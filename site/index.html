@@ -21,6 +21,7 @@
       --radius: 12px;
       --radius-sm: 8px;
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+      --toolbar-bg: #eef0f5;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -37,6 +38,7 @@
         --border: #2a2a44;
         --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
         --shadow-hover: 0 4px 12px rgba(155,125,255,0.2), 0 2px 4px rgba(0,0,0,0.2);
+        --toolbar-bg: #16162a;
       }
     }
 
@@ -81,11 +83,85 @@
 
     /* Sections */
     section { padding: 2rem 0; }
-    section h2 {
-      font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem;
-      display: flex; align-items: center; gap: 0.5rem;
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;
     }
-    section h2 .icon { font-size: 1.3rem; }
+    .section-header h2 {
+      font-size: 1.4rem; font-weight: 700;
+      display: flex; align-items: center; gap: 0.5rem; margin: 0;
+    }
+    .section-header h2 .icon { font-size: 1.3rem; }
+    .section-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .result-count {
+      font-size: 0.82rem; color: var(--text-muted); white-space: nowrap;
+    }
+
+    /* View toggle */
+    .view-toggle {
+      display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden;
+    }
+    .view-toggle button {
+      background: var(--bg-card); border: none; padding: 0.35rem 0.65rem;
+      cursor: pointer; font-size: 1rem; color: var(--text-muted);
+      line-height: 1; transition: background 0.15s, color 0.15s;
+    }
+    .view-toggle button:not(:last-child) { border-right: 1px solid var(--border); }
+    .view-toggle button.active { background: var(--accent); color: #fff; }
+    .view-toggle button:hover:not(.active) { background: var(--toolbar-bg); }
+
+    /* Filter toolbar */
+    .filter-toolbar {
+      background: var(--toolbar-bg); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 0.75rem 1rem;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .filter-group {
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .filter-group label {
+      font-size: 0.78rem; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .filter-toolbar input[type="text"] {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 0.4rem 0.65rem; font-size: 0.85rem;
+      color: var(--text); font-family: var(--font); width: 180px;
+      outline: none; transition: border-color 0.15s;
+    }
+    .filter-toolbar input[type="text"]:focus { border-color: var(--accent); }
+    .filter-toolbar input[type="text"]::placeholder { color: var(--text-muted); opacity: 0.7; }
+    .filter-toolbar select {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 0.4rem 0.5rem; font-size: 0.85rem;
+      color: var(--text); font-family: var(--font); cursor: pointer;
+      outline: none;
+    }
+    .filter-toolbar select:focus { border-color: var(--accent); }
+
+    /* Pill buttons for min-downloads */
+    .pill-group { display: flex; gap: 0.25rem; }
+    .pill-group button {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 999px; padding: 0.25rem 0.7rem; font-size: 0.78rem;
+      color: var(--text-muted); cursor: pointer; font-family: var(--font);
+      font-weight: 500; transition: all 0.15s; white-space: nowrap;
+    }
+    .pill-group button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .pill-group button:hover:not(.active) { border-color: var(--accent-light); color: var(--accent); }
+
+    /* Toggle switch for issues/PRs */
+    .toggle-btn {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 0.3rem 0.65rem; font-size: 0.82rem;
+      color: var(--text-muted); cursor: pointer; font-family: var(--font);
+      font-weight: 500; transition: all 0.15s; white-space: nowrap;
+    }
+    .toggle-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .toggle-btn:hover:not(.active) { border-color: var(--accent-light); color: var(--accent); }
 
     /* Cards grid */
     .card-grid {
@@ -146,6 +222,40 @@
       padding: 0.1rem 0.45rem; border-radius: 999px;
     }
 
+    /* List view */
+    .list-view { display: none; }
+    .list-view table {
+      width: 100%; border-collapse: collapse;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .list-view th {
+      text-align: left; font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--text-muted); padding: 0.65rem 0.75rem;
+      background: var(--toolbar-bg); border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .list-view td {
+      padding: 0.6rem 0.75rem; font-size: 0.85rem;
+      border-bottom: 1px solid var(--border); vertical-align: middle;
+    }
+    .list-view tr:last-child td { border-bottom: none; }
+    .list-view tr:hover td { background: var(--toolbar-bg); }
+    .list-view a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .list-view a:hover { text-decoration: underline; }
+    .list-view .value { font-weight: 700; }
+    .list-view .text-muted { color: var(--text-muted); font-size: 0.8rem; }
+    .list-view .tags { margin-top: 0.15rem; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center; padding: 2.5rem 1rem;
+      color: var(--text-muted);
+    }
+    .empty-state .icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+    .empty-state p { font-size: 0.95rem; }
+
     /* Loading / Error */
     .loading, .error-msg {
       text-align: center; padding: 3rem 1rem;
@@ -177,6 +287,10 @@
       .summary-card { min-width: 120px; padding: 0.75rem 1rem; }
       .summary-card .number { font-size: 1.5rem; }
       .card-grid { grid-template-columns: 1fr; }
+      .filter-toolbar { gap: 0.5rem; }
+      .filter-toolbar input[type="text"] { width: 100%; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+      .list-view { overflow-x: auto; }
     }
   </style>
 </head>
@@ -197,13 +311,98 @@
     </div>
     <div id="error" class="error-msg" style="display:none;"></div>
     <div id="content" style="display:none;">
+
+      <!-- NuGet Packages Section -->
       <section>
-        <h2><span class="icon">📦</span> NuGet Packages</h2>
+        <div class="section-header">
+          <h2><span class="icon">📦</span> NuGet Packages</h2>
+          <div class="section-meta">
+            <span class="result-count" id="nuget-count"></span>
+            <div class="view-toggle" id="nuget-view-toggle">
+              <button data-view="cards" class="active" title="Card view">▦</button>
+              <button data-view="list" title="List view">☰</button>
+            </div>
+          </div>
+        </div>
+        <div class="filter-toolbar" id="nuget-filters">
+          <div class="filter-group">
+            <label for="nuget-search">Search</label>
+            <input type="text" id="nuget-search" placeholder="Filter by name…">
+          </div>
+          <div class="filter-group">
+            <label for="nuget-sort">Sort</label>
+            <select id="nuget-sort">
+              <option value="downloads">Downloads</option>
+              <option value="name-asc">Name A–Z</option>
+              <option value="name-desc">Name Z–A</option>
+              <option value="newest">Newest first</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Min downloads</label>
+            <div class="pill-group" id="nuget-min-dl">
+              <button data-min="0" class="active">All</button>
+              <button data-min="1000">1K+</button>
+              <button data-min="10000">10K+</button>
+              <button data-min="100000">100K+</button>
+            </div>
+          </div>
+        </div>
         <div id="nuget-grid" class="card-grid"></div>
+        <div id="nuget-list" class="list-view"></div>
+        <div id="nuget-empty" class="empty-state" style="display:none;">
+          <span class="icon">🔍</span>
+          <p>No packages match your filters</p>
+        </div>
       </section>
+
+      <!-- GitHub Repositories Section -->
       <section>
-        <h2><span class="icon">🐙</span> GitHub Repositories</h2>
+        <div class="section-header">
+          <h2><span class="icon">🐙</span> GitHub Repositories</h2>
+          <div class="section-meta">
+            <span class="result-count" id="repo-count"></span>
+            <div class="view-toggle" id="repo-view-toggle">
+              <button data-view="cards" class="active" title="Card view">▦</button>
+              <button data-view="list" title="List view">☰</button>
+            </div>
+          </div>
+        </div>
+        <div class="filter-toolbar" id="repo-filters">
+          <div class="filter-group">
+            <label for="repo-search">Search</label>
+            <input type="text" id="repo-search" placeholder="Filter by name…">
+          </div>
+          <div class="filter-group">
+            <label for="repo-sort">Sort</label>
+            <select id="repo-sort">
+              <option value="stars">Stars</option>
+              <option value="forks">Forks</option>
+              <option value="issues">Issues</option>
+              <option value="prs">PRs</option>
+              <option value="name-asc">Name A–Z</option>
+              <option value="updated">Last updated</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="repo-language">Language</label>
+            <select id="repo-language">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <button class="toggle-btn" id="repo-has-issues" title="Show only repos with open issues">🐛 Has issues</button>
+          </div>
+          <div class="filter-group">
+            <button class="toggle-btn" id="repo-has-prs" title="Show only repos with open PRs">🔀 Has PRs</button>
+          </div>
+        </div>
         <div id="repo-grid" class="card-grid"></div>
+        <div id="repo-list" class="list-view"></div>
+        <div id="repo-empty" class="empty-state" style="display:none;">
+          <span class="icon">🔍</span>
+          <p>No repositories match your filters</p>
+        </div>
       </section>
     </div>
   </main>
@@ -226,11 +425,34 @@
       'Jupyter Notebook': '#da5b0b', 'Shell': '#89e051', 'PowerShell': '#012456',
     };
 
+    // Stored data (populated on fetch, used for filtering)
+    let allPackages = [];
+    let allRepos = [];
+
+    // View mode state
+    let nugetViewMode = localStorage.getItem('nuget-view') || 'cards';
+    let repoViewMode = localStorage.getItem('repo-view') || 'cards';
+
+    /* ── Helpers ── */
+
     function fmt(n) { return n == null ? '—' : n.toLocaleString('en-US'); }
+
+    function fmtCompact(n) {
+      if (n == null) return '—';
+      if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
+      if (n >= 1_000) return (n / 1_000).toFixed(1).replace(/\.0$/, '') + 'K';
+      return n.toString();
+    }
 
     function truncate(s, max) {
       if (!s) return '';
       return s.length > max ? s.slice(0, max) + '…' : s;
+    }
+
+    function esc(s) {
+      const el = document.createElement('span');
+      el.textContent = s;
+      return el.innerHTML;
     }
 
     function fmtDate(iso) {
@@ -248,17 +470,19 @@
       });
     }
 
+    /* ── NuGet Rendering ── */
+
     function renderNugetCard(pkg) {
-      const tags = (pkg.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+      const tags = (pkg.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
       return `
         <div class="card">
           <div class="card-header">
             <div class="card-title">
-              <a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${pkg.packageId}</a>
+              <a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a>
             </div>
-            <span class="card-version">v${pkg.latestVersion}</span>
+            <span class="card-version">v${esc(pkg.latestVersion || '')}</span>
           </div>
-          <div class="card-description">${truncate(pkg.description, 140)}</div>
+          <div class="card-description">${esc(truncate(pkg.description, 140))}</div>
           <div class="card-stats">
             <div class="stat">⬇️ <span class="value">${fmt(pkg.totalDownloads)}</span></div>
             <div class="stat">📅 ${fmtDate(pkg.publishedDate)}</div>
@@ -267,29 +491,262 @@
         </div>`;
     }
 
+    function renderNugetListTable(packages) {
+      if (!packages.length) return '';
+      const rows = packages.map(pkg => {
+        const tags = (pkg.tags || []).slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+        return `<tr>
+          <td><a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a>
+            <span class="card-version" style="margin-left:0.4rem;">v${esc(pkg.latestVersion || '')}</span>
+            ${tags ? `<div class="tags">${tags}</div>` : ''}
+          </td>
+          <td class="text-muted">${esc(truncate(pkg.description, 80))}</td>
+          <td class="value" style="text-align:right;">${fmt(pkg.totalDownloads)}</td>
+          <td class="text-muted" style="white-space:nowrap;">${fmtDate(pkg.publishedDate)}</td>
+        </tr>`;
+      }).join('');
+      return `<table>
+        <thead><tr><th>Package</th><th>Description</th><th style="text-align:right;">Downloads</th><th>Published</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+    }
+
+    /* ── Repo Rendering ── */
+
     function renderRepoCard(repo) {
       const color = LANG_COLORS[repo.language] || '#888';
-      const topics = (repo.topics || []).map(t => `<span class="tag">${t}</span>`).join('');
+      const topics = (repo.topics || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
       return `
         <div class="card">
           <div class="card-header">
             <div class="card-title">
-              <a href="${repo.htmlUrl}" target="_blank" rel="noopener">${repo.fullName || repo.name}</a>
+              <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
             </div>
-            ${repo.license ? `<span class="license-badge">${repo.license}</span>` : ''}
+            ${repo.license ? `<span class="license-badge">${esc(repo.license)}</span>` : ''}
           </div>
-          <div class="card-description">${truncate(repo.description, 160)}</div>
+          <div class="card-description">${esc(truncate(repo.description, 160))}</div>
           <div class="card-stats">
             <div class="stat">⭐ <span class="value">${fmt(repo.stars)}</span></div>
             <div class="stat">🍴 <span class="value">${fmt(repo.forks)}</span></div>
             <div class="stat">🐛 Issues <span class="value">${fmt(repo.openIssues)}</span></div>
             <div class="stat">🔀 PRs <span class="value">${fmt(repo.openPullRequests)}</span></div>
-            ${repo.language ? `<div class="stat"><span class="language-dot" style="background:${color}"></span>${repo.language}</div>` : ''}
+            ${repo.language ? `<div class="stat"><span class="language-dot" style="background:${color}"></span>${esc(repo.language)}</div>` : ''}
             <div class="stat">📅 ${fmtDate(repo.lastPush)}</div>
           </div>
           ${topics ? `<div class="tags">${topics}</div>` : ''}
         </div>`;
     }
+
+    function renderRepoListTable(repos) {
+      if (!repos.length) return '';
+      const rows = repos.map(repo => {
+        const color = LANG_COLORS[repo.language] || '#888';
+        const topics = (repo.topics || []).slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+        return `<tr>
+          <td>
+            <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
+            ${repo.license ? ` <span class="license-badge">${esc(repo.license)}</span>` : ''}
+            ${topics ? `<div class="tags">${topics}</div>` : ''}
+          </td>
+          <td class="text-muted">${esc(truncate(repo.description, 80))}</td>
+          <td style="white-space:nowrap;">${repo.language ? `<span class="language-dot" style="background:${color}"></span>${esc(repo.language)}` : '—'}</td>
+          <td class="value" style="text-align:right;">⭐ ${fmt(repo.stars)}</td>
+          <td class="value" style="text-align:right;">🍴 ${fmt(repo.forks)}</td>
+          <td class="value" style="text-align:right;">🐛 ${fmt(repo.openIssues)}</td>
+          <td class="value" style="text-align:right;">🔀 ${fmt(repo.openPullRequests)}</td>
+          <td class="text-muted" style="white-space:nowrap;">${fmtDate(repo.lastPush)}</td>
+        </tr>`;
+      }).join('');
+      return `<table>
+        <thead><tr><th>Repository</th><th>Description</th><th>Language</th><th style="text-align:right;">Stars</th><th style="text-align:right;">Forks</th><th style="text-align:right;">Issues</th><th style="text-align:right;">PRs</th><th>Updated</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+    }
+
+    /* ── Filter + Sort Logic ── */
+
+    function getFilteredPackages() {
+      const search = document.getElementById('nuget-search').value.toLowerCase().trim();
+      const sortKey = document.getElementById('nuget-sort').value;
+      const minDlBtn = document.querySelector('#nuget-min-dl button.active');
+      const minDl = minDlBtn ? parseInt(minDlBtn.dataset.min, 10) : 0;
+
+      let pkgs = allPackages.filter(p => {
+        if (search && !(p.packageId || '').toLowerCase().includes(search)) return false;
+        if (minDl > 0 && (p.totalDownloads || 0) < minDl) return false;
+        return true;
+      });
+
+      pkgs.sort((a, b) => {
+        switch (sortKey) {
+          case 'downloads': return (b.totalDownloads || 0) - (a.totalDownloads || 0);
+          case 'name-asc': return (a.packageId || '').localeCompare(b.packageId || '');
+          case 'name-desc': return (b.packageId || '').localeCompare(a.packageId || '');
+          case 'newest': return new Date(b.publishedDate || 0) - new Date(a.publishedDate || 0);
+          default: return 0;
+        }
+      });
+
+      return pkgs;
+    }
+
+    function getFilteredRepos() {
+      const search = document.getElementById('repo-search').value.toLowerCase().trim();
+      const sortKey = document.getElementById('repo-sort').value;
+      const lang = document.getElementById('repo-language').value;
+      const hasIssues = document.getElementById('repo-has-issues').classList.contains('active');
+      const hasPrs = document.getElementById('repo-has-prs').classList.contains('active');
+
+      let repos = allRepos.filter(r => {
+        if (search && !(r.fullName || r.name || '').toLowerCase().includes(search)) return false;
+        if (lang && r.language !== lang) return false;
+        if (hasIssues && !(r.openIssues > 0)) return false;
+        if (hasPrs && !(r.openPullRequests > 0)) return false;
+        return true;
+      });
+
+      repos.sort((a, b) => {
+        switch (sortKey) {
+          case 'stars': return (b.stars || 0) - (a.stars || 0);
+          case 'forks': return (b.forks || 0) - (a.forks || 0);
+          case 'issues': return (b.openIssues || 0) - (a.openIssues || 0);
+          case 'prs': return (b.openPullRequests || 0) - (a.openPullRequests || 0);
+          case 'name-asc': return (a.fullName || a.name || '').localeCompare(b.fullName || b.name || '');
+          case 'updated': return new Date(b.lastPush || 0) - new Date(a.lastPush || 0);
+          default: return 0;
+        }
+      });
+
+      return repos;
+    }
+
+    /* ── Render Functions ── */
+
+    function renderNugetSection() {
+      const pkgs = getFilteredPackages();
+      const grid = document.getElementById('nuget-grid');
+      const list = document.getElementById('nuget-list');
+      const empty = document.getElementById('nuget-empty');
+      const countEl = document.getElementById('nuget-count');
+
+      countEl.textContent = `Showing ${pkgs.length} of ${allPackages.length} packages`;
+
+      if (pkgs.length === 0) {
+        grid.style.display = 'none';
+        list.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      empty.style.display = 'none';
+      if (nugetViewMode === 'cards') {
+        grid.innerHTML = pkgs.map(renderNugetCard).join('');
+        grid.style.display = '';
+        list.style.display = 'none';
+      } else {
+        list.innerHTML = renderNugetListTable(pkgs);
+        list.style.display = 'block';
+        grid.style.display = 'none';
+      }
+    }
+
+    function renderRepoSection() {
+      const repos = getFilteredRepos();
+      const grid = document.getElementById('repo-grid');
+      const list = document.getElementById('repo-list');
+      const empty = document.getElementById('repo-empty');
+      const countEl = document.getElementById('repo-count');
+
+      countEl.textContent = `Showing ${repos.length} of ${allRepos.length} repositories`;
+
+      if (repos.length === 0) {
+        grid.style.display = 'none';
+        list.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      empty.style.display = 'none';
+      if (repoViewMode === 'cards') {
+        grid.innerHTML = repos.map(renderRepoCard).join('');
+        grid.style.display = '';
+        list.style.display = 'none';
+      } else {
+        list.innerHTML = renderRepoListTable(repos);
+        list.style.display = 'block';
+        grid.style.display = 'none';
+      }
+    }
+
+    /* ── Event Wiring ── */
+
+    function wireFilters() {
+      // NuGet search (live)
+      document.getElementById('nuget-search').addEventListener('input', renderNugetSection);
+      document.getElementById('nuget-sort').addEventListener('change', renderNugetSection);
+
+      // Min-downloads pills
+      document.querySelectorAll('#nuget-min-dl button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#nuget-min-dl button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderNugetSection();
+        });
+      });
+
+      // Repo search (live)
+      document.getElementById('repo-search').addEventListener('input', renderRepoSection);
+      document.getElementById('repo-sort').addEventListener('change', renderRepoSection);
+      document.getElementById('repo-language').addEventListener('change', renderRepoSection);
+
+      // Toggle buttons
+      document.getElementById('repo-has-issues').addEventListener('click', function() {
+        this.classList.toggle('active');
+        renderRepoSection();
+      });
+      document.getElementById('repo-has-prs').addEventListener('click', function() {
+        this.classList.toggle('active');
+        renderRepoSection();
+      });
+
+      // View toggles
+      function wireViewToggle(toggleId, getMode, setMode, renderFn) {
+        document.querySelectorAll(`#${toggleId} button`).forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll(`#${toggleId} button`).forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            setMode(btn.dataset.view);
+            renderFn();
+          });
+        });
+      }
+
+      wireViewToggle('nuget-view-toggle', () => nugetViewMode, (m) => { nugetViewMode = m; localStorage.setItem('nuget-view', m); }, renderNugetSection);
+      wireViewToggle('repo-view-toggle', () => repoViewMode, (m) => { repoViewMode = m; localStorage.setItem('repo-view', m); }, renderRepoSection);
+
+      // Restore saved view modes
+      setActiveViewButton('nuget-view-toggle', nugetViewMode);
+      setActiveViewButton('repo-view-toggle', repoViewMode);
+    }
+
+    function setActiveViewButton(toggleId, mode) {
+      document.querySelectorAll(`#${toggleId} button`).forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === mode);
+      });
+    }
+
+    function populateLanguageDropdown() {
+      const langs = [...new Set(allRepos.map(r => r.language).filter(Boolean))].sort();
+      const sel = document.getElementById('repo-language');
+      langs.forEach(lang => {
+        const opt = document.createElement('option');
+        opt.value = lang;
+        opt.textContent = lang;
+        sel.appendChild(opt);
+      });
+    }
+
+    /* ── Main Load ── */
 
     async function loadDashboard() {
       const loading = document.getElementById('loading');
@@ -307,27 +764,33 @@
         const nugetData = await nugetRes.json();
         const reposData = await reposRes.json();
 
+        // Store raw data for filtering
+        allPackages = nugetData.packages || [];
+        allRepos = reposData.repositories || [];
+
         // Header info
-        const author = nugetData.packages?.[0]?.authors || 'Dashboard';
+        const author = allPackages[0]?.authors || 'Dashboard';
         document.getElementById('subtitle').textContent = author;
         document.getElementById('updated').textContent =
           nugetData.generatedAt ? `Last updated: ${fmtTimestamp(nugetData.generatedAt)}` : '';
 
         // Summary cards
-        const totalDownloads = (nugetData.packages || []).reduce((s, p) => s + (p.totalDownloads || 0), 0);
+        const totalDownloads = allPackages.reduce((s, p) => s + (p.totalDownloads || 0), 0);
         document.getElementById('summary').innerHTML = `
-          <div class="summary-card"><div class="number">${fmt(nugetData.packages?.length || 0)}</div><div class="label">Packages</div></div>
-          <div class="summary-card"><div class="number">${fmt(reposData.repositories?.length || 0)}</div><div class="label">Repositories</div></div>
+          <div class="summary-card"><div class="number">${fmt(allPackages.length)}</div><div class="label">Packages</div></div>
+          <div class="summary-card"><div class="number">${fmt(allRepos.length)}</div><div class="label">Repositories</div></div>
           <div class="summary-card"><div class="number">${fmt(totalDownloads)}</div><div class="label">Total Downloads</div></div>
         `;
 
-        // NuGet packages sorted by downloads descending
-        const packages = [...(nugetData.packages || [])].sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0));
-        document.getElementById('nuget-grid').innerHTML = packages.map(renderNugetCard).join('');
+        // Populate dynamic filter options
+        populateLanguageDropdown();
 
-        // Repos sorted by stars descending
-        const repos = [...(reposData.repositories || [])].sort((a, b) => (b.stars || 0) - (a.stars || 0));
-        document.getElementById('repo-grid').innerHTML = repos.map(renderRepoCard).join('');
+        // Wire up filter events
+        wireFilters();
+
+        // Initial render
+        renderNugetSection();
+        renderRepoSection();
 
         loading.style.display = 'none';
         content.style.display = 'block';
