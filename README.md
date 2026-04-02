@@ -161,6 +161,33 @@ Both files are written to:
 - **`data/latest/`** — latest metrics snapshot
 - **`data/history/{YYYY}/{MM}/{DD}/`** — daily historical snapshots
 
+## Dashboard
+
+The dashboard is automatically deployed to **GitHub Pages** after each metrics refresh. The [`Refresh Metrics`](.github/workflows/refresh-metrics.yml) workflow collects data and then deploys `site/index.html` with the latest JSON data.
+
+### Enabling GitHub Pages
+
+1. Go to **Settings → Pages** in your repository
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. The next workflow run will deploy the dashboard automatically
+
+### Dashboard URL
+
+Once enabled, the dashboard is available at:
+
+```
+https://{owner}.github.io/{repo}/
+```
+
+For this repo: `https://elbruno.github.io/nuget-repo-dashboard/`
+
+### Site Structure
+
+The deployed site contains:
+- `index.html` — dashboard UI (from `site/index.html`)
+- `data/data.nuget.json` — NuGet package metrics
+- `data/data.repositories.json` — GitHub repository metrics
+
 ## PRD
 
 See [docs/nuget-dashboard-prd-v2.md](docs/nuget-dashboard-prd-v2.md) for the full product requirements document.

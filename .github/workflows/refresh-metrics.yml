@@ -1,6 +1,6 @@
-# WI-5: Daily metrics refresh
+# WI-5: Daily metrics refresh + dashboard deploy
 # Runs the NuGet + GitHub Collector to update dashboard data.
-# Commits results to data/ if anything changed.
+# Commits results to data/ if anything changed, then deploys to GitHub Pages.
 
 name: Refresh Metrics
 
@@ -11,6 +11,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: refresh-metrics
@@ -23,10 +25,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET 9
+      - name: Setup .NET 10
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "9.0.x"
+          dotnet-version: "10.0.x"
 
       - name: Build Collector
         run: dotnet build src/Collector/Collector.csproj --configuration Release
@@ -56,3 +58,29 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: refresh metrics [skip ci]"
           git push
+
+  deploy-dashboard:
+    needs: collect
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site/data
+          cp site/index.html _site/
+          cp data/latest/data.nuget.json _site/data/data.nuget.json
+          cp data/latest/data.repositories.json _site/data/data.repositories.json
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NuGet Package Dashboard</title>
+  <style>
+    :root {
+      --bg: #f8f9fc;
+      --bg-card: #ffffff;
+      --text: #1e1e2e;
+      --text-muted: #6c6f85;
+      --accent: #6c47ff;
+      --accent-light: #8b6fff;
+      --accent-bg: #f0ebff;
+      --blue: #1a6dff;
+      --blue-bg: #e8f0ff;
+      --border: #e2e4eb;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 12px rgba(108,71,255,0.12), 0 2px 4px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111122;
+        --bg-card: #1a1a2e;
+        --text: #e0e0f0;
+        --text-muted: #8888aa;
+        --accent: #9b7dff;
+        --accent-light: #b49dff;
+        --accent-bg: #2a2245;
+        --blue: #5a9dff;
+        --blue-bg: #1a2540;
+        --border: #2a2a44;
+        --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+        --shadow-hover: 0 4px 12px rgba(155,125,255,0.2), 0 2px 4px rgba(0,0,0,0.2);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #4a2dbd 0%, #6c47ff 50%, #1a6dff 100%);
+      color: #fff;
+      padding: 2.5rem 0 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+    header .subtitle { font-size: 1rem; opacity: 0.85; margin-top: 0.25rem; }
+    header .updated { font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem; }
+
+    /* Summary cards */
+    .summary {
+      display: flex; gap: 1rem; justify-content: center;
+      flex-wrap: wrap; margin-top: 1.5rem;
+    }
+    .summary-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 1rem 2rem;
+      text-align: center; min-width: 160px;
+    }
+    .summary-card .number { font-size: 2rem; font-weight: 800; line-height: 1.2; }
+    .summary-card .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; }
+
+    /* Sections */
+    section { padding: 2rem 0; }
+    section h2 {
+      font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    section h2 .icon { font-size: 1.3rem; }
+
+    /* Cards grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+    .card-title a {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--accent); text-decoration: none;
+    }
+    .card-title a:hover { text-decoration: underline; }
+    .card-version {
+      font-size: 0.75rem; font-weight: 600;
+      background: var(--accent-bg); color: var(--accent);
+      padding: 0.15rem 0.5rem; border-radius: 999px;
+      white-space: nowrap;
+    }
+    .card-description {
+      font-size: 0.88rem; color: var(--text-muted);
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-stats { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: auto; padding-top: 0.25rem; }
+    .stat {
+      display: flex; align-items: center; gap: 0.25rem;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .stat .value { font-weight: 700; color: var(--text); font-size: 0.95rem; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tag {
+      font-size: 0.7rem; font-weight: 500;
+      background: var(--blue-bg); color: var(--blue);
+      padding: 0.1rem 0.45rem; border-radius: 999px;
+    }
+
+    /* Repo-specific */
+    .language-dot {
+      display: inline-block; width: 10px; height: 10px;
+      border-radius: 50%; margin-right: 0.2rem; vertical-align: middle;
+    }
+    .license-badge {
+      font-size: 0.7rem; font-weight: 500;
+      background: var(--accent-bg); color: var(--accent);
+      padding: 0.1rem 0.45rem; border-radius: 999px;
+    }
+
+    /* Loading / Error */
+    .loading, .error-msg {
+      text-align: center; padding: 3rem 1rem;
+    }
+    .spinner {
+      width: 40px; height: 40px; margin: 0 auto 1rem;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .error-msg { color: #e44; }
+    .error-msg .icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 2rem 0;
+      font-size: 0.82rem; color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .summary-card { min-width: 120px; padding: 0.75rem 1rem; }
+      .summary-card .number { font-size: 1.5rem; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>📦 NuGet Package Dashboard</h1>
+      <div class="subtitle" id="subtitle">Loading...</div>
+      <div class="updated" id="updated"></div>
+      <div class="summary" id="summary"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Fetching dashboard data&hellip;</p>
+    </div>
+    <div id="error" class="error-msg" style="display:none;"></div>
+    <div id="content" style="display:none;">
+      <section>
+        <h2><span class="icon">📦</span> NuGet Packages</h2>
+        <div id="nuget-grid" class="card-grid"></div>
+      </section>
+      <section>
+        <h2><span class="icon">🐙</span> GitHub Repositories</h2>
+        <div id="repo-grid" class="card-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Powered by <strong>NuGet + GitHub Dashboard Collector</strong> &middot;
+      <a href="https://github.com/elbruno/nuget-repo-dashboard" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    const NUGET_URL = 'data/data.nuget.json';
+    const REPOS_URL = 'data/data.repositories.json';
+
+    const LANG_COLORS = {
+      'C#': '#178600', 'JavaScript': '#f1e05a', 'TypeScript': '#3178c6',
+      'Python': '#3572a5', 'Java': '#b07219', 'Go': '#00add8',
+      'Rust': '#dea584', 'HTML': '#e34c26', 'CSS': '#563d7c',
+      'Jupyter Notebook': '#da5b0b', 'Shell': '#89e051', 'PowerShell': '#012456',
+    };
+
+    function fmt(n) { return n == null ? '—' : n.toLocaleString('en-US'); }
+
+    function truncate(s, max) {
+      if (!s) return '';
+      return s.length > max ? s.slice(0, max) + '…' : s;
+    }
+
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function fmtTimestamp(iso) {
+      if (!iso) return '';
+      const d = new Date(iso);
+      return d.toLocaleString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', timeZoneName: 'short',
+      });
+    }
+
+    function renderNugetCard(pkg) {
+      const tags = (pkg.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+      return `
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${pkg.packageId}</a>
+            </div>
+            <span class="card-version">v${pkg.latestVersion}</span>
+          </div>
+          <div class="card-description">${truncate(pkg.description, 140)}</div>
+          <div class="card-stats">
+            <div class="stat">⬇️ <span class="value">${fmt(pkg.totalDownloads)}</span></div>
+            <div class="stat">📅 ${fmtDate(pkg.publishedDate)}</div>
+          </div>
+          ${tags ? `<div class="tags">${tags}</div>` : ''}
+        </div>`;
+    }
+
+    function renderRepoCard(repo) {
+      const color = LANG_COLORS[repo.language] || '#888';
+      const topics = (repo.topics || []).map(t => `<span class="tag">${t}</span>`).join('');
+      return `
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="${repo.htmlUrl}" target="_blank" rel="noopener">${repo.fullName || repo.name}</a>
+            </div>
+            ${repo.license ? `<span class="license-badge">${repo.license}</span>` : ''}
+          </div>
+          <div class="card-description">${truncate(repo.description, 160)}</div>
+          <div class="card-stats">
+            <div class="stat">⭐ <span class="value">${fmt(repo.stars)}</span></div>
+            <div class="stat">🍴 <span class="value">${fmt(repo.forks)}</span></div>
+            <div class="stat">🐛 Issues <span class="value">${fmt(repo.openIssues)}</span></div>
+            <div class="stat">🔀 PRs <span class="value">${fmt(repo.openPullRequests)}</span></div>
+            ${repo.language ? `<div class="stat"><span class="language-dot" style="background:${color}"></span>${repo.language}</div>` : ''}
+            <div class="stat">📅 ${fmtDate(repo.lastPush)}</div>
+          </div>
+          ${topics ? `<div class="tags">${topics}</div>` : ''}
+        </div>`;
+    }
+
+    async function loadDashboard() {
+      const loading = document.getElementById('loading');
+      const errorEl = document.getElementById('error');
+      const content = document.getElementById('content');
+
+      try {
+        const [nugetRes, reposRes] = await Promise.all([
+          fetch(NUGET_URL), fetch(REPOS_URL),
+        ]);
+
+        if (!nugetRes.ok) throw new Error(`Failed to load NuGet data (${nugetRes.status})`);
+        if (!reposRes.ok) throw new Error(`Failed to load repository data (${reposRes.status})`);
+
+        const nugetData = await nugetRes.json();
+        const reposData = await reposRes.json();
+
+        // Header info
+        const author = nugetData.packages?.[0]?.authors || 'Dashboard';
+        document.getElementById('subtitle').textContent = author;
+        document.getElementById('updated').textContent =
+          nugetData.generatedAt ? `Last updated: ${fmtTimestamp(nugetData.generatedAt)}` : '';
+
+        // Summary cards
+        const totalDownloads = (nugetData.packages || []).reduce((s, p) => s + (p.totalDownloads || 0), 0);
+        document.getElementById('summary').innerHTML = `
+          <div class="summary-card"><div class="number">${fmt(nugetData.packages?.length || 0)}</div><div class="label">Packages</div></div>
+          <div class="summary-card"><div class="number">${fmt(reposData.repositories?.length || 0)}</div><div class="label">Repositories</div></div>
+          <div class="summary-card"><div class="number">${fmt(totalDownloads)}</div><div class="label">Total Downloads</div></div>
+        `;
+
+        // NuGet packages sorted by downloads descending
+        const packages = [...(nugetData.packages || [])].sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0));
+        document.getElementById('nuget-grid').innerHTML = packages.map(renderNugetCard).join('');
+
+        // Repos sorted by stars descending
+        const repos = [...(reposData.repositories || [])].sort((a, b) => (b.stars || 0) - (a.stars || 0));
+        document.getElementById('repo-grid').innerHTML = repos.map(renderRepoCard).join('');
+
+        loading.style.display = 'none';
+        content.style.display = 'block';
+      } catch (err) {
+        loading.style.display = 'none';
+        errorEl.innerHTML = `<span class="icon">⚠️</span><p><strong>Could not load dashboard data.</strong></p><p>${err.message}</p>`;
+        errorEl.style.display = 'block';
+        console.error('Dashboard load error:', err);
+      }
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>
