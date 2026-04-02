@@ -15,14 +15,35 @@ public class GitHubCollectorTests
         string? language = "C#",
         string? license = "MIT",
         string? pushedAt = "2024-06-01T12:00:00Z",
-        bool archived = false)
+        bool archived = false,
+        int subscribersCount = 50,
+        List<string>? topics = null,
+        string? createdAt = "2020-01-01T00:00:00Z",
+        string? updatedAt = "2024-06-01T12:00:00Z",
+        int size = 1024,
+        string? defaultBranch = "main",
+        string? homepage = null,
+        bool hasWiki = false,
+        bool hasPages = false,
+        int networkCount = 10,
+        string? visibility = "public",
+        string? htmlUrl = "https://github.com/owner/repo")
     {
         var descJson = description is null ? "null" : $"\"{description}\"";
         var langJson = language is null ? "null" : $"\"{language}\"";
         var pushedJson = pushedAt is null ? "null" : $"\"{pushedAt}\"";
+        var createdJson = createdAt is null ? "null" : $"\"{createdAt}\"";
+        var updatedJson = updatedAt is null ? "null" : $"\"{updatedAt}\"";
+        var homepageJson = homepage is null ? "null" : $"\"{homepage}\"";
+        var visibilityJson = visibility is null ? "null" : $"\"{visibility}\"";
+        var htmlUrlJson = htmlUrl is null ? "null" : $"\"{htmlUrl}\"";
+        var defaultBranchJson = defaultBranch is null ? "null" : $"\"{defaultBranch}\"";
         var licenseJson = license is null
             ? "null"
             : $$"""{ "spdx_id": "{{license}}", "name": "{{license}} License" }""";
+        var topicsJson = topics is null || topics.Count == 0
+            ? "[]"
+            : $"[{string.Join(",", topics.Select(t => $"\"{t}\""))}]";
 
         return $$"""
         {
@@ -33,7 +54,19 @@ public class GitHubCollectorTests
           "language": {{langJson}},
           "license": {{licenseJson}},
           "pushed_at": {{pushedJson}},
-          "archived": {{archived.ToString().ToLower()}}
+          "archived": {{archived.ToString().ToLower()}},
+          "subscribers_count": {{subscribersCount}},
+          "topics": {{topicsJson}},
+          "created_at": {{createdJson}},
+          "updated_at": {{updatedJson}},
+          "size": {{size}},
+          "default_branch": {{defaultBranchJson}},
+          "homepage": {{homepageJson}},
+          "has_wiki": {{hasWiki.ToString().ToLower()}},
+          "has_pages": {{hasPages.ToString().ToLower()}},
+          "network_count": {{networkCount}},
+          "visibility": {{visibilityJson}},
+          "html_url": {{htmlUrlJson}}
         }
         """;
     }
@@ -289,5 +322,200 @@ public class GitHubCollectorTests
         results[0].LastPush.Should().NotBeNull();
         results[0].LastPush!.Value.Year.Should().Be(2024);
         results[0].LastPush!.Value.Month.Should().Be(12);
+    }
+
+    [Fact]
+    public async Task CollectAsync_ParsesEnrichedFields_WatchersCount()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(subscribersCount: 125));
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].WatchersCount.Should().Be(125);
+    }
+
+    [Fact]
+    public async Task CollectAsync_ParsesEnrichedFields_Topics()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(topics: ["csharp", "dotnet", "nuget"]));
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].Topics.Should().BeEquivalentTo(["csharp", "dotnet", "nuget"]);
+    }
+
+    [Fact]
+    public async Task CollectAsync_ParsesEnrichedFields_CreatedAndUpdatedAt()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(
+                createdAt: "2020-01-15T10:00:00Z",
+                updatedAt: "2024-06-20T14:30:00Z"));
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].CreatedAt.Should().NotBeNull();
+        results[0].CreatedAt!.Value.Year.Should().Be(2020);
+        results[0].CreatedAt!.Value.Month.Should().Be(1);
+        results[0].UpdatedAt.Should().NotBeNull();
+        results[0].UpdatedAt!.Value.Year.Should().Be(2024);
+        results[0].UpdatedAt!.Value.Month.Should().Be(6);
+    }
+
+    [Fact]
+    public async Task CollectAsync_ParsesEnrichedFields_SizeAndBranch()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(size: 2048, defaultBranch: "develop"));
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].Size.Should().Be(2048);
+        results[0].DefaultBranch.Should().Be("develop");
+    }
+
+    [Fact]
+    public async Task CollectAsync_ParsesEnrichedFields_HomepageAndUrl()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(
+                homepage: "https://example.com",
+                htmlUrl: "https://github.com/owner/repo"));
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].Homepage.Should().Be("https://example.com");
+        results[0].HtmlUrl.Should().Be("https://github.com/owner/repo");
+    }
+
+    [Fact]
+    public async Task CollectAsync_ParsesEnrichedFields_WikiAndPages()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(hasWiki: true, hasPages: false));
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].HasWiki.Should().BeTrue();
+        results[0].HasPages.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task CollectAsync_ParsesEnrichedFields_NetworkCountAndVisibility()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(networkCount: 42, visibility: "public"));
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].NetworkCount.Should().Be(42);
+        results[0].Visibility.Should().Be("public");
+    }
+
+    [Fact]
+    public async Task CollectAsync_EnrichedFields_HandleNullOptionalFields()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/minimal",
+            HttpStatusCode.OK,
+            BuildRepoJson(
+                description: null,
+                language: null,
+                license: null,
+                pushedAt: null,
+                topics: null,
+                createdAt: null,
+                updatedAt: null,
+                defaultBranch: null,
+                homepage: null,
+                visibility: null,
+                htmlUrl: null));
+        handler.AddResponse("https://api.github.com/repos/owner/minimal/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/minimal/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/minimal"]);
+
+        results.Should().ContainSingle();
+        var m = results[0];
+        m.Description.Should().BeNull();
+        m.Language.Should().BeNull();
+        m.License.Should().BeNull();
+        m.LastPush.Should().BeNull();
+        m.Topics.Should().BeEmpty();
+        m.CreatedAt.Should().BeNull();
+        m.UpdatedAt.Should().BeNull();
+        m.DefaultBranch.Should().BeNull();
+        m.Homepage.Should().BeNull();
+        m.Visibility.Should().BeNull();
+        m.HtmlUrl.Should().BeNull();
     }
 }

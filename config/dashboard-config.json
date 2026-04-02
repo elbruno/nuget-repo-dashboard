@@ -1,0 +1,10 @@
+{
+  "nugetProfile": "elbruno",
+  "mergeWithTrackedPackages": true,
+  "ignorePackages": [
+    "LocalEmbeddings",
+    "Microsoft.Extensions.AI",
+    "Microsoft.Extensions.AI.Abstractions",
+    "Microsoft.Extensions.AI.Ollama"
+  ]
+}

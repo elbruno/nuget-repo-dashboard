@@ -4,22 +4,39 @@ A public dashboard that tracks NuGet packages and GitHub repos — collecting do
 
 ## Architecture
 
-A C# Collector service fetches data from the NuGet and GitHub APIs, producing structured JSON consumed by a frontend dashboard.
+The dashboard uses a **two-pipeline architecture**:
+
+### Pipeline 1: Discovery
+Automatically discovers NuGet packages and their associated GitHub repositories:
+
+1. **Query NuGet Search API** — search for packages by owner (`owner:elbruno`)
+2. **Build package list** — deduplicate and filter discovered packages
+3. **Extract GitHub repos** — parse `projectUrl` from package metadata to build deduplicated repo list
+
+### Pipeline 2: Collection
+Collects metrics from NuGet and GitHub APIs using the discovered lists:
+
+1. **Collect NuGet metrics** — fetch download counts, versions, and metadata → `data.nuget.json`
+2. **Collect GitHub metrics** — fetch stars, forks, issues, PRs → `data.repositories.json`
 
 ```
-config/tracked-packages.json   ← packages & repo mappings
-        ↓
-  src/Collector/               ← .NET 9 console app
-        ↓
-  data/latest/data.json        ← latest snapshot
-  data/history/YYYY/MM/DD/     ← daily history
+config/dashboard-config.json   ← NuGet profile + ignore list
+config/tracked-packages.json   ← optional manual package mappings
+         ↓
+   src/Collector/              ← .NET 10 console app (two-pipeline architecture)
+         ↓
+   data/latest/                ← latest snapshots
+   ├── data.nuget.json         ← NuGet package metrics
+   └── data.repositories.json  ← GitHub repository metrics
+         ↓
+   data/history/YYYY/MM/DD/    ← daily history
 ```
 
 ## Quick Start
 
 ### Prerequisites
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 ### Build
 
@@ -42,7 +59,29 @@ dotnet run --project src/Collector/Collector.csproj
 
 ## Configuration
 
-Edit `config/tracked-packages.json` to track packages:
+### Dashboard Config (`config/dashboard-config.json`)
+
+Primary configuration for auto-discovery:
+
+```json
+{
+  "nugetProfile": "elbruno",
+  "mergeWithTrackedPackages": true,
+  "ignorePackages": [
+    "LocalEmbeddings",
+    "Microsoft.Extensions.AI"
+  ]
+}
+```
+
+**Fields:**
+- `nugetProfile` — NuGet username for auto-discovery (queries `owner:{username}`)
+- `mergeWithTrackedPackages` — merge manual package mappings from `tracked-packages.json`
+- `ignorePackages` — exclude specific packages from collection (case-insensitive)
+
+### Tracked Packages (`config/tracked-packages.json`)
+
+Optional manual package-to-repo mappings (merged with discovered packages):
 
 ```json
 [
@@ -52,10 +91,17 @@ Edit `config/tracked-packages.json` to track packages:
 
 ## Output
 
-The collector writes:
+The collector writes two JSON files:
 
-- **`data/latest/data.json`** — latest metrics snapshot
-- **`data/history/{YYYY}/{MM}/{DD}/data.json`** — daily historical snapshots
+### `data.nuget.json`
+NuGet package metrics with download counts, versions, and metadata.
+
+### `data.repositories.json`
+GitHub repository metrics with stars, forks, issues, PRs, and additional metadata.
+
+Both files are written to:
+- **`data/latest/`** — latest metrics snapshot
+- **`data/history/{YYYY}/{MM}/{DD}/`** — daily historical snapshots
 
 ## PRD
 

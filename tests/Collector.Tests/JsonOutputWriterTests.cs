@@ -23,9 +23,9 @@ public class JsonOutputWriterTests : IDisposable
             Directory.Delete(_tempRoot, true);
     }
 
-    private static DashboardOutput CreateSampleOutput(DateTimeOffset? generatedAt = null)
+    private static NuGetOutput CreateSampleNuGetOutput(DateTimeOffset? generatedAt = null)
     {
-        return new DashboardOutput
+        return new NuGetOutput
         {
             GeneratedAt = generatedAt ?? new DateTimeOffset(2024, 6, 15, 10, 0, 0, TimeSpan.Zero),
             Packages =
@@ -40,8 +40,16 @@ public class JsonOutputWriterTests : IDisposable
                     Listed = true,
                     Tags = ["test"]
                 }
-            ],
-            Repos =
+            ]
+        };
+    }
+
+    private static RepositoriesOutput CreateSampleRepositoriesOutput(DateTimeOffset? generatedAt = null)
+    {
+        return new RepositoriesOutput
+        {
+            GeneratedAt = generatedAt ?? new DateTimeOffset(2024, 6, 15, 10, 0, 0, TimeSpan.Zero),
+            Repositories =
             [
                 new GitHubRepoMetrics
                 {
@@ -57,133 +65,250 @@ public class JsonOutputWriterTests : IDisposable
         };
     }
 
+    #region WriteNuGetAsync Tests
+
     [Fact]
-    public async Task WriteAsync_CreatesLatestDataJson()
+    public async Task WriteNuGetAsync_CreatesLatestDataNuGetJson()
     {
-        var output = CreateSampleOutput();
+        var output = CreateSampleNuGetOutput();
 
-        await _writer.WriteAsync(output, _tempRoot);
+        await _writer.WriteNuGetAsync(output, _tempRoot);
 
-        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.json");
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.nuget.json");
         File.Exists(latestPath).Should().BeTrue();
     }
 
     [Fact]
-    public async Task WriteAsync_CreatesHistoryDataJson()
+    public async Task WriteNuGetAsync_CreatesHistoryDataNuGetJson()
     {
         var dt = new DateTimeOffset(2024, 6, 15, 10, 0, 0, TimeSpan.Zero);
-        var output = CreateSampleOutput(dt);
+        var output = CreateSampleNuGetOutput(dt);
 
-        await _writer.WriteAsync(output, _tempRoot);
+        await _writer.WriteNuGetAsync(output, _tempRoot);
 
-        var historyPath = Path.Combine(_tempRoot, "data", "history", "2024", "06", "15", "data.json");
+        var historyPath = Path.Combine(_tempRoot, "data", "history", "2024", "06", "15", "data.nuget.json");
         File.Exists(historyPath).Should().BeTrue();
     }
 
     [Fact]
-    public async Task WriteAsync_CreatesDirectoryStructureIfMissing()
+    public async Task WriteNuGetAsync_CreatesDirectoryStructureIfMissing()
     {
-        var output = CreateSampleOutput();
+        var output = CreateSampleNuGetOutput();
         var nestedRoot = Path.Combine(_tempRoot, "deep", "nested", "root");
-        // Directory doesn't exist yet — writer should create it
         Directory.Exists(nestedRoot).Should().BeFalse();
 
-        await _writer.WriteAsync(output, nestedRoot);
+        await _writer.WriteNuGetAsync(output, nestedRoot);
 
-        var latestPath = Path.Combine(nestedRoot, "data", "latest", "data.json");
+        var latestPath = Path.Combine(nestedRoot, "data", "latest", "data.nuget.json");
         File.Exists(latestPath).Should().BeTrue();
     }
 
     [Fact]
-    public async Task WriteAsync_OutputJsonIsValidAndDeserializable()
+    public async Task WriteNuGetAsync_OutputJsonIsValidAndDeserializable()
     {
-        var output = CreateSampleOutput();
+        var output = CreateSampleNuGetOutput();
 
-        await _writer.WriteAsync(output, _tempRoot);
+        await _writer.WriteNuGetAsync(output, _tempRoot);
 
-        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.json");
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.nuget.json");
         var json = await File.ReadAllTextAsync(latestPath);
-        var deserialized = JsonSerializer.Deserialize<DashboardOutput>(json);
+        var deserialized = JsonSerializer.Deserialize<NuGetOutput>(json);
 
         deserialized.Should().NotBeNull();
         deserialized!.Packages.Should().HaveCount(1);
-        deserialized.Repos.Should().HaveCount(1);
     }
 
     [Fact]
-    public async Task WriteAsync_JsonContainsExpectedPropertyNames()
+    public async Task WriteNuGetAsync_JsonContainsExpectedPropertyNames()
     {
-        var output = CreateSampleOutput();
+        var output = CreateSampleNuGetOutput();
 
-        await _writer.WriteAsync(output, _tempRoot);
+        await _writer.WriteNuGetAsync(output, _tempRoot);
 
-        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.json");
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.nuget.json");
         var json = await File.ReadAllTextAsync(latestPath);
 
-        // Verify camelCase property names from the JSON serialization
         json.Should().Contain("\"generatedAt\"");
         json.Should().Contain("\"packages\"");
-        json.Should().Contain("\"repos\"");
         json.Should().Contain("\"packageId\"");
         json.Should().Contain("\"latestVersion\"");
         json.Should().Contain("\"totalDownloads\"");
+    }
+
+    [Fact]
+    public async Task WriteNuGetAsync_IsIndentedJson()
+    {
+        var output = CreateSampleNuGetOutput();
+
+        await _writer.WriteNuGetAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.nuget.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+
+        json.Should().Contain("\n");
+    }
+
+    [Fact]
+    public async Task WriteNuGetAsync_EmptyCollections_ProducesValidJson()
+    {
+        var output = new NuGetOutput
+        {
+            GeneratedAt = DateTimeOffset.UtcNow,
+            Packages = []
+        };
+
+        await _writer.WriteNuGetAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.nuget.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+        var deserialized = JsonSerializer.Deserialize<NuGetOutput>(json);
+
+        deserialized.Should().NotBeNull();
+        deserialized!.Packages.Should().BeEmpty();
+    }
+
+    [Fact]
+    public async Task WriteNuGetAsync_OverwritesExistingFile()
+    {
+        var output1 = CreateSampleNuGetOutput();
+        await _writer.WriteNuGetAsync(output1, _tempRoot);
+
+        var output2 = new NuGetOutput
+        {
+            GeneratedAt = DateTimeOffset.UtcNow,
+            Packages = []
+        };
+        await _writer.WriteNuGetAsync(output2, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.nuget.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+        var deserialized = JsonSerializer.Deserialize<NuGetOutput>(json);
+
+        deserialized!.Packages.Should().BeEmpty();
+    }
+
+    #endregion
+
+    #region WriteRepositoriesAsync Tests
+
+    [Fact]
+    public async Task WriteRepositoriesAsync_CreatesLatestDataRepositoriesJson()
+    {
+        var output = CreateSampleRepositoriesOutput();
+
+        await _writer.WriteRepositoriesAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.repositories.json");
+        File.Exists(latestPath).Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task WriteRepositoriesAsync_CreatesHistoryDataRepositoriesJson()
+    {
+        var dt = new DateTimeOffset(2024, 6, 15, 10, 0, 0, TimeSpan.Zero);
+        var output = CreateSampleRepositoriesOutput(dt);
+
+        await _writer.WriteRepositoriesAsync(output, _tempRoot);
+
+        var historyPath = Path.Combine(_tempRoot, "data", "history", "2024", "06", "15", "data.repositories.json");
+        File.Exists(historyPath).Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task WriteRepositoriesAsync_CreatesDirectoryStructureIfMissing()
+    {
+        var output = CreateSampleRepositoriesOutput();
+        var nestedRoot = Path.Combine(_tempRoot, "deep", "nested", "root");
+        Directory.Exists(nestedRoot).Should().BeFalse();
+
+        await _writer.WriteRepositoriesAsync(output, nestedRoot);
+
+        var latestPath = Path.Combine(nestedRoot, "data", "latest", "data.repositories.json");
+        File.Exists(latestPath).Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task WriteRepositoriesAsync_OutputJsonIsValidAndDeserializable()
+    {
+        var output = CreateSampleRepositoriesOutput();
+
+        await _writer.WriteRepositoriesAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.repositories.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+        var deserialized = JsonSerializer.Deserialize<RepositoriesOutput>(json);
+
+        deserialized.Should().NotBeNull();
+        deserialized!.Repositories.Should().HaveCount(1);
+    }
+
+    [Fact]
+    public async Task WriteRepositoriesAsync_JsonContainsExpectedPropertyNames()
+    {
+        var output = CreateSampleRepositoriesOutput();
+
+        await _writer.WriteRepositoriesAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.repositories.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+
+        json.Should().Contain("\"generatedAt\"");
+        json.Should().Contain("\"repositories\"");
         json.Should().Contain("\"stars\"");
         json.Should().Contain("\"forks\"");
     }
 
     [Fact]
-    public async Task WriteAsync_IsIndentedJson()
+    public async Task WriteRepositoriesAsync_IsIndentedJson()
     {
-        var output = CreateSampleOutput();
+        var output = CreateSampleRepositoriesOutput();
 
-        await _writer.WriteAsync(output, _tempRoot);
+        await _writer.WriteRepositoriesAsync(output, _tempRoot);
 
-        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.json");
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.repositories.json");
         var json = await File.ReadAllTextAsync(latestPath);
 
-        // Indented JSON has newlines
         json.Should().Contain("\n");
     }
 
     [Fact]
-    public async Task WriteAsync_EmptyCollections_ProducesValidJson()
+    public async Task WriteRepositoriesAsync_EmptyCollections_ProducesValidJson()
     {
-        var output = new DashboardOutput
+        var output = new RepositoriesOutput
         {
             GeneratedAt = DateTimeOffset.UtcNow,
-            Packages = [],
-            Repos = []
+            Repositories = []
         };
 
-        await _writer.WriteAsync(output, _tempRoot);
+        await _writer.WriteRepositoriesAsync(output, _tempRoot);
 
-        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.json");
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.repositories.json");
         var json = await File.ReadAllTextAsync(latestPath);
-        var deserialized = JsonSerializer.Deserialize<DashboardOutput>(json);
+        var deserialized = JsonSerializer.Deserialize<RepositoriesOutput>(json);
 
         deserialized.Should().NotBeNull();
-        deserialized!.Packages.Should().BeEmpty();
-        deserialized.Repos.Should().BeEmpty();
+        deserialized!.Repositories.Should().BeEmpty();
     }
 
     [Fact]
-    public async Task WriteAsync_OverwritesExistingFile()
+    public async Task WriteRepositoriesAsync_OverwritesExistingFile()
     {
-        var output1 = CreateSampleOutput();
-        await _writer.WriteAsync(output1, _tempRoot);
+        var output1 = CreateSampleRepositoriesOutput();
+        await _writer.WriteRepositoriesAsync(output1, _tempRoot);
 
-        var output2 = new DashboardOutput
+        var output2 = new RepositoriesOutput
         {
             GeneratedAt = DateTimeOffset.UtcNow,
-            Packages = [],
-            Repos = []
+            Repositories = []
         };
-        await _writer.WriteAsync(output2, _tempRoot);
+        await _writer.WriteRepositoriesAsync(output2, _tempRoot);
 
-        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.json");
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.repositories.json");
         var json = await File.ReadAllTextAsync(latestPath);
-        var deserialized = JsonSerializer.Deserialize<DashboardOutput>(json);
+        var deserialized = JsonSerializer.Deserialize<RepositoriesOutput>(json);
 
-        deserialized!.Packages.Should().BeEmpty();
+        deserialized!.Repositories.Should().BeEmpty();
     }
+
+    #endregion
 }

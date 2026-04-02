@@ -75,6 +75,15 @@ public sealed class GitHubCollector : IGitHubCollector
             Description = root.TryGetProperty("description", out var desc) ? desc.GetString() : null,
             Language = root.TryGetProperty("language", out var lang) ? lang.GetString() : null,
             Archived = root.TryGetProperty("archived", out var archived) && archived.GetBoolean(),
+            WatchersCount = root.TryGetProperty("subscribers_count", out var watchers) ? watchers.GetInt32() : 0,
+            Size = root.TryGetProperty("size", out var size) ? size.GetInt32() : 0,
+            DefaultBranch = root.TryGetProperty("default_branch", out var branch) ? branch.GetString() : null,
+            Homepage = root.TryGetProperty("homepage", out var homepage) ? homepage.GetString() : null,
+            HasWiki = root.TryGetProperty("has_wiki", out var hasWiki) && hasWiki.GetBoolean(),
+            HasPages = root.TryGetProperty("has_pages", out var hasPages) && hasPages.GetBoolean(),
+            NetworkCount = root.TryGetProperty("network_count", out var network) ? network.GetInt32() : 0,
+            Visibility = root.TryGetProperty("visibility", out var visibility) ? visibility.GetString() : null,
+            HtmlUrl = root.TryGetProperty("html_url", out var htmlUrl) ? htmlUrl.GetString() : null,
         };
 
         if (root.TryGetProperty("license", out var licenseObj) &&
@@ -88,6 +97,34 @@ public sealed class GitHubCollector : IGitHubCollector
             DateTimeOffset.TryParse(pushedAt.GetString(), out var lastPush))
         {
             metrics.LastPush = lastPush;
+        }
+
+        if (root.TryGetProperty("created_at", out var createdAt) &&
+            DateTimeOffset.TryParse(createdAt.GetString(), out var created))
+        {
+            metrics.CreatedAt = created;
+        }
+
+        if (root.TryGetProperty("updated_at", out var updatedAt) &&
+            DateTimeOffset.TryParse(updatedAt.GetString(), out var updated))
+        {
+            metrics.UpdatedAt = updated;
+        }
+
+        if (root.TryGetProperty("topics", out var topicsArray) &&
+            topicsArray.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var topic in topicsArray.EnumerateArray())
+            {
+                if (topic.ValueKind == JsonValueKind.String)
+                {
+                    var topicValue = topic.GetString();
+                    if (!string.IsNullOrWhiteSpace(topicValue))
+                    {
+                        metrics.Topics.Add(topicValue);
+                    }
+                }
+            }
         }
 
         // Fetch open PRs count

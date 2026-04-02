@@ -39,4 +39,40 @@ public sealed class GitHubRepoMetrics
 
     [JsonPropertyName("archived")]
     public bool Archived { get; set; }
+
+    [JsonPropertyName("watchersCount")]
+    public int WatchersCount { get; set; }
+
+    [JsonPropertyName("topics")]
+    public List<string> Topics { get; set; } = [];
+
+    [JsonPropertyName("createdAt")]
+    public DateTimeOffset? CreatedAt { get; set; }
+
+    [JsonPropertyName("updatedAt")]
+    public DateTimeOffset? UpdatedAt { get; set; }
+
+    [JsonPropertyName("size")]
+    public int Size { get; set; }
+
+    [JsonPropertyName("defaultBranch")]
+    public string? DefaultBranch { get; set; }
+
+    [JsonPropertyName("homepage")]
+    public string? Homepage { get; set; }
+
+    [JsonPropertyName("hasWiki")]
+    public bool HasWiki { get; set; }
+
+    [JsonPropertyName("hasPages")]
+    public bool HasPages { get; set; }
+
+    [JsonPropertyName("networkCount")]
+    public int NetworkCount { get; set; }
+
+    [JsonPropertyName("visibility")]
+    public string? Visibility { get; set; }
+
+    [JsonPropertyName("htmlUrl")]
+    public string? HtmlUrl { get; set; }
 }

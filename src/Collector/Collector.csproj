@@ -8,4 +8,8 @@
     <RootNamespace>NuGetDashboard.Collector</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Collector.Tests" />
+  </ItemGroup>
+
 </Project>
