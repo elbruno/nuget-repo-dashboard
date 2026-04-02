@@ -1,1 +1,402 @@
-[]
+[
+  {
+    "packageId": "Azure.Core",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Bcl.AsyncInterfaces",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.CSharp",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Configuration",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Configuration.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Configuration.Binder",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.DependencyInjection",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.DependencyInjection.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.FileProviders.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Hosting.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Logging",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Logging.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Options",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Extensions.Primitives",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Identity.Client",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.IdentityModel.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.IdentityModel.JsonWebTokens",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.IdentityModel.Logging",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.IdentityModel.Protocols",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.IdentityModel.Protocols.OpenIdConnect",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.IdentityModel.Tokens",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.NETCore.Platforms",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.NETCore.Targets",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Win32.Primitives",
+    "repos": []
+  },
+  {
+    "packageId": "Microsoft.Win32.Registry",
+    "repos": []
+  },
+  {
+    "packageId": "NETStandard.Library",
+    "repos": []
+  },
+  {
+    "packageId": "System.Buffers",
+    "repos": []
+  },
+  {
+    "packageId": "System.Collections",
+    "repos": []
+  },
+  {
+    "packageId": "System.Collections.Concurrent",
+    "repos": []
+  },
+  {
+    "packageId": "System.Collections.Immutable",
+    "repos": []
+  },
+  {
+    "packageId": "System.Configuration.ConfigurationManager",
+    "repos": []
+  },
+  {
+    "packageId": "System.Console",
+    "repos": []
+  },
+  {
+    "packageId": "System.Diagnostics.Debug",
+    "repos": []
+  },
+  {
+    "packageId": "System.Diagnostics.DiagnosticSource",
+    "repos": []
+  },
+  {
+    "packageId": "System.Diagnostics.Tools",
+    "repos": []
+  },
+  {
+    "packageId": "System.Diagnostics.Tracing",
+    "repos": []
+  },
+  {
+    "packageId": "System.Drawing.Common",
+    "repos": []
+  },
+  {
+    "packageId": "System.Dynamic.Runtime",
+    "repos": []
+  },
+  {
+    "packageId": "System.Globalization",
+    "repos": []
+  },
+  {
+    "packageId": "System.Globalization.Calendars",
+    "repos": []
+  },
+  {
+    "packageId": "System.Globalization.Extensions",
+    "repos": []
+  },
+  {
+    "packageId": "System.IO",
+    "repos": []
+  },
+  {
+    "packageId": "System.IO.FileSystem",
+    "repos": []
+  },
+  {
+    "packageId": "System.IO.FileSystem.Primitives",
+    "repos": []
+  },
+  {
+    "packageId": "System.IdentityModel.Tokens.Jwt",
+    "repos": []
+  },
+  {
+    "packageId": "System.Linq",
+    "repos": []
+  },
+  {
+    "packageId": "System.Linq.Expressions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Memory",
+    "repos": []
+  },
+  {
+    "packageId": "System.Net.Primitives",
+    "repos": []
+  },
+  {
+    "packageId": "System.ObjectModel",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection.Emit",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection.Emit.ILGeneration",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection.Emit.Lightweight",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection.Extensions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection.Metadata",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection.Primitives",
+    "repos": []
+  },
+  {
+    "packageId": "System.Reflection.TypeExtensions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Resources.ResourceManager",
+    "repos": []
+  },
+  {
+    "packageId": "System.Runtime",
+    "repos": []
+  },
+  {
+    "packageId": "System.Runtime.CompilerServices.Unsafe",
+    "repos": []
+  },
+  {
+    "packageId": "System.Runtime.Extensions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Runtime.Handles",
+    "repos": []
+  },
+  {
+    "packageId": "System.Runtime.InteropServices",
+    "repos": []
+  },
+  {
+    "packageId": "System.Runtime.InteropServices.RuntimeInformation",
+    "repos": []
+  },
+  {
+    "packageId": "System.Runtime.Numerics",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.AccessControl",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.Algorithms",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.Cng",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.Csp",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.Encoding",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.Primitives",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.ProtectedData",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Cryptography.X509Certificates",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Permissions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Security.Principal.Windows",
+    "repos": []
+  },
+  {
+    "packageId": "System.Text.Encoding",
+    "repos": []
+  },
+  {
+    "packageId": "System.Text.Encoding.Extensions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Text.Encodings.Web",
+    "repos": []
+  },
+  {
+    "packageId": "System.Text.Json",
+    "repos": []
+  },
+  {
+    "packageId": "System.Text.RegularExpressions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Threading",
+    "repos": []
+  },
+  {
+    "packageId": "System.Threading.Tasks.Extensions",
+    "repos": []
+  },
+  {
+    "packageId": "System.Threading.Timer",
+    "repos": []
+  },
+  {
+    "packageId": "System.Xml.ReaderWriter",
+    "repos": []
+  },
+  {
+    "packageId": "System.Xml.XDocument",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.native.System",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.native.System.Net.Http",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  },
+  {
+    "packageId": "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl",
+    "repos": []
+  }
+]
