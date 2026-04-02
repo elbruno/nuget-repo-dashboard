@@ -252,6 +252,37 @@ Current implementation stores `nugetProfile` in static `config/dashboard-config.
 
 ---
 
+### 11. Configurable NuGet Profile Override
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-07-22  
+**Status:** Implemented
+
+## Context
+
+The `nugetProfile` was only configurable via the static `config/dashboard-config.json` file. Bruno requested the ability to override it at runtime for different deployment scenarios (CI/CD, local development, testing with different profiles).
+
+## Decision
+
+Support overriding `nugetProfile` via `NUGET_PROFILE` environment variable or .NET User Secrets, with clear precedence rules.
+
+### Key Design Points
+
+1. **Precedence:** Environment Variable > User Secrets > config file default (`dashboard-config.json`).
+2. **Single `ConfigurationBuilder`** — moved to early in Program.cs (before Pipeline 1) so it serves both `NUGET_PROFILE` and `GITHUB_TOKEN`. No duplicate configuration building.
+3. **Source reporting** — Pipeline 1 step [1/3] displays the active profile and its source (`config file`, `environment variable`, or `user secret`) for transparency.
+4. **Source detection** — since `IConfiguration` merges all providers, we check `Environment.GetEnvironmentVariable("NUGET_PROFILE")` directly to distinguish env var from user secret.
+5. **Single-profile design** — README documents that the dashboard targets one NuGet user at a time. Multi-profile is a future consideration.
+
+## Impact
+
+- **Modified:** `src/Collector/Program.cs`, `README.md`
+- **No new packages** — reuses existing `Microsoft.Extensions.Configuration.*` packages
+- **Build:** ✅ Compiles on net10.0
+- **Tests:** ✅ All 140 tests pass (112 + 28 new ConfigurationTests)
+
+---
+
 ## Governance
 
 - All meaningful changes require team consensus
