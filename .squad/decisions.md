@@ -123,6 +123,61 @@ Add an `ignorePackages` array to `config/dashboard-config.json` and `DashboardCo
 
 ---
 
+### 8. Split Output Pipeline + Enriched GitHub Metrics
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-04-02  
+**Status:** Implemented
+
+## Context
+
+The Collector previously wrote a single `data.json` file containing both NuGet package metrics and GitHub repository metrics in one combined `DashboardOutput` model. Bruno requested:
+
+1. **Split the output** into two separate files for cleaner data consumption by the frontend
+2. **Enrich GitHub metrics** with additional public repository stats from the GitHub API
+
+## Decision
+
+### Output Architecture
+
+Created two new output models and corresponding JSON files:
+
+- **`NuGetOutput`** → `data.nuget.json` — contains `generatedAt` + `packages` array
+- **`RepositoriesOutput`** → `data.repositories.json` — contains `generatedAt` + `repositories` array
+
+Both files written to `data/latest/` and `data/history/YYYY/MM/DD/`.
+
+### Updated JsonOutputWriter Interface
+
+Changed from single `WriteAsync(DashboardOutput)` to:
+```csharp
+Task WriteNuGetAsync(NuGetOutput output, string repoRoot);
+Task WriteRepositoriesAsync(RepositoriesOutput output, string repoRoot);
+```
+
+Each method writes to both latest and history paths.
+
+### Enriched GitHubRepoMetrics
+
+Added 12 new properties from `/repos/{owner}/{repo}` endpoint:
+
+- `watchersCount`, `topics`, `createdAt`, `updatedAt`, `size`, `defaultBranch`, `homepage`, `hasWiki`, `hasPages`, `networkCount`, `visibility`, `htmlUrl`
+
+All parsed in `GitHubCollector.CollectRepoAsync()` — no additional API calls.
+
+### Program.cs Update
+
+Step [6/6] now builds both `NuGetOutput` and `RepositoriesOutput` from a shared `generatedAt` timestamp, then calls both writer methods.
+
+## Impact
+
+- **Modified:** `Models/GitHubRepoMetrics.cs`, `Models/DashboardOutput.cs`, `Services/GitHubCollector.cs`, `Services/JsonOutputWriter.cs`, `Program.cs`
+- **Output:** `data/latest/data.nuget.json` (36 packages) + `data.repositories.json` (3 repos)
+- **Tests:** 71 → 94 (net +23 for split output + enriched fields)
+- **Build:** ✅ Compiles, all 94 tests pass on net10.0
+
+---
+
 ## Governance
 
 - All meaningful changes require team consensus
