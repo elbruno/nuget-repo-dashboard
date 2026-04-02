@@ -28,3 +28,4 @@
 - **Models added:** `DashboardConfig` (config model), `DiscoveredPackage` (intermediate discovery result with `GitHubRepo` field).
 - **elbruno profile stats:** 37 packages discovered, 33 with valid GitHub repo URLs, 4 without projectUrl.
 - **Zoe testing (2026-04-02):** 20 tests written for GitHub URL parsing (NuGetProfileDiscoveryServiceTests.cs); discovery service tests stubbed pending service completion. 71 total tests passing.
+- **Ignore list feature (2026-04-02):** Added `ignorePackages` to `DashboardConfig` and `dashboard-config.json`. Program.cs filters packages after discovery+merge using a case-insensitive `HashSet`. Cleared `tracked-packages.json` of Microsoft packages. Filters `LocalEmbeddings` (bare, non-ElBruno package) from discovery results. Pipeline output: 37 discovered → 1 filtered → 36 collected, all ElBruno-owned.

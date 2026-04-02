@@ -67,7 +67,7 @@ Environment has .NET 8.0 and 10.0 runtimes only (no 9.0). Retargeted both `src/C
 
 **Author:** Kaylee (Backend Dev)  
 **Date:** 2026-04-02  
-**Status:** Implemented  
+**Status:** Implemented
 
 ## Context
 
@@ -91,6 +91,35 @@ Replace the static-only config with a **profile discovery flow** that dynamicall
 - **New files:** `config/dashboard-config.json`, `src/Collector/Models/DashboardConfig.cs`, `src/Collector/Models/DiscoveredPackage.cs`, `src/Collector/Services/NuGetProfileDiscoveryService.cs`
 - **Modified:** `src/Collector/Program.cs` (refactored from 5-step to 6-step pipeline)
 - All 71 existing tests continue to pass.
+
+---
+
+### 7. Package Ignore List in Dashboard Config
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-04-02  
+**Status:** Implemented
+
+## Context
+
+The dashboard was collecting packages the user doesn't own — `LocalEmbeddings` from NuGet profile discovery and `Microsoft.Extensions.AI.*` from `tracked-packages.json`. Bruno needed a way to exclude unwanted packages without modifying code.
+
+## Decision
+
+Add an `ignorePackages` array to `config/dashboard-config.json` and `DashboardConfig` model. After discovery and merge (step 3), Program.cs filters out any package whose `packageId` matches the ignore list using case-insensitive comparison.
+
+### Key Design Points
+
+1. **Config-driven** — ignore list lives in `dashboard-config.json`, not hardcoded.
+2. **Case-insensitive** — uses `StringComparer.OrdinalIgnoreCase` HashSet for matching.
+3. **Post-merge filtering** — applied after both discovery and tracked-package merge, so it catches packages from any source.
+4. **Defaults to empty** — `IgnorePackages` defaults to `[]` so existing configs work without change.
+5. **Console logging** — reports filtered count for transparency.
+
+## Impact
+
+- **Modified:** `config/dashboard-config.json`, `src/Collector/Models/DashboardConfig.cs`, `src/Collector/Program.cs`, `config/tracked-packages.json`
+- **Result:** 37 discovered → 1 filtered → 36 collected, all ElBruno-owned packages.
 
 ---
 

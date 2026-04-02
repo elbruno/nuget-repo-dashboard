@@ -24,3 +24,4 @@
 - **Discovery service stub:** Created `NuGetProfileDiscoveryServiceTests.cs` with 20 passing URL parsing tests and commented-out discovery service tests ready for when Kaylee's implementation lands. Uses inline helper method for now that demonstrates the parsing logic.
 - **Test file:** `tests/Collector.Tests/NuGetProfileDiscoveryServiceTests.cs` — ready to be updated with actual service tests once `INuGetProfileDiscoveryService`/`NuGetProfileDiscoveryService` are implemented.
 - **Kaylee's service (2026-04-02):** Implemented NuGetProfileDiscoveryService with GitHub URL parsing (source-generated regex) and NuGet Search API integration. Zoe's tests now have complete coverage.
+- **Kaylee's ignore list (2026-04-02):** Added configurable `ignorePackages` array to dashboard config with case-insensitive filtering in Program.cs pipeline. All 71 tests continue to pass.
