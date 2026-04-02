@@ -108,10 +108,15 @@ jobs:
       - name: Commit, push, and open PR
         if: steps.diff.outputs.changed == 'true'
         run: |
+          BRANCH="${{ steps.branch.outputs.name }}"
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "feat: update tracked packages inventory"
-          git push --set-upstream origin "${{ steps.branch.outputs.name }}"
+
+          # Delete stale remote branch from a previous run (same day re-run)
+          git push origin --delete "$BRANCH" 2>/dev/null || true
+          git push --set-upstream origin "$BRANCH"
 
           # Ensure the inventory label exists before creating the PR
           gh label create "inventory" --description "Inventory refresh PRs" --color "0E8A16" --force 2>/dev/null || true
