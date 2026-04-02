@@ -1,1 +1,242 @@
-[]
+[
+  {
+    "packageId": "ElBruno.AgentsOrchestration.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AgentsOrchestration.Orchestration",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AI.Evaluation",
+    "repos": [
+      "elbruno/elbruno-ai-evaluation"
+    ]
+  },
+  {
+    "packageId": "ElBruno.AI.Evaluation.Reporting",
+    "repos": [
+      "elbruno/elbruno-ai-evaluation"
+    ]
+  },
+  {
+    "packageId": "ElBruno.AI.Evaluation.SyntheticData",
+    "repos": [
+      "elbruno/elbruno-ai-evaluation"
+    ]
+  },
+  {
+    "packageId": "ElBruno.AI.Evaluation.Xunit",
+    "repos": [
+      "elbruno/elbruno-ai-evaluation"
+    ]
+  },
+  {
+    "packageId": "ElBruno.ClockTray",
+    "repos": [
+      "elbruno/ElBruno.ClockTray"
+    ]
+  },
+  {
+    "packageId": "elbruno.Extensions.AI.Skills.Cli",
+    "repos": [
+      "elbruno/elbruno-agentskills"
+    ]
+  },
+  {
+    "packageId": "elbruno.Extensions.AI.Skills.Core",
+    "repos": [
+      "elbruno/elbruno-agentskills"
+    ]
+  },
+  {
+    "packageId": "ElBruno.HuggingFace.Downloader",
+    "repos": [
+      "elbruno/ElBruno.HuggingFace.Downloader"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.VectorData",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalLLMs",
+    "repos": [
+      "elbruno/ElBruno.LocalLLMs"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.AI",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Excel",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.PowerPoint",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Whisper",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
+    "repos": [
+      "elbruno/ElBruno.ModelContextProtocol"
+    ]
+  },
+  {
+    "packageId": "ElBruno.OllamaSharp.Extensions",
+    "repos": [
+      "elbruno/elbruno.OllamaSharp.Extensions"
+    ]
+  },
+  {
+    "packageId": "ElBruno.PersonaPlex",
+    "repos": [
+      "elbruno/ElBruno.PersonaPlex"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Ascii",
+    "repos": [
+      "elbruno/ElBruno.QRCodeGenerator"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.CLI",
+    "repos": [
+      "elbruno/ElBruno.QRCodeGenerator.CLI"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Image",
+    "repos": [
+      "elbruno/ElBruno.QRCodeGenerator"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Payloads",
+    "repos": [
+      "elbruno/ElBruno.QRCodeGenerator"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Pdf",
+    "repos": [
+      "elbruno/ElBruno.QRCodeGenerator"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Svg",
+    "repos": [
+      "elbruno/ElBruno.QRCodeGenerator"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Tool",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QwenTTS",
+    "repos": [
+      "elbruno/ElBruno.QwenTTS"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Realtime",
+    "repos": [
+      "elbruno/ElBruno.Realtime"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Realtime.SileroVad",
+    "repos": [
+      "elbruno/ElBruno.Realtime"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Realtime.Whisper",
+    "repos": [
+      "elbruno/ElBruno.Realtime"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Text2Image",
+    "repos": [
+      "elbruno/ElBruno.Text2Image"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Text2Image.Cpu",
+    "repos": [
+      "elbruno/ElBruno.Text2Image"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Text2Image.Cuda",
+    "repos": [
+      "elbruno/ElBruno.Text2Image"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Text2Image.DirectML",
+    "repos": [
+      "elbruno/ElBruno.Text2Image"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Text2Image.Foundry",
+    "repos": [
+      "elbruno/ElBruno.Text2Image"
+    ]
+  },
+  {
+    "packageId": "ElBruno.VibeVoiceTTS",
+    "repos": [
+      "elbruno/ElBruno.VibeVoiceTTS"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Whisper",
+    "repos": [
+      "elbruno/ElBruno.Whisper"
+    ]
+  }
+]
