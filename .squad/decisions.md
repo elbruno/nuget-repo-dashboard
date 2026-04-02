@@ -178,6 +178,80 @@ Step [6/6] now builds both `NuGetOutput` and `RepositoriesOutput` from a shared 
 
 ---
 
+### 9. .NET User Secrets for GITHUB_TOKEN
+
+**Author:** Kaylee (Backend Dev)
+**Date:** 2026-07-22
+**Status:** Implemented
+
+## Context
+
+The Collector read `GITHUB_TOKEN` exclusively from `Environment.GetEnvironmentVariable()`. Bruno wanted a more ergonomic local development experience — storing the token via .NET User Secrets so he doesn't need to set environment variables every session.
+
+## Decision
+
+Integrate `Microsoft.Extensions.Configuration` with User Secrets and Environment Variables providers into the Collector's `Program.cs`.
+
+### Key Design Points
+
+1. **Configuration builder** — `ConfigurationBuilder` chains `AddUserSecrets()` then `AddEnvironmentVariables()`, so env vars override secrets if both are set.
+2. **Assembly-based secrets loading** — used `AddUserSecrets(Assembly.GetExecutingAssembly(), optional: true)` instead of the string-based overload, which didn't resolve in .NET 10 preview. The `UserSecretsId` is set in the csproj.
+3. **`optional: true`** — app doesn't crash if no secrets file exists (CI/CD, fresh clones).
+4. **Backward compatible** — environment variables still work exactly as before.
+5. **No secrets in source** — User Secrets are stored in the OS user profile, outside the repo.
+
+### Packages Added
+
+- `Microsoft.Extensions.Configuration` 10.0.0-preview.5
+- `Microsoft.Extensions.Configuration.UserSecrets` 10.0.0-preview.5
+- `Microsoft.Extensions.Configuration.EnvironmentVariables` 10.0.0-preview.5
+
+## Impact
+
+- **Modified:** `src/Collector/Collector.csproj`, `src/Collector/Program.cs`, `README.md`
+- **Build:** ✅ Compiles on net10.0
+- **Tests:** ✅ All 112 tests pass (no regressions)
+
+---
+
+### 10. NuGet Profile Configurability Analysis
+
+**Author:** Coordinator
+**Date:** 2026-04-02
+**Status:** Analysis Only (Not Implemented)
+
+## Context
+
+Current implementation stores `nugetProfile` in static `config/dashboard-config.json`. User requested analysis of making this configurable via environment variable for different deployment scenarios.
+
+## Analysis Summary
+
+### Pros of Environment Variable Configuration
+
+1. **Deployment flexibility** — different profiles per environment (dev, staging, prod)
+2. **CI/CD-friendly** — no config file needed; set via secrets/parameters
+3. **Runtime override** — env var can override config file without code/config changes
+4. **12-factor app compliance** — configs stored in environment, not files
+
+### Cons of Environment Variable Configuration
+
+1. **Configuration discovery** — users accustomed to file-based config; env vars less discoverable
+2. **Documentation burden** — requires explicit documentation of env var name and defaults
+3. **Validation** — file-based JSON schema provides better type safety than string env vars
+4. **Precedence complexity** — multiple config sources (file + env var) can be confusing
+
+## Recommendation
+
+**Current design (file-based) is appropriate for now:**
+- Dashboard is meant to be configured once per repository
+- Profile doesn't change frequently during execution
+- JSON schema provides validation and documentation
+- Future: If multi-tenant scenarios emerge, revisit environment variable support
+
+**No implementation performed** — user explicitly requested analysis only.
+
+---
+
 ## Governance
 
 - All meaningful changes require team consensus
