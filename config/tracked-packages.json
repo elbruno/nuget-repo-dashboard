@@ -1,1 +1,162 @@
-[]
+[
+  {
+    "packageId": "ElBruno.AI.Evaluation",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AI.Evaluation.Reporting",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AI.Evaluation.SyntheticData",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AI.Evaluation.Xunit",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AgentsOrchestration.Abstractions",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AgentsOrchestration.Orchestration",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.ClockTray",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.HuggingFace.Downloader",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.VectorData",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.LocalLLMs",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.AI",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Excel",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.PowerPoint",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.OllamaSharp.Extensions",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.PersonaPlex",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Ascii",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.CLI",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Image",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Payloads",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Pdf",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Svg",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QRCodeGenerator.Tool",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.QwenTTS",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Realtime",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Realtime.SileroVad",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Realtime.Whisper",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Text2Image",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Text2Image.Cpu",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Text2Image.Cuda",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Text2Image.DirectML",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Text2Image.Foundry",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.VibeVoiceTTS",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.Whisper",
+    "repos": []
+  },
+  {
+    "packageId": "elbruno.Extensions.AI.Skills.Cli",
+    "repos": []
+  },
+  {
+    "packageId": "elbruno.Extensions.AI.Skills.Core",
+    "repos": []
+  }
+]
