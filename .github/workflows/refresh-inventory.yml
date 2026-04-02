@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NUGET_OWNER: "microsoft"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,6 +25,16 @@ jobs:
         with:
           dotnet-version: "9.0.x"
 
+      - name: Read dashboard config
+        id: config
+        run: |
+          NUGET_OWNER=$(jq -r '.nugetProfile' config/dashboard-config.json)
+          echo "nuget_owner=$NUGET_OWNER" >> "$GITHUB_OUTPUT"
+
+          # Build ignore list as a newline-separated string for filtering
+          jq -r '.ignorePackages[]?' config/dashboard-config.json | sort > /tmp/ignore-packages.txt
+          echo "Loaded config: owner=$NUGET_OWNER, ignore=$(wc -l < /tmp/ignore-packages.txt) packages"
+
       - name: Set branch name
         id: branch
         run: echo "name=inventory/refresh-$(date -u +%Y%m%d)" >> "$GITHUB_OUTPUT"
@@ -34,15 +43,31 @@ jobs:
         run: git checkout -b "${{ steps.branch.outputs.name }}"
 
       - name: Discover NuGet packages
+        env:
+          NUGET_OWNER: ${{ steps.config.outputs.nuget_owner }}
         run: |
           echo "Querying NuGet for packages owned by '$NUGET_OWNER'..."
 
-          # Query NuGet search API for packages by owner
-          QUERY_URL="https://api-v2v3search-0.nuget.org/query?q=owner:${NUGET_OWNER}&take=100"
-          RESPONSE=$(curl -sf "$QUERY_URL" || echo '{"data":[]}')
+          # Query NuGet search API for packages by owner (paginate up to 500)
+          DISCOVERED=""
+          SKIP=0
+          TAKE=100
+          while true; do
+            QUERY_URL="https://api-v2v3search-0.nuget.org/query?q=owner:${NUGET_OWNER}&take=${TAKE}&skip=${SKIP}"
+            RESPONSE=$(curl -sf "$QUERY_URL" || echo '{"data":[]}')
+            PAGE=$(echo "$RESPONSE" | jq -r '.data[].id')
+            if [ -z "$PAGE" ]; then
+              break
+            fi
+            DISCOVERED="${DISCOVERED}${DISCOVERED:+$'\n'}${PAGE}"
+            COUNT=$(echo "$PAGE" | wc -l)
+            if [ "$COUNT" -lt "$TAKE" ]; then
+              break
+            fi
+            SKIP=$((SKIP + TAKE))
+          done
 
-          # Extract package IDs from search results
-          DISCOVERED=$(echo "$RESPONSE" | jq -r '.data[].id' | sort)
+          DISCOVERED=$(echo "$DISCOVERED" | sort -u)
 
           if [ -z "$DISCOVERED" ]; then
             echo "No packages found for owner '$NUGET_OWNER'."
@@ -50,7 +75,13 @@ jobs:
             exit 0
           fi
 
-          echo "Found $(echo "$DISCOVERED" | wc -l) package(s)."
+          echo "Found $(echo "$DISCOVERED" | wc -l) package(s) from NuGet."
+
+          # Filter out ignored packages from dashboard-config.json
+          if [ -s /tmp/ignore-packages.txt ]; then
+            DISCOVERED=$(comm -23 <(echo "$DISCOVERED") /tmp/ignore-packages.txt)
+            echo "After filtering ignored packages: $(echo "$DISCOVERED" | wc -l) remaining."
+          fi
 
           # Load existing tracked packages for comparison
           EXISTING=$(jq -r '.[].packageId' config/tracked-packages.json 2>/dev/null | sort || true)
