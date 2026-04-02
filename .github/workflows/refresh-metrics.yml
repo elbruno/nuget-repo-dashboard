@@ -19,8 +19,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  collect:
+  collect-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,7 +45,7 @@ jobs:
       - name: Check for data changes
         id: changes
         run: |
-          git add data/
+          git add --force data/latest/*.json data/history/
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No data changes detected."
@@ -58,19 +61,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: refresh metrics [skip ci]"
           git push
-
-  deploy-dashboard:
-    needs: collect
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Pull latest (includes collect job's data commit)
-        run: git pull --ff-only origin main || true
 
       - name: Assemble site
         run: |
