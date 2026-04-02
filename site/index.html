@@ -42,6 +42,7 @@
       }
     }
 
+    html { scroll-behavior: smooth; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -281,6 +282,131 @@
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* Sticky nav */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .top-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.5rem;
+    }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 999px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .nav-link:hover {
+      background: var(--accent-bg);
+      color: var(--accent);
+    }
+
+    /* Collapsible sections */
+    .collapsible-header {
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .collapsible-header:hover h2 { color: var(--accent); }
+    .chevron {
+      display: inline-block;
+      font-size: 0.75em;
+      transition: transform 0.25s ease;
+      width: 1em;
+      text-align: center;
+    }
+    .collapsible-header.collapsed .chevron { transform: rotate(-90deg); }
+    .section-content {
+      overflow: hidden;
+      max-height: 5000px;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 1;
+    }
+    .section-content.collapsed {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Section scroll offset for sticky nav */
+    section[id] { scroll-margin-top: 60px; }
+
+    /* Top Highlights */
+    .highlights-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .highlights-column h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .highlight-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.85rem 1rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 0.5rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .highlight-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+    .highlight-rank {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      min-width: 2rem;
+      text-align: center;
+      line-height: 1;
+    }
+    .highlight-info { flex: 1; min-width: 0; }
+    .highlight-info .name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .highlight-info .name a { color: var(--accent); text-decoration: none; }
+    .highlight-info .name a:hover { text-decoration: underline; }
+    .highlight-info .meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .highlight-stat {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       header h1 { font-size: 1.5rem; }
@@ -291,6 +417,9 @@
       .filter-toolbar input[type="text"] { width: 100%; }
       .section-header { flex-direction: column; align-items: flex-start; }
       .list-view { overflow-x: auto; }
+      .top-nav .container { gap: 0.25rem; padding: 0.5rem 0.75rem; }
+      .nav-link { padding: 0.35rem 0.65rem; font-size: 0.8rem; }
+      .highlights-area { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -304,6 +433,14 @@
     </div>
   </header>
 
+  <nav class="top-nav">
+    <div class="container">
+      <a href="#top-highlights" class="nav-link">🏆 Top 3</a>
+      <a href="#nuget-packages" class="nav-link">📦 Packages</a>
+      <a href="#github-repos" class="nav-link">🐙 Repositories</a>
+    </div>
+  </nav>
+
   <main class="container">
     <div id="loading" class="loading">
       <div class="spinner"></div>
@@ -312,10 +449,20 @@
     <div id="error" class="error-msg" style="display:none;"></div>
     <div id="content" style="display:none;">
 
+      <!-- Top Highlights Section -->
+      <section id="top-highlights">
+        <div class="section-header collapsible-header" data-section="top-highlights">
+          <h2><span class="chevron">▼</span> <span class="icon">🏆</span> Top Highlights</h2>
+        </div>
+        <div class="section-content" id="top-highlights-content">
+          <div id="top-highlights-grid" class="highlights-area"></div>
+        </div>
+      </section>
+
       <!-- NuGet Packages Section -->
-      <section>
-        <div class="section-header">
-          <h2><span class="icon">📦</span> NuGet Packages</h2>
+      <section id="nuget-packages">
+        <div class="section-header collapsible-header" data-section="nuget-packages">
+          <h2><span class="chevron">▼</span> <span class="icon">📦</span> NuGet Packages</h2>
           <div class="section-meta">
             <span class="result-count" id="nuget-count"></span>
             <div class="view-toggle" id="nuget-view-toggle">
@@ -324,6 +471,7 @@
             </div>
           </div>
         </div>
+        <div class="section-content" id="nuget-packages-content">
         <div class="filter-toolbar" id="nuget-filters">
           <div class="filter-group">
             <label for="nuget-search">Search</label>
@@ -354,12 +502,13 @@
           <span class="icon">🔍</span>
           <p>No packages match your filters</p>
         </div>
+        </div>
       </section>
 
       <!-- GitHub Repositories Section -->
-      <section>
-        <div class="section-header">
-          <h2><span class="icon">🐙</span> GitHub Repositories</h2>
+      <section id="github-repos">
+        <div class="section-header collapsible-header" data-section="github-repos">
+          <h2><span class="chevron">▼</span> <span class="icon">🐙</span> GitHub Repositories</h2>
           <div class="section-meta">
             <span class="result-count" id="repo-count"></span>
             <div class="view-toggle" id="repo-view-toggle">
@@ -368,6 +517,7 @@
             </div>
           </div>
         </div>
+        <div class="section-content" id="github-repos-content">
         <div class="filter-toolbar" id="repo-filters">
           <div class="filter-group">
             <label for="repo-search">Search</label>
@@ -402,6 +552,7 @@
         <div id="repo-empty" class="empty-state" style="display:none;">
           <span class="icon">🔍</span>
           <p>No repositories match your filters</p>
+        </div>
         </div>
       </section>
     </div>
@@ -746,6 +897,72 @@
       });
     }
 
+    /* ── Top Highlights Rendering ── */
+
+    function renderTopHighlights() {
+      const topPkgs = [...allPackages].sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0)).slice(0, 3);
+      const topRepos = [...allRepos].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 3);
+      const medals = ['🥇', '🥈', '🥉'];
+
+      const pkgCards = topPkgs.map((pkg, i) => `
+        <div class="highlight-card">
+          <div class="highlight-rank">${medals[i]}</div>
+          <div class="highlight-info">
+            <div class="name"><a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a></div>
+            <div class="meta">v${esc(pkg.latestVersion || '')} · ${esc(truncate(pkg.description, 60))}</div>
+          </div>
+          <div class="highlight-stat">⬇️ ${fmtCompact(pkg.totalDownloads)}</div>
+        </div>
+      `).join('');
+
+      const repoCards = topRepos.map((repo, i) => `
+        <div class="highlight-card">
+          <div class="highlight-rank">${medals[i]}</div>
+          <div class="highlight-info">
+            <div class="name"><a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a></div>
+            <div class="meta">${esc(truncate(repo.description, 60))}</div>
+          </div>
+          <div class="highlight-stat">⭐ ${fmtCompact(repo.stars)}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('top-highlights-grid').innerHTML = `
+        <div class="highlights-column">
+          <h3>📦 Top Packages by Downloads</h3>
+          ${pkgCards}
+        </div>
+        <div class="highlights-column">
+          <h3>🐙 Top Repos by Stars</h3>
+          ${repoCards}
+        </div>
+      `;
+    }
+
+    /* ── Collapsible Sections ── */
+
+    function initCollapsible() {
+      document.querySelectorAll('.collapsible-header').forEach(header => {
+        const sectionId = header.dataset.section;
+        const content = document.getElementById(sectionId + '-content');
+        if (!content) return;
+
+        // Restore saved state
+        if (localStorage.getItem('collapse-' + sectionId) === 'true') {
+          content.classList.add('collapsed');
+          header.classList.add('collapsed');
+        }
+
+        header.addEventListener('click', (e) => {
+          // Don't collapse when clicking view toggle or section-meta controls
+          if (e.target.closest('.view-toggle, .section-meta')) return;
+
+          const isCollapsed = content.classList.toggle('collapsed');
+          header.classList.toggle('collapsed');
+          localStorage.setItem('collapse-' + sectionId, isCollapsed);
+        });
+      });
+    }
+
     /* ── Main Load ── */
 
     async function loadDashboard() {
@@ -791,6 +1008,10 @@
         // Initial render
         renderNugetSection();
         renderRepoSection();
+        renderTopHighlights();
+
+        // Initialize collapsible sections
+        initCollapsible();
 
         loading.style.display = 'none';
         content.style.display = 'block';
