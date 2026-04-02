@@ -57,6 +57,31 @@ dotnet run --project src/Collector/Collector.csproj
 | `GITHUB_TOKEN` | No | GitHub personal access token for higher rate limits |
 | `DASHBOARD_REPO_ROOT` | No | Override the repo root path (useful in CI) |
 
+### GitHub Token Setup
+
+The `GITHUB_TOKEN` can be provided via **.NET User Secrets** (recommended for local development) or environment variables.
+
+#### Option 1: .NET User Secrets (recommended for local dev)
+
+```bash
+cd src/Collector
+dotnet user-secrets set "GITHUB_TOKEN" "ghp_your_token_here"
+```
+
+User Secrets are stored outside the repo in your OS user profile, so they are never committed to source control.
+
+#### Option 2: Environment Variable
+
+```bash
+# Linux / macOS
+export GITHUB_TOKEN="ghp_your_token_here"
+
+# Windows PowerShell
+$env:GITHUB_TOKEN = "ghp_your_token_here"
+```
+
+> **Note:** If both User Secrets and an environment variable are set, the environment variable takes precedence.
+
 ## Configuration
 
 ### Dashboard Config (`config/dashboard-config.json`)

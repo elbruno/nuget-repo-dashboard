@@ -1,6 +1,7 @@
 using System.Net;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using Microsoft.Extensions.Configuration;
 using NuGetDashboard.Collector.Models;
 using NuGetDashboard.Collector.Services;
 
@@ -187,7 +188,13 @@ githubHttpClient.DefaultRequestHeaders.UserAgent.Add(
 githubHttpClient.DefaultRequestHeaders.Accept.Add(
     new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
 
-var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+// Build configuration (User Secrets + Environment Variables)
+var configuration = new ConfigurationBuilder()
+    .AddUserSecrets(System.Reflection.Assembly.GetExecutingAssembly(), optional: true)
+    .AddEnvironmentVariables()
+    .Build();
+
+var token = configuration["GITHUB_TOKEN"];
 if (!string.IsNullOrEmpty(token))
 {
     githubHttpClient.DefaultRequestHeaders.Authorization =
