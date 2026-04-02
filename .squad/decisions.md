@@ -283,6 +283,86 @@ Support overriding `nugetProfile` via `NUGET_PROFILE` environment variable or .N
 
 ---
 
+### 12. GitHub Pages Deployment via refresh-metrics.yml
+
+**Author:** Wash (DevOps)  
+**Date:** 2026-04-02  
+**Status:** Implemented
+
+## Context
+
+The dashboard needs a public-facing site. The Collector already produces `data/latest/data.nuget.json` and `data/latest/data.repositories.json`. A frontend (`site/index.html`) will consume these files. We need automated deployment so the dashboard stays current after every metrics refresh.
+
+## Decision
+
+Deploy to GitHub Pages directly from the `refresh-metrics.yml` workflow using a second job (`deploy-dashboard`) that runs after `collect`.
+
+### Key Design Points
+
+1. **Single workflow** — no separate deploy workflow. The `deploy-dashboard` job chains after `collect` via `needs: collect`, keeping the pipeline atomic.
+2. **Site assembly** — copies `site/index.html` + `data/latest/*.json` into `_site/` with flattened paths (`_site/data/data.nuget.json`). Frontend fetches from relative `data/` path.
+3. **GitHub Pages via Actions** — uses `actions/upload-pages-artifact@v3` + `actions/deploy-pages@v4` (OIDC token-based, no deploy keys needed).
+4. **Permissions** — added `pages: write` and `id-token: write` at workflow level alongside existing `contents: write`.
+5. **.NET version fix** — corrected from `9.0.x` to `10.0.x` to match the project's net10.0 target framework.
+6. **Manual setup required** — repo owner must enable GitHub Pages with "GitHub Actions" source in Settings → Pages.
+
+### Alternatives Considered
+
+- **Separate deploy workflow** — rejected; adds complexity and timing issues (needs to wait for data commit).
+- **Azure Static Web Apps** — viable future option, but GitHub Pages is simpler for a public dashboard with no server-side logic.
+- **gh-pages branch** — legacy pattern; Actions-based deploy is the modern approach and avoids branch pollution.
+
+## Impact
+
+- **Modified:** `.github/workflows/refresh-metrics.yml`, `README.md`
+- **New permissions:** `pages: write`, `id-token: write`
+- **Prerequisite:** Repo Settings → Pages → Source = "GitHub Actions"
+- **URL:** `https://elbruno.github.io/nuget-repo-dashboard/`
+
+---
+
+### 13. HTML Dashboard — Single-File Architecture
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-04-02  
+**Status:** Implemented
+
+## Context
+
+Bruno requested a frontend dashboard to visualize the Collector's JSON output. The dashboard needs to display NuGet package metrics and GitHub repository stats from the split output files (`data.nuget.json`, `data.repositories.json`).
+
+## Decision
+
+Created `site/index.html` as a **single-file HTML dashboard** with all CSS and JS inline.
+
+### Key Design Points
+
+1. **Zero dependencies** — no build tools, no CDN imports, no npm. Just one HTML file.
+2. **Relative data URLs** — fetches `data/data.nuget.json` and `data/data.repositories.json` from sibling `data/` directory. Deployment just needs the `site/` folder with the `data/` folder alongside or inside it.
+3. **Dark/light mode** — uses `prefers-color-scheme` media query with CSS variables. No toggle button needed; respects OS preference.
+4. **Responsive** — CSS grid with `auto-fill` and `minmax(340px, 1fr)` for card layout. Single column on mobile.
+5. **NuGet-inspired palette** — blues and purples via CSS variables for easy customization.
+6. **Sort order** — packages by total downloads desc, repos by stars desc.
+7. **Error UX** — loading spinner during fetch, friendly error message if JSON fails to load.
+
+## Features
+
+- NuGet package cards sorted by downloads (descending)
+- GitHub repository cards sorted by stars (descending)
+- Summary cards (package count, repo count, total downloads)
+- Package tags and repository topics as badges
+- Comma-formatted numbers and human-readable timestamps
+- Links to NuGet.org and GitHub profiles
+- System font stack (no external dependencies)
+
+## Impact
+
+- **New file:** `site/index.html` (~13KB)
+- **No backend changes** — consumes existing JSON contract from Collector
+- **Deployment:** Copy `site/index.html` + `data/` folder to any static host (GitHub Pages, Azure Static Web Apps, etc.)
+
+---
+
 ## Governance
 
 - All meaningful changes require team consensus

@@ -84,3 +84,33 @@
 - Concurrency on refresh-metrics prevents duplicate commits from overlapping schedule+manual runs
 - Inventory workflow uses branch+PR pattern (not direct commit) to enforce human review of package additions
 - `NUGET_OWNER` is configurable via job-level env var; defaults to "microsoft"
+
+### GitHub Pages Deployment (2026-07-22)
+
+**Workflow Update:** Added `deploy-dashboard` job to `refresh-metrics.yml` that runs after `collect`.
+
+**Key Design Points:**
+- .NET version fixed from `9.0.x` to `10.0.x` to match project's net10.0 target
+- Two-job workflow: `collect` (data) → `deploy-dashboard` (site)
+- Site assembly: `site/index.html` + `data/latest/*.json` → flat `_site/` with `data/` subfolder
+- Uses `actions/upload-pages-artifact@v3` + `actions/deploy-pages@v4`
+- Permissions: `contents: write`, `pages: write`, `id-token: write` (OIDC for Pages deploy)
+- `deploy-dashboard` checks out with `ref: ${{ github.ref }}` to get freshly committed data
+- Environment `github-pages` configured with deployment URL output
+- Requires repo Settings → Pages → Source set to "GitHub Actions"
+
+**Data path flattening:** `data/latest/data.nuget.json` → `_site/data/data.nuget.json` so the frontend fetches from `data/data.nuget.json` relative to site root.
+
+### GitHub Pages Dashboard Integration (2026-04-02)
+
+**Workflow Status:** Completed  
+**Session:** github-pages-dashboard (Bruno Capuano, background mode)
+
+GitHub Pages deployment job added to `refresh-metrics.yml`. After data collection, `deploy-dashboard` job assembles site from `site/index.html` + flattened `data/latest/*.json` → `_site/`, uploads artifact, and deploys via OIDC.
+
+**Key Updates:**
+- .NET version: `9.0.x` → `10.0.x` (matches Collector net10.0 target)
+- Added `deploy-dashboard` job with Pages write + OIDC permissions
+- `checkout@v3` with `ref: ${{ github.ref }}` ensures fresh data commit is available
+- Site assembly: `site/index.html` + `data/latest/data.nuget.json` → `_site/data/data.nuget.json` (flattened for frontend)
+- README updated with Pages documentation and setup requirement (Settings → Pages → Source = "GitHub Actions")
