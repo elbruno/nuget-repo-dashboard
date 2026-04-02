@@ -68,8 +68,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
+
+      - name: Pull latest (includes collect job's data commit)
+        run: git pull --ff-only origin main || true
 
       - name: Assemble site
         run: |
