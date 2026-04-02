@@ -54,6 +54,7 @@ dotnet run --project src/Collector/Collector.csproj
 
 | Variable | Required | Description |
 |---|---|---|
+| `NUGET_PROFILE` | No | Override the NuGet profile username from `dashboard-config.json` |
 | `GITHUB_TOKEN` | No | GitHub personal access token for higher rate limits |
 | `DASHBOARD_REPO_ROOT` | No | Override the repo root path (useful in CI) |
 
@@ -81,6 +82,38 @@ $env:GITHUB_TOKEN = "ghp_your_token_here"
 ```
 
 > **Note:** If both User Secrets and an environment variable are set, the environment variable takes precedence.
+
+### NuGet Profile Override
+
+The NuGet profile defaults to `"elbruno"` in `config/dashboard-config.json`. You can override it via **.NET User Secrets** or an **environment variable** without editing the config file.
+
+**Precedence:** Environment Variable > User Secrets > config file default.
+
+#### Option 1: .NET User Secrets
+
+```bash
+cd src/Collector
+dotnet user-secrets set "NUGET_PROFILE" "someuser"
+```
+
+#### Option 2: Environment Variable
+
+```bash
+# Linux / macOS
+export NUGET_PROFILE="someuser"
+
+# Windows PowerShell
+$env:NUGET_PROFILE = "someuser"
+```
+
+The Collector will show which source is active at startup:
+
+```
+  [1/3] Loading config...
+    Profile: someuser (source: environment variable)
+```
+
+> **⚠️ Single Profile Design:** This dashboard is designed and optimized for tracking a single NuGet user profile. In the future we may rebuild to support multiple profiles, but currently it targets one NuGet user at a time.
 
 ## Configuration
 

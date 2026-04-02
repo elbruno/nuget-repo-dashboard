@@ -17,6 +17,14 @@ if (Environment.GetEnvironmentVariable("DASHBOARD_REPO_ROOT") is { Length: > 0 }
 var trackedPackagesPath = Path.Combine(repoRoot, "config", "tracked-packages.json");
 var dashboardConfigPath = Path.Combine(repoRoot, "config", "dashboard-config.json");
 
+// Build configuration early (User Secrets + Environment Variables)
+// Used for GITHUB_TOKEN, NUGET_PROFILE, and any future overrides.
+// Precedence: Environment Variable > User Secrets > config file default.
+var configuration = new ConfigurationBuilder()
+    .AddUserSecrets(System.Reflection.Assembly.GetExecutingAssembly(), optional: true)
+    .AddEnvironmentVariables()
+    .Build();
+
 Console.WriteLine("╔══════════════════════════════════════════╗");
 Console.WriteLine("║   NuGet + GitHub Dashboard Collector     ║");
 Console.WriteLine("╚══════════════════════════════════════════╝");
@@ -48,8 +56,6 @@ if (File.Exists(dashboardConfigPath))
     {
         await using var configStream = File.OpenRead(dashboardConfigPath);
         dashboardConfig = await JsonSerializer.DeserializeAsync<DashboardConfig>(configStream) ?? new();
-        Console.WriteLine($"    Profile: {dashboardConfig.NuGetProfile ?? "(none)"}");
-        Console.WriteLine($"    Merge tracked packages: {dashboardConfig.MergeWithTrackedPackages}");
     }
     catch (Exception ex)
     {
@@ -61,6 +67,21 @@ else
 {
     Console.WriteLine("    No dashboard-config.json found. Using tracked-packages.json only.");
 }
+
+// Override NuGet profile from User Secrets or Environment Variable
+// Precedence: Environment Variable > User Secrets > config file default
+var profileSource = "config file";
+var profileOverride = configuration["NUGET_PROFILE"];
+if (!string.IsNullOrWhiteSpace(profileOverride))
+{
+    dashboardConfig.NuGetProfile = profileOverride;
+    profileSource = Environment.GetEnvironmentVariable("NUGET_PROFILE") is { Length: > 0 }
+        ? "environment variable"
+        : "user secret";
+}
+
+Console.WriteLine($"    Profile: {dashboardConfig.NuGetProfile ?? "(none)"} (source: {profileSource})");
+Console.WriteLine($"    Merge tracked packages: {dashboardConfig.MergeWithTrackedPackages}");
 
 // --- 2. Discover packages from NuGet profile ---
 Console.WriteLine("  [2/3] Discovering packages from NuGet profile...");
@@ -187,12 +208,6 @@ githubHttpClient.DefaultRequestHeaders.UserAgent.Add(
     new ProductInfoHeaderValue("NuGetDashboardCollector", "1.0"));
 githubHttpClient.DefaultRequestHeaders.Accept.Add(
     new MediaTypeWithQualityHeaderValue("application/vnd.github+json"));
-
-// Build configuration (User Secrets + Environment Variables)
-var configuration = new ConfigurationBuilder()
-    .AddUserSecrets(System.Reflection.Assembly.GetExecutingAssembly(), optional: true)
-    .AddEnvironmentVariables()
-    .Build();
 
 var token = configuration["GITHUB_TOKEN"];
 if (!string.IsNullOrEmpty(token))
