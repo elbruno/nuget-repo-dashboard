@@ -113,6 +113,9 @@ jobs:
           git commit -m "feat: update tracked packages inventory"
           git push --set-upstream origin "${{ steps.branch.outputs.name }}"
 
+          # Ensure the inventory label exists before creating the PR
+          gh label create "inventory" --description "Inventory refresh PRs" --color "0E8A16" --force 2>/dev/null || true
+
           gh pr create \
             --title "📦 Inventory refresh — $(date -u +%Y-%m-%d)" \
             --body "## Inventory Refresh
