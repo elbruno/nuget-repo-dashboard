@@ -63,6 +63,37 @@ Environment has .NET 8.0 and 10.0 runtimes only (no 9.0). Retargeted both `src/C
 
 ---
 
+### 6. NuGet Profile Auto-Discovery
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-04-02  
+**Status:** Implemented  
+
+## Context
+
+The dashboard was tracking Microsoft packages (`Microsoft.Extensions.AI.*`) that aren't owned by the user (`elbruno`). The static `tracked-packages.json` required manual maintenance and didn't reflect the user's actual NuGet portfolio.
+
+## Decision
+
+Replace the static-only config with a **profile discovery flow** that dynamically discovers packages from a NuGet user profile at runtime.
+
+### Key Design Points
+
+1. **New config file** `config/dashboard-config.json` with `nugetProfile` and `mergeWithTrackedPackages` fields.
+2. **New service** `INuGetProfileDiscoveryService` queries the NuGet Search API (`owner:{username}`) with pagination support.
+3. **GitHub repo resolution** — parses `projectUrl` from NuGet metadata to extract `owner/repo` using source-generated regex.
+4. **Merge strategy** — discovered packages are primary; `tracked-packages.json` supplements with manually tracked packages that aren't in the profile (e.g., Microsoft packages the user wants to watch).
+5. **Pipeline expanded** from 5 steps to 6: config → discovery → merge → NuGet metrics → GitHub metrics → output.
+6. **Backward compatible** — if `dashboard-config.json` is missing or `nugetProfile` is empty, falls back to `tracked-packages.json` only.
+
+## Impact
+
+- **New files:** `config/dashboard-config.json`, `src/Collector/Models/DashboardConfig.cs`, `src/Collector/Models/DiscoveredPackage.cs`, `src/Collector/Services/NuGetProfileDiscoveryService.cs`
+- **Modified:** `src/Collector/Program.cs` (refactored from 5-step to 6-step pipeline)
+- All 71 existing tests continue to pass.
+
+---
+
 ## Governance
 
 - All meaningful changes require team consensus
