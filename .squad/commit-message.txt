@@ -1,0 +1,17 @@
+squad: fix regex bug for dotted repo names + two-pipeline restructure [session log]
+
+Orchestration logs written for Kaylee and Zoe.
+Session log: 2026-04-02T104131Z-regex-fix-pipeline-restructure.md
+
+Changes:
+- Kaylee fixed NuGetProfileDiscoveryService regex: [^/?.]+  → [^/?#]+
+  (allows dots in repo names, fixes ElBruno.ClockTray parsing)
+- Restructured Program.cs into two logical pipelines (Discovery + Collection)
+- Updated README.md with two-pipeline architecture docs
+- Zoe added 18 comprehensive dotted repo + URL edge case tests
+- Test count: 94 → 112 (all passing)
+- Repos discovered: 3 → 16 (regex fix enabled dotted names)
+- Repos collected: 13 (3 rate-limited)
+- Packages: 36 (all ElBruno-owned)
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
