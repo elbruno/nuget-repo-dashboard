@@ -1,0 +1,136 @@
+# WI-6: Inventory discovery
+# Queries NuGet for packages by a configured owner/profile,
+# creates a PR if new packages are found.
+
+name: Refresh Inventory
+
+on:
+  workflow_dispatch: # Manual trigger only
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NUGET_OWNER: "microsoft"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Set branch name
+        id: branch
+        run: echo "name=inventory/refresh-$(date -u +%Y%m%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Create inventory branch
+        run: git checkout -b "${{ steps.branch.outputs.name }}"
+
+      - name: Discover NuGet packages
+        run: |
+          echo "Querying NuGet for packages owned by '$NUGET_OWNER'..."
+
+          # Query NuGet search API for packages by owner
+          QUERY_URL="https://api-v2v3search-0.nuget.org/query?q=owner:${NUGET_OWNER}&take=100"
+          RESPONSE=$(curl -sf "$QUERY_URL" || echo '{"data":[]}')
+
+          # Extract package IDs from search results
+          DISCOVERED=$(echo "$RESPONSE" | jq -r '.data[].id' | sort)
+
+          if [ -z "$DISCOVERED" ]; then
+            echo "No packages found for owner '$NUGET_OWNER'."
+            echo '[]' > config/candidate-packages.json
+            exit 0
+          fi
+
+          echo "Found $(echo "$DISCOVERED" | wc -l) package(s)."
+
+          # Load existing tracked packages for comparison
+          EXISTING=$(jq -r '.[].packageId' config/tracked-packages.json 2>/dev/null | sort || true)
+
+          # Find new packages not already tracked
+          NEW_PACKAGES=$(comm -23 <(echo "$DISCOVERED") <(echo "$EXISTING"))
+
+          if [ -z "$NEW_PACKAGES" ]; then
+            echo "All discovered packages are already tracked."
+            echo '[]' > config/candidate-packages.json
+            exit 0
+          fi
+
+          echo "New packages to add:"
+          echo "$NEW_PACKAGES"
+
+          # Build candidate JSON — each entry has packageId with empty repos (to be filled in review)
+          echo "$NEW_PACKAGES" | jq -R -s '
+            split("\n") | map(select(length > 0)) |
+            map({ packageId: ., repos: [] })
+          ' > config/candidate-packages.json
+
+          echo "Wrote config/candidate-packages.json with $(echo "$NEW_PACKAGES" | wc -l) candidate(s)."
+
+      - name: Merge candidates into tracked packages
+        run: |
+          if [ ! -s config/candidate-packages.json ] || [ "$(cat config/candidate-packages.json)" = "[]" ]; then
+            echo "No new candidates to merge."
+            echo "has_changes=false" >> "$GITHUB_ENV"
+            exit 0
+          fi
+
+          # Merge candidate packages into tracked-packages.json
+          jq -s '.[0] + .[1] | unique_by(.packageId) | sort_by(.packageId)' \
+            config/tracked-packages.json config/candidate-packages.json \
+            > config/tracked-packages-merged.json
+
+          mv config/tracked-packages-merged.json config/tracked-packages.json
+          rm -f config/candidate-packages.json
+
+          echo "has_changes=true" >> "$GITHUB_ENV"
+
+      - name: Check for config changes
+        id: diff
+        run: |
+          git add config/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new packages found."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Config changes detected — will open PR."
+          fi
+
+      - name: Commit, push, and open PR
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "feat: update tracked packages inventory"
+          git push --set-upstream origin "${{ steps.branch.outputs.name }}"
+
+          gh pr create \
+            --title "📦 Inventory refresh — $(date -u +%Y-%m-%d)" \
+            --body "## Inventory Refresh
+
+          This PR was created automatically by the **Refresh Inventory** workflow.
+
+          ### What changed
+          - Queried NuGet for packages owned by \`$NUGET_OWNER\`
+          - Merged newly discovered packages into \`config/tracked-packages.json\`
+
+          ### Action required
+          - [ ] Review the new package entries
+          - [ ] Fill in the \`repos\` field for each new package
+          - [ ] Verify no unwanted packages were added
+
+          _Generated on $(date -u +%Y-%m-%dT%H:%M:%SZ)_" \
+            --label "inventory"
+
+      - name: No changes summary
+        if: steps.diff.outputs.changed != 'true'
+        run: echo "No new packages found. Nothing to do."

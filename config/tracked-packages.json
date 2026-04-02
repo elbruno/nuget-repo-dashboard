@@ -1,0 +1,5 @@
+[
+  { "packageId": "Microsoft.Extensions.AI", "repos": ["dotnet/extensions"] },
+  { "packageId": "Microsoft.Extensions.AI.Abstractions", "repos": ["dotnet/extensions"] },
+  { "packageId": "Microsoft.Extensions.AI.Ollama", "repos": ["dotnet/extensions"] }
+]

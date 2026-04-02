@@ -1,0 +1,58 @@
+# WI-5: Daily metrics refresh
+# Runs the NuGet + GitHub Collector to update dashboard data.
+# Commits results to data/ if anything changed.
+
+name: Refresh Metrics
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # Daily at 06:00 UTC
+  workflow_dispatch: # Manual trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-metrics
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Build Collector
+        run: dotnet build src/Collector/Collector.csproj --configuration Release
+
+      - name: Run Collector
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DASHBOARD_REPO_ROOT: ${{ github.workspace }}
+        run: dotnet run --project src/Collector/Collector.csproj --configuration Release
+
+      - name: Check for data changes
+        id: changes
+        run: |
+          git add data/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No data changes detected."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Data changes detected — will commit."
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh metrics [skip ci]"
+          git push
