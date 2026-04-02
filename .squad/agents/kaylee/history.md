@@ -10,7 +10,8 @@
 
 ## Learnings
 
-- **Project structure**: `src/Collector/` is a .NET 9 console app (`Collector.csproj`). Models in `Models/`, services in `Services/`.
+- **Project structure**: `src/Collector/` is a .NET console app (`Collector.csproj`, **retargeted to net10.0**). Models in `Models/`, services in `Services/`.
+- **Framework note (2026-04-02):** Environment has .NET 8.0 and 10.0 runtimes only (no 9.0). Collector retargeted from net9.0 to net10.0 for deployment compatibility. No code changes required beyond TFM swap.
 - **Serialization**: Using `System.Text.Json` exclusively with `[JsonPropertyName]` attributes on all model properties.
 - **Interfaces for testability**: All services expose interfaces (`IConfigLoader`, `INuGetCollector`, `IGitHubCollector`, `IJsonOutputWriter`) for DI and mocking.
 - **NuGet API**: Registration endpoint (`registration5-gz-semver2`) for version/metadata + search endpoint for aggregate download counts. Pages may need separate fetching if not inlined.

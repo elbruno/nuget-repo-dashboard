@@ -57,7 +57,7 @@
 
 **refresh-metrics.yml** — Daily automated data refresh
 - Triggers: cron `0 6 * * *` (daily 06:00 UTC) + manual `workflow_dispatch`
-- Builds & runs Collector at `src/Collector/Collector.csproj` (.NET 9)
+- Builds & runs Collector at `src/Collector/Collector.csproj` (**net10.0**, retargeted 2026-04-02)
 - Sets `DASHBOARD_REPO_ROOT=${{ github.workspace }}` so Collector writes to correct paths
 - Collector writes to `data/latest/data.json` and `data/history/YYYY/MM/DD/data.json`
 - Uses `git diff --cached --quiet` on `data/` to detect changes; commits with `[skip ci]` tag

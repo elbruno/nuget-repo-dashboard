@@ -2,7 +2,66 @@
 
 ## Active Decisions
 
-No decisions recorded yet.
+### 1. PRD Decomposition: NuGet + GitHub Dashboard
+
+**Author:** Mal  
+**Date:** 2025-01-26  
+**Status:** Approved  
+
+The PRD defines 14 prioritized work items across three phases: Foundation (P0), Core Features (P1), and Enhancements (P2). Implementation sequence prioritizes data models and infrastructure before collectors, then workflows, then AI-assisted features. See `docs/nuget-dashboard-prd-v2.md`.
+
+---
+
+### 2. Backend Architecture — System.Text.Json + Interface-Based Services
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2025-07-15  
+**Status:** Implemented  
+
+Decisions:
+1. **System.Text.Json only** — no Newtonsoft dependency. All models use `[JsonPropertyName]` attributes.
+2. **Interface-per-service** — `IConfigLoader`, `INuGetCollector`, `IGitHubCollector`, `IJsonOutputWriter`.
+3. **NuGet dual-endpoint strategy** — Registration API for metadata, Search API for download counts.
+4. **GitHub optional auth** — `GITHUB_TOKEN` env var optional; works for public repos.
+5. **Repo root via env var** — `DASHBOARD_REPO_ROOT` enables CI/CD flexibility.
+
+---
+
+### 3. Agentic Workflow Architecture (WI-7, WI-8, WI-9)
+
+**Owner:** Wash (DevOps)  
+**Date:** 2025-01-14  
+**Status:** Implemented  
+
+Agentic workflows (WI-7, WI-8, WI-9) are defined as **markdown specifications**, not executable YAML. Non-authoritative by design:
+- ✅ CAN: Analyze, detect, suggest, create informational issues
+- ❌ CANNOT: Modify production data, make unilateral decisions
+
+**Three workflows:** inventory-review (PR comments), weekly-summary (trends), health-triage (anomalies).
+
+---
+
+### 4. Inventory Workflow Uses Branch+PR Pattern
+
+**Author:** Wash (DevOps)  
+**Date:** 2025-01-27  
+**Status:** Implemented  
+
+Inventory changes go through `inventory/refresh-{date}` branch and PR with human review checklist. Every discovery requires manual merge; new packages arrive with empty `repos: []` requiring reviewer to fill mappings.
+
+---
+
+### 5. Retarget to net10.0
+
+**Author:** Zoe (Tester)  
+**Date:** 2026-04-02  
+**Status:** Implemented  
+
+Environment has .NET 8.0 and 10.0 runtimes only (no 9.0). Retargeted both `src/Collector/Collector.csproj` and `tests/Collector.Tests/Collector.Tests.csproj` from `net9.0` to `net10.0` for test execution and deployment.
+
+**Impact:** All 51 unit tests pass on net10.0. No code changes needed beyond TFM swap.
+
+---
 
 ## Governance
 
