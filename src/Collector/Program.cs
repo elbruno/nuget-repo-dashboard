@@ -5,6 +5,26 @@ using Microsoft.Extensions.Configuration;
 using NuGetDashboard.Collector.Models;
 using NuGetDashboard.Collector.Services;
 
+// Parse CLI arguments
+var mode = "metrics"; // default
+foreach (var arg in args)
+{
+    if (arg.StartsWith("--mode=", StringComparison.OrdinalIgnoreCase))
+    {
+        mode = arg.Substring("--mode=".Length).ToLowerInvariant();
+    }
+    else if (arg.Equals("--mode", StringComparison.OrdinalIgnoreCase) && args.Length > Array.IndexOf(args, arg) + 1)
+    {
+        mode = args[Array.IndexOf(args, arg) + 1].ToLowerInvariant();
+    }
+}
+
+if (mode != "inventory" && mode != "metrics")
+{
+    Console.Error.WriteLine($"ERROR: Invalid mode '{mode}'. Valid modes: inventory, metrics");
+    return 1;
+}
+
 // Resolve repo root (two levels up from src/Collector/)
 var repoRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", ".."));
 
@@ -28,6 +48,7 @@ var configuration = new ConfigurationBuilder()
 Console.WriteLine("╔══════════════════════════════════════════╗");
 Console.WriteLine("║   NuGet + GitHub Dashboard Collector     ║");
 Console.WriteLine("╚══════════════════════════════════════════╝");
+Console.WriteLine($"Mode: {mode}");
 Console.WriteLine();
 
 // --- Shared HTTP client (reused for NuGet calls: discovery + metrics) ---
@@ -191,6 +212,60 @@ Console.WriteLine($"    → {packages.Count} unique packages (after filtering)")
 Console.WriteLine($"    → {allRepos.Count} unique GitHub repositories");
 
 Console.WriteLine();
+
+// ═══════════════════════════════════════════════════════════════════════
+// Inventory Mode: Write discovered packages and exit
+// ═══════════════════════════════════════════════════════════════════════
+if (mode == "inventory")
+{
+    Console.WriteLine("Inventory Mode: Writing tracked packages...");
+    Console.WriteLine();
+
+    // Sort packages by packageId for consistent output
+    var sortedPackages = packages.OrderBy(p => p.PackageId, StringComparer.OrdinalIgnoreCase).ToList();
+
+    // Write to tracked-packages.json
+    var jsonOptions = new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+    };
+
+    var configDir = Path.GetDirectoryName(trackedPackagesPath);
+    if (!string.IsNullOrEmpty(configDir) && !Directory.Exists(configDir))
+    {
+        Directory.CreateDirectory(configDir);
+    }
+
+    await using (var fileStream = File.Create(trackedPackagesPath))
+    {
+        await JsonSerializer.SerializeAsync(fileStream, sortedPackages, jsonOptions);
+    }
+
+    Console.WriteLine("═══ Inventory Summary ═════════════════════");
+    Console.WriteLine($"  Packages written : {sortedPackages.Count}");
+    Console.WriteLine($"  Output path      : {Path.GetRelativePath(repoRoot, trackedPackagesPath)}");
+    Console.WriteLine();
+
+    if (sortedPackages.Count > 0)
+    {
+        Console.WriteLine("  Packages:");
+        foreach (var pkg in sortedPackages)
+        {
+            var repoInfo = pkg.Repos.Count > 0 ? string.Join(", ", pkg.Repos) : "(no repos)";
+            Console.WriteLine($"    • {pkg.PackageId} → {repoInfo}");
+        }
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("Done.");
+    return 0;
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// Metrics Mode: Continue with Pipeline 2
+// ═══════════════════════════════════════════════════════════════════════
+
 Console.WriteLine("Pipeline 2: Collection");
 Console.WriteLine();
 

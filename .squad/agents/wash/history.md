@@ -114,3 +114,30 @@ GitHub Pages deployment job added to `refresh-metrics.yml`. After data collectio
 - `checkout@v3` with `ref: ${{ github.ref }}` ensures fresh data commit is available
 - Site assembly: `site/index.html` + `data/latest/data.nuget.json` → `_site/data/data.nuget.json` (flattened for frontend)
 - README updated with Pages documentation and setup requirement (Settings → Pages → Source = "GitHub Actions")
+
+### Collector Inventory Mode Integration (2026-04-02)
+
+**Workflow Status:** Completed  
+**Session:** collector-inventory-mode (Bruno Capuano)
+
+Refactored `refresh-inventory.yml` to delegate all business logic to the C# Collector running in `--mode inventory`.
+
+**Key Changes:**
+- Removed 3 bash steps: "Read dashboard config", "Discover NuGet packages", "Merge candidates into tracked packages"
+- Replaced with single step: `dotnet run --project src/Collector/Collector.csproj --configuration Release -- --mode inventory`
+- Fixed .NET version from `9.0.x` → `10.0.x` (matches Collector net10.0 target)
+- Added `DASHBOARD_REPO_ROOT: ${{ github.workspace }}` env var (critical for CI path resolution)
+- Simplified PR body to read `nugetProfile` with jq for display purposes only (Collector handles all discovery logic)
+- Kept git/PR workflow operations (branch creation, commit, push, label, PR creation) in workflow — these are CI/CD concerns, not business logic
+
+**Architecture Pattern:**
+- Workflow handles orchestration (checkout, .NET setup, git operations, PR creation)
+- Collector handles domain logic (NuGet discovery, ignore filtering, merge with tracked packages)
+- Clean separation: bash-free data processing, all JSON parsing/merging moved to C#
+- Env vars: `DASHBOARD_REPO_ROOT` and `GITHUB_TOKEN` passed to Collector for path resolution and optional GitHub API calls
+
+**Verification:** `refresh-metrics.yml` confirmed correct — uses .NET 10, runs Collector with proper env vars, site assembly copies correct files (index.html + data/latest/*.json → _site/).
+
+**File Paths:**
+- `.github/workflows/refresh-inventory.yml` (rewritten, ~70 lines → ~60 lines, 90% less bash)
+- `.github/workflows/refresh-metrics.yml` (verified, no changes needed)
