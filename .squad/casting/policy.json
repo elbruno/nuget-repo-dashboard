@@ -1,0 +1,5 @@
+{
+  "allowed_universes": ["firefly"],
+  "max_capacity": 9,
+  "overflow_strategy": "diegetic_expansion"
+}

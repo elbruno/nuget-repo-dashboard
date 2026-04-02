@@ -1,0 +1,13 @@
+[
+  {
+    "assignment_id": "firefly-2026-04-02",
+    "universe": "firefly",
+    "created_at": "2026-04-02T12:25:55Z",
+    "agents": [
+      { "name": "Mal", "role": "Lead" },
+      { "name": "Kaylee", "role": "Backend Dev" },
+      { "name": "Wash", "role": "DevOps" },
+      { "name": "Zoe", "role": "Tester" }
+    ]
+  }
+]
