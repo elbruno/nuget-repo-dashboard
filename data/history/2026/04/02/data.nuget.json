@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-02T16:34:00.7601913+00:00",
+  "generatedAt": "2026-04-02T22:20:45.6932109+00:00",
   "packages": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
@@ -42,7 +42,7 @@
     },
     {
       "packageId": "ElBruno.QwenTTS",
-      "latestVersion": "0.6.1",
+      "latestVersion": "1.1.1",
       "totalDownloads": 1087,
       "description": "Run Qwen3-TTS text-to-speech locally from C# using ONNX Runtime. Models download automatically from HuggingFace on first run.",
       "authors": "Bruno Capuano",
@@ -60,7 +60,7 @@
         "machine-learning"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T20:45:17.013+00:00"
+      "publishedDate": "2026-04-02T20:34:16.397+00:00"
     },
     {
       "packageId": "ElBruno.VibeVoiceTTS",
@@ -245,6 +245,26 @@
       "publishedDate": "2026-02-28T17:26:50.687+00:00"
     },
     {
+      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
+      "latestVersion": "1.1.5",
+      "totalDownloads": 380,
+      "description": "CLIP-based image embedding generation using ONNX Runtime for local multimodal search and RAG scenarios",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "onnx",
+        "ai",
+        "local",
+        "clip",
+        "image-search",
+        "multimodal",
+        "microsoft-extensions-ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-03-12T16:28:10.23+00:00"
+    },
+    {
       "packageId": "ElBruno.Text2Image.Cuda",
       "latestVersion": "0.6.0",
       "totalDownloads": 295,
@@ -264,26 +284,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-02-28T21:07:49.67+00:00"
-    },
-    {
-      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
-      "latestVersion": "1.1.5",
-      "totalDownloads": 380,
-      "description": "CLIP-based image embedding generation using ONNX Runtime for local multimodal search and RAG scenarios",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "tags": [
-        "embeddings",
-        "onnx",
-        "ai",
-        "local",
-        "clip",
-        "image-search",
-        "multimodal",
-        "microsoft-extensions-ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-03-12T16:28:10.23+00:00"
     },
     {
       "packageId": "ElBruno.AgentsOrchestration.Orchestration",
@@ -325,6 +325,24 @@
       "publishedDate": "2026-02-28T21:07:49.897+00:00"
     },
     {
+      "packageId": "ElBruno.Text2Image.Foundry",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 300,
+      "description": "Microsoft Foundry cloud image generation for ElBruno.Text2Image. Provides FLUX.2 text-to-image generation via the Microsoft Foundry REST API. No local models needed \u2014 runs in the cloud.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
+      "tags": [
+        "text-to-image",
+        "flux2",
+        "image-generation",
+        "microsoft-foundry",
+        "cloud",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T21:07:50.12+00:00"
+    },
+    {
       "packageId": "ElBruno.Realtime.Whisper",
       "latestVersion": "0.6.0",
       "totalDownloads": 290,
@@ -344,22 +362,46 @@
       "publishedDate": "2026-02-28T17:26:51.32+00:00"
     },
     {
-      "packageId": "ElBruno.Text2Image.Foundry",
-      "latestVersion": "0.6.0",
-      "totalDownloads": 300,
-      "description": "Microsoft Foundry cloud image generation for ElBruno.Text2Image. Provides FLUX.2 text-to-image generation via the Microsoft Foundry REST API. No local models needed \u2014 runs in the cloud.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
+      "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
+      "latestVersion": "0.5.4",
+      "totalDownloads": 231,
+      "description": "Semantic routing for Model Context Protocol (MCP) tool definitions using local embeddings. Indexes MCP tools and returns the most relevant tools for a given prompt via vector search.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol",
       "tags": [
-        "text-to-image",
-        "flux2",
-        "image-generation",
-        "microsoft-foundry",
-        "cloud",
-        "ai"
+        "mcp",
+        "model-context-protocol",
+        "embeddings",
+        "vector-search",
+        "semantic-search",
+        "ai",
+        "tools",
+        "llm",
+        "token-optimization"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T21:07:50.12+00:00"
+      "publishedDate": "2026-03-29T13:47:08.987+00:00"
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.CLI",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 133,
+      "description": "Generate and display QR codes in the console using Unicode block characters. Optimized for terminal output with 2:1 aspect ratio correction. Perfect for CLI tools and terminal applications.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator.CLI",
+      "tags": [
+        "qrcode",
+        "qr",
+        "console",
+        "cli",
+        "terminal",
+        "unicode",
+        "barcode",
+        "generator",
+        "display"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:06.13+00:00"
     },
     {
       "packageId": "ElBruno.Text2Image.Cpu",
@@ -405,23 +447,6 @@
       "publishedDate": "2026-02-28T21:34:39.393+00:00"
     },
     {
-      "packageId": "ElBruno.ClockTray",
-      "latestVersion": "0.5.5",
-      "totalDownloads": 267,
-      "description": "Windows system tray app to toggle taskbar date/time visibility. Context menu \u002B Ctrl\u002BAlt\u002BT hotkey.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.ClockTray",
-      "tags": [
-        "windows",
-        "taskbar",
-        "clock",
-        "system-tray",
-        "toggle"
-      ],
-      "listed": true,
-      "publishedDate": "2026-03-03T17:31:01.013+00:00"
-    },
-    {
       "packageId": "ElBruno.Realtime.SileroVad",
       "latestVersion": "0.6.0",
       "totalDownloads": 284,
@@ -442,43 +467,21 @@
       "publishedDate": "2026-02-28T17:26:50.98+00:00"
     },
     {
-      "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
-      "latestVersion": "0.5.4",
-      "totalDownloads": 231,
-      "description": "Semantic routing for Model Context Protocol (MCP) tool definitions using local embeddings. Indexes MCP tools and returns the most relevant tools for a given prompt via vector search.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol",
-      "tags": [
-        "mcp",
-        "model-context-protocol",
-        "embeddings",
-        "vector-search",
-        "semantic-search",
-        "ai",
-        "tools",
-        "llm",
-        "token-optimization"
-      ],
-      "listed": true,
-      "publishedDate": "2026-03-29T13:47:08.987+00:00"
-    },
-    {
-      "packageId": "ElBruno.AI.Evaluation.Xunit",
-      "latestVersion": "0.5.2",
-      "totalDownloads": 176,
-      "description": "xUnit integration for ElBruno.AI.Evaluation",
+      "packageId": "ElBruno.ClockTray",
+      "latestVersion": "0.5.5",
+      "totalDownloads": 267,
+      "description": "Windows system tray app to toggle taskbar date/time visibility. Context menu \u002B Ctrl\u002BAlt\u002BT hotkey.",
       "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "projectUrl": "https://github.com/elbruno/ElBruno.ClockTray",
       "tags": [
-        "ai",
-        "evaluation",
-        "testing",
-        "observability",
-        "dotnet",
-        "llm"
+        "windows",
+        "taskbar",
+        "clock",
+        "system-tray",
+        "toggle"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T18:54:00.513+00:00"
+      "publishedDate": "2026-03-03T17:31:01.013+00:00"
     },
     {
       "packageId": "ElBruno.AI.Evaluation.SyntheticData",
@@ -499,25 +502,22 @@
       "publishedDate": "2026-02-28T18:54:00.33+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.CLI",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 133,
-      "description": "Generate and display QR codes in the console using Unicode block characters. Optimized for terminal output with 2:1 aspect ratio correction. Perfect for CLI tools and terminal applications.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator.CLI",
+      "packageId": "ElBruno.AI.Evaluation.Xunit",
+      "latestVersion": "0.5.2",
+      "totalDownloads": 176,
+      "description": "xUnit integration for ElBruno.AI.Evaluation",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
       "tags": [
-        "qrcode",
-        "qr",
-        "console",
-        "cli",
-        "terminal",
-        "unicode",
-        "barcode",
-        "generator",
-        "display"
+        "ai",
+        "evaluation",
+        "testing",
+        "observability",
+        "dotnet",
+        "llm"
       ],
       "listed": true,
-      "publishedDate": "2026-04-01T21:58:06.13+00:00"
+      "publishedDate": "2026-02-28T18:54:00.513+00:00"
     },
     {
       "packageId": "ElBruno.AI.Evaluation.Reporting",
@@ -558,65 +558,6 @@
       "publishedDate": "2026-04-01T21:58:04.627+00:00"
     },
     {
-      "packageId": "elbruno.Extensions.AI.Skills.Cli",
-      "latestVersion": "0.1.0",
-      "totalDownloads": 97,
-      "description": "CLI tool for validating skills and generating prompt XML.",
-      "authors": "elbruno",
-      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
-      "tags": [
-        "agent-skills",
-        "ai",
-        "llm",
-        "anthropic",
-        "dotnet",
-        "microsoft-extensions-ai",
-        "mcp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-06T21:09:15.113+00:00"
-    },
-    {
-      "packageId": "elbruno.Extensions.AI.Skills.Core",
-      "latestVersion": "0.1.0",
-      "totalDownloads": 89,
-      "description": "Core models, parser, validator, and prompt generator for the Agent Skills specification.",
-      "authors": "elbruno",
-      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
-      "tags": [
-        "agent-skills",
-        "ai",
-        "llm",
-        "anthropic",
-        "dotnet",
-        "microsoft-extensions-ai",
-        "mcp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-06T21:09:03.057+00:00"
-    },
-    {
-      "packageId": "ElBruno.Whisper",
-      "latestVersion": "0.1.2",
-      "totalDownloads": 105,
-      "description": "Local Whisper speech-to-text using ONNX Runtime. Auto-downloads models from HuggingFace. Supports tiny, base, small, medium, and large models.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Whisper",
-      "tags": [
-        "whisper",
-        "speech-to-text",
-        "stt",
-        "onnx",
-        "ai",
-        "local",
-        "audio",
-        "transcription",
-        "huggingface"
-      ],
-      "listed": true,
-      "publishedDate": "2026-03-30T20:08:23.31+00:00"
-    },
-    {
       "packageId": "ElBruno.QRCodeGenerator.Svg",
       "latestVersion": "1.1.0",
       "totalDownloads": 71,
@@ -635,6 +576,24 @@
       "publishedDate": "2026-04-01T21:58:07.52+00:00"
     },
     {
+      "packageId": "ElBruno.QRCodeGenerator.Ascii",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 47,
+      "description": "Generate QR codes as ASCII art text. Perfect for legacy terminals, text files, and embedded output.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "ascii",
+        "text",
+        "art",
+        "terminal",
+        "console"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:07.05+00:00"
+    },
+    {
       "packageId": "ElBruno.QRCodeGenerator.Pdf",
       "latestVersion": "1.1.0",
       "totalDownloads": 67,
@@ -650,6 +609,25 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-01T21:58:07.96+00:00"
+    },
+    {
+      "packageId": "elbruno.Extensions.AI.Skills.Cli",
+      "latestVersion": "0.1.0",
+      "totalDownloads": 97,
+      "description": "CLI tool for validating skills and generating prompt XML.",
+      "authors": "elbruno",
+      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
+      "tags": [
+        "agent-skills",
+        "ai",
+        "llm",
+        "anthropic",
+        "dotnet",
+        "microsoft-extensions-ai",
+        "mcp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-06T21:09:15.113+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Tool",
@@ -672,22 +650,44 @@
       "publishedDate": "2026-04-01T21:58:05.853+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Ascii",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 47,
-      "description": "Generate QR codes as ASCII art text. Perfect for legacy terminals, text files, and embedded output.",
+      "packageId": "ElBruno.Whisper",
+      "latestVersion": "0.1.5",
+      "totalDownloads": 105,
+      "description": "Local Whisper speech-to-text using ONNX Runtime. Auto-downloads models from HuggingFace. Supports tiny, base, small, medium, and large models.",
       "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Whisper",
       "tags": [
-        "qrcode",
-        "ascii",
-        "text",
-        "art",
-        "terminal",
-        "console"
+        "whisper",
+        "speech-to-text",
+        "stt",
+        "onnx",
+        "ai",
+        "local",
+        "audio",
+        "transcription",
+        "huggingface"
       ],
       "listed": true,
-      "publishedDate": "2026-04-01T21:58:07.05+00:00"
+      "publishedDate": "2026-04-02T16:44:33.59+00:00"
+    },
+    {
+      "packageId": "elbruno.Extensions.AI.Skills.Core",
+      "latestVersion": "0.1.0",
+      "totalDownloads": 89,
+      "description": "Core models, parser, validator, and prompt generator for the Agent Skills specification.",
+      "authors": "elbruno",
+      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
+      "tags": [
+        "agent-skills",
+        "ai",
+        "llm",
+        "anthropic",
+        "dotnet",
+        "microsoft-extensions-ai",
+        "mcp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-06T21:09:03.057+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Image",
@@ -706,6 +706,104 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-01T21:58:06.607+00:00"
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.AI",
+      "latestVersion": "0.3.0",
+      "totalDownloads": 0,
+      "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "ai",
+        "ocr",
+        "llm",
+        "chatclient",
+        "markitdown"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-02T22:06:34.05+00:00"
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet",
+      "latestVersion": "0.3.0",
+      "totalDownloads": 0,
+      "description": ".NET library that converts file formats to Markdown for AI pipelines, documentation workflows, and developer tools. Inspired by Python markitdown.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "ai",
+        "rag",
+        "pdf",
+        "html",
+        "docx",
+        "text",
+        "markitdown",
+        "file-conversion"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-02T22:06:33.573+00:00"
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Excel",
+      "latestVersion": "0.3.0",
+      "totalDownloads": 0,
+      "description": "Excel (.xlsx) to Markdown converter for ElBruno.MarkItDotNet. Converts spreadsheet sheets to Markdown tables.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "excel",
+        "xlsx",
+        "spreadsheet",
+        "markitdown"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-02T22:06:34.473+00:00"
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.PowerPoint",
+      "latestVersion": "0.3.0",
+      "totalDownloads": 0,
+      "description": "PowerPoint (.pptx) to Markdown converter for ElBruno.MarkItDotNet. Converts slides and speaker notes to Markdown.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "powerpoint",
+        "pptx",
+        "slides",
+        "markitdown"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-02T22:06:34.897+00:00"
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Whisper",
+      "latestVersion": "0.3.0",
+      "totalDownloads": 0,
+      "description": "Local audio transcription for ElBruno.MarkItDotNet using OpenAI Whisper via ONNX Runtime. Converts audio files to Markdown transcripts offline.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "whisper",
+        "audio",
+        "transcription",
+        "speech-to-text",
+        "onnx",
+        "offline",
+        "markitdown"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-02T22:06:35.697+00:00"
     }
   ]
 }
