@@ -130,7 +130,76 @@ public sealed class GitHubCollector : IGitHubCollector
         // Fetch open PRs count
         metrics.OpenPullRequests = await GetOpenPrCountAsync(owner, repo);
 
+        // Fetch last 20 open issues
+        metrics.RecentIssues = await GetRecentIssuesAsync(owner, repo);
+
         return metrics;
+    }
+
+    private async Task<List<GitHubIssue>> GetRecentIssuesAsync(string owner, string repo)
+    {
+        // Fetch more than 20 to account for PRs mixed in by the API (pull requests also appear here)
+        var json = await GetWithRetryAsync($"{ApiBase}/repos/{owner}/{repo}/issues?state=open&sort=created&direction=desc&per_page=40");
+        if (json is null) return [];
+
+        var issues = new List<GitHubIssue>();
+        if (json.RootElement.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var element in json.RootElement.EnumerateArray())
+            {
+                // Skip pull requests – they appear in the issues endpoint too
+                if (element.TryGetProperty("pull_request", out _)) continue;
+
+                var issue = new GitHubIssue
+                {
+                    Number = element.TryGetProperty("number", out var num) ? num.GetInt32() : 0,
+                    Title = element.TryGetProperty("title", out var title) ? title.GetString() ?? string.Empty : string.Empty,
+                    HtmlUrl = element.TryGetProperty("html_url", out var htmlUrl) ? htmlUrl.GetString() : null,
+                    CommentsCount = element.TryGetProperty("comments", out var comments) ? comments.GetInt32() : 0,
+                };
+
+                if (element.TryGetProperty("created_at", out var createdAt) &&
+                    DateTimeOffset.TryParse(createdAt.GetString(), out var created))
+                {
+                    issue.CreatedAt = created;
+                }
+
+                if (element.TryGetProperty("updated_at", out var updatedAt) &&
+                    DateTimeOffset.TryParse(updatedAt.GetString(), out var updated))
+                {
+                    issue.UpdatedAt = updated;
+                }
+
+                if (element.TryGetProperty("user", out var user) &&
+                    user.ValueKind == JsonValueKind.Object &&
+                    user.TryGetProperty("login", out var login))
+                {
+                    issue.UserLogin = login.GetString();
+                }
+
+                if (element.TryGetProperty("labels", out var labelsArray) &&
+                    labelsArray.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (var label in labelsArray.EnumerateArray())
+                    {
+                        if (label.TryGetProperty("name", out var labelName))
+                        {
+                            var name = labelName.GetString();
+                            if (!string.IsNullOrWhiteSpace(name))
+                            {
+                                issue.Labels.Add(name);
+                            }
+                        }
+                    }
+                }
+
+                issues.Add(issue);
+                if (issues.Count >= 20) break;
+            }
+        }
+
+        json.Dispose();
+        return issues;
     }
 
     private async Task<int> GetOpenPrCountAsync(string owner, string repo)

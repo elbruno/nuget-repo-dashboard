@@ -75,4 +75,7 @@ public sealed class GitHubRepoMetrics
 
     [JsonPropertyName("htmlUrl")]
     public string? HtmlUrl { get; set; }
+
+    [JsonPropertyName("recentIssues")]
+    public List<GitHubIssue> RecentIssues { get; set; } = [];
 }

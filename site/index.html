@@ -438,6 +438,7 @@
       <a href="#top-highlights" class="nav-link">🏆 Top 3</a>
       <a href="#nuget-packages" class="nav-link">📦 Packages</a>
       <a href="#github-repos" class="nav-link">🐙 Repositories</a>
+      <a href="#open-issues" class="nav-link">🐛 Issues</a>
     </div>
   </nav>
 
@@ -555,6 +556,48 @@
         </div>
         </div>
       </section>
+      <!-- Open Issues Section -->
+      <section id="open-issues">
+        <div class="section-header collapsible-header" data-section="open-issues">
+          <h2><span class="chevron">▼</span> <span class="icon">🐛</span> Open Issues</h2>
+          <div class="section-meta">
+            <span class="result-count" id="issues-count"></span>
+            <div class="view-toggle" id="issues-view-toggle">
+              <button data-view="cards" class="active" title="Card view">▦</button>
+              <button data-view="list" title="List view">☰</button>
+            </div>
+          </div>
+        </div>
+        <div class="section-content" id="open-issues-content">
+        <div class="filter-toolbar" id="issues-filters">
+          <div class="filter-group">
+            <label for="issues-search">Search</label>
+            <input type="text" id="issues-search" placeholder="Filter by title or repo…">
+          </div>
+          <div class="filter-group">
+            <label for="issues-repo">Repository</label>
+            <select id="issues-repo">
+              <option value="">All repos</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="issues-sort">Sort</label>
+            <select id="issues-sort">
+              <option value="newest">Newest first</option>
+              <option value="updated">Recently updated</option>
+              <option value="comments">Most comments</option>
+              <option value="repo">Repository</option>
+            </select>
+          </div>
+        </div>
+        <div id="issues-grid" class="card-grid"></div>
+        <div id="issues-list" class="list-view"></div>
+        <div id="issues-empty" class="empty-state" style="display:none;">
+          <span class="icon">🔍</span>
+          <p>No open issues match your filters</p>
+        </div>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -583,6 +626,7 @@
     // View mode state
     let nugetViewMode = localStorage.getItem('nuget-view') || 'cards';
     let repoViewMode = localStorage.getItem('repo-view') || 'cards';
+    let issuesViewMode = localStorage.getItem('issues-view') || 'cards';
 
     /* ── Helpers ── */
 
@@ -712,6 +756,114 @@
         <thead><tr><th>Repository</th><th>Description</th><th>Language</th><th style="text-align:right;">Stars</th><th style="text-align:right;">Forks</th><th style="text-align:right;">Issues</th><th style="text-align:right;">PRs</th><th>Updated</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
+    }
+
+    /* ── Issues Rendering ── */
+
+    function renderIssueCard(issue, repoFullName) {
+      const labels = (issue.labels || []).map(l => `<span class="tag">${esc(l)}</span>`).join('');
+      return `
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="${esc(issue.htmlUrl || '#')}" target="_blank" rel="noopener">#${issue.number} ${esc(issue.title)}</a>
+            </div>
+            <span class="card-version">${esc(repoFullName)}</span>
+          </div>
+          <div class="card-stats">
+            ${issue.userLogin ? `<div class="stat">👤 ${esc(issue.userLogin)}</div>` : ''}
+            <div class="stat">📅 ${fmtDate(issue.createdAt)}</div>
+            ${issue.updatedAt !== issue.createdAt ? `<div class="stat">🔄 ${fmtDate(issue.updatedAt)}</div>` : ''}
+            ${issue.commentsCount > 0 ? `<div class="stat">💬 <span class="value">${fmt(issue.commentsCount)}</span></div>` : ''}
+          </div>
+          ${labels ? `<div class="tags">${labels}</div>` : ''}
+        </div>`;
+    }
+
+    function renderIssueListTable(issueEntries) {
+      if (!issueEntries.length) return '';
+      const rows = issueEntries.map(({ issue, repoFullName }) => {
+        const labels = (issue.labels || []).slice(0, 4).map(l => `<span class="tag">${esc(l)}</span>`).join('');
+        return `<tr>
+          <td style="white-space:nowrap;" class="text-muted">${esc(repoFullName)}</td>
+          <td><a href="${esc(issue.htmlUrl || '#')}" target="_blank" rel="noopener">#${issue.number} ${esc(issue.title)}</a>
+            ${labels ? `<div class="tags">${labels}</div>` : ''}
+          </td>
+          <td class="text-muted" style="white-space:nowrap;">${esc(issue.userLogin || '—')}</td>
+          <td class="text-muted" style="white-space:nowrap;">${fmtDate(issue.createdAt)}</td>
+          <td class="text-muted" style="white-space:nowrap;">${fmtDate(issue.updatedAt)}</td>
+          <td class="value" style="text-align:right;">${issue.commentsCount > 0 ? `💬 ${fmt(issue.commentsCount)}` : '—'}</td>
+        </tr>`;
+      }).join('');
+      return `<table>
+        <thead><tr><th>Repository</th><th>Issue</th><th>Author</th><th>Created</th><th>Updated</th><th style="text-align:right;">Comments</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+    }
+
+    /* ── Filter + Sort Logic (Issues) ── */
+
+    function getAllIssueEntries() {
+      const entries = [];
+      for (const repo of allRepos) {
+        for (const issue of (repo.recentIssues || [])) {
+          entries.push({ issue, repoFullName: repo.fullName || repo.name });
+        }
+      }
+      return entries;
+    }
+
+    function getFilteredIssues() {
+      const search = document.getElementById('issues-search').value.toLowerCase().trim();
+      const repoFilter = document.getElementById('issues-repo').value;
+      const sortKey = document.getElementById('issues-sort').value;
+
+      let entries = getAllIssueEntries().filter(({ issue, repoFullName }) => {
+        if (repoFilter && repoFullName !== repoFilter) return false;
+        if (search && !(issue.title || '').toLowerCase().includes(search) && !repoFullName.toLowerCase().includes(search)) return false;
+        return true;
+      });
+
+      entries.sort((a, b) => {
+        switch (sortKey) {
+          case 'newest': return new Date(b.issue.createdAt || 0) - new Date(a.issue.createdAt || 0);
+          case 'updated': return new Date(b.issue.updatedAt || 0) - new Date(a.issue.updatedAt || 0);
+          case 'comments': return (b.issue.commentsCount || 0) - (a.issue.commentsCount || 0);
+          case 'repo': return a.repoFullName.localeCompare(b.repoFullName);
+          default: return 0;
+        }
+      });
+
+      return entries;
+    }
+
+    function renderIssuesSection() {
+      const entries = getFilteredIssues();
+      const allEntries = getAllIssueEntries();
+      const grid = document.getElementById('issues-grid');
+      const list = document.getElementById('issues-list');
+      const empty = document.getElementById('issues-empty');
+      const countEl = document.getElementById('issues-count');
+
+      countEl.textContent = `Showing ${entries.length} of ${allEntries.length} issues`;
+
+      if (entries.length === 0) {
+        grid.style.display = 'none';
+        list.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      empty.style.display = 'none';
+      if (issuesViewMode === 'cards') {
+        grid.innerHTML = entries.map(({ issue, repoFullName }) => renderIssueCard(issue, repoFullName)).join('');
+        grid.style.display = '';
+        list.style.display = 'none';
+      } else {
+        list.innerHTML = renderIssueListTable(entries);
+        list.style.display = 'block';
+        grid.style.display = 'none';
+      }
     }
 
     /* ── Filter + Sort Logic ── */
@@ -860,6 +1012,11 @@
         renderRepoSection();
       });
 
+      // Issues filters
+      document.getElementById('issues-search').addEventListener('input', renderIssuesSection);
+      document.getElementById('issues-repo').addEventListener('change', renderIssuesSection);
+      document.getElementById('issues-sort').addEventListener('change', renderIssuesSection);
+
       // View toggles
       function wireViewToggle(toggleId, getMode, setMode, renderFn) {
         document.querySelectorAll(`#${toggleId} button`).forEach(btn => {
@@ -874,10 +1031,12 @@
 
       wireViewToggle('nuget-view-toggle', () => nugetViewMode, (m) => { nugetViewMode = m; localStorage.setItem('nuget-view', m); }, renderNugetSection);
       wireViewToggle('repo-view-toggle', () => repoViewMode, (m) => { repoViewMode = m; localStorage.setItem('repo-view', m); }, renderRepoSection);
+      wireViewToggle('issues-view-toggle', () => issuesViewMode, (m) => { issuesViewMode = m; localStorage.setItem('issues-view', m); }, renderIssuesSection);
 
       // Restore saved view modes
       setActiveViewButton('nuget-view-toggle', nugetViewMode);
       setActiveViewButton('repo-view-toggle', repoViewMode);
+      setActiveViewButton('issues-view-toggle', issuesViewMode);
     }
 
     function setActiveViewButton(toggleId, mode) {
@@ -893,6 +1052,20 @@
         const opt = document.createElement('option');
         opt.value = lang;
         opt.textContent = lang;
+        sel.appendChild(opt);
+      });
+    }
+
+    function populateIssuesRepoDropdown() {
+      const repos = [...new Set(allRepos
+        .filter(r => (r.recentIssues || []).length > 0)
+        .map(r => r.fullName || r.name)
+      )].sort();
+      const sel = document.getElementById('issues-repo');
+      repos.forEach(repo => {
+        const opt = document.createElement('option');
+        opt.value = repo;
+        opt.textContent = repo;
         sel.appendChild(opt);
       });
     }
@@ -993,14 +1166,17 @@
 
         // Summary cards
         const totalDownloads = allPackages.reduce((s, p) => s + (p.totalDownloads || 0), 0);
+        const totalIssues = allRepos.reduce((s, r) => s + (r.recentIssues || []).length, 0);
         document.getElementById('summary').innerHTML = `
           <div class="summary-card"><div class="number">${fmt(allPackages.length)}</div><div class="label">Packages</div></div>
           <div class="summary-card"><div class="number">${fmt(allRepos.length)}</div><div class="label">Repositories</div></div>
           <div class="summary-card"><div class="number">${fmt(totalDownloads)}</div><div class="label">Total Downloads</div></div>
+          <div class="summary-card"><div class="number">${fmt(totalIssues)}</div><div class="label">Open Issues</div></div>
         `;
 
         // Populate dynamic filter options
         populateLanguageDropdown();
+        populateIssuesRepoDropdown();
 
         // Wire up filter events
         wireFilters();
@@ -1009,6 +1185,7 @@
         renderNugetSection();
         renderRepoSection();
         renderTopHighlights();
+        renderIssuesSection();
 
         // Initialize collapsible sections
         initCollapsible();
