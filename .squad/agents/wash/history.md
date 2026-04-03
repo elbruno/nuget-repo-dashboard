@@ -62,6 +62,7 @@
 - Collector writes to `data/latest/data.json` and `data/history/YYYY/MM/DD/data.json`
 - Uses `git diff --cached --quiet` on `data/` to detect changes; commits with `[skip ci]` tag
 - Concurrency group prevents overlapping runs; idempotent by design
+- **Phase 2 integration (2026-04-03):** Added step to deploy `data/latest/data.trends.json` to `_site/data/data.trends.json` for GitHub Pages accessibility. Enables dashboard sparkline visualization via Kaylee's TrendAggregationService output.
 
 **refresh-inventory.yml** — Manual package discovery
 - Trigger: `workflow_dispatch` only (human-initiated)
