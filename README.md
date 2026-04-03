@@ -2,6 +2,8 @@
 
 A public dashboard that tracks NuGet packages and GitHub repos — collecting download counts, versions, stars, issues, PRs, and more.
 
+🌐 **Live dashboard:** [https://elbruno.github.io/nuget-repo-dashboard/](https://elbruno.github.io/nuget-repo-dashboard/)
+
 ## Architecture
 
 The dashboard uses a **two-pipeline architecture**:
@@ -188,6 +190,4 @@ The deployed site contains:
 - `data/data.nuget.json` — NuGet package metrics
 - `data/data.repositories.json` — GitHub repository metrics
 
-## PRD
 
-See [docs/nuget-dashboard-prd-v2.md](docs/nuget-dashboard-prd-v2.md) for the full product requirements document.
