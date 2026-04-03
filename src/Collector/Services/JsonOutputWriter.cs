@@ -7,6 +7,7 @@ public interface IJsonOutputWriter
 {
     Task WriteNuGetAsync(NuGetOutput output, string repoRoot);
     Task WriteRepositoriesAsync(RepositoriesOutput output, string repoRoot);
+    Task WriteTrendsAsync(TrendData output, string repoRoot);
 }
 
 public sealed class JsonOutputWriter : IJsonOutputWriter
@@ -59,6 +60,16 @@ public sealed class JsonOutputWriter : IJsonOutputWriter
         var historyPath = Path.Combine(historyDir, "data.repositories.json");
         await WriteJsonFileAsync(historyPath, output);
         Console.WriteLine($"  Written: {historyPath}");
+    }
+
+    public async Task WriteTrendsAsync(TrendData output, string repoRoot)
+    {
+        // Write to data/latest/data.trends.json only (no history copy — trends are derived data)
+        var latestDir = Path.Combine(repoRoot, "data", "latest");
+        Directory.CreateDirectory(latestDir);
+        var latestPath = Path.Combine(latestDir, "data.trends.json");
+        await WriteJsonFileAsync(latestPath, output);
+        Console.WriteLine($"  Written: {latestPath}");
     }
 
     private static async Task WriteJsonFileAsync<T>(string path, T output)

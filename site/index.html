@@ -346,6 +346,62 @@
     /* Section scroll offset for sticky nav */
     section[id] { scroll-margin-top: 60px; }
 
+    /* Sparkline */
+    .sparkline-wrap { display: inline-flex; align-items: center; gap: 0.35rem; vertical-align: middle; }
+    .sparkline { display: inline-block; vertical-align: middle; }
+    .sparkline polyline { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .sparkline .area { fill: var(--accent-bg); stroke: none; opacity: 0.5; }
+    .trend-badge {
+      font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.4rem;
+      border-radius: 999px; white-space: nowrap; display: inline-block;
+    }
+    .trend-badge.up { background: #e6f9e6; color: #1a7a1a; }
+    .trend-badge.down { background: #fde8e8; color: #b91c1c; }
+    .trend-badge.flat { background: var(--toolbar-bg); color: var(--text-muted); }
+    @media (prefers-color-scheme: dark) {
+      .trend-badge.up { background: #0d3d0d; color: #6ee66e; }
+      .trend-badge.down { background: #3d0d0d; color: #f87171; }
+    }
+
+    /* Trends overview section */
+    .trends-overview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .trend-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .trend-card h4 {
+      font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+      margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.3rem;
+    }
+    .trend-card .big-number { font-size: 1.6rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+    .trend-card .sparkline-wrap { margin-top: 0.5rem; }
+    .top-movers { list-style: none; padding: 0; margin: 0; }
+    .top-movers li {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.35rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .top-movers li:last-child { border-bottom: none; }
+    .mover-name { font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 60%; }
+    .mover-change { font-weight: 700; white-space: nowrap; }
+    .mover-change.up { color: #1a7a1a; }
+    .mover-change.down { color: #b91c1c; }
+    @media (prefers-color-scheme: dark) {
+      .mover-change.up { color: #6ee66e; }
+      .mover-change.down { color: #f87171; }
+    }
+    @media (max-width: 600px) {
+      .trends-overview { grid-template-columns: 1fr; }
+    }
+
     /* Top Highlights */
     .highlights-area {
       display: grid;
@@ -435,6 +491,7 @@
 
   <nav class="top-nav">
     <div class="container">
+      <a href="#trends-section" class="nav-link">📈 Trends</a>
       <a href="#top-highlights" class="nav-link">🏆 Top 3</a>
       <a href="#nuget-packages" class="nav-link">📦 Packages</a>
       <a href="#github-repos" class="nav-link">🐙 Repositories</a>
@@ -449,6 +506,16 @@
     </div>
     <div id="error" class="error-msg" style="display:none;"></div>
     <div id="content" style="display:none;">
+
+      <!-- Trends Section -->
+      <section id="trends-section" style="display:none;">
+        <div class="section-header collapsible-header" data-section="trends-section">
+          <h2><span class="chevron">▼</span> <span class="icon">📈</span> Trends</h2>
+        </div>
+        <div class="section-content" id="trends-section-content">
+          <div id="trends-grid" class="trends-overview"></div>
+        </div>
+      </section>
 
       <!-- Top Highlights Section -->
       <section id="top-highlights">
@@ -611,6 +678,7 @@
   <script>
     const NUGET_URL = 'data/data.nuget.json';
     const REPOS_URL = 'data/data.repositories.json';
+    const TRENDS_URL = 'data/data.trends.json';
 
     const LANG_COLORS = {
       'C#': '#178600', 'JavaScript': '#f1e05a', 'TypeScript': '#3178c6',
@@ -622,6 +690,7 @@
     // Stored data (populated on fetch, used for filtering)
     let allPackages = [];
     let allRepos = [];
+    let trendsData = null;
 
     // View mode state
     let nugetViewMode = localStorage.getItem('nuget-view') || 'cards';
@@ -665,10 +734,66 @@
       });
     }
 
+    /* ── Sparkline + Trend Helpers ── */
+
+    function buildSparklineSvg(points, width, height) {
+      if (!points || points.length < 2) return '';
+      const vals = points.map(p => p.value);
+      const min = Math.min(...vals);
+      const max = Math.max(...vals);
+      const range = max - min || 1;
+      const step = width / (vals.length - 1);
+      const coords = vals.map((v, i) => {
+        const x = (i * step).toFixed(1);
+        const y = (height - ((v - min) / range) * (height - 2) - 1).toFixed(1);
+        return `${x},${y}`;
+      });
+      const linePoints = coords.join(' ');
+      const areaPoints = `0,${height} ${linePoints} ${width},${height}`;
+      return `<svg class="sparkline" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><polygon class="area" points="${areaPoints}"/><polyline points="${linePoints}"/></svg>`;
+    }
+
+    function calcTrendPct(points, days) {
+      if (!points || points.length < 2) return null;
+      const sorted = [...points].sort((a, b) => a.date.localeCompare(b.date));
+      const today = new Date();
+      const cutRecent = new Date(today); cutRecent.setDate(cutRecent.getDate() - days);
+      const cutPrev = new Date(today); cutPrev.setDate(cutPrev.getDate() - days * 2);
+      const recent = sorted.filter(p => new Date(p.date) >= cutRecent);
+      const prev = sorted.filter(p => { const d = new Date(p.date); return d >= cutPrev && d < cutRecent; });
+      if (!recent.length || !prev.length) return null;
+      const avgRecent = recent.reduce((s, p) => s + p.value, 0) / recent.length;
+      const avgPrev = prev.reduce((s, p) => s + p.value, 0) / prev.length;
+      if (avgPrev === 0) return avgRecent > 0 ? 100 : 0;
+      return ((avgRecent - avgPrev) / Math.abs(avgPrev)) * 100;
+    }
+
+    function trendBadgeHtml(pct) {
+      if (pct === null) return '';
+      const cls = pct > 0.5 ? 'up' : pct < -0.5 ? 'down' : 'flat';
+      const arrow = pct > 0.5 ? '↑' : pct < -0.5 ? '↓' : '→';
+      const label = Math.abs(pct).toFixed(1) + '%';
+      return `<span class="trend-badge ${cls}">${arrow} ${label}</span>`;
+    }
+
+    function getPackageTrend(packageId) {
+      if (!trendsData || !trendsData.packages) return null;
+      return trendsData.packages[packageId] || null;
+    }
+
+    function getRepoTrend(fullName) {
+      if (!trendsData || !trendsData.repositories) return null;
+      return trendsData.repositories[fullName] || null;
+    }
+
     /* ── NuGet Rendering ── */
 
     function renderNugetCard(pkg) {
       const tags = (pkg.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+      const trend = getPackageTrend(pkg.packageId);
+      const sparkline = trend ? buildSparklineSvg(trend.downloads, 100, 30) : '';
+      const pct = trend ? calcTrendPct(trend.downloads, 7) : null;
+      const badge = trendBadgeHtml(pct);
       return `
         <div class="card">
           <div class="card-header">
@@ -679,9 +804,10 @@
           </div>
           <div class="card-description">${esc(truncate(pkg.description, 140))}</div>
           <div class="card-stats">
-            <div class="stat">⬇️ <span class="value">${fmt(pkg.totalDownloads)}</span></div>
+            <div class="stat">⬇️ <span class="value">${fmt(pkg.totalDownloads)}</span> ${badge}</div>
             <div class="stat">📅 ${fmtDate(pkg.publishedDate)}</div>
           </div>
+          ${sparkline ? `<div class="sparkline-wrap">${sparkline}</div>` : ''}
           ${tags ? `<div class="tags">${tags}</div>` : ''}
         </div>`;
     }
@@ -711,6 +837,10 @@
     function renderRepoCard(repo) {
       const color = LANG_COLORS[repo.language] || '#888';
       const topics = (repo.topics || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+      const trend = getRepoTrend(repo.fullName || repo.name);
+      const sparkline = trend ? buildSparklineSvg(trend.stars, 100, 30) : '';
+      const pct = trend ? calcTrendPct(trend.stars, 7) : null;
+      const badge = trendBadgeHtml(pct);
       return `
         <div class="card">
           <div class="card-header">
@@ -721,13 +851,14 @@
           </div>
           <div class="card-description">${esc(truncate(repo.description, 160))}</div>
           <div class="card-stats">
-            <div class="stat">⭐ <span class="value">${fmt(repo.stars)}</span></div>
+            <div class="stat">⭐ <span class="value">${fmt(repo.stars)}</span> ${badge}</div>
             <div class="stat">🍴 <span class="value">${fmt(repo.forks)}</span></div>
             <div class="stat">🐛 Issues <span class="value">${fmt(repo.openIssues)}</span></div>
             <div class="stat">🔀 PRs <span class="value">${fmt(repo.openPullRequests)}</span></div>
             ${repo.language ? `<div class="stat"><span class="language-dot" style="background:${color}"></span>${esc(repo.language)}</div>` : ''}
             <div class="stat">📅 ${fmtDate(repo.lastPush)}</div>
           </div>
+          ${sparkline ? `<div class="sparkline-wrap">${sparkline}</div>` : ''}
           ${topics ? `<div class="tags">${topics}</div>` : ''}
         </div>`;
     }
@@ -1111,6 +1242,61 @@
       `;
     }
 
+    /* ── Trends Section Rendering ── */
+
+    function renderTrendsSection() {
+      if (!trendsData || !trendsData.packages || Object.keys(trendsData.packages).length === 0) {
+        document.getElementById('trends-section').style.display = 'none';
+        return;
+      }
+      document.getElementById('trends-section').style.display = '';
+
+      // Total downloads trend (sum per date)
+      const dateMap = {};
+      for (const [, pkg] of Object.entries(trendsData.packages)) {
+        for (const pt of (pkg.downloads || [])) {
+          dateMap[pt.date] = (dateMap[pt.date] || 0) + pt.value;
+        }
+      }
+      const totalPoints = Object.entries(dateMap)
+        .map(([date, value]) => ({ date, value }))
+        .sort((a, b) => a.date.localeCompare(b.date));
+
+      const totalSparkline = buildSparklineSvg(totalPoints, 200, 40);
+      const totalPct = calcTrendPct(totalPoints, 7);
+      const totalBadge = trendBadgeHtml(totalPct);
+      const latestTotal = totalPoints.length > 0 ? totalPoints[totalPoints.length - 1].value : 0;
+
+      // Top movers: packages with biggest % change in downloads (last 7 days vs prior 7)
+      const movers = [];
+      for (const [name, pkg] of Object.entries(trendsData.packages)) {
+        const pct = calcTrendPct(pkg.downloads, 7);
+        if (pct !== null) movers.push({ name, pct });
+      }
+      movers.sort((a, b) => Math.abs(b.pct) - Math.abs(a.pct));
+      const topMovers = movers.slice(0, 5);
+
+      const moversHtml = topMovers.length > 0
+        ? `<ul class="top-movers">${topMovers.map(m => {
+            const cls = m.pct > 0.5 ? 'up' : m.pct < -0.5 ? 'down' : '';
+            const arrow = m.pct > 0.5 ? '↑' : m.pct < -0.5 ? '↓' : '→';
+            return `<li><span class="mover-name">${esc(m.name)}</span><span class="mover-change ${cls}">${arrow} ${Math.abs(m.pct).toFixed(1)}%</span></li>`;
+          }).join('')}</ul>`
+        : '<p style="color:var(--text-muted);font-size:0.85rem;">Not enough data yet</p>';
+
+      document.getElementById('trends-grid').innerHTML = `
+        <div class="trend-card">
+          <h4>📊 Total Downloads</h4>
+          <div class="big-number">${fmt(latestTotal)} ${totalBadge}</div>
+          ${totalSparkline ? `<div class="sparkline-wrap">${totalSparkline}</div>` : ''}
+        </div>
+        <div class="trend-card">
+          <h4>🚀 Top Movers (7-day download change)</h4>
+          ${moversHtml}
+        </div>
+      `;
+    }
+
     /* ── Collapsible Sections ── */
 
     function initCollapsible() {
@@ -1154,6 +1340,14 @@
         const nugetData = await nugetRes.json();
         const reposData = await reposRes.json();
 
+        // Fetch trends data (optional — may not exist on first run)
+        try {
+          const trendsRes = await fetch(TRENDS_URL);
+          if (trendsRes.ok) {
+            trendsData = await trendsRes.json();
+          }
+        } catch (_) { /* trends not available yet — that's fine */ }
+
         // Store raw data for filtering
         allPackages = nugetData.packages || [];
         allRepos = reposData.repositories || [];
@@ -1182,6 +1376,7 @@
         wireFilters();
 
         // Initial render
+        renderTrendsSection();
         renderNugetSection();
         renderRepoSection();
         renderTopHighlights();

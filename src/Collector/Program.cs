@@ -270,14 +270,14 @@ Console.WriteLine("Pipeline 2: Collection");
 Console.WriteLine();
 
 // --- 1. Collect NuGet metrics ---
-Console.WriteLine("  [1/2] Collecting NuGet package metrics...");
+Console.WriteLine("  [1/3] Collecting NuGet package metrics...");
 
 INuGetCollector nugetCollector = new NuGetCollector(nugetHttpClient);
 var nugetMetrics = await nugetCollector.CollectAsync(packages);
 Console.WriteLine($"    → Collected {nugetMetrics.Count} packages");
 
 // --- 2. Collect GitHub metrics ---
-Console.WriteLine("  [2/2] Collecting GitHub repository metrics...");
+Console.WriteLine("  [2/3] Collecting GitHub repository metrics...");
 using var githubHttpClient = new HttpClient();
 githubHttpClient.DefaultRequestHeaders.UserAgent.Add(
     new ProductInfoHeaderValue("NuGetDashboardCollector", "1.0"));
@@ -294,6 +294,12 @@ if (!string.IsNullOrEmpty(token))
 IGitHubCollector githubCollector = new GitHubCollector(githubHttpClient);
 var githubMetrics = await githubCollector.CollectAsync(allRepos);
 Console.WriteLine($"    → Collected {githubMetrics.Count} repos");
+
+// --- 3. Aggregate trend data from history ---
+Console.WriteLine("  [3/3] Aggregating historical trends...");
+ITrendAggregationService trendService = new TrendAggregationService();
+var trendData = await trendService.AggregateAsync(repoRoot);
+Console.WriteLine($"    → {trendData.Packages.Count} package trends, {trendData.Repositories.Count} repo trends ({trendData.WindowDays}-day window)");
 
 // --- Write output ---
 var generatedAt = DateTimeOffset.UtcNow;
@@ -315,6 +321,8 @@ await writer.WriteNuGetAsync(nugetOutput, repoRoot);
 Console.WriteLine($"    → data.nuget.json");
 await writer.WriteRepositoriesAsync(reposOutput, repoRoot);
 Console.WriteLine($"    → data.repositories.json");
+await writer.WriteTrendsAsync(trendData, repoRoot);
+Console.WriteLine($"    → data.trends.json");
 
 // --- Summary ---
 Console.WriteLine();
