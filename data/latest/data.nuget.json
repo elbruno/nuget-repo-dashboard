@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-03T01:56:35.6370565+00:00",
+  "generatedAt": "2026-04-03T11:40:15.5043582+00:00",
   "packages": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
       "latestVersion": "1.1.5",
-      "totalDownloads": 2634,
+      "totalDownloads": 2636,
       "description": "Local embedding generation using Microsoft.Extensions.AI and ONNX Runtime",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
@@ -24,7 +24,7 @@
     {
       "packageId": "ElBruno.HuggingFace.Downloader",
       "latestVersion": "0.6.0",
-      "totalDownloads": 2182,
+      "totalDownloads": 2199,
       "description": "A .NET library to download files (ONNX models, tokenizers, voice presets, etc.) from Hugging Face Hub repositories with progress reporting, caching, and authentication support.",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
@@ -43,7 +43,7 @@
     {
       "packageId": "ElBruno.QwenTTS",
       "latestVersion": "1.1.1",
-      "totalDownloads": 1087,
+      "totalDownloads": 1127,
       "description": "Run Qwen3-TTS text-to-speech locally from C# using ONNX Runtime. Models download automatically from HuggingFace on first run.",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
@@ -86,7 +86,7 @@
     {
       "packageId": "ElBruno.LocalLLMs",
       "latestVersion": "0.7.2",
-      "totalDownloads": 916,
+      "totalDownloads": 917,
       "description": "Local LLM chat completions using Microsoft.Extensions.AI and ONNX Runtime GenAI. IChatClient implementation for running LLMs locally.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
@@ -128,7 +128,7 @@
     {
       "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
       "latestVersion": "1.1.5",
-      "totalDownloads": 664,
+      "totalDownloads": 665,
       "description": "Kernel Memory integration for ElBruno.LocalEmbeddings \u2014 provides ITextEmbeddingGenerator adapter and KernelMemoryBuilder extensions",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
@@ -148,7 +148,7 @@
     {
       "packageId": "ElBruno.OllamaSharp.Extensions",
       "latestVersion": "1.0.2",
-      "totalDownloads": 574,
+      "totalDownloads": 576,
       "description": "C# 14-ready extension library for OllamaSharp that adds configurable timeout support to OllamaApiClient. Provides fluent, builder pattern, and functional configuration styles for managing timeouts in long-running LLM inference operations.",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions",
@@ -168,7 +168,7 @@
     {
       "packageId": "ElBruno.AgentsOrchestration.Abstractions",
       "latestVersion": "0.5.5",
-      "totalDownloads": 384,
+      "totalDownloads": 388,
       "description": "Core abstractions for multi-agent orchestration with the Microsoft Agent Framework. Includes agent roles, configuration, IAgentClient interface, session factory, and instruction loading utilities.",
       "authors": "Bruno Capuano",
       "projectUrl": "",
@@ -288,7 +288,7 @@
     {
       "packageId": "ElBruno.AgentsOrchestration.Orchestration",
       "latestVersion": "0.5.5",
-      "totalDownloads": 354,
+      "totalDownloads": 356,
       "description": "Ultralight multi-agent orchestration engine for the Microsoft Agent Framework. Implements a 6-step pipeline (Plan, Parse, Execute, Verify, Review, Report) with event streaming via System.Threading.Channels.",
       "authors": "Bruno Capuano",
       "projectUrl": "",
@@ -303,6 +303,27 @@
       ],
       "listed": true,
       "publishedDate": "2026-02-28T18:06:03.217+00:00"
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.CLI",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 288,
+      "description": "Generate and display QR codes in the console using Unicode block characters. Optimized for terminal output with 2:1 aspect ratio correction. Perfect for CLI tools and terminal applications.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator.CLI",
+      "tags": [
+        "qrcode",
+        "qr",
+        "console",
+        "cli",
+        "terminal",
+        "unicode",
+        "barcode",
+        "generator",
+        "display"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:06.13+00:00"
     },
     {
       "packageId": "ElBruno.Text2Image.DirectML",
@@ -325,6 +346,25 @@
       "publishedDate": "2026-02-28T21:07:49.897+00:00"
     },
     {
+      "packageId": "ElBruno.Realtime.Whisper",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 292,
+      "description": "Whisper-based ISpeechToTextClient implementation for ElBruno.Realtime. Provides local speech-to-text using Whisper.net with automatic GGML model download. Supports tiny.en (fast) and base.en (accurate) models.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
+      "tags": [
+        "whisper",
+        "speech-to-text",
+        "stt",
+        "onnx",
+        "ai",
+        "local",
+        "realtime"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T17:26:51.32+00:00"
+    },
+    {
       "packageId": "ElBruno.Text2Image.Foundry",
       "latestVersion": "0.6.0",
       "totalDownloads": 300,
@@ -343,28 +383,9 @@
       "publishedDate": "2026-02-28T21:07:50.12+00:00"
     },
     {
-      "packageId": "ElBruno.Realtime.Whisper",
-      "latestVersion": "0.6.0",
-      "totalDownloads": 290,
-      "description": "Whisper-based ISpeechToTextClient implementation for ElBruno.Realtime. Provides local speech-to-text using Whisper.net with automatic GGML model download. Supports tiny.en (fast) and base.en (accurate) models.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
-      "tags": [
-        "whisper",
-        "speech-to-text",
-        "stt",
-        "onnx",
-        "ai",
-        "local",
-        "realtime"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-28T17:26:51.32+00:00"
-    },
-    {
       "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
       "latestVersion": "0.5.4",
-      "totalDownloads": 315,
+      "totalDownloads": 317,
       "description": "Semantic routing for Model Context Protocol (MCP) tool definitions using local embeddings. Indexes MCP tools and returns the most relevant tools for a given prompt via vector search.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol",
@@ -383,30 +404,9 @@
       "publishedDate": "2026-03-29T13:47:08.987+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.CLI",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 247,
-      "description": "Generate and display QR codes in the console using Unicode block characters. Optimized for terminal output with 2:1 aspect ratio correction. Perfect for CLI tools and terminal applications.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator.CLI",
-      "tags": [
-        "qrcode",
-        "qr",
-        "console",
-        "cli",
-        "terminal",
-        "unicode",
-        "barcode",
-        "generator",
-        "display"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:06.13+00:00"
-    },
-    {
       "packageId": "ElBruno.Text2Image.Cpu",
       "latestVersion": "0.6.0",
-      "totalDownloads": 286,
+      "totalDownloads": 288,
       "description": "CPU runtime for ElBruno.Text2Image. Includes all text-to-image generation functionality with CPU-based inference via ONNX Runtime. Install this for environments without a GPU.",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
@@ -484,6 +484,24 @@
       "publishedDate": "2026-02-28T17:26:50.98+00:00"
     },
     {
+      "packageId": "ElBruno.QRCodeGenerator.Svg",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 210,
+      "description": "Generate QR codes as resolution-independent SVG markup. Perfect for web, email, documents, and print.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "svg",
+        "vector",
+        "web",
+        "email",
+        "printing"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:07.52+00:00"
+    },
+    {
       "packageId": "ElBruno.AI.Evaluation.SyntheticData",
       "latestVersion": "0.5.2",
       "totalDownloads": 172,
@@ -540,7 +558,7 @@
     {
       "packageId": "ElBruno.QRCodeGenerator.Payloads",
       "latestVersion": "1.1.0",
-      "totalDownloads": 181,
+      "totalDownloads": 182,
       "description": "Fluent API builders for structured QR code payloads: WiFi, vCard, Email, SMS, Geographic coordinates, and URLs.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
@@ -558,27 +576,29 @@
       "publishedDate": "2026-04-01T21:58:04.627+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Svg",
+      "packageId": "ElBruno.QRCodeGenerator.Tool",
       "latestVersion": "1.1.0",
-      "totalDownloads": 119,
-      "description": "Generate QR codes as resolution-independent SVG markup. Perfect for web, email, documents, and print.",
+      "totalDownloads": 154,
+      "description": "Global dotnet tool for command-line QR code generation in console, SVG, PNG, JPEG, ASCII, or PDF formats.",
       "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "projectUrl": "",
       "tags": [
         "qrcode",
+        "tool",
+        "cli",
+        "console",
         "svg",
-        "vector",
-        "web",
-        "email",
-        "printing"
+        "png",
+        "pdf",
+        "ascii"
       ],
       "listed": true,
-      "publishedDate": "2026-04-01T21:58:07.52+00:00"
+      "publishedDate": "2026-04-01T21:58:05.853+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Ascii",
       "latestVersion": "1.1.0",
-      "totalDownloads": 117,
+      "totalDownloads": 138,
       "description": "Generate QR codes as ASCII art text. Perfect for legacy terminals, text files, and embedded output.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
@@ -594,9 +614,27 @@
       "publishedDate": "2026-04-01T21:58:07.05+00:00"
     },
     {
+      "packageId": "ElBruno.QRCodeGenerator.Image",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 115,
+      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "png",
+        "jpeg",
+        "image",
+        "bitmap",
+        "skiasharp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:06.607+00:00"
+    },
+    {
       "packageId": "ElBruno.QRCodeGenerator.Pdf",
       "latestVersion": "1.1.0",
-      "totalDownloads": 116,
+      "totalDownloads": 117,
       "description": "Generate PDF documents with embedded QR codes. Uses PdfSharpCore for cross-platform PDF generation.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
@@ -609,6 +647,27 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-01T21:58:07.96+00:00"
+    },
+    {
+      "packageId": "ElBruno.Whisper",
+      "latestVersion": "0.1.5",
+      "totalDownloads": 135,
+      "description": "Local Whisper speech-to-text using ONNX Runtime. Auto-downloads models from HuggingFace. Supports tiny, base, small, medium, and large models.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Whisper",
+      "tags": [
+        "whisper",
+        "speech-to-text",
+        "stt",
+        "onnx",
+        "ai",
+        "local",
+        "audio",
+        "transcription",
+        "huggingface"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-02T16:44:33.59+00:00"
     },
     {
       "packageId": "elbruno.Extensions.AI.Skills.Cli",
@@ -630,47 +689,6 @@
       "publishedDate": "2026-02-06T21:09:15.113+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Tool",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 113,
-      "description": "Global dotnet tool for command-line QR code generation in console, SVG, PNG, JPEG, ASCII, or PDF formats.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "",
-      "tags": [
-        "qrcode",
-        "tool",
-        "cli",
-        "console",
-        "svg",
-        "png",
-        "pdf",
-        "ascii"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:05.853+00:00"
-    },
-    {
-      "packageId": "ElBruno.Whisper",
-      "latestVersion": "0.1.5",
-      "totalDownloads": 105,
-      "description": "Local Whisper speech-to-text using ONNX Runtime. Auto-downloads models from HuggingFace. Supports tiny, base, small, medium, and large models.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Whisper",
-      "tags": [
-        "whisper",
-        "speech-to-text",
-        "stt",
-        "onnx",
-        "ai",
-        "local",
-        "audio",
-        "transcription",
-        "huggingface"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-02T16:44:33.59+00:00"
-    },
-    {
       "packageId": "elbruno.Extensions.AI.Skills.Core",
       "latestVersion": "0.1.0",
       "totalDownloads": 89,
@@ -690,46 +708,9 @@
       "publishedDate": "2026-02-06T21:09:03.057+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Image",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 74,
-      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "png",
-        "jpeg",
-        "image",
-        "bitmap",
-        "skiasharp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:06.607+00:00"
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.AI",
-      "latestVersion": "0.3.0",
-      "totalDownloads": 0,
-      "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "converter",
-        "ai",
-        "ocr",
-        "llm",
-        "chatclient",
-        "markitdown"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-02T22:06:34.05+00:00"
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet",
       "latestVersion": "0.3.0",
-      "totalDownloads": 0,
+      "totalDownloads": 41,
       "description": ".NET library that converts file formats to Markdown for AI pipelines, documentation workflows, and developer tools. Inspired by Python markitdown.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
@@ -749,9 +730,28 @@
       "publishedDate": "2026-04-02T22:06:33.573+00:00"
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.AI",
+      "latestVersion": "0.3.0",
+      "totalDownloads": 16,
+      "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "ai",
+        "ocr",
+        "llm",
+        "chatclient",
+        "markitdown"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-02T22:06:34.05+00:00"
+    },
+    {
       "packageId": "ElBruno.MarkItDotNet.Excel",
       "latestVersion": "0.3.0",
-      "totalDownloads": 0,
+      "totalDownloads": 18,
       "description": "Excel (.xlsx) to Markdown converter for ElBruno.MarkItDotNet. Converts spreadsheet sheets to Markdown tables.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
@@ -769,7 +769,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.PowerPoint",
       "latestVersion": "0.3.0",
-      "totalDownloads": 0,
+      "totalDownloads": 16,
       "description": "PowerPoint (.pptx) to Markdown converter for ElBruno.MarkItDotNet. Converts slides and speaker notes to Markdown.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
