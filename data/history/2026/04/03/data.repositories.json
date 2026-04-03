@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-03T11:40:15.5043582+00:00",
+  "generatedAt": "2026-04-03T19:21:16.2736757+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -61,18 +61,18 @@
       "fullName": "elbruno/ElBruno.QwenTTS",
       "stars": 12,
       "forks": 1,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-04-02T20:35:28+00:00",
+      "lastPush": "2026-04-03T15:46:56+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [],
       "createdAt": "2026-02-21T16:27:42+00:00",
-      "updatedAt": "2026-04-02T20:35:34+00:00",
-      "size": 2757,
+      "updatedAt": "2026-04-03T15:47:01+00:00",
+      "size": 2793,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
@@ -80,18 +80,7 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": [
-        {
-          "number": 27,
-          "title": "1.7b works, but the text was trimed",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/27",
-          "createdAt": "2026-04-03T05:56:08+00:00",
-          "updatedAt": "2026-04-03T05:56:36+00:00",
-          "userLogin": "jasonzhang761213",
-          "labels": [],
-          "commentsCount": 0
-        }
-      ]
+      "recentIssues": []
     },
     {
       "owner": "elbruno",
