@@ -141,3 +141,22 @@ Refactored `refresh-inventory.yml` to delegate all business logic to the C# Coll
 **File Paths:**
 - `.github/workflows/refresh-inventory.yml` (rewritten, ~70 lines → ~60 lines, 90% less bash)
 - `.github/workflows/refresh-metrics.yml` (verified, no changes needed)
+
+### TrendAggregationService Data Integration (2026-01-XX)
+
+**Workflow Status:** Completed  
+**Objective:** Support new TrendAggregationService output in deployment pipeline
+
+**Changes Made:**
+1. **Assemble site step** (line 65-71): Added copy operation for `data/latest/data.trends.json` → `_site/data/data.trends.json`
+   - Follows existing pattern: `cp data/latest/{filename} _site/data/{filename}`
+   - Deployed alongside `data.nuget.json` and `data.repositories.json`
+
+2. **Git change detection** (line 48): Verified existing pattern `git add --force data/latest/*.json data/history/` already covers new file
+   - Glob pattern `*.json` captures `data.trends.json` automatically; no change needed
+   - File is committed when Collector detects changes
+
+**Why:** TrendAggregationService will output to `data/latest/data.trends.json` during Collector runs. Dashboard needs the file in `_site/data/` for frontend consumption (via `data/data.trends.json` relative path).
+
+**File Modified:**
+- `.github/workflows/refresh-metrics.yml` (added 1 line in Assemble site step)

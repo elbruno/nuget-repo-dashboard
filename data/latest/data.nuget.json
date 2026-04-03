@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-03T11:40:15.5043582+00:00",
+  "generatedAt": "2026-04-03T16:37:54.7366098+00:00",
   "packages": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
@@ -42,7 +42,7 @@
     },
     {
       "packageId": "ElBruno.QwenTTS",
-      "latestVersion": "1.1.1",
+      "latestVersion": "1.2.0",
       "totalDownloads": 1127,
       "description": "Run Qwen3-TTS text-to-speech locally from C# using ONNX Runtime. Models download automatically from HuggingFace on first run.",
       "authors": "Bruno Capuano",
@@ -60,7 +60,7 @@
         "machine-learning"
       ],
       "listed": true,
-      "publishedDate": "2026-04-02T20:34:16.397+00:00"
+      "publishedDate": "2026-04-03T15:11:32.503+00:00"
     },
     {
       "packageId": "ElBruno.VibeVoiceTTS",

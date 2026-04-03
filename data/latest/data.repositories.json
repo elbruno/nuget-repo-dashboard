@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-03T11:40:15.5043582+00:00",
+  "generatedAt": "2026-04-03T16:37:54.7366098+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -25,8 +25,7 @@
       "hasPages": false,
       "networkCount": 1,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings"
     },
     {
       "owner": "elbruno",
@@ -52,8 +51,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader"
     },
     {
       "owner": "elbruno",
@@ -61,37 +59,25 @@
       "fullName": "elbruno/ElBruno.QwenTTS",
       "stars": 12,
       "forks": 1,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-04-02T20:35:28+00:00",
+      "lastPush": "2026-04-03T15:46:56+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [],
       "createdAt": "2026-02-21T16:27:42+00:00",
-      "updatedAt": "2026-04-02T20:35:34+00:00",
-      "size": 2757,
+      "updatedAt": "2026-04-03T15:47:01+00:00",
+      "size": 2793,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
       "hasPages": false,
       "networkCount": 1,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": [
-        {
-          "number": 27,
-          "title": "1.7b works, but the text was trimed",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/27",
-          "createdAt": "2026-04-03T05:56:08+00:00",
-          "updatedAt": "2026-04-03T05:56:36+00:00",
-          "userLogin": "jasonzhang761213",
-          "labels": [],
-          "commentsCount": 0
-        }
-      ]
+      "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS"
     },
     {
       "owner": "elbruno",
@@ -117,8 +103,7 @@
       "hasPages": false,
       "networkCount": 1,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS"
     },
     {
       "owner": "elbruno",
@@ -144,8 +129,7 @@
       "hasPages": false,
       "networkCount": 2,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs"
     },
     {
       "owner": "elbruno",
@@ -171,8 +155,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions"
     },
     {
       "owner": "elbruno",
@@ -198,8 +181,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image"
     },
     {
       "owner": "elbruno",
@@ -234,8 +216,7 @@
       "hasPages": true,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation"
     },
     {
       "owner": "elbruno",
@@ -274,8 +255,7 @@
       "hasPages": false,
       "networkCount": 1,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime"
     },
     {
       "owner": "elbruno",
@@ -301,8 +281,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol"
     },
     {
       "owner": "elbruno",
@@ -328,8 +307,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex"
     },
     {
       "owner": "elbruno",
@@ -355,8 +333,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray"
     },
     {
       "owner": "elbruno",
@@ -382,8 +359,7 @@
       "hasPages": false,
       "networkCount": 1,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator"
     },
     {
       "owner": "elbruno",
@@ -409,8 +385,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper"
     },
     {
       "owner": "elbruno",
@@ -436,8 +411,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/elbruno-agentskills",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/elbruno-agentskills"
     },
     {
       "owner": "elbruno",
@@ -463,8 +437,7 @@
       "hasPages": false,
       "networkCount": 0,
       "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "recentIssues": []
+      "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet"
     }
   ]
 }

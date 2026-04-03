@@ -68,6 +68,7 @@ jobs:
           cp site/index.html _site/
           cp data/latest/data.nuget.json _site/data/data.nuget.json
           cp data/latest/data.repositories.json _site/data/data.repositories.json
+          cp data/latest/data.trends.json _site/data/data.trends.json
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
