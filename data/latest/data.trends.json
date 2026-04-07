@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T16:09:10.7186832+00:00",
+  "generatedAt": "2026-04-07T16:22:10.1396038+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -1499,6 +1499,20 @@
         {
           "date": "2026-04-05",
           "version": "0.11.0"
+        }
+      ]
+    },
+    "graphify-dotnet": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "0.6.0"
         }
       ]
     }
@@ -3194,6 +3208,32 @@
           "date": "2026-04-06",
           "value": 0
         },
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ]
+    },
+    "elbruno/graphify-dotnet": {
+      "stars": [
+        {
+          "date": "2026-04-07",
+          "value": 10
+        }
+      ],
+      "forks": [
+        {
+          "date": "2026-04-07",
+          "value": 3
+        }
+      ],
+      "openIssues": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "openPullRequests": [
         {
           "date": "2026-04-07",
           "value": 0
