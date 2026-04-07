@@ -62,13 +62,43 @@
     ]
   },
   {
+    "packageId": "ElBruno.LocalEmbeddings.Harrier",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
     "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
     "repos": [
       "elbruno/elbruno.localembeddings"
     ]
   },
   {
+    "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
     "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.Npu",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
     "repos": [
       "elbruno/elbruno.localembeddings"
     ]
@@ -99,6 +129,12 @@
   },
   {
     "packageId": "ElBruno.MarkItDotNet.AI",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Cli",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
     ]
