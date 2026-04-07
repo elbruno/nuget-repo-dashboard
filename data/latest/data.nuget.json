@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T11:56:31.1083478+00:00",
+  "generatedAt": "2026-04-07T16:09:10.7493378+00:00",
   "packages": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
@@ -330,24 +330,22 @@
       "publishedDate": "2026-04-01T21:58:06.13+00:00"
     },
     {
-      "packageId": "ElBruno.Text2Image.DirectML",
+      "packageId": "ElBruno.Text2Image.Foundry",
       "latestVersion": "0.6.0",
-      "totalDownloads": 284,
-      "description": "DirectML GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable DirectML-based inference for Stable Diffusion image generation on AMD, Intel, and NVIDIA GPUs (Windows only).",
+      "totalDownloads": 301,
+      "description": "Microsoft Foundry cloud image generation for ElBruno.Text2Image. Provides FLUX.2 text-to-image generation via the Microsoft Foundry REST API. No local models needed \u2014 runs in the cloud.",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
       "tags": [
         "text-to-image",
-        "stable-diffusion",
+        "flux2",
         "image-generation",
-        "onnx",
-        "onnxruntime",
-        "directml",
-        "gpu",
+        "microsoft-foundry",
+        "cloud",
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T21:07:49.897+00:00"
+      "publishedDate": "2026-02-28T21:07:50.12+00:00"
     },
     {
       "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
@@ -371,22 +369,24 @@
       "publishedDate": "2026-04-04T15:37:07.34+00:00"
     },
     {
-      "packageId": "ElBruno.Text2Image.Foundry",
+      "packageId": "ElBruno.Text2Image.DirectML",
       "latestVersion": "0.6.0",
-      "totalDownloads": 301,
-      "description": "Microsoft Foundry cloud image generation for ElBruno.Text2Image. Provides FLUX.2 text-to-image generation via the Microsoft Foundry REST API. No local models needed \u2014 runs in the cloud.",
+      "totalDownloads": 284,
+      "description": "DirectML GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable DirectML-based inference for Stable Diffusion image generation on AMD, Intel, and NVIDIA GPUs (Windows only).",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
       "tags": [
         "text-to-image",
-        "flux2",
+        "stable-diffusion",
         "image-generation",
-        "microsoft-foundry",
-        "cloud",
+        "onnx",
+        "onnxruntime",
+        "directml",
+        "gpu",
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T21:07:50.12+00:00"
+      "publishedDate": "2026-02-28T21:07:49.897+00:00"
     },
     {
       "packageId": "ElBruno.Realtime.Whisper",
@@ -468,6 +468,24 @@
       "publishedDate": "2026-03-03T17:31:01.013+00:00"
     },
     {
+      "packageId": "ElBruno.QRCodeGenerator.Svg",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 213,
+      "description": "Generate QR codes as resolution-independent SVG markup. Perfect for web, email, documents, and print.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "svg",
+        "vector",
+        "web",
+        "email",
+        "printing"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:07.52+00:00"
+    },
+    {
       "packageId": "ElBruno.Realtime.SileroVad",
       "latestVersion": "0.6.0",
       "totalDownloads": 287,
@@ -486,24 +504,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-02-28T17:26:50.98+00:00"
-    },
-    {
-      "packageId": "ElBruno.QRCodeGenerator.Svg",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 213,
-      "description": "Generate QR codes as resolution-independent SVG markup. Perfect for web, email, documents, and print.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "svg",
-        "vector",
-        "web",
-        "email",
-        "printing"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:07.52+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -621,22 +621,22 @@
       "publishedDate": "2026-04-01T21:58:05.853+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Image",
+      "packageId": "ElBruno.QRCodeGenerator.Ascii",
       "latestVersion": "1.1.0",
-      "totalDownloads": 140,
-      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
+      "totalDownloads": 141,
+      "description": "Generate QR codes as ASCII art text. Perfect for legacy terminals, text files, and embedded output.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
       "tags": [
         "qrcode",
-        "png",
-        "jpeg",
-        "image",
-        "bitmap",
-        "skiasharp"
+        "ascii",
+        "text",
+        "art",
+        "terminal",
+        "console"
       ],
       "listed": true,
-      "publishedDate": "2026-04-01T21:58:06.607+00:00"
+      "publishedDate": "2026-04-01T21:58:07.05+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Payloads",
@@ -659,6 +659,24 @@
       "publishedDate": "2026-04-01T21:58:04.627+00:00"
     },
     {
+      "packageId": "ElBruno.QRCodeGenerator.Image",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 140,
+      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "png",
+        "jpeg",
+        "image",
+        "bitmap",
+        "skiasharp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:06.607+00:00"
+    },
+    {
       "packageId": "ElBruno.Whisper",
       "latestVersion": "0.1.5",
       "totalDownloads": 163,
@@ -678,24 +696,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-02T16:44:33.59+00:00"
-    },
-    {
-      "packageId": "ElBruno.QRCodeGenerator.Ascii",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 141,
-      "description": "Generate QR codes as ASCII art text. Perfect for legacy terminals, text files, and embedded output.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "ascii",
-        "text",
-        "art",
-        "terminal",
-        "console"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:07.05+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Excel",
@@ -827,6 +827,17 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-04T16:07:14.14+00:00"
+    },
+    {
+      "packageId": "graphify-dotnet",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 0,
+      "description": "AI-powered knowledge graph builder for codebases",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/graphify-dotnet",
+      "tags": [],
+      "listed": true,
+      "publishedDate": "2026-04-07T15:18:25.68+00:00"
     }
   ]
 }
