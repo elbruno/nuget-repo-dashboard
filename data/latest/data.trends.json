@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T20:24:13.5472934+00:00",
+  "generatedAt": "2026-04-07T21:06:24.9317501+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -37,6 +37,10 @@
         {
           "date": "2026-04-05",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
         }
       ]
     },
@@ -235,6 +239,10 @@
         {
           "date": "2026-04-05",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
         }
       ]
     },
@@ -273,6 +281,10 @@
         {
           "date": "2026-04-05",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
         }
       ]
     },
@@ -481,6 +493,10 @@
         {
           "date": "2026-04-05",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
         }
       ]
     },
@@ -1308,7 +1324,7 @@
         },
         {
           "date": "2026-04-07",
-          "version": "0.4.0"
+          "version": "0.5.2"
         }
       ]
     },
@@ -1350,7 +1366,7 @@
         },
         {
           "date": "2026-04-07",
-          "version": "0.4.0"
+          "version": "0.5.2"
         }
       ]
     },
@@ -1392,7 +1408,7 @@
         },
         {
           "date": "2026-04-07",
-          "version": "0.4.0"
+          "version": "0.5.2"
         }
       ]
     },
@@ -1434,7 +1450,7 @@
         },
         {
           "date": "2026-04-07",
-          "version": "0.4.0"
+          "version": "0.5.2"
         }
       ]
     },
@@ -1476,7 +1492,7 @@
         },
         {
           "date": "2026-04-07",
-          "version": "0.4.0"
+          "version": "0.5.2"
         }
       ]
     },
@@ -1502,6 +1518,62 @@
         }
       ]
     },
+    "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
+        }
+      ]
+    },
+    "ElBruno.LocalEmbeddings.Npu.Intel": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
+        }
+      ]
+    },
+    "ElBruno.LocalEmbeddings.Npu": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
+        }
+      ]
+    },
+    "ElBruno.LocalEmbeddings.Harrier": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
+        }
+      ]
+    },
     "graphify-dotnet": {
       "downloads": [
         {
@@ -1513,6 +1585,34 @@
         {
           "date": "2026-04-07",
           "version": "0.6.0"
+        }
+      ]
+    },
+    "ElBruno.LocalEmbeddings.Npu.Qualcomm": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.Cli": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "0.5.2"
         }
       ]
     }
@@ -3218,13 +3318,13 @@
       "stars": [
         {
           "date": "2026-04-07",
-          "value": 11
+          "value": 13
         }
       ],
       "forks": [
         {
           "date": "2026-04-07",
-          "value": 4
+          "value": 5
         }
       ],
       "openIssues": [
