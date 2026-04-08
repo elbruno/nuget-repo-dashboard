@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T21:06:24.9317501+00:00",
+  "generatedAt": "2026-04-08T10:06:33.937731+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -26,7 +26,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 2722
+          "value": 2737
         }
       ],
       "versionHistory": [
@@ -68,7 +68,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 2311
+          "value": 2363
         }
       ],
       "versionHistory": [
@@ -106,7 +106,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 1264
+          "value": 1321
         }
       ],
       "versionHistory": [
@@ -186,7 +186,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 1012
+          "value": 1017
         }
       ],
       "versionHistory": [
@@ -228,7 +228,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 728
+          "value": 732
         }
       ],
       "versionHistory": [
@@ -270,7 +270,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 704
+          "value": 706
         }
       ],
       "versionHistory": [
@@ -482,7 +482,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 419
+          "value": 421
         }
       ],
       "versionHistory": [
@@ -694,7 +694,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 353
+          "value": 355
         }
       ],
       "versionHistory": [
@@ -732,7 +732,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 293
+          "value": 295
         }
       ],
       "versionHistory": [
@@ -1004,7 +1004,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 185
+          "value": 187
         }
       ],
       "versionHistory": [
@@ -1038,7 +1038,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 213
+          "value": 215
         }
       ],
       "versionHistory": [
@@ -1072,7 +1072,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 141
+          "value": 143
         }
       ],
       "versionHistory": [
@@ -1106,7 +1106,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 120
+          "value": 122
         }
       ],
       "versionHistory": [
@@ -1174,7 +1174,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 159
+          "value": 161
         }
       ],
       "versionHistory": [
@@ -1208,7 +1208,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 163
+          "value": 171
         }
       ],
       "versionHistory": [
@@ -1276,7 +1276,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 140
+          "value": 142
         }
       ],
       "versionHistory": [
@@ -1310,7 +1310,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 137
+          "value": 162
         }
       ],
       "versionHistory": [
@@ -1352,7 +1352,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 185
+          "value": 220
         }
       ],
       "versionHistory": [
@@ -1394,7 +1394,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 135
+          "value": 163
         }
       ],
       "versionHistory": [
@@ -1436,7 +1436,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 132
+          "value": 160
         }
       ],
       "versionHistory": [
@@ -1478,7 +1478,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 65
+          "value": 86
         }
       ],
       "versionHistory": [
@@ -1508,7 +1508,7 @@
         },
         {
           "date": "2026-04-07",
-          "value": 34
+          "value": 36
         }
       ],
       "versionHistory": [
@@ -1560,34 +1560,6 @@
         }
       ]
     },
-    "ElBruno.LocalEmbeddings.Harrier": {
-      "downloads": [
-        {
-          "date": "2026-04-07",
-          "value": 0
-        }
-      ],
-      "versionHistory": [
-        {
-          "date": "2026-04-07",
-          "version": "1.4.2"
-        }
-      ]
-    },
-    "graphify-dotnet": {
-      "downloads": [
-        {
-          "date": "2026-04-07",
-          "value": 0
-        }
-      ],
-      "versionHistory": [
-        {
-          "date": "2026-04-07",
-          "version": "0.6.0"
-        }
-      ]
-    },
     "ElBruno.LocalEmbeddings.Npu.Qualcomm": {
       "downloads": [
         {
@@ -1613,6 +1585,34 @@
         {
           "date": "2026-04-07",
           "version": "0.5.2"
+        }
+      ]
+    },
+    "graphify-dotnet": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "0.6.0"
+        }
+      ]
+    },
+    "ElBruno.LocalEmbeddings.Harrier": {
+      "downloads": [
+        {
+          "date": "2026-04-07",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-07",
+          "version": "1.4.2"
         }
       ]
     }
@@ -3318,7 +3318,7 @@
       "stars": [
         {
           "date": "2026-04-07",
-          "value": 13
+          "value": 14
         }
       ],
       "forks": [
