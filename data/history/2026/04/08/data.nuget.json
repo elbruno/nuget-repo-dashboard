@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-08T10:06:33.9674969+00:00",
+  "generatedAt": "2026-04-08T19:34:18.3757108+00:00",
   "packages": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
@@ -23,7 +23,7 @@
     },
     {
       "packageId": "ElBruno.HuggingFace.Downloader",
-      "latestVersion": "1.0.0",
+      "latestVersion": "1.1.0",
       "totalDownloads": 2363,
       "description": "A .NET library to download files (ONNX models, tokenizers, voice presets, etc.) from Hugging Face Hub repositories with progress reporting, caching, and authentication support.",
       "authors": "Bruno Capuano",
@@ -38,11 +38,11 @@
         "nuget"
       ],
       "listed": true,
-      "publishedDate": "2026-04-06T14:39:39.663+00:00"
+      "publishedDate": "2026-04-08T18:15:58.017+00:00"
     },
     {
       "packageId": "ElBruno.QwenTTS",
-      "latestVersion": "1.2.3",
+      "latestVersion": "1.3.0",
       "totalDownloads": 1321,
       "description": "Run Qwen3-TTS text-to-speech locally from C# using ONNX Runtime. Models download automatically from HuggingFace on first run.",
       "authors": "Bruno Capuano",
@@ -60,7 +60,7 @@
         "machine-learning"
       ],
       "listed": true,
-      "publishedDate": "2026-04-06T13:48:51.637+00:00"
+      "publishedDate": "2026-04-08T18:59:24.073+00:00"
     },
     {
       "packageId": "ElBruno.LocalLLMs",
@@ -330,24 +330,6 @@
       "publishedDate": "2026-04-04T15:37:07.34+00:00"
     },
     {
-      "packageId": "ElBruno.Text2Image.Foundry",
-      "latestVersion": "0.6.0",
-      "totalDownloads": 301,
-      "description": "Microsoft Foundry cloud image generation for ElBruno.Text2Image. Provides FLUX.2 text-to-image generation via the Microsoft Foundry REST API. No local models needed \u2014 runs in the cloud.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
-      "tags": [
-        "text-to-image",
-        "flux2",
-        "image-generation",
-        "microsoft-foundry",
-        "cloud",
-        "ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-28T21:07:50.12+00:00"
-    },
-    {
       "packageId": "ElBruno.QRCodeGenerator.CLI",
       "latestVersion": "1.1.0",
       "totalDownloads": 295,
@@ -386,6 +368,24 @@
       ],
       "listed": true,
       "publishedDate": "2026-02-28T17:26:51.32+00:00"
+    },
+    {
+      "packageId": "ElBruno.Text2Image.Foundry",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 301,
+      "description": "Microsoft Foundry cloud image generation for ElBruno.Text2Image. Provides FLUX.2 text-to-image generation via the Microsoft Foundry REST API. No local models needed \u2014 runs in the cloud.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
+      "tags": [
+        "text-to-image",
+        "flux2",
+        "image-generation",
+        "microsoft-foundry",
+        "cloud",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T21:07:50.12+00:00"
     },
     {
       "packageId": "ElBruno.Text2Image.Cpu",
@@ -506,25 +506,6 @@
       "publishedDate": "2026-04-01T21:58:07.52+00:00"
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.AI",
-      "latestVersion": "0.5.2",
-      "totalDownloads": 162,
-      "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "converter",
-        "ai",
-        "ocr",
-        "llm",
-        "chatclient",
-        "markitdown"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-07T19:14:59.553+00:00"
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet",
       "latestVersion": "0.5.2",
       "totalDownloads": 220,
@@ -547,22 +528,23 @@
       "publishedDate": "2026-04-07T19:14:59.203+00:00"
     },
     {
-      "packageId": "ElBruno.AI.Evaluation.SyntheticData",
+      "packageId": "ElBruno.MarkItDotNet.AI",
       "latestVersion": "0.5.2",
-      "totalDownloads": 173,
-      "description": "Synthetic data generation for AI evaluation testing in .NET",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "totalDownloads": 162,
+      "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
       "tags": [
+        "markdown",
+        "converter",
         "ai",
-        "evaluation",
-        "testing",
-        "observability",
-        "dotnet",
-        "llm"
+        "ocr",
+        "llm",
+        "chatclient",
+        "markitdown"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T18:54:00.33+00:00"
+      "publishedDate": "2026-04-07T19:14:59.553+00:00"
     },
     {
       "packageId": "ElBruno.AI.Evaluation.Xunit",
@@ -583,10 +565,10 @@
       "publishedDate": "2026-02-28T18:54:00.513+00:00"
     },
     {
-      "packageId": "ElBruno.AI.Evaluation.Reporting",
+      "packageId": "ElBruno.AI.Evaluation.SyntheticData",
       "latestVersion": "0.5.2",
-      "totalDownloads": 178,
-      "description": "Reporting and persistence for ElBruno.AI.Evaluation",
+      "totalDownloads": 173,
+      "description": "Synthetic data generation for AI evaluation testing in .NET",
       "authors": "Bruno Capuano",
       "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
       "tags": [
@@ -598,7 +580,7 @@
         "llm"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T18:54:00.133+00:00"
+      "publishedDate": "2026-02-28T18:54:00.33+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Ascii",
@@ -637,6 +619,24 @@
       "publishedDate": "2026-04-07T19:15:00.96+00:00"
     },
     {
+      "packageId": "ElBruno.AI.Evaluation.Reporting",
+      "latestVersion": "0.5.2",
+      "totalDownloads": 178,
+      "description": "Reporting and persistence for ElBruno.AI.Evaluation",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "tags": [
+        "ai",
+        "evaluation",
+        "testing",
+        "observability",
+        "dotnet",
+        "llm"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T18:54:00.133+00:00"
+    },
+    {
       "packageId": "ElBruno.QRCodeGenerator.Payloads",
       "latestVersion": "1.1.0",
       "totalDownloads": 187,
@@ -655,6 +655,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-01T21:58:04.627+00:00"
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Tool",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 161,
+      "description": "Global dotnet tool for command-line QR code generation in console, SVG, PNG, JPEG, ASCII, or PDF formats.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
+      "tags": [
+        "qrcode",
+        "tool",
+        "cli",
+        "console",
+        "svg",
+        "png",
+        "pdf",
+        "ascii"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:05.853+00:00"
     },
     {
       "packageId": "ElBruno.Whisper",
@@ -676,26 +696,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-02T16:44:33.59+00:00"
-    },
-    {
-      "packageId": "ElBruno.QRCodeGenerator.Tool",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 161,
-      "description": "Global dotnet tool for command-line QR code generation in console, SVG, PNG, JPEG, ASCII, or PDF formats.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "",
-      "tags": [
-        "qrcode",
-        "tool",
-        "cli",
-        "console",
-        "svg",
-        "png",
-        "pdf",
-        "ascii"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:05.853+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.PowerPoint",
@@ -872,6 +872,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-07T21:05:33.073+00:00"
+    },
+    {
+      "packageId": "ElBruno.HuggingFace.Downloader.Cli",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 0,
+      "description": "A .NET CLI tool to download, manage, and inspect cached files from Hugging Face Hub repositories.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
+      "tags": [
+        "huggingface",
+        "download",
+        "cli",
+        "dotnet-tool",
+        "onnx",
+        "model",
+        "ml",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-08T18:15:59.71+00:00"
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu",
