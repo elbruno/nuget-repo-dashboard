@@ -56,6 +56,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.HuggingFace.Downloader.Cli",
+    "repos": [
+      "elbruno/ElBruno.HuggingFace.Downloader"
+    ]
+  },
+  {
     "packageId": "ElBruno.LocalEmbeddings",
     "repos": [
       "elbruno/elbruno.localembeddings"
