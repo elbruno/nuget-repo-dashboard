@@ -10,6 +10,37 @@
 
 ## Learnings
 
+### Phase 9: CI Auto-Regenerate Profiles (2026-XX-XX)
+
+**Workflow Status:** Completed  
+**Session:** phase-9-ci-autogen (Bruno Capuano)
+
+Added automatic profile regeneration to `.github/workflows/refresh-metrics.yml`. After the Collector updates `data/latest/data.repositories.json`, the CI workflow now runs `repo-identity generate` against fresh data. If profiles changed, they are committed with `[skip ci]` to prevent loops.
+
+**Changes Made:**
+1. **Workflow edit** (`.github/workflows/refresh-metrics.yml`): 
+   - Added step 7 "Regenerate repo-identity profiles": Runs `dotnet run --project src/RepoIdentity/RepoIdentity.csproj --framework net10.0 --configuration Release -- generate --source data/latest/data.repositories.json`
+   - Added step 8 "Commit updated profiles": Checks for staged changes before committing; only commits if profiles differ
+   - Both steps inserted between "Commit and push" (old step 6) and "Assemble site" (now step 9)
+   - Framework: `net10.0` (uses already-installed SDK from step 2)
+   - Idempotent: git config set again (harmless), diff check prevents empty commits
+
+2. **Documentation update** (`docs/repo-identity-install.md`):
+   - Replaced placeholder section with full "CI Auto-Regeneration" coverage
+   - Explains workflow sequence: data refresh → regenerate → commit if changed
+   - Includes sync instructions for devices (git pull + install), manual trigger examples
+   - Documented `[skip ci]` tag rationale (loop prevention)
+
+**Design Rationale:**
+- **Framework choice:** net10.0 instead of net8.0 — CI already has .NET 10 installed in step 2, no need for multi-version fallback
+- **Diff check:** `git diff --staged --quiet` keeps git history clean; no commits when profiles are unchanged
+- **[skip ci] tag:** Prevents infinite loop: commit → metrics refresh → commit → ...
+- **Placement:** After metrics commit but before site assembly ensures profiles use freshest data
+
+**Key File Paths:**
+- `.github/workflows/refresh-metrics.yml` (steps 7–8 added)
+- `docs/repo-identity-install.md` (section 161+ fully populated)
+
 ### Agentic Workflow Architecture (WI-7, WI-8, WI-9)
 
 **Core Pattern:** All GitHub Agentic Workflows (`.github/aw/*.md`) are documented as markdown specification files, not executable YAML. They define behavior, triggers, and output expectations for AI-powered assistants.

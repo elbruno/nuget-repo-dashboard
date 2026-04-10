@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": " 🔷 ElBruno.ClockTray ",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#1C1C1C",
+          "background": "#CEA8AC",
+          "style": "plain",
+          "template": " 🔷 ElBruno.ClockTray "
+        }
+      ]
+    }
+  ]
+}

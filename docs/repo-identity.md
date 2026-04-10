@@ -1,0 +1,105 @@
+# repo-identity — Terminal Profile Generator
+
+Generates [Oh My Posh](https://ohmyposh.dev/) terminal profiles for each repository tracked by this dashboard. Each profile gives your terminal a unique color and icon so you instantly know which repo context you're working in.
+
+## How it works
+
+1. Reads `data/latest/data.repositories.json` (populated daily by GitHub Actions)
+2. Assigns each repo a deterministic accent color (SHA256-based — same repo always same color)
+3. Selects an icon from the repo name's purpose keywords, falling back to the language icon
+4. Generates one Oh My Posh `.json` profile per repo in `terminal/ohmyposh/`
+5. Writes `terminal/ohmyposh/index.json` — the manifest used by the activation script
+
+## Generated profile structure
+
+Each profile is a complete Oh My Posh config:
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": " 🔌 nuget-mcp-server ",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#FFFFFF",
+          "background": "#6B4CA8",
+          "style": "plain",
+          "template": " 🔌 nuget-mcp-server "
+        }
+      ]
+    }
+  ]
+}
+```
+
+Key fields:
+- **`console_title_template`** — sets the Windows Terminal tab title automatically
+- **`background`** — the repo's unique accent color (solid, not transparent)
+- **`foreground`** — auto-selected for contrast (white on dark, dark on light)
+
+## Purpose-based icon mapping
+
+Icons are selected by scanning the repo name for keywords (first match wins):
+
+| Keywords | Icon | Example repos |
+|----------|------|---------------|
+| `whisper` | 🎙️ | nuget-whisper-net |
+| `tts`, `speech`, `speak`, `voice` | 🔊 | elbruno-tts-azure |
+| `embed`, `embedding`, `semantic`, `rag` | 🧠 | semantic-memory |
+| `qr`, `qrcode`, `barcode` | 📷 | qrcode-generator |
+| `mcp`, `modelcontext` | 🔌 | nuget-mcp-server |
+| `realtime`, `streaming` | ⚡ | realtime-api |
+| `vision`, `image`, `img` | 🖼️ | vision-demo |
+| `llm`, `gpt`, `claude`, `openai` | 🤖 | llm-helper |
+| `agent`, `agentic`, `copilot` | 🤖 | copilot-agent |
+| `nuget`, `package`, `sdk` | 📦 | (NuGet libraries) |
+| `dashboard`, `metrics` | 📊 | (monitoring tools) |
+| `api`, `rest`, `http` | 🌐 | (API projects) |
+| *(fallback: language)* | 🔷 🐍 🟦 | C# / Python / TypeScript |
+| *(fallback: unknown)* | 📦 | (any other) |
+
+## Color generation
+
+Colors are derived from `SHA256("{owner}/{repo}:{language}")` — deterministic and portable. The same repo always gets the same color on any device. Post-processing ensures no two repos have visually identical colors (minimum Euclidean RGB distance of 60).
+
+## CLI commands
+
+```bash
+# Regenerate all profiles from current data
+dotnet run --project src/RepoIdentity -- generate
+
+# Preview what would be generated (no files written)
+dotnet run --project src/RepoIdentity -- preview
+
+# Copy profiles to ~/.poshthemes/ for use
+dotnet run --project src/RepoIdentity -- apply
+```
+
+See `docs/repo-identity-install.md` for the full cross-device setup guide.
+
+## Set-RepoTheme.ps1
+
+The `generate` command also emits `terminal/ohmyposh/Set-RepoTheme.ps1` — a PowerShell script that auto-detects the current git repository and applies the matching Oh My Posh theme at shell start.
+
+**Flow:**
+1. Runs `git rev-parse --show-toplevel` to find the repo root
+2. Reads the git remote URL to extract `owner/repo`
+3. Looks up `owner/repo` in `~/.poshthemes/index.json`
+4. Calls `oh-my-posh init pwsh --config <matched-file>` to apply the theme
+
+**Design decisions:**
+- Runs once at shell start (not on every `cd`) — avoids performance overhead
+- Reads from `index.json` (not hardcoded paths) — stays correct after `generate` updates profiles
+- `$ErrorActionPreference = 'SilentlyContinue'` — silently no-ops if git, oh-my-posh, or index.json are missing
+
+**Troubleshooting — "my terminal isn't changing":**
+1. Is `Set-RepoTheme.ps1` in `~/.poshthemes/`? Run `repo-identity install` to copy it.
+2. Is the `$PROFILE` snippet present? Open `$PROFILE` and look for `# repo-identity:`.
+3. Is the current folder inside a git repo? Run `git remote get-url origin` — it must match a tracked repo.
+4. Is `oh-my-posh` on your PATH? Run `oh-my-posh --version`.
+5. Does the repo appear in `~/.poshthemes/index.json`? Check with `Get-Content ~/.poshthemes/index.json | ConvertFrom-Json | Select-Object -ExpandProperty profiles`.

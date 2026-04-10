@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": " 🔊 ElBruno.QwenTTS ",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#1C1C1C",
+          "background": "#AC8460",
+          "style": "plain",
+          "template": " 🔊 ElBruno.QwenTTS "
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": " 🤖 elbruno-agentskills ",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#FFFFFF",
+          "background": "#BD5896",
+          "style": "plain",
+          "template": " 🤖 elbruno-agentskills "
+        }
+      ]
+    }
+  ]
+}

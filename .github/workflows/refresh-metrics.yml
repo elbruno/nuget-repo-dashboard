@@ -62,6 +62,21 @@ jobs:
           git commit -m "chore: refresh metrics [skip ci]"
           git push
 
+      - name: Regenerate repo-identity profiles
+        run: dotnet run --project src/RepoIdentity/RepoIdentity.csproj --framework net10.0 --configuration Release -- generate --source data/latest/data.repositories.json
+
+      - name: Commit updated profiles
+        run: |
+          git add terminal/ohmyposh/
+          if git diff --staged --quiet; then
+            echo "No profile changes — skipping commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: refresh Oh My Posh profiles [skip ci]"
+            git push
+          fi
+
       - name: Assemble site
         run: |
           mkdir -p _site/data

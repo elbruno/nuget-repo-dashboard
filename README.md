@@ -190,4 +190,48 @@ The deployed site contains:
 - `data/data.nuget.json` — NuGet package metrics
 - `data/data.repositories.json` — GitHub repository metrics
 
+## 🎨 repo-identity
+
+A .NET CLI tool that reads the repositories tracked by this dashboard and generates [Oh My Posh](https://ohmyposh.dev/) terminal theme files — one per repo — with deterministic accent colors.
+
+### Usage
+
+```bash
+# Preview what would be generated (no files written)
+dotnet run --project src/RepoIdentity -- preview
+
+# Generate Oh My Posh profiles into terminal/ohmyposh/
+dotnet run --project src/RepoIdentity -- generate
+
+# Use a custom source file
+dotnet run --project src/RepoIdentity -- generate --source path/to/data.repositories.json
+
+# Copy all generated profiles to your Oh My Posh themes directory
+dotnet run --project src/RepoIdentity -- apply
+
+# Copy a single repo's profile
+dotnet run --project src/RepoIdentity -- apply --repo elbruno/elbruno.localembeddings
+```
+
+### Output
+
+Each tracked repo gets a file in `terminal/ohmyposh/`:
+- `{owner}-{repo}.json` — a valid Oh My Posh theme with a deterministic accent color
+- `index.json` — summary manifest of all generated profiles
+
+Colors are derived deterministically from the repo's full name and primary language, so they are stable across re-runs.
+
+### Optional: repo.identity.json
+
+Place a `repo.identity.json` in any tracked repo to customize its profile:
+
+```json
+{
+  "name": "My Library",
+  "type": "library",
+  "accentColor": "#0078D4",
+  "icon": "🧠"
+}
+```
+
 
