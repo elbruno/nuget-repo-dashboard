@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2026-04-10T16:06:39.3000557+00:00",
+  "totalRepos": 16,
+  "profiles": [
+    {
+      "repo": "elbruno/elbruno.localembeddings",
+      "configFile": "elbruno-elbruno.localembeddings.json",
+      "accentColor": "#54AFC0",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.HuggingFace.Downloader",
+      "configFile": "elbruno-ElBruno.HuggingFace.Downloader.json",
+      "accentColor": "#5953B3",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.QwenTTS",
+      "configFile": "elbruno-ElBruno.QwenTTS.json",
+      "accentColor": "#AC8460",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.VibeVoiceTTS",
+      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
+      "accentColor": "#6AB083",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.LocalLLMs",
+      "configFile": "elbruno-ElBruno.LocalLLMs.json",
+      "accentColor": "#85958B",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
+      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
+      "accentColor": "#5D8176",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Text2Image",
+      "configFile": "elbruno-ElBruno.Text2Image.json",
+      "accentColor": "#A4A1C8",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno-ai-evaluation",
+      "configFile": "elbruno-elbruno-ai-evaluation.json",
+      "accentColor": "#8C71B2",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#A06CAE",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.ModelContextProtocol",
+      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
+      "accentColor": "#73BC7F",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.PersonaPlex",
+      "configFile": "elbruno-ElBruno.PersonaPlex.json",
+      "accentColor": "#AF93B3",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.ClockTray",
+      "configFile": "elbruno-ElBruno.ClockTray.json",
+      "accentColor": "#7E80AC",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.QRCodeGenerator",
+      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
+      "accentColor": "#68B65B",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Whisper",
+      "configFile": "elbruno-ElBruno.Whisper.json",
+      "accentColor": "#A0A1A8",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno-agentskills",
+      "configFile": "elbruno-elbruno-agentskills.json",
+      "accentColor": "#6DB296",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.MarkItDotNet",
+      "configFile": "elbruno-ElBruno.MarkItDotNet.json",
+      "accentColor": "#68CE56",
+      "icon": "\uD83D\uDD37"
+    }
+  ]
+}
