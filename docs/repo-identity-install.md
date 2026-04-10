@@ -160,7 +160,36 @@ See: [Auto-Detection Script](./repo-identity-install.md#set-repothemeps1-walkthr
 
 ## CI Auto-Regeneration
 
-The `.github/workflows/refresh-metrics.yml` workflow regenerates profiles automatically after each daily metrics refresh. Profiles committed to the repo are always up to date — a `git pull` is all you need to get the latest.
+The `.github/workflows/refresh-metrics.yml` workflow automatically regenerates Oh My Posh profiles after each daily metrics refresh.
 
-See: [CI Configuration](./repo-identity-install.md#ci-auto-regeneration-1)
-*(This section is populated after Phase 9 completes.)*
+### What happens in CI
+
+After the Collector finishes updating `data/latest/data.repositories.json`:
+
+1. `repo-identity generate` runs against the fresh data
+2. If any profiles changed (new repos, color adjustments), they are committed back to the repo with `[skip ci]` to avoid a loop
+3. `git push` delivers the updated profiles to the branch
+
+### Keeping all devices in sync
+
+```bash
+# On any device, after a daily CI run:
+git pull
+dotnet run --project src/RepoIdentity --framework net8.0 -- install
+```
+
+Re-running `install` is idempotent — profiles are overwritten, `$PROFILE` is never duplicated.
+
+### Triggering manually
+
+```bash
+# Regenerate profiles locally at any time:
+dotnet run --project src/RepoIdentity --framework net8.0 -- generate
+
+# Then apply to this device:
+dotnet run --project src/RepoIdentity --framework net8.0 -- install
+```
+
+### The `[skip ci]` tag
+
+Profile commits include `[skip ci]` in the commit message to prevent the commit from triggering another workflow run. Without this, a profile change would cause an infinite loop of workflow → commit → workflow.
