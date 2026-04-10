@@ -192,34 +192,47 @@ The deployed site contains:
 
 ## 🎨 repo-identity
 
-A .NET CLI tool that reads the repositories tracked by this dashboard and generates [Oh My Posh](https://ohmyposh.dev/) terminal theme files — one per repo — with deterministic accent colors.
+A .NET CLI tool that generates [Oh My Posh](https://ohmyposh.dev/) terminal themes for every repository tracked by this dashboard — with deterministic accent colors and purpose-based icons. Your terminal prompt switches theme automatically as you `cd` between repos.
 
-### Usage
+### Quick install (after cloning)
 
-```bash
-# Preview what would be generated (no files written)
-dotnet run --project src/RepoIdentity -- preview
+```powershell
+# 1. Generate Oh My Posh profiles for all tracked repos
+dotnet run --project src/RepoIdentity --framework net8.0 -- generate
+
+# 2. Install profiles + wire up your PowerShell $PROFILE
+dotnet run --project src/RepoIdentity --framework net8.0 -- install
+```
+
+Open a new PowerShell window and `cd` into any tracked repo — the theme activates automatically.
+
+> Run `install --dry-run` first to preview every change before it's applied.
+
+📖 **Full documentation:**
+- [Terminal themes reference](docs/repo-identity.md) — profile structure, icon table, troubleshooting
+- [Cross-device install guide](docs/repo-identity-install.md) — prerequisites, what changes on your machine, multi-device setup
+
+### All commands
+
+```powershell
+# Preview profiles without writing any files
+dotnet run --project src/RepoIdentity --framework net8.0 -- preview
 
 # Generate Oh My Posh profiles into terminal/ohmyposh/
-dotnet run --project src/RepoIdentity -- generate
+dotnet run --project src/RepoIdentity --framework net8.0 -- generate
 
-# Use a custom source file
-dotnet run --project src/RepoIdentity -- generate --source path/to/data.repositories.json
-
-# Copy all generated profiles to your Oh My Posh themes directory
-dotnet run --project src/RepoIdentity -- apply
-
-# Copy a single repo's profile
-dotnet run --project src/RepoIdentity -- apply --repo elbruno/elbruno.localembeddings
+# Install profiles and patch $PROFILE (dry-run to preview first)
+dotnet run --project src/RepoIdentity --framework net8.0 -- install --dry-run
+dotnet run --project src/RepoIdentity --framework net8.0 -- install
 ```
 
 ### Output
 
 Each tracked repo gets a file in `terminal/ohmyposh/`:
-- `{owner}-{repo}.json` — a valid Oh My Posh theme with a deterministic accent color
-- `index.json` — summary manifest of all generated profiles
-
-Colors are derived deterministically from the repo's full name and primary language, so they are stable across re-runs.
+- `{owner}-{repo}.json` — Oh My Posh theme with deterministic accent color and purpose icon
+- `default.json` — neutral fallback theme used outside tracked repos
+- `index.json` — manifest used by the auto-detection script at runtime
+- `Set-RepoTheme.ps1` — auto-detection script (sourced from `$PROFILE`)
 
 ### Optional: repo.identity.json
 
