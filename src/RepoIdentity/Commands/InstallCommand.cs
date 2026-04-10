@@ -180,7 +180,14 @@ internal static class InstallCommand
 
 # repo-identity: auto-detect terminal theme from current git repo
 $repoIdentityScript = Join-Path $HOME ".poshthemes/Set-RepoTheme.ps1"
-if (Test-Path $repoIdentityScript) { . $repoIdentityScript }
+if (Test-Path $repoIdentityScript) {
+    . $repoIdentityScript
+    function global:Set-Location {
+        Microsoft.PowerShell.Management\Set-Location @args
+        $s = Join-Path $HOME ".poshthemes/Set-RepoTheme.ps1"
+        if (Test-Path $s) { . $s }
+    }
+}
 """;
 
     const string ProfileMarker = "# repo-identity:";
