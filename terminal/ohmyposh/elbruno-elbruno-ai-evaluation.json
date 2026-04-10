@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
+  "console_title_template": " 🔷 elbruno-ai-evaluation ",
   "blocks": [
     {
       "type": "prompt",
@@ -8,10 +9,10 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#8C71B2",
-          "background": "transparent",
+          "foreground": "#1C1C1C",
+          "background": "#5A99B2",
           "style": "plain",
-          "template": " \uD83D\uDD37 elbruno-ai-evaluation "
+          "template": " 🔷 elbruno-ai-evaluation "
         }
       ]
     }

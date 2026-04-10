@@ -98,4 +98,111 @@ public class ConfigGeneratorTests
     {
         ConfigGenerator.SanitizeFileName(input).Should().Be(expected);
     }
+
+    [Fact]
+    public async Task GenerateAsync_ProfileHasConsoleTitleTemplate()
+    {
+        var outputDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+        var repos = new[] { MakeRepo("elbruno", "TestRepo", "C#") };
+        try
+        {
+            await _sut.GenerateAsync(repos, outputDir);
+            var json = await File.ReadAllTextAsync(Path.Combine(outputDir, "elbruno-TestRepo.json"));
+            var doc = JsonDocument.Parse(json);
+            doc.RootElement.TryGetProperty("console_title_template", out var titleProp).Should().BeTrue();
+            titleProp.GetString().Should().Contain("TestRepo");
+        }
+        finally { Directory.Delete(outputDir, recursive: true); }
+    }
+
+    [Fact]
+    public async Task GenerateAsync_SegmentHasSolidBackground()
+    {
+        var outputDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+        var repos = new[] { MakeRepo("elbruno", "TestRepo", "C#") };
+        try
+        {
+            await _sut.GenerateAsync(repos, outputDir);
+            var json = await File.ReadAllTextAsync(Path.Combine(outputDir, "elbruno-TestRepo.json"));
+            var doc = JsonDocument.Parse(json);
+            var segment = doc.RootElement
+                .GetProperty("blocks")[0]
+                .GetProperty("segments")[0];
+            var bg = segment.GetProperty("background").GetString();
+            bg.Should().NotBe("transparent");
+            bg.Should().MatchRegex(@"^#[0-9A-Fa-f]{6}$");
+        }
+        finally { Directory.Delete(outputDir, recursive: true); }
+    }
+
+    [Fact]
+    public async Task GenerateAsync_SegmentHasContrastForeground()
+    {
+        var outputDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+        var repos = new[] { MakeRepo("elbruno", "TestRepo", "C#") };
+        try
+        {
+            await _sut.GenerateAsync(repos, outputDir);
+            var json = await File.ReadAllTextAsync(Path.Combine(outputDir, "elbruno-TestRepo.json"));
+            var doc = JsonDocument.Parse(json);
+            var segment = doc.RootElement
+                .GetProperty("blocks")[0]
+                .GetProperty("segments")[0];
+            var fg = segment.GetProperty("foreground").GetString();
+            fg.Should().BeOneOf("#FFFFFF", "#1C1C1C");
+        }
+        finally { Directory.Delete(outputDir, recursive: true); }
+    }
+
+    [Theory]
+    [InlineData("nuget-mcp-server", "🔌")]
+    [InlineData("whisper-net", "🎙️")]
+    [InlineData("tts-azure", "🔊")]
+    [InlineData("semantic-memory", "🧠")]
+    [InlineData("qrcode-generator", "📷")]
+    [InlineData("llm-helper", "🤖")]
+    [InlineData("vision-demo", "🖼️")]
+    [InlineData("normal-csharp-lib", "🔷")]  // C# fallback
+    [InlineData("unknown-lang-repo", "📦")]   // no language, no keyword
+    public async Task GenerateAsync_IconMatchesPurposeOrLanguage(string repoName, string expectedIcon)
+    {
+        var outputDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+        var language = repoName.Contains("csharp") ? "C#" : null;
+        var repos = new[] { MakeRepo("elbruno", repoName, language) };
+        try
+        {
+            await _sut.GenerateAsync(repos, outputDir);
+            var json = await File.ReadAllTextAsync(Path.Combine(outputDir, $"elbruno-{repoName}.json"));
+            json.Should().Contain(expectedIcon);
+        }
+        finally { Directory.Delete(outputDir, recursive: true); }
+    }
+
+    [Fact]
+    public async Task GenerateAsync_MultipleReposHaveDistinctColors()
+    {
+        var outputDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+        var repos = Enumerable.Range(1, 10)
+            .Select(i => MakeRepo("elbruno", $"repo-{i}"))
+            .ToArray();
+        try
+        {
+            await _sut.GenerateAsync(repos, outputDir);
+            var colors = new List<(int r, int g, int b)>();
+            for (int i = 1; i <= 10; i++)
+            {
+                var json = await File.ReadAllTextAsync(Path.Combine(outputDir, $"elbruno-repo-{i}.json"));
+                var doc = JsonDocument.Parse(json);
+                var bg = doc.RootElement.GetProperty("blocks")[0].GetProperty("segments")[0]
+                    .GetProperty("background").GetString()!;
+                var r = Convert.ToInt32(bg[1..3], 16);
+                var g = Convert.ToInt32(bg[3..5], 16);
+                var b = Convert.ToInt32(bg[5..7], 16);
+                colors.Add((r, g, b));
+            }
+            // All colors should be distinct (no duplicates)
+            colors.Distinct().Should().HaveCount(colors.Count);
+        }
+        finally { Directory.Delete(outputDir, recursive: true); }
+    }
 }

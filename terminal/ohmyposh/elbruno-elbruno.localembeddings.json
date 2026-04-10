@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
+  "console_title_template": " 🧠 elbruno.localembeddings ",
   "blocks": [
     {
       "type": "prompt",
@@ -8,10 +9,10 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#54AFC0",
-          "background": "transparent",
+          "foreground": "#1C1C1C",
+          "background": "#54AFC0",
           "style": "plain",
-          "template": " \uD83D\uDD37 elbruno.localembeddings "
+          "template": " 🧠 elbruno.localembeddings "
         }
       ]
     }

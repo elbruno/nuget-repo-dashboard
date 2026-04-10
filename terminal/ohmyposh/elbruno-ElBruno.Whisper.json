@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
+  "console_title_template": " 🎙️ ElBruno.Whisper ",
   "blocks": [
     {
       "type": "prompt",
@@ -8,10 +9,10 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#A0A1A8",
-          "background": "transparent",
+          "foreground": "#1C1C1C",
+          "background": "#6EC9A8",
           "style": "plain",
-          "template": " \uD83D\uDD37 ElBruno.Whisper "
+          "template": " 🎙️ ElBruno.Whisper "
         }
       ]
     }
