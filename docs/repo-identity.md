@@ -81,3 +81,25 @@ dotnet run --project src/RepoIdentity -- apply
 ```
 
 See `docs/repo-identity-install.md` for the full cross-device setup guide.
+
+## Set-RepoTheme.ps1
+
+The `generate` command also emits `terminal/ohmyposh/Set-RepoTheme.ps1` — a PowerShell script that auto-detects the current git repository and applies the matching Oh My Posh theme at shell start.
+
+**Flow:**
+1. Runs `git rev-parse --show-toplevel` to find the repo root
+2. Reads the git remote URL to extract `owner/repo`
+3. Looks up `owner/repo` in `~/.poshthemes/index.json`
+4. Calls `oh-my-posh init pwsh --config <matched-file>` to apply the theme
+
+**Design decisions:**
+- Runs once at shell start (not on every `cd`) — avoids performance overhead
+- Reads from `index.json` (not hardcoded paths) — stays correct after `generate` updates profiles
+- `$ErrorActionPreference = 'SilentlyContinue'` — silently no-ops if git, oh-my-posh, or index.json are missing
+
+**Troubleshooting — "my terminal isn't changing":**
+1. Is `Set-RepoTheme.ps1` in `~/.poshthemes/`? Run `repo-identity install` to copy it.
+2. Is the `$PROFILE` snippet present? Open `$PROFILE` and look for `# repo-identity:`.
+3. Is the current folder inside a git repo? Run `git remote get-url origin` — it must match a tracked repo.
+4. Is `oh-my-posh` on your PATH? Run `oh-my-posh --version`.
+5. Does the repo appear in `~/.poshthemes/index.json`? Check with `Get-Content ~/.poshthemes/index.json | ConvertFrom-Json | Select-Object -ExpandProperty profiles`.

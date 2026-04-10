@@ -6,5 +6,6 @@ var rootCommand = new RootCommand("repo-identity — generate Oh My Posh profile
 rootCommand.AddCommand(GenerateCommand.Create());
 rootCommand.AddCommand(PreviewCommand.Create());
 rootCommand.AddCommand(ApplyCommand.Create());
+rootCommand.AddCommand(InstallCommand.Create());
 
 return await rootCommand.InvokeAsync(args);
