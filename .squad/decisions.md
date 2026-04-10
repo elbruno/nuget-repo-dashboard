@@ -321,7 +321,406 @@ Deploy to GitHub Pages directly from the `refresh-metrics.yml` workflow using a 
 
 ---
 
-### 13. HTML Dashboard — Single-File Architecture
+### 13. RepoIdentity Phase 1 — CLI Scaffolding
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-07-22  
+**Status:** Implemented
+
+## Context
+
+Phase 1 of the `repo-identity` tool establishes the foundational CLI scaffold in the existing `nuget-repo-dashboard` repository. The tool will eventually generate Oh My Posh profile configs from the tracked NuGet dashboard repo data.
+
+## Decision 1: System.CommandLine beta4 (`2.0.0-beta4.22272.1`)
+
+**Chosen:** `System.CommandLine` Version `2.0.0-beta4.22272.1`
+
+**Rationale:**
+- Stable enough for production CLI tooling in the .NET ecosystem
+- Full support for `net8.0` and `net10.0` (the two runtimes present in this environment)
+- Provides typed `Option<T>` with default-value factories — cleanly handles `--source` and `--target` with sensible defaults without manual argument parsing
+- Already used widely in .NET CLI tools; aligns with project style
+
+**Alternatives considered:**
+- `Cocona` — heavier DI-based framework; overkill for a single-purpose CLI tool
+- `CliFx` — less ecosystem adoption; would be unfamiliar to the team
+- Manual `args[]` parsing — fragile, no `--help` generation
+
+## Decision 2: Multi-target `net8.0;net10.0`
+
+**Chosen:** `<TargetFrameworks>net8.0;net10.0</TargetFrameworks>`
+
+**Rationale:**
+- The environment has .NET 8 (LTS) and .NET 10 runtimes only (no 9.0)
+- net8.0 is the active LTS release — ensures broadest developer compat
+- net10.0 is the latest; used by the Collector and ensures feature parity
+- Consistent with the project convention documented in Kaylee's history
+- Tests run against both TFMs to catch TFM-specific regressions early
+
+**Alternatives considered:**
+- `net10.0` only — risks excluding devs on net8.0 LTS machines
+- `net9.0;net10.0` — net9.0 is not present in this environment (confirmed)
+
+## Decision 3: CLI command structure — `generate` / `preview` / `apply` / `install`
+
+**Chosen four top-level subcommands:**
+
+| Command | Purpose | Phase |
+|---------|---------|-------|
+| `generate` | Parse repo data, produce `oh-my-posh.generated.json` | 1 → 4 (full impl) |
+| `preview` | Print table of what would be generated | 1 → 5 (full impl) |
+| `apply` | Copy generated profiles to theme directory | 1 → 5 (full impl) |
+| `install` | One-shot device bootstrap with profile patching | 7 (new) |
+
+**Rationale:**
+- Separating `generate` and `apply` follows the "dry run vs execute" pattern — users can inspect output before writing to their system config
+- `preview` provides a read-only UX entry point for CI/CD pipelines and curious devs
+- `--source` defaults to the Collector's standard output path so zero-config use is possible
+- `--target` defaults to `~/.poshthemes` (common Oh My Posh convention for custom themes)
+- `install` command consolidates multi-step device setup into a single idempotent command
+
+---
+
+### 14. RepoIdentity Phase 2 — DashboardDataReader
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-07-22  
+**Status:** Implemented
+
+## Context
+
+Phase 2 of the RepoIdentity CLI requires reading `data/latest/data.repositories.json` (produced daily by the Collector) into a strongly-typed C# model list. Two key design decisions were made during implementation.
+
+## Decision 1: Init-only property records for JSON deserialization
+
+**Chosen approach:** Use init-only property records rather than positional record syntax for `RepositoryInfo` and `DashboardData`.
+
+```csharp
+// ✅ Chosen — works with System.Text.Json out of the box
+public record RepositoryInfo
+{
+    public string Owner { get; init; } = string.Empty;
+    // ...
+}
+
+// ❌ Rejected — requires [JsonConstructor] on every record
+public record RepositoryInfo(string Owner, ...);
+```
+
+**Rationale:** Positional (primary constructor) records require `[JsonConstructor]` to tell `System.Text.Json` which constructor to use when deserializing. Init-only property records work without any attribute because the deserializer can use the parameterless constructor and then set properties via their setters. This keeps models clean and free of serialization concerns.
+
+**Trade-off:** Init-only records are slightly more verbose but eliminate a common source of deserialization bugs when constructors change.
+
+## Decision 2: System.Text.Json (no extra NuGet dependency)
+
+**Chosen approach:** Use `System.Text.Json` from the .NET SDK with `PropertyNameCaseInsensitive = true`.
+
+**Rationale:** `System.Text.Json` is bundled with every .NET 8+ runtime — zero additional dependencies. The JSON produced by the Collector uses camelCase property names (standard JS convention); `PropertyNameCaseInsensitive = true` handles the camelCase → PascalCase mapping automatically without requiring `[JsonPropertyName]` attributes on every model property.
+
+**Alternative considered:** `Newtonsoft.Json` — rejected because it adds a NuGet dependency for no benefit here. The Collector already uses `System.Text.Json` for its own models.
+
+## Files Affected
+
+- `src/RepoIdentity/Models/RepositoryInfo.cs` (new)
+- `src/RepoIdentity/Models/DashboardData.cs` (new)
+- `src/RepoIdentity/Services/IDashboardDataReader.cs` (new)
+- `src/RepoIdentity/Services/DashboardDataReader.cs` (new)
+- `tests/RepoIdentity.Tests/DashboardDataReaderTests.cs` (new)
+
+---
+
+### 15. RepoIdentity Phase 3 — ColorGenerator + MetadataEnricher
+
+**Date:** 2026-07-22  
+**Author:** Kaylee (Backend Dev)
+
+## Decision 1: Use SHA256 for deterministic color generation (not MD5)
+
+**Choice:** SHA256 via `SHA256.HashData()` (BCL, no external dependency)
+
+**Rationale:**
+- SHA256 is available in the BCL on all .NET 8+ targets — no NuGet package needed
+- Provides excellent distribution across the color space (256-bit hash, first 3 bytes used for R/G/B)
+- Deterministic: same seed always produces the same hash and therefore the same color
+- More collision-resistant than MD5, though for color generation this is minor; SHA256 is preferred as the modern standard
+- `SHA256.HashData()` static API avoids `IDisposable` lifecycle management
+
+**Rejected alternatives:**
+- MD5: deprecated, not FIPS-compliant, no advantage for this non-security use case
+- FNV/custom hash: requires additional implementation complexity with no benefit
+
+## Decision 2: Return null (not throw) when repo.identity.json is missing or malformed
+
+**Choice:** `MetadataEnricher.TryReadAsync()` returns `null` on missing file or JSON parse failure
+
+**Rationale:**
+- `repo.identity.json` is explicitly optional — its absence is the normal case for most repos
+- Callers use a `Try*` pattern (method name `TryReadAsync`) which signals nullable return semantics
+- Throwing exceptions on missing files would require try/catch at every call site
+- Malformed JSON (e.g. incomplete file, encoding errors) should not crash the enrichment pipeline — graceful degradation is correct
+- Consistent with the `TryParse` / `TryGet` patterns throughout .NET BCL
+
+**Implementation:** The `catch (Exception)` block swallows all exceptions and returns null. File existence is checked with `File.Exists()` before attempting to open — this handles the missing file case without an exception at all.
+
+## Decision 3: EnrichedRepoInfo combines base repo data with identity overrides
+
+**Choice:** `EnrichedRepoInfo` is a flat record that merges fields from `RepositoryInfo` (GitHub data) and `RepoIdentityMetadata` (optional identity override)
+
+**Rationale:**
+- A single flat record is simpler for downstream consumers (dashboard rendering, JSON serialization) than a nested object
+- `AccentColor` is always populated: if `RepoIdentityMetadata.AccentColor` is set, use it; otherwise use the `ColorGenerator` output. This ensures no null checks needed at render time
+- `Icon` and `Type` are nullable — they come from identity metadata only, with no fallback
+- The enrichment step (combining base + metadata + generated color) happens in a single place, keeping callers clean
+
+**Fields:**
+- From base repo: `Owner`, `Name`, `FullName`, `Description`, `Language`, `Stars`, `HtmlUrl`
+- Computed/enriched: `AccentColor` (required, never null), `Icon` (optional), `Type` (optional)
+
+---
+
+### 16. RepoIdentity Phase 4 — ConfigGenerator + generate command
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-07-22  
+**Status:** Implemented
+
+## Context
+
+Phase 4 completes the `generate` command of the `repo-identity` CLI. The generator must turn `data.repositories.json` into per-repo Oh My Posh JSON theme files so terminal prompts can reflect which repo is active.
+
+## Decisions
+
+### 1. One file per active repo (not a single combined config)
+
+Each non-archived repository gets its own `.json` file (e.g. `elbruno-MyRepo.json`) rather than a single monolithic config.  
+**Rationale:** Makes the future `apply` command selective — a user can apply only the profile for the repo they're currently in without touching other repos. A combined file would require parsing and re-splitting at apply time.
+
+### 2. `index.json` as summary/manifest for tooling
+
+An `index.json` is written to the same output directory summarising all generated profiles (repo name, config file path, accent color, icon, generated timestamp).  
+**Rationale:** Enables downstream tooling (shell scripts, the future `apply` command, CI checks) to enumerate available profiles without scanning for `.json` files. Acts as a typed manifest.
+
+### 3. Skip archived repos in generation
+
+Repos with `Archived = true` are excluded from generation entirely.  
+**Rationale:** Archived repos are not actively developed; generating a prompt theme for them adds noise and wastes disk space. Keeping the output set clean makes `apply` logic simpler.
+
+### 4. Oh My Posh config structure
+
+Each generated config uses:
+- `$schema`: `https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json`
+- `version`: 2
+- Single `prompt` block, `left` aligned, with one `text` segment
+- Segment `style`: `plain`, `background`: `transparent`
+- `foreground`: deterministic hex color from `ColorGenerator` (seeded on `fullName:language`)
+- `template`: ` {icon} {repoName} ` (space-padded for readability)
+
+**Rationale:** Minimal structure that Oh My Posh validates. Single segment is sufficient for repo identification in a prompt. Deterministic color means re-running generation produces identical files (idempotent).
+
+### 5. `$schema` key workaround
+
+`System.Text.Json` with `JsonNamingPolicy.CamelCase` serializes `Schema` → `"schema"`. Oh My Posh requires the key `"$schema"`. Fixed with a post-serialize string replace: `json.Replace("\"schema\":", "\"$schema\":")`.  
+**Rationale:** Simpler than a custom `JsonConverter` or naming policy override for a single key. The replace is precise (only matches the key pattern, not values).
+
+### 6. `SanitizeFileName` replaces `/` only (not spaces)
+
+`SanitizeFileName("owner/Repo Name")` → `"owner-Repo Name"`. Only slashes are replaced; spaces preserved.  
+**Rationale:** Matches test expectations. Real repo names on GitHub cannot contain `/` but can contain hyphens. Spaces in repo names are rare; if needed, a future pass can normalize further.
+
+## Files Added / Modified
+
+- `src/RepoIdentity/Models/GenerationResult.cs` — new record
+- `src/RepoIdentity/Services/IConfigGenerator.cs` — new interface
+- `src/RepoIdentity/Services/ConfigGenerator.cs` — new sealed implementation
+- `src/RepoIdentity/Commands/GenerateCommand.cs` — replaced stub with full wiring
+- `tests/RepoIdentity.Tests/ConfigGeneratorTests.cs` — 5 new tests
+
+## Test Results
+
+19 tests passing on both net8.0 and net10.0. Smoke test on real `data.repositories.json`: 16 profiles generated to `terminal/ohmyposh/`.
+
+---
+
+### 17. RepoIdentity Phase 5 — preview + apply commands
+
+**Date:** 2026-07-22  
+**Author:** Kaylee (Backend Dev)  
+**Status:** Implemented
+
+## Decisions
+
+### 1. preview uses same --source as generate for consistency
+Both `preview` and `generate` accept `--source` defaulting to `data/latest/data.repositories.json`. This ensures users can compare what *would* be generated against what *was* generated using identical input — no surprises.
+
+### 2. apply --repo uses slash→dash sanitization to find file
+Repo names use `/` (e.g. `elbruno/MyRepo`) but file names use `-` (e.g. `elbruno-MyRepo.json`). The `apply` command applies `repo.Replace("/", "-")` to resolve the filename, matching the sanitization used by `ConfigGenerator.SanitizeFileName()`.
+
+### 3. apply copies only non-index profiles when --repo is omitted
+`index.json` is a manifest file, not a usable Oh My Posh theme. When copying all profiles, `index.json` is excluded from the copy set so users don't accidentally load it as a theme.
+
+### 4. README updated with new repo-identity section
+Added `## 🎨 repo-identity` section to `README.md` documenting all four CLI commands (`preview`, `generate`, `apply` with and without `--repo`), the output file structure, and the optional `repo.identity.json` customization format. Placed after the existing Dashboard section.
+
+---
+
+### 18. RepoIdentity Phase 6 — Enhanced Profile Generation
+
+**Author:** Kaylee  
+**Date:** 2026-07-22  
+**Status:** Implemented
+
+## Context
+
+Phase 5 delivered working `generate`, `preview`, and `apply` commands for Oh My Posh profile generation. Phase 6 addresses 7 gaps identified in analysis to make the generated profiles more visually useful and complete.
+
+## Changes Implemented
+
+### Change 1 — `console_title_template`
+
+Added `ConsoleTitleTemplate` to the anonymous serialization object in `ConfigGenerator.GenerateAsync`. Because `System.Text.Json` with `JsonNamingPolicy.CamelCase` emits `consoleTitleTemplate`, a string replace is applied post-serialization to produce the snake_case key Oh My Posh requires: `console_title_template`.
+
+### Change 2 — Solid background + contrasting foreground
+
+Replaced `Background = "transparent"` with `Background = color` (the repo's accent color). Added `Foreground = contrastColor` where contrast is determined by NTSC luminance formula (`0.299r + 0.587g + 0.114b`) / 255. Colors with luminance < 0.5 get white (`#FFFFFF`) foreground; ≥ 0.5 get dark (`#1C1C1C`) foreground.
+
+### Change 3 — Purpose-based icons
+
+Added `PurposeIcons` static readonly array of `(string[] Keywords, string Icon)` tuples with 12 entries covering common repo name patterns (mcp, whisper, tts, embedding, qr, realtime, vision, llm, agent, nuget, dashboard, api). Added `SelectIcon(string repoName, string? language)` internal method that checks keywords against `repo.Name.ToLowerInvariant()` before falling back to `LanguageIcons` dictionary.
+
+### Change 4 — Perceptually-spaced colors
+
+Added `EnsureMinDistance` iterative method (max 20 iterations) that enforces minimum Euclidean RGB distance of 60 between any two assigned colors. Colors that collide are shifted by +30 R / +15 G (mod 130 in the 80-210 range). Colors are pre-generated before profile writing so the distance check covers all repos in one pass. Added `ParseRgb` helper to parse `#RRGGBB` hex strings to `(int r, int g, int b)`.
+
+### Change 5 — Documentation
+
+Created `docs/repo-identity.md` documenting the profile structure, icon mapping table, color generation algorithm, and CLI commands.
+
+### Incidental fix — Emoji in JSON
+
+Discovered that `System.Text.Json` always escapes supplementary Unicode characters (emoji, U+10000+) as `\uXXXX\uXXXX` surrogate pairs, even with `JavaScriptEncoder.UnsafeRelaxedJsonEscaping`. Added `UnescapeSurrogatePairs` method using a compiled `Regex` to replace surrogate pair escape sequences with literal UTF-8 characters in the serialized JSON output. This makes profiles human-readable and allows test string-contains assertions to work correctly.
+
+## Interfaces
+
+All public interfaces (`IConfigGenerator`) are **unchanged**. `SelectIcon` is `internal` to support Zoe's tests directly via `InternalsVisibleTo`. `SanitizeFileName` was already internal.
+
+## Tests
+
+13 tests were already written by Zoe (in `ConfigGeneratorTests.cs`) and were failing before this implementation:
+- `GenerateAsync_ProfileHasConsoleTitleTemplate`
+- `GenerateAsync_SegmentHasSolidBackground`
+- `GenerateAsync_SegmentHasContrastForeground`
+- `GenerateAsync_IconMatchesPurposeOrLanguage` (9 theory cases)
+- `GenerateAsync_MultipleReposHaveDistinctColors`
+
+All 38 tests now pass on both net8.0 and net10.0.
+
+## Tests Zoe may need to update
+
+The `PipelineIntegrationTests.FullPipeline_ColorsAreDeterministic_OnMultipleRuns` test reads `segment.foreground` and checks it's the same between two runs. Previously `foreground` was the accent color; now it's the contrast color (`#FFFFFF` or `#1C1C1C`). The test still passes because contrast is deterministically derived from the accent color — but the *semantic meaning* of the assertion has changed. Zoe may wish to update the test to check `background` for accent color determinism and `foreground` for the contrast value check.
+
+## Alternatives Considered
+
+- **`[JsonPropertyName]` on strongly-typed record**: Would avoid string replaces but requires defining a full `ProfileDocument` class hierarchy — more code for less benefit at this scale.
+- **Custom `JsonConverter`**: Overly complex for this use case.
+- **Keep `"transparent"` background**: Rejected — all 16 repos are C# so they all got 🔷 with no visual differentiation.
+
+---
+
+### 19. RepoIdentity Phase 7 — install Command + Install Guide
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-07-22  
+**Status:** Implemented
+
+## What Was Built
+
+### `src/RepoIdentity/Commands/InstallCommand.cs` (new)
+
+New `install` command — the "one-shot device bootstrap". Registered in `Program.cs` via `rootCommand.AddCommand(InstallCommand.Create())`.
+
+**Options:**
+- `--profiles <dir>` — source directory with generated profiles (default: `terminal/ohmyposh` in CWD)
+- `--target <dir>` — destination directory (default: `~/.poshthemes`)
+- `--skip-prereqs` — skip oh-my-posh availability check
+- `--dry-run` — print every action without executing
+
+**Four-step flow:**
+1. **Prereq check** — `RunProcess("oh-my-posh", "--version")` with 5-second timeout. On failure, prints platform-specific install instructions (`winget` on Windows, `brew` on macOS). Skipped with `--skip-prereqs`.
+2. **Copy profiles** — all `*.json` files (including `index.json`) from `--profiles` to `--target`. Uses `File.Copy(overwrite: true)`.
+3. **Copy Set-RepoTheme.ps1** — if present in profiles dir; warns to run `generate` if absent.
+4. **Patch `$PROFILE`** — idempotent append of 3-line snippet, guarded by `# repo-identity:` marker. Profile path is platform-aware: `MyDocuments/PowerShell/Microsoft.PowerShell_profile.ps1` on Windows, `~/.config/powershell/Microsoft.PowerShell_profile.ps1` on Unix.
+
+**Idempotency:** Re-running `install` overwrites profile JSON files (safe — deterministic generation) but never duplicates the `$PROFILE` snippet.
+
+### `docs/repo-identity-install.md` (new)
+
+Cross-device install guide covering:
+- External dependencies table (.NET, Oh My Posh, PowerShell 7, Windows Terminal, Git)
+- Oh My Posh install instructions for Windows / macOS / Linux
+- Two-command bootstrap (`git clone` + `dotnet run -- install`)
+- Exact list of what changes on the machine (4 rows: JSON profiles, index.json, Set-RepoTheme.ps1, $PROFILE)
+- Idempotency guarantees
+- `--dry-run` usage with example output
+- `repo.identity.json` customization (accentColor, icon, type)
+- Uninstall instructions
+- Full CLI reference
+
+## Rationale
+
+The `install` command consolidates what would otherwise be a manual 4-step process (copy files, edit $PROFILE, create directories) into a single idempotent command. `--dry-run` makes it safe to inspect on new devices before committing. The `$PROFILE` marker guard prevents duplicate snippet injection on re-runs, which is the main footgun in auto-patching shell profiles.
+
+## Alternatives Considered
+
+- **Shell script instead of C# command** — rejected; keeping bootstrap entirely within the CLI avoids bash/PowerShell cross-platform fragility and keeps the tool self-contained.
+- **Separate `patch-profile` subcommand** — rejected; folding it into `install` gives users a single command to remember for new device setup.
+
+---
+
+### 20. RepoIdentity Phase 8 — Set-RepoTheme.ps1 Generator
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-07-22  
+**Status:** Implemented
+
+## Context
+
+`repo-identity generate` already writes Oh My Posh profile `.json` files and `index.json` to `terminal/ohmyposh/`. To complete the terminal theme auto-detection flow, the `generate` command also needs to emit `Set-RepoTheme.ps1` — the PowerShell activation script that reads `index.json` at shell start and applies the matching theme for the current git repo.
+
+## Decision
+
+Extend `GenerateCommand.cs` to write `Set-RepoTheme.ps1` to the output directory immediately after `ConfigGenerator.GenerateAsync()` completes.
+
+## Implementation Details
+
+- **Script template location:** `private const string ScriptTemplate` in `GenerateCommand.cs` as a C# 11 raw string literal (`"""..."""`). Keeps the script version-controlled alongside the C# code that generates it.
+- **Line endings:** Written with LF-only (`\n`) via `.Replace("\r\n", "\n")`. PowerShell 7+ handles LF on all platforms.
+- **Output path:** `{outputDirectory}/Set-RepoTheme.ps1` — same directory as the JSON profiles (default: `terminal/ohmyposh/`).
+- **Console output:** Appends `   Set-RepoTheme.ps1` to the existing file listing in the success summary.
+
+## Script behaviour
+
+1. `git rev-parse --show-toplevel` — finds the repo root (exits silently if not in a git repo)
+2. `git -C $repoRoot remote get-url origin` — extracts the remote URL
+3. Regex match on `github.com[:/](owner/repo)` to get `owner/repo`
+4. Reads `~/.poshthemes/index.json` and looks up the matching profile entry
+5. Calls `oh-my-posh init pwsh --config <configFile> | Invoke-Expression`
+
+`$ErrorActionPreference = 'SilentlyContinue'` ensures the script is a silent no-op in any environment where git, oh-my-posh, or `index.json` are absent.
+
+## Alternatives considered
+
+- **Separate template file in the repo:** Would require embedding or reading from disk at generate-time. Raw string literal in C# is simpler and keeps the script co-located with the code that owns it.
+- **Generating the script from `install` command instead:** The `install` command copies from `terminal/ohmyposh/` to `~/.poshthemes/`. By generating it at `generate` time, the script is committed to the repo and always reflects the current generation logic.
+
+## Files changed
+
+- `src/RepoIdentity/Commands/GenerateCommand.cs` — added `ScriptTemplate` const and write logic
+- `docs/repo-identity.md` — added `## Set-RepoTheme.ps1` section
+- `terminal/ohmyposh/Set-RepoTheme.ps1` — generated output (do not edit manually)
+
+---
+
+### 29. HTML Dashboard — Single-File Architecture
 
 **Author:** Kaylee (Backend Dev)  
 **Date:** 2026-04-02  
@@ -363,7 +762,7 @@ Created `site/index.html` as a **single-file HTML dashboard** with all CSS and J
 
 ---
 
-### 14. Dashboard Filters & View Modes
+### 30. Dashboard Filters & View Modes
 
 **Author:** Kaylee (Backend Dev)  
 **Date:** 2026-04-02  
@@ -397,7 +796,7 @@ Added per-section filter toolbars and card/list view toggle to `site/index.html`
 
 ---
 
-### 15. Dashboard Navigation, Highlights & Collapsible Sections
+### 31. Dashboard Navigation, Highlights & Collapsible Sections
 
 **Author:** Kaylee (Backend Dev)  
 **Date:** 2026-07-22  
@@ -434,7 +833,7 @@ Implemented all three features in the single-file `site/index.html` architecture
 
 ---
 
-### 16. Historical Trend Aggregation Architecture
+### 32. Historical Trend Aggregation Architecture
 
 **Author:** Kaylee (Backend Dev)
 **Date:** 2026-07-22
