@@ -10,7 +10,7 @@
         {
           "type": "text",
           "foreground": "#1C1C1C",
-          "background": "#6AB083",
+          "background": "#A6CE83",
           "style": "plain",
           "template": " 🔊 ElBruno.VibeVoiceTTS "
         }

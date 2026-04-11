@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-10T16:57:31.2399718+00:00",
-  "totalRepos": 16,
+  "generatedAt": "2026-04-11T09:38:39.448145+00:00",
+  "totalRepos": 17,
   "profiles": [
     {
       "repo": "elbruno/elbruno.localembeddings",
@@ -21,21 +21,21 @@
       "icon": "\uD83D\uDD0A"
     },
     {
-      "repo": "elbruno/ElBruno.VibeVoiceTTS",
-      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
-      "accentColor": "#6AB083",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/ElBruno.LocalLLMs",
       "configFile": "elbruno-ElBruno.LocalLLMs.json",
-      "accentColor": "#C1B38B",
+      "accentColor": "#85958B",
       "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "elbruno/ElBruno.VibeVoiceTTS",
+      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
+      "accentColor": "#A6CE83",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
       "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
-      "accentColor": "#ADA976",
+      "accentColor": "#53BD76",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -45,16 +45,16 @@
       "icon": "\uD83D\uDDBC️"
     },
     {
-      "repo": "elbruno/elbruno-ai-evaluation",
-      "configFile": "elbruno-elbruno-ai-evaluation.json",
-      "accentColor": "#5A99B2",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Realtime",
       "configFile": "elbruno-ElBruno.Realtime.json",
       "accentColor": "#9667AE",
       "icon": "⚡"
+    },
+    {
+      "repo": "elbruno/elbruno-ai-evaluation",
+      "configFile": "elbruno-elbruno-ai-evaluation.json",
+      "accentColor": "#5A99B2",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/ElBruno.ModelContextProtocol",
@@ -81,6 +81,12 @@
       "icon": "\uD83D\uDCF7"
     },
     {
+      "repo": "elbruno/ElBruno.MarkItDotNet",
+      "configFile": "elbruno-ElBruno.MarkItDotNet.json",
+      "accentColor": "#B87456",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.Whisper",
       "configFile": "elbruno-ElBruno.Whisper.json",
       "accentColor": "#6EC9A8",
@@ -93,9 +99,9 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/ElBruno.MarkItDotNet",
-      "configFile": "elbruno-ElBruno.MarkItDotNet.json",
-      "accentColor": "#B87456",
+      "repo": "elbruno/graphify-dotnet",
+      "configFile": "elbruno-graphify-dotnet.json",
+      "accentColor": "#BEA579",
       "icon": "\uD83D\uDD37"
     }
   ]
