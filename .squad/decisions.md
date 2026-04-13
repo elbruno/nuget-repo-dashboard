@@ -601,6 +601,73 @@ The NuGet Search API has been returning stale download counts since April 7 (fro
 ### 4. Frontend Integration
 
 - Staleness banner at top of content area (amber, dark-mode aware)
+
+---
+
+### 19. Multi-Shard NuGet Download Query Resilience
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-04-13  
+**Status:** Implemented
+
+## Context
+
+The NuGet Search API runs two independent search shards for geographic/performance redundancy:
+- **USNC** (`api-v2v3search-0.nuget.org`) — froze on April 7, 2026; returns stale download counts
+- **USSC** (`api-v2v3search-1.nuget.org`) — live, up-to-date data
+
+The Collector was hardcoded to query only USNC, causing stale data propagation to the dashboard.
+
+## Decision
+
+Modified `NuGetCollector.GetTotalDownloadsAsync()` to query **both shards in parallel** and use the **maximum** download count from either response.
+
+### Key Design Points
+
+1. **Parallel queries** — `Task.WhenAll` queries both shards simultaneously to minimize latency (2x requests but concurrent)
+2. **Max aggregation** — returns `max(USNC, USSC)` ensuring users get the most current data from whichever shard is live
+3. **Fallback resilience** — if one shard fails (HTTP error or parse exception), uses the other's value; if both fail, returns 0 (existing behavior)
+4. **Transparency** — logs mismatches to console when USNC ≠ USSC for diagnostic visibility
+5. **Zero breaking changes** — method signature `GetTotalDownloadsAsync()` unchanged; tests pass without modification
+
+### Implementation Details
+
+- **New constants** (lines 16–17): `SearchShardUsnc` and `SearchShardUssc` URLs
+- **Helper method** (lines 144–165): `GetDownloadsFromShardAsync(string url)` for shard-specific JSON parsing + error handling
+- **Main method** (lines 166–188): Calls both shards via `Task.WhenAll`, aggregates results
+- **Log format**: `[NuGet] Download shard mismatch for {packageId}: USNC={x} USSC={y}, using max={max}`
+
+### Rationale
+
+**Why not switch to USSC-only?**
+- If USSC becomes stale in future, we'd have the same problem again. Dual-shard ensures resilience to future staleness in either shard.
+
+**Why parallel instead of sequential?**
+- Reduces latency. Sequential would add ~200ms per package (multiply by 50 packages = significant delay).
+
+**Why max aggregation instead of primary+fallback?**
+- Simpler logic. Query both, take max. No ordering assumptions between shards.
+- Both shards are equally authoritative — no reason to prefer one's staleness over the other's liveness.
+
+## Testing
+
+- **11 new tests** in `NuGetCollectorMultiShardTests.cs` cover:
+  - Both shards return data → max aggregation
+  - Individual shard failures → fallback to healthy shard
+  - Both shards fail → returns 0
+  - Same value on both shards → no mismatch log
+  - Empty data arrays → treated as 0
+  - HTTP error codes (404, 500, 503)
+- **Build:** ✅ 0 warnings, 0 errors
+- **Test count:** 198 → 209 (net +11)
+- **All tests passing** ✅
+
+## Impact
+
+- **Modified:** `src/Collector/Services/NuGetCollector.cs`
+- **New tests:** `tests/Collector.Tests/NuGetCollectorMultiShardTests.cs`
+- **Output:** No change to data format; improved data quality (stale → live) for frozen shards
+- **Backward compatible:** Existing tests pass without modification
 - Trends section expanded from 2 to 4 cards: Total Downloads, Top Movers + Velocity, Issue Activity table, Recent Releases
 - All new data rendered via existing vanilla JS patterns (no new dependencies)
 

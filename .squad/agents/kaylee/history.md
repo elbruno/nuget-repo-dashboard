@@ -151,3 +151,32 @@ Build: 0 warnings, 0 errors. 198 tests pass (19 new tests from Zoe).
 - **Staleness threshold is 3 days**: `isStale = staleDays >= 3`. This was chosen to avoid false positives from weekend data gaps while still catching the NuGet API stale-data issue (which froze counts starting April 7).
 - **GitHubCollector closed issues use `since` parameter**: The `since` query param is set to 30 days ago in ISO8601 format, keeping the API response bounded.
 - **Frontend staleness banner**: Uses inline styles matching the existing pattern. Dark mode override added in the `@media (prefers-color-scheme: dark)` block alongside `.mover-change` styles.
+- **NuGet search shards (USNC vs USSC)**: NuGet runs two search shards (`azuresearch-usnc.nuget.org` and `azuresearch-ussc.nuget.org`) that can return different download counts when one becomes stale. The USNC shard froze on April 7, 2026. Querying both shards in parallel and taking the maximum ensures the collector gets the most current data.
+- **Parallel shard queries with Task.WhenAll**: `GetTotalDownloadsAsync` now queries both shards simultaneously using `Task.WhenAll`. Each shard uses the existing `GetWithRetryAsync` for resilience. If one shard fails (returns 0), the other's value is used. If both fail, returns 0 (existing behavior).
+- **Shard mismatch logging**: When both shards return non-zero but different values, a console log helps diagnose staleness: `[NuGet] Download shard mismatch for {packageId}: USNC={x} USSC={y}, using max={max}`. This is informational only — the collector already picked the correct max value.
+- **GetDownloadsFromShardAsync helper**: Extracted the JSON parsing logic into a separate method to avoid duplication. Takes a URL, calls `GetWithRetryAsync`, parses the `data[0].totalDownloads` field, returns 0 on any failure.
+
+### Multi-Shard NuGet Download Query Implementation (2026-04-13)
+
+Modified `NuGetCollector.cs` to resolve April 7 stale USNC shard issue by querying both search shards in parallel:
+
+1. **Dual-shard architecture**
+   - Constants: `SearchShardUsnc` (`api-v2v3search-0.nuget.org`), `SearchShardUssc` (`api-v2v3search-1.nuget.org`)
+   - `GetTotalDownloadsAsync()` queries both via `Task.WhenAll` for concurrent execution
+   - Aggregates result: `max(USNC, USSC)` ensures live data when either shard is fresh
+
+2. **Resilience & fallback**
+   - New helper `GetDownloadsFromShardAsync(string url)` handles per-shard JSON parsing + error handling
+   - Single shard failure → use other's value
+   - Both shards fail → return 0 (preserves existing behavior)
+
+3. **Diagnostic logging**
+   - When both shards return different non-zero values: `[NuGet] Download shard mismatch for {packageId}: USNC={x} USSC={y}, using max={max}`
+   - Helps identify future staleness issues
+
+4. **Build & test results**
+   - Build: 0 warnings, 0 errors
+   - Existing tests pass unchanged (no signature changes)
+   - Zoe created 11 new integration tests for multi-shard scenarios
+   - Test count: 198 → 209
+   - All 209 tests passing ✅
