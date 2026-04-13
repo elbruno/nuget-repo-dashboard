@@ -78,4 +78,10 @@ public sealed class GitHubRepoMetrics
 
     [JsonPropertyName("recentIssues")]
     public List<GitHubIssue> RecentIssues { get; set; } = [];
+
+    [JsonPropertyName("recentClosedIssues")]
+    public List<GitHubIssue> RecentClosedIssues { get; set; } = [];
+
+    [JsonPropertyName("closedIssuesCount")]
+    public int ClosedIssuesCount { get; set; }
 }

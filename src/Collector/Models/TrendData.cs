@@ -15,6 +15,21 @@ public sealed class TrendData
 
     [JsonPropertyName("repositories")]
     public Dictionary<string, RepositoryTrend> Repositories { get; set; } = new();
+
+    [JsonPropertyName("velocities")]
+    public List<PackageVelocity> Velocities { get; set; } = [];
+
+    [JsonPropertyName("stalePackageCount")]
+    public int StalePackageCount { get; set; }
+
+    [JsonPropertyName("issueActivity")]
+    public List<IssueActivityPoint> IssueActivity { get; set; } = [];
+
+    [JsonPropertyName("versionActivity")]
+    public List<VersionActivityPoint> VersionActivity { get; set; } = [];
+
+    [JsonPropertyName("newPackages")]
+    public List<NewPackageEvent> NewPackages { get; set; } = [];
 }
 
 public sealed class PackageTrend
@@ -57,4 +72,52 @@ public sealed class VersionEvent
 
     [JsonPropertyName("version")]
     public string Version { get; set; } = string.Empty;
+}
+
+public sealed class PackageVelocity
+{
+    [JsonPropertyName("packageId")]
+    public string PackageId { get; set; } = string.Empty;
+
+    [JsonPropertyName("avgDailyDownloads")]
+    public double AvgDailyDownloads { get; set; }
+
+    [JsonPropertyName("staleDays")]
+    public int StaleDays { get; set; }
+
+    [JsonPropertyName("isStale")]
+    public bool IsStale { get; set; }
+}
+
+public sealed class IssueActivityPoint
+{
+    [JsonPropertyName("date")]
+    public string Date { get; set; } = string.Empty;
+
+    [JsonPropertyName("opened")]
+    public int Opened { get; set; }
+
+    [JsonPropertyName("closed")]
+    public int Closed { get; set; }
+}
+
+public sealed class VersionActivityPoint
+{
+    [JsonPropertyName("date")]
+    public string Date { get; set; } = string.Empty;
+
+    [JsonPropertyName("newVersions")]
+    public int NewVersions { get; set; }
+
+    [JsonPropertyName("packages")]
+    public List<string> Packages { get; set; } = [];
+}
+
+public sealed class NewPackageEvent
+{
+    [JsonPropertyName("date")]
+    public string Date { get; set; } = string.Empty;
+
+    [JsonPropertyName("packageId")]
+    public string PackageId { get; set; } = string.Empty;
 }

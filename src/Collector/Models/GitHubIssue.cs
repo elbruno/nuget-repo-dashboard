@@ -27,4 +27,10 @@ public sealed class GitHubIssue
 
     [JsonPropertyName("commentsCount")]
     public int CommentsCount { get; set; }
+
+    [JsonPropertyName("state")]
+    public string? State { get; set; }
+
+    [JsonPropertyName("closedAt")]
+    public DateTimeOffset? ClosedAt { get; set; }
 }

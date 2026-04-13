@@ -563,9 +563,60 @@ Added `## 🎨 repo-identity` section to `README.md` documenting all four CLI co
 
 ---
 
-### 18. RepoIdentity Phase 6 — Enhanced Profile Generation
+### 18. Download Velocity, Staleness Detection, Issue Activity, Version Tracking
 
-**Author:** Kaylee  
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-04-13  
+**Status:** Implemented
+
+## Context
+
+The NuGet Search API has been returning stale download counts since April 7 (frozen at 18,439 total across 50 packages). We needed to detect and surface this data quality issue, plus add issue opened/closed tracking and version/package publishing visibility.
+
+## Decisions
+
+### 1. Staleness Detection via Download Velocity
+
+- Compute daily download deltas from consecutive history snapshots
+- `avgDailyDownloads` = average of last 7 deltas
+- `staleDays` = count of consecutive trailing zero-delta days
+- `isStale` = staleDays >= 3 (avoids weekend false positives)
+- `stalePackageCount` aggregated at trend data root level
+- Frontend shows amber warning banner when any packages are stale
+
+### 2. Issue Activity from History Snapshots
+
+- New `GetRecentClosedIssuesAsync` in GitHubCollector (same retry/rate-limit pattern)
+- `GitHubIssue` extended with `State` and `ClosedAt` fields
+- `GitHubRepoMetrics` extended with `RecentClosedIssues` list and `ClosedIssuesCount`
+- TrendAggregationService counts opened (by `createdAt`) and closed (by `closedAt`) per date from repo snapshots
+- Output as `issueActivity` array in trend data
+
+### 3. Version/Package Publishing Tracking
+
+- Track first-appearance of packages chronologically across history → `newPackages` events
+- Aggregate version changes per date → `versionActivity` (excludes initial version appearances to avoid noise)
+- Both output in trend data for frontend consumption
+
+### 4. Frontend Integration
+
+- Staleness banner at top of content area (amber, dark-mode aware)
+- Trends section expanded from 2 to 4 cards: Total Downloads, Top Movers + Velocity, Issue Activity table, Recent Releases
+- All new data rendered via existing vanilla JS patterns (no new dependencies)
+
+## Impact
+
+- **Modified models:** `TrendData.cs`, `GitHubIssue.cs`, `GitHubRepoMetrics.cs`
+- **Modified services:** `TrendAggregationService.cs`, `GitHubCollector.cs`
+- **Modified frontend:** `site/index.html`
+- **Build:** 0 warnings, 0 errors
+- **Tests:** 19 new tests added, all 198 existing tests pass (no regressions)
+
+---
+
+### 19. RepoIdentity Phase 6 — Enhanced Profile Generation
+
+**Author:** Kaylee
 **Date:** 2026-07-22  
 **Status:** Implemented
 

@@ -38,6 +38,16 @@ public sealed class TrendAggregationService : ITrendAggregationService
         // Track version changes per package for VersionHistory
         var lastVersionByPackage = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
+        // Track first appearance of packages for NewPackages
+        var knownPackageIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        // Collect version activity per date
+        var versionActivityByDate = new Dictionary<string, List<string>>();
+
+        // Collect issue activity per date (opened/closed counts)
+        var openedByDate = new Dictionary<string, int>();
+        var closedByDate = new Dictionary<string, int>();
+
         foreach (var (date, dirPath) in dateDirs)
         {
             var dateStr = date.ToString("yyyy-MM-dd");
@@ -46,7 +56,8 @@ public sealed class TrendAggregationService : ITrendAggregationService
             var nugetPath = Path.Combine(dirPath, "data.nuget.json");
             if (File.Exists(nugetPath))
             {
-                await ProcessNuGetSnapshotAsync(nugetPath, dateStr, trendData, lastVersionByPackage);
+                await ProcessNuGetSnapshotAsync(nugetPath, dateStr, trendData, lastVersionByPackage,
+                    knownPackageIds, versionActivityByDate);
             }
 
             // Process repositories snapshot
@@ -54,10 +65,89 @@ public sealed class TrendAggregationService : ITrendAggregationService
             if (File.Exists(reposPath))
             {
                 await ProcessReposSnapshotAsync(reposPath, dateStr, trendData);
+                await ProcessIssueActivityAsync(reposPath, dateStr, openedByDate, closedByDate);
             }
         }
 
+        // Compute package velocity from download trend points
+        ComputeVelocities(trendData);
+
+        // Build version activity list
+        foreach (var (dateStr, packages) in versionActivityByDate.OrderBy(kv => kv.Key))
+        {
+            trendData.VersionActivity.Add(new VersionActivityPoint
+            {
+                Date = dateStr,
+                NewVersions = packages.Count,
+                Packages = packages
+            });
+        }
+
+        // Build issue activity list
+        var allIssueDates = openedByDate.Keys.Union(closedByDate.Keys).OrderBy(d => d);
+        foreach (var dateStr in allIssueDates)
+        {
+            openedByDate.TryGetValue(dateStr, out var opened);
+            closedByDate.TryGetValue(dateStr, out var closed);
+            trendData.IssueActivity.Add(new IssueActivityPoint
+            {
+                Date = dateStr,
+                Opened = opened,
+                Closed = closed
+            });
+        }
+
         return trendData;
+    }
+
+    /// <summary>
+    /// Computes download velocity and staleness for each package from its trend download points.
+    /// </summary>
+    private static void ComputeVelocities(TrendData trendData)
+    {
+        foreach (var (packageId, trend) in trendData.Packages)
+        {
+            var points = trend.Downloads.OrderBy(p => p.Date).ToList();
+
+            double avgDailyDownloads = 0;
+            int staleDays = 0;
+
+            if (points.Count >= 2)
+            {
+                // Calculate daily deltas
+                var deltas = new List<long>();
+                for (int i = 1; i < points.Count; i++)
+                {
+                    deltas.Add(points[i].Value - points[i - 1].Value);
+                }
+
+                // Average of the last 7 deltas (or fewer if not enough data)
+                var recentDeltas = deltas.Skip(Math.Max(0, deltas.Count - 7)).ToList();
+                if (recentDeltas.Count > 0)
+                {
+                    avgDailyDownloads = recentDeltas.Average(d => (double)d);
+                }
+
+                // Count consecutive trailing days with zero delta
+                for (int i = deltas.Count - 1; i >= 0; i--)
+                {
+                    if (deltas[i] == 0)
+                        staleDays++;
+                    else
+                        break;
+                }
+            }
+
+            trendData.Velocities.Add(new PackageVelocity
+            {
+                PackageId = packageId,
+                AvgDailyDownloads = Math.Round(avgDailyDownloads, 2),
+                StaleDays = staleDays,
+                IsStale = staleDays >= 3
+            });
+        }
+
+        trendData.StalePackageCount = trendData.Velocities.Count(v => v.IsStale);
     }
 
     /// <summary>
@@ -107,7 +197,9 @@ public sealed class TrendAggregationService : ITrendAggregationService
         string path,
         string dateStr,
         TrendData trendData,
-        Dictionary<string, string> lastVersionByPackage)
+        Dictionary<string, string> lastVersionByPackage,
+        HashSet<string> knownPackageIds,
+        Dictionary<string, List<string>> versionActivityByDate)
     {
         try
         {
@@ -131,6 +223,16 @@ public sealed class TrendAggregationService : ITrendAggregationService
                     Value = pkg.TotalDownloads
                 });
 
+                // Track first appearance of a package
+                if (knownPackageIds.Add(pkg.PackageId))
+                {
+                    trendData.NewPackages.Add(new NewPackageEvent
+                    {
+                        Date = dateStr,
+                        PackageId = pkg.PackageId
+                    });
+                }
+
                 // Track version changes
                 if (!string.IsNullOrWhiteSpace(pkg.LatestVersion))
                 {
@@ -143,6 +245,17 @@ public sealed class TrendAggregationService : ITrendAggregationService
                             Version = pkg.LatestVersion
                         });
                         lastVersionByPackage[pkg.PackageId] = pkg.LatestVersion;
+
+                        // Record in version activity aggregation (skip initial appearances)
+                        if (prevVersion is not null)
+                        {
+                            if (!versionActivityByDate.TryGetValue(dateStr, out var list))
+                            {
+                                list = [];
+                                versionActivityByDate[dateStr] = list;
+                            }
+                            list.Add(pkg.PackageId);
+                        }
                     }
                 }
             }
@@ -181,6 +294,50 @@ public sealed class TrendAggregationService : ITrendAggregationService
         catch (Exception ex)
         {
             Console.Error.WriteLine($"    WARNING: Failed to read repos snapshot {path}: {ex.Message}");
+        }
+    }
+
+    private async Task ProcessIssueActivityAsync(
+        string path,
+        string dateStr,
+        Dictionary<string, int> openedByDate,
+        Dictionary<string, int> closedByDate)
+    {
+        try
+        {
+            await using var stream = File.OpenRead(path);
+            var snapshot = await JsonSerializer.DeserializeAsync<RepositoriesOutput>(stream, ReadOptions);
+            if (snapshot?.Repositories is null) return;
+
+            foreach (var repo in snapshot.Repositories)
+            {
+                // Count open issues created on this date
+                foreach (var issue in repo.RecentIssues)
+                {
+                    var issueDate = issue.CreatedAt.ToString("yyyy-MM-dd");
+                    if (issueDate == dateStr)
+                    {
+                        openedByDate[dateStr] = openedByDate.GetValueOrDefault(dateStr) + 1;
+                    }
+                }
+
+                // Count closed issues closed on this date
+                foreach (var issue in repo.RecentClosedIssues)
+                {
+                    if (issue.ClosedAt.HasValue)
+                    {
+                        var closedDate = issue.ClosedAt.Value.ToString("yyyy-MM-dd");
+                        if (closedDate == dateStr)
+                        {
+                            closedByDate[dateStr] = closedByDate.GetValueOrDefault(dateStr) + 1;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"    WARNING: Failed to read issue activity from {path}: {ex.Message}");
         }
     }
 }

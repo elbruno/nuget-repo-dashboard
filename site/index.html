@@ -397,6 +397,7 @@
     @media (prefers-color-scheme: dark) {
       .mover-change.up { color: #6ee66e; }
       .mover-change.down { color: #f87171; }
+      #staleness-banner { background: #3d3000; color: #ffc107; border-color: #665000; }
     }
     @media (max-width: 600px) {
       .trends-overview { grid-template-columns: 1fr; }
@@ -506,6 +507,11 @@
     </div>
     <div id="error" class="error-msg" style="display:none;"></div>
     <div id="content" style="display:none;">
+
+      <!-- Staleness Warning Banner -->
+      <div id="staleness-banner" style="display:none; background: #fff3cd; color: #856404; border: 1px solid #ffc107; border-radius: var(--radius-sm); padding: 0.75rem 1.25rem; margin-bottom: 1rem; font-size: 0.9rem; font-weight: 500; text-align: center;">
+        ⚠️ <span id="staleness-message"></span>
+      </div>
 
       <!-- Trends Section -->
       <section id="trends-section" style="display:none;">
@@ -1251,6 +1257,17 @@
       }
       document.getElementById('trends-section').style.display = '';
 
+      // Staleness banner
+      const staleCount = trendsData.stalePackageCount || 0;
+      const banner = document.getElementById('staleness-banner');
+      if (staleCount > 0) {
+        document.getElementById('staleness-message').textContent =
+          `Download data may be delayed — ${staleCount} package${staleCount !== 1 ? 's' : ''} show${staleCount === 1 ? 's' : ''} no change for 3+ days`;
+        banner.style.display = '';
+      } else {
+        banner.style.display = 'none';
+      }
+
       // Total downloads trend (sum per date)
       const dateMap = {};
       for (const [, pkg] of Object.entries(trendsData.packages)) {
@@ -1284,6 +1301,53 @@
           }).join('')}</ul>`
         : '<p style="color:var(--text-muted);font-size:0.85rem;">Not enough data yet</p>';
 
+      // Velocity info for top movers
+      const velocities = trendsData.velocities || [];
+      const velocityMap = {};
+      for (const v of velocities) { velocityMap[v.packageId] = v; }
+      const velocityHtml = topMovers.length > 0
+        ? `<ul class="top-movers">${topMovers.map(m => {
+            const v = velocityMap[m.name];
+            const avg = v ? v.avgDailyDownloads.toFixed(1) : '—';
+            const stale = v && v.isStale ? ' <span style="color:#b91c1c;font-size:0.75rem;">⏸ stale</span>' : '';
+            return `<li><span class="mover-name">${esc(m.name)}</span><span style="font-size:0.8rem;color:var(--text-muted);">${avg}/day${stale}</span></li>`;
+          }).join('')}</ul>`
+        : '';
+
+      // Issue activity — last 7 days
+      const issueActivity = (trendsData.issueActivity || []).slice(-7);
+      const issueHtml = issueActivity.length > 0
+        ? `<table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
+            <thead><tr style="border-bottom:1px solid var(--border);"><th style="text-align:left;padding:0.25rem 0.5rem;">Date</th><th style="text-align:right;padding:0.25rem 0.5rem;">Opened</th><th style="text-align:right;padding:0.25rem 0.5rem;">Closed</th></tr></thead>
+            <tbody>${issueActivity.map(a =>
+              `<tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:0.25rem 0.5rem;">${esc(a.date)}</td>
+                <td style="text-align:right;padding:0.25rem 0.5rem;color:#b91c1c;">${a.opened}</td>
+                <td style="text-align:right;padding:0.25rem 0.5rem;color:#1a7a1a;">${a.closed}</td>
+              </tr>`).join('')}</tbody>
+           </table>`
+        : '<p style="color:var(--text-muted);font-size:0.85rem;">No issue activity data yet</p>';
+
+      // Version activity — recent releases
+      const versionActivity = (trendsData.versionActivity || []).slice(-5);
+      const versionHtml = versionActivity.length > 0
+        ? `<ul class="top-movers">${versionActivity.map(v =>
+            `<li><span class="mover-name">📦 ${v.newVersions} new version${v.newVersions !== 1 ? 's' : ''} on ${esc(v.date)}</span><span style="font-size:0.75rem;color:var(--text-muted);">${v.packages.map(p => esc(p)).join(', ')}</span></li>`
+          ).join('')}</ul>`
+        : '';
+
+      // New packages
+      const newPackages = (trendsData.newPackages || []).slice(-5);
+      const newPkgHtml = newPackages.length > 0
+        ? `<ul class="top-movers">${newPackages.map(p =>
+            `<li><span class="mover-name">🆕 ${esc(p.packageId)}</span><span style="font-size:0.75rem;color:var(--text-muted);">First seen ${esc(p.date)}</span></li>`
+          ).join('')}</ul>`
+        : '';
+
+      const publishHtml = (versionHtml || newPkgHtml)
+        ? `${versionHtml}${newPkgHtml}`
+        : '<p style="color:var(--text-muted);font-size:0.85rem;">No publish activity yet</p>';
+
       document.getElementById('trends-grid').innerHTML = `
         <div class="trend-card">
           <h4>📊 Total Downloads</h4>
@@ -1293,6 +1357,15 @@
         <div class="trend-card">
           <h4>🚀 Top Movers (7-day download change)</h4>
           ${moversHtml}
+          ${velocityHtml ? `<h4 style="margin-top:0.75rem;">⚡ Download Velocity</h4>${velocityHtml}` : ''}
+        </div>
+        <div class="trend-card">
+          <h4>🐛 Issue Activity (last 7 days)</h4>
+          ${issueHtml}
+        </div>
+        <div class="trend-card">
+          <h4>📦 Recent Releases</h4>
+          ${publishHtml}
         </div>
       `;
     }

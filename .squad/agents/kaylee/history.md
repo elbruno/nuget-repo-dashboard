@@ -117,5 +117,37 @@ Updated `docs/repo-identity.md` with `## Set-RepoTheme.ps1` section. File locati
 - **RepoIdentity Phase 6 — Enhanced Profile Generation (2025-07-22):** Five enhancements to `ConfigGenerator`: (1) `console_title_template` added to root JSON via post-serialize string replace (camelCase→snake_case); (2) solid `Background = color` replaces `"transparent"`, contrasting `Foreground` (`#FFFFFF`/`#1C1C1C`) derived from NTSC luminance; (3) `PurposeIcons` array + `SelectIcon()` method scans repo name for 12 keyword groups before falling back to `LanguageIcons`; (4) `EnsureMinDistance` iterative color-shift algorithm (min Euclidean RGB distance 60, max 20 iterations) pre-generates all colors before writing files; (5) `docs/repo-identity.md` created. Critical lesson: `System.Text.Json` always escapes supplementary Unicode characters (emoji U+10000+) as `\uXXXX\uXXXX` surrogate pairs even with `UnsafeRelaxedJsonEscaping` — added `UnescapeSurrogatePairs()` post-processing with compiled `Regex` to restore literal UTF-8. All 38 tests pass (net8.0 + net10.0). Decision written to `.squad/decisions/inbox/kaylee-phase6-enhancements.md`.
 - **RepoIdentity Phase 7 — install command + install guide (2025-07-22):** Created `src/RepoIdentity/Commands/InstallCommand.cs` — the "one-shot device bootstrap" command. Four options: `--profiles` (default: `terminal/ohmyposh`), `--target` (default: `~/.poshthemes`), `--skip-prereqs`, `--dry-run`. Four-step flow: (1) prereq check via `RunProcess("oh-my-posh", "--version")` with platform-specific install hints; (2) copy all `*.json` profile files to target directory; (3) copy `Set-RepoTheme.ps1` if present; (4) idempotent `$PROFILE` patch — appends 3-line snippet if `# repo-identity:` marker not already present, resolves PowerShell profile path per-platform (`MyDocuments/PowerShell/` on Windows, `~/.config/powershell/` on Unix). `Program.cs` updated with `rootCommand.AddCommand(InstallCommand.Create())`. `docs/repo-identity-install.md` created as cross-device install guide (external deps table, bootstrap commands, what changes on machine, idempotency notes, dry-run example, customization, uninstall steps, CLI reference). Build: 0 warnings, 0 errors. `--help` and `--dry-run` both verified working.
 - **RepoIdentity Phase 8 — Auto-Detection Script Generation (2025-07-22):** Updated `GenerateCommand.cs` to emit `Set-RepoTheme.ps1` alongside Oh My Posh profile JSON files. Script template stored as a `private const string ScriptTemplate` using a C# 11 raw string literal (`"""..."""`). Written to the output directory with LF-only line endings via `.Replace("\r\n", "\n")`. The script is a cross-platform PowerShell 7+ auto-detection script: uses `git rev-parse --show-toplevel` + `git remote get-url origin` to identify the current repo, looks up `owner/repo` in `~/.poshthemes/index.json`, then calls `oh-my-posh init pwsh --config <file> | Invoke-Expression`. `$ErrorActionPreference = 'SilentlyContinue'` ensures silent no-ops when git/oh-my-posh/index.json are absent. Verified: `generate` command produces `Set-RepoTheme.ps1` with 35 lines and 8 blank lines in `terminal/ohmyposh/`. Updated `docs/repo-identity.md` with a `## Set-RepoTheme.ps1` section covering flow, design decisions, and troubleshooting steps.
+- **Dashboard Improvements — Velocity, Issues, Versions (2026-07-23):** Three features added to Collector + frontend. (1) **Download Velocity + Staleness Detection**: `PackageVelocity` class in `TrendData.cs` (avgDailyDownloads over last 7 deltas, staleDays = consecutive trailing zero-delta days, isStale = staleDays >= 3). `ComputeVelocities()` in `TrendAggregationService` runs after download trends are built. Frontend shows amber staleness banner when `stalePackageCount > 0` and velocity per-day rates under top movers. (2) **Issue Activity**: New `GetRecentClosedIssuesAsync` in `GitHubCollector` fetches closed issues (last 30 days) with same retry pattern. `GitHubIssue` gained `State` and `ClosedAt` fields; `GitHubRepoMetrics` gained `RecentClosedIssues` and `ClosedIssuesCount`. `TrendAggregationService.ProcessIssueActivityAsync` counts opened/closed per date from repo snapshots. Frontend renders last-7-days opened/closed table. (3) **Version/Package Publishing**: `ProcessNuGetSnapshotAsync` now tracks first-appearance (newPackages) and version-change-by-date (versionActivity, skipping initial version). Frontend shows recent releases and new package events. Build: 0 warnings, 0 errors. All 198 tests pass.
 
+### Dashboard Improvements — Velocity, Issues, Versions (2026-04-13)
 
+Completed three dashboard metric features in parallel with Zoe's tests:
+
+1. **Download Velocity + Staleness Detection** 
+   - `PackageVelocity` class in `TrendData.cs`: `avgDailyDownloads` (last 7 deltas), `staleDays` (consecutive zero deltas), `isStale` (staleDays >= 3)
+   - `ComputeVelocities()` runs after download trends built
+   - Metrics exposed in `TrendData.packageVelocities`
+   - Frontend amber banner when `stalePackageCount > 0`
+
+2. **Issue Activity Tracking**
+   - New `GetRecentClosedIssuesAsync()` in `GitHubCollector` (30-day window, same retry pattern)
+   - `GitHubIssue` extended: `State` (string?), `ClosedAt` (DateTimeOffset?)
+   - `GitHubRepoMetrics` extended: `RecentClosedIssues` (List<GitHubIssue>), `ClosedIssuesCount` (int)
+   - `ProcessIssueActivityAsync()` counts opened/closed per date from repo snapshots
+   - Frontend 7-day table showing opened/closed counts
+
+3. **Version/Package Publishing Metrics**
+   - `ProcessNuGetSnapshotAsync()` tracks first-appearance → `newPackages` events
+   - Version-change-by-date → `versionActivity` (excludes initial versions)
+   - Frontend shows recent releases timeline
+
+Build: 0 warnings, 0 errors. 198 tests pass (19 new tests from Zoe).
+
+## Learnings
+
+- **TrendAggregationService is the central aggregation point**: All new trend features (velocity, issue activity, version activity, new packages) plug into its main loop and post-processing. Keep the pattern: collect during snapshot iteration, aggregate after the loop.
+- **ProcessIssueActivityAsync reads repos snapshot a second time**: This is intentional — the file is small and the repos snapshot contains issue data. Avoids coupling ProcessReposSnapshotAsync to issue-specific dictionaries.
+- **Version activity skips initial appearances**: When a package first appears in history, its version is recorded in VersionHistory but NOT in versionActivity (which only tracks upgrades). This avoids flooding versionActivity with 50 "new version" events on the first snapshot date.
+- **Staleness threshold is 3 days**: `isStale = staleDays >= 3`. This was chosen to avoid false positives from weekend data gaps while still catching the NuGet API stale-data issue (which froze counts starting April 7).
+- **GitHubCollector closed issues use `since` parameter**: The `since` query param is set to 30 days ago in ISO8601 format, keeping the API response bounded.
+- **Frontend staleness banner**: Uses inline styles matching the existing pattern. Dark mode override added in the `@media (prefers-color-scheme: dark)` block alongside `.mover-change` styles.
