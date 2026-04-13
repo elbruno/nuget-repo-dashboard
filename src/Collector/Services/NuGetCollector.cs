@@ -13,6 +13,8 @@ public sealed class NuGetCollector : INuGetCollector
 {
     private readonly HttpClient _httpClient;
     private const string RegistrationBaseUrl = "https://api.nuget.org/v3/registration5-gz-semver2";
+    private const string SearchShardUsnc = "https://azuresearch-usnc.nuget.org/query";
+    private const string SearchShardUssc = "https://azuresearch-ussc.nuget.org/query";
     private const int MaxRetries = 3;
     private static readonly TimeSpan RetryDelay = TimeSpan.FromSeconds(2);
 
@@ -141,19 +143,52 @@ public sealed class NuGetCollector : INuGetCollector
 
     private async Task<long> GetTotalDownloadsAsync(string packageId)
     {
-        var url = $"https://api-v2v3search-0.nuget.org/query?q=packageid:{packageId}&take=1";
-        var json = await GetWithRetryAsync(url);
-        if (json is null) return 0;
+        // Query both NuGet search shards in parallel to handle staleness
+        var query = $"?q=packageid:{packageId}&take=1";
+        var usncUrl = SearchShardUsnc + query;
+        var usscUrl = SearchShardUssc + query;
 
-        if (json.RootElement.TryGetProperty("data", out var data))
+        var usncTask = GetDownloadsFromShardAsync(usncUrl);
+        var usscTask = GetDownloadsFromShardAsync(usscUrl);
+
+        await Task.WhenAll(usncTask, usscTask);
+
+        var usncCount = usncTask.Result;
+        var usscCount = usscTask.Result;
+
+        // Take the maximum to handle cases where one shard is stale
+        var maxCount = Math.Max(usncCount, usscCount);
+
+        // Log when shards disagree (helps diagnose staleness)
+        if (usncCount != usscCount && usncCount > 0 && usscCount > 0)
         {
-            foreach (var item in data.EnumerateArray())
+            Console.WriteLine($"[NuGet] Download shard mismatch for {packageId}: USNC={usncCount} USSC={usscCount}, using max={maxCount}");
+        }
+
+        return maxCount;
+    }
+
+    private async Task<long> GetDownloadsFromShardAsync(string url)
+    {
+        try
+        {
+            var json = await GetWithRetryAsync(url);
+            if (json is null) return 0;
+
+            if (json.RootElement.TryGetProperty("data", out var data))
             {
-                if (item.TryGetProperty("totalDownloads", out var dl))
+                foreach (var item in data.EnumerateArray())
                 {
-                    return dl.GetInt64();
+                    if (item.TryGetProperty("totalDownloads", out var dl))
+                    {
+                        return dl.GetInt64();
+                    }
                 }
             }
+        }
+        catch (HttpRequestException)
+        {
+            // Shard unavailable after retries — return 0 so the other shard can provide data
         }
 
         return 0;

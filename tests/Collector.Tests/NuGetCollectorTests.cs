@@ -67,7 +67,11 @@ public class NuGetCollectorTests
             HttpStatusCode.OK,
             BuildRegistrationJson(version: "2.0.0", description: "My package", authors: "Bruno"));
         handler.AddResponse(
-            "https://api-v2v3search-0.nuget.org/query?q=packageid:TestPkg&take=1",
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:TestPkg&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(42000));
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:TestPkg&take=1",
             HttpStatusCode.OK,
             BuildSearchJson(42000));
 
@@ -167,7 +171,11 @@ public class NuGetCollectorTests
             HttpStatusCode.OK,
             """{ "items": [] }""");
         handler.AddResponse(
-            "https://api-v2v3search-0.nuget.org/query?q=packageid:EmptyPkg&take=1",
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:EmptyPkg&take=1",
+            HttpStatusCode.OK,
+            """{ "data": [] }""");
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:EmptyPkg&take=1",
             HttpStatusCode.OK,
             """{ "data": [] }""");
 
@@ -217,7 +225,11 @@ public class NuGetCollectorTests
             HttpStatusCode.OK,
             BuildRegistrationJson(version: "1.0.0"));
         handler.AddResponse(
-            "https://api-v2v3search-0.nuget.org/query?q=packageid:Pkg1&take=1",
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:Pkg1&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(500));
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:Pkg1&take=1",
             HttpStatusCode.OK,
             BuildSearchJson(500));
 
@@ -232,7 +244,11 @@ public class NuGetCollectorTests
             HttpStatusCode.OK,
             BuildRegistrationJson(version: "3.0.0"));
         handler.AddResponse(
-            "https://api-v2v3search-0.nuget.org/query?q=packageid:Pkg3&take=1",
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:Pkg3&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(9999));
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:Pkg3&take=1",
             HttpStatusCode.OK,
             BuildSearchJson(9999));
 
@@ -262,7 +278,11 @@ public class NuGetCollectorTests
             HttpStatusCode.OK,
             BuildRegistrationJson(listed: false));
         handler.AddResponse(
-            "https://api-v2v3search-0.nuget.org/query?q=packageid:UnlistedPkg&take=1",
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:UnlistedPkg&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(10));
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:UnlistedPkg&take=1",
             HttpStatusCode.OK,
             BuildSearchJson(10));
 
@@ -301,7 +321,11 @@ public class NuGetCollectorTests
             HttpStatusCode.OK,
             BuildRegistrationJson(tags: ["ai", "machine-learning", "dotnet"]));
         handler.AddResponse(
-            "https://api-v2v3search-0.nuget.org/query?q=packageid:TagPkg&take=1",
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:TagPkg&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(0));
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:TagPkg&take=1",
             HttpStatusCode.OK,
             BuildSearchJson(0));
 
@@ -328,7 +352,11 @@ public class NuGetCollectorTests
             HttpStatusCode.OK,
             BuildRegistrationJson(publishedDate: "2024-06-15T12:00:00+00:00"));
         handler.AddResponse(
-            "https://api-v2v3search-0.nuget.org/query?q=packageid:DatePkg&take=1",
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:DatePkg&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(0));
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:DatePkg&take=1",
             HttpStatusCode.OK,
             BuildSearchJson(0));
 
