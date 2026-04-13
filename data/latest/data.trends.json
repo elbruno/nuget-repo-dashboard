@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T12:16:43.1168457+00:00",
+  "generatedAt": "2026-04-13T12:23:34.5327746+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -50,7 +50,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 2737
+          "value": 3441
         }
       ],
       "versionHistory": [
@@ -120,7 +120,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 2363
+          "value": 3304
         }
       ],
       "versionHistory": [
@@ -186,7 +186,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 1321
+          "value": 1760
         }
       ],
       "versionHistory": [
@@ -264,7 +264,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 991
+          "value": 1055
         }
       ],
       "versionHistory": [
@@ -326,7 +326,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 1017
+          "value": 1207
         }
       ],
       "versionHistory": [
@@ -392,7 +392,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 732
+          "value": 1102
         }
       ],
       "versionHistory": [
@@ -462,7 +462,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 706
+          "value": 1065
         }
       ],
       "versionHistory": [
@@ -532,7 +532,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 586
+          "value": 601
         }
       ],
       "versionHistory": [
@@ -590,7 +590,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 389
+          "value": 395
         }
       ],
       "versionHistory": [
@@ -648,7 +648,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 492
+          "value": 532
         }
       ],
       "versionHistory": [
@@ -710,7 +710,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 271
+          "value": 275
         }
       ],
       "versionHistory": [
@@ -768,7 +768,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 390
+          "value": 398
         }
       ],
       "versionHistory": [
@@ -826,7 +826,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 421
+          "value": 780
         }
       ],
       "versionHistory": [
@@ -896,7 +896,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 297
+          "value": 336
         }
       ],
       "versionHistory": [
@@ -958,7 +958,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 357
+          "value": 360
         }
       ],
       "versionHistory": [
@@ -1016,7 +1016,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 284
+          "value": 311
         }
       ],
       "versionHistory": [
@@ -1078,7 +1078,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 301
+          "value": 331
         }
       ],
       "versionHistory": [
@@ -1140,7 +1140,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 295
+          "value": 299
         }
       ],
       "versionHistory": [
@@ -1198,7 +1198,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 355
+          "value": 459
         }
       ],
       "versionHistory": [
@@ -1260,7 +1260,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 295
+          "value": 326
         }
       ],
       "versionHistory": [
@@ -1318,7 +1318,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 293
+          "value": 318
         }
       ],
       "versionHistory": [
@@ -1380,7 +1380,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 306
+          "value": 311
         }
       ],
       "versionHistory": [
@@ -1438,7 +1438,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 287
+          "value": 290
         }
       ],
       "versionHistory": [
@@ -1496,7 +1496,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 268
+          "value": 272
         }
       ],
       "versionHistory": [
@@ -1554,7 +1554,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 173
+          "value": 177
         }
       ],
       "versionHistory": [
@@ -1612,7 +1612,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 177
+          "value": 180
         }
       ],
       "versionHistory": [
@@ -1670,7 +1670,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 178
+          "value": 182
         }
       ],
       "versionHistory": [
@@ -1728,7 +1728,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 187
+          "value": 247
         }
       ],
       "versionHistory": [
@@ -1786,7 +1786,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 215
+          "value": 244
         }
       ],
       "versionHistory": [
@@ -1844,7 +1844,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 143
+          "value": 167
         }
       ],
       "versionHistory": [
@@ -1902,7 +1902,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 122
+          "value": 167
         }
       ],
       "versionHistory": [
@@ -1960,7 +1960,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 99
+          "value": 103
         }
       ],
       "versionHistory": [
@@ -2018,7 +2018,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 161
+          "value": 186
         }
       ],
       "versionHistory": [
@@ -2076,7 +2076,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 171
+          "value": 517
         }
       ],
       "versionHistory": [
@@ -2142,7 +2142,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 90
+          "value": 94
         }
       ],
       "versionHistory": [
@@ -2200,7 +2200,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 142
+          "value": 167
         }
       ],
       "versionHistory": [
@@ -2258,7 +2258,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 162
+          "value": 579
         }
       ],
       "versionHistory": [
@@ -2328,7 +2328,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 220
+          "value": 1090
         }
       ],
       "versionHistory": [
@@ -2398,7 +2398,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 163
+          "value": 592
         }
       ],
       "versionHistory": [
@@ -2468,7 +2468,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 160
+          "value": 575
         }
       ],
       "versionHistory": [
@@ -2538,7 +2538,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 86
+          "value": 380
         }
       ],
       "versionHistory": [
@@ -2596,7 +2596,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 36
+          "value": 92
         }
       ],
       "versionHistory": [
@@ -2634,7 +2634,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 181
         }
       ],
       "versionHistory": [
@@ -2676,7 +2676,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 114
         }
       ],
       "versionHistory": [
@@ -2718,7 +2718,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 116
         }
       ],
       "versionHistory": [
@@ -2760,7 +2760,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 108
         }
       ],
       "versionHistory": [
@@ -2802,7 +2802,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 44
         }
       ],
       "versionHistory": [
@@ -2844,7 +2844,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 97
         }
       ],
       "versionHistory": [
@@ -2882,7 +2882,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 166
         }
       ],
       "versionHistory": [
@@ -2920,7 +2920,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 0
+          "value": 38
         }
       ],
       "versionHistory": [
@@ -6416,303 +6416,303 @@
   "velocities": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
-      "avgDailyDownloads": 3.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 104,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.HuggingFace.Downloader",
-      "avgDailyDownloads": 10.57,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 145,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QwenTTS",
-      "avgDailyDownloads": 17.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 79.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.VibeVoiceTTS",
-      "avgDailyDownloads": 0.29,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 9.43,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalLLMs",
-      "avgDailyDownloads": 1.86,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 29,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.VectorData",
-      "avgDailyDownloads": 1.29,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 54.14,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
-      "avgDailyDownloads": 0.57,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 51.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.OllamaSharp.Extensions",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 2.29,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.AgentsOrchestration.Abstractions",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 1,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 5.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Realtime",
-      "avgDailyDownloads": 0.29,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 1.43,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 51.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.Cuda",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 5.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.AgentsOrchestration.Orchestration",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.57,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.DirectML",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 4,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.Foundry",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 4.43,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Realtime.Whisper",
-      "avgDailyDownloads": 0.29,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 15.29,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.CLI",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 4.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.Cpu",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 3.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.PersonaPlex",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Realtime.SileroVad",
-      "avgDailyDownloads": 0.29,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.ClockTray",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation.SyntheticData",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation.Xunit",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.57,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation.Reporting",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Payloads",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 9,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Svg",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 4.57,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Ascii",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 3.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Pdf",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 6.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "elbruno.Extensions.AI.Skills.Cli",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Tool",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 4,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.Whisper",
-      "avgDailyDownloads": 2.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 51.57,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "elbruno.Extensions.AI.Skills.Core",
-      "avgDailyDownloads": 0.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 0.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Image",
-      "avgDailyDownloads": 0.43,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 4,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.AI",
-      "avgDailyDownloads": 4.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 63.71,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet",
-      "avgDailyDownloads": 6.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 130.43,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Excel",
-      "avgDailyDownloads": 4.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 65.43,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.PowerPoint",
-      "avgDailyDownloads": 4.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 63.43,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Whisper",
-      "avgDailyDownloads": 3.14,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 45.14,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalLLMs.Rag",
-      "avgDailyDownloads": 0.86,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 8.86,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
-      "avgDailyDownloads": 0,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 30.17,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
-      "avgDailyDownloads": 0,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 19,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu",
-      "avgDailyDownloads": 0,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 19.33,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
-      "avgDailyDownloads": 0,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 18,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Cli",
-      "avgDailyDownloads": 0,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 7.33,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "graphify-dotnet",
-      "avgDailyDownloads": 0,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 16.17,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Harrier",
-      "avgDailyDownloads": 0,
-      "staleDays": 6,
-      "isStale": true
+      "avgDailyDownloads": 27.67,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.HuggingFace.Downloader.Cli",
-      "avgDailyDownloads": 0,
-      "staleDays": 5,
-      "isStale": true
+      "avgDailyDownloads": 7.6,
+      "staleDays": 0,
+      "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Quality",
@@ -6769,7 +6769,7 @@
       "isStale": false
     }
   ],
-  "stalePackageCount": 50,
+  "stalePackageCount": 0,
   "issueActivity": [
     {
       "date": "2026-04-04",
