@@ -187,3 +187,4 @@ Modified `NuGetCollector.cs` to resolve April 7 stale USNC shard issue by queryi
    - Zoe created 11 new integration tests for multi-shard scenarios
    - Test count: 198 → 209
    - All 209 tests passing ✅
+- **PR data collection feature (2026-04-13):** Built full PR collection pipeline: new GitHubPullRequest model (17 fields), refactored GitHubCollector (replaced GetOpenPrCountAsync with GetRecentPullRequestsAsync + GetRecentMergedPullRequestsAsync), added PR trend aggregation (PullRequestActivityPoint), updated GitHubRepoMetrics (3 new fields), built Open PRs dashboard section with filters/sort/toggle. Frontend mirrors Issues section UX. Build: 0 warnings, 0 errors. Decision #17 (kaylee-pr-dashboard) merged to decisions.md.

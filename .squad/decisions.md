@@ -996,3 +996,64 @@ Phase 2 requires time-series trend data for sparkline visualizations on the dash
 - All meaningful changes require team consensus
 - Document architectural decisions here
 - Keep history focused on work, decisions focused on direction
+
+---
+
+# Decision: Full PR Data Collection Architecture
+
+**Author:** Kaylee (Backend Dev)
+**Date:** 2026-07-23
+**Status:** Implemented
+
+## Context
+
+The dashboard previously only tracked a count of open PRs (`OpenPullRequests` int) via a `GetOpenPrCountAsync` method that fetched up to 100 PRs just to count them. Bruno requested a full "Open Pull Requests" section matching the existing Issues section.
+
+## Decision
+
+1. **New model `GitHubPullRequest`** — 17 fields covering PR-specific data (draft status, review decision, branch info, merge timestamps). Follows same `[JsonPropertyName]` camelCase pattern as `GitHubIssue`.
+
+2. **Replaced `GetOpenPrCountAsync` with two methods:**
+   - `GetRecentPullRequestsAsync` — fetches up to 40 open PRs with full detail
+   - `GetRecentMergedPullRequestsAsync` — fetches recently merged PRs (30-day window), filters by `merged_at`
+
+3. **`additions`/`deletions`/`changed_files` set to 0** — The GitHub Pulls list endpoint does not return these. Individual PR endpoint would require N+1 calls per repo. Decided to skip for efficiency; dashboard works without line counts.
+
+4. **`reviewDecision` set to null from REST** — Only available via GraphQL API. Left as nullable field for future enhancement.
+
+5. **PR Activity in Trends** — `PullRequestActivityPoint` tracks opened/merged/closed per date (three states vs issues' two).
+
+6. **Frontend mirrors Issues section** — Same HTML structure, filter/sort logic, card/list toggle, localStorage persistence.
+
+## Impact
+
+- `GitHubRepoMetrics` gains 3 new fields: `recentPullRequests`, `recentMergedPullRequests`, `mergedPullRequestsCount`
+- `TrendData` gains `pullRequestActivity` list
+- `OpenPullRequests` int preserved for backward compat (now derived from `RecentPullRequests.Count`)
+- Two additional API calls per repo during collection (open PRs + closed PRs)
+
+
+---
+
+# Decision: PR Test Endpoint Migration
+
+**Author:** Zoe (Tester)
+**Date:** 2026-04-13
+
+## Context
+
+Kaylee refactored `GitHubCollector` to replace the old `GetOpenPrCountAsync` (which used `/pulls?state=open&per_page=1` and `/pulls?state=open&per_page=100`) with two new methods:
+- `GetRecentPullRequestsAsync` → `/pulls?state=open&sort=created&direction=desc&per_page=40`
+- `GetRecentMergedPullRequestsAsync` → `/pulls?state=closed&sort=updated&direction=desc&per_page=40`
+
+## Decision
+
+Updated all 14 existing tests in `GitHubCollectorTests.cs` to mock the new endpoint URLs instead of the old ones. This was required because the old URLs no longer match what the collector calls, causing `CollectAsync_KnownRepo_ReturnsCorrectMetrics` to fail (expected 3 open PRs, got 0).
+
+## Impact
+
+- All existing tests now correctly mock the new PR endpoints
+- No behavioral changes to test assertions beyond the URL updates
+- The `BuildPullsJson` helper still works since `ParseSinglePullRequest` uses `TryGetProperty` with defaults
+- `additions`/`deletions`/`changedFiles` are always 0 from the list endpoint — tested explicitly in new tests
+
