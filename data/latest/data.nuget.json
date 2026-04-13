@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T12:23:34.5839871+00:00",
+  "generatedAt": "2026-04-13T13:00:15.3212326+00:00",
   "packages": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
@@ -1096,6 +1096,25 @@
       "publishedDate": "2026-04-07T21:05:32.77+00:00"
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
+      "latestVersion": "0.5.3",
+      "totalDownloads": 0,
+      "description": "Azure Document Intelligence integration for ElBruno.MarkItDotNet. Provides layout-aware OCR extraction with structured CoreModel output.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "azure",
+        "document-intelligence",
+        "ocr",
+        "layout",
+        "ingestion",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-13T11:14:54.19+00:00"
+    },
+    {
       "packageId": "ElBruno.LocalEmbeddings.Harrier",
       "latestVersion": "1.4.3",
       "totalDownloads": 166,
@@ -1114,25 +1133,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-07T21:05:31.63+00:00"
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
-      "latestVersion": "0.5.3",
-      "totalDownloads": 0,
-      "description": "Azure Document Intelligence integration for ElBruno.MarkItDotNet. Provides layout-aware OCR extraction with structured CoreModel output.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "azure",
-        "document-intelligence",
-        "ocr",
-        "layout",
-        "ingestion",
-        "ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-13T11:14:54.19+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Metadata",

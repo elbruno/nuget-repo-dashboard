@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T12:23:34.5839871+00:00",
+  "generatedAt": "2026-04-13T13:00:15.3212326+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -46,7 +46,71 @@
       "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 42,
+          "title": "feat(harrier): DirectML GPU acceleration \u002B dynamic batch padding fix",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/42",
+          "createdAt": "2026-04-07T20:56:09+00:00",
+          "updatedAt": "2026-04-07T20:56:17+00:00",
+          "mergedAt": "2026-04-07T20:56:17+00:00",
+          "closedAt": "2026-04-07T20:56:17+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/harrier-gpu-directml",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 41,
+          "title": "feat: repo-wide improvements \u2014 security, performance, tests, docs",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/41",
+          "createdAt": "2026-04-07T18:25:58+00:00",
+          "updatedAt": "2026-04-07T18:31:31+00:00",
+          "mergedAt": "2026-04-07T18:31:31+00:00",
+          "closedAt": "2026-04-07T18:31:31+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/repo-improvements",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 40,
+          "title": "feat: update dependencies, implement roadmap features, add new samples and tests",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/40",
+          "createdAt": "2026-04-04T14:10:22+00:00",
+          "updatedAt": "2026-04-04T14:18:14+00:00",
+          "mergedAt": "2026-04-04T14:18:10+00:00",
+          "closedAt": "2026-04-04T14:18:10+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/update-dependencies-and-roadmap",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 3
     },
     {
       "owner": "elbruno",
@@ -88,7 +152,51 @@
       "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 7,
+          "title": "feat: add hfdownload CLI tool",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/pull/7",
+          "createdAt": "2026-04-08T18:14:26+00:00",
+          "updatedAt": "2026-04-08T18:14:37+00:00",
+          "mergedAt": "2026-04-08T18:14:37+00:00",
+          "closedAt": "2026-04-08T18:14:37+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/cli-tool",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 6,
+          "title": "feat: upgrade dependencies \u0026 expand test coverage to 147 tests",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/pull/6",
+          "createdAt": "2026-04-06T14:38:16+00:00",
+          "updatedAt": "2026-04-06T14:38:29+00:00",
+          "mergedAt": "2026-04-06T14:38:26+00:00",
+          "closedAt": "2026-04-06T14:38:26+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/upgrade-dependencies-latest",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 2
     },
     {
       "owner": "elbruno",
@@ -121,7 +229,7 @@
       ],
       "createdAt": "2026-02-21T16:27:42+00:00",
       "updatedAt": "2026-04-13T11:45:07+00:00",
-      "size": 2973,
+      "size": 2996,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
@@ -243,7 +351,71 @@
           "closedAt": "2026-04-02T19:55:13+00:00"
         }
       ],
-      "closedIssuesCount": 9
+      "closedIssuesCount": 9,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 35,
+          "title": "fix(python): add missing compat patches to export_lm.py",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/35",
+          "createdAt": "2026-04-13T11:41:49+00:00",
+          "updatedAt": "2026-04-13T11:42:01+00:00",
+          "mergedAt": "2026-04-13T11:41:59+00:00",
+          "closedAt": "2026-04-13T11:41:59+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/34-fix-export-lm-patches",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 33,
+          "title": "feat: ICL (In-Context Learning) mode for voice cloning (#32)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/33",
+          "createdAt": "2026-04-12T19:54:58+00:00",
+          "updatedAt": "2026-04-12T19:55:09+00:00",
+          "mergedAt": "2026-04-12T19:55:07+00:00",
+          "closedAt": "2026-04-12T19:55:07+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/32-ref-text-clone-mode",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 31,
+          "title": "fix: 1.7B model quality and performance improvements (#30)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/31",
+          "createdAt": "2026-04-08T18:57:14+00:00",
+          "updatedAt": "2026-04-08T18:57:26+00:00",
+          "mergedAt": "2026-04-08T18:57:23+00:00",
+          "closedAt": "2026-04-08T18:57:23+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/30-fix-17b-model",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 3
     },
     {
       "owner": "elbruno",
@@ -378,7 +550,131 @@
           "closedAt": "2026-03-28T00:51:49+00:00"
         }
       ],
-      "closedIssuesCount": 7
+      "closedIssuesCount": 7,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 14,
+          "title": "fix: publish workflow \u2014 skip net10.0-only samples, add net10.0 SDK, pack both NuGet packages",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/14",
+          "createdAt": "2026-04-04T16:02:25+00:00",
+          "updatedAt": "2026-04-04T16:03:39+00:00",
+          "mergedAt": "2026-04-04T16:03:37+00:00",
+          "closedAt": "2026-04-04T16:03:37+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/publish-workflow-net10-compat",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 13,
+          "title": "feat: v0.11.0 \u2014 RAG XML docs \u002B comprehensive tests",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/13",
+          "createdAt": "2026-04-04T15:54:47+00:00",
+          "updatedAt": "2026-04-04T15:54:56+00:00",
+          "mergedAt": "2026-04-04T15:54:54+00:00",
+          "closedAt": "2026-04-04T15:54:54+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/11-12-rag-docs-tests",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 10,
+          "title": "feat: Zero-cloud RAG sample (closes #9)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/10",
+          "createdAt": "2026-04-04T15:19:14+00:00",
+          "updatedAt": "2026-04-04T15:19:25+00:00",
+          "mergedAt": "2026-04-04T15:19:23+00:00",
+          "closedAt": "2026-04-04T15:19:23+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/9-zero-cloud-rag",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 8,
+          "title": "feat: DX improvements \u2014 Issue #7 fix \u002B exceptions \u002B logging \u002B diagnostics \u002B builder (#7)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/8",
+          "createdAt": "2026-03-28T17:27:25+00:00",
+          "updatedAt": "2026-03-28T17:27:36+00:00",
+          "mergedAt": "2026-03-28T17:27:34+00:00",
+          "closedAt": "2026-03-28T17:27:34+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/7-dx-improvements",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 6,
+          "title": "fix: MaxSequenceLength reports effective runtime limit",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/6",
+          "createdAt": "2026-03-28T15:49:48+00:00",
+          "updatedAt": "2026-03-28T15:52:08+00:00",
+          "mergedAt": "2026-03-28T15:52:06+00:00",
+          "closedAt": "2026-03-28T15:52:06+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/5-fix-max-sequence-length",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 4,
+          "title": "feat: expose model metadata (context window, model name) via LocalChatClient",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/4",
+          "createdAt": "2026-03-28T15:02:14+00:00",
+          "updatedAt": "2026-03-28T15:06:43+00:00",
+          "mergedAt": "2026-03-28T15:06:40+00:00",
+          "closedAt": "2026-03-28T15:06:40+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/3-model-metadata",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 6
     },
     {
       "owner": "elbruno",
@@ -516,7 +812,31 @@
           "closedAt": "2026-04-10T15:40:05+00:00"
         }
       ],
-      "closedIssuesCount": 5
+      "closedIssuesCount": 5,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 24,
+          "title": "Backlog sprint: MAUI migration, missing docs, ONNX annotations",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS/pull/24",
+          "createdAt": "2026-04-10T15:39:54+00:00",
+          "updatedAt": "2026-04-10T15:40:07+00:00",
+          "mergedAt": "2026-04-10T15:40:04+00:00",
+          "closedAt": "2026-04-10T15:40:04+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/backlog-sprint",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1
     },
     {
       "owner": "elbruno",
@@ -545,7 +865,10 @@
       "htmlUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0
     },
     {
       "owner": "elbruno",
@@ -620,7 +943,31 @@
           "closedAt": "2026-04-12T19:59:20+00:00"
         }
       ],
-      "closedIssuesCount": 2
+      "closedIssuesCount": 2,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 7,
+          "title": "fix: Content-Length header \u002B img2img reference images support",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/7",
+          "createdAt": "2026-04-12T19:59:10+00:00",
+          "updatedAt": "2026-04-12T19:59:21+00:00",
+          "mergedAt": "2026-04-12T19:59:18+00:00",
+          "closedAt": "2026-04-12T19:59:18+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/fix-issues-5-and-6",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1
     },
     {
       "owner": "elbruno",
@@ -662,7 +1009,10 @@
       "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0
     },
     {
       "owner": "elbruno",
@@ -700,7 +1050,10 @@
       "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0
     },
     {
       "owner": "elbruno",
@@ -771,7 +1124,51 @@
           "closedAt": "2026-04-04T15:34:44+00:00"
         }
       ],
-      "closedIssuesCount": 2
+      "closedIssuesCount": 2,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 4,
+          "title": "feat: add MCP server tools for embedding generation",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol/pull/4",
+          "createdAt": "2026-04-04T15:32:52+00:00",
+          "updatedAt": "2026-04-04T15:34:54+00:00",
+          "mergedAt": "2026-04-04T15:34:52+00:00",
+          "closedAt": "2026-04-04T15:34:52+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/2-mcp-embedding-tools",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 5,
+          "title": "feat: include parameter schemas in tool embedding text",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol/pull/5",
+          "createdAt": "2026-04-04T15:33:33+00:00",
+          "updatedAt": "2026-04-04T15:34:45+00:00",
+          "mergedAt": "2026-04-04T15:34:43+00:00",
+          "closedAt": "2026-04-04T15:34:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/3-tool-indexing-parameter-schemas",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 2
     },
     {
       "owner": "elbruno",
@@ -800,7 +1197,10 @@
       "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0
     },
     {
       "owner": "elbruno",
@@ -840,7 +1240,51 @@
       "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 2,
+          "title": "Consolidate doc/ into docs/",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/pull/2",
+          "createdAt": "2026-04-02T21:41:13+00:00",
+          "updatedAt": "2026-04-02T21:41:34+00:00",
+          "mergedAt": "2026-04-02T21:41:23+00:00",
+          "closedAt": "2026-04-02T21:41:23+00:00",
+          "userLogin": "Copilot",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "copilot/consolidate-doc-and-docs-folder",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 1,
+          "title": "Establish PowerToys contribution plan and onboard Technical Writer",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/pull/1",
+          "createdAt": "2026-04-02T20:40:05+00:00",
+          "updatedAt": "2026-04-02T20:40:16+00:00",
+          "mergedAt": "2026-04-02T20:40:13+00:00",
+          "closedAt": "2026-04-02T20:40:13+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/powertoys-contribution",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 2
     },
     {
       "owner": "elbruno",
@@ -899,7 +1343,151 @@
           "closedAt": "2026-04-13T11:12:43+00:00"
         }
       ],
-      "closedIssuesCount": 1
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 8,
+          "title": "fix: add missing CoreModel and 8 other packages to publish workflow",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/8",
+          "createdAt": "2026-04-13T11:12:30+00:00",
+          "updatedAt": "2026-04-13T11:12:44+00:00",
+          "mergedAt": "2026-04-13T11:12:41+00:00",
+          "closedAt": "2026-04-13T11:12:41+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/issue-7-missing-coremodel-package",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 6,
+          "title": "chore: remove .squad/ files from main tracking",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/6",
+          "createdAt": "2026-04-07T15:55:03+00:00",
+          "updatedAt": "2026-04-07T15:57:02+00:00",
+          "mergedAt": "2026-04-07T15:57:00+00:00",
+          "closedAt": "2026-04-07T15:57:00+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/remove-squad-from-main",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 5,
+          "title": "security: full remediation of 19 audit findings with 59 security tests",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/5",
+          "createdAt": "2026-04-07T15:50:46+00:00",
+          "updatedAt": "2026-04-07T15:52:15+00:00",
+          "mergedAt": "2026-04-07T15:52:11+00:00",
+          "closedAt": "2026-04-07T15:52:11+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/security-remediation",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 4,
+          "title": "docs: security audit report and test gap analysis",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/4",
+          "createdAt": "2026-04-07T15:17:25+00:00",
+          "updatedAt": "2026-04-07T15:17:37+00:00",
+          "mergedAt": "2026-04-07T15:17:35+00:00",
+          "closedAt": "2026-04-07T15:17:36+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/security-audit",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 3,
+          "title": "feat: add markitdown CLI tool",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/3",
+          "createdAt": "2026-04-07T14:58:48+00:00",
+          "updatedAt": "2026-04-07T14:59:01+00:00",
+          "mergedAt": "2026-04-07T14:58:58+00:00",
+          "closedAt": "2026-04-07T14:58:58+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/cli-tool",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 2,
+          "title": "v0.4.0 \u2014 Ingestion Framework (Phase 1 \u002B Phase 2)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/2",
+          "createdAt": "2026-04-06T20:18:21+00:00",
+          "updatedAt": "2026-04-06T20:18:30+00:00",
+          "mergedAt": "2026-04-06T20:18:30+00:00",
+          "closedAt": "2026-04-06T20:18:30+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/phase1-ingestion-foundations",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 1,
+          "title": "Add shared golden file tests with Python markitdown comparison",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/1",
+          "createdAt": "2026-04-04T15:36:14+00:00",
+          "updatedAt": "2026-04-04T15:36:21+00:00",
+          "mergedAt": "2026-04-04T15:36:21+00:00",
+          "closedAt": "2026-04-04T15:36:21+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/shared-golden-tests",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 7
     },
     {
       "owner": "elbruno",
@@ -961,7 +1549,31 @@
           "closedAt": "2026-04-01T21:56:34+00:00"
         }
       ],
-      "closedIssuesCount": 1
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 2,
+          "title": "feat: add vCard N: (structured name) field support",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator/pull/2",
+          "createdAt": "2026-04-01T21:56:20+00:00",
+          "updatedAt": "2026-04-02T00:38:01+00:00",
+          "mergedAt": "2026-04-01T21:56:33+00:00",
+          "closedAt": "2026-04-01T21:56:33+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/1-vcard-name-field",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1
     },
     {
       "owner": "elbruno",
@@ -1078,7 +1690,111 @@
           "closedAt": "2026-03-30T19:30:38+00:00"
         }
       ],
-      "closedIssuesCount": 6
+      "closedIssuesCount": 6,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 11,
+          "title": "Fix Whisper inference producing empty text output",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/pull/11",
+          "createdAt": "2026-04-11T19:12:52+00:00",
+          "updatedAt": "2026-04-11T19:13:03+00:00",
+          "mergedAt": "2026-04-11T19:13:01+00:00",
+          "closedAt": "2026-04-11T19:13:01+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/issue-10-inference-empty-output",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 9,
+          "title": "fix: handle zero-dimension cache tensors in decoder initialization",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/pull/9",
+          "createdAt": "2026-04-10T14:08:48+00:00",
+          "updatedAt": "2026-04-10T14:39:41+00:00",
+          "mergedAt": "2026-04-10T14:39:39+00:00",
+          "closedAt": "2026-04-10T14:39:39+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/issue-7-onnx-reshape-error",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 6,
+          "title": "fix: correct mel spectrogram computation to match Whisper reference (#5)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/pull/6",
+          "createdAt": "2026-04-02T16:35:03+00:00",
+          "updatedAt": "2026-04-02T16:35:15+00:00",
+          "mergedAt": "2026-04-02T16:35:13+00:00",
+          "closedAt": "2026-04-02T16:35:13+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/5-fix-mel-spectrogram-processing",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 4,
+          "title": "fix: use_cache_branch tensor rank 0-\u003E1 \u002B 32 new tests (#3)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/pull/4",
+          "createdAt": "2026-03-30T20:00:32+00:00",
+          "updatedAt": "2026-03-30T20:00:45+00:00",
+          "mergedAt": "2026-03-30T20:00:43+00:00",
+          "closedAt": "2026-03-30T20:00:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/3-fix-tensor-rank",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 2,
+          "title": "fix: add use_cache_branch and KV cache support to merged decoder (#1)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/pull/2",
+          "createdAt": "2026-03-30T19:30:27+00:00",
+          "updatedAt": "2026-03-30T19:30:39+00:00",
+          "mergedAt": "2026-03-30T19:30:37+00:00",
+          "closedAt": "2026-03-30T19:30:37+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/1-fix-use-cache-branch",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 5
     },
     {
       "owner": "elbruno",
@@ -1107,7 +1823,31 @@
       "htmlUrl": "https://github.com/elbruno/elbruno-agentskills",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [
+        {
+          "number": 1,
+          "title": "Phase 1, 2 \u0026 3: Core models, parser, and validator for skill resource directories",
+          "htmlUrl": "https://github.com/elbruno/elbruno-agentskills/pull/1",
+          "createdAt": "2026-02-07T11:53:00+00:00",
+          "updatedAt": "2026-02-07T14:40:24+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "Copilot",
+          "labels": [],
+          "isDraft": true,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "copilot/start-phase-1-implementation",
+          "baseBranch": "master",
+          "commentsCount": 0
+        }
+      ],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0
     },
     {
       "owner": "elbruno",
@@ -1151,7 +1891,31 @@
       "htmlUrl": "https://github.com/elbruno/graphify-dotnet",
       "recentIssues": [],
       "recentClosedIssues": [],
-      "closedIssuesCount": 0
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 1,
+          "title": "feat: viewer guides, worked examples, and all export formats",
+          "htmlUrl": "https://github.com/elbruno/graphify-dotnet/pull/1",
+          "createdAt": "2026-04-07T02:18:08+00:00",
+          "updatedAt": "2026-04-07T02:19:32+00:00",
+          "mergedAt": "2026-04-07T02:19:31+00:00",
+          "closedAt": "2026-04-07T02:19:31+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/viewer-guides-and-samples",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1
     }
   ]
 }
