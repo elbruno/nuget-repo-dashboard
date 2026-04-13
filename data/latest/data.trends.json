@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T12:01:32.9137334+00:00",
+  "generatedAt": "2026-04-13T12:04:38.7486812+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -212,7 +212,7 @@
         },
         {
           "date": "2026-04-13",
-          "version": "1.4.0"
+          "version": "1.4.1"
         }
       ]
     },
@@ -2273,6 +2273,10 @@
         {
           "date": "2026-04-07",
           "version": "0.5.2"
+        },
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
         }
       ]
     },
@@ -2339,6 +2343,10 @@
         {
           "date": "2026-04-07",
           "version": "0.5.2"
+        },
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
         }
       ]
     },
@@ -2405,6 +2413,10 @@
         {
           "date": "2026-04-07",
           "version": "0.5.2"
+        },
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
         }
       ]
     },
@@ -2471,6 +2483,10 @@
         {
           "date": "2026-04-07",
           "version": "0.5.2"
+        },
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
         }
       ]
     },
@@ -2537,6 +2553,10 @@
         {
           "date": "2026-04-07",
           "version": "0.5.2"
+        },
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
         }
       ]
     },
@@ -2789,6 +2809,10 @@
         {
           "date": "2026-04-07",
           "version": "0.5.2"
+        },
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
         }
       ]
     },
@@ -2903,6 +2927,132 @@
         {
           "date": "2026-04-08",
           "version": "1.1.0"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.Quality": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.Citations": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.VectorData": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.Sync": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.AzureSearch": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.CoreModel": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.Chunking": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.DocumentIntelligence": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
+        }
+      ]
+    },
+    "ElBruno.MarkItDotNet.Metadata": {
+      "downloads": [
+        {
+          "date": "2026-04-13",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-13",
+          "version": "0.5.3"
         }
       ]
     }
@@ -3460,7 +3610,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 1
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -6086,7 +6236,7 @@
         },
         {
           "date": "2026-04-13",
-          "value": 1
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -6262,5 +6412,734 @@
         }
       ]
     }
-  }
+  },
+  "velocities": [
+    {
+      "packageId": "ElBruno.LocalEmbeddings",
+      "avgDailyDownloads": 3.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.HuggingFace.Downloader",
+      "avgDailyDownloads": 10.57,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QwenTTS",
+      "avgDailyDownloads": 17.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.VibeVoiceTTS",
+      "avgDailyDownloads": 0.29,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalLLMs",
+      "avgDailyDownloads": 1.86,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.VectorData",
+      "avgDailyDownloads": 1.29,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
+      "avgDailyDownloads": 0.57,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.OllamaSharp.Extensions",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.AgentsOrchestration.Abstractions",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Text2Image",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Realtime",
+      "avgDailyDownloads": 0.29,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Text2Image.Cuda",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.AgentsOrchestration.Orchestration",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Text2Image.DirectML",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Text2Image.Foundry",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Realtime.Whisper",
+      "avgDailyDownloads": 0.29,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.CLI",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Text2Image.Cpu",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.PersonaPlex",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Realtime.SileroVad",
+      "avgDailyDownloads": 0.29,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.ClockTray",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation.SyntheticData",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation.Xunit",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation.Reporting",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Payloads",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Svg",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Ascii",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Pdf",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "elbruno.Extensions.AI.Skills.Cli",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Tool",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.Whisper",
+      "avgDailyDownloads": 2.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "elbruno.Extensions.AI.Skills.Core",
+      "avgDailyDownloads": 0.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Image",
+      "avgDailyDownloads": 0.43,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.AI",
+      "avgDailyDownloads": 4.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet",
+      "avgDailyDownloads": 6.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Excel",
+      "avgDailyDownloads": 4.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.PowerPoint",
+      "avgDailyDownloads": 4.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Whisper",
+      "avgDailyDownloads": 3.14,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalLLMs.Rag",
+      "avgDailyDownloads": 0.86,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
+      "avgDailyDownloads": 0,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
+      "avgDailyDownloads": 0,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.Npu",
+      "avgDailyDownloads": 0,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
+      "avgDailyDownloads": 0,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Cli",
+      "avgDailyDownloads": 0,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "graphify-dotnet",
+      "avgDailyDownloads": 0,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.Harrier",
+      "avgDailyDownloads": 0,
+      "staleDays": 6,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.HuggingFace.Downloader.Cli",
+      "avgDailyDownloads": 0,
+      "staleDays": 5,
+      "isStale": true
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Quality",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Citations",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.VectorData",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Sync",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.AzureSearch",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.CoreModel",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Chunking",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Metadata",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    }
+  ],
+  "stalePackageCount": 50,
+  "issueActivity": [
+    {
+      "date": "2026-04-04",
+      "opened": 1,
+      "closed": 0
+    },
+    {
+      "date": "2026-04-07",
+      "opened": 1,
+      "closed": 0
+    },
+    {
+      "date": "2026-04-10",
+      "opened": 2,
+      "closed": 0
+    },
+    {
+      "date": "2026-04-11",
+      "opened": 1,
+      "closed": 0
+    },
+    {
+      "date": "2026-04-12",
+      "opened": 1,
+      "closed": 0
+    }
+  ],
+  "versionActivity": [
+    {
+      "date": "2026-04-03",
+      "newVersions": 1,
+      "packages": [
+        "ElBruno.QwenTTS"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "newVersions": 1,
+      "packages": [
+        "ElBruno.LocalLLMs"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "newVersions": 11,
+      "packages": [
+        "ElBruno.LocalEmbeddings",
+        "ElBruno.LocalLLMs",
+        "ElBruno.LocalEmbeddings.VectorData",
+        "ElBruno.LocalEmbeddings.KernelMemory",
+        "ElBruno.LocalEmbeddings.ImageEmbeddings",
+        "ElBruno.ModelContextProtocol.MCPToolRouter",
+        "ElBruno.MarkItDotNet",
+        "ElBruno.MarkItDotNet.AI",
+        "ElBruno.MarkItDotNet.Excel",
+        "ElBruno.MarkItDotNet.PowerPoint",
+        "ElBruno.MarkItDotNet.Whisper"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "newVersions": 1,
+      "packages": [
+        "ElBruno.QwenTTS"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "newVersions": 11,
+      "packages": [
+        "ElBruno.LocalEmbeddings",
+        "ElBruno.HuggingFace.Downloader",
+        "ElBruno.QwenTTS",
+        "ElBruno.LocalEmbeddings.VectorData",
+        "ElBruno.LocalEmbeddings.KernelMemory",
+        "ElBruno.LocalEmbeddings.ImageEmbeddings",
+        "ElBruno.MarkItDotNet.AI",
+        "ElBruno.MarkItDotNet",
+        "ElBruno.MarkItDotNet.Excel",
+        "ElBruno.MarkItDotNet.PowerPoint",
+        "ElBruno.MarkItDotNet.Whisper"
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "newVersions": 11,
+      "packages": [
+        "ElBruno.LocalEmbeddings",
+        "ElBruno.HuggingFace.Downloader",
+        "ElBruno.QwenTTS",
+        "ElBruno.LocalEmbeddings.VectorData",
+        "ElBruno.LocalEmbeddings.KernelMemory",
+        "ElBruno.LocalEmbeddings.ImageEmbeddings",
+        "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
+        "ElBruno.LocalEmbeddings.Npu.Intel",
+        "ElBruno.LocalEmbeddings.Npu",
+        "ElBruno.LocalEmbeddings.Npu.Qualcomm",
+        "ElBruno.LocalEmbeddings.Harrier"
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "newVersions": 2,
+      "packages": [
+        "ElBruno.VibeVoiceTTS",
+        "ElBruno.Whisper"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "newVersions": 1,
+      "packages": [
+        "ElBruno.Whisper"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "newVersions": 12,
+      "packages": [
+        "ElBruno.QwenTTS",
+        "ElBruno.Text2Image",
+        "ElBruno.Text2Image.Cuda",
+        "ElBruno.Text2Image.Foundry",
+        "ElBruno.Text2Image.DirectML",
+        "ElBruno.Text2Image.Cpu",
+        "ElBruno.MarkItDotNet",
+        "ElBruno.MarkItDotNet.AI",
+        "ElBruno.MarkItDotNet.Excel",
+        "ElBruno.MarkItDotNet.PowerPoint",
+        "ElBruno.MarkItDotNet.Whisper",
+        "ElBruno.MarkItDotNet.Cli"
+      ]
+    }
+  ],
+  "newPackages": [
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.LocalEmbeddings"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.HuggingFace.Downloader"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QwenTTS"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.VibeVoiceTTS"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.LocalLLMs"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.LocalEmbeddings.VectorData"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.LocalEmbeddings.KernelMemory"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.OllamaSharp.Extensions"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.AgentsOrchestration.Abstractions"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Text2Image"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.AI.Evaluation"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Realtime"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Text2Image.Cuda"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.AgentsOrchestration.Orchestration"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Text2Image.DirectML"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Text2Image.Foundry"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Realtime.Whisper"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QRCodeGenerator.CLI"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Text2Image.Cpu"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.PersonaPlex"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Realtime.SileroVad"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.ClockTray"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.AI.Evaluation.SyntheticData"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.AI.Evaluation.Xunit"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.AI.Evaluation.Reporting"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QRCodeGenerator.Payloads"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QRCodeGenerator.Svg"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QRCodeGenerator.Ascii"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QRCodeGenerator.Pdf"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "elbruno.Extensions.AI.Skills.Cli"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QRCodeGenerator.Tool"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.Whisper"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "elbruno.Extensions.AI.Skills.Core"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.QRCodeGenerator.Image"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.MarkItDotNet.AI"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.MarkItDotNet"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.MarkItDotNet.Excel"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.MarkItDotNet.PowerPoint"
+    },
+    {
+      "date": "2026-04-02",
+      "packageId": "ElBruno.MarkItDotNet.Whisper"
+    },
+    {
+      "date": "2026-04-05",
+      "packageId": "ElBruno.LocalLLMs.Rag"
+    },
+    {
+      "date": "2026-04-07",
+      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader"
+    },
+    {
+      "date": "2026-04-07",
+      "packageId": "ElBruno.LocalEmbeddings.Npu.Intel"
+    },
+    {
+      "date": "2026-04-07",
+      "packageId": "ElBruno.LocalEmbeddings.Npu"
+    },
+    {
+      "date": "2026-04-07",
+      "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm"
+    },
+    {
+      "date": "2026-04-07",
+      "packageId": "ElBruno.MarkItDotNet.Cli"
+    },
+    {
+      "date": "2026-04-07",
+      "packageId": "graphify-dotnet"
+    },
+    {
+      "date": "2026-04-07",
+      "packageId": "ElBruno.LocalEmbeddings.Harrier"
+    },
+    {
+      "date": "2026-04-08",
+      "packageId": "ElBruno.HuggingFace.Downloader.Cli"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.Quality"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.Citations"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.VectorData"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.Sync"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.AzureSearch"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.CoreModel"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.Chunking"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence"
+    },
+    {
+      "date": "2026-04-13",
+      "packageId": "ElBruno.MarkItDotNet.Metadata"
+    }
+  ]
 }

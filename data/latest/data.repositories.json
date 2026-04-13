@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T12:01:32.9493907+00:00",
+  "generatedAt": "2026-04-13T12:04:38.7982959+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -44,7 +44,9 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -84,7 +86,9 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -125,7 +129,121 @@
       "networkCount": 2,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 34,
+          "title": "export lm failed.",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/34",
+          "createdAt": "2026-04-13T06:09:57+00:00",
+          "updatedAt": "2026-04-13T11:42:00+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-13T11:42:00+00:00"
+        },
+        {
+          "number": 32,
+          "title": "feature request :  ref_text for clone mode",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/32",
+          "createdAt": "2026-04-12T07:01:56+00:00",
+          "updatedAt": "2026-04-12T19:55:08+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-12T19:55:08+00:00"
+        },
+        {
+          "number": 30,
+          "title": "1.7b not work",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/30",
+          "createdAt": "2026-04-07T10:50:41+00:00",
+          "updatedAt": "2026-04-08T18:57:58+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 4,
+          "state": "closed",
+          "closedAt": "2026-04-08T18:57:24+00:00"
+        },
+        {
+          "number": 29,
+          "title": "new span  cause exception",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/29",
+          "createdAt": "2026-04-05T15:29:58+00:00",
+          "updatedAt": "2026-04-06T13:51:10+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-04-06T13:43:29+00:00"
+        },
+        {
+          "number": 28,
+          "title": "cp_projection_bias.npy  not match _cpHiddenSize",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/28",
+          "createdAt": "2026-04-04T01:14:25+00:00",
+          "updatedAt": "2026-04-05T14:53:28+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [
+            "bug",
+            "type:bug"
+          ],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-04-05T14:53:21+00:00"
+        },
+        {
+          "number": 27,
+          "title": "1.7b works, but the text was trimed",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/27",
+          "createdAt": "2026-04-03T05:56:08+00:00",
+          "updatedAt": "2026-04-03T15:10:12+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 2,
+          "state": "closed",
+          "closedAt": "2026-04-03T15:10:12+00:00"
+        },
+        {
+          "number": 25,
+          "title": "NPY file too large (1244.66 MB). Maximum allowed: 500.00 MB.[text_embedding.npy]",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/25",
+          "createdAt": "2026-03-03T06:05:24+00:00",
+          "updatedAt": "2026-04-03T02:01:05+00:00",
+          "userLogin": "lijianxin520",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-04-03T02:01:05+00:00"
+        },
+        {
+          "number": 20,
+          "title": "Add ElBruno.PersonaPlex to Related Projects in README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/20",
+          "createdAt": "2026-02-27T02:35:33+00:00",
+          "updatedAt": "2026-04-03T02:00:55+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 2,
+          "state": "closed",
+          "closedAt": "2026-04-03T02:00:55+00:00"
+        },
+        {
+          "number": 26,
+          "title": "1.7b?",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/26",
+          "createdAt": "2026-04-01T05:01:34+00:00",
+          "updatedAt": "2026-04-02T19:55:47+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-04-02T19:55:13+00:00"
+        }
+      ],
+      "closedIssuesCount": 9
     },
     {
       "owner": "elbruno",
@@ -167,7 +285,100 @@
       "networkCount": 3,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 12,
+          "title": "Fix 116 CS1591 XML doc comment warnings in RAG package",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/12",
+          "createdAt": "2026-04-04T15:46:18+00:00",
+          "updatedAt": "2026-04-04T15:54:57+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "bug"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-04T15:54:57+00:00"
+        },
+        {
+          "number": 11,
+          "title": "Add comprehensive unit tests for RAG package public API",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/11",
+          "createdAt": "2026-04-04T15:46:18+00:00",
+          "updatedAt": "2026-04-04T15:54:56+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-04T15:54:56+00:00"
+        },
+        {
+          "number": 9,
+          "title": "Add zero-cloud RAG sample combining ElBruno.LocalEmbeddings \u002B LocalLLMs",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/9",
+          "createdAt": "2026-04-04T13:26:58+00:00",
+          "updatedAt": "2026-04-04T15:19:24+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-04T15:19:24+00:00"
+        },
+        {
+          "number": 7,
+          "title": "ExecutionProvider.Auto throws hard error instead of falling back to CPU when DirectML is unsupported",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/7",
+          "createdAt": "2026-03-28T16:51:32+00:00",
+          "updatedAt": "2026-03-28T17:27:35+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-03-28T17:27:35+00:00"
+        },
+        {
+          "number": 5,
+          "title": "ModelInfo.MaxSequenceLength reports config value, not actual ONNX runtime limit",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/5",
+          "createdAt": "2026-03-28T15:39:23+00:00",
+          "updatedAt": "2026-03-28T15:52:07+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-03-28T15:52:07+00:00"
+        },
+        {
+          "number": 3,
+          "title": "Feature: Expose model metadata (context window size, model info) from LocalChatClient",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/3",
+          "createdAt": "2026-03-28T14:54:15+00:00",
+          "updatedAt": "2026-03-28T15:06:42+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-03-28T15:06:41+00:00"
+        },
+        {
+          "number": 1,
+          "title": "Using GPU",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/1",
+          "createdAt": "2026-03-22T18:50:12+00:00",
+          "updatedAt": "2026-03-28T07:32:17+00:00",
+          "userLogin": "jarmohh",
+          "labels": [],
+          "commentsCount": 4,
+          "state": "closed",
+          "closedAt": "2026-03-28T00:51:49+00:00"
+        }
+      ],
+      "closedIssuesCount": 7
     },
     {
       "owner": "elbruno",
@@ -213,7 +424,99 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 23,
+          "title": "Add screenshots to Scenario 7 MAUI README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS/issues/23",
+          "createdAt": "2026-04-10T15:18:05+00:00",
+          "updatedAt": "2026-04-11T18:49:18+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation",
+            "squad",
+            "squad:alex",
+            "go:needs-research",
+            "scenario-07"
+          ],
+          "commentsCount": 5,
+          "state": "closed",
+          "closedAt": "2026-04-11T18:49:18+00:00"
+        },
+        {
+          "number": 22,
+          "title": "Verify and resolve ONNX pipeline TODOs in Scenario 8",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS/issues/22",
+          "createdAt": "2026-04-10T15:18:05+00:00",
+          "updatedAt": "2026-04-10T15:40:06+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement",
+            "squad",
+            "squad:amos",
+            "go:needs-research",
+            "scenario-08"
+          ],
+          "commentsCount": 6,
+          "state": "closed",
+          "closedAt": "2026-04-10T15:40:06+00:00"
+        },
+        {
+          "number": 21,
+          "title": "Create missing docs/scenarios.md",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS/issues/21",
+          "createdAt": "2026-04-10T15:18:04+00:00",
+          "updatedAt": "2026-04-10T15:40:06+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation",
+            "squad",
+            "squad:alex",
+            "go:needs-research"
+          ],
+          "commentsCount": 6,
+          "state": "closed",
+          "closedAt": "2026-04-10T15:40:06+00:00"
+        },
+        {
+          "number": 20,
+          "title": "Create missing docs/project-structure.md",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS/issues/20",
+          "createdAt": "2026-04-10T15:18:04+00:00",
+          "updatedAt": "2026-04-10T15:40:06+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation",
+            "squad",
+            "squad:alex",
+            "squad:amos",
+            "go:needs-research"
+          ],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-04-10T15:40:06+00:00"
+        },
+        {
+          "number": 19,
+          "title": "Migrate MAUI Scenario 7 from Python backend to ElBruno.VibeVoiceTTS NuGet package",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS/issues/19",
+          "createdAt": "2026-04-10T15:18:04+00:00",
+          "updatedAt": "2026-04-10T15:40:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement",
+            "squad",
+            "squad:naomi",
+            "go:needs-research",
+            "scenario-07"
+          ],
+          "commentsCount": 10,
+          "state": "closed",
+          "closedAt": "2026-04-10T15:40:05+00:00"
+        }
+      ],
+      "closedIssuesCount": 5
     },
     {
       "owner": "elbruno",
@@ -240,7 +543,9 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -286,7 +591,36 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 6,
+          "title": "Feature: Image-to-Image (img2img) support for Flux2Generator",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/issues/6",
+          "createdAt": "2026-04-12T19:38:51+00:00",
+          "updatedAt": "2026-04-12T19:59:20+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-12T19:59:20+00:00"
+        },
+        {
+          "number": 5,
+          "title": "no_content_length_header error",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/issues/5",
+          "createdAt": "2026-04-12T15:29:50+00:00",
+          "updatedAt": "2026-04-12T19:59:20+00:00",
+          "userLogin": "PHermanov",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-12T19:59:20+00:00"
+        }
+      ],
+      "closedIssuesCount": 2
     },
     {
       "owner": "elbruno",
@@ -326,7 +660,9 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -362,7 +698,9 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -402,7 +740,38 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 2,
+          "title": "Add MCP server tools for embedding generation (embed_text, search_embeddings)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol/issues/2",
+          "createdAt": "2026-04-04T13:26:39+00:00",
+          "updatedAt": "2026-04-04T15:34:54+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-04T15:34:54+00:00"
+        },
+        {
+          "number": 3,
+          "title": "Improve tool indexing to include parameter schemas and richer metadata",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol/issues/3",
+          "createdAt": "2026-04-04T13:27:13+00:00",
+          "updatedAt": "2026-04-04T15:34:44+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-04T15:34:44+00:00"
+        }
+      ],
+      "closedIssuesCount": 2
     },
     {
       "owner": "elbruno",
@@ -429,7 +798,9 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -467,7 +838,9 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -511,7 +884,22 @@
       "networkCount": 4,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 7,
+          "title": "Non existing package:  ElBruno.MarkItDotNet.CoreModel",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/issues/7",
+          "createdAt": "2026-04-12T22:06:47+00:00",
+          "updatedAt": "2026-04-13T11:12:43+00:00",
+          "userLogin": "EyeSirvived",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-13T11:12:43+00:00"
+        }
+      ],
+      "closedIssuesCount": 1
     },
     {
       "owner": "elbruno",
@@ -558,7 +946,22 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 1,
+          "title": "Add support for vCard N: (structured name) field",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator/issues/1",
+          "createdAt": "2026-04-01T21:37:12+00:00",
+          "updatedAt": "2026-04-01T21:56:34+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-01T21:56:34+00:00"
+        }
+      ],
+      "closedIssuesCount": 1
     },
     {
       "owner": "elbruno",
@@ -600,7 +1003,82 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 10,
+          "title": "Inference not able to generate text",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/issues/10",
+          "createdAt": "2026-04-11T01:19:58+00:00",
+          "updatedAt": "2026-04-11T19:13:03+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-11T19:13:03+00:00"
+        },
+        {
+          "number": 7,
+          "title": "onnx inference error",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/issues/7",
+          "createdAt": "2026-04-10T09:58:58+00:00",
+          "updatedAt": "2026-04-10T14:39:40+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-10T14:39:40+00:00"
+        },
+        {
+          "number": 8,
+          "title": "System.Net.Sockets.SocketException (10050): A socket operation encountered a dead network.",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/issues/8",
+          "createdAt": "2026-04-10T10:01:21+00:00",
+          "updatedAt": "2026-04-10T14:07:42+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-04-10T14:07:42+00:00"
+        },
+        {
+          "number": 5,
+          "title": "v0.1.2: Transcription produces wrong text (duration mismatch suggests incomplete audio processing)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/issues/5",
+          "createdAt": "2026-03-30T20:25:04+00:00",
+          "updatedAt": "2026-04-03T02:00:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 2,
+          "state": "closed",
+          "closedAt": "2026-04-03T02:00:43+00:00"
+        },
+        {
+          "number": 3,
+          "title": "v0.1.1: Invalid rank for use_cache_branch tensor (Got: 0 Expected: 1)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/issues/3",
+          "createdAt": "2026-03-30T19:44:44+00:00",
+          "updatedAt": "2026-03-30T20:00:58+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-03-30T20:00:44+00:00"
+        },
+        {
+          "number": 1,
+          "title": "OnnxRuntimeException: Missing Input use_cache_branch in decoder",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/issues/1",
+          "createdAt": "2026-03-30T19:17:24+00:00",
+          "updatedAt": "2026-03-30T19:30:50+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-03-30T19:30:38+00:00"
+        }
+      ],
+      "closedIssuesCount": 6
     },
     {
       "owner": "elbruno",
@@ -627,7 +1105,9 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/elbruno-agentskills",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     },
     {
       "owner": "elbruno",
@@ -669,7 +1149,9 @@
       "networkCount": 8,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/graphify-dotnet",
-      "recentIssues": []
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0
     }
   ]
 }
