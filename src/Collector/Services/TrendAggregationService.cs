@@ -48,6 +48,11 @@ public sealed class TrendAggregationService : ITrendAggregationService
         var openedByDate = new Dictionary<string, int>();
         var closedByDate = new Dictionary<string, int>();
 
+        // Collect PR activity per date (opened/merged/closed counts)
+        var prOpenedByDate = new Dictionary<string, int>();
+        var prMergedByDate = new Dictionary<string, int>();
+        var prClosedByDate = new Dictionary<string, int>();
+
         foreach (var (date, dirPath) in dateDirs)
         {
             var dateStr = date.ToString("yyyy-MM-dd");
@@ -66,6 +71,7 @@ public sealed class TrendAggregationService : ITrendAggregationService
             {
                 await ProcessReposSnapshotAsync(reposPath, dateStr, trendData);
                 await ProcessIssueActivityAsync(reposPath, dateStr, openedByDate, closedByDate);
+                await ProcessPullRequestActivityAsync(reposPath, dateStr, prOpenedByDate, prMergedByDate, prClosedByDate);
             }
         }
 
@@ -94,6 +100,22 @@ public sealed class TrendAggregationService : ITrendAggregationService
                 Date = dateStr,
                 Opened = opened,
                 Closed = closed
+            });
+        }
+
+        // Build PR activity list
+        var allPrDates = prOpenedByDate.Keys.Union(prMergedByDate.Keys).Union(prClosedByDate.Keys).OrderBy(d => d);
+        foreach (var dateStr in allPrDates)
+        {
+            prOpenedByDate.TryGetValue(dateStr, out var prOpened);
+            prMergedByDate.TryGetValue(dateStr, out var prMerged);
+            prClosedByDate.TryGetValue(dateStr, out var prClosed);
+            trendData.PullRequestActivity.Add(new PullRequestActivityPoint
+            {
+                Date = dateStr,
+                Opened = prOpened,
+                Merged = prMerged,
+                Closed = prClosed
             });
         }
 
@@ -338,6 +360,60 @@ public sealed class TrendAggregationService : ITrendAggregationService
         catch (Exception ex)
         {
             Console.Error.WriteLine($"    WARNING: Failed to read issue activity from {path}: {ex.Message}");
+        }
+    }
+
+    private async Task ProcessPullRequestActivityAsync(
+        string path,
+        string dateStr,
+        Dictionary<string, int> openedByDate,
+        Dictionary<string, int> mergedByDate,
+        Dictionary<string, int> closedByDate)
+    {
+        try
+        {
+            await using var stream = File.OpenRead(path);
+            var snapshot = await JsonSerializer.DeserializeAsync<RepositoriesOutput>(stream, ReadOptions);
+            if (snapshot?.Repositories is null) return;
+
+            foreach (var repo in snapshot.Repositories)
+            {
+                // Count open PRs created on this date
+                foreach (var pr in repo.RecentPullRequests)
+                {
+                    var prDate = pr.CreatedAt.ToString("yyyy-MM-dd");
+                    if (prDate == dateStr)
+                    {
+                        openedByDate[dateStr] = openedByDate.GetValueOrDefault(dateStr) + 1;
+                    }
+                }
+
+                // Count merged PRs merged on this date
+                foreach (var pr in repo.RecentMergedPullRequests)
+                {
+                    if (pr.MergedAt.HasValue)
+                    {
+                        var mergedDate = pr.MergedAt.Value.ToString("yyyy-MM-dd");
+                        if (mergedDate == dateStr)
+                        {
+                            mergedByDate[dateStr] = mergedByDate.GetValueOrDefault(dateStr) + 1;
+                        }
+                    }
+
+                    if (pr.ClosedAt.HasValue)
+                    {
+                        var closedDate = pr.ClosedAt.Value.ToString("yyyy-MM-dd");
+                        if (closedDate == dateStr)
+                        {
+                            closedByDate[dateStr] = closedByDate.GetValueOrDefault(dateStr) + 1;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"    WARNING: Failed to read PR activity from {path}: {ex.Message}");
         }
     }
 }

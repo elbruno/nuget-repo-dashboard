@@ -84,4 +84,13 @@ public sealed class GitHubRepoMetrics
 
     [JsonPropertyName("closedIssuesCount")]
     public int ClosedIssuesCount { get; set; }
+
+    [JsonPropertyName("recentPullRequests")]
+    public List<GitHubPullRequest> RecentPullRequests { get; set; } = [];
+
+    [JsonPropertyName("recentMergedPullRequests")]
+    public List<GitHubPullRequest> RecentMergedPullRequests { get; set; } = [];
+
+    [JsonPropertyName("mergedPullRequestsCount")]
+    public int MergedPullRequestsCount { get; set; }
 }

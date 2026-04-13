@@ -25,6 +25,9 @@ public sealed class TrendData
     [JsonPropertyName("issueActivity")]
     public List<IssueActivityPoint> IssueActivity { get; set; } = [];
 
+    [JsonPropertyName("pullRequestActivity")]
+    public List<PullRequestActivityPoint> PullRequestActivity { get; set; } = [];
+
     [JsonPropertyName("versionActivity")]
     public List<VersionActivityPoint> VersionActivity { get; set; } = [];
 
@@ -120,4 +123,19 @@ public sealed class NewPackageEvent
 
     [JsonPropertyName("packageId")]
     public string PackageId { get; set; } = string.Empty;
+}
+
+public sealed class PullRequestActivityPoint
+{
+    [JsonPropertyName("date")]
+    public string Date { get; set; } = string.Empty;
+
+    [JsonPropertyName("opened")]
+    public int Opened { get; set; }
+
+    [JsonPropertyName("merged")]
+    public int Merged { get; set; }
+
+    [JsonPropertyName("closed")]
+    public int Closed { get; set; }
 }

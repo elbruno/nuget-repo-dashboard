@@ -155,6 +155,13 @@ Build: 0 warnings, 0 errors. 198 tests pass (19 new tests from Zoe).
 - **Parallel shard queries with Task.WhenAll**: `GetTotalDownloadsAsync` now queries both shards simultaneously using `Task.WhenAll`. Each shard uses the existing `GetWithRetryAsync` for resilience. If one shard fails (returns 0), the other's value is used. If both fail, returns 0 (existing behavior).
 - **Shard mismatch logging**: When both shards return non-zero but different values, a console log helps diagnose staleness: `[NuGet] Download shard mismatch for {packageId}: USNC={x} USSC={y}, using max={max}`. This is informational only — the collector already picked the correct max value.
 - **GetDownloadsFromShardAsync helper**: Extracted the JSON parsing logic into a separate method to avoid duplication. Takes a URL, calls `GetWithRetryAsync`, parses the `data[0].totalDownloads` field, returns 0 on any failure.
+- **PR data follows the Issues pattern exactly**: `GetRecentPullRequestsAsync` mirrors `GetRecentIssuesAsync`, `GetRecentMergedPullRequestsAsync` mirrors `GetRecentClosedIssuesAsync`. Both use the same retry logic, JSON parsing style, and 30-day window for merged/closed data.
+- **GitHub Pulls API does NOT return additions/deletions/changed_files**: The list endpoint (`GET /repos/{owner}/{repo}/pulls`) omits line-count fields. These are only available from the individual PR endpoint (`GET /repos/{owner}/{repo}/pulls/{number}`). Set to 0 from list endpoint for efficiency — individual calls would be N+1 per repo.
+- **PR parsing extracted to `ParseSinglePullRequest` helper**: Reused by both open and merged PR fetching to avoid code duplication. Parses all available fields from the list endpoint.
+- **ProcessPullRequestActivityAsync follows ProcessIssueActivityAsync**: Same pattern — reads repos snapshot a second time, counts opened/merged/closed per date from PR data in the snapshot.
+- **Frontend PR section mirrors Issues section exactly**: Same HTML structure, same filter/sort logic, same card/list toggle pattern, same localStorage persistence. Added `prsViewMode`, `getAllPrEntries`, `getFilteredPrs`, `renderPrsSection`, `populatePrsRepoDropdown`.
+- **PR Activity trend card uses opened/merged/closed**: Unlike issues (opened/closed), PRs track three states. Merged is displayed in accent purple (#6c47ff) to distinguish from closed (green).
+- **Draft and review badges**: `.draft-badge` (gray, italic) and `.review-badge` (approved=green, changes-requested=orange, review-required=gray) with dark mode overrides.
 
 ### Multi-Shard NuGet Download Query Implementation (2026-04-13)
 

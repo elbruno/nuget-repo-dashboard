@@ -127,8 +127,13 @@ public sealed class GitHubCollector : IGitHubCollector
             }
         }
 
-        // Fetch open PRs count
-        metrics.OpenPullRequests = await GetOpenPrCountAsync(owner, repo);
+        // Fetch open PRs with full detail
+        metrics.RecentPullRequests = await GetRecentPullRequestsAsync(owner, repo);
+        metrics.OpenPullRequests = metrics.RecentPullRequests.Count;
+
+        // Fetch recently merged PRs (last 30 days)
+        metrics.RecentMergedPullRequests = await GetRecentMergedPullRequestsAsync(owner, repo);
+        metrics.MergedPullRequestsCount = metrics.RecentMergedPullRequests.Count;
 
         // Fetch last 20 open issues
         metrics.RecentIssues = await GetRecentIssuesAsync(owner, repo);
@@ -279,27 +284,141 @@ public sealed class GitHubCollector : IGitHubCollector
         return issues;
     }
 
-    private async Task<int> GetOpenPrCountAsync(string owner, string repo)
+    private async Task<List<GitHubPullRequest>> GetRecentPullRequestsAsync(string owner, string repo)
     {
-        // Use per_page=1 and check the total from the response to minimize data transfer
-        var json = await GetWithRetryAsync($"{ApiBase}/repos/{owner}/{repo}/pulls?state=open&per_page=1");
-        if (json is null) return 0;
+        var json = await GetWithRetryAsync(
+            $"{ApiBase}/repos/{owner}/{repo}/pulls?state=open&sort=created&direction=desc&per_page=40");
+        if (json is null) return [];
 
-        // The response is an array; for an accurate count we check the Link header,
-        // but for simplicity we'll fetch up to 100 and count.
+        var prs = ParsePullRequests(json);
         json.Dispose();
+        return prs;
+    }
 
-        var fullJson = await GetWithRetryAsync($"{ApiBase}/repos/{owner}/{repo}/pulls?state=open&per_page=100");
-        if (fullJson is null) return 0;
+    private async Task<List<GitHubPullRequest>> GetRecentMergedPullRequestsAsync(string owner, string repo)
+    {
+        var json = await GetWithRetryAsync(
+            $"{ApiBase}/repos/{owner}/{repo}/pulls?state=closed&sort=updated&direction=desc&per_page=40");
+        if (json is null) return [];
 
-        int count = 0;
-        if (fullJson.RootElement.ValueKind == JsonValueKind.Array)
+        var cutoff = DateTimeOffset.UtcNow.AddDays(-30);
+        var prs = new List<GitHubPullRequest>();
+
+        if (json.RootElement.ValueKind == JsonValueKind.Array)
         {
-            count = fullJson.RootElement.GetArrayLength();
+            foreach (var element in json.RootElement.EnumerateArray())
+            {
+                // Only include PRs that were actually merged (merged_at is set) within last 30 days
+                if (!element.TryGetProperty("merged_at", out var mergedAtProp) ||
+                    mergedAtProp.ValueKind == JsonValueKind.Null)
+                    continue;
+
+                if (!DateTimeOffset.TryParse(mergedAtProp.GetString(), out var mergedAt) || mergedAt < cutoff)
+                    continue;
+
+                var pr = ParseSinglePullRequest(element);
+                prs.Add(pr);
+            }
         }
 
-        fullJson.Dispose();
-        return count;
+        json.Dispose();
+        return prs;
+    }
+
+    private static List<GitHubPullRequest> ParsePullRequests(JsonDocument json)
+    {
+        var prs = new List<GitHubPullRequest>();
+        if (json.RootElement.ValueKind != JsonValueKind.Array) return prs;
+
+        foreach (var element in json.RootElement.EnumerateArray())
+        {
+            prs.Add(ParseSinglePullRequest(element));
+        }
+
+        return prs;
+    }
+
+    private static GitHubPullRequest ParseSinglePullRequest(JsonElement element)
+    {
+        var pr = new GitHubPullRequest
+        {
+            Number = element.TryGetProperty("number", out var num) ? num.GetInt32() : 0,
+            Title = element.TryGetProperty("title", out var title) ? title.GetString() ?? string.Empty : string.Empty,
+            HtmlUrl = element.TryGetProperty("html_url", out var htmlUrl) ? htmlUrl.GetString() : null,
+            IsDraft = element.TryGetProperty("draft", out var draft) && draft.GetBoolean(),
+            State = element.TryGetProperty("state", out var state) ? state.GetString() : null,
+            CommentsCount = element.TryGetProperty("comments", out var comments) ? comments.GetInt32() : 0,
+            // additions/deletions/changed_files are not returned by the list endpoint — set to 0
+            Additions = 0,
+            Deletions = 0,
+            ChangedFiles = 0,
+            ReviewDecision = null, // Not available from REST list endpoint
+        };
+
+        if (element.TryGetProperty("created_at", out var createdAt) &&
+            DateTimeOffset.TryParse(createdAt.GetString(), out var created))
+        {
+            pr.CreatedAt = created;
+        }
+
+        if (element.TryGetProperty("updated_at", out var updatedAt) &&
+            DateTimeOffset.TryParse(updatedAt.GetString(), out var updated))
+        {
+            pr.UpdatedAt = updated;
+        }
+
+        if (element.TryGetProperty("merged_at", out var mergedAt) &&
+            mergedAt.ValueKind != JsonValueKind.Null &&
+            DateTimeOffset.TryParse(mergedAt.GetString(), out var merged))
+        {
+            pr.MergedAt = merged;
+        }
+
+        if (element.TryGetProperty("closed_at", out var closedAt) &&
+            closedAt.ValueKind != JsonValueKind.Null &&
+            DateTimeOffset.TryParse(closedAt.GetString(), out var closed))
+        {
+            pr.ClosedAt = closed;
+        }
+
+        if (element.TryGetProperty("user", out var user) &&
+            user.ValueKind == JsonValueKind.Object &&
+            user.TryGetProperty("login", out var login))
+        {
+            pr.UserLogin = login.GetString();
+        }
+
+        if (element.TryGetProperty("labels", out var labelsArray) &&
+            labelsArray.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var label in labelsArray.EnumerateArray())
+            {
+                if (label.TryGetProperty("name", out var labelName))
+                {
+                    var name = labelName.GetString();
+                    if (!string.IsNullOrWhiteSpace(name))
+                    {
+                        pr.Labels.Add(name);
+                    }
+                }
+            }
+        }
+
+        if (element.TryGetProperty("head", out var head) &&
+            head.ValueKind == JsonValueKind.Object &&
+            head.TryGetProperty("ref", out var headRef))
+        {
+            pr.HeadBranch = headRef.GetString();
+        }
+
+        if (element.TryGetProperty("base", out var baseProp) &&
+            baseProp.ValueKind == JsonValueKind.Object &&
+            baseProp.TryGetProperty("ref", out var baseRef))
+        {
+            pr.BaseBranch = baseRef.GetString();
+        }
+
+        return pr;
     }
 
     private async Task<JsonDocument?> GetWithRetryAsync(string url)

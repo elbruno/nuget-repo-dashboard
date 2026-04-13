@@ -87,13 +87,13 @@ public class GitHubCollectorTests
             HttpStatusCode.OK,
             BuildRepoJson(stars: 500, forks: 120, openIssues: 15, description: "Awesome repo", language: "C#", license: "Apache-2.0"));
         handler.AddResponse(
-            "https://api.github.com/repos/testowner/testrepo/pulls?state=open&per_page=1",
-            HttpStatusCode.OK,
-            BuildPullsJson(1));
-        handler.AddResponse(
-            "https://api.github.com/repos/testowner/testrepo/pulls?state=open&per_page=100",
+            "https://api.github.com/repos/testowner/testrepo/pulls?state=open&sort=created&direction=desc&per_page=40",
             HttpStatusCode.OK,
             BuildPullsJson(3));
+        handler.AddResponse(
+            "https://api.github.com/repos/testowner/testrepo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -162,11 +162,11 @@ public class GitHubCollectorTests
             HttpStatusCode.OK,
             BuildRepoJson());
         handler.AddResponse(
-            "https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1",
+            "https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40",
             HttpStatusCode.OK,
             "[]");
         handler.AddResponse(
-            "https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100",
+            "https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
             HttpStatusCode.OK,
             "[]");
 
@@ -227,11 +227,11 @@ public class GitHubCollectorTests
             HttpStatusCode.OK,
             BuildRepoJson(archived: true));
         handler.AddResponse(
-            "https://api.github.com/repos/owner/archived-repo/pulls?state=open&per_page=1",
+            "https://api.github.com/repos/owner/archived-repo/pulls?state=open&sort=created&direction=desc&per_page=40",
             HttpStatusCode.OK,
             "[]");
         handler.AddResponse(
-            "https://api.github.com/repos/owner/archived-repo/pulls?state=open&per_page=100",
+            "https://api.github.com/repos/owner/archived-repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
             HttpStatusCode.OK,
             "[]");
 
@@ -253,11 +253,11 @@ public class GitHubCollectorTests
             HttpStatusCode.OK,
             BuildRepoJson(description: null, language: null, license: null, pushedAt: null));
         handler.AddResponse(
-            "https://api.github.com/repos/owner/minimal/pulls?state=open&per_page=1",
+            "https://api.github.com/repos/owner/minimal/pulls?state=open&sort=created&direction=desc&per_page=40",
             HttpStatusCode.OK,
             "[]");
         handler.AddResponse(
-            "https://api.github.com/repos/owner/minimal/pulls?state=open&per_page=100",
+            "https://api.github.com/repos/owner/minimal/pulls?state=closed&sort=updated&direction=desc&per_page=40",
             HttpStatusCode.OK,
             "[]");
 
@@ -281,16 +281,16 @@ public class GitHubCollectorTests
 
         // First repo succeeds
         handler.AddResponse("https://api.github.com/repos/owner/repo1", HttpStatusCode.OK, BuildRepoJson(stars: 10));
-        handler.AddResponse("https://api.github.com/repos/owner/repo1/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo1/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo1/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo1/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         // Second repo 404
         handler.AddResponse("https://api.github.com/repos/owner/repo2", HttpStatusCode.NotFound, "");
 
         // Third repo succeeds
         handler.AddResponse("https://api.github.com/repos/owner/repo3", HttpStatusCode.OK, BuildRepoJson(stars: 30));
-        handler.AddResponse("https://api.github.com/repos/owner/repo3/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo3/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo3/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo3/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -310,8 +310,8 @@ public class GitHubCollectorTests
             "https://api.github.com/repos/owner/repo",
             HttpStatusCode.OK,
             BuildRepoJson(pushedAt: "2024-12-25T10:30:00Z"));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -332,8 +332,8 @@ public class GitHubCollectorTests
             "https://api.github.com/repos/owner/repo",
             HttpStatusCode.OK,
             BuildRepoJson(subscribersCount: 125));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -352,8 +352,8 @@ public class GitHubCollectorTests
             "https://api.github.com/repos/owner/repo",
             HttpStatusCode.OK,
             BuildRepoJson(topics: ["csharp", "dotnet", "nuget"]));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -374,8 +374,8 @@ public class GitHubCollectorTests
             BuildRepoJson(
                 createdAt: "2020-01-15T10:00:00Z",
                 updatedAt: "2024-06-20T14:30:00Z"));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -399,8 +399,8 @@ public class GitHubCollectorTests
             "https://api.github.com/repos/owner/repo",
             HttpStatusCode.OK,
             BuildRepoJson(size: 2048, defaultBranch: "develop"));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -422,8 +422,8 @@ public class GitHubCollectorTests
             BuildRepoJson(
                 homepage: "https://example.com",
                 htmlUrl: "https://github.com/owner/repo"));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -443,8 +443,8 @@ public class GitHubCollectorTests
             "https://api.github.com/repos/owner/repo",
             HttpStatusCode.OK,
             BuildRepoJson(hasWiki: true, hasPages: false));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -464,8 +464,8 @@ public class GitHubCollectorTests
             "https://api.github.com/repos/owner/repo",
             HttpStatusCode.OK,
             BuildRepoJson(networkCount: 42, visibility: "public"));
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
@@ -496,8 +496,8 @@ public class GitHubCollectorTests
                 homepage: null,
                 visibility: null,
                 htmlUrl: null));
-        handler.AddResponse("https://api.github.com/repos/owner/minimal/pulls?state=open&per_page=1", HttpStatusCode.OK, "[]");
-        handler.AddResponse("https://api.github.com/repos/owner/minimal/pulls?state=open&per_page=100", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/minimal/pulls?state=open&sort=created&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
+        handler.AddResponse("https://api.github.com/repos/owner/minimal/pulls?state=closed&sort=updated&direction=desc&per_page=40", HttpStatusCode.OK, "[]");
 
         using var httpClient = new HttpClient(handler);
         var collector = new GitHubCollector(httpClient);
