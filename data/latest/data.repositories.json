@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T10:43:42.5065884+00:00",
+  "generatedAt": "2026-04-13T12:01:32.9493907+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -92,12 +92,12 @@
       "fullName": "elbruno/ElBruno.QwenTTS",
       "stars": 17,
       "forks": 2,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-04-12T19:55:29+00:00",
+      "lastPush": "2026-04-13T11:45:03+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -116,7 +116,7 @@
         "voice-cloning"
       ],
       "createdAt": "2026-02-21T16:27:42+00:00",
-      "updatedAt": "2026-04-12T19:55:11+00:00",
+      "updatedAt": "2026-04-13T11:45:07+00:00",
       "size": 2973,
       "defaultBranch": "main",
       "homepage": null,
@@ -125,18 +125,7 @@
       "networkCount": 2,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": [
-        {
-          "number": 34,
-          "title": "export lm failed.",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/34",
-          "createdAt": "2026-04-13T06:09:57+00:00",
-          "updatedAt": "2026-04-13T09:10:32+00:00",
-          "userLogin": "jasonzhang761213",
-          "labels": [],
-          "commentsCount": 0
-        }
-      ]
+      "recentIssues": []
     },
     {
       "owner": "elbruno",
@@ -482,6 +471,50 @@
     },
     {
       "owner": "elbruno",
+      "name": "ElBruno.MarkItDotNet",
+      "fullName": "elbruno/ElBruno.MarkItDotNet",
+      "stars": 14,
+      "forks": 4,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": ".NET library that converts file formats to Markdown for AI pipelines",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-04-13T11:13:16+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "csharp",
+        "csv",
+        "document-conversion",
+        "docx",
+        "dotnet",
+        "epub",
+        "excel",
+        "file-converter",
+        "html",
+        "markdown",
+        "markitdown",
+        "nuget",
+        "pdf",
+        "powerpoint",
+        "rtf"
+      ],
+      "createdAt": "2026-04-02T17:50:33+00:00",
+      "updatedAt": "2026-04-13T11:12:47+00:00",
+      "size": 1637,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 4,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "recentIssues": []
+    },
+    {
+      "owner": "elbruno",
       "name": "ElBruno.QRCodeGenerator",
       "fullName": "elbruno/ElBruno.QRCodeGenerator",
       "stars": 5,
@@ -526,61 +559,6 @@
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
       "recentIssues": []
-    },
-    {
-      "owner": "elbruno",
-      "name": "ElBruno.MarkItDotNet",
-      "fullName": "elbruno/ElBruno.MarkItDotNet",
-      "stars": 14,
-      "forks": 4,
-      "openIssues": 1,
-      "openPullRequests": 0,
-      "description": ".NET library that converts file formats to Markdown for AI pipelines",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-04-09T11:56:58+00:00",
-      "archived": false,
-      "watchersCount": 0,
-      "topics": [
-        "ai",
-        "csharp",
-        "csv",
-        "document-conversion",
-        "docx",
-        "dotnet",
-        "epub",
-        "excel",
-        "file-converter",
-        "html",
-        "markdown",
-        "markitdown",
-        "nuget",
-        "pdf",
-        "powerpoint",
-        "rtf"
-      ],
-      "createdAt": "2026-04-02T17:50:33+00:00",
-      "updatedAt": "2026-04-12T22:24:43+00:00",
-      "size": 1637,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": true,
-      "hasPages": false,
-      "networkCount": 4,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "recentIssues": [
-        {
-          "number": 7,
-          "title": "Non existing package:  ElBruno.MarkItDotNet.CoreModel",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/issues/7",
-          "createdAt": "2026-04-12T22:06:47+00:00",
-          "updatedAt": "2026-04-12T22:06:47+00:00",
-          "userLogin": "EyeSirvived",
-          "labels": [],
-          "commentsCount": 0
-        }
-      ]
     },
     {
       "owner": "elbruno",
