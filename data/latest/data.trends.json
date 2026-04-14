@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T13:00:15.2641734+00:00",
+  "generatedAt": "2026-04-14T10:14:51.6783758+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -6802,7 +6802,14 @@
       "closed": 2
     }
   ],
-  "pullRequestActivity": [],
+  "pullRequestActivity": [
+    {
+      "date": "2026-04-13",
+      "opened": 0,
+      "merged": 2,
+      "closed": 2
+    }
+  ],
   "versionActivity": [
     {
       "date": "2026-04-03",
