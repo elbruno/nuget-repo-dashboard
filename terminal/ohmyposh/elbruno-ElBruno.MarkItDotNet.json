@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#FFFFFF",
-          "background": "#5E8856",
+          "foreground": "#1C1C1C",
+          "background": "#68CE56",
           "style": "plain",
           "template": " 🔷 ElBruno.MarkItDotNet "
         }

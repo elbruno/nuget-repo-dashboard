@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#FFFFFF",
-          "background": "#9667AE",
+          "foreground": "#1C1C1C",
+          "background": "#6E94AE",
           "style": "plain",
           "template": " ⚡ ElBruno.Realtime "
         }

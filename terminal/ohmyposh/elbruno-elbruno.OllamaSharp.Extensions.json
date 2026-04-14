@@ -10,7 +10,7 @@
         {
           "type": "text",
           "foreground": "#1C1C1C",
-          "background": "#53BD76",
+          "background": "#ADA976",
           "style": "plain",
           "template": " 🔷 elbruno.OllamaSharp.Extensions "
         }

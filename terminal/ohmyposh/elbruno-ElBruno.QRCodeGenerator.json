@@ -10,7 +10,7 @@
         {
           "type": "text",
           "foreground": "#FFFFFF",
-          "background": "#B85C5B",
+          "background": "#5E705B",
           "style": "plain",
           "template": " 📷 ElBruno.QRCodeGenerator "
         }
