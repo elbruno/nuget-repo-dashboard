@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T10:16:11.1195353+00:00",
+  "generatedAt": "2026-04-16T10:14:40.7246144+00:00",
   "totalRepos": 17,
   "profiles": [
     {
@@ -21,16 +21,16 @@
       "icon": "\uD83D\uDD0A"
     },
     {
-      "repo": "elbruno/ElBruno.LocalLLMs",
-      "configFile": "elbruno-ElBruno.LocalLLMs.json",
-      "accentColor": "#85958B",
-      "icon": "\uD83E\uDD16"
-    },
-    {
       "repo": "elbruno/ElBruno.MarkItDotNet",
       "configFile": "elbruno-ElBruno.MarkItDotNet.json",
       "accentColor": "#68CE56",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.LocalLLMs",
+      "configFile": "elbruno-ElBruno.LocalLLMs.json",
+      "accentColor": "#85958B",
+      "icon": "\uD83E\uDD16"
     },
     {
       "repo": "elbruno/ElBruno.VibeVoiceTTS",
