@@ -8,7 +8,7 @@ namespace Collector.Tests;
 
 /// <summary>
 /// Tests for NuGetCollector multi-shard query behavior.
-/// Validates parallel querying of both USNC and USSC shards with max aggregation.
+/// Validates USNC-primary strategy with USSC as failover only.
 /// </summary>
 public class NuGetCollectorMultiShardTests
 {
@@ -88,7 +88,7 @@ public class NuGetCollectorMultiShardTests
         var results = await collector.CollectAsync(packages);
 
         results.Should().ContainSingle();
-        results[0].TotalDownloads.Should().Be(75000, "should return max of both shards");
+        results[0].TotalDownloads.Should().Be(50000, "should return USNC (primary shard) value");
     }
 
     [Fact]
@@ -162,7 +162,7 @@ public class NuGetCollectorMultiShardTests
         var results = await collector.CollectAsync(packages);
 
         results.Should().ContainSingle();
-        results[0].TotalDownloads.Should().Be(90000, "USSC has higher download count");
+        results[0].TotalDownloads.Should().Be(45000, "should return USNC (primary shard) value, ignoring higher USSC");
     }
 
     [Fact]
@@ -345,7 +345,7 @@ public class NuGetCollectorMultiShardTests
         var results = await collector.CollectAsync(packages);
 
         results.Should().ContainSingle();
-        results[0].TotalDownloads.Should().Be(12000, "should return positive value when one shard is 0");
+        results[0].TotalDownloads.Should().Be(0, "USNC returned 0 which is a valid response; USSC is only used on USNC failure");
     }
 
     [Fact]
@@ -382,7 +382,7 @@ public class NuGetCollectorMultiShardTests
         var results = await collector.CollectAsync(packages);
 
         results.Should().ContainSingle();
-        results[0].TotalDownloads.Should().Be(8000, "should use USSC value when USNC returns empty data");
+        results[0].TotalDownloads.Should().Be(0, "USNC returned empty data (valid 0); USSC fallback only on HTTP failure");
     }
 
     [Fact]

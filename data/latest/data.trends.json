@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-16T16:54:08.8258032+00:00",
+  "generatedAt": "2026-04-16T19:13:57.8870814+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -256,7 +256,7 @@
         },
         {
           "date": "2026-04-16",
-          "version": "1.4.3"
+          "version": "1.4.5"
         }
       ]
     },
@@ -3851,6 +3851,62 @@
           "version": "0.6.0"
         }
       ]
+    },
+    "ElBruno.AotMapper": {
+      "downloads": [
+        {
+          "date": "2026-04-16",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-16",
+          "version": "0.5.0"
+        }
+      ]
+    },
+    "ElBruno.AotMapper.Generator": {
+      "downloads": [
+        {
+          "date": "2026-04-16",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-16",
+          "version": "0.5.0"
+        }
+      ]
+    },
+    "ElBruno.AotMapper.EntityFramework": {
+      "downloads": [
+        {
+          "date": "2026-04-16",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-16",
+          "version": "0.5.0"
+        }
+      ]
+    },
+    "ElBruno.AotMapper.AspNetCore": {
+      "downloads": [
+        {
+          "date": "2026-04-16",
+          "value": 0
+        }
+      ],
+      "versionHistory": [
+        {
+          "date": "2026-04-16",
+          "version": "0.5.0"
+        }
+      ]
     }
   },
   "repositories": {
@@ -4538,7 +4594,7 @@
         },
         {
           "date": "2026-04-16",
-          "value": 2
+          "value": 1
         }
       ],
       "openPullRequests": [
@@ -8379,6 +8435,30 @@
       "avgDailyDownloads": 14.67,
       "staleDays": 1,
       "isStale": false
+    },
+    {
+      "packageId": "ElBruno.AotMapper",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.AotMapper.Generator",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.AotMapper.EntityFramework",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.AotMapper.AspNetCore",
+      "avgDailyDownloads": 0,
+      "staleDays": 0,
+      "isStale": false
     }
   ],
   "stalePackageCount": 8,
@@ -8421,12 +8501,18 @@
     {
       "date": "2026-04-16",
       "opened": 2,
-      "closed": 0
+      "closed": 3
     }
   ],
   "pullRequestActivity": [
     {
       "date": "2026-04-13",
+      "opened": 0,
+      "merged": 2,
+      "closed": 2
+    },
+    {
+      "date": "2026-04-16",
       "opened": 0,
       "merged": 2,
       "closed": 2
@@ -8573,8 +8659,8 @@
         "ElBruno.MarkItDotNet.VectorData",
         "ElBruno.MarkItDotNet.AzureSearch",
         "ElBruno.MarkItDotNet.Chunking",
-        "ElBruno.MarkItDotNet.DocumentIntelligence",
         "ElBruno.MarkItDotNet.Sync",
+        "ElBruno.MarkItDotNet.DocumentIntelligence",
         "ElBruno.MarkItDotNet.Metadata"
       ]
     }
@@ -8815,6 +8901,22 @@
     {
       "date": "2026-04-13",
       "packageId": "ElBruno.MarkItDotNet.Metadata"
+    },
+    {
+      "date": "2026-04-16",
+      "packageId": "ElBruno.AotMapper"
+    },
+    {
+      "date": "2026-04-16",
+      "packageId": "ElBruno.AotMapper.Generator"
+    },
+    {
+      "date": "2026-04-16",
+      "packageId": "ElBruno.AotMapper.EntityFramework"
+    },
+    {
+      "date": "2026-04-16",
+      "packageId": "ElBruno.AotMapper.AspNetCore"
     }
   ]
 }

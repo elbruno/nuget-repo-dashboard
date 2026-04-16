@@ -143,31 +143,24 @@ public sealed class NuGetCollector : INuGetCollector
 
     private async Task<long> GetTotalDownloadsAsync(string packageId)
     {
-        // Query both NuGet search shards in parallel to handle staleness
+        // Use USNC (primary) shard. Fall back to USSC only if USNC fails.
+        // Previous Math.Max strategy picked up inflated stale data from USSC.
         var query = $"?q=packageid:{packageId}&take=1";
-        var usncUrl = SearchShardUsnc + query;
-        var usscUrl = SearchShardUssc + query;
 
-        var usncTask = GetDownloadsFromShardAsync(usncUrl);
-        var usscTask = GetDownloadsFromShardAsync(usscUrl);
-
-        await Task.WhenAll(usncTask, usscTask);
-
-        var usncCount = usncTask.Result;
-        var usscCount = usscTask.Result;
-
-        // Take the maximum to handle cases where one shard is stale
-        var maxCount = Math.Max(usncCount, usscCount);
-
-        // Log when shards disagree (helps diagnose staleness)
-        if (usncCount != usscCount && usncCount > 0 && usscCount > 0)
+        var usncCount = await GetDownloadsFromShardAsync(SearchShardUsnc + query);
+        if (usncCount >= 0)
         {
-            Console.WriteLine($"[NuGet] Download shard mismatch for {packageId}: USNC={usncCount} USSC={usscCount}, using max={maxCount}");
+            return usncCount;
         }
 
-        return maxCount;
+        // USNC failed (-1), try USSC as fallback
+        var usscCount = await GetDownloadsFromShardAsync(SearchShardUssc + query);
+        return Math.Max(usscCount, 0);
     }
 
+    /// <summary>
+    /// Returns download count from a search shard, or -1 if the shard is unavailable.
+    /// </summary>
     private async Task<long> GetDownloadsFromShardAsync(string url)
     {
         try
@@ -188,7 +181,8 @@ public sealed class NuGetCollector : INuGetCollector
         }
         catch (HttpRequestException)
         {
-            // Shard unavailable after retries — return 0 so the other shard can provide data
+            // Shard unavailable after retries — return -1 so caller can try fallback
+            return -1;
         }
 
         return 0;
