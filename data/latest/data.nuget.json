@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-16T10:14:36.8461289+00:00",
+  "generatedAt": "2026-04-16T16:54:08.8886729+00:00",
   "packages": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
@@ -42,7 +42,7 @@
     },
     {
       "packageId": "ElBruno.QwenTTS",
-      "latestVersion": "1.4.3",
+      "latestVersion": "1.4.5",
       "totalDownloads": 1841,
       "description": "Run Qwen3-TTS text-to-speech locally from C# using ONNX Runtime. Models download automatically from HuggingFace on first run.",
       "authors": "Bruno Capuano",
@@ -60,7 +60,7 @@
         "machine-learning"
       ],
       "listed": true,
-      "publishedDate": "2026-04-15T16:23:16.523+00:00"
+      "publishedDate": "2026-04-16T11:37:39.55+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -172,6 +172,25 @@
       "publishedDate": "2026-04-10T15:40:45.263+00:00"
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.AI",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 646,
+      "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "ai",
+        "ocr",
+        "llm",
+        "chatclient",
+        "markitdown"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-15T16:36:18.02+00:00"
+    },
+    {
       "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
       "latestVersion": "1.4.3",
       "totalDownloads": 808,
@@ -190,25 +209,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-07T21:05:31.92+00:00"
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.AI",
-      "latestVersion": "0.6.0",
-      "totalDownloads": 646,
-      "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "converter",
-        "ai",
-        "ocr",
-        "llm",
-        "chatclient",
-        "markitdown"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-15T16:36:18.02+00:00"
     },
     {
       "packageId": "ElBruno.Text2Image",
@@ -309,24 +309,25 @@
       "publishedDate": "2026-04-11T19:14:27.51+00:00"
     },
     {
-      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
-      "latestVersion": "1.4.3",
-      "totalDownloads": 200,
-      "description": "Model downloader for ElBruno.LocalEmbeddings.ImageEmbeddings",
+      "packageId": "ElBruno.Text2Image.Cuda",
+      "latestVersion": "0.8.0",
+      "totalDownloads": 403,
+      "description": "NVIDIA CUDA GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable CUDA-based inference for Stable Diffusion image generation on NVIDIA GPUs.",
       "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
       "tags": [
-        "embeddings",
+        "text-to-image",
+        "stable-diffusion",
+        "image-generation",
         "onnx",
-        "ai",
-        "local",
-        "clip",
-        "image-embeddings",
-        "model-downloader",
-        "huggingface"
+        "onnxruntime",
+        "cuda",
+        "gpu",
+        "nvidia",
+        "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-04-07T21:05:32.223+00:00"
+      "publishedDate": "2026-04-13T14:22:07.7+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Whisper",
@@ -350,25 +351,24 @@
       "publishedDate": "2026-04-15T16:36:22.45+00:00"
     },
     {
-      "packageId": "ElBruno.Text2Image.Cuda",
-      "latestVersion": "0.8.0",
-      "totalDownloads": 403,
-      "description": "NVIDIA CUDA GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable CUDA-based inference for Stable Diffusion image generation on NVIDIA GPUs.",
+      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
+      "latestVersion": "1.4.3",
+      "totalDownloads": 200,
+      "description": "Model downloader for ElBruno.LocalEmbeddings.ImageEmbeddings",
       "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
       "tags": [
-        "text-to-image",
-        "stable-diffusion",
-        "image-generation",
+        "embeddings",
         "onnx",
-        "onnxruntime",
-        "cuda",
-        "gpu",
-        "nvidia",
-        "ai"
+        "ai",
+        "local",
+        "clip",
+        "image-embeddings",
+        "model-downloader",
+        "huggingface"
       ],
       "listed": true,
-      "publishedDate": "2026-04-13T14:22:07.7+00:00"
+      "publishedDate": "2026-04-07T21:05:32.223+00:00"
     },
     {
       "packageId": "ElBruno.Text2Image.Foundry",
@@ -406,6 +406,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-02-28T18:06:02.633+00:00"
+    },
+    {
+      "packageId": "ElBruno.Text2Image.DirectML",
+      "latestVersion": "0.8.0",
+      "totalDownloads": 376,
+      "description": "DirectML GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable DirectML-based inference for Stable Diffusion image generation on AMD, Intel, and NVIDIA GPUs (Windows only).",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
+      "tags": [
+        "text-to-image",
+        "stable-diffusion",
+        "image-generation",
+        "onnx",
+        "onnxruntime",
+        "directml",
+        "gpu",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-13T14:22:07.993+00:00"
     },
     {
       "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
@@ -451,26 +471,6 @@
       "publishedDate": "2026-02-28T17:26:50.687+00:00"
     },
     {
-      "packageId": "ElBruno.Text2Image.DirectML",
-      "latestVersion": "0.8.0",
-      "totalDownloads": 376,
-      "description": "DirectML GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable DirectML-based inference for Stable Diffusion image generation on AMD, Intel, and NVIDIA GPUs (Windows only).",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
-      "tags": [
-        "text-to-image",
-        "stable-diffusion",
-        "image-generation",
-        "onnx",
-        "onnxruntime",
-        "directml",
-        "gpu",
-        "ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-13T14:22:07.993+00:00"
-    },
-    {
       "packageId": "ElBruno.Text2Image.Cpu",
       "latestVersion": "0.8.0",
       "totalDownloads": 386,
@@ -488,25 +488,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-13T14:22:07.413+00:00"
-    },
-    {
-      "packageId": "ElBruno.AgentsOrchestration.Orchestration",
-      "latestVersion": "0.5.5",
-      "totalDownloads": 360,
-      "description": "Ultralight multi-agent orchestration engine for the Microsoft Agent Framework. Implements a 6-step pipeline (Plan, Parse, Execute, Verify, Review, Report) with event streaming via System.Threading.Channels.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "",
-      "tags": [
-        "ai",
-        "agents",
-        "orchestration",
-        "microsoft-agent-framework",
-        "copilot",
-        "pipeline",
-        "events"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-28T18:06:03.217+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.CLI",
@@ -528,6 +509,25 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-01T21:58:06.13+00:00"
+    },
+    {
+      "packageId": "ElBruno.AgentsOrchestration.Orchestration",
+      "latestVersion": "0.5.5",
+      "totalDownloads": 360,
+      "description": "Ultralight multi-agent orchestration engine for the Microsoft Agent Framework. Implements a 6-step pipeline (Plan, Parse, Execute, Verify, Review, Report) with event streaming via System.Threading.Channels.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "",
+      "tags": [
+        "ai",
+        "agents",
+        "orchestration",
+        "microsoft-agent-framework",
+        "copilot",
+        "pipeline",
+        "events"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T18:06:03.217+00:00"
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Harrier",
@@ -566,31 +566,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-02-28T18:53:59.933+00:00"
-    },
-    {
-      "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
-      "latestVersion": "1.4.3",
-      "totalDownloads": 134,
-      "description": "Intel Core Ultra NPU-accelerated local embedding generation using OpenVINO and ONNX Runtime",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "tags": [
-        "embeddings",
-        "onnx",
-        "ai",
-        "local",
-        "npu",
-        "intel",
-        "core-ultra",
-        "openvino",
-        "hardware-acceleration",
-        "microsoft-extensions-ai",
-        "sentence-transformers",
-        "nlp",
-        "machine-learning"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-07T21:05:33.073+00:00"
     },
     {
       "packageId": "ElBruno.Realtime.Whisper",
@@ -634,6 +609,31 @@
       ],
       "listed": true,
       "publishedDate": "2026-02-28T21:34:39.393+00:00"
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
+      "latestVersion": "1.4.3",
+      "totalDownloads": 134,
+      "description": "Intel Core Ultra NPU-accelerated local embedding generation using OpenVINO and ONNX Runtime",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "onnx",
+        "ai",
+        "local",
+        "npu",
+        "intel",
+        "core-ultra",
+        "openvino",
+        "hardware-acceleration",
+        "microsoft-extensions-ai",
+        "sentence-transformers",
+        "nlp",
+        "machine-learning"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-07T21:05:33.073+00:00"
     },
     {
       "packageId": "ElBruno.Realtime.SileroVad",
@@ -680,6 +680,24 @@
       "publishedDate": "2026-04-07T21:05:32.77+00:00"
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.CoreModel",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 105,
+      "description": "Structured document model for ElBruno.MarkItDotNet ingestion pipelines. Defines Document, Section, Block hierarchy for layout-aware processing.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "document-model",
+        "ingestion",
+        "rag",
+        "chunking",
+        "structured-extraction"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-15T16:36:19.943+00:00"
+    },
+    {
       "packageId": "ElBruno.QRCodeGenerator.Svg",
       "latestVersion": "1.1.0",
       "totalDownloads": 251,
@@ -696,23 +714,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-01T21:58:07.52+00:00"
-    },
-    {
-      "packageId": "ElBruno.ClockTray",
-      "latestVersion": "0.5.5",
-      "totalDownloads": 272,
-      "description": "Windows system tray app to toggle taskbar date/time visibility. Context menu \u002B Ctrl\u002BAlt\u002BT hotkey.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.ClockTray",
-      "tags": [
-        "windows",
-        "taskbar",
-        "clock",
-        "system-tray",
-        "toggle"
-      ],
-      "listed": true,
-      "publishedDate": "2026-03-03T17:31:01.013+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Payloads",
@@ -735,22 +736,21 @@
       "publishedDate": "2026-04-01T21:58:04.627+00:00"
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.CoreModel",
-      "latestVersion": "0.6.0",
-      "totalDownloads": 105,
-      "description": "Structured document model for ElBruno.MarkItDotNet ingestion pipelines. Defines Document, Section, Block hierarchy for layout-aware processing.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "packageId": "ElBruno.ClockTray",
+      "latestVersion": "0.5.5",
+      "totalDownloads": 272,
+      "description": "Windows system tray app to toggle taskbar date/time visibility. Context menu \u002B Ctrl\u002BAlt\u002BT hotkey.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.ClockTray",
       "tags": [
-        "markdown",
-        "document-model",
-        "ingestion",
-        "rag",
-        "chunking",
-        "structured-extraction"
+        "windows",
+        "taskbar",
+        "clock",
+        "system-tray",
+        "toggle"
       ],
       "listed": true,
-      "publishedDate": "2026-04-15T16:36:19.943+00:00"
+      "publishedDate": "2026-03-03T17:31:01.013+00:00"
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Ascii",
@@ -788,98 +788,6 @@
       "publishedDate": "2026-04-01T21:58:07.96+00:00"
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Tool",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 190,
-      "description": "Global dotnet tool for command-line QR code generation in console, SVG, PNG, JPEG, ASCII, or PDF formats.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "",
-      "tags": [
-        "qrcode",
-        "tool",
-        "cli",
-        "console",
-        "svg",
-        "png",
-        "pdf",
-        "ascii"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:05.853+00:00"
-    },
-    {
-      "packageId": "ElBruno.AI.Evaluation.Xunit",
-      "latestVersion": "0.5.2",
-      "totalDownloads": 180,
-      "description": "xUnit integration for ElBruno.AI.Evaluation",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "tags": [
-        "ai",
-        "evaluation",
-        "testing",
-        "observability",
-        "dotnet",
-        "llm"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-28T18:54:00.513+00:00"
-    },
-    {
-      "packageId": "ElBruno.AI.Evaluation.SyntheticData",
-      "latestVersion": "0.5.2",
-      "totalDownloads": 177,
-      "description": "Synthetic data generation for AI evaluation testing in .NET",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "tags": [
-        "ai",
-        "evaluation",
-        "testing",
-        "observability",
-        "dotnet",
-        "llm"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-28T18:54:00.33+00:00"
-    },
-    {
-      "packageId": "ElBruno.QRCodeGenerator.Image",
-      "latestVersion": "1.1.0",
-      "totalDownloads": 173,
-      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "png",
-        "jpeg",
-        "image",
-        "bitmap",
-        "skiasharp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:06.607+00:00"
-    },
-    {
-      "packageId": "ElBruno.AI.Evaluation.Reporting",
-      "latestVersion": "0.5.2",
-      "totalDownloads": 187,
-      "description": "Reporting and persistence for ElBruno.AI.Evaluation",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "tags": [
-        "ai",
-        "evaluation",
-        "testing",
-        "observability",
-        "dotnet",
-        "llm"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-28T18:54:00.133+00:00"
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.Quality",
       "latestVersion": "0.6.0",
       "totalDownloads": 72,
@@ -896,6 +804,28 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-15T16:36:21.57+00:00"
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Cli",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 111,
+      "description": "Command-line tool for converting files to Markdown. Powered by ElBruno.MarkItDotNet.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "cli",
+        "dotnet-tool",
+        "markitdown",
+        "pdf",
+        "docx",
+        "html",
+        "excel",
+        "powerpoint"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-15T16:36:19.623+00:00"
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
@@ -923,65 +853,96 @@
       "publishedDate": "2026-04-07T21:05:33.367+00:00"
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Cli",
-      "latestVersion": "0.6.0",
-      "totalDownloads": 111,
-      "description": "Command-line tool for converting files to Markdown. Powered by ElBruno.MarkItDotNet.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "converter",
-        "cli",
-        "dotnet-tool",
-        "markitdown",
-        "pdf",
-        "docx",
-        "html",
-        "excel",
-        "powerpoint"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-15T16:36:19.623+00:00"
-    },
-    {
-      "packageId": "elbruno.Extensions.AI.Skills.Core",
-      "latestVersion": "0.1.0",
-      "totalDownloads": 94,
-      "description": "Core models, parser, validator, and prompt generator for the Agent Skills specification.",
-      "authors": "elbruno",
-      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
-      "tags": [
-        "agent-skills",
-        "ai",
-        "llm",
-        "anthropic",
-        "dotnet",
-        "microsoft-extensions-ai",
-        "mcp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-06T21:09:03.057+00:00"
-    },
-    {
-      "packageId": "ElBruno.HuggingFace.Downloader.Cli",
+      "packageId": "ElBruno.QRCodeGenerator.Tool",
       "latestVersion": "1.1.0",
-      "totalDownloads": 85,
-      "description": "A .NET CLI tool to download, manage, and inspect cached files from Hugging Face Hub repositories.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
+      "totalDownloads": 190,
+      "description": "Global dotnet tool for command-line QR code generation in console, SVG, PNG, JPEG, ASCII, or PDF formats.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
       "tags": [
-        "huggingface",
-        "download",
+        "qrcode",
+        "tool",
         "cli",
-        "dotnet-tool",
-        "onnx",
-        "model",
-        "ml",
-        "ai"
+        "console",
+        "svg",
+        "png",
+        "pdf",
+        "ascii"
       ],
       "listed": true,
-      "publishedDate": "2026-04-08T18:15:59.71+00:00"
+      "publishedDate": "2026-04-01T21:58:05.853+00:00"
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Image",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 173,
+      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "png",
+        "jpeg",
+        "image",
+        "bitmap",
+        "skiasharp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:06.607+00:00"
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation.SyntheticData",
+      "latestVersion": "0.5.2",
+      "totalDownloads": 177,
+      "description": "Synthetic data generation for AI evaluation testing in .NET",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "tags": [
+        "ai",
+        "evaluation",
+        "testing",
+        "observability",
+        "dotnet",
+        "llm"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T18:54:00.33+00:00"
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation.Xunit",
+      "latestVersion": "0.5.2",
+      "totalDownloads": 180,
+      "description": "xUnit integration for ElBruno.AI.Evaluation",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "tags": [
+        "ai",
+        "evaluation",
+        "testing",
+        "observability",
+        "dotnet",
+        "llm"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T18:54:00.513+00:00"
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation.Reporting",
+      "latestVersion": "0.5.2",
+      "totalDownloads": 187,
+      "description": "Reporting and persistence for ElBruno.AI.Evaluation",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "tags": [
+        "ai",
+        "evaluation",
+        "testing",
+        "observability",
+        "dotnet",
+        "llm"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T18:54:00.133+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Citations",
@@ -1023,25 +984,6 @@
       "publishedDate": "2026-04-15T16:36:22.15+00:00"
     },
     {
-      "packageId": "elbruno.Extensions.AI.Skills.Cli",
-      "latestVersion": "0.1.0",
-      "totalDownloads": 103,
-      "description": "CLI tool for validating skills and generating prompt XML.",
-      "authors": "elbruno",
-      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
-      "tags": [
-        "agent-skills",
-        "ai",
-        "llm",
-        "anthropic",
-        "dotnet",
-        "microsoft-extensions-ai",
-        "mcp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-06T21:09:15.113+00:00"
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.AzureSearch",
       "latestVersion": "0.6.0",
       "totalDownloads": 81,
@@ -1062,23 +1004,23 @@
       "publishedDate": "2026-04-15T16:36:18.32+00:00"
     },
     {
-      "packageId": "ElBruno.LocalLLMs.Rag",
-      "latestVersion": "0.11.0",
-      "totalDownloads": 96,
-      "description": "RAG (Retrieval-Augmented Generation) pipeline for ElBruno.LocalLLMs. Provides document chunking, embedding storage, and semantic search.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
+      "packageId": "elbruno.Extensions.AI.Skills.Core",
+      "latestVersion": "0.1.0",
+      "totalDownloads": 94,
+      "description": "Core models, parser, validator, and prompt generator for the Agent Skills specification.",
+      "authors": "elbruno",
+      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
       "tags": [
-        "rag",
-        "retrieval",
-        "embeddings",
-        "semantic-search",
-        "vector-db",
-        "chunking",
-        "llm"
+        "agent-skills",
+        "ai",
+        "llm",
+        "anthropic",
+        "dotnet",
+        "microsoft-extensions-ai",
+        "mcp"
       ],
       "listed": true,
-      "publishedDate": "2026-04-04T16:07:14.14+00:00"
+      "publishedDate": "2026-02-06T21:09:03.057+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Chunking",
@@ -1097,6 +1039,63 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-15T16:36:18.71+00:00"
+    },
+    {
+      "packageId": "ElBruno.HuggingFace.Downloader.Cli",
+      "latestVersion": "1.1.0",
+      "totalDownloads": 85,
+      "description": "A .NET CLI tool to download, manage, and inspect cached files from Hugging Face Hub repositories.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
+      "tags": [
+        "huggingface",
+        "download",
+        "cli",
+        "dotnet-tool",
+        "onnx",
+        "model",
+        "ml",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-08T18:15:59.71+00:00"
+    },
+    {
+      "packageId": "elbruno.Extensions.AI.Skills.Cli",
+      "latestVersion": "0.1.0",
+      "totalDownloads": 103,
+      "description": "CLI tool for validating skills and generating prompt XML.",
+      "authors": "elbruno",
+      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
+      "tags": [
+        "agent-skills",
+        "ai",
+        "llm",
+        "anthropic",
+        "dotnet",
+        "microsoft-extensions-ai",
+        "mcp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-06T21:09:15.113+00:00"
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Sync",
+      "latestVersion": "0.6.0",
+      "totalDownloads": 50,
+      "description": "Incremental sync and change detection for ElBruno.MarkItDotNet ingestion pipelines. Supports source hashing, chunk diffing, soft-delete, and sync planning.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "sync",
+        "incremental",
+        "change-detection",
+        "ingestion",
+        "hashing"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-15T16:36:21.86+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
@@ -1118,22 +1117,23 @@
       "publishedDate": "2026-04-15T16:36:20.257+00:00"
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Sync",
-      "latestVersion": "0.6.0",
-      "totalDownloads": 50,
-      "description": "Incremental sync and change detection for ElBruno.MarkItDotNet ingestion pipelines. Supports source hashing, chunk diffing, soft-delete, and sync planning.",
+      "packageId": "ElBruno.LocalLLMs.Rag",
+      "latestVersion": "0.11.0",
+      "totalDownloads": 96,
+      "description": "RAG (Retrieval-Augmented Generation) pipeline for ElBruno.LocalLLMs. Provides document chunking, embedding storage, and semantic search.",
       "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
       "tags": [
-        "markdown",
-        "sync",
-        "incremental",
-        "change-detection",
-        "ingestion",
-        "hashing"
+        "rag",
+        "retrieval",
+        "embeddings",
+        "semantic-search",
+        "vector-db",
+        "chunking",
+        "llm"
       ],
       "listed": true,
-      "publishedDate": "2026-04-15T16:36:21.86+00:00"
+      "publishedDate": "2026-04-04T16:07:14.14+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Metadata",
@@ -1155,6 +1155,62 @@
       "publishedDate": "2026-04-15T16:36:20.983+00:00"
     },
     {
+      "packageId": "ElBruno.AotMapper",
+      "latestVersion": "0.5.0",
+      "totalDownloads": 0,
+      "description": "AOT-friendly source-generator-based DTO mapper for .NET. Core attributes and abstractions.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
+      "tags": [
+        "aot",
+        "mapper",
+        "dto",
+        "source-generator",
+        "native-aot",
+        "trimming",
+        "mapping"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-16T11:12:26.02+00:00"
+    },
+    {
+      "packageId": "ElBruno.AotMapper.Generator",
+      "latestVersion": "0.5.0",
+      "totalDownloads": 0,
+      "description": "Roslyn incremental source generator for ElBruno.AotMapper. Generates compile-time DTO mapping code.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
+      "tags": [
+        "aot",
+        "mapper",
+        "dto",
+        "source-generator",
+        "roslyn",
+        "analyzer",
+        "native-aot"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-16T11:12:25.383+00:00"
+    },
+    {
+      "packageId": "ElBruno.AotMapper.EntityFramework",
+      "latestVersion": "0.5.0",
+      "totalDownloads": 0,
+      "description": "Entity Framework Core integration for ElBruno.AotMapper. Projection helpers for supported patterns.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
+      "tags": [
+        "aot",
+        "mapper",
+        "entityframework",
+        "ef-core",
+        "projection",
+        "native-aot"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-16T11:12:27.47+00:00"
+    },
+    {
       "packageId": "graphify-dotnet",
       "latestVersion": "0.6.0",
       "totalDownloads": 190,
@@ -1164,6 +1220,23 @@
       "tags": [],
       "listed": true,
       "publishedDate": "2026-04-07T15:18:25.68+00:00"
+    },
+    {
+      "packageId": "ElBruno.AotMapper.AspNetCore",
+      "latestVersion": "0.5.0",
+      "totalDownloads": 0,
+      "description": "ASP.NET Core integration for ElBruno.AotMapper. DI registration and convenience extensions.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
+      "tags": [
+        "aot",
+        "mapper",
+        "aspnetcore",
+        "dependency-injection",
+        "native-aot"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-16T11:12:26.733+00:00"
     }
   ]
 }

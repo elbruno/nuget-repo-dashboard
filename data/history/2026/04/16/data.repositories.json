@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-16T10:14:36.8461289+00:00",
+  "generatedAt": "2026-04-16T16:54:08.8886729+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -204,12 +204,12 @@
       "fullName": "elbruno/ElBruno.QwenTTS",
       "stars": 18,
       "forks": 3,
-      "openIssues": 2,
+      "openIssues": 1,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-04-15T16:21:33+00:00",
+      "lastPush": "2026-04-16T11:35:55+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -228,8 +228,8 @@
         "voice-cloning"
       ],
       "createdAt": "2026-02-21T16:27:42+00:00",
-      "updatedAt": "2026-04-16T07:05:57+00:00",
-      "size": 2780,
+      "updatedAt": "2026-04-16T11:35:58+00:00",
+      "size": 2797,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
@@ -239,24 +239,12 @@
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
       "recentIssues": [
         {
-          "number": 42,
-          "title": "export export_speech_tokenizer caused error",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/42",
-          "createdAt": "2026-04-16T01:34:38+00:00",
-          "updatedAt": "2026-04-16T01:34:38+00:00",
-          "userLogin": "jasonzhang761213",
-          "labels": [],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        },
-        {
-          "number": 41,
-          "title": "huggingface model files not update",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/41",
-          "createdAt": "2026-04-15T18:48:41+00:00",
-          "updatedAt": "2026-04-15T18:48:41+00:00",
-          "userLogin": "lhwsa2010",
+          "number": 46,
+          "title": "Where is the  ElBruno.QwenTTS.VoiceCloning",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/46",
+          "createdAt": "2026-04-16T15:13:27+00:00",
+          "updatedAt": "2026-04-16T15:13:27+00:00",
+          "userLogin": "g123413927",
           "labels": [],
           "commentsCount": 0,
           "state": null,
@@ -264,6 +252,44 @@
         }
       ],
       "recentClosedIssues": [
+        {
+          "number": 44,
+          "title": "Refactor VoiceCloningDownloader to use ElBruno.HuggingFace.Downloader package",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/44",
+          "createdAt": "2026-04-16T11:15:01+00:00",
+          "updatedAt": "2026-04-16T11:32:22+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "enhancement"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-16T11:32:22+00:00"
+        },
+        {
+          "number": 42,
+          "title": "export export_speech_tokenizer caused error",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/42",
+          "createdAt": "2026-04-16T01:34:38+00:00",
+          "updatedAt": "2026-04-16T11:03:20+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-16T11:03:20+00:00"
+        },
+        {
+          "number": 41,
+          "title": "huggingface model files not update",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/41",
+          "createdAt": "2026-04-15T18:48:41+00:00",
+          "updatedAt": "2026-04-16T11:03:20+00:00",
+          "userLogin": "lhwsa2010",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-16T11:03:20+00:00"
+        },
         {
           "number": 39,
           "title": "export_speech_tokenizer.py error",
@@ -400,9 +426,49 @@
           "closedAt": "2026-04-02T19:55:13+00:00"
         }
       ],
-      "closedIssuesCount": 11,
+      "closedIssuesCount": 14,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
+        {
+          "number": 45,
+          "title": "Refactor VoiceCloningDownloader to use HuggingFace.Downloader package",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/45",
+          "createdAt": "2026-04-16T11:32:12+00:00",
+          "updatedAt": "2026-04-16T11:32:23+00:00",
+          "mergedAt": "2026-04-16T11:32:21+00:00",
+          "closedAt": "2026-04-16T11:32:21+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/44-refactor-voicecloning-downloader",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 43,
+          "title": "Fix ONNX cdist export error and handle missing HuggingFace files",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/43",
+          "createdAt": "2026-04-16T11:01:46+00:00",
+          "updatedAt": "2026-04-16T11:03:21+00:00",
+          "mergedAt": "2026-04-16T11:03:18+00:00",
+          "closedAt": "2026-04-16T11:03:18+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/41-42-fix-open-issues",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 40,
           "title": "Fix Unicode encoding error on non-UTF-8 terminals",
@@ -524,7 +590,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 6
+      "mergedPullRequestsCount": 8
     },
     {
       "owner": "elbruno",
@@ -1947,10 +2013,10 @@
           "title": "Could you add the functionality from the program I provided to ElBruno.ClockTray?",
           "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/issues/3",
           "createdAt": "2026-04-16T03:22:00+00:00",
-          "updatedAt": "2026-04-16T03:22:00+00:00",
+          "updatedAt": "2026-04-16T11:18:26+00:00",
           "userLogin": "sojey",
           "labels": [],
-          "commentsCount": 0,
+          "commentsCount": 2,
           "state": null,
           "closedAt": null
         }
