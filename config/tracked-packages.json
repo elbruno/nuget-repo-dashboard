@@ -32,6 +32,22 @@
     ]
   },
   {
+    "packageId": "ElBruno.AotMapper",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AotMapper.AspNetCore",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AotMapper.EntityFramework",
+    "repos": []
+  },
+  {
+    "packageId": "ElBruno.AotMapper.Generator",
+    "repos": []
+  },
+  {
     "packageId": "ElBruno.ClockTray",
     "repos": [
       "elbruno/ElBruno.ClockTray"
@@ -140,7 +156,37 @@
     ]
   },
   {
+    "packageId": "ElBruno.MarkItDotNet.AzureSearch",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Chunking",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Citations",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
     "packageId": "ElBruno.MarkItDotNet.Cli",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.CoreModel",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
     ]
@@ -152,7 +198,31 @@
     ]
   },
   {
+    "packageId": "ElBruno.MarkItDotNet.Metadata",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
     "packageId": "ElBruno.MarkItDotNet.PowerPoint",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Quality",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Sync",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.VectorData",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
     ]
