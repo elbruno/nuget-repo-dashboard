@@ -1057,3 +1057,44 @@ Updated all 14 existing tests in `GitHubCollectorTests.cs` to mock the new endpo
 - The `BuildPullsJson` helper still works since `ParseSinglePullRequest` uses `TryGetProperty` with defaults
 - `additions`/`deletions`/`changedFiles` are always 0 from the list endpoint — tested explicitly in new tests
 
+---
+
+### 19. Monotonicity Guard + Staleness Alert for Download Counts
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-04-17  
+**Status:** Implemented
+
+## Context
+
+The NuGet Search API uses geo-replicated shards (USNC + USSC) that reindex independently. Even with the Math.Max dual-shard fix, both shards can occasionally be stale simultaneously, causing the collector to write download counts **lower** than previously stored values. Since download counts are monotonically increasing, this is always wrong.
+
+Additionally, prolonged staleness across both shards can go unnoticed for days.
+
+## Decision
+
+### Layer 1: Monotonicity Guard (critical)
+
+- New `IMetricsGuardService` / `MetricsGuardService` in `src/Collector/Services/`
+- `ApplyMonotonicityGuard()`: before writing output, reads previous `data/latest/data.nuget.json` and applies `Math.Max(fresh, previous)` per-package on `totalDownloads`
+- Logs `[Guard]` when the guard activates (collected < stored)
+- Designed as interface-based service for testability (InternalsVisibleTo already covers test project)
+
+### Layer 2: Staleness Alert (advisory)
+
+- `CheckStaleness()`: reads trend data, checks packages with >100 total downloads for 5+ consecutive zero-growth data points
+- Logs `[Staleness]` warnings to console — visible in CI logs
+- Advisory only: does not block writes
+
+### Integration
+
+Both guards run in `Program.cs` after collection and trend aggregation but **before** writing output files. The monotonicity guard mutates metrics in-place; the staleness check is read-only.
+
+## Impact
+
+- Zero regression risk: guard only ever increases values, never decreases
+- CI logs surface API staleness issues automatically
+- Both methods are testable via the interface
+- Test suite: 30 new tests (MonotonicityGuardTests: 13, StalenessAlertTests: 17)
+- Total tests: 227 → 257 (all passing)
+

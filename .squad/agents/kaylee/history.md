@@ -203,3 +203,5 @@ Both guards are integrated in `Program.cs` after collection + trend aggregation 
 - `LoadPreviousNuGetOutputAsync()` returns null when file doesn't exist (first run) — guard becomes a no-op
 - `CountTrailingZeroGrowth()` is `internal static` for direct unit testing
 - Constants `StalenessThreshold` (5) and `MinDownloadsForStalenessCheck` (100) are `internal const` for test access
+
+- **MetricsGuardService implementation (2026-04-17):** Completed monotonicity guard + staleness alert for download counts. Created `src/Collector/Services/MetricsGuardService.cs` with `IMetricsGuardService` interface. Two layers: (1) `ApplyMonotonicityGuard()` reads previous `data.nuget.json` snapshot, applies `Math.Max(fresh, previous)` per-package, logs `[Guard]` on activation; (2) `CheckStaleness()` reads trend data, detects packages >100 downloads with 5+ consecutive zero-growth days, logs `[Staleness]` warnings (advisory). Both guards in `Program.cs` post-collection/trend, pre-output. Zero regression risk. Test count: 227 → 257 (all pass). Decision #19 merged to decisions.md.
