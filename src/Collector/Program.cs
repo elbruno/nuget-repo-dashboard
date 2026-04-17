@@ -301,6 +301,18 @@ ITrendAggregationService trendService = new TrendAggregationService();
 var trendData = await trendService.AggregateAsync(repoRoot);
 Console.WriteLine($"    → {trendData.Packages.Count} package trends, {trendData.Repositories.Count} repo trends ({trendData.WindowDays}-day window)");
 
+// --- Apply defensive guards ---
+IMetricsGuardService metricsGuard = new MetricsGuardService();
+
+// Layer 1: Monotonicity Guard — download counts must never decrease
+Console.WriteLine("  Applying monotonicity guard...");
+var previousNuGetOutput = await metricsGuard.LoadPreviousNuGetOutputAsync(repoRoot);
+nugetMetrics = metricsGuard.ApplyMonotonicityGuard(nugetMetrics, previousNuGetOutput?.Packages);
+
+// Layer 2: Staleness Alert — warn if API data looks stale
+Console.WriteLine("  Checking for data staleness...");
+metricsGuard.CheckStaleness(trendData, nugetMetrics);
+
 // --- Write output ---
 var generatedAt = DateTimeOffset.UtcNow;
 

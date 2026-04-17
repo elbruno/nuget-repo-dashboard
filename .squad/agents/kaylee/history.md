@@ -188,3 +188,18 @@ Modified `NuGetCollector.cs` to resolve April 7 stale USNC shard issue by queryi
    - Test count: 198 → 209
    - All 209 tests passing ✅
 - **PR data collection feature (2026-04-13):** Built full PR collection pipeline: new GitHubPullRequest model (17 fields), refactored GitHubCollector (replaced GetOpenPrCountAsync with GetRecentPullRequestsAsync + GetRecentMergedPullRequestsAsync), added PR trend aggregation (PullRequestActivityPoint), updated GitHubRepoMetrics (3 new fields), built Open PRs dashboard section with filters/sort/toggle. Frontend mirrors Issues section UX. Build: 0 warnings, 0 errors. Decision #17 (kaylee-pr-dashboard) merged to decisions.md.
+
+### Monotonicity Guard + Staleness Alert (2026-07-24)
+
+Added two defensive layers to the collector pipeline via new `IMetricsGuardService` / `MetricsGuardService` in `src/Collector/Services/MetricsGuardService.cs`:
+
+1. **Monotonicity Guard (Layer 1)**: `ApplyMonotonicityGuard()` reads previous `data/latest/data.nuget.json` and applies `Math.Max(fresh, previous)` per-package on `totalDownloads`. Ensures download counts never regress even if both NuGet search shards are stale. Logs `[Guard]` when activated.
+
+2. **Staleness Alert (Layer 2)**: `CheckStaleness()` inspects trend data for packages with >100 downloads showing 0% growth over 5+ consecutive data points. Logs `[Staleness]` warnings — advisory only, doesn't block writes.
+
+Both guards are integrated in `Program.cs` after collection + trend aggregation but before writing output files. Interface-based design for testability (InternalsVisibleTo already covers Collector.Tests). Build: 0 warnings, 0 errors. All 227 tests pass. Decision: `.squad/decisions/inbox/kaylee-monotonicity-guard.md`.
+
+**Key patterns:**
+- `LoadPreviousNuGetOutputAsync()` returns null when file doesn't exist (first run) — guard becomes a no-op
+- `CountTrailingZeroGrowth()` is `internal static` for direct unit testing
+- Constants `StalenessThreshold` (5) and `MinDownloadsForStalenessCheck` (100) are `internal const` for test access
