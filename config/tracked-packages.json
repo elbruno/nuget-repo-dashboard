@@ -138,6 +138,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.LocalLLMs.BitNet",
+    "repos": [
+      "elbruno/ElBruno.LocalLLMs"
+    ]
+  },
+  {
     "packageId": "ElBruno.LocalLLMs.Rag",
     "repos": [
       "elbruno/ElBruno.LocalLLMs"
@@ -293,6 +299,12 @@
   },
   {
     "packageId": "ElBruno.QwenTTS",
+    "repos": [
+      "elbruno/ElBruno.QwenTTS"
+    ]
+  },
+  {
+    "packageId": "ElBruno.QwenTTS.VoiceCloning",
     "repos": [
       "elbruno/ElBruno.QwenTTS"
     ]
