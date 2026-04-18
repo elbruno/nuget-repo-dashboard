@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-17T14:44:43.3812113+00:00",
+  "generatedAt": "2026-04-18T09:46:02.1017666+00:00",
   "totalRepos": 17,
   "profiles": [
     {
@@ -45,16 +45,16 @@
       "icon": "\uD83D\uDDBC️"
     },
     {
-      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
-      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
-      "accentColor": "#ADA976",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Whisper",
       "configFile": "elbruno-ElBruno.Whisper.json",
       "accentColor": "#965BA8",
       "icon": "\uD83C\uDF99️"
+    },
+    {
+      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
+      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
+      "accentColor": "#ADA976",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/ElBruno.ModelContextProtocol",
@@ -75,6 +75,12 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.ClockTray",
+      "configFile": "elbruno-ElBruno.ClockTray.json",
+      "accentColor": "#CEA8AC",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.PersonaPlex",
       "configFile": "elbruno-ElBruno.PersonaPlex.json",
       "accentColor": "#7DBBB3",
@@ -87,9 +93,9 @@
       "icon": "\uD83D\uDCF7"
     },
     {
-      "repo": "elbruno/ElBruno.ClockTray",
-      "configFile": "elbruno-ElBruno.ClockTray.json",
-      "accentColor": "#CEA8AC",
+      "repo": "elbruno/graphify-dotnet",
+      "configFile": "elbruno-graphify-dotnet.json",
+      "accentColor": "#BEA579",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -97,12 +103,6 @@
       "configFile": "elbruno-elbruno-agentskills.json",
       "accentColor": "#BD5896",
       "icon": "\uD83E\uDD16"
-    },
-    {
-      "repo": "elbruno/graphify-dotnet",
-      "configFile": "elbruno-graphify-dotnet.json",
-      "accentColor": "#BEA579",
-      "icon": "\uD83D\uDD37"
     }
   ]
 }
