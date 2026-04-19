@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T09:45:08.1925582+00:00",
+  "generatedAt": "2026-04-19T11:51:06.2712968+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -202,8 +202,8 @@
       "owner": "elbruno",
       "name": "ElBruno.QwenTTS",
       "fullName": "elbruno/ElBruno.QwenTTS",
-      "stars": 21,
-      "forks": 4,
+      "stars": 22,
+      "forks": 5,
       "openIssues": 0,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
@@ -228,13 +228,13 @@
         "voice-cloning"
       ],
       "createdAt": "2026-02-21T16:27:42+00:00",
-      "updatedAt": "2026-04-17T14:23:07+00:00",
+      "updatedAt": "2026-04-19T11:16:59+00:00",
       "size": 2827,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
       "hasPages": false,
-      "networkCount": 4,
+      "networkCount": 5,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
       "recentIssues": [],
