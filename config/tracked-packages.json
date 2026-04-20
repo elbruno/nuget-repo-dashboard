@@ -334,6 +334,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.Text2Image.Cli",
+    "repos": [
+      "elbruno/ElBruno.Text2Image"
+    ]
+  },
+  {
     "packageId": "ElBruno.Text2Image.Cpu",
     "repos": [
       "elbruno/ElBruno.Text2Image"
