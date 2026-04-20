@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-04-19T11:51:10.1437274+00:00",
+  "generatedAt": "2026-04-20T10:47:20.5870542+00:00",
   "totalRepos": 17,
   "profiles": [
-    {
-      "repo": "elbruno/elbruno.localembeddings",
-      "configFile": "elbruno-elbruno.localembeddings.json",
-      "accentColor": "#54AFC0",
-      "icon": "\uD83E\uDDE0"
-    },
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
       "configFile": "elbruno-ElBruno.HuggingFace.Downloader.json",
       "accentColor": "#5953B3",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno.localembeddings",
+      "configFile": "elbruno-elbruno.localembeddings.json",
+      "accentColor": "#54AFC0",
+      "icon": "\uD83E\uDDE0"
     },
     {
       "repo": "elbruno/ElBruno.QwenTTS",
