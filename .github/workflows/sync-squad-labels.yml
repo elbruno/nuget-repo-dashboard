@@ -1,6 +1,8 @@
 name: Sync Squad Labels
 
-on:
+on: null  # DISABLED: sync-squad-labels disabled to reduce GitHub Actions monthly quota usage
+
+on_unused:
   push:
     paths:
       - '.squad/team.md'

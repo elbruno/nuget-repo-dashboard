@@ -1,6 +1,8 @@
 name: Squad Issue Assign
 
-on:
+on: null  # DISABLED: squad-issue-assign disabled to reduce GitHub Actions monthly quota usage
+
+on_unused:
   issues:
     types: [labeled]
 

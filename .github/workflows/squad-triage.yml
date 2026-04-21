@@ -1,6 +1,8 @@
 name: Squad Triage
 
-on:
+on: null  # DISABLED: squad-triage disabled to reduce GitHub Actions monthly quota usage
+
+on_unused:
   issues:
     types: [labeled]
 

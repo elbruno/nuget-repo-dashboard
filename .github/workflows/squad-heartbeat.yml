@@ -1,6 +1,8 @@
 name: Squad Heartbeat (Ralph)
 
-on:
+on: null  # DISABLED: squad-heartbeat disabled to reduce GitHub Actions monthly quota usage
+
+on_unused:
   # DISABLED: Cron heartbeat commented out pre-migration — re-enable when ready
   # schedule:
   #   # Every 30 minutes — adjust or remove if not needed
