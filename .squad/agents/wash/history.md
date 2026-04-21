@@ -8,6 +8,29 @@
 - **PRD:** `docs/nuget-dashboard-prd-v2.md`
 - **Workflows:** `refresh-metrics.yml` (daily+manual), `refresh-inventory.yml` (manual). AI-assisted: `inventory-review.md`, `weekly-summary.md`, `health-triage.md`.
 
+## Core Context
+
+### Workflow Architecture
+- **refresh-metrics.yml:** Daily CI data collection (net10.0 Collector), commits to history, deploys to GitHub Pages
+- **refresh-inventory.yml:** Manual package discovery via NuGet API, creates PR with branch pattern for human review
+- **Agentic Workflows (.github/aw/*.md):** Non-authoritative markdown specs (inventory-review, weekly-summary, health-triage); analyze & suggest only, no production modifications
+- **Profile Regeneration:** CI now auto-regenerates repo-identity profiles after metrics refresh using net10.0 RepoIdentity tool
+- **Key Design Patterns:** `[skip ci]` tags prevent loops, diff checks keep history clean, DASHBOARD_REPO_ROOT env var ensures CI path resolution
+
+### Diagnostic Patterns
+When investigating "data staleness" reports:
+1. Check workflow execution status in GitHub Actions UI
+2. If workflows passing, verify local workspace sync (`git fetch`, `git log HEAD..origin`)
+3. Compare local file timestamps vs workflow run timestamps
+4. Issue is usually workspace sync, not pipeline failure
+
+## Recent Updates
+
+2026-04-21: Metrics Stall Investigation (merged to decisions #33)
+- Root cause: Local workspace out of sync with origin/main (April 17 local vs April 18-21 remote)
+- CI was succeeding; user needed `git pull origin main`
+- Recommended workspace health check to prevent false alarms (decision deferred to Mal)
+
 ## Learnings
 
 ### Metrics Stall Investigation (2026-04-21)
