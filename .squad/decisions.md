@@ -1098,3 +1098,76 @@ Both guards run in `Program.cs` after collection and trend aggregation but **bef
 - Test suite: 30 new tests (MonotonicityGuardTests: 13, StalenessAlertTests: 17)
 - Total tests: 227 → 257 (all passing)
 
+---
+
+### 33. Workspace Sync Health Check
+
+**Author:** Wash (DevOps)  
+**Date:** 2026-04-21  
+**Status:** Recommendation  
+
+## Context
+
+Bruno reported dashboard showing no progress for several days. Investigation revealed:
+- GitHub Actions `refresh-metrics.yml` workflow was running successfully (daily at 09:00 UTC)
+- Fresh data was being committed to GitHub every day
+- **Root cause:** Local workspace was out of sync with remote (`origin/main`)
+- User's local `data/latest/*.json` files were stale (April 17) while remote had April 18-21 commits
+
+## Problem
+
+When users have uncommitted changes or haven't pulled in a while, they see stale data locally and assume the CI pipeline is broken. This wastes diagnostic time and creates false alarms.
+
+## Recommendation
+
+Add a workspace health check that surfaces sync status. Three options evaluated:
+
+### Option A: Pre-commit hook (via Husky or similar)
+```bash
+# .husky/pre-commit
+git fetch origin main --quiet
+BEHIND=$(git rev-list --count HEAD..origin/main)
+if [ "$BEHIND" -gt 0 ]; then
+  echo "⚠️  Local workspace is $BEHIND commits behind origin/main"
+  echo "   Run 'git pull origin main' to sync latest data"
+fi
+```
+
+### Option B: CLI health command ⭐ Preferred
+Add to `src/Collector/Collector.csproj` or a separate `WorkspaceHealth.csproj` tool:
+```bash
+dotnet run --project tools/WorkspaceHealth -- check
+```
+Outputs:
+- Local data timestamps vs latest workflow run timestamp
+- Git sync status (ahead/behind/diverged)
+- Recommendation: pull, commit, or push
+
+### Option C: Dashboard footer
+Add timestamp metadata to `site/index.html` footer with comparison of local copy vs server data.
+
+## Trade-offs
+
+| Option | Pros | Cons |
+|--------|------|------|
+| A: Pre-commit hook | Automatic reminder | Requires Husky or manual setup; git-centric |
+| B: CLI health command | On-demand, clear output, CI-friendly | User must remember to run it |
+| C: Dashboard footer | Visible in UI, no CLI needed | Requires frontend changes, doesn't fix root cause |
+
+## Decision
+
+**Deferred to Mal (team lead)** — this is an architectural/UX decision. Preference: **Option B (CLI health command)** seems most pragmatic (non-invasive, can be run on-demand or in CI, useful for debugging without requiring git expertise).
+
+## Next Steps
+
+1. Review with Mal and Kaylee
+2. If approved, assign implementation to appropriate squad member
+3. Document usage in `docs/troubleshooting.md`
+
+---
+
+**Evidence:**
+- Workflow logs: https://github.com/elbruno/nuget-repo-dashboard/actions/runs/24716973089
+- Git log: 10+ commits behind (2026-04-18 to 2026-04-21)
+- See `wash/history.md` § "Metrics Stall Investigation (2026-04-21)" for full diagnostic trail
+

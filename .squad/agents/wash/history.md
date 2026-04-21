@@ -10,6 +10,53 @@
 
 ## Learnings
 
+### Metrics Stall Investigation (2026-04-21)
+
+**Issue:** Bruno reported dashboard showing no progress for several days (data frozen at April 17, 2026).
+
+**Root Cause:** Local workspace was out of sync with GitHub remote (`origin/main`). The `refresh-metrics.yml` workflow was running successfully every day at 09:00 UTC and committing fresh data to GitHub, but the local workspace had uncommitted changes that prevented a clean `git pull`.
+
+**Evidence Found:**
+1. GitHub Actions workflow runs: All recent runs (#42, #41, #40, #39, #38, #37, #36, #35) showed `status: completed, conclusion: success`
+2. Workflow logs confirmed Collector was executing correctly:
+   - Writing to `data/latest/*.json` and `data/history/YYYY/MM/DD/*.json`
+   - Detecting data changes via `git diff --cached --quiet`
+   - Committing with message `"chore: refresh metrics [skip ci]"`
+3. Local `data/latest/*.json` timestamps: April 17, 2026 10:29 AM
+4. Remote commits: Fresh data commits on April 18, 19, 20, 21 (visible via `git log HEAD..origin/main`)
+5. Git status: `HEAD` was behind `origin/main` by 10+ commits
+
+**Resolution:**
+- Executed `git pull origin main` to sync local workspace with remote
+- Local data files updated to April 21, 2026 (current)
+- Verified history snapshots present for all missing days (04/18, 04/19, 04/20, 04/21)
+
+**Key Diagnostic Commands:**
+```bash
+# Check workflow run history
+github-mcp-server-actions_list --resource_id refresh-metrics.yml
+
+# Check recent workflow logs
+github-mcp-server-get_job_logs --job_id <id>
+
+# Check local vs remote divergence
+git fetch origin main
+git log HEAD..origin/main
+
+# Verify data timestamps
+Get-ChildItem data/latest/*.json | Select Name, LastWriteTime
+Get-ChildItem data/history/YYYY/MM/DD -Recurse | Sort LastWriteTime -Desc
+```
+
+**Pattern Identified:** When investigating "data staleness" complaints:
+1. First check workflow execution status (GitHub Actions UI or MCP tools)
+2. If workflows are succeeding, check local workspace sync (`git status`, `git fetch`, `git log HEAD..origin`)
+3. Verify Collector logs show data writes (look for "Written: /path/to/data")
+4. Compare local file timestamps vs workflow run timestamps
+5. The issue is often workspace sync, not the CI/CD pipeline itself
+
+**Recommendation:** Consider adding a pre-commit hook or workspace health check to remind users to pull before assuming pipeline failure.
+
 ### Phase 9: CI Auto-Regenerate Profiles (2026-XX-XX)
 
 **Workflow Status:** Completed  
