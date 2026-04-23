@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-22T10:18:38.6246679+00:00",
+  "generatedAt": "2026-04-23T10:21:22.569833+00:00",
   "totalRepos": 17,
   "profiles": [
     {
@@ -33,16 +33,16 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/ElBruno.VibeVoiceTTS",
-      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
-      "accentColor": "#A6CE83",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/ElBruno.Text2Image",
       "configFile": "elbruno-ElBruno.Text2Image.json",
       "accentColor": "#A4A1C8",
       "icon": "\uD83D\uDDBC️"
+    },
+    {
+      "repo": "elbruno/ElBruno.VibeVoiceTTS",
+      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
+      "accentColor": "#A6CE83",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.Whisper",
