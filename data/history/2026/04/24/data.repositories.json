@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T10:20:20.9085541+00:00",
+  "generatedAt": "2026-04-24T12:32:10.1566265+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -1185,12 +1185,12 @@
       "fullName": "elbruno/ElBruno.Text2Image",
       "stars": 5,
       "forks": 0,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "A .NET library for local image captioning using ONNX Runtime with automatic HuggingFace model download",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-04-22T16:29:15+00:00",
+      "lastPush": "2026-04-24T12:25:14+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -1214,8 +1214,8 @@
         "text-to-image"
       ],
       "createdAt": "2026-02-25T23:12:28+00:00",
-      "updatedAt": "2026-04-22T16:27:36+00:00",
-      "size": 5396,
+      "updatedAt": "2026-04-24T12:25:18+00:00",
+      "size": 5690,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -1223,21 +1223,20 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 19,
           "title": "Feature request: configurable timeout for slow image providers (e.g. gpt-image-2)",
           "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/issues/19",
           "createdAt": "2026-04-24T05:43:05+00:00",
-          "updatedAt": "2026-04-24T05:43:05+00:00",
+          "updatedAt": "2026-04-24T11:33:32+00:00",
           "userLogin": "yqowen",
           "labels": [],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "state": "closed",
+          "closedAt": "2026-04-24T11:33:32+00:00"
+        },
         {
           "number": 6,
           "title": "Feature: Image-to-Image (img2img) support for Flux2Generator",
@@ -1265,9 +1264,29 @@
           "closedAt": "2026-04-12T19:59:20+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 3,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
+        {
+          "number": 20,
+          "title": "feat: configurable timeout for image generation providers (#19)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/20",
+          "createdAt": "2026-04-24T11:33:25+00:00",
+          "updatedAt": "2026-04-24T11:33:34+00:00",
+          "mergedAt": "2026-04-24T11:33:31+00:00",
+          "closedAt": "2026-04-24T11:33:31+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/19-configurable-timeout",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 18,
           "title": "feat: comprehensive skill integration for v0.16.0",
@@ -1509,7 +1528,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 12
+      "mergedPullRequestsCount": 13
     },
     {
       "owner": "elbruno",
