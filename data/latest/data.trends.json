@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T12:32:10.0634323+00:00",
+  "generatedAt": "2026-04-24T12:40:06.5071816+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -1135,6 +1135,10 @@
         {
           "date": "2026-04-23",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-24",
+          "version": "1.2.1"
         }
       ]
     },
@@ -1579,6 +1583,10 @@
         {
           "date": "2026-04-23",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-24",
+          "version": "1.2.1"
         }
       ]
     },
@@ -1807,6 +1815,10 @@
         {
           "date": "2026-04-23",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-24",
+          "version": "1.2.1"
         }
       ]
     },
@@ -1933,6 +1945,10 @@
         {
           "date": "2026-04-23",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-24",
+          "version": "1.2.1"
         }
       ]
     },
@@ -2369,6 +2385,10 @@
         {
           "date": "2026-04-23",
           "version": "1.2.0"
+        },
+        {
+          "date": "2026-04-24",
+          "version": "1.2.1"
         }
       ]
     },
@@ -8716,7 +8736,7 @@
         },
         {
           "date": "2026-04-24",
-          "value": 1
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -12882,8 +12902,8 @@
     },
     {
       "date": "2026-04-24",
-      "opened": 1,
-      "closed": 0
+      "opened": 0,
+      "closed": 1
     }
   ],
   "pullRequestActivity": [
@@ -12907,6 +12927,12 @@
     },
     {
       "date": "2026-04-22",
+      "opened": 0,
+      "merged": 1,
+      "closed": 1
+    },
+    {
+      "date": "2026-04-24",
       "opened": 0,
       "merged": 1,
       "closed": 1
@@ -13118,6 +13144,17 @@
         "ElBruno.Text2Image.Cpu",
         "ElBruno.Text2Image.Cli",
         "ElBruno.ClockTray"
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "newVersions": 5,
+      "packages": [
+        "ElBruno.Text2Image",
+        "ElBruno.Text2Image.Cuda",
+        "ElBruno.Text2Image.Foundry",
+        "ElBruno.Text2Image.Cpu",
+        "ElBruno.Text2Image.DirectML"
       ]
     }
   ],
