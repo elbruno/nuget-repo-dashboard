@@ -31,6 +31,23 @@ When investigating "data staleness" reports:
 - CI was succeeding; user needed `git pull origin main`
 - Recommended workspace health check to prevent false alarms (decision deferred to Mal)
 
+## Recent Sessions
+
+### Push to GitHub (2026-04-22)
+**Objective:** Push all local changes to GitHub  
+**Session:** Task completion — Bruno requested commit and push of watch list system and team documentation
+
+**Changes pushed:**
+- `config/WATCH-LIST.md` — Documentation for external reference repository tracking system
+- `.squad/agents/mal/history.md` — Updated with watch list pattern learnings
+- `.squad/casting-policy.json` — Agent capability registry
+- `.squad/constraint-tracking.md` — Constraint documentation
+- `.squad/raw-agent-output.md`, `.squad/run-output.md` — Workflow artifacts
+- `.squad/scribe-charter.md` — Scribe agent charter
+
+**Commit:** e501b32 — "docs: add watch list system and update team history" with Co-authored-by trailer  
+**Status:** ✅ Pushed to `origin/main`
+
 ## Learnings
 
 ### Metrics Stall Investigation (2026-04-21)
