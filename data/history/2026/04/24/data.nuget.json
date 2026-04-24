@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T10:20:20.9085541+00:00",
+  "generatedAt": "2026-04-24T12:38:47.3553229+00:00",
   "packages": [
     {
       "packageId": "ElBruno.HuggingFace.Downloader",
@@ -113,7 +113,7 @@
     },
     {
       "packageId": "ElBruno.Text2Image",
-      "latestVersion": "1.2.0",
+      "latestVersion": "1.2.1",
       "totalDownloads": 1511,
       "description": "A .NET library for local text-to-image generation using Stable Diffusion and ONNX Runtime. Supports multiple models (SD 1.5, LCM Dreamshaper) with automatic model download from HuggingFace and native C# inference \u2014 no Python dependency.",
       "authors": "Bruno Capuano",
@@ -130,7 +130,7 @@
         "diffusion"
       ],
       "listed": true,
-      "publishedDate": "2026-04-22T16:30:52.993+00:00"
+      "publishedDate": "2026-04-24T12:24:09.883+00:00"
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.VectorData",
@@ -174,7 +174,7 @@
     },
     {
       "packageId": "ElBruno.Text2Image.Cuda",
-      "latestVersion": "1.2.0",
+      "latestVersion": "1.2.1",
       "totalDownloads": 1037,
       "description": "NVIDIA CUDA GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable CUDA-based inference for Stable Diffusion image generation on NVIDIA GPUs.",
       "authors": "Bruno Capuano",
@@ -191,7 +191,7 @@
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-04-22T16:30:54.653+00:00"
+      "publishedDate": "2026-04-24T12:24:10.37+00:00"
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
@@ -215,7 +215,7 @@
     },
     {
       "packageId": "ElBruno.Text2Image.Foundry",
-      "latestVersion": "1.2.0",
+      "latestVersion": "1.2.1",
       "totalDownloads": 962,
       "description": "Microsoft Foundry cloud image generation for ElBruno.Text2Image. Provides FLUX.2 and MAI-Image-2 text-to-image generation via the Microsoft Foundry REST API. No local models needed \u2014 runs in the cloud.",
       "authors": "Bruno Capuano",
@@ -230,11 +230,11 @@
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-04-22T16:30:55.287+00:00"
+      "publishedDate": "2026-04-24T12:24:10.79+00:00"
     },
     {
       "packageId": "ElBruno.Text2Image.DirectML",
-      "latestVersion": "1.2.0",
+      "latestVersion": "1.2.1",
       "totalDownloads": 872,
       "description": "DirectML GPU acceleration for ElBruno.Text2Image. Install this package instead of ElBruno.Text2Image to enable DirectML-based inference for Stable Diffusion image generation on AMD, Intel, and NVIDIA GPUs (Windows only).",
       "authors": "Bruno Capuano",
@@ -250,11 +250,11 @@
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-04-22T16:30:54.99+00:00"
+      "publishedDate": "2026-04-24T12:24:10.577+00:00"
     },
     {
       "packageId": "ElBruno.Text2Image.Cpu",
-      "latestVersion": "1.2.0",
+      "latestVersion": "1.2.1",
       "totalDownloads": 970,
       "description": "CPU runtime for ElBruno.Text2Image. Includes all text-to-image generation functionality with CPU-based inference via ONNX Runtime. Install this for environments without a GPU.",
       "authors": "Bruno Capuano",
@@ -269,7 +269,7 @@
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-04-22T16:30:54.367+00:00"
+      "publishedDate": "2026-04-24T12:24:10.127+00:00"
     },
     {
       "packageId": "ElBruno.MarkItDotNet.AI",

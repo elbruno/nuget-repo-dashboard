@@ -143,8 +143,41 @@ Completed three dashboard metric features in parallel with Zoe's tests:
 
 Build: 0 warnings, 0 errors. 198 tests pass (19 new tests from Zoe).
 
+### Watch-list Integration + NuGet Shard Preference Fix (2026-04-24)
+
+**Issue**: Collector pipeline did not read `config/watch-list.json` for external repos, and NuGet download stats were stale due to USSC shard preference.
+
+**Solution**:
+
+1. **Watch-list Integration** — Created `WatchListEntry.cs` model (owner, repo, url, description, dateAdded, purpose). Updated `Program.cs`:
+   - Added `watchListPath` resolution in Discovery phase
+   - New [4/4] step loads watch-list JSON after packages, parses owner/repo into full names (`owner/repo`)
+   - Repos from watch-list concatenated into `allRepos` deduplication, ensuring they flow to GitHub collection
+   - Console output confirms "Loaded N watch-list repo(s)."
+   - Result: Watch-list repos now appear in `data.repositories.json` output (subject to GitHub rate limits)
+
+2. **NuGet Shard Fix** — Updated `GetTotalDownloadsAsync()` in `NuGetCollector.cs`:
+   - Changed from parallel query (taking max of both shards) to sequential: primary USNC first, fallback to USSC
+   - USNC (`azuresearch-usnc.nuget.org`) now preferred; USSC only queried on USNC failure
+   - Rationale: USSC returns stale/inflated counts; USNC is fresh primary. Fallback preserves reliability on USNC outages
+   - Comment added to document shard strategy
+   - No behavioral change for this session (both shards returned same value), but prevents stale data spikes
+
+3. **Local Testing**: Ran Collector `--mode=metrics` successfully:
+   - Watch-list loaded: 1 repo (openclawnet)
+   - Total repos before collection: 19 (13 from packages + 1 from watch-list)
+   - Repos collected: 12 (limited by GitHub API rate limiting, not pipeline logic)
+   - NuGet metrics: 66 packages, download stats correct
+
+**Files Modified**:
+- Created: `src/Collector/Models/WatchListEntry.cs`
+- Updated: `src/Collector/Program.cs` (added watch-list loading at [4/4], integrated into repo deduplication)
+- Updated: `src/Collector/Services/NuGetCollector.cs` (USNC-first shard strategy)
+
 ## Learnings
 
+- **Watch-list repos join the deduplication flow**: They're treated like any other repo URL string — concatenated into `allRepos` before deduplication and GitHub collection. No special branching needed, just add them to the stream early.
+- **NuGet shard strategy balances freshness + reliability**: USNC is primary (fresher), USSC is fallback (prevents total failure). Avoid taking the maximum of both — use primary-first logic instead to prevent stale data spikes.
 - **TrendAggregationService is the central aggregation point**: All new trend features (velocity, issue activity, version activity, new packages) plug into its main loop and post-processing. Keep the pattern: collect during snapshot iteration, aggregate after the loop.
 - **ProcessIssueActivityAsync reads repos snapshot a second time**: This is intentional — the file is small and the repos snapshot contains issue data. Avoids coupling ProcessReposSnapshotAsync to issue-specific dictionaries.
 - **Version activity skips initial appearances**: When a package first appears in history, its version is recorded in VersionHistory but NOT in versionActivity (which only tracks upgrades). This avoids flooding versionActivity with 50 "new version" events on the first snapshot date.

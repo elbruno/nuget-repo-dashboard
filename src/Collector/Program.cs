@@ -36,6 +36,7 @@ if (Environment.GetEnvironmentVariable("DASHBOARD_REPO_ROOT") is { Length: > 0 }
 
 var trackedPackagesPath = Path.Combine(repoRoot, "config", "tracked-packages.json");
 var dashboardConfigPath = Path.Combine(repoRoot, "config", "dashboard-config.json");
+var watchListPath = Path.Combine(repoRoot, "config", "watch-list.json");
 
 // Build configuration early (User Secrets + Environment Variables)
 // Used for GITHUB_TOKEN, NUGET_PROFILE, and any future overrides.
@@ -201,9 +202,39 @@ if (packages.Count == 0)
     return 1;
 }
 
-// Deduplicate repos across all packages
+// Load watch-list repos (external repos to monitor)
+Console.WriteLine("  [4/4] Loading watch-list repositories...");
+var watchListRepos = new List<string>();
+if (File.Exists(watchListPath))
+{
+    try
+    {
+        await using var watchListStream = File.OpenRead(watchListPath);
+        var watchListEntries = await JsonSerializer.DeserializeAsync<List<WatchListEntry>>(watchListStream);
+        if (watchListEntries is not null)
+        {
+            foreach (var entry in watchListEntries)
+            {
+                var fullName = $"{entry.Owner}/{entry.Repo}";
+                watchListRepos.Add(fullName);
+            }
+            Console.WriteLine($"    Loaded {watchListRepos.Count} watch-list repo(s).");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"    WARNING: Failed to load watch-list.json: {ex.Message}");
+    }
+}
+else
+{
+    Console.WriteLine("    No watch-list.json found. Skipping watch-list repos.");
+}
+
+// Deduplicate repos across all packages and watch-list
 var allRepos = packages
     .SelectMany(p => p.Repos)
+    .Concat(watchListRepos)
     .Where(r => !string.IsNullOrWhiteSpace(r))
     .Distinct(StringComparer.OrdinalIgnoreCase)
     .ToList();
