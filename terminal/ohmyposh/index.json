@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-23T10:21:22.569833+00:00",
+  "generatedAt": "2026-04-24T10:20:25.0927583+00:00",
   "totalRepos": 17,
   "profiles": [
     {
@@ -69,15 +69,15 @@
       "icon": "⚡"
     },
     {
-      "repo": "elbruno/elbruno-ai-evaluation",
-      "configFile": "elbruno-elbruno-ai-evaluation.json",
-      "accentColor": "#5A99B2",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.ClockTray",
       "configFile": "elbruno-ElBruno.ClockTray.json",
       "accentColor": "#CEA8AC",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno-ai-evaluation",
+      "configFile": "elbruno-elbruno-ai-evaluation.json",
+      "accentColor": "#5A99B2",
       "icon": "\uD83D\uDD37"
     },
     {
