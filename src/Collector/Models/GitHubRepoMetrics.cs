@@ -93,4 +93,10 @@ public sealed class GitHubRepoMetrics
 
     [JsonPropertyName("mergedPullRequestsCount")]
     public int MergedPullRequestsCount { get; set; }
+
+    [JsonPropertyName("isStub")]
+    public bool IsStub { get; set; }
+
+    [JsonPropertyName("stubReason")]
+    public string? StubReason { get; set; }
 }

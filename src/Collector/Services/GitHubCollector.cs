@@ -9,6 +9,7 @@ namespace NuGetDashboard.Collector.Services;
 public interface IGitHubCollector
 {
     Task<List<GitHubRepoMetrics>> CollectAsync(List<string> repoFullNames);
+    Task<List<GitHubRepoMetrics>> CollectWithStubsAsync(List<string> repoFullNames, List<WatchListEntry> watchList);
 }
 
 public sealed class GitHubCollector : IGitHubCollector
@@ -26,6 +27,7 @@ public sealed class GitHubCollector : IGitHubCollector
     public async Task<List<GitHubRepoMetrics>> CollectAsync(List<string> repoFullNames)
     {
         var results = new List<GitHubRepoMetrics>();
+        var collectedRepos = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var fullName in repoFullNames)
         {
@@ -35,6 +37,7 @@ public sealed class GitHubCollector : IGitHubCollector
                 if (metrics is not null)
                 {
                     results.Add(metrics);
+                    collectedRepos.Add(fullName);
                 }
             }
             catch (Exception ex)
@@ -475,5 +478,36 @@ public sealed class GitHubCollector : IGitHubCollector
         }
 
         return null;
+    }
+
+    public async Task<List<GitHubRepoMetrics>> CollectWithStubsAsync(List<string> repoFullNames, List<WatchListEntry> watchList)
+    {
+        // First, collect what we can from the API
+        var results = await CollectAsync(repoFullNames);
+        var collectedFullNames = new HashSet<string>(results.Select(r => r.FullName), StringComparer.OrdinalIgnoreCase);
+
+        // For each watch-list entry, if it wasn't collected, create a stub
+        foreach (var watchEntry in watchList)
+        {
+            var fullName = $"{watchEntry.Owner}/{watchEntry.Repo}";
+            if (!collectedFullNames.Contains(fullName))
+            {
+                var stub = new GitHubRepoMetrics
+                {
+                    Owner = watchEntry.Owner,
+                    Name = watchEntry.Repo,
+                    FullName = fullName,
+                    Description = watchEntry.Description,
+                    HtmlUrl = watchEntry.Url,
+                    IsStub = true,
+                    StubReason = "Failed to fetch live data from GitHub API (rate limited or unavailable)"
+                };
+
+                results.Add(stub);
+                Console.WriteLine($"[GitHub] Created stub entry for watch-list repo: {fullName}");
+            }
+        }
+
+        return results;
     }
 }

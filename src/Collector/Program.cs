@@ -205,13 +205,14 @@ if (packages.Count == 0)
 // Load watch-list repos (external repos to monitor)
 Console.WriteLine("  [4/4] Loading watch-list repositories...");
 var watchListRepos = new List<string>();
+var watchListEntries = new List<WatchListEntry>();
 if (File.Exists(watchListPath))
 {
     try
     {
         await using var watchListStream = File.OpenRead(watchListPath);
-        var watchListEntries = await JsonSerializer.DeserializeAsync<List<WatchListEntry>>(watchListStream);
-        if (watchListEntries is not null)
+        watchListEntries = await JsonSerializer.DeserializeAsync<List<WatchListEntry>>(watchListStream) ?? [];
+        if (watchListEntries.Count > 0)
         {
             foreach (var entry in watchListEntries)
             {
@@ -323,8 +324,8 @@ if (!string.IsNullOrEmpty(token))
 }
 
 IGitHubCollector githubCollector = new GitHubCollector(githubHttpClient);
-var githubMetrics = await githubCollector.CollectAsync(allRepos);
-Console.WriteLine($"    → Collected {githubMetrics.Count} repos");
+var githubMetrics = await githubCollector.CollectWithStubsAsync(allRepos, watchListEntries);
+Console.WriteLine($"    → Collected {githubMetrics.Count} repos (including {githubMetrics.Count(r => r.IsStub)} stub(s) from watch-list)");
 
 // --- 3. Aggregate trend data from history ---
 Console.WriteLine("  [3/3] Aggregating historical trends...");

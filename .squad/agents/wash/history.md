@@ -279,3 +279,56 @@ Refactored `refresh-inventory.yml` to delegate all business logic to the C# Coll
 
 **File Modified:**
 - `.github/workflows/refresh-metrics.yml` (added 1 line in Assemble site step)
+
+## Watch-list Stub Fallback Implementation (2026-04-22)
+
+**Issue:** Watch-list repos (configured in `config/watch-list.json`) were queued for collection but disappeared from the final `data.repositories.json` when GitHub API rate limiting prevented their collection. Only successfully-collected repos appeared on the dashboard.
+
+**Solution:** Implemented fallback/stub entries for watch-list repos that fail collection.
+
+**Changes Made:**
+
+1. **GitHubRepoMetrics Model** (`src/Collector/Models/GitHubRepoMetrics.cs`):
+   - Added `bool IsStub { get; set; }` — flags whether repo data is complete live data or a fallback
+   - Added `string? StubReason { get; set; }` — explains why the entry is a stub (e.g., "Failed to fetch live data from GitHub API (rate limited or unavailable)")
+
+2. **IGitHubCollector Interface** (`src/Collector/Services/GitHubCollector.cs`):
+   - Added new method: `Task<List<GitHubRepoMetrics>> CollectWithStubsAsync(List<string> repoFullNames, List<WatchListEntry> watchList)`
+   - Existing `CollectAsync()` unchanged for backward compatibility
+
+3. **GitHubCollector Implementation** (`src/Collector/Services/GitHubCollector.cs`):
+   - `CollectWithStubsAsync()` implementation:
+     - Calls existing `CollectAsync()` to collect what's possible from GitHub API
+     - Tracks collected repos by FullName in a HashSet (case-insensitive)
+     - For each watch-list entry not in the collected set, creates a stub GitHubRepoMetrics with:
+       - `Owner`, `Name`, `FullName` from watch-list entry
+       - `Description` from watch-list entry
+       - `HtmlUrl` from watch-list URL (fallback source)
+       - `IsStub = true`, `StubReason` explaining the failure
+       - All other fields: default/null/0 to indicate incomplete data
+     - Returns combined list: real data + stubs
+     - Logs each stub creation for operational visibility
+
+4. **Program.cs Collector Integration** (`src/Collector/Program.cs`):
+   - Modified watch-list loading (lines 205-232) to preserve `List<WatchListEntry>` for later use (not just full names)
+   - Updated GitHub collector call (line 327) to use `CollectWithStubsAsync(allRepos, watchListEntries)` instead of `CollectAsync(allRepos)`
+   - Updated output summary (line 328) to show stub count: "Collected 13 repos (including 1 stub(s) from watch-list)"
+
+**Data Integrity & Testing:**
+- Stubs preserve the WatchListEntry data (owner, repo, description, URL) so dashboard can display them
+- All other metrics fields default to 0/null/false — this prevents aggregation errors (trends, summaries still work because they check for stub flag or use defensive defaults)
+- JSON serialization via `[JsonPropertyName]` attributes ensures field names match dashboard expectations
+- Verified with live collector run: elbruno/openclawnet stub created successfully and appears in `data.repositories.json` with `isStub: true`
+
+**Key Design Rationale:**
+- **Non-breaking:** Existing `CollectAsync()` untouched; stub logic isolated to new method
+- **Operational Transparency:** Logging clearly shows when stubs are created (helps with troubleshooting rate limits)
+- **Dashboard-Ready:** Stub entries appear in output with enough info (URL, description, owner/repo) to render on dashboard
+- **Defensive Defaults:** Stubs use 0/null/false for metrics, so trends and aggregations don't break
+- **Testable:** Can simulate rate limiting by not populating collected repos; watch-list entries will become stubs
+
+**Verification:**
+- Build succeeds with 0 warnings, 0 errors (Release configuration)
+- Local collector run creates stub entry for `elbruno/openclawnet` (openclawnet in watch-list.json)
+- `data.repositories.json` contains stub with `isStub: true` and `stubReason` field
+- Stub data preserved from watch-list: `owner`, `name`, `description`, `htmlUrl`
