@@ -44,3 +44,22 @@
 - Manual inventory refresh to control what's tracked
 - Public JSON output as contract for future Blazor app
 - AI workflows are advisory, never authoritative
+
+### Watch List System (2025-04-02)
+
+**Pattern:** Minimal-friction configuration for external reference repos.
+
+**Architecture Decision:** Simple JSON array (config/watch-list.json) with flat schema: `owner`, `repo`, `url`, `description`, `dateAdded`, `purpose`. No validation script or CI gate needed initially; manual editing keeps friction low and makes the process intentional.
+
+**Key Files:**
+- `config/watch-list.json` — watch list data
+- `config/WATCH-LIST.md` — complete user guide (schema, examples, how-to)
+- `.squad/decisions/inbox/mal-watch-list-system.md` — architectural decision record
+
+**Design Principles Applied:**
+1. **Zero ceremony:** 4-step manual process; no scripting or validation
+2. **Self-documenting:** Markdown guide + clear field names in JSON
+3. **Scalable:** Works from 1 to 50+ repos; automation can be added later without redesign
+4. **Intentional:** Manual editing forces contributors to think about why each repo matters
+
+**Future Extensibility:** URL validation, freshness checks, and dashboard integration possible without schema changes (flat schema is flexible).
