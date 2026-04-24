@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T12:40:06.5071816+00:00",
+  "generatedAt": "2026-04-24T12:47:29.787409+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -12453,6 +12453,32 @@
           "value": 0
         }
       ]
+    },
+    "elbruno/openclawnet": {
+      "stars": [
+        {
+          "date": "2026-04-24",
+          "value": 38
+        }
+      ],
+      "forks": [
+        {
+          "date": "2026-04-24",
+          "value": 11
+        }
+      ],
+      "openIssues": [
+        {
+          "date": "2026-04-24",
+          "value": 0
+        }
+      ],
+      "openPullRequests": [
+        {
+          "date": "2026-04-24",
+          "value": 0
+        }
+      ]
     }
   },
   "velocities": [
@@ -13153,8 +13179,8 @@
         "ElBruno.Text2Image",
         "ElBruno.Text2Image.Cuda",
         "ElBruno.Text2Image.Foundry",
-        "ElBruno.Text2Image.Cpu",
-        "ElBruno.Text2Image.DirectML"
+        "ElBruno.Text2Image.DirectML",
+        "ElBruno.Text2Image.Cpu"
       ]
     }
   ],

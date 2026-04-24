@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T12:40:06.5985852+00:00",
+  "generatedAt": "2026-04-24T12:47:29.8687251+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -85,7 +85,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 2
+      "mergedPullRequestsCount": 2,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -196,7 +198,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 3
+      "mergedPullRequestsCount": 3,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -643,7 +647,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 10
+      "mergedPullRequestsCount": 10,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -878,7 +884,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 8
+      "mergedPullRequestsCount": 8,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -1177,7 +1185,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 8
+      "mergedPullRequestsCount": 8,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -1528,7 +1538,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 13
+      "mergedPullRequestsCount": 13,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -1690,7 +1702,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 1
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -1943,7 +1957,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 6
+      "mergedPullRequestsCount": 6,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -1975,7 +1991,9 @@
       "closedIssuesCount": 0,
       "recentPullRequests": [],
       "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2090,7 +2108,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 2
+      "mergedPullRequestsCount": 2,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2135,7 +2155,9 @@
       "closedIssuesCount": 0,
       "recentPullRequests": [],
       "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2272,7 +2294,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 4
+      "mergedPullRequestsCount": 4,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2313,7 +2337,9 @@
       "closedIssuesCount": 0,
       "recentPullRequests": [],
       "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2345,7 +2371,9 @@
       "closedIssuesCount": 0,
       "recentPullRequests": [],
       "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2431,7 +2459,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 1
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2499,7 +2529,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 1
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2552,7 +2584,9 @@
         }
       ],
       "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2706,7 +2740,9 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 4
+      "mergedPullRequestsCount": 4,
+      "isStub": false,
+      "stubReason": null
     }
   ]
 }
