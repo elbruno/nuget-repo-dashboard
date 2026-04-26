@@ -246,6 +246,10 @@
     ]
   },
   {
+    "packageId": "ElBruno.OllamaMonitor",
+    "repos": []
+  },
+  {
     "packageId": "ElBruno.OllamaSharp.Extensions",
     "repos": [
       "elbruno/elbruno.OllamaSharp.Extensions"
@@ -379,6 +383,66 @@
     "packageId": "graphify-dotnet",
     "repos": [
       "elbruno/graphify-dotnet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Agents",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Ai",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Backends.Sqlite",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Core",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.KnowledgeGraph",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Mcp",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Mining",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Search",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "mempalacenet",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "mempalacenet-bench",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
     ]
   }
 ]
