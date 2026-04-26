@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-25T09:52:08.8018535+00:00",
-  "totalRepos": 18,
+  "generatedAt": "2026-04-26T09:53:45.6126964+00:00",
+  "totalRepos": 19,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
@@ -63,16 +63,16 @@
       "icon": "\uD83D\uDD0C"
     },
     {
-      "repo": "elbruno/ElBruno.Realtime",
-      "configFile": "elbruno-ElBruno.Realtime.json",
-      "accentColor": "#6E94AE",
-      "icon": "⚡"
-    },
-    {
       "repo": "elbruno/ElBruno.ClockTray",
       "configFile": "elbruno-ElBruno.ClockTray.json",
       "accentColor": "#CEA8AC",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#6E94AE",
+      "icon": "⚡"
     },
     {
       "repo": "elbruno/elbruno-ai-evaluation",
@@ -103,6 +103,12 @@
       "configFile": "elbruno-elbruno-agentskills.json",
       "accentColor": "#BD5896",
       "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "elbruno/ElBruno.MempalaceNet",
+      "configFile": "elbruno-ElBruno.MempalaceNet.json",
+      "accentColor": "#A38C59",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",
