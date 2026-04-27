@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-26T09:53:45.6126964+00:00",
-  "totalRepos": 19,
+  "generatedAt": "2026-04-27T11:02:52.6347392+00:00",
+  "totalRepos": 20,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
@@ -99,16 +99,22 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.MempalaceNet",
+      "configFile": "elbruno-ElBruno.MempalaceNet.json",
+      "accentColor": "#A38C59",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/elbruno-agentskills",
       "configFile": "elbruno-elbruno-agentskills.json",
       "accentColor": "#BD5896",
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/ElBruno.MempalaceNet",
-      "configFile": "elbruno-ElBruno.MempalaceNet.json",
-      "accentColor": "#A38C59",
-      "icon": "\uD83D\uDD37"
+      "repo": "elbruno/ElBruno.AspireMonitor",
+      "configFile": "elbruno-ElBruno.AspireMonitor.json",
+      "accentColor": "#9DB0B6",
+      "icon": "\uD83D\uDCCA"
     },
     {
       "repo": "elbruno/openclawnet",
