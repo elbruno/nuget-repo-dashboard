@@ -48,6 +48,12 @@
     "repos": []
   },
   {
+    "packageId": "ElBruno.AspireMonitor",
+    "repos": [
+      "elbruno/ElBruno.AspireMonitor"
+    ]
+  },
+  {
     "packageId": "ElBruno.ClockTray",
     "repos": [
       "elbruno/ElBruno.ClockTray"
