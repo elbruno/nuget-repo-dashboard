@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-28T11:04:24.6541824+00:00",
-  "totalRepos": 20,
+  "generatedAt": "2026-04-29T10:55:45.8372546+00:00",
+  "totalRepos": 22,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
@@ -21,16 +21,16 @@
       "icon": "\uD83D\uDD0A"
     },
     {
-      "repo": "elbruno/ElBruno.MarkItDotNet",
-      "configFile": "elbruno-ElBruno.MarkItDotNet.json",
-      "accentColor": "#68CE56",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Text2Image",
       "configFile": "elbruno-ElBruno.Text2Image.json",
       "accentColor": "#A4A1C8",
       "icon": "\uD83D\uDDBC️"
+    },
+    {
+      "repo": "elbruno/ElBruno.MarkItDotNet",
+      "configFile": "elbruno-ElBruno.MarkItDotNet.json",
+      "accentColor": "#68CE56",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/ElBruno.LocalLLMs",
@@ -115,6 +115,18 @@
       "configFile": "elbruno-elbruno-agentskills.json",
       "accentColor": "#BD5896",
       "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "elbruno/ElBruno.Reranking",
+      "configFile": "elbruno-ElBruno.Reranking.json",
+      "accentColor": "#A97061",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "ElBruno/ElBruno.BM25",
+      "configFile": "ElBruno-ElBruno.BM25.json",
+      "accentColor": "#556C55",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": " 🔷 ElBruno.Reranking ",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#FFFFFF",
+          "background": "#A97061",
+          "style": "plain",
+          "template": " 🔷 ElBruno.Reranking "
+        }
+      ]
+    }
+  ]
+}
