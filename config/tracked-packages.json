@@ -54,6 +54,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.BM25",
+    "repos": [
+      "ElBruno/ElBruno.BM25"
+    ]
+  },
+  {
     "packageId": "ElBruno.ClockTray",
     "repos": [
       "elbruno/ElBruno.ClockTray"
@@ -335,6 +341,12 @@
     "packageId": "ElBruno.Realtime.Whisper",
     "repos": [
       "elbruno/ElBruno.Realtime"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Reranking",
+    "repos": [
+      "elbruno/ElBruno.Reranking"
     ]
   },
   {
