@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-28T11:04:20.4762789+00:00",
+  "generatedAt": "2026-04-29T10:55:42.0049609+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -129,6 +129,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -787,6 +791,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -917,6 +925,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -1665,6 +1677,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -5393,6 +5409,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -5495,6 +5515,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -5597,6 +5621,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -5699,6 +5727,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -6005,6 +6037,10 @@
         {
           "date": "2026-04-08",
           "version": "1.4.3"
+        },
+        {
+          "date": "2026-04-28",
+          "version": "1.4.6"
         }
       ]
     },
@@ -7848,7 +7884,7 @@
         },
         {
           "date": "2026-04-28",
-          "value": 1
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -14894,7 +14930,7 @@
         },
         {
           "date": "2026-04-28",
-          "value": 40
+          "value": 41
         }
       ],
       "forks": [
@@ -14916,7 +14952,7 @@
         },
         {
           "date": "2026-04-28",
-          "value": 13
+          "value": 14
         }
       ],
       "openIssues": [
@@ -15586,6 +15622,11 @@
       "date": "2026-04-24",
       "opened": 0,
       "closed": 1
+    },
+    {
+      "date": "2026-04-28",
+      "opened": 0,
+      "closed": 1
     }
   ],
   "pullRequestActivity": [
@@ -15621,6 +15662,12 @@
     },
     {
       "date": "2026-04-26",
+      "opened": 0,
+      "merged": 1,
+      "closed": 1
+    },
+    {
+      "date": "2026-04-28",
       "opened": 0,
       "merged": 1,
       "closed": 1
@@ -15854,8 +15901,17 @@
     },
     {
       "date": "2026-04-28",
-      "newVersions": 2,
+      "newVersions": 11,
       "packages": [
+        "ElBruno.LocalEmbeddings",
+        "ElBruno.LocalEmbeddings.VectorData",
+        "ElBruno.LocalEmbeddings.KernelMemory",
+        "ElBruno.LocalEmbeddings.ImageEmbeddings",
+        "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
+        "ElBruno.LocalEmbeddings.Harrier",
+        "ElBruno.LocalEmbeddings.Npu.Intel",
+        "ElBruno.LocalEmbeddings.Npu.Qualcomm",
+        "ElBruno.LocalEmbeddings.Npu",
         "ElBruno.OllamaMonitor",
         "ElBruno.AspireMonitor"
       ]
