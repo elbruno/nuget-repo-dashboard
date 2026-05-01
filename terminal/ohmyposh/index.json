@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T10:54:20.8296122+00:00",
+  "generatedAt": "2026-05-01T10:22:14.7225956+00:00",
   "totalRepos": 22,
   "profiles": [
     {
@@ -87,16 +87,22 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.QRCodeGenerator",
-      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
-      "accentColor": "#5E705B",
-      "icon": "\uD83D\uDCF7"
+      "repo": "elbruno/ElBruno.AspireMonitor",
+      "configFile": "elbruno-ElBruno.AspireMonitor.json",
+      "accentColor": "#9DB0B6",
+      "icon": "\uD83D\uDCCA"
     },
     {
       "repo": "elbruno/ElBruno.MempalaceNet",
       "configFile": "elbruno-ElBruno.MempalaceNet.json",
-      "accentColor": "#A38C59",
+      "accentColor": "#536459",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.QRCodeGenerator",
+      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
+      "accentColor": "#B85C5B",
+      "icon": "\uD83D\uDCF7"
     },
     {
       "repo": "elbruno/graphify-dotnet",
@@ -105,15 +111,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.AspireMonitor",
-      "configFile": "elbruno-ElBruno.AspireMonitor.json",
-      "accentColor": "#9DB0B6",
-      "icon": "\uD83D\uDCCA"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "ElBruno/ElBruno.BM25",
+      "configFile": "ElBruno-ElBruno.BM25.json",
+      "accentColor": "#556C55",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -121,12 +127,6 @@
       "configFile": "elbruno-elbruno-agentskills.json",
       "accentColor": "#BD5896",
       "icon": "\uD83E\uDD16"
-    },
-    {
-      "repo": "ElBruno/ElBruno.BM25",
-      "configFile": "ElBruno-ElBruno.BM25.json",
-      "accentColor": "#556C55",
-      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",
