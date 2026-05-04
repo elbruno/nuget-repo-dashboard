@@ -763,6 +763,157 @@ New `install` command — the "one-shot device bootstrap". Registered in `Progra
 - `--dry-run` — print every action without executing
 
 **Four-step flow:**
+
+---
+
+### 20. 2025-01-20: Responsive Design Audit & Fixes
+
+**Author:** Inara (Frontend Dev)  
+**Date:** 2025-01-XX  
+**Status:** Implemented & Verified
+
+Completed mobile-first responsive design audit of `site/index.html` CSS. Issues identified: aggressive padding on 320px viewports, oversized typography, cramped cards, broken grid layouts, and inadequate media query coverage.
+
+**Fixes Applied:**
+- Container padding reduced from 1.5rem → 1rem (mobile)
+- Header h1 down from 2rem → 1.5rem (mobile)
+- Summary cards: min-width 100px (was 160px), touch-friendly sizes
+- Card grid defaults to 1-column mobile, 2-column tablet, auto-fill desktop
+- Filter toolbar inputs/buttons now 30px+ for touch targets
+- Comprehensive media queries: 480px (mobile), 481–767px (tablet), 768px+ (desktop)
+- Dark mode maintained across all breakpoints
+
+**Testing:** Verified by Zoe across 320px–1200px+ viewports. All breakpoints pass with no layout breaks.
+
+---
+
+### 21. 2025-01-20: Responsive Design Verification & Testing
+
+**Author:** Zoe (QA Tester)  
+**Date:** 2025-01-20  
+**Status:** Approved
+
+Comprehensive testing of responsive design across 6 breakpoints: 320px (iPhone SE), 375px (iPhone 6/7/8), 480px (Android), 768px (iPad), 1024px (iPad Pro), 1200px+ (Desktop).
+
+**Results:** ✅ **APPROVED** — All tests pass.
+- Mobile breakpoint: Header, cards, toolbar text doesn't overflow; readable at 320px
+- Tablet breakpoint: 2-column grid, balanced spacing
+- Desktop breakpoint: Full-width auto-fill layout, generous padding
+- Dark mode works correctly across all viewports
+- No horizontal overflow or awkward wrapping
+- Typography scales appropriately
+- Touch targets ≥ 30px at all breakpoints
+
+Dashboard ready for production deployment.
+
+---
+
+### 22. 2026-04-22: Responsive Design Commit — Push to Main
+
+**Author:** Wash (DevOps)  
+**Date:** 2026-04-22  
+**Status:** Deployed
+
+Pushed responsive design fixes to `origin/main` (commit SHA 7456497).
+
+**Commit Details:**
+- Files: `site/index.html` (147 insertions, 52 deletions)
+- Changes: CSS-only responsive fixes; no logic changes
+- Pre-verified by Zoe: All breakpoints tested and approved
+- Risk Level: Low (styling only)
+
+**Push Status:** ✅ Successfully pushed to origin/main. Branch up to date.
+
+---
+
+### 23. 2025-04-02: Introduce Watch List Configuration
+
+**Author:** Mal (Lead Architect)  
+**Date:** 2025-04-02  
+**Status:** Implemented
+
+Created `config/watch-list.json` to track external GitHub repositories the project monitors for reference, architectural insights, and integration opportunities.
+
+**Schema:**
+- `owner`: GitHub user/org
+- `repo`: Repository name
+- `url`: Full GitHub URL
+- `description`: Brief purpose/description
+- `dateAdded`: ISO 8601 date of addition
+- `purpose`: Why this repo is being watched
+
+**Initial Entry:** `elbruno/openclawnet` — Reference architecture and AI-assisted workflow patterns.
+
+**Design:** Non-authoritative watch list is informational; may seed agentic workflows (inventory-review, weekly-summary) but does not drive data collection.
+
+---
+
+### 24. 2025-04-02: Watch List System for External Reference Repos
+
+**Author:** Mal (Lead Architect)  
+**Date:** 2025-04-02  
+**Status:** Accepted
+
+Designed lightweight JSON-based watch list system (`config/watch-list.json`) with human-readable documentation (`config/WATCH-LIST.md`).
+
+**Design Rationale:**
+- **Format:** JSON — machine-readable, version-controllable, extensible
+- **Location:** `config/watch-list.json` — colocated with project config
+- **Documentation:** Markdown guide explaining schema, how to add repos, examples
+- **Manual entry process** — low friction, no validation scripts required
+- **Future automation possible:** Validation jobs, changelog workflows, freshness checks
+
+**Requirements Met:**
+- Easy to add repos (4-step manual process)
+- Self-documenting (clear schema + examples)
+- Scalable (JSON array, works from 1 to 50+ repos)
+- Zero ceremony (no scripts or CI gates)
+
+**Trade-offs:** No schema validation initially; can add when manual process becomes a burden.
+
+---
+
+### 25. 2026-04-22: Watch List System Deployment & Squad Infrastructure
+
+**Author:** Wash (DevOps)  
+**Date:** 2026-04-22  
+**Status:** Implemented & Pushed
+
+Deployed watch list system documentation and Squad infrastructure files to `origin/main` (commit e501b32).
+
+**Files Committed:**
+1. `config/WATCH-LIST.md` — Watch list system documentation
+2. Squad infrastructure files:
+   - `.squad/casting-policy.json` — Agent role/capability registry
+   - `.squad/constraint-tracking.md` — Constraints tracking
+   - `.squad/raw-agent-output.md` — Agentic workflow artifacts
+   - `.squad/run-output.md` — Execution logs and diagnostics
+   - `.squad/scribe-charter.md` — Scribe agent responsibilities
+3. `.squad/agents/mal/history.md` — Watch list pattern documented
+
+**Design:** Watch list system provides minimal-friction configuration for monitoring external GitHub repositories as reference implementations and pattern sources. Extensible for future automation (validation, changelog, freshness checks).
+
+---
+
+### 26. 2026-05-04: Investigation — Metrics Collection Status
+
+**Author:** Kaylee (Backend Dev)  
+**Date:** 2026-05-04  
+**Status:** Verified — No Action Required
+
+Investigation into apparent data collection stall (no commits since April 24, 2026) concluded: **FALSE ALARM**.
+
+**Finding:** Data collection working correctly and committing daily. Root cause of confusion: PowerShell's `ConvertFrom-Json` formatted ISO 8601 date `"2026-05-04T11:04:31..."` as `04/24/2026` instead of May 4, 2026.
+
+**Actual Status:** ✅ All systems operational
+- Latest commit: 2026-05-04 11:04:31 UTC
+- History files present for: 05/04, 05/03, 05/02, 05/01, 04/30, 04/29, 04/28, etc.
+- Workflow runs daily at 09:00 UTC (04:00 AM EST)
+- All recent runs show "success" status
+- 81 packages tracked, 23 repos monitored
+- Metrics Guard Service prevents download count regressions
+
+**Technical Notes:** `.gitignore` tracked files are committed via `git add --force` in workflow. Monotonicity Guard ensures data integrity by taking max of fresh vs. previous values.
 1. **Prereq check** — `RunProcess("oh-my-posh", "--version")` with 5-second timeout. On failure, prints platform-specific install instructions (`winget` on Windows, `brew` on macOS). Skipped with `--skip-prereqs`.
 2. **Copy profiles** — all `*.json` files (including `index.json`) from `--profiles` to `--target`. Uses `File.Copy(overwrite: true)`.
 3. **Copy Set-RepoTheme.ps1** — if present in profiles dir; warns to run `generate` if absent.

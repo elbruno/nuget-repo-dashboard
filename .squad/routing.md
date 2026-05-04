@@ -6,6 +6,7 @@ How to decide who handles what.
 
 | Work Type | Route To | Examples |
 |-----------|----------|----------|
+| HTML/CSS, UI layout, responsive design | Inara ⚛️ | Dashboard responsive mobile design, CSS architecture, accessibility |
 | C# Collector, APIs, data model | Kaylee 🔧 | Build Collector, NuGet/GitHub API integration, JSON output |
 | GitHub Actions, CI/CD, deployment | Wash ⚙️ | Workflows, secrets, GitHub Pages/Azure deployment |
 | Tests, quality, edge cases | Zoe 🧪 | Unit tests, integration tests, contract validation |

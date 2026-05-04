@@ -16,6 +16,7 @@
 | Kaylee | Backend Dev | `.squad/agents/kaylee/charter.md` | 🔧 Active |
 | Wash | DevOps | `.squad/agents/wash/charter.md` | ⚙️ Active |
 | Zoe | Tester | `.squad/agents/zoe/charter.md` | 🧪 Active |
+| Inara | Frontend Dev | `.squad/agents/inara/charter.md` | ⚛️ Active |
 | Scribe | Scribe | `.squad/agents/scribe/charter.md` | 📋 Active |
 | Ralph | Work Monitor | — | 🔄 Active |
 

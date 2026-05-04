@@ -1,3 +1,12 @@
 {
-  "agents": {}
+  "agents": {
+    "inara": {
+      "persistent_name": "inara",
+      "universe": "Firefly",
+      "created_at": "2026-05-04T11:05:36Z",
+      "legacy_named": false,
+      "status": "active",
+      "role": "Frontend Dev"
+    }
+  }
 }
