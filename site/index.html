@@ -1493,7 +1493,7 @@
       const banner = document.getElementById('staleness-banner');
       if (staleCount > 0) {
         document.getElementById('staleness-message').textContent =
-          `Download data may be delayed — ${staleCount} package${staleCount !== 1 ? 's' : ''} show${staleCount === 1 ? 's' : ''} no change for 3+ days`;
+          `⚠️ Low activity: ${staleCount} package${staleCount !== 1 ? 's' : ''} show${staleCount === 1 ? 's' : ''} no new downloads for 3+ days`;
         banner.style.display = '';
       } else {
         banner.style.display = 'none';
