@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
-  "console_title_template": " 📦 openclawnet ",
+  "console_title_template": " 🔷 openclawnet ",
   "blocks": [
     {
       "type": "prompt",
@@ -9,10 +9,10 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#1C1C1C",
-          "background": "#628EA1",
+          "foreground": "#FFFFFF",
+          "background": "#6C5470",
           "style": "plain",
-          "template": " 📦 openclawnet "
+          "template": " 🔷 openclawnet "
         }
       ]
     }
