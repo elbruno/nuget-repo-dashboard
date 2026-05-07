@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T11:05:58.6605803+00:00",
+  "generatedAt": "2026-05-07T11:09:05.7381535+00:00",
   "totalRepos": 22,
   "profiles": [
     {
@@ -45,16 +45,16 @@
       "icon": "\uD83D\uDD0A"
     },
     {
-      "repo": "elbruno/ElBruno.Whisper",
-      "configFile": "elbruno-ElBruno.Whisper.json",
-      "accentColor": "#965BA8",
-      "icon": "\uD83C\uDF99️"
-    },
-    {
       "repo": "elbruno/ElBruno.MempalaceNet",
       "configFile": "elbruno-ElBruno.MempalaceNet.json",
       "accentColor": "#536459",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Whisper",
+      "configFile": "elbruno-ElBruno.Whisper.json",
+      "accentColor": "#965BA8",
+      "icon": "\uD83C\uDF99️"
     },
     {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
@@ -93,22 +93,22 @@
       "icon": "\uD83D\uDCCA"
     },
     {
-      "repo": "elbruno/ElBruno.PersonaPlex",
-      "configFile": "elbruno-ElBruno.PersonaPlex.json",
-      "accentColor": "#7DBBB3",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.QRCodeGenerator",
-      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
-      "accentColor": "#B85C5B",
-      "icon": "\uD83D\uDCF7"
+      "repo": "elbruno/ElBruno.PersonaPlex",
+      "configFile": "elbruno-ElBruno.PersonaPlex.json",
+      "accentColor": "#7DBBB3",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/graphify-dotnet",
+      "configFile": "elbruno-graphify-dotnet.json",
+      "accentColor": "#BEA579",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "ElBruno/ElBruno.BM25",
@@ -117,10 +117,10 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/graphify-dotnet",
-      "configFile": "elbruno-graphify-dotnet.json",
-      "accentColor": "#BEA579",
-      "icon": "\uD83D\uDD37"
+      "repo": "elbruno/ElBruno.QRCodeGenerator",
+      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
+      "accentColor": "#B85C5B",
+      "icon": "\uD83D\uDCF7"
     },
     {
       "repo": "elbruno/elbruno-agentskills",
