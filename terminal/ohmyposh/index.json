@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-10T10:13:43.3926803+00:00",
-  "totalRepos": 22,
+  "generatedAt": "2026-05-11T12:10:41.4684446+00:00",
+  "totalRepos": 21,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
@@ -21,16 +21,16 @@
       "icon": "\uD83D\uDD0A"
     },
     {
-      "repo": "elbruno/ElBruno.Text2Image",
-      "configFile": "elbruno-ElBruno.Text2Image.json",
-      "accentColor": "#A4A1C8",
-      "icon": "\uD83D\uDDBC️"
-    },
-    {
       "repo": "elbruno/ElBruno.MarkItDotNet",
       "configFile": "elbruno-ElBruno.MarkItDotNet.json",
       "accentColor": "#68CE56",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Text2Image",
+      "configFile": "elbruno-ElBruno.Text2Image.json",
+      "accentColor": "#A4A1C8",
+      "icon": "\uD83D\uDDBC️"
     },
     {
       "repo": "elbruno/ElBruno.LocalLLMs",
@@ -105,15 +105,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.PersonaPlex",
-      "configFile": "elbruno-ElBruno.PersonaPlex.json",
-      "accentColor": "#7DBBB3",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/graphify-dotnet",
       "configFile": "elbruno-graphify-dotnet.json",
       "accentColor": "#BEA579",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.PersonaPlex",
+      "configFile": "elbruno-ElBruno.PersonaPlex.json",
+      "accentColor": "#7DBBB3",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -121,12 +121,6 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
-    },
-    {
-      "repo": "elbruno/elbruno-agentskills",
-      "configFile": "elbruno-elbruno-agentskills.json",
-      "accentColor": "#BD5896",
-      "icon": "\uD83E\uDD16"
     },
     {
       "repo": "elbruno/openclawnet",
