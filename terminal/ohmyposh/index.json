@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T12:10:41.4684446+00:00",
+  "generatedAt": "2026-05-12T11:21:22.8341341+00:00",
   "totalRepos": 21,
   "profiles": [
     {
@@ -69,6 +69,12 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/graphify-dotnet",
+      "configFile": "elbruno-graphify-dotnet.json",
+      "accentColor": "#BEA579",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.ModelContextProtocol",
       "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
       "accentColor": "#C3627F",
@@ -93,21 +99,15 @@
       "icon": "\uD83D\uDCCA"
     },
     {
-      "repo": "elbruno/elbruno-ai-evaluation",
-      "configFile": "elbruno-elbruno-ai-evaluation.json",
-      "accentColor": "#5A99B2",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "ElBruno/ElBruno.BM25",
       "configFile": "ElBruno-ElBruno.BM25.json",
       "accentColor": "#556C55",
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/graphify-dotnet",
-      "configFile": "elbruno-graphify-dotnet.json",
-      "accentColor": "#BEA579",
+      "repo": "elbruno/elbruno-ai-evaluation",
+      "configFile": "elbruno-elbruno-ai-evaluation.json",
+      "accentColor": "#5A99B2",
       "icon": "\uD83D\uDD37"
     },
     {
