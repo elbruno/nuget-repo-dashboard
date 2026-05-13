@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T11:21:22.8341341+00:00",
+  "generatedAt": "2026-05-13T11:29:55.9866072+00:00",
   "totalRepos": 21,
   "profiles": [
     {
@@ -63,6 +63,12 @@
       "icon": "⚡"
     },
     {
+      "repo": "elbruno/ElBruno.AspireMonitor",
+      "configFile": "elbruno-ElBruno.AspireMonitor.json",
+      "accentColor": "#CFC9B6",
+      "icon": "\uD83D\uDCCA"
+    },
+    {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
       "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
       "accentColor": "#ADA976",
@@ -81,22 +87,16 @@
       "icon": "\uD83D\uDD0C"
     },
     {
-      "repo": "elbruno/ElBruno.ClockTray",
-      "configFile": "elbruno-ElBruno.ClockTray.json",
-      "accentColor": "#CEA8AC",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.AspireMonitor",
-      "configFile": "elbruno-ElBruno.AspireMonitor.json",
-      "accentColor": "#9DB0B6",
-      "icon": "\uD83D\uDCCA"
+      "repo": "elbruno/ElBruno.ClockTray",
+      "configFile": "elbruno-ElBruno.ClockTray.json",
+      "accentColor": "#CEA8AC",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "ElBruno/ElBruno.BM25",
