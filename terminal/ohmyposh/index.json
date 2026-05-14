@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-13T11:29:55.9866072+00:00",
-  "totalRepos": 21,
+  "generatedAt": "2026-05-14T11:12:40.7052037+00:00",
+  "totalRepos": 22,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
@@ -15,16 +15,16 @@
       "icon": "\uD83E\uDDE0"
     },
     {
-      "repo": "elbruno/ElBruno.QwenTTS",
-      "configFile": "elbruno-ElBruno.QwenTTS.json",
-      "accentColor": "#AC8460",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/ElBruno.MarkItDotNet",
       "configFile": "elbruno-ElBruno.MarkItDotNet.json",
       "accentColor": "#68CE56",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.QwenTTS",
+      "configFile": "elbruno-ElBruno.QwenTTS.json",
+      "accentColor": "#AC8460",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.Text2Image",
@@ -81,16 +81,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.ModelContextProtocol",
-      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
-      "accentColor": "#C3627F",
-      "icon": "\uD83D\uDD0C"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.ModelContextProtocol",
+      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
+      "accentColor": "#C3627F",
+      "icon": "\uD83D\uDD0C"
     },
     {
       "repo": "elbruno/ElBruno.ClockTray",
@@ -121,6 +121,12 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
+    },
+    {
+      "repo": "elbruno/ElBruno.CopilotCLIMonitor",
+      "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
+      "accentColor": "#6660B3",
+      "icon": "\uD83E\uDD16"
     },
     {
       "repo": "elbruno/openclawnet",
