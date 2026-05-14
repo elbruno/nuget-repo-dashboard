@@ -66,6 +66,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.CopilotCLIMonitor",
+    "repos": [
+      "elbruno/ElBruno.CopilotCLIMonitor"
+    ]
+  },
+  {
     "packageId": "elbruno.Extensions.AI.Skills.Cli",
     "repos": [
       "elbruno/elbruno-agentskills"
@@ -87,6 +93,12 @@
     "packageId": "ElBruno.HuggingFace.Downloader.Cli",
     "repos": [
       "elbruno/ElBruno.HuggingFace.Downloader"
+    ]
+  },
+  {
+    "packageId": "ElBruno.KokoroTTS.Realtime",
+    "repos": [
+      "elbruno/ElBruno.Realtime"
     ]
   },
   {
@@ -320,6 +332,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.QwenTTS.Realtime",
+    "repos": [
+      "elbruno/ElBruno.Realtime"
+    ]
+  },
+  {
     "packageId": "ElBruno.QwenTTS.VoiceCloning",
     "repos": [
       "elbruno/ElBruno.QwenTTS"
@@ -392,6 +410,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.VibeVoiceTTS.Realtime",
+    "repos": [
+      "elbruno/ElBruno.Realtime"
+    ]
+  },
+  {
     "packageId": "ElBruno.Whisper",
     "repos": [
       "elbruno/ElBruno.Whisper"
@@ -399,6 +423,12 @@
   },
   {
     "packageId": "graphify-dotnet",
+    "repos": [
+      "elbruno/graphify-dotnet"
+    ]
+  },
+  {
+    "packageId": "graphify-dotnet-core",
     "repos": [
       "elbruno/graphify-dotnet"
     ]
@@ -423,6 +453,12 @@
   },
   {
     "packageId": "MemPalace.Core",
+    "repos": [
+      "elbruno/ElBruno.MempalaceNet"
+    ]
+  },
+  {
+    "packageId": "MemPalace.Diagnostics",
     "repos": [
       "elbruno/ElBruno.MempalaceNet"
     ]
