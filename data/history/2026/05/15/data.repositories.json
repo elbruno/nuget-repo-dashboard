@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T14:48:32.1579749+00:00",
+  "generatedAt": "2026-05-15T15:41:25.1671404+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -46,7 +46,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 2 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -132,7 +182,57 @@
       ],
       "mergedPullRequestsCount": 1,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 88,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 10,
+          "displayValue": "10 commits",
+          "summary": "10 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.2,
+          "displayValue": "0.2 days",
+          "summary": "0.2 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 18,
+          "displayValue": "18 releases",
+          "summary": "18 package releases in the last 30 days across 9 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -269,7 +369,57 @@
       ],
       "mergedPullRequestsCount": 3,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 80,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 5,
+          "maxScore": 20,
+          "available": true,
+          "value": 5,
+          "displayValue": "5 commits",
+          "summary": "5 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 19,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.8,
+          "displayValue": "0.8 days",
+          "summary": "0.8 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 30,
+          "displayValue": "30 releases",
+          "summary": "30 package releases in the last 30 days across 15 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -521,7 +671,57 @@
       ],
       "mergedPullRequestsCount": 5,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 90,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 12,
+          "maxScore": 20,
+          "available": true,
+          "value": 12,
+          "displayValue": "12 commits",
+          "summary": "12 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.6,
+          "displayValue": "0.6 days",
+          "summary": "0.6 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 9,
+          "displayValue": "9 releases",
+          "summary": "9 package releases in the last 30 days across 2 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -996,7 +1196,57 @@
       ],
       "mergedPullRequestsCount": 18,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 99,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 92,
+          "displayValue": "92 commits",
+          "summary": "92 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 19,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.8,
+          "displayValue": "0.8 days",
+          "summary": "0.8 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 106,
+          "displayValue": "106 releases",
+          "summary": "106 package releases in the last 30 days across 6 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -1086,7 +1336,57 @@
       ],
       "mergedPullRequestsCount": 2,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 75,
+        "availablePoints": 60,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 5,
+          "maxScore": 20,
+          "available": true,
+          "value": 5,
+          "displayValue": "5 commits",
+          "summary": "5 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 6,
+          "displayValue": "6 releases",
+          "summary": "6 package releases in the last 30 days across 3 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -1513,7 +1813,57 @@
       ],
       "mergedPullRequestsCount": 4,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 99,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 100,
+          "displayValue": "100 commits",
+          "summary": "100 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 19,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1.0 days",
+          "summary": "1.0 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 85,
+          "displayValue": "85 releases",
+          "summary": "85 package releases in the last 30 days across 11 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -1587,7 +1937,57 @@
       ],
       "mergedPullRequestsCount": 1,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 58,
+        "availablePoints": 60,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 5,
+          "maxScore": 20,
+          "available": true,
+          "value": 5,
+          "displayValue": "5 commits",
+          "summary": "5 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -1670,7 +2070,57 @@
       ],
       "mergedPullRequestsCount": 1,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 53,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 2,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.3,
+          "displayValue": "0.3 days",
+          "summary": "0.3 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -1818,7 +2268,57 @@
       ],
       "mergedPullRequestsCount": 5,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 100,
+        "availablePoints": 60,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 100,
+          "displayValue": "100 commits",
+          "summary": "100 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 9,
+          "displayValue": "9 releases",
+          "summary": "9 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -1899,7 +2399,57 @@
       ],
       "mergedPullRequestsCount": 1,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 85,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 8,
+          "maxScore": 20,
+          "available": true,
+          "value": 8,
+          "displayValue": "8 commits",
+          "summary": "8 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.3,
+          "displayValue": "0.3 days",
+          "summary": "0.3 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 9,
+          "displayValue": "9 releases",
+          "summary": "9 package releases in the last 30 days across 6 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2002,7 +2552,57 @@
       ],
       "mergedPullRequestsCount": 2,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 94,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 16,
+          "maxScore": 20,
+          "available": true,
+          "value": 16,
+          "displayValue": "16 commits",
+          "summary": "16 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 19,
+          "maxScore": 20,
+          "available": true,
+          "value": 1.9,
+          "displayValue": "1.9 days",
+          "summary": "1.9 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 5,
+          "displayValue": "5 releases",
+          "summary": "5 package releases in the last 30 days across 2 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2036,7 +2636,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 17,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 10,
+          "displayValue": "Partial",
+          "summary": "README present, docs/ missing."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2080,7 +2730,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 73,
+        "availablePoints": 60,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 14,
+          "maxScore": 20,
+          "available": true,
+          "value": 14,
+          "displayValue": "14 commits",
+          "summary": "14 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2127,7 +2827,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2226,7 +2976,57 @@
       ],
       "mergedPullRequestsCount": 2,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 66,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 3,
+          "maxScore": 20,
+          "available": true,
+          "value": 3,
+          "displayValue": "3 commits",
+          "summary": "3 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.7,
+          "displayValue": "0.7 days",
+          "summary": "0.7 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "ElBruno",
@@ -2269,7 +3069,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 75,
+        "availablePoints": 60,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 23,
+          "displayValue": "23 commits",
+          "summary": "23 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 5,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 release",
+          "summary": "1 package release in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2312,7 +3162,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 4 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2346,7 +3246,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -2400,7 +3350,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 35,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 5 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -3088,7 +4088,57 @@
       ],
       "mergedPullRequestsCount": 15,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 100,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 100,
+          "displayValue": "100 commits",
+          "summary": "100 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.1,
+          "displayValue": "0.1 days",
+          "summary": "0.1 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 5,
+          "displayValue": "5 releases",
+          "summary": "5 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -3122,7 +4172,57 @@
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 2 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     },
     {
       "owner": "elbruno",
@@ -3982,7 +5082,57 @@
       ],
       "mergedPullRequestsCount": 35,
       "isStub": false,
-      "stubReason": null
+      "stubReason": null,
+      "isWatchList": true,
+      "watchPurpose": "Reference architecture and AI-assisted workflow patterns",
+      "watchDateAdded": "2025-04-02",
+      "maintainability": {
+        "totalScore": 100,
+        "availablePoints": 60,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 100,
+          "displayValue": "100 commits",
+          "summary": "100 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.5,
+          "displayValue": "0.5 days",
+          "summary": "0.5 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No package release data mapped to this repository."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
     }
   ],
   "watchList": [

@@ -202,6 +202,7 @@ public class ModelTests
         metrics.Tags.Should().BeEmpty();
         metrics.Listed.Should().BeTrue();
         metrics.PublishedDate.Should().BeNull();
+        metrics.ReleasesLast30Days.Should().Be(0);
     }
 
     #endregion
@@ -470,6 +471,7 @@ public class ModelTests
         json.Should().Contain("\"isWatchList\"");
         json.Should().Contain("\"watchPurpose\"");
         json.Should().Contain("\"watchDateAdded\"");
+        json.Should().Contain("\"maintainability\"");
     }
 
     [Fact]
@@ -504,6 +506,7 @@ public class ModelTests
         metrics.IsWatchList.Should().BeFalse();
         metrics.WatchPurpose.Should().BeNull();
         metrics.WatchDateAdded.Should().BeNull();
+        metrics.Maintainability.Should().BeNull();
     }
 
     [Fact]
@@ -544,6 +547,46 @@ public class ModelTests
         deserialized.NetworkCount.Should().Be(42);
         deserialized.Visibility.Should().Be("public");
         deserialized.HtmlUrl.Should().Be("https://github.com/owner/repo");
+    }
+
+    [Fact]
+    public void MaintainabilityScore_SerializeDeserialize_RoundTrip()
+    {
+        var original = new MaintainabilityScore
+        {
+            TotalScore = 82,
+            AvailablePoints = 100,
+            Status = "good",
+            Label = "Good",
+            Emoji = "\ud83d\udfe2",
+            Activity = new MaintainabilityMetricScore
+            {
+                Score = 14,
+                MaxScore = 20,
+                Available = true,
+                Value = 14,
+                DisplayValue = "14 commits",
+                Summary = "14 commits in the last 30 days."
+            },
+            Documentation = new MaintainabilityMetricScore
+            {
+                Score = 20,
+                MaxScore = 20,
+                Available = true,
+                Value = 20,
+                DisplayValue = "Complete",
+                Summary = "README present, docs/ present."
+            }
+        };
+
+        var json = JsonSerializer.Serialize(original, JsonOptions);
+        var deserialized = JsonSerializer.Deserialize<MaintainabilityScore>(json, JsonOptions);
+
+        deserialized.Should().NotBeNull();
+        deserialized!.TotalScore.Should().Be(82);
+        deserialized.Status.Should().Be("good");
+        deserialized.Activity.Score.Should().Be(14);
+        deserialized.Documentation.Score.Should().Be(20);
     }
 
     #endregion

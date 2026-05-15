@@ -108,4 +108,7 @@ public sealed class GitHubRepoMetrics
 
     [JsonPropertyName("watchDateAdded")]
     public string? WatchDateAdded { get; set; }
+
+    [JsonPropertyName("maintainability")]
+    public MaintainabilityScore? Maintainability { get; set; }
 }

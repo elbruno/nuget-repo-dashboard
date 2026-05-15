@@ -304,6 +304,52 @@
       background: var(--accent-bg); color: var(--accent);
       padding: 0.1rem 0.45rem; border-radius: 999px;
     }
+    .card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    .health-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.74rem;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: help;
+    }
+    .health-badge .health-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+    }
+    .health-badge.good {
+      background: #e6f4ea;
+      color: #1a7a1a;
+      border-color: #b7e1c0;
+    }
+    .health-badge.fair {
+      background: #fff7db;
+      color: #a16207;
+      border-color: #f3d485;
+    }
+    .health-badge.needs-attention {
+      background: #fde8e8;
+      color: #b91c1c;
+      border-color: #f3b6b6;
+    }
+    .health-badge.unavailable {
+      background: var(--toolbar-bg);
+      color: var(--text-muted);
+      border-color: var(--border);
+    }
+    .health-cell {
+      white-space: nowrap;
+    }
 
     /* List view */
     .list-view { display: none; }
@@ -729,6 +775,8 @@
       .card-title a { font-size: 0.85rem; }
       .card-description { font-size: 0.75rem; }
       .stat { font-size: 0.7rem; }
+      .health-badge { font-size: 0.68rem; }
+      .health-badge .health-label { font-size: 0.62rem; }
       
        .highlight-info .name { font-size: 0.8rem; }
        .highlight-info .meta { font-size: 0.7rem; }
@@ -996,6 +1044,7 @@
             <label for="repo-sort">Sort</label>
             <select id="repo-sort">
               <option value="stars">Stars</option>
+              <option value="health">Health</option>
               <option value="forks">Forks</option>
               <option value="issues">Issues</option>
               <option value="prs">PRs</option>
@@ -1206,10 +1255,43 @@
       return el.innerHTML;
     }
 
+    function escAttr(s) {
+      return esc(s).replace(/"/g, '&quot;').replace(/\n/g, '&#10;');
+    }
+
     function fmtDate(iso) {
       if (!iso) return '—';
       const d = new Date(iso);
       return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function buildHealthMetricLine(label, metric) {
+      if (!metric || !metric.available || !metric.maxScore) return `${label}: N/A`;
+      const display = metric.displayValue ? ` (${metric.displayValue})` : '';
+      return `${label}: ${metric.score}/${metric.maxScore}${display} — ${metric.summary || ''}`.trim();
+    }
+
+    function buildHealthTooltip(repo) {
+      const health = repo?.maintainability;
+      if (!health) return 'Health score unavailable';
+      return [
+        `Health ${health.totalScore}/100 — ${health.emoji || ''} ${health.label || 'Needs attention'}`.trim(),
+        buildHealthMetricLine('Activity', health.activity),
+        buildHealthMetricLine('Issue resolution', health.issueResolution),
+        buildHealthMetricLine('Release frequency', health.releaseFrequency),
+        buildHealthMetricLine('Test coverage', health.testCoverage),
+        buildHealthMetricLine('Documentation', health.documentation),
+      ].join('\n');
+    }
+
+    function renderHealthBadge(repo) {
+      const health = repo?.maintainability;
+      if (!health) {
+        return `<span class="health-badge unavailable" title="Health score unavailable">⚪ <strong>N/A</strong><span class="health-label">Health</span></span>`;
+      }
+      const cls = health.status || 'needs-attention';
+      const tooltip = escAttr(buildHealthTooltip(repo));
+      return `<span class="health-badge ${esc(cls)}" title="${tooltip}" aria-label="Health ${health.totalScore} out of 100">${esc(health.emoji || '🔴')} <strong>${fmt(health.totalScore)}</strong><span class="health-label">${esc(health.label || 'Needs attention')}</span></span>`;
     }
 
     function fmtTimestamp(iso) {
@@ -1923,13 +2005,17 @@
       const trend = getRepoTrend(repo.fullName || repo.name);
       const snapshot = trend ? buildTrendSnapshot(trend.stars, chartWindowDays.repositories) : null;
       const badge = snapshot ? trendBadgeHtml(snapshot.growthPct) : '';
+      const healthBadge = renderHealthBadge(repo);
       return `
         <div class="card">
           <div class="card-header">
             <div class="card-title">
               <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
             </div>
-            ${repo.license ? `<span class="license-badge">${esc(repo.license)}</span>` : ''}
+            <div class="card-badges">
+              ${healthBadge}
+              ${repo.license ? `<span class="license-badge">${esc(repo.license)}</span>` : ''}
+            </div>
           </div>
           <div class="card-description">${esc(truncate(repo.description, 160))}</div>
           <div class="card-stats">
@@ -1953,12 +2039,14 @@
         const topics = (repo.topics || []).slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join('');
         const trend = getRepoTrend(repo.fullName || repo.name);
         const snapshot = trend ? buildTrendSnapshot(trend.stars, chartWindowDays.repositories) : null;
+        const healthBadge = renderHealthBadge(repo);
         return `<tr>
           <td>
             <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
             ${repo.license ? ` <span class="license-badge">${esc(repo.license)}</span>` : ''}
             ${topics ? `<div class="tags">${topics}</div>` : ''}
           </td>
+          <td class="health-cell">${healthBadge}</td>
           <td class="text-muted">${esc(truncate(repo.description, 80))}</td>
           <td style="white-space:nowrap;">${repo.language ? `<span class="language-dot" style="background:${color}"></span>${esc(repo.language)}` : '—'}</td>
           <td class="value" style="text-align:right;">⭐ ${fmt(repo.stars)}</td>
@@ -1971,7 +2059,7 @@
         </tr>`;
       }).join('');
       return `<table>
-        <thead><tr><th>Repository</th><th>Description</th><th>Language</th><th style="text-align:right;">Stars</th><th style="text-align:right;">Forks</th><th style="text-align:right;">Issues</th><th style="text-align:right;">PRs</th><th>Trend</th><th>WoW</th><th>Updated</th></tr></thead>
+        <thead><tr><th>Repository</th><th>Health</th><th>Description</th><th>Language</th><th style="text-align:right;">Stars</th><th style="text-align:right;">Forks</th><th style="text-align:right;">Issues</th><th style="text-align:right;">PRs</th><th>Trend</th><th>WoW</th><th>Updated</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
     }
@@ -2300,6 +2388,7 @@
       repos.sort((a, b) => {
         switch (sortKey) {
           case 'stars': return (b.stars || 0) - (a.stars || 0);
+          case 'health': return ((b.maintainability && b.maintainability.totalScore) || 0) - ((a.maintainability && a.maintainability.totalScore) || 0);
           case 'forks': return (b.forks || 0) - (a.forks || 0);
           case 'issues': return (b.openIssues || 0) - (a.openIssues || 0);
           case 'prs': return (b.openPullRequests || 0) - (a.openPullRequests || 0);

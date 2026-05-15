@@ -58,6 +58,34 @@ public class NuGetCollectorTests
         """;
     }
 
+    private static string BuildRegistrationJsonWithReleaseHistory(params string[] publishedDates)
+    {
+        var items = string.Join(",",
+            publishedDates.Select((date, index) => $$"""
+            {
+              "catalogEntry": {
+                "version": "1.0.{{index}}",
+                "description": "Package release {{index}}",
+                "authors": "Test Author",
+                "projectUrl": "https://example.com",
+                "listed": true,
+                "published": "{{date}}",
+                "tags": ["test"]
+              }
+            }
+            """));
+
+        return $$"""
+        {
+          "items": [
+            {
+              "items": [{{items}}]
+            }
+          ]
+        }
+        """;
+    }
+
     [Fact]
     public async Task CollectAsync_KnownPackage_ReturnsCorrectMetrics()
     {
@@ -373,5 +401,42 @@ public class NuGetCollectorTests
         results.Should().ContainSingle();
         results[0].PublishedDate.Should().NotBeNull();
         results[0].PublishedDate!.Value.Year.Should().Be(2024);
+    }
+
+    [Fact]
+    public async Task CollectAsync_CountsReleasesPublishedInLast30Days()
+    {
+        var handler = new MockHttpMessageHandler();
+        var recent1 = DateTimeOffset.UtcNow.AddDays(-5).ToString("O");
+        var recent2 = DateTimeOffset.UtcNow.AddDays(-12).ToString("O");
+        var older = DateTimeOffset.UtcNow.AddDays(-45).ToString("O");
+
+        handler.AddResponse(
+            "https://api.nuget.org/v3/registration5-gz-semver2/releasepkg/index.json",
+            HttpStatusCode.OK,
+            BuildRegistrationJsonWithReleaseHistory(recent1, older, recent2));
+        handler.AddResponse(
+            "https://azuresearch-usnc.nuget.org/query?q=packageid:ReleasePkg&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(250));
+        handler.AddResponse(
+            "https://azuresearch-ussc.nuget.org/query?q=packageid:ReleasePkg&take=1",
+            HttpStatusCode.OK,
+            BuildSearchJson(250));
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new NuGetCollector(httpClient);
+
+        var results = await collector.CollectAsync(
+        [
+            new PackageConfig
+            {
+                PackageId = "ReleasePkg",
+                Repos = ["owner/repo"]
+            }
+        ]);
+
+        results.Should().ContainSingle();
+        results[0].ReleasesLast30Days.Should().Be(2);
     }
 }
