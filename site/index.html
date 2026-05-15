@@ -22,6 +22,9 @@
       --radius-sm: 8px;
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
       --toolbar-bg: #eef0f5;
+      --freshness-fresh: #c7ffd8;
+      --freshness-stale: #ffe48d;
+      --freshness-critical: #ffb7bf;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -64,7 +67,35 @@
     }
     header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
     header .subtitle { font-size: 0.9rem; opacity: 0.85; margin-top: 0.25rem; }
-    header .updated { font-size: 0.75rem; opacity: 0.7; margin-top: 0.5rem; }
+    header .updated {
+      margin: 0.6rem auto 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 0.25rem 0.65rem;
+      min-height: 1.8rem;
+      max-width: 100%;
+      color: #fff;
+    }
+    .updated .freshness-dot {
+      width: 0.52rem;
+      height: 0.52rem;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 0.16rem rgba(255,255,255,0.2);
+    }
+    .updated .freshness-label {
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .updated.status-fresh { color: var(--freshness-fresh); }
+    .updated.status-stale { color: var(--freshness-stale); }
+    .updated.status-critical { color: var(--freshness-critical); }
 
     /* Summary cards */
     .summary {
@@ -512,7 +543,15 @@
       header { padding: 1rem 0 0.85rem; }
       header h1 { font-size: 1.25rem; }
       header .subtitle { font-size: 0.8rem; }
-      header .updated { font-size: 0.65rem; }
+      header .updated {
+        margin-top: 0.5rem;
+        font-size: 0.68rem;
+        padding: 0.24rem 0.55rem;
+      }
+      .updated .freshness-label {
+        white-space: normal;
+        text-align: center;
+      }
       .summary { gap: 0.5rem; margin-top: 0.75rem; }
       .summary-card { min-width: 80px; padding: 0.5rem 0.75rem; }
       .summary-card .number { font-size: 1rem; }
@@ -875,6 +914,7 @@
     const NUGET_URL = 'data/data.nuget.json';
     const REPOS_URL = 'data/data.repositories.json';
     const TRENDS_URL = 'data/data.trends.json';
+    const METADATA_URL = 'data/data.metadata.json';
 
     const LANG_COLORS = {
       'C#': '#178600', 'JavaScript': '#f1e05a', 'TypeScript': '#3178c6',
@@ -937,6 +977,60 @@
         year: 'numeric', month: 'long', day: 'numeric',
         hour: '2-digit', minute: '2-digit', timeZoneName: 'short',
       });
+    }
+
+    function parseIsoDate(iso) {
+      if (!iso) return null;
+      const d = new Date(iso);
+      return Number.isNaN(d.getTime()) ? null : d;
+    }
+
+    function pickLatestTimestamp(...isos) {
+      return isos.reduce((latest, iso) => {
+        const candidate = parseIsoDate(iso);
+        if (!candidate) return latest;
+        return !latest || candidate > latest ? candidate : latest;
+      }, null);
+    }
+
+    function formatFreshnessAge(hoursAgo) {
+      if (!Number.isFinite(hoursAgo) || hoursAgo < 0) return '';
+      if (hoursAgo < 1) return '< 1 hour ago';
+      const roundedHours = Math.round(hoursAgo);
+      return `${roundedHours} hour${roundedHours === 1 ? '' : 's'} ago`;
+    }
+
+    function freshnessStatus(hoursAgo) {
+      if (!Number.isFinite(hoursAgo) || hoursAgo < 0) return 'fresh';
+      if (hoursAgo < 12) return 'fresh';
+      if (hoursAgo <= 48) return 'stale';
+      return 'critical';
+    }
+
+    function freshnessStatusLabel(status) {
+      if (status === 'fresh') return 'Fresh';
+      if (status === 'stale') return 'Slightly stale';
+      return 'Very stale';
+    }
+
+    function renderFreshnessHeader(latestGeneratedAt) {
+      const updatedEl = document.getElementById('updated');
+      if (!updatedEl || !latestGeneratedAt) {
+        if (updatedEl) updatedEl.textContent = '';
+        return;
+      }
+
+      const ageHours = (Date.now() - latestGeneratedAt.getTime()) / 3_600_000;
+      const status = freshnessStatus(ageHours);
+      const relative = formatFreshnessAge(ageHours);
+
+      updatedEl.classList.remove('status-fresh', 'status-stale', 'status-critical');
+      updatedEl.classList.add(`status-${status}`);
+      updatedEl.title = latestGeneratedAt.toISOString();
+      updatedEl.innerHTML = `
+        <span class="freshness-dot" aria-hidden="true"></span>
+        <span class="freshness-label">Last updated: ${esc(relative)} · ${esc(freshnessStatusLabel(status))}</span>
+      `;
     }
 
     /* ── Sparkline + Trend Helpers ── */
@@ -1825,8 +1919,10 @@
       const content = document.getElementById('content');
 
       try {
-        const [nugetRes, reposRes] = await Promise.all([
+        const [nugetRes, reposRes, metadataRes, trendsRes] = await Promise.all([
           fetch(NUGET_URL), fetch(REPOS_URL),
+          fetch(METADATA_URL).catch(() => null),
+          fetch(TRENDS_URL).catch(() => null),
         ]);
 
         if (!nugetRes.ok) throw new Error(`Failed to load NuGet data (${nugetRes.status})`);
@@ -1835,13 +1931,8 @@
         const nugetData = await nugetRes.json();
         const reposData = await reposRes.json();
 
-        // Fetch trends data (optional — may not exist on first run)
-        try {
-          const trendsRes = await fetch(TRENDS_URL);
-          if (trendsRes.ok) {
-            trendsData = await trendsRes.json();
-          }
-        } catch (_) { /* trends not available yet — that's fine */ }
+        const metadataData = metadataRes?.ok ? await metadataRes.json() : null;
+        trendsData = trendsRes?.ok ? await trendsRes.json() : null;
 
         // Store raw data for filtering
         allPackages = nugetData.packages || [];
@@ -1850,8 +1941,16 @@
         // Header info
         const author = allPackages[0]?.authors || 'Dashboard';
         document.getElementById('subtitle').textContent = author;
-        document.getElementById('updated').textContent =
-          nugetData.generatedAt ? `Last updated: ${fmtTimestamp(nugetData.generatedAt)}` : '';
+        const latestGeneratedAt = pickLatestTimestamp(
+          metadataData?.generatedAt,
+          metadataData?.nugetGeneratedAt,
+          metadataData?.repositoriesGeneratedAt,
+          metadataData?.trendsGeneratedAt,
+          nugetData?.generatedAt,
+          reposData?.generatedAt,
+          trendsData?.generatedAt
+        );
+        renderFreshnessHeader(latestGeneratedAt);
 
         // Summary cards
         const totalDownloads = allPackages.reduce((s, p) => s + (p.totalDownloads || 0), 0);

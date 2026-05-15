@@ -32,3 +32,18 @@ public sealed class RepositoriesOutput
     [JsonPropertyName("repositories")]
     public List<GitHubRepoMetrics> Repositories { get; set; } = [];
 }
+
+public sealed class DashboardMetadataOutput
+{
+    [JsonPropertyName("generatedAt")]
+    public DateTimeOffset GeneratedAt { get; set; }
+
+    [JsonPropertyName("nugetGeneratedAt")]
+    public DateTimeOffset? NuGetGeneratedAt { get; set; }
+
+    [JsonPropertyName("repositoriesGeneratedAt")]
+    public DateTimeOffset? RepositoriesGeneratedAt { get; set; }
+
+    [JsonPropertyName("trendsGeneratedAt")]
+    public DateTimeOffset? TrendsGeneratedAt { get; set; }
+}
