@@ -625,6 +625,7 @@
       <a href="#top-highlights" class="nav-link">🏆 Top 3</a>
       <a href="#nuget-packages" class="nav-link">📦 Packages</a>
       <a href="#github-repos" class="nav-link">🐙 Repositories</a>
+      <a href="#watch-list" class="nav-link">👀 Watch List</a>
       <a href="#open-issues" class="nav-link">🐛 Issues</a>
       <a href="#open-prs" class="nav-link">🔀 Pull Requests</a>
     </div>
@@ -756,6 +757,23 @@
         <div id="repo-empty" class="empty-state" style="display:none;">
           <span class="icon">🔍</span>
           <p>No repositories match your filters</p>
+        </div>
+        </div>
+      </section>
+
+      <!-- Watch List Section -->
+      <section id="watch-list">
+        <div class="section-header collapsible-header" data-section="watch-list">
+          <h2><span class="chevron">▼</span> <span class="icon">👀</span> Watch List</h2>
+          <div class="section-meta">
+            <span class="result-count" id="watchlist-count"></span>
+          </div>
+        </div>
+        <div class="section-content" id="watch-list-content">
+        <div id="watchlist-grid" class="card-grid"></div>
+        <div id="watchlist-empty" class="empty-state" style="display:none;">
+          <span class="icon">📝</span>
+          <p>No watch-list repositories configured</p>
         </div>
         </div>
       </section>
@@ -1074,6 +1092,57 @@
         <thead><tr><th>Repository</th><th>Description</th><th>Language</th><th style="text-align:right;">Stars</th><th style="text-align:right;">Forks</th><th style="text-align:right;">Issues</th><th style="text-align:right;">PRs</th><th>Updated</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
+    }
+
+    /* ── Watch-list Rendering ── */
+
+    function getWatchListRepos() {
+      return allRepos.filter(repo => repo.isWatchList || repo.watchPurpose || repo.watchDateAdded);
+    }
+
+    function renderWatchListCard(repo) {
+      const purpose = repo.watchPurpose ? `<div class="card-description">${esc(truncate(repo.watchPurpose, 200))}</div>` : '';
+      const dateAdded = repo.watchDateAdded ? `<div class="stat">➕ Added <span class="value">${esc(repo.watchDateAdded)}</span></div>` : '';
+      const source = repo.isStub ? '<span class="card-version">Watch-list stub</span>' : '<span class="card-version">Watch-list</span>';
+      return `
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
+            </div>
+            ${source}
+          </div>
+          <div class="card-description">${esc(truncate(repo.description, 160))}</div>
+          ${purpose}
+          <div class="card-stats">
+            <div class="stat">⭐ <span class="value">${fmt(repo.stars)}</span></div>
+            <div class="stat">🍴 <span class="value">${fmt(repo.forks)}</span></div>
+            <div class="stat">📅 Updated <span class="value">${fmtDate(repo.lastPush)}</span></div>
+            ${dateAdded}
+          </div>
+        </div>`;
+    }
+
+    function renderWatchListSection() {
+      const watchListRepos = getWatchListRepos();
+      const grid = document.getElementById('watchlist-grid');
+      const empty = document.getElementById('watchlist-empty');
+      const countEl = document.getElementById('watchlist-count');
+
+      countEl.textContent = `Showing ${watchListRepos.length} watch-list repositories`;
+
+      if (watchListRepos.length === 0) {
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      empty.style.display = 'none';
+      grid.innerHTML = watchListRepos
+        .sort((a, b) => (b.stars || 0) - (a.stars || 0))
+        .map(renderWatchListCard)
+        .join('');
+      grid.style.display = '';
     }
 
     /* ── Issues Rendering ── */
@@ -1788,9 +1857,11 @@
         const totalDownloads = allPackages.reduce((s, p) => s + (p.totalDownloads || 0), 0);
         const totalIssues = allRepos.reduce((s, r) => s + (r.recentIssues || []).length, 0);
         const totalPrs = allRepos.reduce((s, r) => s + (r.recentPullRequests || []).length, 0);
+        const watchListCount = allRepos.filter(r => r.isWatchList || r.watchPurpose || r.watchDateAdded).length;
         document.getElementById('summary').innerHTML = `
           <div class="summary-card"><div class="number">${fmt(allPackages.length)}</div><div class="label">Packages</div></div>
           <div class="summary-card"><div class="number">${fmt(allRepos.length)}</div><div class="label">Repositories</div></div>
+          <div class="summary-card"><div class="number">${fmt(watchListCount)}</div><div class="label">Watch List</div></div>
           <div class="summary-card"><div class="number">${fmt(totalDownloads)}</div><div class="label">Total Downloads</div></div>
           <div class="summary-card"><div class="number">${fmt(totalIssues)}</div><div class="label">Open Issues</div></div>
           <div class="summary-card"><div class="number">${fmt(totalPrs)}</div><div class="label">Open PRs</div></div>
@@ -1808,6 +1879,7 @@
         renderTrendsSection();
         renderNugetSection();
         renderRepoSection();
+        renderWatchListSection();
         renderTopHighlights();
         renderIssuesSection();
         renderPrsSection();

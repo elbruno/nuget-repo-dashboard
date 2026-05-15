@@ -339,7 +339,10 @@ public class ModelTests
             HasPages = true,
             NetworkCount = 500,
             Visibility = "public",
-            HtmlUrl = "https://github.com/dotnet/runtime"
+            HtmlUrl = "https://github.com/dotnet/runtime",
+            IsWatchList = true,
+            WatchPurpose = "Reference architecture",
+            WatchDateAdded = "2025-04-02"
         };
 
         var json = JsonSerializer.Serialize(original, JsonOptions);
@@ -370,6 +373,9 @@ public class ModelTests
         deserialized.NetworkCount.Should().Be(original.NetworkCount);
         deserialized.Visibility.Should().Be(original.Visibility);
         deserialized.HtmlUrl.Should().Be(original.HtmlUrl);
+        deserialized.IsWatchList.Should().BeTrue();
+        deserialized.WatchPurpose.Should().Be("Reference architecture");
+        deserialized.WatchDateAdded.Should().Be("2025-04-02");
     }
 
     [Fact]
@@ -420,7 +426,10 @@ public class ModelTests
             DefaultBranch = "main",
             Homepage = "https://example.com",
             Visibility = "public",
-            HtmlUrl = "https://github.com/o/r"
+            HtmlUrl = "https://github.com/o/r",
+            IsWatchList = true,
+            WatchPurpose = "Purpose",
+            WatchDateAdded = "2025-04-02"
         };
         var json = JsonSerializer.Serialize(metrics);
 
@@ -444,6 +453,9 @@ public class ModelTests
         json.Should().Contain("\"networkCount\"");
         json.Should().Contain("\"visibility\"");
         json.Should().Contain("\"htmlUrl\"");
+        json.Should().Contain("\"isWatchList\"");
+        json.Should().Contain("\"watchPurpose\"");
+        json.Should().Contain("\"watchDateAdded\"");
     }
 
     [Fact]
@@ -475,6 +487,9 @@ public class ModelTests
         metrics.NetworkCount.Should().Be(0);
         metrics.Visibility.Should().BeNull();
         metrics.HtmlUrl.Should().BeNull();
+        metrics.IsWatchList.Should().BeFalse();
+        metrics.WatchPurpose.Should().BeNull();
+        metrics.WatchDateAdded.Should().BeNull();
     }
 
     [Fact]

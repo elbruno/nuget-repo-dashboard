@@ -608,4 +608,83 @@ public class GitHubCollectorTests
         results[0].RecentIssues.Should().ContainSingle();
         results[0].RecentIssues[0].CommentsCount.Should().Be(5);
     }
+
+    [Fact]
+    public async Task CollectWithStubsAsync_WatchListRepoFetched_MarksWatchListMetadata()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.OK, "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(description: null, htmlUrl: null));
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+        var watchList = new List<NuGetDashboard.Collector.Models.WatchListEntry>
+        {
+            new()
+            {
+                Owner = "owner",
+                Repo = "repo",
+                Url = "https://github.com/owner/repo",
+                Description = "Watch list description",
+                DateAdded = "2025-04-02",
+                Purpose = "Reference implementation"
+            }
+        };
+
+        var results = await collector.CollectWithStubsAsync(["owner/repo"], watchList);
+
+        results.Should().ContainSingle();
+        var repo = results[0];
+        repo.IsWatchList.Should().BeTrue();
+        repo.WatchPurpose.Should().Be("Reference implementation");
+        repo.WatchDateAdded.Should().Be("2025-04-02");
+        repo.Description.Should().Be("Watch list description");
+        repo.HtmlUrl.Should().Be("https://github.com/owner/repo");
+        repo.IsStub.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task CollectWithStubsAsync_WatchListRepoUnavailable_CreatesWatchListStub()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.NotFound);
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+        var watchList = new List<NuGetDashboard.Collector.Models.WatchListEntry>
+        {
+            new()
+            {
+                Owner = "owner",
+                Repo = "missing-repo",
+                Url = "https://github.com/owner/missing-repo",
+                Description = "Missing repo description",
+                DateAdded = "2025-04-03",
+                Purpose = "Pattern tracking"
+            }
+        };
+
+        var results = await collector.CollectWithStubsAsync([], watchList);
+
+        results.Should().ContainSingle();
+        var stub = results[0];
+        stub.FullName.Should().Be("owner/missing-repo");
+        stub.IsStub.Should().BeTrue();
+        stub.IsWatchList.Should().BeTrue();
+        stub.WatchPurpose.Should().Be("Pattern tracking");
+        stub.WatchDateAdded.Should().Be("2025-04-03");
+        stub.Description.Should().Be("Missing repo description");
+        stub.HtmlUrl.Should().Be("https://github.com/owner/missing-repo");
+    }
 }
