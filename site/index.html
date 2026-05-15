@@ -330,6 +330,96 @@
     .list-view .value { font-weight: 700; }
     .list-view .text-muted { color: var(--text-muted); font-size: 0.8rem; }
     .list-view .tags { margin-top: 0.15rem; }
+    .toolbar-hint {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .trend-window-toggle button {
+      font-size: 0.78rem;
+      min-width: 3rem;
+    }
+    .trend-chart-shell {
+      position: relative;
+      min-height: 170px;
+      margin-top: 0.35rem;
+      padding: 0.6rem 0.65rem 0.45rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, var(--toolbar-bg), transparent);
+    }
+    .trend-chart-shell.compact {
+      min-height: 68px;
+      min-width: 160px;
+      padding: 0.35rem 0.45rem 0.2rem;
+    }
+    .detail-chart {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .trend-insights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+    .trend-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.55rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--toolbar-bg);
+    }
+    .trend-metric .label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .trend-metric .value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .trend-metric .value.up { color: #1a7a1a; }
+    .trend-metric .value.down { color: #b91c1c; }
+    .trend-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding: 0.5rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: var(--toolbar-bg);
+      border: 1px dashed var(--border);
+    }
+    .trend-note.warning {
+      color: #b45309;
+      border-color: #fbbf24;
+      background: #fff7e6;
+    }
+    .table-trend-cell {
+      min-width: 190px;
+    }
+    .table-trend-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-top: 0.35rem;
+      font-size: 0.75rem;
+    }
+    .table-trend-meta .value {
+      font-size: 0.8rem;
+    }
+    .table-trend-meta .trend-badge {
+      font-size: 0.68rem;
+    }
+    .table-trend-note {
+      margin-top: 0.35rem;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
 
     /* Empty state */
     .empty-state {
@@ -443,6 +533,13 @@
     @media (prefers-color-scheme: dark) {
       .trend-badge.up { background: #0d3d0d; color: #6ee66e; }
       .trend-badge.down { background: #3d0d0d; color: #f87171; }
+      .trend-metric .value.up { color: #6ee66e; }
+      .trend-metric .value.down { color: #f87171; }
+      .trend-note.warning {
+        background: #3d2800;
+        color: #ffd18a;
+        border-color: #8a5a00;
+      }
     }
 
     /* Trends overview section */
@@ -616,12 +713,13 @@
        .filter-group, .filter-group.filter-grow { width: 100%; min-width: 0; }
        .filter-group label { font-size: 0.65rem; }
        .filter-toolbar input[type="text"] { padding: 0.4rem 0.5rem; font-size: 0.75rem; max-width: none; min-height: 30px; width: 100%; }
-       .filter-toolbar select { padding: 0.4rem 0.4rem; font-size: 0.75rem; min-height: 30px; width: 100%; }
-       .pill-group button { padding: 0.35rem 0.5rem; font-size: 0.65rem; min-height: 30px; }
-       .toggle-btn { padding: 0.35rem 0.5rem; font-size: 0.7rem; min-height: 30px; }
-      
-      .top-nav .container { gap: 0.2rem; padding: 0.4rem 0.5rem; }
-      .nav-link { padding: 0.3rem 0.5rem; font-size: 0.7rem; }
+        .filter-toolbar select { padding: 0.4rem 0.4rem; font-size: 0.75rem; min-height: 30px; width: 100%; }
+        .pill-group button { padding: 0.35rem 0.5rem; font-size: 0.65rem; min-height: 30px; }
+        .toggle-btn { padding: 0.35rem 0.5rem; font-size: 0.7rem; min-height: 30px; }
+        .toolbar-hint { margin-left: 0; width: 100%; }
+       
+       .top-nav .container { gap: 0.2rem; padding: 0.4rem 0.5rem; }
+       .nav-link { padding: 0.3rem 0.5rem; font-size: 0.7rem; }
       
       .list-view { overflow-x: auto; }
       .list-view th { font-size: 0.65rem; padding: 0.5rem; }
@@ -632,14 +730,17 @@
       .card-description { font-size: 0.75rem; }
       .stat { font-size: 0.7rem; }
       
-      .highlight-info .name { font-size: 0.8rem; }
-      .highlight-info .meta { font-size: 0.7rem; }
-      .highlight-rank { font-size: 1rem; }
-      .highlight-stat { font-size: 0.9rem; }
-      
-      .empty-state { padding: 2rem 0.75rem; }
-      .empty-state .icon { font-size: 1.5rem; }
-      .empty-state p { font-size: 0.85rem; }
+       .highlight-info .name { font-size: 0.8rem; }
+       .highlight-info .meta { font-size: 0.7rem; }
+       .highlight-rank { font-size: 1rem; }
+       .highlight-stat { font-size: 0.9rem; }
+       .trend-insights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+       .trend-chart-shell { min-height: 150px; }
+       .table-trend-cell { min-width: 160px; }
+       
+       .empty-state { padding: 2rem 0.75rem; }
+       .empty-state .icon { font-size: 1.5rem; }
+       .empty-state p { font-size: 0.85rem; }
       
       footer { padding: 1.5rem 0; font-size: 0.75rem; }
     }
@@ -858,6 +959,15 @@
               <option value="newest">Newest first</option>
             </select>
           </div>
+          <div class="filter-group">
+            <label>Trend window</label>
+            <div class="view-toggle trend-window-toggle" id="nuget-window-toggle">
+              <button type="button" data-days="14" title="Show last 14 days">14D</button>
+              <button type="button" data-days="30" title="Show last 30 days">30D</button>
+              <button type="button" data-days="90" title="Show last 90 days">90D</button>
+            </div>
+          </div>
+          <div class="toolbar-hint">Hover charts for totals and daily change.</div>
         </div>
         <div id="nuget-grid" class="card-grid"></div>
         <div id="nuget-list" class="list-view"></div>
@@ -893,6 +1003,15 @@
               <option value="updated">Last updated</option>
             </select>
           </div>
+          <div class="filter-group">
+            <label>Trend window</label>
+            <div class="view-toggle trend-window-toggle" id="repo-window-toggle">
+              <button type="button" data-days="14" title="Show last 14 days">14D</button>
+              <button type="button" data-days="30" title="Show last 30 days">30D</button>
+              <button type="button" data-days="90" title="Show last 90 days">90D</button>
+            </div>
+          </div>
+          <div class="toolbar-hint">Hover charts for totals and daily change.</div>
         </div>
         <div id="repo-grid" class="card-grid"></div>
         <div id="repo-list" class="list-view"></div>
@@ -1013,6 +1132,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
   <script>
     const NUGET_URL = 'data/data.nuget.json';
     const REPOS_URL = 'data/data.repositories.json';
@@ -1047,6 +1167,14 @@
     let repoViewMode = localStorage.getItem('repo-view') || 'cards';
     let issuesViewMode = localStorage.getItem('issues-view') || 'cards';
     let prsViewMode = localStorage.getItem('prs-view') || 'cards';
+    const CHART_WINDOW_STORAGE_KEY = 'dashboard-chart-windows-v1';
+    const defaultChartWindows = {
+      packages: 30,
+      repositories: 30,
+    };
+    let chartWindowDays = { ...defaultChartWindows };
+    let packageChartInstances = [];
+    let repoChartInstances = [];
 
     /* ── Helpers ── */
 
@@ -1129,6 +1257,76 @@
 
     function normalizeFilterValue(value) {
       return typeof value === 'string' ? value.trim() : '';
+    }
+
+    function sumValues(values) {
+      return values.reduce((sum, value) => sum + value, 0);
+    }
+
+    function fmtShortDate(iso) {
+      if (!iso) return '—';
+      const value = iso.length === 10 ? `${iso}T00:00:00` : iso;
+      return new Date(value).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    }
+
+    function fmtSignedCompact(value) {
+      if (value == null || Number.isNaN(value)) return '—';
+      const rounded = Math.round(value);
+      const sign = rounded > 0 ? '+' : rounded < 0 ? '-' : '';
+      return `${sign}${fmtCompact(Math.abs(rounded))}`;
+    }
+
+    function fmtSignedPercent(value) {
+      if (value == null || Number.isNaN(value)) return '—';
+      const sign = value > 0 ? '+' : value < 0 ? '-' : '';
+      return `${sign}${Math.abs(value).toFixed(1)}%`;
+    }
+
+    function trendToneClass(value, threshold = 0.5) {
+      if (value == null || Number.isNaN(value)) return 'flat';
+      if (value > threshold) return 'up';
+      if (value < -threshold) return 'down';
+      return 'flat';
+    }
+
+    function normalizeChartWindow(value) {
+      const parsed = Number(value);
+      return [14, 30, 90].includes(parsed) ? parsed : 30;
+    }
+
+    function readStoredChartWindows() {
+      const raw = localStorage.getItem(CHART_WINDOW_STORAGE_KEY);
+      if (!raw) return {};
+
+      try {
+        const parsed = JSON.parse(raw);
+        return typeof parsed === 'object' && parsed ? parsed : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function hydrateChartWindows() {
+      const stored = readStoredChartWindows();
+      chartWindowDays = {
+        packages: normalizeChartWindow(stored.packages),
+        repositories: normalizeChartWindow(stored.repositories),
+      };
+    }
+
+    function persistChartWindows() {
+      localStorage.setItem(CHART_WINDOW_STORAGE_KEY, JSON.stringify(chartWindowDays));
+    }
+
+    function setActiveChartWindowButton(toggleId, days) {
+      document.querySelectorAll(`#${toggleId} button`).forEach(btn => {
+        btn.classList.toggle('active', Number(btn.dataset.days) === days);
+      });
+    }
+
+    function syncChartWindowButtons() {
+      setActiveChartWindowButton('nuget-window-toggle', chartWindowDays.packages);
+      setActiveChartWindowButton('repo-window-toggle', chartWindowDays.repositories);
     }
 
     function readStoredDashboardFilters() {
@@ -1366,26 +1564,55 @@
       return `<svg class="sparkline" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><polygon class="area" points="${areaPoints}"/><polyline points="${linePoints}"/></svg>`;
     }
 
+    function sortTrendPoints(points) {
+      return [...(points || [])]
+        .filter(point => point && point.date && Number.isFinite(point.value))
+        .sort((a, b) => a.date.localeCompare(b.date));
+    }
+
+    function sliceTrendPoints(points, days) {
+      const sorted = sortTrendPoints(points);
+      return days > 0 ? sorted.slice(-days) : sorted;
+    }
+
+    function buildDailyChanges(points) {
+      const sorted = sortTrendPoints(points);
+      const changes = [];
+
+      for (let i = 1; i < sorted.length; i++) {
+        changes.push({
+          date: sorted[i].date,
+          value: sorted[i].value - sorted[i - 1].value,
+          total: sorted[i].value,
+        });
+      }
+
+      return changes;
+    }
+
     function calcTrendPct(points, days) {
-      if (!points || points.length < 2) return null;
-      const sorted = [...points].sort((a, b) => a.date.localeCompare(b.date));
-      const today = new Date();
-      const cutRecent = new Date(today); cutRecent.setDate(cutRecent.getDate() - days);
-      const cutPrev = new Date(today); cutPrev.setDate(cutPrev.getDate() - days * 2);
-      const recent = sorted.filter(p => new Date(p.date) >= cutRecent);
-      const prev = sorted.filter(p => { const d = new Date(p.date); return d >= cutPrev && d < cutRecent; });
-      if (!recent.length || !prev.length) return null;
-      const avgRecent = recent.reduce((s, p) => s + p.value, 0) / recent.length;
-      const avgPrev = prev.reduce((s, p) => s + p.value, 0) / prev.length;
-      if (avgPrev === 0) return avgRecent > 0 ? 100 : 0;
-      return ((avgRecent - avgPrev) / Math.abs(avgPrev)) * 100;
+      const deltas = buildDailyChanges(points);
+      if (deltas.length < days * 2) return null;
+
+      const recent = deltas.slice(-days);
+      const previous = deltas.slice(-days * 2, -days);
+      if (!recent.length || !previous.length) return null;
+
+      const recentGain = sumValues(recent.map(point => point.value));
+      const previousGain = sumValues(previous.map(point => point.value));
+      if (previousGain === 0) {
+        if (recentGain === 0) return 0;
+        return recentGain > 0 ? 100 : -100;
+      }
+
+      return ((recentGain - previousGain) / Math.abs(previousGain)) * 100;
     }
 
     function trendBadgeHtml(pct) {
       if (pct === null) return '';
-      const cls = pct > 0.5 ? 'up' : pct < -0.5 ? 'down' : 'flat';
-      const arrow = pct > 0.5 ? '↑' : pct < -0.5 ? '↓' : '→';
-      const label = Math.abs(pct).toFixed(1) + '%';
+      const cls = trendToneClass(pct, 1);
+      const arrow = cls === 'up' ? '↑' : cls === 'down' ? '↓' : '→';
+      const label = fmtSignedPercent(pct);
       return `<span class="trend-badge ${cls}">${arrow} ${label}</span>`;
     }
 
@@ -1399,14 +1626,252 @@
       return trendsData.repositories[fullName] || null;
     }
 
+    function detectAnomalies(points) {
+      const deltas = buildDailyChanges(points);
+      if (deltas.length < 7) return [];
+
+      const values = deltas.map(point => point.value);
+      const mean = sumValues(values) / values.length;
+      const variance = values.reduce((sum, value) => sum + ((value - mean) ** 2), 0) / values.length;
+      const stdDev = Math.sqrt(variance);
+      if (!Number.isFinite(stdDev) || stdDev < 0.5) return [];
+
+      return deltas
+        .map(point => ({
+          ...point,
+          deviation: point.value - mean,
+        }))
+        .filter(point =>
+          Math.abs(point.deviation) >= stdDev * 2 &&
+          Math.abs(point.value) >= Math.max(1, Math.abs(mean) * 1.5)
+        )
+        .slice(-3)
+        .map(point => ({
+          date: point.date,
+          total: point.total,
+          delta: point.value,
+          type: point.deviation > 0 ? 'spike' : 'drop',
+        }));
+    }
+
+    function buildTrendSnapshot(points, chartDays) {
+      const chartPoints = sliceTrendPoints(points, chartDays);
+      const recentDeltas = buildDailyChanges(points).slice(-7);
+      const recentGain = recentDeltas.length ? sumValues(recentDeltas.map(point => point.value)) : null;
+      const avgDaily = recentDeltas.length ? sumValues(recentDeltas.map(point => point.value)) / recentDeltas.length : null;
+      const latestDelta = recentDeltas.length ? recentDeltas[recentDeltas.length - 1].value : null;
+      const totalGain = chartPoints.length > 1
+        ? chartPoints[chartPoints.length - 1].value - chartPoints[0].value
+        : null;
+
+      return {
+        chartPoints,
+        growthPct: calcTrendPct(points, 7),
+        recentGain,
+        avgDaily,
+        latestDelta,
+        totalGain,
+        latestValue: chartPoints.length ? chartPoints[chartPoints.length - 1].value : null,
+        anomalies: detectAnomalies(chartPoints),
+      };
+    }
+
+    function buildTrendChartMarkup(entityType, entityKey, variant = 'full') {
+      const encodedKey = encodeURIComponent(entityKey);
+      const compactClass = variant === 'compact' ? ' compact' : '';
+      return `<div class="trend-chart-shell${compactClass}"><canvas class="detail-chart" data-trend-chart="${entityType}" data-entity-key="${encodedKey}" data-chart-variant="${variant}"></canvas></div>`;
+    }
+
+    function buildTrendInsightsHtml(snapshot, chartDays) {
+      const gainClass = trendToneClass(snapshot.recentGain, 0.1);
+      const growthClass = trendToneClass(snapshot.growthPct, 1);
+      const latestClass = trendToneClass(snapshot.latestDelta, 0.1);
+
+      return `
+        <div class="trend-insights">
+          <div class="trend-metric">
+            <span class="label">7d gain</span>
+            <span class="value ${gainClass}">${fmtSignedCompact(snapshot.recentGain)}</span>
+          </div>
+          <div class="trend-metric">
+            <span class="label">WoW growth</span>
+            <span class="value ${growthClass}">${fmtSignedPercent(snapshot.growthPct)}</span>
+          </div>
+          <div class="trend-metric">
+            <span class="label">Latest day</span>
+            <span class="value ${latestClass}">${fmtSignedCompact(snapshot.latestDelta)}</span>
+          </div>
+        </div>
+        <div class="trend-note${snapshot.anomalies.some(point => point.type === 'drop') ? ' warning' : ''}">
+          ${snapshot.anomalies.length
+            ? `Anomalies in ${chartDays}d window: ${snapshot.anomalies.map(point => `${point.type === 'spike' ? 'spike' : 'drop'} ${fmtShortDate(point.date)} (${fmtSignedCompact(point.delta)})`).join(' · ')}`
+            : `${chartDays}d gain: ${fmtSignedCompact(snapshot.totalGain)} · Avg/day: ${fmtSignedCompact(snapshot.avgDaily)}` }
+        </div>
+      `;
+    }
+
+    function buildTrendSummaryMeta(snapshot) {
+      return `
+        <div class="table-trend-meta">
+          ${trendBadgeHtml(snapshot.growthPct)}
+          <span class="value ${trendToneClass(snapshot.recentGain, 0.1)}">${fmtSignedCompact(snapshot.recentGain)} 7d</span>
+        </div>
+        ${snapshot.anomalies.length ? `<div class="table-trend-note">Latest ${snapshot.anomalies[snapshot.anomalies.length - 1].type}: ${fmtShortDate(snapshot.anomalies[snapshot.anomalies.length - 1].date)} (${fmtSignedCompact(snapshot.anomalies[snapshot.anomalies.length - 1].delta)})</div>` : ''}
+      `;
+    }
+
+    function destroyChartGroup(group) {
+      group.forEach(chart => chart.destroy());
+      group.length = 0;
+    }
+
+    function createTrendChart(canvas, snapshot, metricLabel, color) {
+      if (typeof Chart === 'undefined' || !snapshot || snapshot.chartPoints.length < 2) return null;
+
+      const variant = canvas.dataset.chartVariant || 'full';
+      const compact = variant === 'compact';
+      const rootStyles = getComputedStyle(document.documentElement);
+      const gridColor = rootStyles.getPropertyValue('--border').trim() || '#e5e7eb';
+      const mutedColor = rootStyles.getPropertyValue('--text-muted').trim() || '#666';
+
+      const points = snapshot.chartPoints.map((point, index) => ({
+        x: fmtShortDate(point.date),
+        y: point.value,
+        date: point.date,
+        delta: index === 0 ? null : point.value - snapshot.chartPoints[index - 1].value,
+      }));
+
+      const anomalyMap = new Map(snapshot.anomalies.map(point => [point.date, point]));
+      const anomalyPoints = points
+        .filter(point => anomalyMap.has(point.date))
+        .map(point => ({
+          ...point,
+          anomalyType: anomalyMap.get(point.date).type,
+        }));
+
+      return new Chart(canvas.getContext('2d'), {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: metricLabel,
+              data: points,
+              parsing: false,
+              borderColor: color,
+              backgroundColor: color,
+              borderWidth: compact ? 1.75 : 2.25,
+              pointRadius: compact ? 0 : 2,
+              pointHoverRadius: compact ? 2 : 4,
+              pointHitRadius: 16,
+              tension: 0.28,
+              fill: false,
+            },
+            {
+              label: 'Anomaly',
+              data: anomalyPoints,
+              parsing: false,
+              showLine: false,
+              pointRadius: compact ? 0 : 4,
+              pointHoverRadius: compact ? 2 : 5,
+              pointBackgroundColor: anomalyPoints.map(point => point.anomalyType === 'spike' ? '#f59e0b' : '#ef4444'),
+              pointBorderColor: '#ffffff',
+              pointBorderWidth: 1.5,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: false,
+          normalized: true,
+          interaction: {
+            mode: 'nearest',
+            intersect: false,
+          },
+          elements: {
+            line: {
+              capBezierPoints: true,
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              callbacks: {
+                title(items) {
+                  return items[0]?.raw?.date || '';
+                },
+                label(context) {
+                  const lines = [];
+                  if (context.dataset.label === 'Anomaly') {
+                    const typeLabel = context.raw.anomalyType === 'spike' ? 'Spike' : 'Drop';
+                    lines.push(`${typeLabel}: ${fmtSignedCompact(context.raw.delta)}`);
+                    return lines;
+                  }
+
+                  lines.push(`${metricLabel}: ${fmt(context.raw.y)}`);
+                  if (context.raw.delta != null) lines.push(`Day change: ${fmtSignedCompact(context.raw.delta)}`);
+                  if (snapshot.recentGain != null) lines.push(`7d gain: ${fmtSignedCompact(snapshot.recentGain)}`);
+                  return lines;
+                },
+              },
+            },
+          },
+          scales: {
+            x: {
+              type: 'category',
+              display: !compact,
+              grid: {
+                display: false,
+              },
+              ticks: {
+                color: mutedColor,
+                maxTicksLimit: 6,
+              },
+            },
+            y: {
+              display: !compact,
+              grid: {
+                color: gridColor,
+              },
+              ticks: {
+                color: mutedColor,
+                callback: (value) => fmtCompact(Number(value)),
+              },
+            },
+          },
+        },
+      });
+    }
+
+    function renderPackageCharts() {
+      destroyChartGroup(packageChartInstances);
+      document.querySelectorAll('[data-trend-chart="package"]').forEach(canvas => {
+        const trend = getPackageTrend(decodeURIComponent(canvas.dataset.entityKey || ''));
+        if (!trend || !trend.downloads) return;
+        const chart = createTrendChart(canvas, buildTrendSnapshot(trend.downloads, chartWindowDays.packages), 'Downloads', '#6c47ff');
+        if (chart) packageChartInstances.push(chart);
+      });
+    }
+
+    function renderRepoCharts() {
+      destroyChartGroup(repoChartInstances);
+      document.querySelectorAll('[data-trend-chart="repository"]').forEach(canvas => {
+        const trend = getRepoTrend(decodeURIComponent(canvas.dataset.entityKey || ''));
+        if (!trend || !trend.stars) return;
+        const chart = createTrendChart(canvas, buildTrendSnapshot(trend.stars, chartWindowDays.repositories), 'Stars', '#0ea5e9');
+        if (chart) repoChartInstances.push(chart);
+      });
+    }
+
     /* ── NuGet Rendering ── */
 
     function renderNugetCard(pkg) {
       const tags = (pkg.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
       const trend = getPackageTrend(pkg.packageId);
-      const sparkline = trend ? buildSparklineSvg(trend.downloads, 100, 30) : '';
-      const pct = trend ? calcTrendPct(trend.downloads, 7) : null;
-      const badge = trendBadgeHtml(pct);
+      const snapshot = trend ? buildTrendSnapshot(trend.downloads, chartWindowDays.packages) : null;
+      const badge = snapshot ? trendBadgeHtml(snapshot.growthPct) : '';
       return `
         <div class="card">
           <div class="card-header">
@@ -1420,7 +1885,8 @@
             <div class="stat">⬇️ <span class="value">${fmt(pkg.totalDownloads)}</span> ${badge}</div>
             <div class="stat">📅 ${fmtDate(pkg.publishedDate)}</div>
           </div>
-          ${sparkline ? `<div class="sparkline-wrap">${sparkline}</div>` : ''}
+          ${snapshot ? buildTrendChartMarkup('package', pkg.packageId) : ''}
+          ${snapshot ? buildTrendInsightsHtml(snapshot, chartWindowDays.packages) : ''}
           ${tags ? `<div class="tags">${tags}</div>` : ''}
         </div>`;
     }
@@ -1429,6 +1895,8 @@
       if (!packages.length) return '';
       const rows = packages.map(pkg => {
         const tags = (pkg.tags || []).slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+        const trend = getPackageTrend(pkg.packageId);
+        const snapshot = trend ? buildTrendSnapshot(trend.downloads, chartWindowDays.packages) : null;
         return `<tr>
           <td><a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a>
             <span class="card-version" style="margin-left:0.4rem;">v${esc(pkg.latestVersion || '')}</span>
@@ -1436,11 +1904,13 @@
           </td>
           <td class="text-muted">${esc(truncate(pkg.description, 80))}</td>
           <td class="value" style="text-align:right;">${fmt(pkg.totalDownloads)}</td>
+          <td class="table-trend-cell">${snapshot ? `${buildTrendChartMarkup('package', pkg.packageId, 'compact')}${buildTrendSummaryMeta(snapshot)}` : '<span class="text-muted">—</span>'}</td>
+          <td style="white-space:nowrap;">${snapshot ? trendBadgeHtml(snapshot.growthPct) : '—'}</td>
           <td class="text-muted" style="white-space:nowrap;">${fmtDate(pkg.publishedDate)}</td>
         </tr>`;
       }).join('');
       return `<table>
-        <thead><tr><th>Package</th><th>Description</th><th style="text-align:right;">Downloads</th><th>Published</th></tr></thead>
+        <thead><tr><th>Package</th><th>Description</th><th style="text-align:right;">Downloads</th><th>Trend</th><th>WoW</th><th>Published</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
     }
@@ -1451,9 +1921,8 @@
       const color = LANG_COLORS[repo.language] || '#888';
       const topics = (repo.topics || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
       const trend = getRepoTrend(repo.fullName || repo.name);
-      const sparkline = trend ? buildSparklineSvg(trend.stars, 100, 30) : '';
-      const pct = trend ? calcTrendPct(trend.stars, 7) : null;
-      const badge = trendBadgeHtml(pct);
+      const snapshot = trend ? buildTrendSnapshot(trend.stars, chartWindowDays.repositories) : null;
+      const badge = snapshot ? trendBadgeHtml(snapshot.growthPct) : '';
       return `
         <div class="card">
           <div class="card-header">
@@ -1471,7 +1940,8 @@
             ${repo.language ? `<div class="stat"><span class="language-dot" style="background:${color}"></span>${esc(repo.language)}</div>` : ''}
             <div class="stat">📅 ${fmtDate(repo.lastPush)}</div>
           </div>
-          ${sparkline ? `<div class="sparkline-wrap">${sparkline}</div>` : ''}
+          ${snapshot ? buildTrendChartMarkup('repository', repo.fullName || repo.name) : ''}
+          ${snapshot ? buildTrendInsightsHtml(snapshot, chartWindowDays.repositories) : ''}
           ${topics ? `<div class="tags">${topics}</div>` : ''}
         </div>`;
     }
@@ -1481,6 +1951,8 @@
       const rows = repos.map(repo => {
         const color = LANG_COLORS[repo.language] || '#888';
         const topics = (repo.topics || []).slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+        const trend = getRepoTrend(repo.fullName || repo.name);
+        const snapshot = trend ? buildTrendSnapshot(trend.stars, chartWindowDays.repositories) : null;
         return `<tr>
           <td>
             <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
@@ -1493,11 +1965,13 @@
           <td class="value" style="text-align:right;">🍴 ${fmt(repo.forks)}</td>
           <td class="value" style="text-align:right;">🐛 ${fmt(repo.openIssues)}</td>
           <td class="value" style="text-align:right;">🔀 ${fmt(repo.openPullRequests)}</td>
+          <td class="table-trend-cell">${snapshot ? `${buildTrendChartMarkup('repository', repo.fullName || repo.name, 'compact')}${buildTrendSummaryMeta(snapshot)}` : '<span class="text-muted">—</span>'}</td>
+          <td style="white-space:nowrap;">${snapshot ? trendBadgeHtml(snapshot.growthPct) : '—'}</td>
           <td class="text-muted" style="white-space:nowrap;">${fmtDate(repo.lastPush)}</td>
         </tr>`;
       }).join('');
       return `<table>
-        <thead><tr><th>Repository</th><th>Description</th><th>Language</th><th style="text-align:right;">Stars</th><th style="text-align:right;">Forks</th><th style="text-align:right;">Issues</th><th style="text-align:right;">PRs</th><th>Updated</th></tr></thead>
+        <thead><tr><th>Repository</th><th>Description</th><th>Language</th><th style="text-align:right;">Stars</th><th style="text-align:right;">Forks</th><th style="text-align:right;">Issues</th><th style="text-align:right;">PRs</th><th>Trend</th><th>WoW</th><th>Updated</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
     }
@@ -1850,6 +2324,9 @@
       countEl.textContent = `Showing ${pkgs.length} of ${allPackages.length} packages`;
 
       if (pkgs.length === 0) {
+        destroyChartGroup(packageChartInstances);
+        grid.innerHTML = '';
+        list.innerHTML = '';
         grid.style.display = 'none';
         list.style.display = 'none';
         empty.style.display = 'block';
@@ -1859,13 +2336,17 @@
       empty.style.display = 'none';
       if (nugetViewMode === 'cards') {
         grid.innerHTML = pkgs.map(renderNugetCard).join('');
+        list.innerHTML = '';
         grid.style.display = '';
         list.style.display = 'none';
       } else {
         list.innerHTML = renderNugetListTable(pkgs);
+        grid.innerHTML = '';
         list.style.display = 'block';
         grid.style.display = 'none';
       }
+
+      renderPackageCharts();
     }
 
     function renderRepoSection() {
@@ -1878,6 +2359,9 @@
       countEl.textContent = `Showing ${repos.length} of ${allRepos.length} repositories`;
 
       if (repos.length === 0) {
+        destroyChartGroup(repoChartInstances);
+        grid.innerHTML = '';
+        list.innerHTML = '';
         grid.style.display = 'none';
         list.style.display = 'none';
         empty.style.display = 'block';
@@ -1887,13 +2371,17 @@
       empty.style.display = 'none';
       if (repoViewMode === 'cards') {
         grid.innerHTML = repos.map(renderRepoCard).join('');
+        list.innerHTML = '';
         grid.style.display = '';
         list.style.display = 'none';
       } else {
         list.innerHTML = renderRepoListTable(repos);
+        grid.innerHTML = '';
         list.style.display = 'block';
         grid.style.display = 'none';
       }
+
+      renderRepoCharts();
     }
 
     /* ── Event Wiring ── */
@@ -1944,16 +2432,30 @@
         });
       }
 
+      function wireChartWindowToggle(toggleId, key, renderFn) {
+        document.querySelectorAll(`#${toggleId} button`).forEach(btn => {
+          btn.addEventListener('click', () => {
+            chartWindowDays[key] = normalizeChartWindow(btn.dataset.days);
+            persistChartWindows();
+            syncChartWindowButtons();
+            renderFn();
+          });
+        });
+      }
+
       wireViewToggle('nuget-view-toggle', () => nugetViewMode, (m) => { nugetViewMode = m; localStorage.setItem('nuget-view', m); }, renderNugetSection);
       wireViewToggle('repo-view-toggle', () => repoViewMode, (m) => { repoViewMode = m; localStorage.setItem('repo-view', m); }, renderRepoSection);
       wireViewToggle('issues-view-toggle', () => issuesViewMode, (m) => { issuesViewMode = m; localStorage.setItem('issues-view', m); }, renderIssuesSection);
       wireViewToggle('prs-view-toggle', () => prsViewMode, (m) => { prsViewMode = m; localStorage.setItem('prs-view', m); }, renderPrsSection);
+      wireChartWindowToggle('nuget-window-toggle', 'packages', renderNugetSection);
+      wireChartWindowToggle('repo-window-toggle', 'repositories', renderRepoSection);
 
       // Restore saved view modes
       setActiveViewButton('nuget-view-toggle', nugetViewMode);
       setActiveViewButton('repo-view-toggle', repoViewMode);
       setActiveViewButton('issues-view-toggle', issuesViewMode);
       setActiveViewButton('prs-view-toggle', prsViewMode);
+      syncChartWindowButtons();
     }
 
     function setActiveViewButton(toggleId, mode) {
@@ -2295,8 +2797,10 @@
 
         // Populate dynamic filter options
         hydrateDashboardFilters();
+        hydrateChartWindows();
         populateTagDropdown();
         persistDashboardFilters();
+        persistChartWindows();
         syncDashboardFiltersToUrl();
         populateIssuesRepoDropdown();
         populatePrsRepoDropdown();
