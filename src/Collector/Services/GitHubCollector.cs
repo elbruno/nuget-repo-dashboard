@@ -516,6 +516,16 @@ public sealed class GitHubCollector : IGitHubCollector
         // First, collect what we can from the API
         var results = await CollectAsync(repoFullNames);
         var collectedFullNames = new HashSet<string>(results.Select(r => r.FullName), StringComparer.OrdinalIgnoreCase);
+        var watchLookup = watchList.ToDictionary(w => $"{w.Owner}/{w.Repo}", StringComparer.OrdinalIgnoreCase);
+
+        // Mark successfully collected repos that are in watch-list
+        foreach (var repo in results)
+        {
+            if (watchLookup.TryGetValue(repo.FullName, out var watchEntry))
+            {
+                ApplyWatchListMetadata(repo, watchEntry);
+            }
+        }
 
         // For each watch-list entry, if it wasn't collected, create a stub
         foreach (var watchEntry in watchList)
@@ -533,6 +543,7 @@ public sealed class GitHubCollector : IGitHubCollector
                     IsStub = true,
                     StubReason = "Failed to fetch live data from GitHub API (rate limited or unavailable)"
                 };
+                ApplyWatchListMetadata(stub, watchEntry);
 
                 results.Add(stub);
                 Console.WriteLine($"[GitHub] Created stub entry for watch-list repo: {fullName}");
@@ -540,5 +551,22 @@ public sealed class GitHubCollector : IGitHubCollector
         }
 
         return results;
+    }
+
+    private static void ApplyWatchListMetadata(GitHubRepoMetrics repo, WatchListEntry watchEntry)
+    {
+        repo.IsWatchList = true;
+        repo.WatchPurpose = watchEntry.Purpose;
+        repo.WatchDateAdded = watchEntry.DateAdded;
+
+        if (string.IsNullOrWhiteSpace(repo.Description))
+        {
+            repo.Description = watchEntry.Description;
+        }
+
+        if (string.IsNullOrWhiteSpace(repo.HtmlUrl))
+        {
+            repo.HtmlUrl = watchEntry.Url;
+        }
     }
 }
