@@ -151,9 +151,46 @@
       display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
       margin-bottom: 1rem;
     }
+    .dashboard-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .dashboard-toolbar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .dashboard-toolbar-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .active-filters-summary {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .dashboard-toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: end;
+    }
     .filter-group {
       display: flex; align-items: center; gap: 0.25rem;
       flex-shrink: 0;
+    }
+    .filter-group.filter-grow {
+      flex: 1 1 20rem;
+      min-width: min(20rem, 100%);
     }
     .filter-group label {
       font-size: 0.7rem; font-weight: 600; color: var(--text-muted);
@@ -165,6 +202,10 @@
       color: var(--text); font-family: var(--font);
       outline: none; transition: border-color 0.15s;
       min-height: 32px; max-width: 150px;
+    }
+    .filter-group.filter-grow input[type="text"] {
+      max-width: none;
+      width: 100%;
     }
     .filter-toolbar input[type="text"]:focus { border-color: var(--accent); }
     .filter-toolbar input[type="text"]::placeholder { color: var(--text-muted); opacity: 0.7; }
@@ -198,6 +239,11 @@
     }
     .toggle-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
     .toggle-btn:hover:not(.active) { border-color: var(--accent-light); color: var(--accent); }
+    .toggle-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+    .filter-toggle { display: none; }
 
     /* Cards grid */
     .card-grid {
@@ -561,13 +607,18 @@
       .section-header h2 { font-size: 1.1rem; }
       .section-meta { width: 100%; justify-content: space-between; }
       
-      .filter-toolbar { padding: 0.4rem 0.5rem; gap: 0.4rem; }
-      .filter-group { gap: 0.2rem; }
-      .filter-group label { font-size: 0.65rem; }
-      .filter-toolbar input[type="text"] { padding: 0.4rem 0.5rem; font-size: 0.75rem; max-width: 120px; min-height: 30px; }
-      .filter-toolbar select { padding: 0.4rem 0.4rem; font-size: 0.75rem; min-height: 30px; }
-      .pill-group button { padding: 0.35rem 0.5rem; font-size: 0.65rem; min-height: 30px; }
-      .toggle-btn { padding: 0.35rem 0.5rem; font-size: 0.7rem; min-height: 30px; }
+       .filter-toolbar { padding: 0.4rem 0.5rem; gap: 0.4rem; }
+       .dashboard-toolbar { gap: 0.6rem; }
+       .dashboard-toolbar-header { align-items: flex-start; }
+       .dashboard-toolbar-actions { width: 100%; justify-content: space-between; }
+       .filter-controls { flex-direction: column; align-items: stretch; }
+       .filter-group { gap: 0.2rem; }
+       .filter-group, .filter-group.filter-grow { width: 100%; min-width: 0; }
+       .filter-group label { font-size: 0.65rem; }
+       .filter-toolbar input[type="text"] { padding: 0.4rem 0.5rem; font-size: 0.75rem; max-width: none; min-height: 30px; width: 100%; }
+       .filter-toolbar select { padding: 0.4rem 0.4rem; font-size: 0.75rem; min-height: 30px; width: 100%; }
+       .pill-group button { padding: 0.35rem 0.5rem; font-size: 0.65rem; min-height: 30px; }
+       .toggle-btn { padding: 0.35rem 0.5rem; font-size: 0.7rem; min-height: 30px; }
       
       .top-nav .container { gap: 0.2rem; padding: 0.4rem 0.5rem; }
       .nav-link { padding: 0.3rem 0.5rem; font-size: 0.7rem; }
@@ -642,10 +693,28 @@
       .highlight-rank { font-size: 1.5rem; }
       .highlight-stat { font-size: 1.1rem; }
       
-      .card-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-      .trends-overview { grid-template-columns: repeat(2, 1fr); }
-      .highlights-area { grid-template-columns: repeat(2, 1fr); }
-    }
+       .card-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+       .trends-overview { grid-template-columns: repeat(2, 1fr); }
+       .highlights-area { grid-template-columns: repeat(2, 1fr); }
+     }
+     
+     @media (max-width: 767px) {
+       .filter-toggle { display: inline-flex; }
+       .dashboard-toolbar-header { align-items: flex-start; }
+       .dashboard-toolbar-actions { width: 100%; justify-content: space-between; }
+       .filter-controls { flex-direction: column; align-items: stretch; }
+       .filter-controls[hidden] { display: none; }
+       .filter-group,
+       .filter-group.filter-grow {
+         width: 100%;
+         min-width: 0;
+       }
+       .filter-toolbar select,
+       .filter-toolbar input[type="text"] {
+         width: 100%;
+         max-width: none;
+       }
+     }
   </style>
 </head>
 <body>
@@ -683,6 +752,58 @@
         ⚠️ <span id="staleness-message"></span>
       </div>
 
+      <div class="filter-toolbar dashboard-toolbar" id="dashboard-filters">
+        <div class="dashboard-toolbar-header">
+          <div>
+            <div class="dashboard-toolbar-title">Search and filter</div>
+            <div class="active-filters-summary" id="dashboard-filters-summary">All packages and repositories are visible.</div>
+          </div>
+          <div class="dashboard-toolbar-actions">
+            <button type="button" class="toggle-btn filter-toggle" id="filters-toggle" aria-expanded="false" aria-controls="dashboard-filter-controls">Filters</button>
+            <button type="button" class="toggle-btn" id="clear-filters">Clear filters</button>
+          </div>
+        </div>
+        <div class="filter-controls" id="dashboard-filter-controls">
+          <div class="filter-group filter-grow">
+            <label for="dashboard-search">Search</label>
+            <input type="text" id="dashboard-search" placeholder="Name, description, tag, or topic">
+          </div>
+          <div class="filter-group">
+            <label for="dashboard-tag">Tag</label>
+            <select id="dashboard-tag">
+              <option value="">All tags</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="dashboard-downloads">Downloads</label>
+            <select id="dashboard-downloads">
+              <option value="">Any volume</option>
+              <option value="100">100+</option>
+              <option value="1000">1K+</option>
+              <option value="10000">10K+</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="dashboard-stars">Stars</label>
+            <select id="dashboard-stars">
+              <option value="">Any popularity</option>
+              <option value="10">10+</option>
+              <option value="25">25+</option>
+              <option value="100">100+</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="dashboard-freshness">Updated</label>
+            <select id="dashboard-freshness">
+              <option value="">Any time</option>
+              <option value="7">Last 7 days</option>
+              <option value="30">Last 30 days</option>
+              <option value="90">Last 90 days</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <!-- Trends Section -->
       <section id="trends-section" style="display:none;">
         <div class="section-header collapsible-header" data-section="trends-section">
@@ -718,10 +839,6 @@
         <div class="section-content" id="nuget-packages-content">
         <div class="filter-toolbar" id="nuget-filters">
           <div class="filter-group">
-            <label for="nuget-search">Search</label>
-            <input type="text" id="nuget-search" placeholder="Filter by name…">
-          </div>
-          <div class="filter-group">
             <label for="nuget-sort">Sort</label>
             <select id="nuget-sort">
               <option value="downloads">Downloads</option>
@@ -729,15 +846,6 @@
               <option value="name-desc">Name Z–A</option>
               <option value="newest">Newest first</option>
             </select>
-          </div>
-          <div class="filter-group">
-            <label>Min downloads</label>
-            <div class="pill-group" id="nuget-min-dl">
-              <button data-min="0" class="active">All</button>
-              <button data-min="1000">1K+</button>
-              <button data-min="10000">10K+</button>
-              <button data-min="100000">100K+</button>
-            </div>
           </div>
         </div>
         <div id="nuget-grid" class="card-grid"></div>
@@ -764,10 +872,6 @@
         <div class="section-content" id="github-repos-content">
         <div class="filter-toolbar" id="repo-filters">
           <div class="filter-group">
-            <label for="repo-search">Search</label>
-            <input type="text" id="repo-search" placeholder="Filter by name…">
-          </div>
-          <div class="filter-group">
             <label for="repo-sort">Sort</label>
             <select id="repo-sort">
               <option value="stars">Stars</option>
@@ -777,18 +881,6 @@
               <option value="name-asc">Name A–Z</option>
               <option value="updated">Last updated</option>
             </select>
-          </div>
-          <div class="filter-group">
-            <label for="repo-language">Language</label>
-            <select id="repo-language">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <button class="toggle-btn" id="repo-has-issues" title="Show only repos with open issues">🐛 Has issues</button>
-          </div>
-          <div class="filter-group">
-            <button class="toggle-btn" id="repo-has-prs" title="Show only repos with open PRs">🔀 Has PRs</button>
           </div>
         </div>
         <div id="repo-grid" class="card-grid"></div>
@@ -928,6 +1020,16 @@
     let allRepos = [];
     let watchListRepos = [];
     let trendsData = null;
+    const DASHBOARD_FILTER_STORAGE_KEY = 'dashboard-filters-v1';
+    const defaultDashboardFilters = {
+      search: '',
+      tag: '',
+      downloads: '',
+      stars: '',
+      freshness: '',
+      filtersOpen: false,
+    };
+    let dashboardFilters = { ...defaultDashboardFilters };
 
     // View mode state
     let nugetViewMode = localStorage.getItem('nuget-view') || 'cards';
@@ -1012,6 +1114,206 @@
       if (status === 'fresh') return 'Fresh';
       if (status === 'stale') return 'Slightly stale';
       return 'Very stale';
+    }
+
+    function normalizeFilterValue(value) {
+      return typeof value === 'string' ? value.trim() : '';
+    }
+
+    function readStoredDashboardFilters() {
+      const raw = localStorage.getItem(DASHBOARD_FILTER_STORAGE_KEY);
+      if (!raw) return {};
+
+      try {
+        const parsed = JSON.parse(raw);
+        return typeof parsed === 'object' && parsed ? parsed : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function readDashboardFiltersFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        search: normalizeFilterValue(params.get('q')),
+        tag: normalizeFilterValue(params.get('tag')),
+        downloads: normalizeFilterValue(params.get('downloads')),
+        stars: normalizeFilterValue(params.get('stars')),
+        freshness: normalizeFilterValue(params.get('updated')),
+      };
+    }
+
+    function normalizeDashboardFilters(filters) {
+      const downloads = normalizeFilterValue(filters.downloads);
+      const stars = normalizeFilterValue(filters.stars);
+      const freshness = normalizeFilterValue(filters.freshness);
+
+      return {
+        search: normalizeFilterValue(filters.search),
+        tag: normalizeFilterValue(filters.tag),
+        downloads: ['100', '1000', '10000'].includes(downloads) ? downloads : '',
+        stars: ['10', '25', '100'].includes(stars) ? stars : '',
+        freshness: ['7', '30', '90'].includes(freshness) ? freshness : '',
+        filtersOpen: Boolean(filters.filtersOpen),
+      };
+    }
+
+    function hydrateDashboardFilters() {
+      dashboardFilters = normalizeDashboardFilters({
+        ...defaultDashboardFilters,
+        ...readStoredDashboardFilters(),
+        ...readDashboardFiltersFromUrl(),
+      });
+    }
+
+    function persistDashboardFilters() {
+      localStorage.setItem(DASHBOARD_FILTER_STORAGE_KEY, JSON.stringify(dashboardFilters));
+    }
+
+    function syncDashboardFiltersToUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const mappings = [
+        ['q', dashboardFilters.search],
+        ['tag', dashboardFilters.tag],
+        ['downloads', dashboardFilters.downloads],
+        ['stars', dashboardFilters.stars],
+        ['updated', dashboardFilters.freshness],
+      ];
+
+      mappings.forEach(([key, value]) => {
+        if (value) {
+          params.set(key, value);
+        } else {
+          params.delete(key);
+        }
+      });
+
+      const query = params.toString();
+      const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
+      window.history.replaceState({}, '', nextUrl);
+    }
+
+    function getActiveDashboardFilterLabels() {
+      const labels = [];
+      if (dashboardFilters.search) labels.push(`search "${dashboardFilters.search}"`);
+      if (dashboardFilters.tag) labels.push(`tag ${dashboardFilters.tag}`);
+      if (dashboardFilters.downloads) labels.push(`${fmtCompact(Number(dashboardFilters.downloads))}+ downloads`);
+      if (dashboardFilters.stars) labels.push(`${fmtCompact(Number(dashboardFilters.stars))}+ stars`);
+      if (dashboardFilters.freshness) labels.push(`updated in ${dashboardFilters.freshness} days`);
+      return labels;
+    }
+
+    function updateDashboardFilterSummary() {
+      const summaryEl = document.getElementById('dashboard-filters-summary');
+      const clearBtn = document.getElementById('clear-filters');
+      const toggleBtn = document.getElementById('filters-toggle');
+      const labels = getActiveDashboardFilterLabels();
+
+      summaryEl.textContent = labels.length
+        ? `${labels.length} active filter${labels.length === 1 ? '' : 's'}: ${labels.join(' · ')}`
+        : 'All packages and repositories are visible.';
+
+      clearBtn.disabled = labels.length === 0;
+      toggleBtn.textContent = labels.length ? `Filters (${labels.length})` : 'Filters';
+    }
+
+    function updateDashboardFilterPanelVisibility() {
+      const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      const panel = document.getElementById('dashboard-filter-controls');
+      const toggleBtn = document.getElementById('filters-toggle');
+      const isOpen = !isMobile || dashboardFilters.filtersOpen;
+
+      panel.hidden = !isOpen;
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    function syncDashboardFilterControls() {
+      document.getElementById('dashboard-search').value = dashboardFilters.search;
+      document.getElementById('dashboard-tag').value = dashboardFilters.tag;
+      document.getElementById('dashboard-downloads').value = dashboardFilters.downloads;
+      document.getElementById('dashboard-stars').value = dashboardFilters.stars;
+      document.getElementById('dashboard-freshness').value = dashboardFilters.freshness;
+      updateDashboardFilterSummary();
+      updateDashboardFilterPanelVisibility();
+    }
+
+    function applyDashboardFilterUpdate(nextState, options = {}) {
+      const { preservePanelState = true } = options;
+      const merged = {
+        ...dashboardFilters,
+        ...nextState,
+      };
+
+      if (!preservePanelState && nextState.filtersOpen == null) {
+        merged.filtersOpen = defaultDashboardFilters.filtersOpen;
+      }
+
+      dashboardFilters = normalizeDashboardFilters(merged);
+      syncDashboardFilterControls();
+      persistDashboardFilters();
+      syncDashboardFiltersToUrl();
+      renderNugetSection();
+      renderRepoSection();
+    }
+
+    function clearDashboardFilters() {
+      applyDashboardFilterUpdate({ ...defaultDashboardFilters, filtersOpen: dashboardFilters.filtersOpen });
+    }
+
+    function buildSearchTerms(value) {
+      return normalizeFilterValue(value).toLowerCase().split(/\s+/).filter(Boolean);
+    }
+
+    function matchesSearch(value, fields) {
+      const terms = buildSearchTerms(value);
+      if (!terms.length) return true;
+
+      const haystack = fields
+        .flatMap(field => Array.isArray(field) ? field : [field])
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+      return terms.every(term => haystack.includes(term));
+    }
+
+    function matchesTag(selectedTag, tags) {
+      if (!selectedTag) return true;
+      return (tags || []).some(tag => tag.toLowerCase() === selectedTag.toLowerCase());
+    }
+
+    function matchesMinimum(value, minimum) {
+      if (!minimum) return true;
+      return (value || 0) >= Number(minimum);
+    }
+
+    function matchesFreshnessWindow(isoDate, freshnessDays) {
+      if (!freshnessDays) return true;
+      const date = parseIsoDate(isoDate);
+      if (!date) return false;
+      return (Date.now() - date.getTime()) <= (Number(freshnessDays) * 86_400_000);
+    }
+
+    function populateTagDropdown() {
+      const tags = [...new Set([
+        ...allPackages.flatMap(pkg => pkg.tags || []),
+        ...allRepos.flatMap(repo => repo.topics || []),
+      ])].sort((a, b) => a.localeCompare(b));
+
+      const sel = document.getElementById('dashboard-tag');
+      sel.innerHTML = '<option value="">All tags</option>';
+
+      tags.forEach(tag => {
+        const opt = document.createElement('option');
+        opt.value = tag;
+        opt.textContent = tag;
+        sel.appendChild(opt);
+      });
+
+      if (dashboardFilters.tag) {
+        const matchingTag = tags.find(tag => tag.toLowerCase() === dashboardFilters.tag.toLowerCase());
+        dashboardFilters = { ...dashboardFilters, tag: matchingTag || '' };
+      }
     }
 
     function renderFreshnessHeader(latestGeneratedAt) {
@@ -1476,14 +1778,13 @@
     /* ── Filter + Sort Logic ── */
 
     function getFilteredPackages() {
-      const search = document.getElementById('nuget-search').value.toLowerCase().trim();
       const sortKey = document.getElementById('nuget-sort').value;
-      const minDlBtn = document.querySelector('#nuget-min-dl button.active');
-      const minDl = minDlBtn ? parseInt(minDlBtn.dataset.min, 10) : 0;
 
       let pkgs = allPackages.filter(p => {
-        if (search && !(p.packageId || '').toLowerCase().includes(search)) return false;
-        if (minDl > 0 && (p.totalDownloads || 0) < minDl) return false;
+        if (!matchesSearch(dashboardFilters.search, [p.packageId, p.description, p.tags || []])) return false;
+        if (!matchesTag(dashboardFilters.tag, p.tags)) return false;
+        if (!matchesMinimum(p.totalDownloads, dashboardFilters.downloads)) return false;
+        if (!matchesFreshnessWindow(p.publishedDate, dashboardFilters.freshness)) return false;
         return true;
       });
 
@@ -1501,17 +1802,13 @@
     }
 
     function getFilteredRepos() {
-      const search = document.getElementById('repo-search').value.toLowerCase().trim();
       const sortKey = document.getElementById('repo-sort').value;
-      const lang = document.getElementById('repo-language').value;
-      const hasIssues = document.getElementById('repo-has-issues').classList.contains('active');
-      const hasPrs = document.getElementById('repo-has-prs').classList.contains('active');
 
       let repos = allRepos.filter(r => {
-        if (search && !(r.fullName || r.name || '').toLowerCase().includes(search)) return false;
-        if (lang && r.language !== lang) return false;
-        if (hasIssues && !(r.openIssues > 0)) return false;
-        if (hasPrs && !(r.openPullRequests > 0)) return false;
+        if (!matchesSearch(dashboardFilters.search, [r.fullName || r.name, r.description, r.topics || []])) return false;
+        if (!matchesTag(dashboardFilters.tag, r.topics)) return false;
+        if (!matchesMinimum(r.stars, dashboardFilters.stars)) return false;
+        if (!matchesFreshnessWindow(r.lastPush || r.updatedAt, dashboardFilters.freshness)) return false;
         return true;
       });
 
@@ -1591,33 +1888,28 @@
     /* ── Event Wiring ── */
 
     function wireFilters() {
-      // NuGet search (live)
-      document.getElementById('nuget-search').addEventListener('input', renderNugetSection);
       document.getElementById('nuget-sort').addEventListener('change', renderNugetSection);
-
-      // Min-downloads pills
-      document.querySelectorAll('#nuget-min-dl button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('#nuget-min-dl button').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          renderNugetSection();
-        });
-      });
-
-      // Repo search (live)
-      document.getElementById('repo-search').addEventListener('input', renderRepoSection);
       document.getElementById('repo-sort').addEventListener('change', renderRepoSection);
-      document.getElementById('repo-language').addEventListener('change', renderRepoSection);
-
-      // Toggle buttons
-      document.getElementById('repo-has-issues').addEventListener('click', function() {
-        this.classList.toggle('active');
-        renderRepoSection();
+      document.getElementById('dashboard-search').addEventListener('input', (event) => {
+        applyDashboardFilterUpdate({ search: event.target.value });
       });
-      document.getElementById('repo-has-prs').addEventListener('click', function() {
-        this.classList.toggle('active');
-        renderRepoSection();
+      document.getElementById('dashboard-tag').addEventListener('change', (event) => {
+        applyDashboardFilterUpdate({ tag: event.target.value });
       });
+      document.getElementById('dashboard-downloads').addEventListener('change', (event) => {
+        applyDashboardFilterUpdate({ downloads: event.target.value });
+      });
+      document.getElementById('dashboard-stars').addEventListener('change', (event) => {
+        applyDashboardFilterUpdate({ stars: event.target.value });
+      });
+      document.getElementById('dashboard-freshness').addEventListener('change', (event) => {
+        applyDashboardFilterUpdate({ freshness: event.target.value });
+      });
+      document.getElementById('clear-filters').addEventListener('click', clearDashboardFilters);
+      document.getElementById('filters-toggle').addEventListener('click', () => {
+        applyDashboardFilterUpdate({ filtersOpen: !dashboardFilters.filtersOpen }, { preservePanelState: true });
+      });
+      window.addEventListener('resize', updateDashboardFilterPanelVisibility);
 
       // Issues filters
       document.getElementById('issues-search').addEventListener('input', renderIssuesSection);
@@ -1656,17 +1948,6 @@
     function setActiveViewButton(toggleId, mode) {
       document.querySelectorAll(`#${toggleId} button`).forEach(btn => {
         btn.classList.toggle('active', btn.dataset.view === mode);
-      });
-    }
-
-    function populateLanguageDropdown() {
-      const langs = [...new Set(allRepos.map(r => r.language).filter(Boolean))].sort();
-      const sel = document.getElementById('repo-language');
-      langs.forEach(lang => {
-        const opt = document.createElement('option');
-        opt.value = lang;
-        opt.textContent = lang;
-        sel.appendChild(opt);
       });
     }
 
@@ -1962,12 +2243,16 @@
         `;
 
         // Populate dynamic filter options
-        populateLanguageDropdown();
+        hydrateDashboardFilters();
+        populateTagDropdown();
+        persistDashboardFilters();
+        syncDashboardFiltersToUrl();
         populateIssuesRepoDropdown();
         populatePrsRepoDropdown();
 
         // Wire up filter events
         wireFilters();
+        syncDashboardFilterControls();
 
         // Initial render
         renderTrendsSection();
