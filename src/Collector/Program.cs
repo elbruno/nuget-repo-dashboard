@@ -348,6 +348,35 @@ metricsGuard.CheckStaleness(trendData, nugetMetrics);
 // --- Write output ---
 var generatedAt = DateTimeOffset.UtcNow;
 
+var githubMetricsByRepo = githubMetrics.ToDictionary(
+    repo => repo.FullName,
+    repo => repo,
+    StringComparer.OrdinalIgnoreCase);
+
+var watchListMetrics = watchListEntries
+    .Select(entry =>
+    {
+        var fullName = $"{entry.Owner}/{entry.Repo}";
+        githubMetricsByRepo.TryGetValue(fullName, out var repoMetrics);
+
+        return new WatchListRepoMetrics
+        {
+            Owner = entry.Owner,
+            Repo = entry.Repo,
+            FullName = fullName,
+            Url = entry.Url,
+            HtmlUrl = repoMetrics?.HtmlUrl ?? entry.Url,
+            Description = !string.IsNullOrWhiteSpace(entry.Description) ? entry.Description : repoMetrics?.Description,
+            Purpose = entry.Purpose,
+            DateAdded = entry.DateAdded,
+            Stars = repoMetrics?.Stars,
+            LastUpdate = repoMetrics?.LastPush ?? repoMetrics?.UpdatedAt,
+            IsStub = repoMetrics?.IsStub ?? true,
+            StubReason = repoMetrics?.StubReason
+        };
+    })
+    .ToList();
+
 var nugetOutput = new NuGetOutput
 {
     GeneratedAt = generatedAt,
@@ -357,7 +386,8 @@ var nugetOutput = new NuGetOutput
 var reposOutput = new RepositoriesOutput
 {
     GeneratedAt = generatedAt,
-    Repositories = githubMetrics
+    Repositories = githubMetrics,
+    WatchList = watchListMetrics
 };
 
 IJsonOutputWriter writer = new JsonOutputWriter();
@@ -382,6 +412,10 @@ Console.WriteLine("═══ Summary ══════════════�
 Console.WriteLine($"  Generated at : {generatedAt:O}");
 Console.WriteLine($"  Packages     : {nugetOutput.Packages.Count}");
 Console.WriteLine($"  Repos        : {reposOutput.Repositories.Count}");
+if (reposOutput.WatchList.Count > 0)
+{
+    Console.WriteLine($"  Watch list   : {reposOutput.WatchList.Count}");
+}
 
 if (nugetOutput.Packages.Count > 0)
 {

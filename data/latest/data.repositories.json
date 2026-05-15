@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T11:21:21.7675964+00:00",
+  "generatedAt": "2026-05-15T14:48:32.1579749+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -3129,7 +3129,7 @@
       "name": "openclawnet",
       "fullName": "elbruno/openclawnet",
       "stars": 52,
-      "forks": 20,
+      "forks": 19,
       "openIssues": 0,
       "openPullRequests": 0,
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
@@ -3162,7 +3162,7 @@
       "homepage": null,
       "hasWiki": true,
       "hasPages": true,
-      "networkCount": 20,
+      "networkCount": 19,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/openclawnet",
       "recentIssues": [],
@@ -3981,6 +3981,22 @@
         }
       ],
       "mergedPullRequestsCount": 35,
+      "isStub": false,
+      "stubReason": null
+    }
+  ],
+  "watchList": [
+    {
+      "owner": "elbruno",
+      "repo": "openclawnet",
+      "fullName": "elbruno/openclawnet",
+      "url": "https://github.com/elbruno/openclawnet",
+      "htmlUrl": "https://github.com/elbruno/openclawnet",
+      "description": "Open Claw .NET project",
+      "purpose": "Reference architecture and AI-assisted workflow patterns",
+      "dateAdded": "2025-04-02",
+      "stars": 52,
+      "lastUpdate": "2026-05-15T05:49:40+00:00",
       "isStub": false,
       "stubReason": null
     }
