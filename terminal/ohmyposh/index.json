@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T11:12:40.7052037+00:00",
+  "generatedAt": "2026-05-15T11:21:26.4016988+00:00",
   "totalRepos": 22,
   "profiles": [
     {
@@ -39,16 +39,16 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/ElBruno.VibeVoiceTTS",
-      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
-      "accentColor": "#A6CE83",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/ElBruno.MempalaceNet",
       "configFile": "elbruno-ElBruno.MempalaceNet.json",
       "accentColor": "#536459",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.VibeVoiceTTS",
+      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
+      "accentColor": "#A6CE83",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.Whisper",
@@ -57,27 +57,27 @@
       "icon": "\uD83C\uDF99️"
     },
     {
-      "repo": "elbruno/ElBruno.Realtime",
-      "configFile": "elbruno-ElBruno.Realtime.json",
-      "accentColor": "#6E94AE",
-      "icon": "⚡"
-    },
-    {
       "repo": "elbruno/ElBruno.AspireMonitor",
       "configFile": "elbruno-ElBruno.AspireMonitor.json",
       "accentColor": "#CFC9B6",
       "icon": "\uD83D\uDCCA"
     },
     {
-      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
-      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
-      "accentColor": "#ADA976",
-      "icon": "\uD83D\uDD37"
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#6E94AE",
+      "icon": "⚡"
     },
     {
       "repo": "elbruno/graphify-dotnet",
       "configFile": "elbruno-graphify-dotnet.json",
       "accentColor": "#BEA579",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
+      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
+      "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
     },
     {
