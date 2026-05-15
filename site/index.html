@@ -880,6 +880,14 @@
 
     function fmt(n) { return n == null ? '—' : n.toLocaleString('en-US'); }
 
+    function issueCommentCount(issue) {
+      if (!issue) return 0;
+      const count = Number.isFinite(issue.commentsCount)
+        ? issue.commentsCount
+        : issue.comments;
+      return Number.isFinite(count) ? count : 0;
+    }
+
     function fmtCompact(n) {
       if (n == null) return '—';
       if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
@@ -1084,7 +1092,7 @@
             ${issue.userLogin ? `<div class="stat">👤 ${esc(issue.userLogin)}</div>` : ''}
             <div class="stat">📅 ${fmtDate(issue.createdAt)}</div>
             ${issue.updatedAt !== issue.createdAt ? `<div class="stat">🔄 ${fmtDate(issue.updatedAt)}</div>` : ''}
-            ${issue.commentsCount > 0 ? `<div class="stat">💬 <span class="value">${fmt(issue.commentsCount)}</span></div>` : ''}
+            <div class="stat">💬 <span class="value">${fmt(issueCommentCount(issue))}</span></div>
           </div>
           ${labels ? `<div class="tags">${labels}</div>` : ''}
         </div>`;
@@ -1102,7 +1110,7 @@
           <td class="text-muted" style="white-space:nowrap;">${esc(issue.userLogin || '—')}</td>
           <td class="text-muted" style="white-space:nowrap;">${fmtDate(issue.createdAt)}</td>
           <td class="text-muted" style="white-space:nowrap;">${fmtDate(issue.updatedAt)}</td>
-          <td class="value" style="text-align:right;">${issue.commentsCount > 0 ? `💬 ${fmt(issue.commentsCount)}` : '—'}</td>
+          <td class="value" style="text-align:right;">💬 ${fmt(issueCommentCount(issue))}</td>
         </tr>`;
       }).join('');
       return `<table>
@@ -1138,7 +1146,7 @@
         switch (sortKey) {
           case 'newest': return new Date(b.issue.createdAt || 0) - new Date(a.issue.createdAt || 0);
           case 'updated': return new Date(b.issue.updatedAt || 0) - new Date(a.issue.updatedAt || 0);
-          case 'comments': return (b.issue.commentsCount || 0) - (a.issue.commentsCount || 0);
+          case 'comments': return issueCommentCount(b.issue) - issueCommentCount(a.issue);
           case 'repo': return a.repoFullName.localeCompare(b.repoFullName);
           default: return 0;
         }

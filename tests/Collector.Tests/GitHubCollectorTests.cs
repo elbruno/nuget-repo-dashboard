@@ -518,4 +518,94 @@ public class GitHubCollectorTests
         m.Visibility.Should().BeNull();
         m.HtmlUrl.Should().BeNull();
     }
+
+    [Fact]
+    public async Task CollectAsync_RecentIssues_ParsesCommentsCount()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.OK, "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson());
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/issues?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            """
+            [
+              {
+                "number": 20,
+                "title": "Fix issue comments",
+                "html_url": "https://github.com/owner/repo/issues/20",
+                "comments": 7,
+                "created_at": "2026-05-01T10:00:00Z",
+                "updated_at": "2026-05-02T10:00:00Z",
+                "user": { "login": "octocat" },
+                "labels": []
+              }
+            ]
+            """);
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].RecentIssues.Should().ContainSingle();
+        results[0].RecentIssues[0].CommentsCount.Should().Be(7);
+    }
+
+    [Fact]
+    public async Task CollectAsync_RecentIssues_ParsesCommentsCountFallback()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.OK, "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson());
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/issues?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            """
+            [
+              {
+                "number": 20,
+                "title": "Fix issue comments",
+                "html_url": "https://github.com/owner/repo/issues/20",
+                "comments_count": "5",
+                "created_at": "2026-05-01T10:00:00Z",
+                "updated_at": "2026-05-02T10:00:00Z",
+                "user": { "login": "octocat" },
+                "labels": []
+              }
+            ]
+            """);
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].RecentIssues.Should().ContainSingle();
+        results[0].RecentIssues[0].CommentsCount.Should().Be(5);
+    }
 }
