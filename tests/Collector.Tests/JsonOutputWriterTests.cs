@@ -61,6 +61,17 @@ public class JsonOutputWriterTests : IDisposable
                     OpenIssues = 2,
                     OpenPullRequests = 1
                 }
+            ],
+            WatchList =
+            [
+                new WatchListRepoMetrics
+                {
+                    Owner = "elbruno",
+                    Repo = "openclawnet",
+                    FullName = "elbruno/openclawnet",
+                    Purpose = "Reference architecture",
+                    Stars = 42
+                }
             ]
         };
     }
@@ -254,6 +265,7 @@ public class JsonOutputWriterTests : IDisposable
 
         json.Should().Contain("\"generatedAt\"");
         json.Should().Contain("\"repositories\"");
+        json.Should().Contain("\"watchList\"");
         json.Should().Contain("\"stars\"");
         json.Should().Contain("\"forks\"");
     }
@@ -288,6 +300,7 @@ public class JsonOutputWriterTests : IDisposable
 
         deserialized.Should().NotBeNull();
         deserialized!.Repositories.Should().BeEmpty();
+        deserialized.WatchList.Should().BeEmpty();
     }
 
     [Fact]
@@ -308,6 +321,7 @@ public class JsonOutputWriterTests : IDisposable
         var deserialized = JsonSerializer.Deserialize<RepositoriesOutput>(json);
 
         deserialized!.Repositories.Should().BeEmpty();
+        deserialized.WatchList.Should().BeEmpty();
     }
 
     #endregion

@@ -274,6 +274,17 @@ public class ModelTests
                     FullName = "owner/repo",
                     Stars = 500
                 }
+            ],
+            WatchList =
+            [
+                new WatchListRepoMetrics
+                {
+                    Owner = "elbruno",
+                    Repo = "openclawnet",
+                    FullName = "elbruno/openclawnet",
+                    Purpose = "Reference architecture",
+                    Stars = 123
+                }
             ]
         };
 
@@ -283,6 +294,7 @@ public class ModelTests
         deserialized.Should().NotBeNull();
         deserialized!.GeneratedAt.Should().Be(original.GeneratedAt);
         deserialized.Repositories.Should().HaveCount(1);
+        deserialized.WatchList.Should().HaveCount(1);
     }
 
     [Fact]
@@ -297,6 +309,7 @@ public class ModelTests
 
         json.Should().Contain("\"generatedAt\"");
         json.Should().Contain("\"repositories\"");
+        json.Should().Contain("\"watchList\"");
     }
 
     [Fact]
@@ -305,6 +318,7 @@ public class ModelTests
         var output = new RepositoriesOutput();
 
         output.Repositories.Should().BeEmpty();
+        output.WatchList.Should().BeEmpty();
     }
 
     #endregion

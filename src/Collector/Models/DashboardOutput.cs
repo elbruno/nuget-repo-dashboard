@@ -31,4 +31,7 @@ public sealed class RepositoriesOutput
 
     [JsonPropertyName("repositories")]
     public List<GitHubRepoMetrics> Repositories { get; set; } = [];
+
+    [JsonPropertyName("watchList")]
+    public List<WatchListRepoMetrics> WatchList { get; set; } = [];
 }

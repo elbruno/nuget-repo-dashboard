@@ -766,15 +766,15 @@
         <div class="section-header collapsible-header" data-section="watch-list">
           <h2><span class="chevron">▼</span> <span class="icon">👀</span> Watch List</h2>
           <div class="section-meta">
-            <span class="result-count" id="watchlist-count"></span>
+            <span class="result-count" id="watch-list-count"></span>
           </div>
         </div>
         <div class="section-content" id="watch-list-content">
-        <div id="watchlist-grid" class="card-grid"></div>
-        <div id="watchlist-empty" class="empty-state" style="display:none;">
-          <span class="icon">📝</span>
-          <p>No watch-list repositories configured</p>
-        </div>
+          <div id="watch-list-grid" class="card-grid"></div>
+          <div id="watch-list-empty" class="empty-state" style="display:none;">
+            <span class="icon">📭</span>
+            <p>No watch-list repositories configured</p>
+          </div>
         </div>
       </section>
       <!-- Open Issues Section -->
@@ -886,6 +886,7 @@
     // Stored data (populated on fetch, used for filtering)
     let allPackages = [];
     let allRepos = [];
+    let watchListRepos = [];
     let trendsData = null;
 
     // View mode state
@@ -1094,55 +1095,48 @@
       </table>`;
     }
 
-    /* ── Watch-list Rendering ── */
-
-    function getWatchListRepos() {
-      return allRepos.filter(repo => repo.isWatchList || repo.watchPurpose || repo.watchDateAdded);
-    }
+    /* ── Watch List Rendering ── */
 
     function renderWatchListCard(repo) {
-      const purpose = repo.watchPurpose ? `<div class="card-description">${esc(truncate(repo.watchPurpose, 200))}</div>` : '';
-      const dateAdded = repo.watchDateAdded ? `<div class="stat">➕ Added <span class="value">${esc(repo.watchDateAdded)}</span></div>` : '';
-      const source = repo.isStub ? '<span class="card-version">Watch-list stub</span>' : '<span class="card-version">Watch-list</span>';
+      const fullName = repo.fullName || `${repo.owner || ''}/${repo.repo || ''}`.replace(/^\/|\/$/g, '');
+      const repoUrl = repo.htmlUrl || repo.url || '#';
+      const description = repo.description || 'No description available.';
+      const purpose = repo.purpose || 'No purpose provided.';
+      const stubBadge = repo.isStub ? '<span class="license-badge">Stub</span>' : '';
       return `
         <div class="card">
           <div class="card-header">
             <div class="card-title">
-              <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
+              <a href="${esc(repoUrl)}" target="_blank" rel="noopener">${esc(fullName)}</a>
             </div>
-            ${source}
+            ${stubBadge}
           </div>
-          <div class="card-description">${esc(truncate(repo.description, 160))}</div>
-          ${purpose}
+          <div class="card-description">${esc(description)}</div>
+          <div class="card-description"><strong>Purpose:</strong> ${esc(purpose)}</div>
           <div class="card-stats">
+            <div class="stat">👤 <span class="value">${esc(repo.owner || '—')}</span></div>
+            <div class="stat">📦 <span class="value">${esc(repo.repo || '—')}</span></div>
             <div class="stat">⭐ <span class="value">${fmt(repo.stars)}</span></div>
-            <div class="stat">🍴 <span class="value">${fmt(repo.forks)}</span></div>
-            <div class="stat">📅 Updated <span class="value">${fmtDate(repo.lastPush)}</span></div>
-            ${dateAdded}
+            <div class="stat">📅 ${fmtDate(repo.lastUpdate)}</div>
           </div>
         </div>`;
     }
 
     function renderWatchListSection() {
-      const watchListRepos = getWatchListRepos();
-      const grid = document.getElementById('watchlist-grid');
-      const empty = document.getElementById('watchlist-empty');
-      const countEl = document.getElementById('watchlist-count');
+      const section = document.getElementById('watch-list');
+      const grid = document.getElementById('watch-list-grid');
+      const empty = document.getElementById('watch-list-empty');
+      const countEl = document.getElementById('watch-list-count');
 
-      countEl.textContent = `Showing ${watchListRepos.length} watch-list repositories`;
-
-      if (watchListRepos.length === 0) {
-        grid.style.display = 'none';
-        empty.style.display = 'block';
+      if (!watchListRepos.length) {
+        section.style.display = 'none';
         return;
       }
 
+      section.style.display = '';
+      countEl.textContent = `Tracking ${watchListRepos.length} referenced repositories`;
+      grid.innerHTML = watchListRepos.map(renderWatchListCard).join('');
       empty.style.display = 'none';
-      grid.innerHTML = watchListRepos
-        .sort((a, b) => (b.stars || 0) - (a.stars || 0))
-        .map(renderWatchListCard)
-        .join('');
-      grid.style.display = '';
     }
 
     /* ── Issues Rendering ── */
@@ -1846,6 +1840,7 @@
         // Store raw data for filtering
         allPackages = nugetData.packages || [];
         allRepos = reposData.repositories || [];
+        watchListRepos = reposData.watchList || [];
 
         // Header info
         const author = allPackages[0]?.authors || 'Dashboard';
