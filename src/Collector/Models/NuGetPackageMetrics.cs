@@ -30,4 +30,7 @@ public sealed class NuGetPackageMetrics
 
     [JsonPropertyName("publishedDate")]
     public DateTimeOffset? PublishedDate { get; set; }
+
+    [JsonPropertyName("releasesLast30Days")]
+    public int ReleasesLast30Days { get; set; }
 }

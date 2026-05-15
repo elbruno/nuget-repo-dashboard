@@ -345,6 +345,11 @@ nugetMetrics = metricsGuard.ApplyMonotonicityGuard(nugetMetrics, previousNuGetOu
 Console.WriteLine("  Checking for data staleness...");
 metricsGuard.CheckStaleness(trendData, nugetMetrics);
 
+// Layer 3: Maintainability health scoring
+Console.WriteLine("  Calculating maintainability health scores...");
+IMaintainabilityScoreService maintainabilityScoreService = new MaintainabilityScoreService(githubHttpClient);
+await maintainabilityScoreService.ApplyAsync(githubMetrics, packages, nugetMetrics);
+
 // --- Write output ---
 var generatedAt = DateTimeOffset.UtcNow;
 
