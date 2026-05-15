@@ -367,6 +367,14 @@ await writer.WriteRepositoriesAsync(reposOutput, repoRoot);
 Console.WriteLine($"    → data.repositories.json");
 await writer.WriteTrendsAsync(trendData, repoRoot);
 Console.WriteLine($"    → data.trends.json");
+await writer.WriteMetadataAsync(new DashboardMetadataOutput
+{
+    GeneratedAt = generatedAt,
+    NuGetGeneratedAt = nugetOutput.GeneratedAt,
+    RepositoriesGeneratedAt = reposOutput.GeneratedAt,
+    TrendsGeneratedAt = trendData.GeneratedAt
+}, repoRoot);
+Console.WriteLine($"    → data.metadata.json");
 
 // --- Summary ---
 Console.WriteLine();

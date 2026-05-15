@@ -65,6 +65,18 @@ public class JsonOutputWriterTests : IDisposable
         };
     }
 
+    private static DashboardMetadataOutput CreateSampleMetadataOutput(DateTimeOffset? generatedAt = null)
+    {
+        var timestamp = generatedAt ?? new DateTimeOffset(2024, 6, 15, 10, 0, 0, TimeSpan.Zero);
+        return new DashboardMetadataOutput
+        {
+            GeneratedAt = timestamp,
+            NuGetGeneratedAt = timestamp,
+            RepositoriesGeneratedAt = timestamp,
+            TrendsGeneratedAt = timestamp
+        };
+    }
+
     #region WriteNuGetAsync Tests
 
     [Fact]
@@ -308,6 +320,52 @@ public class JsonOutputWriterTests : IDisposable
         var deserialized = JsonSerializer.Deserialize<RepositoriesOutput>(json);
 
         deserialized!.Repositories.Should().BeEmpty();
+    }
+
+    #endregion
+
+    #region WriteMetadataAsync Tests
+
+    [Fact]
+    public async Task WriteMetadataAsync_CreatesLatestDataMetadataJson()
+    {
+        var output = CreateSampleMetadataOutput();
+
+        await _writer.WriteMetadataAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.metadata.json");
+        File.Exists(latestPath).Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task WriteMetadataAsync_JsonContainsExpectedPropertyNames()
+    {
+        var output = CreateSampleMetadataOutput();
+
+        await _writer.WriteMetadataAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.metadata.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+
+        json.Should().Contain("\"generatedAt\"");
+        json.Should().Contain("\"nugetGeneratedAt\"");
+        json.Should().Contain("\"repositoriesGeneratedAt\"");
+        json.Should().Contain("\"trendsGeneratedAt\"");
+    }
+
+    [Fact]
+    public async Task WriteMetadataAsync_OutputJsonIsValidAndDeserializable()
+    {
+        var output = CreateSampleMetadataOutput();
+
+        await _writer.WriteMetadataAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.metadata.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+        var deserialized = JsonSerializer.Deserialize<DashboardMetadataOutput>(json);
+
+        deserialized.Should().NotBeNull();
+        deserialized!.NuGetGeneratedAt.Should().NotBeNull();
     }
 
     #endregion
