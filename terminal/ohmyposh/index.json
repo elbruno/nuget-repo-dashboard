@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-16T10:14:12.1559469+00:00",
+  "generatedAt": "2026-05-17T10:22:16.3086101+00:00",
   "totalRepos": 22,
   "profiles": [
     {
@@ -33,6 +33,12 @@
       "icon": "\uD83D\uDDBC️"
     },
     {
+      "repo": "elbruno/ElBruno.LocalLLMs",
+      "configFile": "elbruno-ElBruno.LocalLLMs.json",
+      "accentColor": "#85958B",
+      "icon": "\uD83E\uDD16"
+    },
+    {
       "repo": "elbruno/ElBruno.MempalaceNet",
       "configFile": "elbruno-ElBruno.MempalaceNet.json",
       "accentColor": "#536459",
@@ -43,12 +49,6 @@
       "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
       "accentColor": "#A6CE83",
       "icon": "\uD83D\uDD0A"
-    },
-    {
-      "repo": "elbruno/ElBruno.LocalLLMs",
-      "configFile": "elbruno-ElBruno.LocalLLMs.json",
-      "accentColor": "#85958B",
-      "icon": "\uD83E\uDD16"
     },
     {
       "repo": "elbruno/ElBruno.AspireMonitor",
@@ -75,18 +75,6 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.ModelContextProtocol",
-      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
-      "accentColor": "#C3627F",
-      "icon": "\uD83D\uDD0C"
-    },
-    {
-      "repo": "elbruno/ElBruno.ClockTray",
-      "configFile": "elbruno-ElBruno.ClockTray.json",
-      "accentColor": "#CEA8AC",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
       "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
       "accentColor": "#ADA976",
@@ -99,21 +87,33 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.ModelContextProtocol",
+      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
+      "accentColor": "#C3627F",
+      "icon": "\uD83D\uDD0C"
+    },
+    {
+      "repo": "elbruno/ElBruno.ClockTray",
+      "configFile": "elbruno-ElBruno.ClockTray.json",
+      "accentColor": "#CEA8AC",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "ElBruno/ElBruno.BM25",
       "configFile": "ElBruno-ElBruno.BM25.json",
       "accentColor": "#556C55",
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.PersonaPlex",
-      "configFile": "elbruno-ElBruno.PersonaPlex.json",
-      "accentColor": "#7DBBB3",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/elbruno-ai-evaluation",
       "configFile": "elbruno-elbruno-ai-evaluation.json",
       "accentColor": "#5A99B2",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.PersonaPlex",
+      "configFile": "elbruno-ElBruno.PersonaPlex.json",
+      "accentColor": "#7DBBB3",
       "icon": "\uD83D\uDD37"
     },
     {
