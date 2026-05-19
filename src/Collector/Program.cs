@@ -345,8 +345,42 @@ nugetMetrics = metricsGuard.ApplyMonotonicityGuard(nugetMetrics, previousNuGetOu
 Console.WriteLine("  Checking for data staleness...");
 metricsGuard.CheckStaleness(trendData, nugetMetrics);
 
+// Layer 3: Maintainability health scoring
+Console.WriteLine("  Calculating maintainability health scores...");
+IMaintainabilityScoreService maintainabilityScoreService = new MaintainabilityScoreService(githubHttpClient);
+await maintainabilityScoreService.ApplyAsync(githubMetrics, packages, nugetMetrics);
+
 // --- Write output ---
 var generatedAt = DateTimeOffset.UtcNow;
+
+var githubMetricsByRepo = githubMetrics.ToDictionary(
+    repo => repo.FullName,
+    repo => repo,
+    StringComparer.OrdinalIgnoreCase);
+
+var watchListMetrics = watchListEntries
+    .Select(entry =>
+    {
+        var fullName = $"{entry.Owner}/{entry.Repo}";
+        githubMetricsByRepo.TryGetValue(fullName, out var repoMetrics);
+
+        return new WatchListRepoMetrics
+        {
+            Owner = entry.Owner,
+            Repo = entry.Repo,
+            FullName = fullName,
+            Url = entry.Url,
+            HtmlUrl = repoMetrics?.HtmlUrl ?? entry.Url,
+            Description = !string.IsNullOrWhiteSpace(entry.Description) ? entry.Description : repoMetrics?.Description,
+            Purpose = entry.Purpose,
+            DateAdded = entry.DateAdded,
+            Stars = repoMetrics?.Stars,
+            LastUpdate = repoMetrics?.LastPush ?? repoMetrics?.UpdatedAt,
+            IsStub = repoMetrics?.IsStub ?? true,
+            StubReason = repoMetrics?.StubReason
+        };
+    })
+    .ToList();
 
 var nugetOutput = new NuGetOutput
 {
@@ -357,7 +391,8 @@ var nugetOutput = new NuGetOutput
 var reposOutput = new RepositoriesOutput
 {
     GeneratedAt = generatedAt,
-    Repositories = githubMetrics
+    Repositories = githubMetrics,
+    WatchList = watchListMetrics
 };
 
 IJsonOutputWriter writer = new JsonOutputWriter();
@@ -367,6 +402,14 @@ await writer.WriteRepositoriesAsync(reposOutput, repoRoot);
 Console.WriteLine($"    → data.repositories.json");
 await writer.WriteTrendsAsync(trendData, repoRoot);
 Console.WriteLine($"    → data.trends.json");
+await writer.WriteMetadataAsync(new DashboardMetadataOutput
+{
+    GeneratedAt = generatedAt,
+    NuGetGeneratedAt = nugetOutput.GeneratedAt,
+    RepositoriesGeneratedAt = reposOutput.GeneratedAt,
+    TrendsGeneratedAt = trendData.GeneratedAt
+}, repoRoot);
+Console.WriteLine($"    → data.metadata.json");
 
 // --- Summary ---
 Console.WriteLine();
@@ -374,6 +417,10 @@ Console.WriteLine("═══ Summary ══════════════�
 Console.WriteLine($"  Generated at : {generatedAt:O}");
 Console.WriteLine($"  Packages     : {nugetOutput.Packages.Count}");
 Console.WriteLine($"  Repos        : {reposOutput.Repositories.Count}");
+if (reposOutput.WatchList.Count > 0)
+{
+    Console.WriteLine($"  Watch list   : {reposOutput.WatchList.Count}");
+}
 
 if (nugetOutput.Packages.Count > 0)
 {

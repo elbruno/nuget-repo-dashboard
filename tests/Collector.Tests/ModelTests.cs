@@ -202,6 +202,7 @@ public class ModelTests
         metrics.Tags.Should().BeEmpty();
         metrics.Listed.Should().BeTrue();
         metrics.PublishedDate.Should().BeNull();
+        metrics.ReleasesLast30Days.Should().Be(0);
     }
 
     #endregion
@@ -274,6 +275,17 @@ public class ModelTests
                     FullName = "owner/repo",
                     Stars = 500
                 }
+            ],
+            WatchList =
+            [
+                new WatchListRepoMetrics
+                {
+                    Owner = "elbruno",
+                    Repo = "openclawnet",
+                    FullName = "elbruno/openclawnet",
+                    Purpose = "Reference architecture",
+                    Stars = 123
+                }
             ]
         };
 
@@ -283,6 +295,7 @@ public class ModelTests
         deserialized.Should().NotBeNull();
         deserialized!.GeneratedAt.Should().Be(original.GeneratedAt);
         deserialized.Repositories.Should().HaveCount(1);
+        deserialized.WatchList.Should().HaveCount(1);
     }
 
     [Fact]
@@ -297,6 +310,7 @@ public class ModelTests
 
         json.Should().Contain("\"generatedAt\"");
         json.Should().Contain("\"repositories\"");
+        json.Should().Contain("\"watchList\"");
     }
 
     [Fact]
@@ -305,6 +319,7 @@ public class ModelTests
         var output = new RepositoriesOutput();
 
         output.Repositories.Should().BeEmpty();
+        output.WatchList.Should().BeEmpty();
     }
 
     #endregion
@@ -339,7 +354,10 @@ public class ModelTests
             HasPages = true,
             NetworkCount = 500,
             Visibility = "public",
-            HtmlUrl = "https://github.com/dotnet/runtime"
+            HtmlUrl = "https://github.com/dotnet/runtime",
+            IsWatchList = true,
+            WatchPurpose = "Reference architecture",
+            WatchDateAdded = "2025-04-02"
         };
 
         var json = JsonSerializer.Serialize(original, JsonOptions);
@@ -370,6 +388,9 @@ public class ModelTests
         deserialized.NetworkCount.Should().Be(original.NetworkCount);
         deserialized.Visibility.Should().Be(original.Visibility);
         deserialized.HtmlUrl.Should().Be(original.HtmlUrl);
+        deserialized.IsWatchList.Should().BeTrue();
+        deserialized.WatchPurpose.Should().Be("Reference architecture");
+        deserialized.WatchDateAdded.Should().Be("2025-04-02");
     }
 
     [Fact]
@@ -420,7 +441,10 @@ public class ModelTests
             DefaultBranch = "main",
             Homepage = "https://example.com",
             Visibility = "public",
-            HtmlUrl = "https://github.com/o/r"
+            HtmlUrl = "https://github.com/o/r",
+            IsWatchList = true,
+            WatchPurpose = "Purpose",
+            WatchDateAdded = "2025-04-02"
         };
         var json = JsonSerializer.Serialize(metrics);
 
@@ -444,6 +468,10 @@ public class ModelTests
         json.Should().Contain("\"networkCount\"");
         json.Should().Contain("\"visibility\"");
         json.Should().Contain("\"htmlUrl\"");
+        json.Should().Contain("\"isWatchList\"");
+        json.Should().Contain("\"watchPurpose\"");
+        json.Should().Contain("\"watchDateAdded\"");
+        json.Should().Contain("\"maintainability\"");
     }
 
     [Fact]
@@ -475,6 +503,10 @@ public class ModelTests
         metrics.NetworkCount.Should().Be(0);
         metrics.Visibility.Should().BeNull();
         metrics.HtmlUrl.Should().BeNull();
+        metrics.IsWatchList.Should().BeFalse();
+        metrics.WatchPurpose.Should().BeNull();
+        metrics.WatchDateAdded.Should().BeNull();
+        metrics.Maintainability.Should().BeNull();
     }
 
     [Fact]
@@ -515,6 +547,46 @@ public class ModelTests
         deserialized.NetworkCount.Should().Be(42);
         deserialized.Visibility.Should().Be("public");
         deserialized.HtmlUrl.Should().Be("https://github.com/owner/repo");
+    }
+
+    [Fact]
+    public void MaintainabilityScore_SerializeDeserialize_RoundTrip()
+    {
+        var original = new MaintainabilityScore
+        {
+            TotalScore = 82,
+            AvailablePoints = 100,
+            Status = "good",
+            Label = "Good",
+            Emoji = "\ud83d\udfe2",
+            Activity = new MaintainabilityMetricScore
+            {
+                Score = 14,
+                MaxScore = 20,
+                Available = true,
+                Value = 14,
+                DisplayValue = "14 commits",
+                Summary = "14 commits in the last 30 days."
+            },
+            Documentation = new MaintainabilityMetricScore
+            {
+                Score = 20,
+                MaxScore = 20,
+                Available = true,
+                Value = 20,
+                DisplayValue = "Complete",
+                Summary = "README present, docs/ present."
+            }
+        };
+
+        var json = JsonSerializer.Serialize(original, JsonOptions);
+        var deserialized = JsonSerializer.Deserialize<MaintainabilityScore>(json, JsonOptions);
+
+        deserialized.Should().NotBeNull();
+        deserialized!.TotalScore.Should().Be(82);
+        deserialized.Status.Should().Be("good");
+        deserialized.Activity.Score.Should().Be(14);
+        deserialized.Documentation.Score.Should().Be(20);
     }
 
     #endregion

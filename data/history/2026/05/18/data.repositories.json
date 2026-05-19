@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T12:09:15.1219454+00:00",
+  "generatedAt": "2026-05-18T12:29:00.7353492+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -238,7 +238,7 @@
       "owner": "elbruno",
       "name": "ElBruno.MarkItDotNet",
       "fullName": "elbruno/ElBruno.MarkItDotNet",
-      "stars": 21,
+      "stars": 20,
       "forks": 4,
       "openIssues": 0,
       "openPullRequests": 0,
@@ -267,7 +267,7 @@
         "rtf"
       ],
       "createdAt": "2026-04-02T17:50:33+00:00",
-      "updatedAt": "2026-05-18T22:04:50+00:00",
+      "updatedAt": "2026-05-13T16:15:35+00:00",
       "size": 1670,
       "defaultBranch": "main",
       "homepage": null,
@@ -395,7 +395,7 @@
       "fullName": "elbruno/ElBruno.QwenTTS",
       "stars": 30,
       "forks": 5,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
@@ -428,20 +428,7 @@
       "networkCount": 5,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": [
-        {
-          "number": 52,
-          "title": "Does this project support Russian language?",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/52",
-          "createdAt": "2026-05-18T16:16:12+00:00",
-          "updatedAt": "2026-05-18T16:16:12+00:00",
-          "userLogin": "RXDCODX",
-          "labels": [],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
+      "recentIssues": [],
       "recentClosedIssues": [
         {
           "number": 51,
@@ -976,9 +963,29 @@
           "headBranch": "feature/cli-tool-t2i",
           "baseBranch": "main",
           "commentsCount": 0
+        },
+        {
+          "number": 9,
+          "title": "Add scenario-14: GPU stress test with metrics",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/9",
+          "createdAt": "2026-04-17T19:44:54+00:00",
+          "updatedAt": "2026-04-19T11:55:07+00:00",
+          "mergedAt": "2026-04-19T11:55:05+00:00",
+          "closedAt": "2026-04-19T11:55:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sample/gpu-stress-test",
+          "baseBranch": "main",
+          "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 17,
+      "mergedPullRequestsCount": 18,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
@@ -994,9 +1001,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 89,
-          "displayValue": "89 commits",
-          "summary": "89 commits in the last 30 days."
+          "value": 90,
+          "displayValue": "90 commits",
+          "summary": "90 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
@@ -1010,9 +1017,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 101,
-          "displayValue": "101 releases",
-          "summary": "101 package releases in the last 30 days across 6 packages."
+          "value": 106,
+          "displayValue": "106 releases",
+          "summary": "106 package releases in the last 30 days across 6 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3911,7 +3918,7 @@
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-19T06:01:41+00:00",
+      "lastPush": "2026-05-18T06:07:25+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -3932,8 +3939,8 @@
         "tutorial"
       ],
       "createdAt": "2026-04-12T17:17:04+00:00",
-      "updatedAt": "2026-05-19T06:01:44+00:00",
-      "size": 56411,
+      "updatedAt": "2026-05-18T06:07:28+00:00",
+      "size": 56409,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3959,29 +3966,6 @@
       "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
-        {
-          "number": 78,
-          "title": "sync: mirror from plan repo [2026-05-19]",
-          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/78",
-          "createdAt": "2026-05-19T06:01:36+00:00",
-          "updatedAt": "2026-05-19T06:01:42+00:00",
-          "mergedAt": "2026-05-19T06:01:40+00:00",
-          "closedAt": "2026-05-19T06:01:40+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "auto:sync",
-            "bot"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "sync/plan-mirror-2026-05-19",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
         {
           "number": 77,
           "title": "sync: mirror from plan repo [2026-05-18]",
@@ -4834,7 +4818,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 38,
+      "mergedPullRequestsCount": 37,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -4900,7 +4884,7 @@
       "purpose": "Reference architecture and AI-assisted workflow patterns",
       "dateAdded": "2025-04-02",
       "stars": 54,
-      "lastUpdate": "2026-05-19T06:01:41+00:00",
+      "lastUpdate": "2026-05-18T06:07:25+00:00",
       "isStub": false,
       "stubReason": null
     }

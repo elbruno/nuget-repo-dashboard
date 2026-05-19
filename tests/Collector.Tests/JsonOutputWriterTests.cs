@@ -61,7 +61,30 @@ public class JsonOutputWriterTests : IDisposable
                     OpenIssues = 2,
                     OpenPullRequests = 1
                 }
+            ],
+            WatchList =
+            [
+                new WatchListRepoMetrics
+                {
+                    Owner = "elbruno",
+                    Repo = "openclawnet",
+                    FullName = "elbruno/openclawnet",
+                    Purpose = "Reference architecture",
+                    Stars = 42
+                }
             ]
+        };
+    }
+
+    private static DashboardMetadataOutput CreateSampleMetadataOutput(DateTimeOffset? generatedAt = null)
+    {
+        var timestamp = generatedAt ?? new DateTimeOffset(2024, 6, 15, 10, 0, 0, TimeSpan.Zero);
+        return new DashboardMetadataOutput
+        {
+            GeneratedAt = timestamp,
+            NuGetGeneratedAt = timestamp,
+            RepositoriesGeneratedAt = timestamp,
+            TrendsGeneratedAt = timestamp
         };
     }
 
@@ -254,6 +277,7 @@ public class JsonOutputWriterTests : IDisposable
 
         json.Should().Contain("\"generatedAt\"");
         json.Should().Contain("\"repositories\"");
+        json.Should().Contain("\"watchList\"");
         json.Should().Contain("\"stars\"");
         json.Should().Contain("\"forks\"");
     }
@@ -288,6 +312,7 @@ public class JsonOutputWriterTests : IDisposable
 
         deserialized.Should().NotBeNull();
         deserialized!.Repositories.Should().BeEmpty();
+        deserialized.WatchList.Should().BeEmpty();
     }
 
     [Fact]
@@ -308,6 +333,53 @@ public class JsonOutputWriterTests : IDisposable
         var deserialized = JsonSerializer.Deserialize<RepositoriesOutput>(json);
 
         deserialized!.Repositories.Should().BeEmpty();
+        deserialized.WatchList.Should().BeEmpty();
+    }
+
+    #endregion
+
+    #region WriteMetadataAsync Tests
+
+    [Fact]
+    public async Task WriteMetadataAsync_CreatesLatestDataMetadataJson()
+    {
+        var output = CreateSampleMetadataOutput();
+
+        await _writer.WriteMetadataAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.metadata.json");
+        File.Exists(latestPath).Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task WriteMetadataAsync_JsonContainsExpectedPropertyNames()
+    {
+        var output = CreateSampleMetadataOutput();
+
+        await _writer.WriteMetadataAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.metadata.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+
+        json.Should().Contain("\"generatedAt\"");
+        json.Should().Contain("\"nugetGeneratedAt\"");
+        json.Should().Contain("\"repositoriesGeneratedAt\"");
+        json.Should().Contain("\"trendsGeneratedAt\"");
+    }
+
+    [Fact]
+    public async Task WriteMetadataAsync_OutputJsonIsValidAndDeserializable()
+    {
+        var output = CreateSampleMetadataOutput();
+
+        await _writer.WriteMetadataAsync(output, _tempRoot);
+
+        var latestPath = Path.Combine(_tempRoot, "data", "latest", "data.metadata.json");
+        var json = await File.ReadAllTextAsync(latestPath);
+        var deserialized = JsonSerializer.Deserialize<DashboardMetadataOutput>(json);
+
+        deserialized.Should().NotBeNull();
+        deserialized!.NuGetGeneratedAt.Should().NotBeNull();
     }
 
     #endregion

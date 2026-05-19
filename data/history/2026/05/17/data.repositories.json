@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T12:09:15.1219454+00:00",
+  "generatedAt": "2026-05-17T10:22:11.9641014+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -238,7 +238,7 @@
       "owner": "elbruno",
       "name": "ElBruno.MarkItDotNet",
       "fullName": "elbruno/ElBruno.MarkItDotNet",
-      "stars": 21,
+      "stars": 20,
       "forks": 4,
       "openIssues": 0,
       "openPullRequests": 0,
@@ -267,7 +267,7 @@
         "rtf"
       ],
       "createdAt": "2026-04-02T17:50:33+00:00",
-      "updatedAt": "2026-05-18T22:04:50+00:00",
+      "updatedAt": "2026-05-13T16:15:35+00:00",
       "size": 1670,
       "defaultBranch": "main",
       "homepage": null,
@@ -395,7 +395,7 @@
       "fullName": "elbruno/ElBruno.QwenTTS",
       "stars": 30,
       "forks": 5,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
@@ -428,20 +428,7 @@
       "networkCount": 5,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": [
-        {
-          "number": 52,
-          "title": "Does this project support Russian language?",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/52",
-          "createdAt": "2026-05-18T16:16:12+00:00",
-          "updatedAt": "2026-05-18T16:16:12+00:00",
-          "userLogin": "RXDCODX",
-          "labels": [],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
+      "recentIssues": [],
       "recentClosedIssues": [
         {
           "number": 51,
@@ -468,46 +455,79 @@
           "commentsCount": 3,
           "state": "closed",
           "closedAt": "2026-05-03T13:02:07+00:00"
+        },
+        {
+          "number": 48,
+          "title": "export_vocoder caused error",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/48",
+          "createdAt": "2026-04-16T23:56:02+00:00",
+          "updatedAt": "2026-04-17T10:50:23+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-04-17T10:50:23+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 3,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 49,
+          "title": "fix: make check_model_inputs no-op for ONNX export (#48)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/49",
+          "createdAt": "2026-04-17T10:48:58+00:00",
+          "updatedAt": "2026-04-17T10:50:24+00:00",
+          "mergedAt": "2026-04-17T10:50:21+00:00",
+          "closedAt": "2026-04-17T10:50:22+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/48-fix-vocoder-check-model-inputs",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 64,
+        "totalScore": 79,
         "availablePoints": 80,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 2,
+          "score": 4,
           "maxScore": 20,
           "available": true,
-          "value": 2,
-          "displayValue": "2 commits",
-          "summary": "2 commits in the last 30 days."
+          "value": 4,
+          "displayValue": "4 commits",
+          "summary": "4 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
           "maxScore": 20,
           "available": true,
-          "value": 1.3,
-          "displayValue": "1.3 days",
-          "summary": "1.3 average days to close recent issues."
+          "value": 1,
+          "displayValue": "1.0 days",
+          "summary": "1.0 average days to close recent issues."
         },
         "releaseFrequency": {
-          "score": 10,
+          "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 2,
-          "displayValue": "2 releases",
-          "summary": "2 package releases in the last 30 days across 2 packages."
+          "value": 4,
+          "displayValue": "4 releases",
+          "summary": "4 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -976,9 +996,29 @@
           "headBranch": "feature/cli-tool-t2i",
           "baseBranch": "main",
           "commentsCount": 0
+        },
+        {
+          "number": 9,
+          "title": "Add scenario-14: GPU stress test with metrics",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/9",
+          "createdAt": "2026-04-17T19:44:54+00:00",
+          "updatedAt": "2026-04-19T11:55:07+00:00",
+          "mergedAt": "2026-04-19T11:55:05+00:00",
+          "closedAt": "2026-04-19T11:55:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sample/gpu-stress-test",
+          "baseBranch": "main",
+          "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 17,
+      "mergedPullRequestsCount": 18,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
@@ -994,9 +1034,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 89,
-          "displayValue": "89 commits",
-          "summary": "89 commits in the last 30 days."
+          "value": 92,
+          "displayValue": "92 commits",
+          "summary": "92 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
@@ -1010,9 +1050,129 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 101,
-          "displayValue": "101 releases",
-          "summary": "101 package releases in the last 30 days across 6 packages."
+          "value": 106,
+          "displayValue": "106 releases",
+          "summary": "106 package releases in the last 30 days across 6 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.LocalLLMs",
+      "fullName": "elbruno/ElBruno.LocalLLMs",
+      "stars": 13,
+      "forks": 4,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "C# local LLM chat completions library using ONNX Runtime, compatible with Microsoft.Extensions.AI",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-04-17T13:32:00+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "chat-completion",
+        "csharp",
+        "dotnet",
+        "embeddings",
+        "local-llm",
+        "machine-learning",
+        "microsoft-extensions-ai",
+        "net10",
+        "net8",
+        "nuget",
+        "onnx",
+        "onnx-runtime",
+        "rag"
+      ],
+      "createdAt": "2026-03-17T23:54:21+00:00",
+      "updatedAt": "2026-05-16T20:03:37+00:00",
+      "size": 2554,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": false,
+      "hasPages": false,
+      "networkCount": 4,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 16,
+          "title": "feat(bitnet): add auto-download \u002B platform-specific native NuGet packages",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/16",
+          "createdAt": "2026-04-17T13:28:14+00:00",
+          "updatedAt": "2026-04-17T13:30:50+00:00",
+          "mergedAt": "2026-04-17T13:30:47+00:00",
+          "closedAt": "2026-04-17T13:30:47+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/bitnet-auto-download",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 62,
+        "availablePoints": 60,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 2,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 15,
+          "maxScore": 20,
+          "available": true,
+          "value": 3,
+          "displayValue": "3 releases",
+          "summary": "3 package releases in the last 30 days across 3 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1490,105 +1650,6 @@
           "value": 85,
           "displayValue": "85 releases",
           "summary": "85 package releases in the last 30 days across 11 packages."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "elbruno",
-      "name": "ElBruno.LocalLLMs",
-      "fullName": "elbruno/ElBruno.LocalLLMs",
-      "stars": 13,
-      "forks": 4,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": "C# local LLM chat completions library using ONNX Runtime, compatible with Microsoft.Extensions.AI",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-04-17T13:32:00+00:00",
-      "archived": false,
-      "watchersCount": 0,
-      "topics": [
-        "ai",
-        "chat-completion",
-        "csharp",
-        "dotnet",
-        "embeddings",
-        "local-llm",
-        "machine-learning",
-        "microsoft-extensions-ai",
-        "net10",
-        "net8",
-        "nuget",
-        "onnx",
-        "onnx-runtime",
-        "rag"
-      ],
-      "createdAt": "2026-03-17T23:54:21+00:00",
-      "updatedAt": "2026-05-16T20:03:37+00:00",
-      "size": 2554,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": false,
-      "hasPages": false,
-      "networkCount": 4,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
-        "activity": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 3 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3911,7 +3972,7 @@
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-19T06:01:41+00:00",
+      "lastPush": "2026-05-17T05:43:36+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -3932,8 +3993,8 @@
         "tutorial"
       ],
       "createdAt": "2026-04-12T17:17:04+00:00",
-      "updatedAt": "2026-05-19T06:01:44+00:00",
-      "size": 56411,
+      "updatedAt": "2026-05-17T09:25:51+00:00",
+      "size": 56408,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3959,52 +4020,6 @@
       "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
-        {
-          "number": 78,
-          "title": "sync: mirror from plan repo [2026-05-19]",
-          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/78",
-          "createdAt": "2026-05-19T06:01:36+00:00",
-          "updatedAt": "2026-05-19T06:01:42+00:00",
-          "mergedAt": "2026-05-19T06:01:40+00:00",
-          "closedAt": "2026-05-19T06:01:40+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "auto:sync",
-            "bot"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "sync/plan-mirror-2026-05-19",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 77,
-          "title": "sync: mirror from plan repo [2026-05-18]",
-          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/77",
-          "createdAt": "2026-05-18T06:07:20+00:00",
-          "updatedAt": "2026-05-18T06:07:26+00:00",
-          "mergedAt": "2026-05-18T06:07:24+00:00",
-          "closedAt": "2026-05-18T06:07:24+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "auto:sync",
-            "bot"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "sync/plan-mirror-2026-05-18",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
         {
           "number": 76,
           "title": "sync: mirror from plan repo [2026-05-17]",
@@ -4834,7 +4849,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 38,
+      "mergedPullRequestsCount": 36,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -4900,7 +4915,7 @@
       "purpose": "Reference architecture and AI-assisted workflow patterns",
       "dateAdded": "2025-04-02",
       "stars": 54,
-      "lastUpdate": "2026-05-19T06:01:41+00:00",
+      "lastUpdate": "2026-05-17T05:43:36+00:00",
       "isStub": false,
       "stubReason": null
     }

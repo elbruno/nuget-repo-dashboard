@@ -99,4 +99,16 @@ public sealed class GitHubRepoMetrics
 
     [JsonPropertyName("stubReason")]
     public string? StubReason { get; set; }
+
+    [JsonPropertyName("isWatchList")]
+    public bool IsWatchList { get; set; }
+
+    [JsonPropertyName("watchPurpose")]
+    public string? WatchPurpose { get; set; }
+
+    [JsonPropertyName("watchDateAdded")]
+    public string? WatchDateAdded { get; set; }
+
+    [JsonPropertyName("maintainability")]
+    public MaintainabilityScore? Maintainability { get; set; }
 }

@@ -518,4 +518,173 @@ public class GitHubCollectorTests
         m.Visibility.Should().BeNull();
         m.HtmlUrl.Should().BeNull();
     }
+
+    [Fact]
+    public async Task CollectAsync_RecentIssues_ParsesCommentsCount()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.OK, "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson());
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/issues?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            """
+            [
+              {
+                "number": 20,
+                "title": "Fix issue comments",
+                "html_url": "https://github.com/owner/repo/issues/20",
+                "comments": 7,
+                "created_at": "2026-05-01T10:00:00Z",
+                "updated_at": "2026-05-02T10:00:00Z",
+                "user": { "login": "octocat" },
+                "labels": []
+              }
+            ]
+            """);
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].RecentIssues.Should().ContainSingle();
+        results[0].RecentIssues[0].CommentsCount.Should().Be(7);
+    }
+
+    [Fact]
+    public async Task CollectAsync_RecentIssues_ParsesCommentsCountFallback()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.OK, "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson());
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/issues?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            """
+            [
+              {
+                "number": 20,
+                "title": "Fix issue comments",
+                "html_url": "https://github.com/owner/repo/issues/20",
+                "comments_count": "5",
+                "created_at": "2026-05-01T10:00:00Z",
+                "updated_at": "2026-05-02T10:00:00Z",
+                "user": { "login": "octocat" },
+                "labels": []
+              }
+            ]
+            """);
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+
+        var results = await collector.CollectAsync(["owner/repo"]);
+
+        results.Should().ContainSingle();
+        results[0].RecentIssues.Should().ContainSingle();
+        results[0].RecentIssues[0].CommentsCount.Should().Be(5);
+    }
+
+    [Fact]
+    public async Task CollectWithStubsAsync_WatchListRepoFetched_MarksWatchListMetadata()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.OK, "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo",
+            HttpStatusCode.OK,
+            BuildRepoJson(description: null, htmlUrl: null));
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=open&sort=created&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+        handler.AddResponse(
+            "https://api.github.com/repos/owner/repo/pulls?state=closed&sort=updated&direction=desc&per_page=40",
+            HttpStatusCode.OK,
+            "[]");
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+        var watchList = new List<NuGetDashboard.Collector.Models.WatchListEntry>
+        {
+            new()
+            {
+                Owner = "owner",
+                Repo = "repo",
+                Url = "https://github.com/owner/repo",
+                Description = "Watch list description",
+                DateAdded = "2025-04-02",
+                Purpose = "Reference implementation"
+            }
+        };
+
+        var results = await collector.CollectWithStubsAsync(["owner/repo"], watchList);
+
+        results.Should().ContainSingle();
+        var repo = results[0];
+        repo.IsWatchList.Should().BeTrue();
+        repo.WatchPurpose.Should().Be("Reference implementation");
+        repo.WatchDateAdded.Should().Be("2025-04-02");
+        repo.Description.Should().Be("Watch list description");
+        repo.HtmlUrl.Should().Be("https://github.com/owner/repo");
+        repo.IsStub.Should().BeFalse();
+    }
+
+    [Fact]
+    public async Task CollectWithStubsAsync_WatchListRepoUnavailable_CreatesWatchListStub()
+    {
+        var handler = new MockHttpMessageHandler();
+        handler.SetDefaultResponse(HttpStatusCode.NotFound);
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new GitHubCollector(httpClient);
+        var watchList = new List<NuGetDashboard.Collector.Models.WatchListEntry>
+        {
+            new()
+            {
+                Owner = "owner",
+                Repo = "missing-repo",
+                Url = "https://github.com/owner/missing-repo",
+                Description = "Missing repo description",
+                DateAdded = "2025-04-03",
+                Purpose = "Pattern tracking"
+            }
+        };
+
+        var results = await collector.CollectWithStubsAsync([], watchList);
+
+        results.Should().ContainSingle();
+        var stub = results[0];
+        stub.FullName.Should().Be("owner/missing-repo");
+        stub.IsStub.Should().BeTrue();
+        stub.IsWatchList.Should().BeTrue();
+        stub.WatchPurpose.Should().Be("Pattern tracking");
+        stub.WatchDateAdded.Should().Be("2025-04-03");
+        stub.Description.Should().Be("Missing repo description");
+        stub.HtmlUrl.Should().Be("https://github.com/owner/missing-repo");
+    }
 }

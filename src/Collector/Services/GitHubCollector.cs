@@ -167,7 +167,7 @@ public sealed class GitHubCollector : IGitHubCollector
                     Number = element.TryGetProperty("number", out var num) ? num.GetInt32() : 0,
                     Title = element.TryGetProperty("title", out var title) ? title.GetString() ?? string.Empty : string.Empty,
                     HtmlUrl = element.TryGetProperty("html_url", out var htmlUrl) ? htmlUrl.GetString() : null,
-                    CommentsCount = element.TryGetProperty("comments", out var comments) ? comments.GetInt32() : 0,
+                    CommentsCount = GetCommentsCount(element),
                 };
 
                 if (element.TryGetProperty("created_at", out var createdAt) &&
@@ -234,7 +234,7 @@ public sealed class GitHubCollector : IGitHubCollector
                     Number = element.TryGetProperty("number", out var num) ? num.GetInt32() : 0,
                     Title = element.TryGetProperty("title", out var title) ? title.GetString() ?? string.Empty : string.Empty,
                     HtmlUrl = element.TryGetProperty("html_url", out var htmlUrl) ? htmlUrl.GetString() : null,
-                    CommentsCount = element.TryGetProperty("comments", out var comments) ? comments.GetInt32() : 0,
+                    CommentsCount = GetCommentsCount(element),
                     State = element.TryGetProperty("state", out var state) ? state.GetString() : null,
                 };
 
@@ -350,7 +350,7 @@ public sealed class GitHubCollector : IGitHubCollector
             HtmlUrl = element.TryGetProperty("html_url", out var htmlUrl) ? htmlUrl.GetString() : null,
             IsDraft = element.TryGetProperty("draft", out var draft) && draft.GetBoolean(),
             State = element.TryGetProperty("state", out var state) ? state.GetString() : null,
-            CommentsCount = element.TryGetProperty("comments", out var comments) ? comments.GetInt32() : 0,
+            CommentsCount = GetCommentsCount(element),
             // additions/deletions/changed_files are not returned by the list endpoint — set to 0
             Additions = 0,
             Deletions = 0,
@@ -424,6 +424,37 @@ public sealed class GitHubCollector : IGitHubCollector
         return pr;
     }
 
+    private static int GetCommentsCount(JsonElement element)
+    {
+        if (TryReadIntProperty(element, "comments", out var commentsCount))
+        {
+            return commentsCount;
+        }
+
+        if (TryReadIntProperty(element, "comments_count", out commentsCount))
+        {
+            return commentsCount;
+        }
+
+        return 0;
+    }
+
+    private static bool TryReadIntProperty(JsonElement element, string propertyName, out int value)
+    {
+        value = 0;
+        if (!element.TryGetProperty(propertyName, out var property))
+        {
+            return false;
+        }
+
+        return property.ValueKind switch
+        {
+            JsonValueKind.Number => property.TryGetInt32(out value),
+            JsonValueKind.String => int.TryParse(property.GetString(), out value),
+            _ => false
+        };
+    }
+
     private async Task<JsonDocument?> GetWithRetryAsync(string url)
     {
         for (int attempt = 0; attempt < MaxRetries; attempt++)
@@ -485,6 +516,16 @@ public sealed class GitHubCollector : IGitHubCollector
         // First, collect what we can from the API
         var results = await CollectAsync(repoFullNames);
         var collectedFullNames = new HashSet<string>(results.Select(r => r.FullName), StringComparer.OrdinalIgnoreCase);
+        var watchLookup = watchList.ToDictionary(w => $"{w.Owner}/{w.Repo}", StringComparer.OrdinalIgnoreCase);
+
+        // Mark successfully collected repos that are in watch-list
+        foreach (var repo in results)
+        {
+            if (watchLookup.TryGetValue(repo.FullName, out var watchEntry))
+            {
+                ApplyWatchListMetadata(repo, watchEntry);
+            }
+        }
 
         // For each watch-list entry, if it wasn't collected, create a stub
         foreach (var watchEntry in watchList)
@@ -502,6 +543,7 @@ public sealed class GitHubCollector : IGitHubCollector
                     IsStub = true,
                     StubReason = "Failed to fetch live data from GitHub API (rate limited or unavailable)"
                 };
+                ApplyWatchListMetadata(stub, watchEntry);
 
                 results.Add(stub);
                 Console.WriteLine($"[GitHub] Created stub entry for watch-list repo: {fullName}");
@@ -509,5 +551,22 @@ public sealed class GitHubCollector : IGitHubCollector
         }
 
         return results;
+    }
+
+    private static void ApplyWatchListMetadata(GitHubRepoMetrics repo, WatchListEntry watchEntry)
+    {
+        repo.IsWatchList = true;
+        repo.WatchPurpose = watchEntry.Purpose;
+        repo.WatchDateAdded = watchEntry.DateAdded;
+
+        if (string.IsNullOrWhiteSpace(repo.Description))
+        {
+            repo.Description = watchEntry.Description;
+        }
+
+        if (string.IsNullOrWhiteSpace(repo.HtmlUrl))
+        {
+            repo.HtmlUrl = watchEntry.Url;
+        }
     }
 }

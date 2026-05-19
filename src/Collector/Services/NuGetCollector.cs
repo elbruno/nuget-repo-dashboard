@@ -63,6 +63,8 @@ public sealed class NuGetCollector : INuGetCollector
         List<string> tags = [];
         bool listed = true;
         DateTimeOffset? publishedDate = null;
+        int releasesLast30Days = 0;
+        var releaseCutoff = DateTimeOffset.UtcNow.AddDays(-30);
 
         // Registration index contains "items" (pages). Walk them to find the latest catalog entry.
         if (root.TryGetProperty("items", out var pages))
@@ -91,6 +93,14 @@ public sealed class NuGetCollector : INuGetCollector
                 foreach (var leaf in items.EnumerateArray())
                 {
                     latestLeaf = leaf; // keep overwriting — last one is latest
+
+                    if (leaf.TryGetProperty("catalogEntry", out var releaseEntry) &&
+                        releaseEntry.TryGetProperty("published", out var releasePublished) &&
+                        DateTimeOffset.TryParse(releasePublished.GetString(), out var releasePublishedDate) &&
+                        releasePublishedDate >= releaseCutoff)
+                    {
+                        releasesLast30Days++;
+                    }
                 }
             }
 
@@ -137,7 +147,8 @@ public sealed class NuGetCollector : INuGetCollector
             ProjectUrl = projectUrl,
             Tags = tags,
             Listed = listed,
-            PublishedDate = publishedDate
+            PublishedDate = publishedDate,
+            ReleasesLast30Days = releasesLast30Days
         };
     }
 
