@@ -442,70 +442,6 @@
       .trends-overview { grid-template-columns: 1fr; }
     }
 
-    /* Top Highlights */
-    .highlights-area {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .highlights-column h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .highlight-card {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.75rem 0.85rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 0.5rem;
-      transition: box-shadow 0.2s, transform 0.2s;
-      flex-wrap: wrap;
-    }
-    .highlight-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
-    .highlight-rank {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--accent);
-      min-width: 2rem;
-      text-align: center;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-    .highlight-info { flex: 1; min-width: 0; }
-    .highlight-info .name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .highlight-info .name a { color: var(--accent); text-decoration: none; }
-    .highlight-info .name a:hover { text-decoration: underline; }
-    .highlight-info .meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.15rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .highlight-stat {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
     /* Responsive */
     @media (max-width: 480px) {
       .container { padding: 0 0.75rem; }
@@ -542,10 +478,6 @@
       .card-description { font-size: 0.75rem; }
       .stat { font-size: 0.7rem; }
       
-      .highlight-info .name { font-size: 0.8rem; }
-      .highlight-info .meta { font-size: 0.7rem; }
-      .highlight-rank { font-size: 1rem; }
-      .highlight-stat { font-size: 0.9rem; }
       
       .empty-state { padding: 2rem 0.75rem; }
       .empty-state .icon { font-size: 1.5rem; }
@@ -556,13 +488,11 @@
     
     @media (max-width: 600px) {
       .trends-overview { grid-template-columns: 1fr; }
-      .highlights-area { grid-template-columns: 1fr; }
     }
     
     @media (min-width: 481px) and (max-width: 767px) {
       .card-grid { grid-template-columns: repeat(2, 1fr); }
       .trends-overview { grid-template-columns: repeat(2, 1fr); }
-      .highlights-area { grid-template-columns: repeat(2, 1fr); }
     }
     
     @media (min-width: 768px) {
@@ -598,14 +528,8 @@
       .stat { font-size: 0.82rem; gap: 0.25rem; }
       .stat .value { font-size: 0.95rem; }
       
-      .highlight-info .name { font-size: 0.95rem; }
-      .highlight-info .meta { font-size: 0.82rem; }
-      .highlight-rank { font-size: 1.5rem; }
-      .highlight-stat { font-size: 1.1rem; }
-      
       .card-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
       .trends-overview { grid-template-columns: repeat(2, 1fr); }
-      .highlights-area { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -622,7 +546,6 @@
   <nav class="top-nav">
     <div class="container">
       <a href="#trends-section" class="nav-link">📈 Trends</a>
-      <a href="#top-highlights" class="nav-link">🏆 Top 3</a>
       <a href="#nuget-packages" class="nav-link">📦 Packages</a>
       <a href="#github-repos" class="nav-link">🐙 Repositories</a>
       <a href="#open-issues" class="nav-link">🐛 Issues</a>
@@ -650,16 +573,6 @@
         </div>
         <div class="section-content" id="trends-section-content">
           <div id="trends-grid" class="trends-overview"></div>
-        </div>
-      </section>
-
-      <!-- Top Highlights Section -->
-      <section id="top-highlights">
-        <div class="section-header collapsible-header" data-section="top-highlights">
-          <h2><span class="chevron">▼</span> <span class="icon">🏆</span> Top Highlights</h2>
-        </div>
-        <div class="section-content" id="top-highlights-content">
-          <div id="top-highlights-grid" class="highlights-area"></div>
         </div>
       </section>
 
@@ -1533,47 +1446,6 @@
       });
     }
 
-    /* ── Top Highlights Rendering ── */
-
-    function renderTopHighlights() {
-      const topPkgs = [...allPackages].sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0)).slice(0, 3);
-      const topRepos = [...allRepos].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 3);
-      const medals = ['🥇', '🥈', '🥉'];
-
-      const pkgCards = topPkgs.map((pkg, i) => `
-        <div class="highlight-card">
-          <div class="highlight-rank">${medals[i]}</div>
-          <div class="highlight-info">
-            <div class="name"><a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a></div>
-            <div class="meta">v${esc(pkg.latestVersion || '')} · ${esc(truncate(pkg.description, 60))}</div>
-          </div>
-          <div class="highlight-stat">⬇️ ${fmtCompact(pkg.totalDownloads)}</div>
-        </div>
-      `).join('');
-
-      const repoCards = topRepos.map((repo, i) => `
-        <div class="highlight-card">
-          <div class="highlight-rank">${medals[i]}</div>
-          <div class="highlight-info">
-            <div class="name"><a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a></div>
-            <div class="meta">${esc(truncate(repo.description, 60))}</div>
-          </div>
-          <div class="highlight-stat">⭐ ${fmtCompact(repo.stars)}</div>
-        </div>
-      `).join('');
-
-      document.getElementById('top-highlights-grid').innerHTML = `
-        <div class="highlights-column">
-          <h3>📦 Top Packages by Downloads</h3>
-          ${pkgCards}
-        </div>
-        <div class="highlights-column">
-          <h3>🐙 Top Repos by Stars</h3>
-          ${repoCards}
-        </div>
-      `;
-    }
-
     /* ── Trends Section Rendering ── */
 
     function renderTrendsSection() {
@@ -1800,7 +1672,6 @@
         renderTrendsSection();
         renderNugetSection();
         renderRepoSection();
-        renderTopHighlights();
         renderIssuesSection();
         renderPrsSection();
 
