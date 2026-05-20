@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T12:09:19.9220789+00:00",
+  "generatedAt": "2026-05-20T11:49:38.2894698+00:00",
   "totalRepos": 22,
   "profiles": [
     {
@@ -117,16 +117,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.QRCodeGenerator",
-      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
-      "accentColor": "#B85C5B",
-      "icon": "\uD83D\uDCF7"
-    },
-    {
       "repo": "elbruno/ElBruno.CopilotCLIMonitor",
       "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
       "accentColor": "#6660B3",
       "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "elbruno/ElBruno.QRCodeGenerator",
+      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
+      "accentColor": "#B85C5B",
+      "icon": "\uD83D\uDCF7"
     },
     {
       "repo": "elbruno/openclawnet",
