@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T18:32:21.2010494+00:00",
+  "generatedAt": "2026-05-20T11:49:33.9326643+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -109,7 +109,7 @@
       "description": ".NET library for local embedding generation using ONNX and Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-20T15:46:24+00:00",
+      "lastPush": "2026-04-28T03:22:36+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -132,8 +132,8 @@
         "vector-embeddings"
       ],
       "createdAt": "2026-02-12T20:46:25+00:00",
-      "updatedAt": "2026-05-20T15:46:11+00:00",
-      "size": 62334,
+      "updatedAt": "2026-05-14T13:50:55+00:00",
+      "size": 62015,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -160,26 +160,6 @@
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
-          "number": 45,
-          "title": "Release v1.0.1: OpenTelemetry Phase \u0026 Test Stability",
-          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/45",
-          "createdAt": "2026-05-20T15:44:29+00:00",
-          "updatedAt": "2026-05-20T15:46:05+00:00",
-          "mergedAt": "2026-05-20T15:46:05+00:00",
-          "closedAt": "2026-05-20T15:46:05+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "feature/implement-phases-20260519",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
           "number": 44,
           "title": "Add pluggable ICustomEmbedder interface (closes #43)",
           "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/44",
@@ -200,25 +180,25 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 2,
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 99,
+        "totalScore": 88,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 19,
+          "score": 10,
           "maxScore": 20,
           "available": true,
-          "value": 19,
-          "displayValue": "19 commits",
-          "summary": "19 commits in the last 30 days."
+          "value": 10,
+          "displayValue": "10 commits",
+          "summary": "10 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 20,
@@ -232,9 +212,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 26,
-          "displayValue": "26 releases",
-          "summary": "26 package releases in the last 30 days across 9 packages."
+          "value": 18,
+          "displayValue": "18 releases",
+          "summary": "18 package releases in the last 30 days across 9 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -413,14 +393,14 @@
       "owner": "elbruno",
       "name": "ElBruno.QwenTTS",
       "fullName": "elbruno/ElBruno.QwenTTS",
-      "stars": 31,
+      "stars": 30,
       "forks": 5,
-      "openIssues": 0,
+      "openIssues": 1,
       "openPullRequests": 0,
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-20T20:03:14+00:00",
+      "lastPush": "2026-05-02T12:56:39+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -439,8 +419,8 @@
         "voice-cloning"
       ],
       "createdAt": "2026-02-21T16:27:42+00:00",
-      "updatedAt": "2026-05-20T20:03:12+00:00",
-      "size": 2894,
+      "updatedAt": "2026-05-14T03:28:38+00:00",
+      "size": 2879,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
@@ -448,20 +428,21 @@
       "networkCount": 5,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": [],
-      "recentClosedIssues": [
+      "recentIssues": [
         {
           "number": 52,
           "title": "Does this project support Russian language?",
           "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/52",
           "createdAt": "2026-05-18T16:16:12+00:00",
-          "updatedAt": "2026-05-20T20:07:04+00:00",
+          "updatedAt": "2026-05-18T16:16:12+00:00",
           "userLogin": "RXDCODX",
           "labels": [],
-          "commentsCount": 3,
-          "state": "closed",
-          "closedAt": "2026-05-20T20:07:04+00:00"
-        },
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [
         {
           "number": 51,
           "title": "confirm: position_ids\u0027s dimension",
@@ -489,65 +470,44 @@
           "closedAt": "2026-05-03T13:02:07+00:00"
         }
       ],
-      "closedIssuesCount": 3,
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [
-        {
-          "number": 53,
-          "title": "feat: add Russian language support",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/53",
-          "createdAt": "2026-05-20T20:01:20+00:00",
-          "updatedAt": "2026-05-20T20:03:08+00:00",
-          "mergedAt": "2026-05-20T20:03:05+00:00",
-          "closedAt": "2026-05-20T20:03:05+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "squad/52-russian-language-support",
-          "baseBranch": "main",
-          "commentsCount": 0
-        }
-      ],
-      "mergedPullRequestsCount": 1,
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 78,
+        "totalScore": 64,
         "availablePoints": 80,
-        "status": "good",
-        "label": "Good",
-        "emoji": "\uD83D\uDFE2",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 3,
+          "score": 2,
           "maxScore": 20,
           "available": true,
-          "value": 3,
-          "displayValue": "3 commits",
-          "summary": "3 commits in the last 30 days."
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
           "maxScore": 20,
           "available": true,
-          "value": 1.6,
-          "displayValue": "1.6 days",
-          "summary": "1.6 average days to close recent issues."
+          "value": 1.3,
+          "displayValue": "1.3 days",
+          "summary": "1.3 average days to close recent issues."
         },
         "releaseFrequency": {
-          "score": 20,
+          "score": 10,
           "maxScore": 20,
           "available": true,
-          "value": 4,
-          "displayValue": "4 releases",
-          "summary": "4 package releases in the last 30 days across 2 packages."
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -876,9 +836,129 @@
           "headBranch": "feature/gpt-image-1.5-support",
           "baseBranch": "main",
           "commentsCount": 0
+        },
+        {
+          "number": 16,
+          "title": "fix(cli): remove -h short alias from --height (collided with --help)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/16",
+          "createdAt": "2026-04-20T14:59:12+00:00",
+          "updatedAt": "2026-04-20T14:59:27+00:00",
+          "mergedAt": "2026-04-20T14:59:24+00:00",
+          "closedAt": "2026-04-20T14:59:24+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/cli-height-shortopt-collision",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 15,
+          "title": "fix(cli): auto-bump dimensions for MAI-Image-2 below 768px minimum",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/15",
+          "createdAt": "2026-04-20T14:46:29+00:00",
+          "updatedAt": "2026-04-20T14:46:47+00:00",
+          "mergedAt": "2026-04-20T14:46:43+00:00",
+          "closedAt": "2026-04-20T14:46:44+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/mai-image2-default-dimensions",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 14,
+          "title": "docs(blog): fix inaccuracies \u0026 reorder secrets guidance",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/14",
+          "createdAt": "2026-04-20T14:38:57+00:00",
+          "updatedAt": "2026-04-20T14:46:41+00:00",
+          "mergedAt": "2026-04-20T14:46:40+00:00",
+          "closedAt": "2026-04-20T14:46:40+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "docs/blog-secrets-accuracy",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 13,
+          "title": "feat(cli): configurable model name \u002B fix endpoint masking (v0.10.0)",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/13",
+          "createdAt": "2026-04-20T14:15:57+00:00",
+          "updatedAt": "2026-04-20T14:18:34+00:00",
+          "mergedAt": "2026-04-20T14:18:31+00:00",
+          "closedAt": "2026-04-20T14:18:31+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feat/configurable-model-name",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 12,
+          "title": "chore: align all packages to v0.9.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/12",
+          "createdAt": "2026-04-20T12:21:51+00:00",
+          "updatedAt": "2026-04-20T12:22:00+00:00",
+          "mergedAt": "2026-04-20T12:21:57+00:00",
+          "closedAt": "2026-04-20T12:21:57+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "chore/align-versions-0.9.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 11,
+          "title": "feat(cli): add \u0027t2i init\u0027 command for AI agent skill files",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/11",
+          "createdAt": "2026-04-20T11:30:51+00:00",
+          "updatedAt": "2026-04-20T12:15:14+00:00",
+          "mergedAt": "2026-04-20T12:15:11+00:00",
+          "closedAt": "2026-04-20T12:15:11+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "feature/cli-init-skill",
+          "baseBranch": "main",
+          "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 10,
+      "mergedPullRequestsCount": 16,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
@@ -894,9 +974,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 74,
-          "displayValue": "74 commits",
-          "summary": "74 commits in the last 30 days."
+          "value": 83,
+          "displayValue": "83 commits",
+          "summary": "83 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
@@ -910,9 +990,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 90,
-          "displayValue": "90 releases",
-          "summary": "90 package releases in the last 30 days across 6 packages."
+          "value": 100,
+          "displayValue": "100 releases",
+          "summary": "100 package releases in the last 30 days across 6 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -2064,7 +2144,7 @@
       "owner": "elbruno",
       "name": "graphify-dotnet",
       "fullName": "elbruno/graphify-dotnet",
-      "stars": 69,
+      "stars": 65,
       "forks": 13,
       "openIssues": 0,
       "openPullRequests": 0,
@@ -2091,7 +2171,7 @@
         "vis-js"
       ],
       "createdAt": "2026-04-06T20:06:04+00:00",
-      "updatedAt": "2026-05-21T06:51:00+00:00",
+      "updatedAt": "2026-05-12T13:56:41+00:00",
       "size": 6637,
       "defaultBranch": "main",
       "homepage": null,
@@ -2605,17 +2685,287 @@
       }
     },
     {
+      "owner": "ElBruno",
+      "name": "ElBruno.BM25",
+      "fullName": "ElBruno/ElBruno.BM25",
+      "stars": 2,
+      "forks": 0,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "Zero-dependency BM25 full-text search library for .NET. High-performance indexing and ranking with configurable tokenization.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-04-29T02:11:44+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "bm25",
+        "csharp",
+        "dotnet",
+        "full-text-search",
+        "information-retrieval",
+        "nuget",
+        "search",
+        "text-analysis"
+      ],
+      "createdAt": "2026-04-28T21:27:06+00:00",
+      "updatedAt": "2026-05-01T08:53:44+00:00",
+      "size": 14975,
+      "defaultBranch": "main",
+      "homepage": "https://github.com/elbruno/ElBruno.BM25",
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.BM25",
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 75,
+        "availablePoints": 60,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 23,
+          "displayValue": "23 commits",
+          "summary": "23 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 5,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 release",
+          "summary": "1 package release in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "elbruno-ai-evaluation",
+      "fullName": "elbruno/elbruno-ai-evaluation",
+      "stars": 4,
+      "forks": 0,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "AI Testing \u0026 Observability Toolkit for .NET - deterministic evaluators, synthetic data, golden datasets, regression detection",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-02-28T18:53:22+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "csharp",
+        "dotnet",
+        "evaluation",
+        "llm",
+        "nuget",
+        "testing",
+        "xunit"
+      ],
+      "createdAt": "2026-02-24T00:57:33+00:00",
+      "updatedAt": "2026-05-02T12:49:14+00:00",
+      "size": 16977,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": true,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 4 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.PersonaPlex",
+      "fullName": "elbruno/ElBruno.PersonaPlex",
+      "stars": 6,
+      "forks": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "C# .NET library for running NVIDIA PersonaPlex-7B-v1 full-duplex speech-to-speech locally using ONNX Runtime",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-02-28T21:33:57+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [],
+      "createdAt": "2026-02-27T01:33:45+00:00",
+      "updatedAt": "2026-04-17T14:23:09+00:00",
+      "size": 575,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex",
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
       "owner": "elbruno",
       "name": "ElBruno.CopilotCLIMonitor",
       "fullName": "elbruno/ElBruno.CopilotCLIMonitor",
       "stars": 1,
       "forks": 0,
-      "openIssues": 1,
-      "openPullRequests": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
       "description": "Windows Systray application that keeps you informed with native notifications when GitHub Copilot CLI tasks finish. Stop babysitting long-running workflows.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-21T15:04:39+00:00",
+      "lastPush": "2026-05-14T13:08:26+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -2628,8 +2978,8 @@
         "wpf"
       ],
       "createdAt": "2026-05-12T22:22:49+00:00",
-      "updatedAt": "2026-05-21T15:14:23+00:00",
-      "size": 12542,
+      "updatedAt": "2026-05-14T13:08:29+00:00",
+      "size": 12516,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -2848,232 +3198,137 @@
           "commentsCount": 1,
           "state": "closed",
           "closedAt": "2026-05-13T14:19:53+00:00"
-        }
-      ],
-      "closedIssuesCount": 15,
-      "recentPullRequests": [
+        },
         {
-          "number": 89,
-          "title": "Bump Spectre.Console from 0.49.1 to 0.55.2",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/89",
-          "createdAt": "2026-05-20T16:01:25+00:00",
-          "updatedAt": "2026-05-20T16:01:27+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "dependabot[bot]",
+          "number": 18,
+          "title": "IPC Optimization",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/18",
+          "createdAt": "2026-05-13T11:29:05+00:00",
+          "updatedAt": "2026-05-13T14:19:51+00:00",
+          "userLogin": "elbruno",
           "labels": [
-            "security"
+            "squad"
           ],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Cli/Spectre.Console-0.55.2",
-          "baseBranch": "main",
-          "commentsCount": 0
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:51+00:00"
+        },
+        {
+          "number": 19,
+          "title": "Code Quality Metrics",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/19",
+          "createdAt": "2026-05-13T11:29:07+00:00",
+          "updatedAt": "2026-05-13T14:19:49+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:49+00:00"
+        },
+        {
+          "number": 20,
+          "title": "Linting Rules",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/20",
+          "createdAt": "2026-05-13T11:29:08+00:00",
+          "updatedAt": "2026-05-13T14:19:47+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:47+00:00"
+        },
+        {
+          "number": 21,
+          "title": "Performance Testing",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/21",
+          "createdAt": "2026-05-13T11:29:10+00:00",
+          "updatedAt": "2026-05-13T14:19:45+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:45+00:00"
+        },
+        {
+          "number": 22,
+          "title": "Accessibility Testing",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/22",
+          "createdAt": "2026-05-13T11:29:11+00:00",
+          "updatedAt": "2026-05-13T14:19:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:43+00:00"
+        },
+        {
+          "number": 23,
+          "title": "Encrypted Storage",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/23",
+          "createdAt": "2026-05-13T11:29:13+00:00",
+          "updatedAt": "2026-05-13T14:19:41+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:41+00:00"
+        },
+        {
+          "number": 24,
+          "title": "Privacy Policy",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/24",
+          "createdAt": "2026-05-13T11:29:15+00:00",
+          "updatedAt": "2026-05-13T14:19:39+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:39+00:00"
+        },
+        {
+          "number": 25,
+          "title": "UI/UX Tests",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/25",
+          "createdAt": "2026-05-13T11:29:17+00:00",
+          "updatedAt": "2026-05-13T14:19:37+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:37+00:00"
+        },
+        {
+          "number": 26,
+          "title": "Code Coverage Reports",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/26",
+          "createdAt": "2026-05-13T11:29:18+00:00",
+          "updatedAt": "2026-05-13T14:19:35+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "squad"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-05-13T14:19:35+00:00"
         }
       ],
+      "closedIssuesCount": 24,
+      "recentPullRequests": [],
       "recentMergedPullRequests": [
-        {
-          "number": 84,
-          "title": "chore(deps): bump actions/upload-artifact from 4 to 7",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/84",
-          "createdAt": "2026-05-20T15:58:38+00:00",
-          "updatedAt": "2026-05-21T14:55:39+00:00",
-          "mergedAt": "2026-05-21T14:55:37+00:00",
-          "closedAt": "2026-05-21T14:55:37+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/github_actions/actions/upload-artifact-7",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 83,
-          "title": "chore(deps): bump github/codeql-action from 3 to 4",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/83",
-          "createdAt": "2026-05-20T15:58:34+00:00",
-          "updatedAt": "2026-05-21T14:53:23+00:00",
-          "mergedAt": "2026-05-21T14:53:20+00:00",
-          "closedAt": "2026-05-21T14:53:20+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/github_actions/github/codeql-action-4",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 82,
-          "title": "chore(deps): bump actions/checkout from 4 to 6",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/82",
-          "createdAt": "2026-05-20T15:58:29+00:00",
-          "updatedAt": "2026-05-21T14:49:36+00:00",
-          "mergedAt": "2026-05-21T14:49:32+00:00",
-          "closedAt": "2026-05-21T14:49:33+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/github_actions/actions/checkout-6",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 81,
-          "title": "chore(deps): bump softprops/action-gh-release from 2 to 3",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/81",
-          "createdAt": "2026-05-20T15:58:24+00:00",
-          "updatedAt": "2026-05-21T14:48:34+00:00",
-          "mergedAt": "2026-05-21T14:48:31+00:00",
-          "closedAt": "2026-05-21T14:48:31+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/github_actions/softprops/action-gh-release-3",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 85,
-          "title": "chore(deps): bump actions/setup-dotnet from 4 to 5",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/85",
-          "createdAt": "2026-05-20T15:58:43+00:00",
-          "updatedAt": "2026-05-21T14:48:28+00:00",
-          "mergedAt": "2026-05-21T14:48:25+00:00",
-          "closedAt": "2026-05-21T14:48:25+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/github_actions/actions/setup-dotnet-5",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 86,
-          "title": "Bump coverlet.collector from 10.0.0 to 10.0.1",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/86",
-          "createdAt": "2026-05-20T16:00:36+00:00",
-          "updatedAt": "2026-05-21T14:48:23+00:00",
-          "mergedAt": "2026-05-21T14:48:20+00:00",
-          "closedAt": "2026-05-21T14:48:20+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/coverlet.collector-10.0.1",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 87,
-          "title": "Bump Microsoft.Extensions.Logging.Console from 10.0.0 to 10.0.8",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/87",
-          "createdAt": "2026-05-20T16:00:54+00:00",
-          "updatedAt": "2026-05-21T14:48:17+00:00",
-          "mergedAt": "2026-05-21T14:48:15+00:00",
-          "closedAt": "2026-05-21T14:48:15+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Core/Microsoft.Extensions.Logging.Console-10.0.8",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 88,
-          "title": "Bump Serilog.Sinks.Console from 6.0.0 to 6.1.1",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/88",
-          "createdAt": "2026-05-20T16:01:09+00:00",
-          "updatedAt": "2026-05-21T14:48:12+00:00",
-          "mergedAt": "2026-05-21T14:48:10+00:00",
-          "closedAt": "2026-05-21T14:48:10+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Core/Serilog.Sinks.Console-6.1.1",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 90,
-          "title": "Bump xunit.runner.visualstudio from 3.1.4 to 3.1.5",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/90",
-          "createdAt": "2026-05-20T16:01:47+00:00",
-          "updatedAt": "2026-05-21T14:48:07+00:00",
-          "mergedAt": "2026-05-21T14:48:04+00:00",
-          "closedAt": "2026-05-21T14:48:04+00:00",
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/xunit.runner.visualstudio-3.1.5",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
         {
           "number": 71,
           "title": "Hook reliability \u002B doctor/menu updates",
@@ -3383,7 +3638,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 24,
+      "mergedPullRequestsCount": 15,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
@@ -3415,279 +3670,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 6,
-          "displayValue": "6 releases",
-          "summary": "6 package releases in the last 30 days across 1 package."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "ElBruno",
-      "name": "ElBruno.BM25",
-      "fullName": "ElBruno/ElBruno.BM25",
-      "stars": 2,
-      "forks": 0,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": "Zero-dependency BM25 full-text search library for .NET. High-performance indexing and ranking with configurable tokenization.",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-04-29T02:11:44+00:00",
-      "archived": false,
-      "watchersCount": 0,
-      "topics": [
-        "bm25",
-        "csharp",
-        "dotnet",
-        "full-text-search",
-        "information-retrieval",
-        "nuget",
-        "search",
-        "text-analysis"
-      ],
-      "createdAt": "2026-04-28T21:27:06+00:00",
-      "updatedAt": "2026-05-01T08:53:44+00:00",
-      "size": 14975,
-      "defaultBranch": "main",
-      "homepage": "https://github.com/elbruno/ElBruno.BM25",
-      "hasWiki": true,
-      "hasPages": false,
-      "networkCount": 0,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.BM25",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 75,
-        "availablePoints": 60,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
-        "activity": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 23,
-          "displayValue": "23 commits",
-          "summary": "23 commits in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 5,
-          "maxScore": 20,
-          "available": true,
-          "value": 1,
-          "displayValue": "1 release",
-          "summary": "1 package release in the last 30 days across 1 package."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "elbruno",
-      "name": "elbruno-ai-evaluation",
-      "fullName": "elbruno/elbruno-ai-evaluation",
-      "stars": 4,
-      "forks": 0,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": "AI Testing \u0026 Observability Toolkit for .NET - deterministic evaluators, synthetic data, golden datasets, regression detection",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-02-28T18:53:22+00:00",
-      "archived": false,
-      "watchersCount": 0,
-      "topics": [
-        "ai",
-        "csharp",
-        "dotnet",
-        "evaluation",
-        "llm",
-        "nuget",
-        "testing",
-        "xunit"
-      ],
-      "createdAt": "2026-02-24T00:57:33+00:00",
-      "updatedAt": "2026-05-02T12:49:14+00:00",
-      "size": 16977,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": true,
-      "hasPages": true,
-      "networkCount": 0,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
-        "activity": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 4 packages."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "elbruno",
-      "name": "ElBruno.PersonaPlex",
-      "fullName": "elbruno/ElBruno.PersonaPlex",
-      "stars": 6,
-      "forks": 1,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": "C# .NET library for running NVIDIA PersonaPlex-7B-v1 full-duplex speech-to-speech locally using ONNX Runtime",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-02-28T21:33:57+00:00",
-      "archived": false,
-      "watchersCount": 0,
-      "topics": [],
-      "createdAt": "2026-02-27T01:33:45+00:00",
-      "updatedAt": "2026-04-17T14:23:09+00:00",
-      "size": 575,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": true,
-      "hasPages": false,
-      "networkCount": 1,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
-        "activity": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 1 package."
+          "value": 5,
+          "displayValue": "5 releases",
+          "summary": "5 package releases in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -3764,18 +3749,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 35,
         "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
+          "score": 1,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -3906,7 +3891,7 @@
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-21T06:04:35+00:00",
+      "lastPush": "2026-05-20T06:01:35+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -3927,8 +3912,8 @@
         "tutorial"
       ],
       "createdAt": "2026-04-12T17:17:04+00:00",
-      "updatedAt": "2026-05-21T06:04:38+00:00",
-      "size": 56414,
+      "updatedAt": "2026-05-20T06:01:39+00:00",
+      "size": 56412,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3938,20 +3923,6 @@
       "htmlUrl": "https://github.com/elbruno/openclawnet",
       "recentIssues": [],
       "recentClosedIssues": [
-        {
-          "number": 29,
-          "title": "Compilaci\u00F3n error con 17 errores y 78 advertencias en 63,7s",
-          "htmlUrl": "https://github.com/elbruno/openclawnet/issues/29",
-          "createdAt": "2026-05-05T06:26:41+00:00",
-          "updatedAt": "2026-05-21T05:23:53+00:00",
-          "userLogin": "davidgamo",
-          "labels": [
-            "bug"
-          ],
-          "commentsCount": 3,
-          "state": "closed",
-          "closedAt": "2026-05-06T02:43:09+00:00"
-        },
         {
           "number": 71,
           "title": "small issues in latest main branch",
@@ -3965,32 +3936,9 @@
           "closedAt": "2026-05-16T14:28:12+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
-        {
-          "number": 80,
-          "title": "sync: mirror from plan repo [2026-05-21]",
-          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/80",
-          "createdAt": "2026-05-21T06:04:30+00:00",
-          "updatedAt": "2026-05-21T06:04:35+00:00",
-          "mergedAt": "2026-05-21T06:04:34+00:00",
-          "closedAt": "2026-05-21T06:04:34+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "auto:sync",
-            "bot"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "sync/plan-mirror-2026-05-21",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
         {
           "number": 79,
           "title": "sync: mirror from plan repo [2026-05-20]",
@@ -4866,7 +4814,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 39,
+      "mergedPullRequestsCount": 38,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -4890,9 +4838,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 0.7,
-          "displayValue": "0.7 days",
-          "summary": "0.7 average days to close recent issues."
+          "value": 0.6,
+          "displayValue": "0.6 days",
+          "summary": "0.6 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 0,
@@ -4932,7 +4880,7 @@
       "purpose": "Reference architecture and AI-assisted workflow patterns",
       "dateAdded": "2025-04-02",
       "stars": 54,
-      "lastUpdate": "2026-05-21T06:04:35+00:00",
+      "lastUpdate": "2026-05-20T06:01:35+00:00",
       "isStub": false,
       "stubReason": null
     }
