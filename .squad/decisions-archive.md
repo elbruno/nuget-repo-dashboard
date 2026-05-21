@@ -760,3 +760,28 @@ Add timestamp metadata to `site/index.html` footer with comparison of local copy
 
 
 
+# Decision: PR Test Endpoint Migration
+
+**Author:** Zoe (Tester)
+**Date:** 2026-04-13
+
+## Context
+
+Kaylee refactored `GitHubCollector` to replace the old `GetOpenPrCountAsync` (which used `/pulls?state=open&per_page=1` and `/pulls?state=open&per_page=100`) with two new methods:
+- `GetRecentPullRequestsAsync` → `/pulls?state=open&sort=created&direction=desc&per_page=40`
+- `GetRecentMergedPullRequestsAsync` → `/pulls?state=closed&sort=updated&direction=desc&per_page=40`
+
+## Decision
+
+Updated all 14 existing tests in `GitHubCollectorTests.cs` to mock the new endpoint URLs instead of the old ones. This was required because the old URLs no longer match what the collector calls, causing `CollectAsync_KnownRepo_ReturnsCorrectMetrics` to fail (expected 3 open PRs, got 0).
+
+## Impact
+
+- All existing tests now correctly mock the new PR endpoints
+- No behavioral changes to test assertions beyond the URL updates
+- The `BuildPullsJson` helper still works since `ParseSinglePullRequest` uses `TryGetProperty` with defaults
+- `additions`/`deletions`/`changedFiles` are always 0 from the list endpoint — tested explicitly in new tests
+
+---
+
+
