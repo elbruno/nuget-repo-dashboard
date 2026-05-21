@@ -294,6 +294,79 @@
       padding: 0.1rem 0.45rem; border-radius: 999px;
     }
 
+    /* Highlight cards for leaderboards */
+    .highlights-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .highlights-column h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .highlight-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .highlight-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-1px);
+    }
+    .highlight-rank {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      min-width: 2rem;
+      text-align: center;
+    }
+    .highlight-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .highlight-info .name a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .highlight-info .name a:hover {
+      text-decoration: underline;
+    }
+    .highlight-info .meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .highlight-stat {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .highlights-area {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
     /* Repo-specific */
     .language-dot {
       display: inline-block; width: 10px; height: 10px;
@@ -782,6 +855,7 @@
   <nav class="top-nav">
     <div class="container">
       <a href="#trends-section" class="nav-link">📈 Trends</a>
+      <a href="#top-leaderboard" class="nav-link">🥇 Top 5</a>
       <a href="#nuget-packages" class="nav-link">📦 Packages</a>
       <a href="#github-repos" class="nav-link">🐙 Repositories</a>
       <a href="#watch-list" class="nav-link">👀 Watch List</a>
@@ -862,6 +936,16 @@
         </div>
         <div class="section-content" id="trends-section-content">
           <div id="trends-grid" class="trends-overview"></div>
+        </div>
+      </section>
+
+      <!-- Top 5 Leaderboard Section -->
+      <section id="top-leaderboard">
+        <div class="section-header collapsible-header" data-section="top-leaderboard">
+          <h2><span class="chevron">▼</span> <span class="icon">🥇</span> Top 5 Leaderboard</h2>
+        </div>
+        <div class="section-content" id="top-leaderboard-content">
+          <div id="top-leaderboard-grid" class="highlights-area"></div>
         </div>
       </section>
 
@@ -2354,6 +2438,46 @@
       renderRepoCharts();
     }
 
+    /* ── Top 5 Leaderboard Section Rendering ── */
+
+    function renderLeaderboard() {
+      const topPkgs = [...allPackages].sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0)).slice(0, 5);
+      const topRepos = [...allRepos].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5);
+
+      const pkgCards = topPkgs.map((pkg, i) => `
+        <div class="highlight-card">
+          <div class="highlight-rank">${i + 1}</div>
+          <div class="highlight-info">
+            <div class="name"><a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a></div>
+            <div class="meta">v${esc(pkg.latestVersion || '')} · ${esc(truncate(pkg.description, 60))}</div>
+          </div>
+          <div class="highlight-stat">⬇️ ${fmtCompact(pkg.totalDownloads)}</div>
+        </div>
+      `).join('');
+
+      const repoCards = topRepos.map((repo, i) => `
+        <div class="highlight-card">
+          <div class="highlight-rank">${i + 1}</div>
+          <div class="highlight-info">
+            <div class="name"><a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a></div>
+            <div class="meta">${esc(truncate(repo.description, 60))}</div>
+          </div>
+          <div class="highlight-stat">⭐ ${fmtCompact(repo.stars)}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('top-leaderboard-grid').innerHTML = `
+        <div class="highlights-column">
+          <h3>📦 Top 5 Most Downloaded Packages</h3>
+          ${pkgCards}
+        </div>
+        <div class="highlights-column">
+          <h3>🐙 Top 5 Most Starred Repositories</h3>
+          ${repoCards}
+        </div>
+      `;
+    }
+
     /* ── Event Wiring ── */
 
     function wireFilters() {
@@ -2700,6 +2824,7 @@
 
         // Initial render
         renderTrendsSection();
+        renderLeaderboard();
         renderNugetSection();
         renderRepoSection();
         renderIssuesSection();
