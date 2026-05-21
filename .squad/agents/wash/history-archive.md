@@ -1,0 +1,304 @@
+
+## Archived History
+
+Entries archived 2026-05-21 for active file reduction.
+
+---
+
+- Local data files updated to April 21, 2026 (current)
+- Verified history snapshots present for all missing days (04/18, 04/19, 04/20, 04/21)
+
+**Key Diagnostic Commands:**
+```bash
+# Check workflow run history
+github-mcp-server-actions_list --resource_id refresh-metrics.yml
+
+# Check recent workflow logs
+github-mcp-server-get_job_logs --job_id <id>
+
+# Check local vs remote divergence
+git fetch origin main
+git log HEAD..origin/main
+
+# Verify data timestamps
+Get-ChildItem data/latest/*.json | Select Name, LastWriteTime
+Get-ChildItem data/history/YYYY/MM/DD -Recurse | Sort LastWriteTime -Desc
+```
+
+**Pattern Identified:** When investigating "data staleness" complaints:
+1. First check workflow execution status (GitHub Actions UI or MCP tools)
+2. If workflows are succeeding, check local workspace sync (`git status`, `git fetch`, `git log HEAD..origin`)
+3. Verify Collector logs show data writes (look for "Written: /path/to/data")
+4. Compare local file timestamps vs workflow run timestamps
+5. The issue is often workspace sync, not the CI/CD pipeline itself
+
+**Recommendation:** Consider adding a pre-commit hook or workspace health check to remind users to pull before assuming pipeline failure.
+
+### Phase 9: CI Auto-Regenerate Profiles (2026-XX-XX)
+
+**Workflow Status:** Completed  
+**Session:** phase-9-ci-autogen (Bruno Capuano)
+
+Added automatic profile regeneration to `.github/workflows/refresh-metrics.yml`. After the Collector updates `data/latest/data.repositories.json`, the CI workflow now runs `repo-identity generate` against fresh data. If profiles changed, they are committed with `[skip ci]` to prevent loops.
+
+**Changes Made:**
+1. **Workflow edit** (`.github/workflows/refresh-metrics.yml`): 
+   - Added step 7 "Regenerate repo-identity profiles": Runs `dotnet run --project src/RepoIdentity/RepoIdentity.csproj --framework net10.0 --configuration Release -- generate --source data/latest/data.repositories.json`
+   - Added step 8 "Commit updated profiles": Checks for staged changes before committing; only commits if profiles differ
+   - Both steps inserted between "Commit and push" (old step 6) and "Assemble site" (now step 9)
+   - Framework: `net10.0` (uses already-installed SDK from step 2)
+   - Idempotent: git config set again (harmless), diff check prevents empty commits
+
+2. **Documentation update** (`docs/repo-identity-install.md`):
+   - Replaced placeholder section with full "CI Auto-Regeneration" coverage
+   - Explains workflow sequence: data refresh → regenerate → commit if changed
+   - Includes sync instructions for devices (git pull + install), manual trigger examples
+   - Documented `[skip ci]` tag rationale (loop prevention)
+
+**Design Rationale:**
+- **Framework choice:** net10.0 instead of net8.0 — CI already has .NET 10 installed in step 2, no need for multi-version fallback
+- **Diff check:** `git diff --staged --quiet` keeps git history clean; no commits when profiles are unchanged
+- **[skip ci] tag:** Prevents infinite loop: commit → metrics refresh → commit → ...
+- **Placement:** After metrics commit but before site assembly ensures profiles use freshest data
+
+**Key File Paths:**
+- `.github/workflows/refresh-metrics.yml` (steps 7–8 added)
+- `docs/repo-identity-install.md` (section 161+ fully populated)
+
+### Agentic Workflow Architecture (WI-7, WI-8, WI-9)
+
+**Core Pattern:** All GitHub Agentic Workflows (`.github/aw/*.md`) are documented as markdown specification files, not executable YAML. They define behavior, triggers, and output expectations for AI-powered assistants.
+
+**Key Design Principle:** Non-Authoritative Advisory
+- Workflows analyze, detect, and suggest—but never modify production data
+- All recommendations require explicit human review and approval
+- Clear separation: deterministic workflows (refresh-metrics, refresh-inventory) own production data; agentic workflows own insight generation
+
+**Workflow Breakdown:**
+
+1. **inventory-review.md** — PR comment-based feedback on package-repo mappings
+   - Reads discovered mappings from `refresh-inventory` PR
+   - Quality checks: repo existence, connection, maintenance status, archived flag
+   - Output: Structured PR review comment with ✅/⚠️/❓ categorization
+   - No merge blocking; purely advisory
+
+2. **weekly-summary.md** — Trend analysis and ecosystem metrics
+   - Reads: `data/latest/data.json`, `data/history/` (historical context)
+   - Aggregates: Top 5 packages, notable changes, repo activity
+   - Output: GitHub issue with weekly summary
+   - Runs weekly (Monday 09:00 UTC) or on-demand
+   - Risk: None (no modifications, read-only)
+
+3. **health-triage.md** — Anomaly detection and health monitoring
+   - Detects: stale packages (6+ months), high-issue repos (200+), download anomalies, archived repos
+   - Output: Consolidated GitHub issues per anomaly type
+   - Runs daily (02:00 UTC) or on-demand
+   - Each issue includes data-driven rationale, links, and recommendations
+   - Critical: No automatic corrective action; all findings surfaced for human decision
+
+**Key File Paths:**
+- `.github/aw/inventory-review.md` (4.2 KB)
+- `.github/aw/weekly-summary.md` (5.6 KB)
+- `.github/aw/health-triage.md` (8.3 KB)
+- `LICENSE` (MIT, 1.1 KB)
+
+**Integration Notes:**
+- All workflows operate on public data; no secrets required
+- Error handling: Surface limitations rather than fail silently
+- GitHub API rate limits: Implement graceful degradation
+- Data freshness: Workflows reference specific data paths; ensure refresh jobs complete first
+
+### Deterministic Workflows (WI-5, WI-6)
+
+**refresh-metrics.yml** — Daily automated data refresh
+- Triggers: cron `0 6 * * *` (daily 06:00 UTC) + manual `workflow_dispatch`
+- Builds & runs Collector at `src/Collector/Collector.csproj` (**net10.0**, retargeted 2026-04-02)
+- Sets `DASHBOARD_REPO_ROOT=${{ github.workspace }}` so Collector writes to correct paths
+- Collector writes to `data/latest/data.json` and `data/history/YYYY/MM/DD/data.json`
+- Uses `git diff --cached --quiet` on `data/` to detect changes; commits with `[skip ci]` tag
+- Concurrency group prevents overlapping runs; idempotent by design
+- **Phase 2 integration (2026-04-03):** Added step to deploy `data/latest/data.trends.json` to `_site/data/data.trends.json` for GitHub Pages accessibility. Enables dashboard sparkline visualization via Kaylee's TrendAggregationService output.
+
+**refresh-inventory.yml** — Manual package discovery
+- Trigger: `workflow_dispatch` only (human-initiated)
+- Queries NuGet search API (`owner:` filter) for package discovery
+- Compares discovered packages against `config/tracked-packages.json`
+- Creates `inventory/refresh-{date}` branch with merged config
+- Opens PR via `gh pr create` with checklist body and `inventory` label
+- New packages get empty `repos: []` — human must fill in repo mappings during review
+- Exits cleanly with log message if no new packages found
+
+**Key File Paths:**
+- `.github/workflows/refresh-metrics.yml` (WI-5)
+- `.github/workflows/refresh-inventory.yml` (WI-6)
+- `config/tracked-packages.json` — source of truth for tracked packages
+- `data/latest/data.json` — latest collector output
+- `data/history/YYYY/MM/DD/data.json` — historical snapshots
+
+**Design Decisions:**
+- `DASHBOARD_REPO_ROOT` env var is critical — Collector resolves paths relative to `AppContext.BaseDirectory` by default, which doesn't work in CI
+- Concurrency on refresh-metrics prevents duplicate commits from overlapping schedule+manual runs
+- Inventory workflow uses branch+PR pattern (not direct commit) to enforce human review of package additions
+- `NUGET_OWNER` is configurable via job-level env var; defaults to "microsoft"
+
+### GitHub Pages Deployment (2026-07-22)
+
+**Workflow Update:** Added `deploy-dashboard` job to `refresh-metrics.yml` that runs after `collect`.
+
+**Key Design Points:**
+- .NET version fixed from `9.0.x` to `10.0.x` to match project's net10.0 target
+- Two-job workflow: `collect` (data) → `deploy-dashboard` (site)
+- Site assembly: `site/index.html` + `data/latest/*.json` → flat `_site/` with `data/` subfolder
+- Uses `actions/upload-pages-artifact@v3` + `actions/deploy-pages@v4`
+- Permissions: `contents: write`, `pages: write`, `id-token: write` (OIDC for Pages deploy)
+- `deploy-dashboard` checks out with `ref: ${{ github.ref }}` to get freshly committed data
+- Environment `github-pages` configured with deployment URL output
+- Requires repo Settings → Pages → Source set to "GitHub Actions"
+
+**Data path flattening:** `data/latest/data.nuget.json` → `_site/data/data.nuget.json` so the frontend fetches from `data/data.nuget.json` relative to site root.
+
+### GitHub Pages Dashboard Integration (2026-04-02)
+
+**Workflow Status:** Completed  
+**Session:** github-pages-dashboard (Bruno Capuano, background mode)
+
+GitHub Pages deployment job added to `refresh-metrics.yml`. After data collection, `deploy-dashboard` job assembles site from `site/index.html` + flattened `data/latest/*.json` → `_site/`, uploads artifact, and deploys via OIDC.
+
+**Key Updates:**
+- .NET version: `9.0.x` → `10.0.x` (matches Collector net10.0 target)
+- Added `deploy-dashboard` job with Pages write + OIDC permissions
+- `checkout@v3` with `ref: ${{ github.ref }}` ensures fresh data commit is available
+- Site assembly: `site/index.html` + `data/latest/data.nuget.json` → `_site/data/data.nuget.json` (flattened for frontend)
+- README updated with Pages documentation and setup requirement (Settings → Pages → Source = "GitHub Actions")
+
+### Collector Inventory Mode Integration (2026-04-02)
+
+**Workflow Status:** Completed  
+**Session:** collector-inventory-mode (Bruno Capuano)
+
+Refactored `refresh-inventory.yml` to delegate all business logic to the C# Collector running in `--mode inventory`.
+
+**Key Changes:**
+- Removed 3 bash steps: "Read dashboard config", "Discover NuGet packages", "Merge candidates into tracked packages"
+- Replaced with single step: `dotnet run --project src/Collector/Collector.csproj --configuration Release -- --mode inventory`
+- Fixed .NET version from `9.0.x` → `10.0.x` (matches Collector net10.0 target)
+- Added `DASHBOARD_REPO_ROOT: ${{ github.workspace }}` env var (critical for CI path resolution)
+- Simplified PR body to read `nugetProfile` with jq for display purposes only (Collector handles all discovery logic)
+- Kept git/PR workflow operations (branch creation, commit, push, label, PR creation) in workflow — these are CI/CD concerns, not business logic
+
+**Architecture Pattern:**
+- Workflow handles orchestration (checkout, .NET setup, git operations, PR creation)
+- Collector handles domain logic (NuGet discovery, ignore filtering, merge with tracked packages)
+- Clean separation: bash-free data processing, all JSON parsing/merging moved to C#
+- Env vars: `DASHBOARD_REPO_ROOT` and `GITHUB_TOKEN` passed to Collector for path resolution and optional GitHub API calls
+
+**Verification:** `refresh-metrics.yml` confirmed correct — uses .NET 10, runs Collector with proper env vars, site assembly copies correct files (index.html + data/latest/*.json → _site/).
+
+**File Paths:**
+- `.github/workflows/refresh-inventory.yml` (rewritten, ~70 lines → ~60 lines, 90% less bash)
+- `.github/workflows/refresh-metrics.yml` (verified, no changes needed)
+
+### TrendAggregationService Data Integration (2026-01-XX)
+
+**Workflow Status:** Completed  
+**Objective:** Support new TrendAggregationService output in deployment pipeline
+
+**Changes Made:**
+1. **Assemble site step** (line 65-71): Added copy operation for `data/latest/data.trends.json` → `_site/data/data.trends.json`
+   - Follows existing pattern: `cp data/latest/{filename} _site/data/{filename}`
+   - Deployed alongside `data.nuget.json` and `data.repositories.json`
+
+2. **Git change detection** (line 48): Verified existing pattern `git add --force data/latest/*.json data/history/` already covers new file
+   - Glob pattern `*.json` captures `data.trends.json` automatically; no change needed
+   - File is committed when Collector detects changes
+
+**Why:** TrendAggregationService will output to `data/latest/data.trends.json` during Collector runs. Dashboard needs the file in `_site/data/` for frontend consumption (via `data/data.trends.json` relative path).
+
+**File Modified:**
+- `.github/workflows/refresh-metrics.yml` (added 1 line in Assemble site step)
+
+## Watch-list Stub Fallback Implementation (2026-04-22)
+
+**Issue:** Watch-list repos (configured in `config/watch-list.json`) were queued for collection but disappeared from the final `data.repositories.json` when GitHub API rate limiting prevented their collection. Only successfully-collected repos appeared on the dashboard.
+
+**Solution:** Implemented fallback/stub entries for watch-list repos that fail collection.
+
+**Changes Made:**
+
+1. **GitHubRepoMetrics Model** (`src/Collector/Models/GitHubRepoMetrics.cs`):
+   - Added `bool IsStub { get; set; }` — flags whether repo data is complete live data or a fallback
+   - Added `string? StubReason { get; set; }` — explains why the entry is a stub (e.g., "Failed to fetch live data from GitHub API (rate limited or unavailable)")
+
+2. **IGitHubCollector Interface** (`src/Collector/Services/GitHubCollector.cs`):
+   - Added new method: `Task<List<GitHubRepoMetrics>> CollectWithStubsAsync(List<string> repoFullNames, List<WatchListEntry> watchList)`
+   - Existing `CollectAsync()` unchanged for backward compatibility
+
+3. **GitHubCollector Implementation** (`src/Collector/Services/GitHubCollector.cs`):
+   - `CollectWithStubsAsync()` implementation:
+     - Calls existing `CollectAsync()` to collect what's possible from GitHub API
+     - Tracks collected repos by FullName in a HashSet (case-insensitive)
+     - For each watch-list entry not in the collected set, creates a stub GitHubRepoMetrics with:
+       - `Owner`, `Name`, `FullName` from watch-list entry
+       - `Description` from watch-list entry
+       - `HtmlUrl` from watch-list URL (fallback source)
+       - `IsStub = true`, `StubReason` explaining the failure
+       - All other fields: default/null/0 to indicate incomplete data
+     - Returns combined list: real data + stubs
+     - Logs each stub creation for operational visibility
+
+4. **Program.cs Collector Integration** (`src/Collector/Program.cs`):
+   - Modified watch-list loading (lines 205-232) to preserve `List<WatchListEntry>` for later use (not just full names)
+   - Updated GitHub collector call (line 327) to use `CollectWithStubsAsync(allRepos, watchListEntries)` instead of `CollectAsync(allRepos)`
+   - Updated output summary (line 328) to show stub count: "Collected 13 repos (including 1 stub(s) from watch-list)"
+
+**Data Integrity & Testing:**
+- Stubs preserve the WatchListEntry data (owner, repo, description, URL) so dashboard can display them
+- All other metrics fields default to 0/null/false — this prevents aggregation errors (trends, summaries still work because they check for stub flag or use defensive defaults)
+- JSON serialization via `[JsonPropertyName]` attributes ensures field names match dashboard expectations
+- Verified with live collector run: elbruno/openclawnet stub created successfully and appears in `data.repositories.json` with `isStub: true`
+
+**Key Design Rationale:**
+- **Non-breaking:** Existing `CollectAsync()` untouched; stub logic isolated to new method
+- **Operational Transparency:** Logging clearly shows when stubs are created (helps with troubleshooting rate limits)
+- **Dashboard-Ready:** Stub entries appear in output with enough info (URL, description, owner/repo) to render on dashboard
+- **Defensive Defaults:** Stubs use 0/null/false for metrics, so trends and aggregations don't break
+- **Testable:** Can simulate rate limiting by not populating collected repos; watch-list entries will become stubs
+
+**Verification:**
+- Build succeeds with 0 warnings, 0 errors (Release configuration)
+- Local collector run creates stub entry for `elbruno/openclawnet` (openclawnet in watch-list.json)
+- `data.repositories.json` contains stub with `isStub: true` and `stubReason` field
+- Stub data preserved from watch-list: `owner`, `name`, `description`, `htmlUrl`
+
+## Learnings
+
+### Dashboard Publishing Workflow (2026-05-21)
+
+**Key Pattern:** When user requests "run the workflow to publish the page," trigger `refresh-metrics.yml` with `gh workflow run`.
+
+**Full Pipeline in refresh-metrics.yml:**
+1. Builds & runs Collector (net10.0) with `GITHUB_TOKEN` and `DASHBOARD_REPO_ROOT` env vars
+2. Collects NuGet + GitHub data, commits to `data/` if changed
+3. Regenerates repo-identity profiles via RepoIdentity tool (net10.0)
+4. **Assembles site:** Copies `site/index.html` + data JSON files to `_site/` directory
+5. **Uploads Pages artifact:** Uses `actions/upload-pages-artifact@v3`
+6. **Deploys to GitHub Pages:** Uses `actions/deploy-pages@v4` with environment `github-pages`
+
+**Trigger Command:**
+```bash
+gh workflow run "refresh-metrics.yml" --ref main
+```
+
+**Key Files:**
+- `.github/workflows/refresh-metrics.yml` — The publishing workflow
+- `site/index.html` — Frontend (copied to `_site/index.html`)
+- `data/latest/*.json` — Dashboard data (copied to `_site/data/`)
+
+**Deployment Target:** GitHub Pages at `https://elbruno.github.io/nuget-repo-dashboard/`
+
+**Permissions Required in workflow:**
+- `contents: write` — Commit data changes
+- `pages: write` — Deploy to Pages
+- `id-token: write` — OIDC for Pages deployment
+
+**Concurrency:** `group: refresh-metrics` with `cancel-in-progress: false` — ensures only one run at a time.
