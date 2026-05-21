@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T14:09:40.9384935+00:00",
+  "generatedAt": "2026-05-21T18:01:26.8732016+00:00",
   "packages": [
     {
       "packageId": "ElBruno.HuggingFace.Downloader",
@@ -1034,7 +1034,7 @@
     },
     {
       "packageId": "ElBruno.CopilotCLIMonitor",
-      "latestVersion": "0.2.3",
+      "latestVersion": "0.2.4",
       "totalDownloads": 399,
       "description": "Windows-first .NET tool that forwards GitHub Copilot CLI events to the ElBruno.CopilotCLIMonitor systray app.",
       "authors": "El Bruno",
@@ -1049,8 +1049,8 @@
         "dotnet-tool"
       ],
       "listed": true,
-      "publishedDate": "2026-05-14T13:10:08.37+00:00",
-      "releasesLast30Days": 5
+      "publishedDate": "2026-05-21T15:07:53.453+00:00",
+      "releasesLast30Days": 6
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Chunking",

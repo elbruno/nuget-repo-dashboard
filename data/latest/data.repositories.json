@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T14:09:40.9384935+00:00",
+  "generatedAt": "2026-05-21T18:01:26.8732016+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -2610,12 +2610,12 @@
       "fullName": "elbruno/ElBruno.CopilotCLIMonitor",
       "stars": 1,
       "forks": 0,
-      "openIssues": 10,
-      "openPullRequests": 10,
+      "openIssues": 1,
+      "openPullRequests": 1,
       "description": "Windows Systray application that keeps you informed with native notifications when GitHub Copilot CLI tasks finish. Stop babysitting long-running workflows.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-20T16:01:46+00:00",
+      "lastPush": "2026-05-21T15:04:39+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -2628,8 +2628,8 @@
         "wpf"
       ],
       "createdAt": "2026-05-12T22:22:49+00:00",
-      "updatedAt": "2026-05-14T13:08:29+00:00",
-      "size": 12556,
+      "updatedAt": "2026-05-21T15:14:23+00:00",
+      "size": 12542,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -2848,158 +2848,10 @@
           "commentsCount": 1,
           "state": "closed",
           "closedAt": "2026-05-13T14:19:53+00:00"
-        },
-        {
-          "number": 18,
-          "title": "IPC Optimization",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/18",
-          "createdAt": "2026-05-13T11:29:05+00:00",
-          "updatedAt": "2026-05-13T14:19:51+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:51+00:00"
-        },
-        {
-          "number": 19,
-          "title": "Code Quality Metrics",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/19",
-          "createdAt": "2026-05-13T11:29:07+00:00",
-          "updatedAt": "2026-05-13T14:19:49+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:49+00:00"
-        },
-        {
-          "number": 20,
-          "title": "Linting Rules",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/20",
-          "createdAt": "2026-05-13T11:29:08+00:00",
-          "updatedAt": "2026-05-13T14:19:47+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:47+00:00"
-        },
-        {
-          "number": 21,
-          "title": "Performance Testing",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/21",
-          "createdAt": "2026-05-13T11:29:10+00:00",
-          "updatedAt": "2026-05-13T14:19:45+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:45+00:00"
-        },
-        {
-          "number": 22,
-          "title": "Accessibility Testing",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/22",
-          "createdAt": "2026-05-13T11:29:11+00:00",
-          "updatedAt": "2026-05-13T14:19:43+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:43+00:00"
-        },
-        {
-          "number": 23,
-          "title": "Encrypted Storage",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/23",
-          "createdAt": "2026-05-13T11:29:13+00:00",
-          "updatedAt": "2026-05-13T14:19:41+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:41+00:00"
-        },
-        {
-          "number": 24,
-          "title": "Privacy Policy",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/24",
-          "createdAt": "2026-05-13T11:29:15+00:00",
-          "updatedAt": "2026-05-13T14:19:39+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:39+00:00"
-        },
-        {
-          "number": 25,
-          "title": "UI/UX Tests",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/25",
-          "createdAt": "2026-05-13T11:29:17+00:00",
-          "updatedAt": "2026-05-13T14:19:37+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:37+00:00"
-        },
-        {
-          "number": 26,
-          "title": "Code Coverage Reports",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/26",
-          "createdAt": "2026-05-13T11:29:18+00:00",
-          "updatedAt": "2026-05-13T14:19:35+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "squad"
-          ],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-05-13T14:19:35+00:00"
         }
       ],
-      "closedIssuesCount": 24,
+      "closedIssuesCount": 15,
       "recentPullRequests": [
-        {
-          "number": 90,
-          "title": "Bump xunit.runner.visualstudio from 3.1.4 to 3.1.5",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/90",
-          "createdAt": "2026-05-20T16:01:47+00:00",
-          "updatedAt": "2026-05-20T16:01:49+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/xunit.runner.visualstudio-3.1.5",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
         {
           "number": 89,
           "title": "Bump Spectre.Console from 0.49.1 to 0.55.2",
@@ -3021,109 +2873,23 @@
           "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Cli/Spectre.Console-0.55.2",
           "baseBranch": "main",
           "commentsCount": 0
-        },
-        {
-          "number": 88,
-          "title": "Bump Serilog.Sinks.Console from 6.0.0 to 6.1.1",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/88",
-          "createdAt": "2026-05-20T16:01:09+00:00",
-          "updatedAt": "2026-05-20T16:01:11+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Core/Serilog.Sinks.Console-6.1.1",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 87,
-          "title": "Bump Microsoft.Extensions.Logging.Console from 10.0.0 to 10.0.8",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/87",
-          "createdAt": "2026-05-20T16:00:54+00:00",
-          "updatedAt": "2026-05-20T16:00:56+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Core/Microsoft.Extensions.Logging.Console-10.0.8",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 86,
-          "title": "Bump coverlet.collector from 10.0.0 to 10.0.1",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/86",
-          "createdAt": "2026-05-20T16:00:36+00:00",
-          "updatedAt": "2026-05-20T16:00:38+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/coverlet.collector-10.0.1",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 85,
-          "title": "chore(deps): bump actions/setup-dotnet from 4 to 5",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/85",
-          "createdAt": "2026-05-20T15:58:43+00:00",
-          "updatedAt": "2026-05-20T15:58:44+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "dependabot[bot]",
-          "labels": [
-            "security"
-          ],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/github_actions/actions/setup-dotnet-5",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
+        }
+      ],
+      "recentMergedPullRequests": [
         {
           "number": 84,
           "title": "chore(deps): bump actions/upload-artifact from 4 to 7",
           "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/84",
           "createdAt": "2026-05-20T15:58:38+00:00",
-          "updatedAt": "2026-05-20T15:58:40+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-05-21T14:55:39+00:00",
+          "mergedAt": "2026-05-21T14:55:37+00:00",
+          "closedAt": "2026-05-21T14:55:37+00:00",
           "userLogin": "dependabot[bot]",
           "labels": [
             "security"
           ],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -3137,15 +2903,15 @@
           "title": "chore(deps): bump github/codeql-action from 3 to 4",
           "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/83",
           "createdAt": "2026-05-20T15:58:34+00:00",
-          "updatedAt": "2026-05-20T15:58:36+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-05-21T14:53:23+00:00",
+          "mergedAt": "2026-05-21T14:53:20+00:00",
+          "closedAt": "2026-05-21T14:53:20+00:00",
           "userLogin": "dependabot[bot]",
           "labels": [
             "security"
           ],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -3159,15 +2925,15 @@
           "title": "chore(deps): bump actions/checkout from 4 to 6",
           "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/82",
           "createdAt": "2026-05-20T15:58:29+00:00",
-          "updatedAt": "2026-05-20T15:58:30+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-05-21T14:49:36+00:00",
+          "mergedAt": "2026-05-21T14:49:32+00:00",
+          "closedAt": "2026-05-21T14:49:33+00:00",
           "userLogin": "dependabot[bot]",
           "labels": [
             "security"
           ],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -3181,15 +2947,15 @@
           "title": "chore(deps): bump softprops/action-gh-release from 2 to 3",
           "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/81",
           "createdAt": "2026-05-20T15:58:24+00:00",
-          "updatedAt": "2026-05-20T15:58:25+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-05-21T14:48:34+00:00",
+          "mergedAt": "2026-05-21T14:48:31+00:00",
+          "closedAt": "2026-05-21T14:48:31+00:00",
           "userLogin": "dependabot[bot]",
           "labels": [
             "security"
           ],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -3197,9 +2963,117 @@
           "headBranch": "dependabot/github_actions/softprops/action-gh-release-3",
           "baseBranch": "main",
           "commentsCount": 0
-        }
-      ],
-      "recentMergedPullRequests": [
+        },
+        {
+          "number": 85,
+          "title": "chore(deps): bump actions/setup-dotnet from 4 to 5",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/85",
+          "createdAt": "2026-05-20T15:58:43+00:00",
+          "updatedAt": "2026-05-21T14:48:28+00:00",
+          "mergedAt": "2026-05-21T14:48:25+00:00",
+          "closedAt": "2026-05-21T14:48:25+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/github_actions/actions/setup-dotnet-5",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 86,
+          "title": "Bump coverlet.collector from 10.0.0 to 10.0.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/86",
+          "createdAt": "2026-05-20T16:00:36+00:00",
+          "updatedAt": "2026-05-21T14:48:23+00:00",
+          "mergedAt": "2026-05-21T14:48:20+00:00",
+          "closedAt": "2026-05-21T14:48:20+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/coverlet.collector-10.0.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 87,
+          "title": "Bump Microsoft.Extensions.Logging.Console from 10.0.0 to 10.0.8",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/87",
+          "createdAt": "2026-05-20T16:00:54+00:00",
+          "updatedAt": "2026-05-21T14:48:17+00:00",
+          "mergedAt": "2026-05-21T14:48:15+00:00",
+          "closedAt": "2026-05-21T14:48:15+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Core/Microsoft.Extensions.Logging.Console-10.0.8",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 88,
+          "title": "Bump Serilog.Sinks.Console from 6.0.0 to 6.1.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/88",
+          "createdAt": "2026-05-20T16:01:09+00:00",
+          "updatedAt": "2026-05-21T14:48:12+00:00",
+          "mergedAt": "2026-05-21T14:48:10+00:00",
+          "closedAt": "2026-05-21T14:48:10+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Core/Serilog.Sinks.Console-6.1.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 90,
+          "title": "Bump xunit.runner.visualstudio from 3.1.4 to 3.1.5",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/90",
+          "createdAt": "2026-05-20T16:01:47+00:00",
+          "updatedAt": "2026-05-21T14:48:07+00:00",
+          "mergedAt": "2026-05-21T14:48:04+00:00",
+          "closedAt": "2026-05-21T14:48:04+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/xunit.runner.visualstudio-3.1.5",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 71,
           "title": "Hook reliability \u002B doctor/menu updates",
@@ -3509,7 +3383,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 15,
+      "mergedPullRequestsCount": 24,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
@@ -3541,9 +3415,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 5,
-          "displayValue": "5 releases",
-          "summary": "5 package releases in the last 30 days across 1 package."
+          "value": 6,
+          "displayValue": "6 releases",
+          "summary": "6 package releases in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
