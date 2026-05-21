@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T18:01:05.0098767+00:00",
+  "generatedAt": "2026-05-21T18:31:58.3131325+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
@@ -15719,6 +15719,10 @@
         {
           "date": "2026-05-15",
           "version": "0.2.3"
+        },
+        {
+          "date": "2026-05-21",
+          "version": "0.2.4"
         }
       ]
     }
@@ -31484,7 +31488,7 @@
         },
         {
           "date": "2026-05-21",
-          "value": 10
+          "value": 1
         }
       ],
       "openPullRequests": [
@@ -31518,7 +31522,7 @@
         },
         {
           "date": "2026-05-21",
-          "value": 10
+          "value": 1
         }
       ]
     }
@@ -32243,8 +32247,8 @@
     {
       "date": "2026-05-21",
       "opened": 0,
-      "merged": 1,
-      "closed": 1
+      "merged": 10,
+      "closed": 10
     }
   ],
   "versionActivity": [
@@ -32654,6 +32658,13 @@
       "newVersions": 1,
       "packages": [
         "ElBruno.OllamaMonitor"
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "newVersions": 1,
+      "packages": [
+        "ElBruno.CopilotCLIMonitor"
       ]
     }
   ],
