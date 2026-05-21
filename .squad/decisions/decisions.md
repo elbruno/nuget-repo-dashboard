@@ -65,6 +65,102 @@ Move ALL inventory management logic into the C# Collector by adding a `--mode` C
 
 ---
 
+## #11 — Fix PR Creation Auth in refresh-inventory.yml
+
+**Status:** Implemented  
+**Date:** 2026-04-23  
+**Implementer:** Wash (DevOps)  
+**Relates to:** WI-6 (Inventory Discovery Workflow)
+
+### Context
+
+The `refresh-inventory.yml` workflow failed when attempting to create pull requests with:
+```
+pull request create failed: GraphQL: GitHub Actions is not permitted to 
+create or approve pull requests (createPullRequest)
+```
+
+**Root Cause:** GitHub's security policy explicitly prohibits `GITHUB_TOKEN` (the automatic GitHub Actions token) from creating or approving PRs on public repositories. This is by design to prevent unauthorized PR spam and maintain repository integrity.
+
+### Decision
+
+Use a Personal Access Token (PAT) with fallback to `GITHUB_TOKEN` for PR creation in the workflow. The pattern:
+```yaml
+GITHUB_TOKEN: ${{ secrets.REPO_PAT || secrets.GITHUB_TOKEN }}
+```
+
+This allows:
+1. **Production:** Bruno sets up `REPO_PAT` repository secret with a PAT that has `repo` + `workflow` scopes
+2. **Fallback:** If `REPO_PAT` is not configured, falls back to `GITHUB_TOKEN` (works for private repos, still fails on public, but no silent failures)
+3. **Security:** No secrets committed; secret is stored in GitHub repository settings with automatic masking in logs
+
+### Why This Over Alternatives
+
+| Option | Pros | Cons | Selected |
+|--------|------|------|----------|
+| **PAT** | Explicit PR permissions, fallback works, clear intent | Requires manual PAT setup | ✅ **Yes** |
+| GITHUB_TOKEN only | Zero setup | Blocked by GitHub on public repos | ❌ |
+| App token | No expiry risk | Requires app creation and installation | ⚠️ |
+| Direct git push | Maximum control | Manual, not automated | ❌ |
+
+### Implementation
+
+1. **`.github/workflows/refresh-inventory.yml` (line 18):**
+   ```yaml
+   GITHUB_TOKEN: ${{ secrets.REPO_PAT || secrets.GITHUB_TOKEN }}
+   ```
+   - Fallback preserves `GITHUB_TOKEN` as a safety net
+   - Logs automatically mask both secret values
+
+2. **No workflow YAML permissions change:**
+   - `pull-requests: write` permission remains valid for both token types
+   - `contents: write` remains for commit operations
+
+### Setup Instructions for Bruno
+
+1. **Create Personal Access Token:**
+   - Go to https://github.com/settings/tokens
+   - Click "Generate new token" → "Generate new token (classic)"
+   - Name: `nuget-repo-dashboard inventory workflow`
+   - Scopes required: `repo`, `workflow`
+   - Expiration: 90 days (set reminders to rotate)
+
+2. **Add to Repository Secrets:**
+   - Go to repository Settings → Secrets and variables → Actions
+   - Click "New repository secret"
+   - Name: `REPO_PAT`
+   - Value: (paste the token)
+
+3. **Verify:**
+   - Manual trigger `refresh-inventory.yml`
+   - If packages are discovered, PR should be created successfully
+   - Check workflow logs: `GITHUB_TOKEN` will show as `***` (masked)
+
+### Token Security Notes
+
+- **Scope minimization:** Using "classic" token with explicit scopes
+- **Rotation:** Set calendar reminder to rotate every 90 days
+- **Revocation:** If compromised, revoke at https://github.com/settings/tokens immediately
+- **Audit trail:** GitHub logs all PAT usage at https://github.com/settings/security-log
+- **No credentials in repo:** Token stored only in GitHub repository secrets, never committed
+
+### Validation
+
+**Testing Instructions:**
+1. Manual trigger: Actions → "Refresh Inventory" → "Run workflow"
+2. Monitor the run in real-time
+3. If new packages are queued:
+   - PR should be created successfully
+   - Check branch: `inventory/refresh-{YYYYMMDD}`
+4. If no new packages: Workflow exits with "No changes summary" message
+5. Logs should show `GITHUB_TOKEN` as `***` (secret masked properly)
+
+### Related
+- WI-6: Inventory Discovery Workflow
+- Decision #10: Inventory Workflow Uses C# Collector
+
+---
+
 ## #10 — Inventory Workflow Uses C# Collector
 
 **Author:** Wash (DevOps)  
