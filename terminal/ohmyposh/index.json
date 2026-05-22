@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T18:32:25.7311222+00:00",
+  "generatedAt": "2026-05-22T11:45:05.5905215+00:00",
   "totalRepos": 22,
   "profiles": [
     {
@@ -87,6 +87,12 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.CopilotCLIMonitor",
+      "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
+      "accentColor": "#6660B3",
+      "icon": "\uD83E\uDD16"
+    },
+    {
       "repo": "elbruno/ElBruno.ModelContextProtocol",
       "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
       "accentColor": "#C3627F",
@@ -97,12 +103,6 @@
       "configFile": "elbruno-ElBruno.ClockTray.json",
       "accentColor": "#CEA8AC",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.CopilotCLIMonitor",
-      "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
-      "accentColor": "#6660B3",
-      "icon": "\uD83E\uDD16"
     },
     {
       "repo": "ElBruno/ElBruno.BM25",
