@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-23T10:26:25.1116706+00:00",
-  "totalRepos": 22,
+  "generatedAt": "2026-05-24T10:30:18.2148666+00:00",
+  "totalRepos": 23,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
@@ -63,16 +63,16 @@
       "icon": "\uD83C\uDF99️"
     },
     {
-      "repo": "elbruno/ElBruno.Realtime",
-      "configFile": "elbruno-ElBruno.Realtime.json",
-      "accentColor": "#6E94AE",
-      "icon": "⚡"
-    },
-    {
       "repo": "elbruno/graphify-dotnet",
       "configFile": "elbruno-graphify-dotnet.json",
       "accentColor": "#BEA579",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#6E94AE",
+      "icon": "⚡"
     },
     {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
@@ -127,6 +127,12 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
+    },
+    {
+      "repo": "elbruno/HermesNET",
+      "configFile": "elbruno-HermesNET.json",
+      "accentColor": "#8B8A71",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",
