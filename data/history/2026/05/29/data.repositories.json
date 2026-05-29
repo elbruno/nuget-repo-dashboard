@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T11:36:59.195146+00:00",
+  "generatedAt": "2026-05-29T12:14:51.7783642+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -3806,7 +3806,7 @@
       "fullName": "elbruno/openclawnet",
       "stars": 57,
       "forks": 22,
-      "openIssues": 2,
+      "openIssues": 3,
       "openPullRequests": 0,
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
       "language": "C#",
@@ -3843,14 +3843,26 @@
       "htmlUrl": "https://github.com/elbruno/openclawnet",
       "recentIssues": [
         {
+          "number": 125,
+          "title": "E2E page is not loading",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/issues/125",
+          "createdAt": "2026-05-29T11:48:27+00:00",
+          "updatedAt": "2026-05-29T11:50:53+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 1,
+          "state": null,
+          "closedAt": null
+        },
+        {
           "number": 122,
           "title": "The Ollama profile\u2019s \u201CTest Agent\u201D always returns Failed",
           "htmlUrl": "https://github.com/elbruno/openclawnet/issues/122",
           "createdAt": "2026-05-27T14:11:08+00:00",
-          "updatedAt": "2026-05-27T19:11:19+00:00",
+          "updatedAt": "2026-05-29T11:50:52+00:00",
           "userLogin": "davidgamo",
           "labels": [],
-          "commentsCount": 0,
+          "commentsCount": 1,
           "state": null,
           "closedAt": null
         },
@@ -3859,10 +3871,10 @@
           "title": "The Ollama provider\u2019s \u201CTest Connection\u201D always returns Failed",
           "htmlUrl": "https://github.com/elbruno/openclawnet/issues/120",
           "createdAt": "2026-05-27T13:26:50+00:00",
-          "updatedAt": "2026-05-27T13:26:50+00:00",
+          "updatedAt": "2026-05-29T11:50:53+00:00",
           "userLogin": "davidgamo",
           "labels": [],
-          "commentsCount": 0,
+          "commentsCount": 1,
           "state": null,
           "closedAt": null
         }
