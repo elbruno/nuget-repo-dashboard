@@ -84,6 +84,24 @@
     ]
   },
   {
+    "packageId": "ElBruno.Hermes.Adapters",
+    "repos": [
+      "elbruno/HermesNET"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Hermes.Core",
+    "repos": [
+      "elbruno/HermesNET"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Hermes.Tool",
+    "repos": [
+      "elbruno/HermesNET"
+    ]
+  },
+  {
     "packageId": "ElBruno.HuggingFace.Downloader",
     "repos": [
       "elbruno/ElBruno.HuggingFace.Downloader"
@@ -283,6 +301,12 @@
     "packageId": "ElBruno.PersonaPlex",
     "repos": [
       "elbruno/ElBruno.PersonaPlex"
+    ]
+  },
+  {
+    "packageId": "ElBruno.PresenterTimer",
+    "repos": [
+      "elbruno/ElBruno.PresenterTimer"
     ]
   },
   {
