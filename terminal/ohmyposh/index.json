@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-03T13:16:47.601304+00:00",
-  "totalRepos": 23,
+  "generatedAt": "2026-06-04T11:52:46.3308168+00:00",
+  "totalRepos": 24,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
@@ -133,6 +133,12 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
+    },
+    {
+      "repo": "elbruno/ElBruno.PresenterTimer",
+      "configFile": "elbruno-ElBruno.PresenterTimer.json",
+      "accentColor": "#CD5CB2",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",
