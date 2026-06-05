@@ -144,6 +144,19 @@
     .view-toggle button.active { background: var(--accent); color: #fff; }
     .view-toggle button:hover:not(.active) { background: var(--toolbar-bg); }
 
+    /* Export buttons */
+    .export-buttons {
+      display: inline-flex; gap: 0.5rem;
+    }
+    .export-btn {
+      background: var(--accent-bg); border: 1px solid var(--border); color: var(--accent);
+      padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); cursor: pointer;
+      font-size: 0.85rem; font-weight: 500; transition: background 0.15s, color 0.15s;
+    }
+    .export-btn:hover {
+      background: var(--accent); color: #fff;
+    }
+
     /* Filter toolbar */
     .filter-toolbar {
       background: var(--toolbar-bg); border: 1px solid var(--border);
@@ -955,6 +968,10 @@
           <h2><span class="chevron">▼</span> <span class="icon">📦</span> NuGet Packages</h2>
           <div class="section-meta">
             <span class="result-count" id="nuget-count"></span>
+            <div class="export-buttons">
+              <button id="export-packages-csv" class="export-btn" title="Export as CSV">CSV</button>
+              <button id="export-packages-json" class="export-btn" title="Export as JSON">JSON</button>
+            </div>
             <div class="view-toggle" id="nuget-view-toggle">
               <button data-view="cards" class="active" title="Card view">▦</button>
               <button data-view="list" title="List view">☰</button>
@@ -997,6 +1014,10 @@
           <h2><span class="chevron">▼</span> <span class="icon">🐙</span> GitHub Repositories</h2>
           <div class="section-meta">
             <span class="result-count" id="repo-count"></span>
+            <div class="export-buttons">
+              <button id="export-repos-csv" class="export-btn" title="Export as CSV">CSV</button>
+              <button id="export-repos-json" class="export-btn" title="Export as JSON">JSON</button>
+            </div>
             <div class="view-toggle" id="repo-view-toggle">
               <button data-view="cards" class="active" title="Card view">▦</button>
               <button data-view="list" title="List view">☰</button>
@@ -2482,6 +2503,119 @@
       `;
     }
 
+    /* ── Export Functions ── */
+
+    function escapeCSV(value) {
+      if (value === null || value === undefined) return '';
+      const str = String(value);
+      if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+        return '"' + str.replace(/"/g, '""') + '"';
+      }
+      return str;
+    }
+
+    function exportPackagesAsCSV() {
+      const pkgs = getFilteredPackages();
+      const date = new Date().toISOString().split('T')[0];
+      const filename = `packages-${date}.csv`;
+
+      const headers = ['Package ID', 'Version', 'Total Downloads', 'Project URL', 'Authors', 'Tags'];
+      const rows = pkgs.map(p => [
+        p.id,
+        p.latestVersion,
+        p.totalDownloads || 0,
+        p.projectUrl || '',
+        p.authors || '',
+        (p.tags || []).join(';')
+      ]);
+
+      const csv = [
+        headers.map(escapeCSV).join(','),
+        ...rows.map(row => row.map(escapeCSV).join(','))
+      ].join('\n');
+
+      downloadFile(csv, filename, 'text/csv');
+    }
+
+    function exportPackagesAsJSON() {
+      const pkgs = getFilteredPackages();
+      const date = new Date().toISOString().split('T')[0];
+      const filename = `packages-${date}.json`;
+
+      const data = {
+        exportedAt: new Date().toISOString(),
+        count: pkgs.length,
+        packages: pkgs.map(p => ({
+          id: p.id,
+          version: p.latestVersion,
+          totalDownloads: p.totalDownloads || 0,
+          projectUrl: p.projectUrl || '',
+          authors: p.authors || '',
+          tags: p.tags || []
+        }))
+      };
+
+      downloadFile(JSON.stringify(data, null, 2), filename, 'application/json');
+    }
+
+    function exportRepositoriesAsCSV() {
+      const repos = getFilteredRepos();
+      const date = new Date().toISOString().split('T')[0];
+      const filename = `repositories-${date}.csv`;
+
+      const headers = ['Name', 'Stars', 'Forks', 'Open Issues', 'Open PRs', 'Language', 'URL'];
+      const rows = repos.map(r => [
+        r.fullName || r.name,
+        r.stargazersCount || 0,
+        r.forksCount || 0,
+        r.openIssuesCount || 0,
+        r.pullRequestsCount || 0,
+        r.primaryLanguage || '',
+        r.htmlUrl || ''
+      ]);
+
+      const csv = [
+        headers.map(escapeCSV).join(','),
+        ...rows.map(row => row.map(escapeCSV).join(','))
+      ].join('\n');
+
+      downloadFile(csv, filename, 'text/csv');
+    }
+
+    function exportRepositoriesAsJSON() {
+      const repos = getFilteredRepos();
+      const date = new Date().toISOString().split('T')[0];
+      const filename = `repositories-${date}.json`;
+
+      const data = {
+        exportedAt: new Date().toISOString(),
+        count: repos.length,
+        repositories: repos.map(r => ({
+          name: r.fullName || r.name,
+          stars: r.stargazersCount || 0,
+          forks: r.forksCount || 0,
+          openIssues: r.openIssuesCount || 0,
+          pullRequests: r.pullRequestsCount || 0,
+          language: r.primaryLanguage || '',
+          url: r.htmlUrl || ''
+        }))
+      };
+
+      downloadFile(JSON.stringify(data, null, 2), filename, 'application/json');
+    }
+
+    function downloadFile(content, filename, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
     /* ── Event Wiring ── */
 
     function wireFilters() {
@@ -2507,6 +2641,12 @@
         applyDashboardFilterUpdate({ filtersOpen: !dashboardFilters.filtersOpen }, { preservePanelState: true });
       });
       window.addEventListener('resize', updateDashboardFilterPanelVisibility);
+
+      // Export buttons
+      document.getElementById('export-packages-csv').addEventListener('click', exportPackagesAsCSV);
+      document.getElementById('export-packages-json').addEventListener('click', exportPackagesAsJSON);
+      document.getElementById('export-repos-csv').addEventListener('click', exportRepositoriesAsCSV);
+      document.getElementById('export-repos-json').addEventListener('click', exportRepositoriesAsJSON);
 
       // Issues filters
       document.getElementById('issues-search').addEventListener('input', renderIssuesSection);
