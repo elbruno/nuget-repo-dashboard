@@ -785,7 +785,7 @@
       .section-header h2 { font-size: 1.1rem; }
       .section-meta { width: 100%; justify-content: space-between; }
       
-       .filter-toolbar { padding: 0.4rem 0.5rem; gap: 0.4rem; }
+       .filter-toolbar { padding: 0.5rem 0.5rem; gap: 0.5rem; }
        .dashboard-toolbar { gap: 0.6rem; }
        .dashboard-toolbar-header { align-items: flex-start; }
        .dashboard-toolbar-actions { width: 100%; justify-content: space-between; }
@@ -793,38 +793,93 @@
        .filter-group { gap: 0.2rem; }
        .filter-group, .filter-group.filter-grow { width: 100%; min-width: 0; }
        .filter-group label { font-size: 0.65rem; }
-       .filter-toolbar input[type="text"] { padding: 0.4rem 0.5rem; font-size: 0.75rem; max-width: none; min-height: 30px; width: 100%; }
-        .filter-toolbar select { padding: 0.4rem 0.4rem; font-size: 0.75rem; min-height: 30px; width: 100%; }
-        .pill-group button { padding: 0.35rem 0.5rem; font-size: 0.65rem; min-height: 30px; }
-        .toggle-btn { padding: 0.35rem 0.5rem; font-size: 0.7rem; min-height: 30px; }
-        .toolbar-hint { margin-left: 0; width: 100%; }
+       .filter-toolbar input[type="text"] { padding: 0.5rem 0.6rem; font-size: 0.85rem; max-width: none; min-height: 44px; width: 100%; }
+       .filter-toolbar select { padding: 0.5rem 0.6rem; font-size: 0.85rem; min-height: 44px; width: 100%; }
+       .pill-group button { padding: 0.5rem 0.75rem; font-size: 0.75rem; min-height: 44px; }
+       .toggle-btn { padding: 0.5rem 0.75rem; font-size: 0.8rem; min-height: 44px; }
+       .export-btn { padding: 0.5rem 0.75rem; font-size: 0.8rem; min-height: 44px; }
+       .toolbar-hint { margin-left: 0; width: 100%; }
+      
+       .top-nav .container { gap: 0.2rem; padding: 0.5rem 0.5rem; }
+       .nav-link { padding: 0.5rem 0.75rem; font-size: 0.8rem; min-height: 44px; display: flex; align-items: center; }
+      
+       .list-view { overflow-x: auto; }
+       .list-view th { font-size: 0.7rem; padding: 0.75rem 0.5rem; }
+       .list-view td { font-size: 0.8rem; padding: 0.75rem 0.5rem; }
        
-       .top-nav .container { gap: 0.2rem; padding: 0.4rem 0.5rem; }
-       .nav-link { padding: 0.3rem 0.5rem; font-size: 0.7rem; }
-      
-      .list-view { overflow-x: auto; }
-      .list-view th { font-size: 0.65rem; padding: 0.5rem; }
-      .list-view td { font-size: 0.75rem; padding: 0.5rem; }
-      
-      .card { padding: 0.85rem; }
-      .card-title a { font-size: 0.85rem; }
-      .card-description { font-size: 0.75rem; }
-      .stat { font-size: 0.7rem; }
-      .health-badge { font-size: 0.68rem; }
-      .health-badge .health-label { font-size: 0.62rem; }
-      
-      
-      .empty-state { padding: 2rem 0.75rem; }
-      .empty-state .icon { font-size: 1.5rem; }
-      .empty-state p { font-size: 0.85rem; }
-      
-      footer { padding: 1.5rem 0; font-size: 0.75rem; }
+       .card { padding: 0.85rem; }
+       .card-title a { font-size: 0.85rem; }
+       .card-description { font-size: 0.75rem; }
+       .stat { font-size: 0.7rem; }
+       .health-badge { font-size: 0.68rem; min-height: 32px; padding: 0.3rem 0.6rem; display: flex; align-items: center; }
+       .health-badge .health-label { font-size: 0.62rem; }
+       
+       .view-toggle button { min-height: 40px; padding: 0.4rem 0.65rem; }
+       
+       .empty-state { padding: 2rem 0.75rem; }
+       .empty-state .icon { font-size: 1.5rem; }
+       .empty-state p { font-size: 0.85rem; }
+       
+       footer { padding: 1.5rem 0; font-size: 0.75rem; margin-bottom: 56px; }
     }
-    
+     
     @media (max-width: 600px) {
       .trends-overview { grid-template-columns: 1fr; }
+      .mobile-nav { display: block; }
     }
     
+    /* Bottom navigation for mobile */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 0;
+      margin: 0;
+      z-index: 999;
+    }
+    .mobile-nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 56px;
+      width: 100%;
+    }
+    .mobile-nav li {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    .mobile-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      width: 100%;
+      height: 100%;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mobile-nav a:active,
+    .mobile-nav a.active {
+      background: var(--accent-bg);
+      color: var(--accent);
+    }
+    .mobile-nav a span:first-child {
+      font-size: 1.2rem;
+    }
+
     @media (min-width: 481px) and (max-width: 767px) {
       .card-grid { grid-template-columns: repeat(2, 1fr); }
       .trends-overview { grid-template-columns: repeat(2, 1fr); }
@@ -3017,6 +3072,30 @@
     }
 
     loadDashboard();
+  </script>
+
+  <!-- Mobile bottom navigation -->
+  <nav class="mobile-nav">
+    <ul>
+      <li><a href="#nuget-packages" onclick="scrollToSection('nuget-packages'); this.parentElement.classList.add('active');"><span>📦</span> <span>Packages</span></a></li>
+      <li><a href="#github-repos" onclick="scrollToSection('github-repos'); this.parentElement.classList.add('active');"><span>🐙</span> <span>Repos</span></a></li>
+      <li><a href="#issues-section" onclick="scrollToSection('issues-section'); this.parentElement.classList.add('active');"><span>🔍</span> <span>Issues</span></a></li>
+      <li><a href="#prs-section" onclick="scrollToSection('prs-section'); this.parentElement.classList.add('active');"><span>🔀</span> <span>PRs</span></a></li>
+      <li><a href="#trends-section" onclick="scrollToSection('trends-section'); this.parentElement.classList.add('active');"><span>📈</span> <span>Trends</span></a></li>
+    </ul>
+  </nav>
+
+  <script>
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        // Clear all active states
+        document.querySelectorAll('.mobile-nav a').forEach(a => a.classList.remove('active'));
+        // Set active on clicked item
+        event.target.closest('a').classList.add('active');
+      }
+    }
   </script>
 </body>
 </html>
