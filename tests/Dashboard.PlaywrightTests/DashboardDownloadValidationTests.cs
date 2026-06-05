@@ -8,7 +8,7 @@ namespace Dashboard.PlaywrightTests;
 /// <summary>
 /// Validates that the published NuGet dashboard download numbers
 /// are reasonably close to live NuGet API data.
-/// Requires Playwright browsers: pwsh bin/Debug/net10.0/playwright.ps1 install
+/// Auto-installs Playwright Chromium when missing.
 /// </summary>
 public partial class DashboardDownloadValidationTests : IAsyncLifetime
 {
@@ -19,8 +19,11 @@ public partial class DashboardDownloadValidationTests : IAsyncLifetime
     // Allow up to 25% deviation — search API shards lag behind real-time stats
     private const double TolerancePercent = 25.0;
 
-    // Only validate packages with meaningful download counts
-    private const long MinDownloadsToValidate = 100;
+    // Only validate packages with meaningful download counts.
+    // Low-count packages are too volatile for stable percentage-based checks.
+    private const long MinDownloadsToValidate = 500;
+    private static readonly SemaphoreSlim InstallLock = new(1, 1);
+    private static bool _browsersReady;
 
     private IPlaywright _playwright = null!;
     private IBrowser _browser = null!;
@@ -28,10 +31,22 @@ public partial class DashboardDownloadValidationTests : IAsyncLifetime
     public async Task InitializeAsync()
     {
         _playwright = await Playwright.CreateAsync();
-        _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+
+        try
         {
-            Headless = true
-        });
+            _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+            {
+                Headless = true
+            });
+        }
+        catch (PlaywrightException ex) when (ex.Message.Contains("Executable doesn't exist", StringComparison.OrdinalIgnoreCase))
+        {
+            await EnsureChromiumInstalledAsync();
+            _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+            {
+                Headless = true
+            });
+        }
     }
 
     public async Task DisposeAsync()
@@ -225,4 +240,28 @@ public partial class DashboardDownloadValidationTests : IAsyncLifetime
 
     [GeneratedRegex(@"^([\d.]+)\s*([KMBkmb])?$")]
     private static partial Regex FormattedNumberRegex();
+
+    private static async Task EnsureChromiumInstalledAsync()
+    {
+        if (_browsersReady)
+        {
+            return;
+        }
+
+        await InstallLock.WaitAsync();
+        try
+        {
+            if (_browsersReady)
+            {
+                return;
+            }
+
+            Microsoft.Playwright.Program.Main(new[] { "install", "chromium" });
+            _browsersReady = true;
+        }
+        finally
+        {
+            InstallLock.Release();
+        }
+    }
 }

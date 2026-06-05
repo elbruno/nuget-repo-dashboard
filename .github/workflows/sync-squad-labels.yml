@@ -103,6 +103,16 @@ jobs:
               { name: 'priority:p2', color: 'FBCA04', description: 'Next sprint' }
             ];
 
+            const DEPENDABOT_SECURITY_LABELS = [
+              { name: 'dependabot', color: '5319E7', description: 'Automated Dependabot pull request' },
+              { name: 'dependabot:security', color: 'B60205', description: 'Dependabot PR addressing security vulnerabilities' },
+              { name: 'security', color: 'B60205', description: 'Security-related change' },
+              { name: 'severity:high', color: 'D93F0B', description: 'High severity risk' },
+              { name: 'severity:critical', color: 'B60205', description: 'Critical severity risk' }
+            ];
+
+            function slugify(t) { return t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+
             // Ensure the base "squad" triage label exists
             const labels = [
               { name: 'squad', color: SQUAD_COLOR, description: 'Squad triage inbox — Lead will assign to a member' }
@@ -110,7 +120,7 @@ jobs:
 
             for (const member of members) {
               labels.push({
-                name: `squad:${member.name.toLowerCase()}`,
+                name: `squad:${slugify(member.name)}`,
                 color: MEMBER_COLOR,
                 description: `Assigned to ${member.name} (${member.role})`
               });
@@ -131,6 +141,7 @@ jobs:
             labels.push(...TYPE_LABELS);
             labels.push(...PRIORITY_LABELS);
             labels.push(...SIGNAL_LABELS);
+            labels.push(...DEPENDABOT_SECURITY_LABELS);
 
             // Sync labels (create or update)
             for (const label of labels) {

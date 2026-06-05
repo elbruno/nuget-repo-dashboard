@@ -1,0 +1,6 @@
+{
+  "_info": "This file is auto-generated. For details, use the packages endpoint.",
+  "message": "Please request ../data/data.nuget.json for package data",
+  "endpoint": "/api/packages",
+  "description": "Get all NuGet packages with metrics"
+}

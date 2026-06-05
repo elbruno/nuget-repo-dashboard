@@ -43,6 +43,20 @@ When investigating "data staleness" reports:
 
 ## Recent Sessions
 
+### Push to GitHub (2026-05-21)
+**Objective:** Push 3 committed changes to origin/main  
+**Session:** Push branch state to remote
+
+**Changes pushed (merged with CI data):**
+- `c03d5bd` — docs: scribe orchestration - decisions archive and history summarization
+- `71148a2` — feat: add Top 5 leaderboard section to dashboard
+- `410f12d` — fix: enable PR creation in refresh-inventory workflow via REPO_PAT secret
+- (Plus 4 auto-generated CI commits for metrics/profile refreshes)
+
+**Merge resolution:** Remote had 4 new CI-generated commits. Used `git merge origin/main` to integrate both timelines before pushing.
+
+**Final state:** `fa39c1b` merged to `origin/main`. Branch is now synchronized.
+
 ### Push to GitHub (2026-04-22)
 **Objective:** Push all local changes to GitHub  
 **Session:** Task completion — Bruno requested commit and push of watch list system and team documentation

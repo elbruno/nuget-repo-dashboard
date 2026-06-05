@@ -1,0 +1,251 @@
+name: Dependabot Security Alert
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  alert:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Classify and alert high/critical updates
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- dependabot-security-alert -->';
+            const pr = context.payload.pull_request;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = pr.number;
+
+            const labelDefinitions = {
+              'dependabot': { color: '5319E7', description: 'Automated Dependabot pull request' },
+              'dependabot:security': { color: 'B60205', description: 'Dependabot PR addressing security vulnerabilities' },
+              'security': { color: 'B60205', description: 'Security-related change' },
+              'severity:high': { color: 'D93F0B', description: 'High severity risk' },
+              'severity:critical': { color: 'B60205', description: 'Critical severity risk' },
+              'priority:p1': { color: 'D93F0B', description: 'This sprint' }
+            };
+
+            async function ensureLabel(name) {
+              const def = labelDefinitions[name];
+              if (!def) {
+                return;
+              }
+
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name });
+              } catch (error) {
+                if (error.status === 404) {
+                  await github.rest.issues.createLabel({
+                    owner,
+                    repo,
+                    name,
+                    color: def.color,
+                    description: def.description
+                  });
+                  core.info(`Created missing label: ${name}`);
+                  return;
+                }
+
+                throw error;
+              }
+            }
+
+            const title = pr.title || '';
+            const body = pr.body || '';
+            const blob = `${title}\n${body}`.toLowerCase();
+
+            const isSecurityUpdate =
+              /\b(security|vulnerab|cve|ghsa)\b/i.test(blob) ||
+              /dependabot alerts?/i.test(body) ||
+              /security update/i.test(title);
+
+            let severity = null;
+            if (/\bcritical\b/i.test(blob)) {
+              severity = 'critical';
+            } else if (/\bhigh\b/i.test(blob)) {
+              severity = 'high';
+            } else if (/\bmedium\b/i.test(blob)) {
+              severity = 'medium';
+            } else if (/\blow\b/i.test(blob)) {
+              severity = 'low';
+            }
+
+            const shouldAlert = isSecurityUpdate && (severity === 'high' || severity === 'critical');
+            const desiredLabels = new Set(['dependabot']);
+
+            if (shouldAlert) {
+              desiredLabels.add('dependabot:security');
+              desiredLabels.add('security');
+              desiredLabels.add('priority:p1');
+              desiredLabels.add(`severity:${severity}`);
+            }
+
+            for (const labelName of desiredLabels) {
+              await ensureLabel(labelName);
+            }
+
+            const existingLabelNames = (pr.labels || []).map(l => l.name);
+            const labelsToAdd = [...desiredLabels].filter(name => !existingLabelNames.includes(name));
+            const managedLabels = ['dependabot:security', 'security', 'severity:high', 'severity:critical'];
+            const labelsToRemove = shouldAlert
+              ? managedLabels.filter(name => name.startsWith('severity:') && name !== `severity:${severity}` && existingLabelNames.includes(name))
+              : managedLabels.filter(name => existingLabelNames.includes(name));
+
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner,
+                repo,
+                issue_number,
+                labels: labelsToAdd
+              });
+              core.info(`Added labels: ${labelsToAdd.join(', ')}`);
+            }
+
+            for (const labelName of labelsToRemove) {
+              try {
+                await github.rest.issues.removeLabel({ owner, repo, issue_number, name: labelName });
+                core.info(`Removed label: ${labelName}`);
+              } catch (error) {
+                if (error.status !== 404) {
+                  throw error;
+                }
+              }
+            }
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+              per_page: 100
+            });
+
+            const alertComment = comments.find(c =>
+              c.user?.type === 'Bot' &&
+              typeof c.body === 'string' &&
+              c.body.includes(marker)
+            );
+
+            if (shouldAlert) {
+              const severityUpper = severity.toUpperCase();
+              const bodyText = [
+                marker,
+                '## 🚨 Dependabot security alert',
+                '',
+                `This PR appears to address a **${severityUpper}** vulnerability and needs prioritized triage.`,
+                '',
+                '### Maintainer checklist',
+                '- Confirm the advisory context and impacted transitive dependencies.',
+                '- Validate test/build signals before merge.',
+                '- Prioritize review and merge if no compatibility blockers exist.'
+              ].join('\n');
+
+              if (alertComment) {
+                await github.rest.issues.updateComment({
+                  owner,
+                  repo,
+                  comment_id: alertComment.id,
+                  body: bodyText
+                });
+                core.info('Updated existing Dependabot security alert comment');
+              } else {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number,
+                  body: bodyText
+                });
+                core.info('Created Dependabot security alert comment');
+              }
+
+              async function readCodeowners() {
+                const candidatePaths = ['.github/CODEOWNERS', 'CODEOWNERS', 'docs/CODEOWNERS'];
+                for (const path of candidatePaths) {
+                  try {
+                    const file = await github.rest.repos.getContent({ owner, repo, path, ref: pr.base.ref });
+                    if (!('content' in file.data)) {
+                      continue;
+                    }
+
+                    return Buffer.from(file.data.content, 'base64').toString('utf8');
+                  } catch (error) {
+                    if (error.status !== 404) {
+                      throw error;
+                    }
+                  }
+                }
+
+                return null;
+              }
+
+              const codeownersRaw = await readCodeowners();
+              const reviewerUsers = new Set();
+              const reviewerTeams = new Set();
+
+              if (codeownersRaw) {
+                const lines = codeownersRaw.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#'));
+                for (const line of lines) {
+                  const parts = line.split(/\s+/).slice(1).filter(Boolean);
+                  for (const part of parts) {
+                    if (!part.startsWith('@')) {
+                      continue;
+                    }
+
+                    const token = part.slice(1);
+                    if (token.includes('/')) {
+                      const [org, team] = token.split('/', 2);
+                      if (org.toLowerCase() === owner.toLowerCase() && team) {
+                        reviewerTeams.add(team);
+                      }
+                    } else {
+                      reviewerUsers.add(token);
+                    }
+                  }
+                }
+              }
+
+              if (reviewerUsers.size === 0 && reviewerTeams.size === 0) {
+                reviewerUsers.add(owner);
+              }
+
+              const requested = await github.rest.pulls.listRequestedReviewers({
+                owner,
+                repo,
+                pull_number: issue_number
+              });
+
+              const requestedUsers = new Set((requested.data.users || []).map(u => u.login.toLowerCase()));
+              const requestedTeams = new Set((requested.data.teams || []).map(t => t.slug.toLowerCase()));
+
+              const usersToRequest = [...reviewerUsers].filter(user => !requestedUsers.has(user.toLowerCase()));
+              const teamsToRequest = [...reviewerTeams].filter(team => !requestedTeams.has(team.toLowerCase()));
+
+              if (usersToRequest.length > 0 || teamsToRequest.length > 0) {
+                await github.rest.pulls.requestReviewers({
+                  owner,
+                  repo,
+                  pull_number: issue_number,
+                  reviewers: usersToRequest,
+                  team_reviewers: teamsToRequest
+                });
+                core.info(`Requested reviewers: users=[${usersToRequest.join(', ')}] teams=[${teamsToRequest.join(', ')}]`);
+              } else {
+                core.info('Reviewer requests already satisfied');
+              }
+            } else if (alertComment) {
+              await github.rest.issues.deleteComment({
+                owner,
+                repo,
+                comment_id: alertComment.id
+              });
+              core.info('Removed stale Dependabot security alert comment');
+            } else {
+              core.info('No high/critical security alert detected');
+            }

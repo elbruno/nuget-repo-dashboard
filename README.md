@@ -167,6 +167,16 @@ Both files are written to:
 
 The dashboard is automatically deployed to **GitHub Pages** after each metrics refresh. The [`Refresh Metrics`](.github/workflows/refresh-metrics.yml) workflow collects data and then deploys `site/index.html` with the latest JSON data.
 
+## Dependabot Security Alerts
+
+High/critical Dependabot security PRs are automatically escalated via [`Dependabot Security Alert`](.github/workflows/dependabot-security-alert.yml):
+
+- Adds labels: `dependabot`, `dependabot:security`, `security`, and `severity:*`
+- Posts/updates a sticky triage comment on the PR
+- Requests CODEOWNERS review (or repository owner fallback when CODEOWNERS is missing)
+
+Only high/critical security updates trigger the special alert flow; lower-severity updates keep normal PR handling.
+
 ### Enabling GitHub Pages
 
 1. Go to **Settings → Pages** in your repository
@@ -183,12 +193,40 @@ https://{owner}.github.io/{repo}/
 
 For this repo: `https://elbruno.github.io/nuget-repo-dashboard/`
 
+### REST API
+
+The dashboard exposes metrics data via REST API endpoints for programmatic access. This enables external tools, dashboards, and integrations to consume package and repository metrics.
+
+#### API Endpoints
+
+- **GET /api/packages/index.json** — All NuGet packages with metrics
+- **GET /api/repositories/index.json** — All GitHub repositories with metrics
+- **GET /api/trends/index.json** — Historical trend data (90-day window)
+- **GET /api/metadata.json** — Metadata and generation timestamps
+
+#### Example Usage
+
+```javascript
+// Fetch all packages
+const response = await fetch('https://elbruno.github.io/nuget-repo-dashboard/api/packages/index.json');
+const data = await response.json();
+console.log(data.packages);
+```
+
+#### API Documentation
+
+For detailed API documentation, parameters, response formats, and examples, see:
+- [REST API Documentation](docs/api.md)
+
 ### Site Structure
 
 The deployed site contains:
 - `index.html` — dashboard UI (from `site/index.html`)
-- `data/data.nuget.json` — NuGet package metrics
-- `data/data.repositories.json` — GitHub repository metrics
+- `api/packages/index.json` — NuGet package metrics (API endpoint)
+- `api/repositories/index.json` — GitHub repository metrics (API endpoint)
+- `api/trends/index.json` — Historical trends (API endpoint)
+- `data/data.nuget.json` — NuGet package metrics (legacy)
+- `data/data.repositories.json` — GitHub repository metrics (legacy)
 
 ## 🎨 repo-identity
 
@@ -246,5 +284,4 @@ Place a `repo.identity.json` in any tracked repo to customize its profile:
   "icon": "🧠"
 }
 ```
-
 

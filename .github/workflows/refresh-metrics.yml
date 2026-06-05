@@ -6,7 +6,7 @@ name: Refresh Metrics
 
 on:
   schedule:
-    - cron: "0 9 * * *" # Daily at 04:00 AM EST (09:00 UTC)
+    - cron: "17 9 * * *" # Daily around 05:17 AM ET (09:17 UTC), off top-of-hour load
   workflow_dispatch: # Manual trigger
 
 permissions:
@@ -60,7 +60,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: refresh metrics [skip ci]"
-          git push
+          for attempt in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            if git push; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Push failed after 3 attempts."
+              exit 1
+            fi
+            echo "Push attempt $attempt failed; retrying in 10s..."
+            sleep 10
+          done
 
       - name: Regenerate repo-identity profiles
         run: dotnet run --project src/RepoIdentity/RepoIdentity.csproj --framework net10.0 --configuration Release -- generate --source data/latest/data.repositories.json
@@ -74,17 +85,40 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "chore: refresh Oh My Posh profiles [skip ci]"
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase origin "${GITHUB_REF_NAME}" || true
+              if git push; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Push failed after 3 attempts."
+                exit 1
+              fi
+              echo "Push attempt $attempt failed; retrying in 10s..."
+              sleep 10
+            done
           fi
+
+      - name: Setup REST API endpoints
+        run: |
+          mkdir -p site/api/packages site/api/repositories site/api/trends
+          cp data/latest/data.nuget.json site/api/packages/index.json
+          cp data/latest/data.repositories.json site/api/repositories/index.json
+          cp data/latest/data.trends.json site/api/trends/index.json
+          cp data/latest/data.metadata.json site/api/metadata.json
 
       - name: Assemble site
         run: |
-          mkdir -p _site/data
+          mkdir -p _site/data _site/api/packages _site/api/repositories _site/api/trends
           cp site/index.html _site/
           cp data/latest/data.nuget.json _site/data/data.nuget.json
           cp data/latest/data.repositories.json _site/data/data.repositories.json
           cp data/latest/data.trends.json _site/data/data.trends.json
           cp data/latest/data.metadata.json _site/data/data.metadata.json
+          cp site/api/packages/index.json _site/api/packages/index.json
+          cp site/api/repositories/index.json _site/api/repositories/index.json
+          cp site/api/trends/index.json _site/api/trends/index.json
+          cp site/api/metadata.json _site/api/metadata.json
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

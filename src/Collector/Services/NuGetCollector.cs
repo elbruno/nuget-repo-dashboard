@@ -154,22 +154,17 @@ public sealed class NuGetCollector : INuGetCollector
 
     private async Task<long> GetTotalDownloadsAsync(string packageId)
     {
-        // Query USNC as primary, USSC as fallback.
-        // USNC (azuresearch-usnc.nuget.org) is the primary shard with fresh data.
-        // USSC can return stale/inflated counts, so use it only on HTTP failure.
+        // Query both shards and use the higher value.
+        // Download counts are monotonic; max value is the best available reading.
         var query = $"?q=packageid:{packageId}&take=1";
+        var usncTask = GetDownloadsFromShardAsync(SearchShardUsnc + query);
+        var usscTask = GetDownloadsFromShardAsync(SearchShardUssc + query);
 
-        var usncCount = await GetDownloadsFromShardAsync(SearchShardUsnc + query);
-        
-        // If USNC succeeded, use that value
-        if (usncCount > 0)
-        {
-            return usncCount;
-        }
+        await Task.WhenAll(usncTask, usscTask);
 
-        // Fall back to USSC only if USNC failed or returned 0
-        var usscCount = await GetDownloadsFromShardAsync(SearchShardUssc + query);
-        return usscCount > 0 ? usscCount : 0;
+        var usncCount = Math.Max(await usncTask, 0);
+        var usscCount = Math.Max(await usscTask, 0);
+        return Math.Max(usncCount, usscCount);
     }
 
     /// <summary>
