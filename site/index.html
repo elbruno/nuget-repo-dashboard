@@ -307,6 +307,19 @@
       padding: 0.1rem 0.45rem; border-radius: 999px;
     }
 
+    /* Dependency summary */
+    .dependency-summary {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      padding: 0.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      margin: 0.25rem 0; font-size: 0.75rem; color: var(--text-muted);
+    }
+    .dep-item {
+      display: flex; align-items: center; gap: 0.2rem;
+    }
+    .dep-item.warning {
+      color: #f59e0b; font-weight: 500;
+    }
+
     /* Highlight cards for leaderboards */
     .highlights-area {
       display: grid;
@@ -1944,6 +1957,17 @@
       const trend = getPackageTrend(pkg.packageId);
       const snapshot = trend ? buildTrendSnapshot(trend.downloads, chartWindowDays.packages) : null;
       const badge = snapshot ? trendBadgeHtml(snapshot.growthPct) : '';
+      
+      // Dependency info
+      const deps = pkg.dependencies;
+      const depsSummary = deps ? `
+        <div class="dependency-summary">
+          <div class="dep-item">📦 <strong>${deps.directCount}</strong> dependencies</div>
+          <div class="dep-item">✓ ${deps.freshnessPercent.toFixed(0)}% fresh</div>
+          ${deps.outdatedCount > 0 ? `<div class="dep-item warning">⚠️ ${deps.outdatedCount} outdated</div>` : ''}
+        </div>
+      ` : '';
+      
       return `
         <div class="card">
           <div class="card-header">
@@ -1957,6 +1981,7 @@
             <div class="stat">⬇️ <span class="value">${fmt(pkg.totalDownloads)}</span> ${badge}</div>
             <div class="stat">📅 ${fmtDate(pkg.publishedDate)}</div>
           </div>
+          ${depsSummary}
           ${snapshot ? buildTrendChartMarkup('package', pkg.packageId) : ''}
           ${snapshot ? buildTrendInsightsHtml(snapshot, chartWindowDays.packages) : ''}
           ${tags ? `<div class="tags">${tags}</div>` : ''}
@@ -1969,6 +1994,9 @@
         const tags = (pkg.tags || []).slice(0, 4).map(t => `<span class="tag">${esc(t)}</span>`).join('');
         const trend = getPackageTrend(pkg.packageId);
         const snapshot = trend ? buildTrendSnapshot(trend.downloads, chartWindowDays.packages) : null;
+        const deps = pkg.dependencies;
+        const depsCell = deps ? `${deps.directCount} deps · ${deps.freshnessPercent.toFixed(0)}%` : '—';
+        const depsClass = deps && deps.outdatedCount > 0 ? ' style="color:#f59e0b;font-weight:500;"' : '';
         return `<tr>
           <td><a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a>
             <span class="card-version" style="margin-left:0.4rem;">v${esc(pkg.latestVersion || '')}</span>
@@ -1978,11 +2006,12 @@
           <td class="value" style="text-align:right;">${fmt(pkg.totalDownloads)}</td>
           <td class="table-trend-cell">${snapshot ? `${buildTrendChartMarkup('package', pkg.packageId, 'compact')}${buildTrendSummaryMeta(snapshot)}` : '<span class="text-muted">—</span>'}</td>
           <td style="white-space:nowrap;">${snapshot ? trendBadgeHtml(snapshot.growthPct) : '—'}</td>
+          <td class="text-muted" style="white-space:nowrap;${depsClass}">${depsCell}</td>
           <td class="text-muted" style="white-space:nowrap;">${fmtDate(pkg.publishedDate)}</td>
         </tr>`;
       }).join('');
       return `<table>
-        <thead><tr><th>Package</th><th>Description</th><th style="text-align:right;">Downloads</th><th>Trend</th><th>WoW</th><th>Published</th></tr></thead>
+        <thead><tr><th>Package</th><th>Description</th><th style="text-align:right;">Downloads</th><th>Trend</th><th>WoW</th><th>Dependencies</th><th>Published</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
     }
