@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T11:52:46.3308168+00:00",
+  "generatedAt": "2026-06-05T12:07:57.5154264+00:00",
   "totalRepos": 24,
   "profiles": [
     {
@@ -21,16 +21,16 @@
       "icon": "\uD83E\uDDE0"
     },
     {
-      "repo": "elbruno/ElBruno.QwenTTS",
-      "configFile": "elbruno-ElBruno.QwenTTS.json",
-      "accentColor": "#AC8460",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/ElBruno.Text2Image",
       "configFile": "elbruno-ElBruno.Text2Image.json",
       "accentColor": "#A4A1C8",
       "icon": "\uD83D\uDDBC️"
+    },
+    {
+      "repo": "elbruno/ElBruno.QwenTTS",
+      "configFile": "elbruno-ElBruno.QwenTTS.json",
+      "accentColor": "#AC8460",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.MempalaceNet",
