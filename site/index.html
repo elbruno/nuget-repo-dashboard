@@ -1196,9 +1196,13 @@
 
     function issueCommentCount(issue) {
       if (!issue) return 0;
-      const count = Number.isFinite(issue.commentsCount)
-        ? issue.commentsCount
-        : issue.comments;
+      let count = issue.commentsCount;
+      if (!Number.isFinite(count)) {
+        count = issue.comments_count;
+      }
+      if (!Number.isFinite(count)) {
+        count = issue.comments;
+      }
       return Number.isFinite(count) ? count : 0;
     }
 
