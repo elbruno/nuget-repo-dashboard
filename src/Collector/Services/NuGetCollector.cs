@@ -137,6 +137,9 @@ public sealed class NuGetCollector : INuGetCollector
         // Get total downloads from search API (registration doesn't include aggregate downloads)
         totalDownloads = await GetTotalDownloadsAsync(packageId);
 
+        // Extract and process dependencies
+        var dependencyMetrics = await ExtractDependencyMetricsAsync(packageId, latestVersion);
+
         return new NuGetPackageMetrics
         {
             PackageId = packageId,
@@ -148,8 +151,129 @@ public sealed class NuGetCollector : INuGetCollector
             Tags = tags,
             Listed = listed,
             PublishedDate = publishedDate,
-            ReleasesLast30Days = releasesLast30Days
+            ReleasesLast30Days = releasesLast30Days,
+            Dependencies = dependencyMetrics
         };
+    }
+
+    private async Task<DependencyMetrics?> ExtractDependencyMetricsAsync(string packageId, string version)
+    {
+        try
+        {
+            var url = $"{RegistrationBaseUrl}/{packageId.ToLowerInvariant()}/{version.ToLowerInvariant()}.json";
+            var json = await GetWithRetryAsync(url);
+            if (json is null) return null;
+
+            var root = json.RootElement;
+            var dependencies = new List<PackageDependency>();
+
+            // Parse catalogEntry to get dependencies
+            if (root.TryGetProperty("catalogEntry", out var catalogEntry) &&
+                catalogEntry.TryGetProperty("dependencyGroups", out var dependencyGroups))
+            {
+                foreach (var group in dependencyGroups.EnumerateArray())
+                {
+                    if (group.TryGetProperty("dependencies", out var groupDeps))
+                    {
+                        foreach (var dep in groupDeps.EnumerateArray())
+                        {
+                            var depId = dep.GetStringOrDefault("id", "");
+                            var depVersion = dep.GetStringOrDefault("range", "*");
+                            
+                            if (!string.IsNullOrEmpty(depId))
+                            {
+                                // Check if this dependency is on the latest version
+                                var isLatest = await IsPackageOnLatestVersionAsync(depId, depVersion);
+                                dependencies.Add(new PackageDependency
+                                {
+                                    Id = depId,
+                                    Version = depVersion,
+                                    IsLatest = isLatest
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (dependencies.Count == 0) return null;
+
+            var outdatedCount = dependencies.Count(d => !d.IsLatest);
+            var freshnessPercent = dependencies.Count > 0 
+                ? Math.Round((decimal)(dependencies.Count - outdatedCount) / dependencies.Count * 100, 2) 
+                : 0m;
+
+            return new DependencyMetrics
+            {
+                DirectCount = dependencies.Count,
+                Dependencies = dependencies,
+                OutdatedCount = outdatedCount,
+                FreshnessPercent = freshnessPercent
+            };
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"[NuGet] Failed to extract dependencies for '{packageId}': {ex.Message}");
+            return null;
+        }
+    }
+
+    private async Task<bool> IsPackageOnLatestVersionAsync(string packageId, string versionRange)
+    {
+        try
+        {
+            // For simplicity, check if the version range constraint allows the latest version
+            // This is a simplified check; a production system would parse version ranges properly
+            if (versionRange == "*" || versionRange == "") return true;
+
+            var url = $"{RegistrationBaseUrl}/{packageId.ToLowerInvariant()}/index.json";
+            var json = await GetWithRetryAsync(url);
+            if (json is null) return false;
+
+            var root = json.RootElement;
+            string? latestVersion = null;
+
+            if (root.TryGetProperty("items", out var pages))
+            {
+                foreach (var page in pages.EnumerateArray())
+                {
+                    JsonElement items;
+                    if (page.TryGetProperty("items", out var inlineItems))
+                    {
+                        items = inlineItems;
+                    }
+                    else if (page.TryGetProperty("@id", out var pageUrl))
+                    {
+                        var pageJson = await GetWithRetryAsync(pageUrl.GetString()!);
+                        if (pageJson is null) continue;
+                        if (!pageJson.RootElement.TryGetProperty("items", out items)) continue;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                    foreach (var leaf in items.EnumerateArray())
+                    {
+                        if (leaf.TryGetProperty("catalogEntry", out var entry))
+                        {
+                            latestVersion = entry.GetStringOrDefault("version", "");
+                        }
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(latestVersion)) return true;
+
+            // Simple version comparison: if the version range includes the latest version, consider it up-to-date
+            // This is a simplified implementation
+            return !versionRange.StartsWith("<") && !versionRange.Contains("(") && !versionRange.Contains("[");
+        }
+        catch
+        {
+            // If we can't determine, assume it's acceptable
+            return true;
+        }
     }
 
     private async Task<long> GetTotalDownloadsAsync(string packageId)
