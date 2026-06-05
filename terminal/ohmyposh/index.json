@@ -1,11 +1,17 @@
 {
-  "generatedAt": "2026-05-21T18:32:25.7311222+00:00",
-  "totalRepos": 22,
+  "generatedAt": "2026-06-05T12:07:57.5154264+00:00",
+  "totalRepos": 24,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.HuggingFace.Downloader",
       "configFile": "elbruno-ElBruno.HuggingFace.Downloader.json",
       "accentColor": "#5953B3",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.MarkItDotNet",
+      "configFile": "elbruno-ElBruno.MarkItDotNet.json",
+      "accentColor": "#68CE56",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -15,22 +21,16 @@
       "icon": "\uD83E\uDDE0"
     },
     {
-      "repo": "elbruno/ElBruno.MarkItDotNet",
-      "configFile": "elbruno-ElBruno.MarkItDotNet.json",
-      "accentColor": "#68CE56",
-      "icon": "\uD83D\uDD37"
+      "repo": "elbruno/ElBruno.Text2Image",
+      "configFile": "elbruno-ElBruno.Text2Image.json",
+      "accentColor": "#A4A1C8",
+      "icon": "\uD83D\uDDBC️"
     },
     {
       "repo": "elbruno/ElBruno.QwenTTS",
       "configFile": "elbruno-ElBruno.QwenTTS.json",
       "accentColor": "#AC8460",
       "icon": "\uD83D\uDD0A"
-    },
-    {
-      "repo": "elbruno/ElBruno.Text2Image",
-      "configFile": "elbruno-ElBruno.Text2Image.json",
-      "accentColor": "#A4A1C8",
-      "icon": "\uD83D\uDDBC️"
     },
     {
       "repo": "elbruno/ElBruno.MempalaceNet",
@@ -57,6 +57,12 @@
       "icon": "\uD83D\uDCCA"
     },
     {
+      "repo": "elbruno/graphify-dotnet",
+      "configFile": "elbruno-graphify-dotnet.json",
+      "accentColor": "#BEA579",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.Whisper",
       "configFile": "elbruno-ElBruno.Whisper.json",
       "accentColor": "#965BA8",
@@ -69,15 +75,21 @@
       "icon": "⚡"
     },
     {
-      "repo": "elbruno/graphify-dotnet",
-      "configFile": "elbruno-graphify-dotnet.json",
-      "accentColor": "#BEA579",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
       "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
       "accentColor": "#ADA976",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.CopilotCLIMonitor",
+      "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
+      "accentColor": "#6660B3",
+      "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "elbruno/HermesNET",
+      "configFile": "elbruno-HermesNET.json",
+      "accentColor": "#8B8A71",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -97,12 +109,6 @@
       "configFile": "elbruno-ElBruno.ClockTray.json",
       "accentColor": "#CEA8AC",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.CopilotCLIMonitor",
-      "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
-      "accentColor": "#6660B3",
-      "icon": "\uD83E\uDD16"
     },
     {
       "repo": "ElBruno/ElBruno.BM25",
@@ -127,6 +133,12 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
+    },
+    {
+      "repo": "elbruno/ElBruno.PresenterTimer",
+      "configFile": "elbruno-ElBruno.PresenterTimer.json",
+      "accentColor": "#CD5CB2",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",

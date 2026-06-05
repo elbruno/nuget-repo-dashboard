@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T12:07:53.1948857+00:00",
+  "generatedAt": "2026-06-04T11:52:41.6378223+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -378,6 +378,138 @@
     },
     {
       "owner": "elbruno",
+      "name": "ElBruno.QwenTTS",
+      "fullName": "elbruno/ElBruno.QwenTTS",
+      "stars": 34,
+      "forks": 5,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-05-20T20:03:14+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "csharp",
+        "dotnet",
+        "machine-learning",
+        "nuget",
+        "onnx",
+        "onnx-runtime",
+        "qwen",
+        "qwen3-tts",
+        "speech-synthesis",
+        "text-to-speech",
+        "tts",
+        "voice-cloning"
+      ],
+      "createdAt": "2026-02-21T16:27:42+00:00",
+      "updatedAt": "2026-06-03T15:41:27+00:00",
+      "size": 2894,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": false,
+      "hasPages": false,
+      "networkCount": 5,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 52,
+          "title": "Does this project support Russian language?",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/52",
+          "createdAt": "2026-05-18T16:16:12+00:00",
+          "updatedAt": "2026-05-20T20:07:04+00:00",
+          "userLogin": "RXDCODX",
+          "labels": [],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-05-20T20:07:04+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 53,
+          "title": "feat: add Russian language support",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/53",
+          "createdAt": "2026-05-20T20:01:20+00:00",
+          "updatedAt": "2026-05-20T20:03:08+00:00",
+          "mergedAt": "2026-05-20T20:03:05+00:00",
+          "closedAt": "2026-05-20T20:03:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "squad/52-russian-language-support",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 63,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 19,
+          "maxScore": 20,
+          "available": true,
+          "value": 2.2,
+          "displayValue": "2.2 days",
+          "summary": "2.2 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 2 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
       "name": "ElBruno.Text2Image",
       "fullName": "elbruno/ElBruno.Text2Image",
       "stars": 8,
@@ -674,138 +806,6 @@
           "value": 36,
           "displayValue": "36 releases",
           "summary": "36 package releases in the last 30 days across 6 packages."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "elbruno",
-      "name": "ElBruno.QwenTTS",
-      "fullName": "elbruno/ElBruno.QwenTTS",
-      "stars": 34,
-      "forks": 5,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-05-20T20:03:14+00:00",
-      "archived": false,
-      "watchersCount": 0,
-      "topics": [
-        "ai",
-        "csharp",
-        "dotnet",
-        "machine-learning",
-        "nuget",
-        "onnx",
-        "onnx-runtime",
-        "qwen",
-        "qwen3-tts",
-        "speech-synthesis",
-        "text-to-speech",
-        "tts",
-        "voice-cloning"
-      ],
-      "createdAt": "2026-02-21T16:27:42+00:00",
-      "updatedAt": "2026-06-03T15:41:27+00:00",
-      "size": 2894,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": false,
-      "hasPages": false,
-      "networkCount": 5,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "recentIssues": [],
-      "recentClosedIssues": [
-        {
-          "number": 52,
-          "title": "Does this project support Russian language?",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/issues/52",
-          "createdAt": "2026-05-18T16:16:12+00:00",
-          "updatedAt": "2026-05-20T20:07:04+00:00",
-          "userLogin": "RXDCODX",
-          "labels": [],
-          "commentsCount": 3,
-          "state": "closed",
-          "closedAt": "2026-05-20T20:07:04+00:00"
-        }
-      ],
-      "closedIssuesCount": 1,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [
-        {
-          "number": 53,
-          "title": "feat: add Russian language support",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/53",
-          "createdAt": "2026-05-20T20:01:20+00:00",
-          "updatedAt": "2026-05-20T20:03:08+00:00",
-          "mergedAt": "2026-05-20T20:03:05+00:00",
-          "closedAt": "2026-05-20T20:03:05+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "squad/52-russian-language-support",
-          "baseBranch": "main",
-          "commentsCount": 0
-        }
-      ],
-      "mergedPullRequestsCount": 1,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 63,
-        "availablePoints": 80,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
-        "activity": {
-          "score": 1,
-          "maxScore": 20,
-          "available": true,
-          "value": 1,
-          "displayValue": "1 commit",
-          "summary": "1 commit in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 19,
-          "maxScore": 20,
-          "available": true,
-          "value": 2.2,
-          "displayValue": "2.2 days",
-          "summary": "2.2 average days to close recent issues."
-        },
-        "releaseFrequency": {
-          "score": 10,
-          "maxScore": 20,
-          "available": true,
-          "value": 2,
-          "displayValue": "2 releases",
-          "summary": "2 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1456,8 +1456,21 @@
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/graphify-dotnet",
       "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "recentClosedIssues": [
+        {
+          "number": 2,
+          "title": "Graphify files are taking absolute path instead of relative path",
+          "htmlUrl": "https://github.com/elbruno/graphify-dotnet/issues/2",
+          "createdAt": "2026-05-04T11:59:39+00:00",
+          "updatedAt": "2026-05-06T09:33:21+00:00",
+          "userLogin": "kenn850",
+          "labels": [],
+          "commentsCount": 7,
+          "state": "closed",
+          "closedAt": "2026-05-06T09:33:21+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -1508,34 +1521,34 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 75,
-        "availablePoints": 60,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
+        "totalScore": 91,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 5,
+          "score": 14,
           "maxScore": 20,
           "available": true,
-          "value": 5,
-          "displayValue": "5 commits",
-          "summary": "5 commits in the last 30 days."
+          "value": 14,
+          "displayValue": "14 commits",
+          "summary": "14 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
+          "score": 19,
+          "maxScore": 20,
+          "available": true,
+          "value": 1.9,
+          "displayValue": "1.9 days",
+          "summary": "1.9 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 4,
-          "displayValue": "4 releases",
-          "summary": "4 package releases in the last 30 days across 2 packages."
+          "value": 5,
+          "displayValue": "5 releases",
+          "summary": "5 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1693,45 +1706,79 @@
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime",
       "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "recentClosedIssues": [
+        {
+          "number": 3,
+          "title": "Sometimes unclear how to \u0022useGpu\u0022 in TTS  with AddPersonaPlexRealtime",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/issues/3",
+          "createdAt": "2026-05-05T06:15:42+00:00",
+          "updatedAt": "2026-05-05T14:07:19+00:00",
+          "userLogin": "xela-trawets",
+          "labels": [],
+          "commentsCount": 2,
+          "state": "closed",
+          "closedAt": "2026-05-05T13:43:26+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 4,
+          "title": "feat: Add GPU configuration to UseQwenTts() \u2014 fixes #3",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/pull/4",
+          "createdAt": "2026-05-05T13:31:48+00:00",
+          "updatedAt": "2026-05-05T13:43:28+00:00",
+          "mergedAt": "2026-05-05T13:43:25+00:00",
+          "closedAt": "2026-05-05T13:43:25+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "issue-3-gpu-config",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 85,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 0,
+          "score": 8,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 8,
+          "displayValue": "8 commits",
+          "summary": "8 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
+          "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 6 packages."
+          "value": 0.3,
+          "displayValue": "0.3 days",
+          "summary": "0.3 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 9,
+          "displayValue": "9 releases",
+          "summary": "9 package releases in the last 30 days across 6 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3775,7 +3822,7 @@
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-06-05T06:16:17+00:00",
+      "lastPush": "2026-06-04T06:37:06+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -3796,8 +3843,8 @@
         "tutorial"
       ],
       "createdAt": "2026-04-12T17:17:04+00:00",
-      "updatedAt": "2026-06-05T06:16:20+00:00",
-      "size": 56893,
+      "updatedAt": "2026-06-04T06:37:09+00:00",
+      "size": 56892,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3862,29 +3909,6 @@
       "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
-        {
-          "number": 132,
-          "title": "sync: mirror from plan repo [2026-06-05]",
-          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/132",
-          "createdAt": "2026-06-05T06:16:11+00:00",
-          "updatedAt": "2026-06-05T06:16:18+00:00",
-          "mergedAt": "2026-06-05T06:16:16+00:00",
-          "closedAt": "2026-06-05T06:16:16+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "auto:sync",
-            "bot"
-          ],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "sync/plan-mirror-2026-06-05",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
         {
           "number": 131,
           "title": "sync: mirror from plan repo [2026-06-04]",
@@ -4752,6 +4776,29 @@
           "headBranch": "sync/plan-mirror-2026-05-23",
           "baseBranch": "main",
           "commentsCount": 0
+        },
+        {
+          "number": 88,
+          "title": "sync: mirror from plan repo [2026-05-23]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/88",
+          "createdAt": "2026-05-23T00:38:58+00:00",
+          "updatedAt": "2026-05-23T00:39:03+00:00",
+          "mergedAt": "2026-05-23T00:39:01+00:00",
+          "closedAt": "2026-05-23T00:39:01+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-05-23",
+          "baseBranch": "main",
+          "commentsCount": 0
         }
       ],
       "mergedPullRequestsCount": 39,
@@ -4770,9 +4817,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 93,
-          "displayValue": "93 commits",
-          "summary": "93 commits in the last 30 days."
+          "value": 98,
+          "displayValue": "98 commits",
+          "summary": "98 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 20,
@@ -4820,7 +4867,7 @@
       "purpose": "Reference architecture and AI-assisted workflow patterns",
       "dateAdded": "2025-04-02",
       "stars": 58,
-      "lastUpdate": "2026-06-05T06:16:17+00:00",
+      "lastUpdate": "2026-06-04T06:37:06+00:00",
       "isStub": false,
       "stubReason": null
     }
