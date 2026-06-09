@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T13:17:46.5231811+00:00",
+  "generatedAt": "2026-06-09T12:16:31.8374792+00:00",
   "totalRepos": 25,
   "profiles": [
     {
@@ -87,6 +87,12 @@
       "icon": "\uD83E\uDD16"
     },
     {
+      "repo": "elbruno/ElBruno.PresenterTimer",
+      "configFile": "elbruno-ElBruno.PresenterTimer.json",
+      "accentColor": "#CD5CB2",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/HermesNET",
       "configFile": "elbruno-HermesNET.json",
       "accentColor": "#8B8A71",
@@ -133,12 +139,6 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
-    },
-    {
-      "repo": "elbruno/ElBruno.PresenterTimer",
-      "configFile": "elbruno-ElBruno.PresenterTimer.json",
-      "accentColor": "#CD5CB2",
-      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/ElBruno.MAF.FoundryLocal",
