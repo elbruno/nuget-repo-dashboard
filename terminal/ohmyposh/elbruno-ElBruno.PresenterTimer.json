@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#1C1C1C",
-          "background": "#CD5CB2",
+          "foreground": "#FFFFFF",
+          "background": "#B952B2",
           "style": "plain",
           "template": " 🔷 ElBruno.PresenterTimer "
         }

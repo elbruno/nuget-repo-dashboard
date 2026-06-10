@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-06-09T12:16:31.8374792+00:00",
+  "generatedAt": "2026-06-10T12:37:18.9670297+00:00",
   "totalRepos": 25,
   "profiles": [
-    {
-      "repo": "elbruno/ElBruno.HuggingFace.Downloader",
-      "configFile": "elbruno-ElBruno.HuggingFace.Downloader.json",
-      "accentColor": "#5953B3",
-      "icon": "\uD83D\uDD37"
-    },
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
       "configFile": "elbruno-ElBruno.MarkItDotNet.json",
       "accentColor": "#68CE56",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.HuggingFace.Downloader",
+      "configFile": "elbruno-ElBruno.HuggingFace.Downloader.json",
+      "accentColor": "#5953B3",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -63,9 +63,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.PresenterTimer",
+      "configFile": "elbruno-ElBruno.PresenterTimer.json",
+      "accentColor": "#B952B2",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.Whisper",
       "configFile": "elbruno-ElBruno.Whisper.json",
-      "accentColor": "#965BA8",
+      "accentColor": "#6EC9A8",
       "icon": "\uD83C\uDF99️"
     },
     {
@@ -85,12 +91,6 @@
       "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
       "accentColor": "#6660B3",
       "icon": "\uD83E\uDD16"
-    },
-    {
-      "repo": "elbruno/ElBruno.PresenterTimer",
-      "configFile": "elbruno-ElBruno.PresenterTimer.json",
-      "accentColor": "#CD5CB2",
-      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/HermesNET",
