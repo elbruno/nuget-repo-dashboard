@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T12:55:57.5805579+00:00",
+  "generatedAt": "2026-06-12T12:31:28.8057795+00:00",
   "totalRepos": 25,
   "profiles": [
     {
@@ -51,6 +51,12 @@
       "icon": "\uD83D\uDD0A"
     },
     {
+      "repo": "elbruno/ElBruno.PresenterTimer",
+      "configFile": "elbruno-ElBruno.PresenterTimer.json",
+      "accentColor": "#B952B2",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.AspireMonitor",
       "configFile": "elbruno-ElBruno.AspireMonitor.json",
       "accentColor": "#CFC9B6",
@@ -60,12 +66,6 @@
       "repo": "elbruno/graphify-dotnet",
       "configFile": "elbruno-graphify-dotnet.json",
       "accentColor": "#BEA579",
-      "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.PresenterTimer",
-      "configFile": "elbruno-ElBruno.PresenterTimer.json",
-      "accentColor": "#B952B2",
       "icon": "\uD83D\uDD37"
     },
     {
