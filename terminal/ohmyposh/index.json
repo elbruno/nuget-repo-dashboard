@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T11:55:28.8274151+00:00",
+  "generatedAt": "2026-06-22T14:51:48.4770364+00:00",
   "totalRepos": 25,
   "profiles": [
     {
@@ -45,21 +45,21 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/ElBruno.VibeVoiceTTS",
-      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
-      "accentColor": "#A6CE83",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/graphify-dotnet",
       "configFile": "elbruno-graphify-dotnet.json",
       "accentColor": "#BEA579",
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.VibeVoiceTTS",
+      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
+      "accentColor": "#B05183",
+      "icon": "\uD83D\uDD0A"
+    },
+    {
       "repo": "elbruno/ElBruno.PresenterTimer",
       "configFile": "elbruno-ElBruno.PresenterTimer.json",
-      "accentColor": "#B952B2",
+      "accentColor": "#CD5CB2",
       "icon": "\uD83D\uDD37"
     },
     {

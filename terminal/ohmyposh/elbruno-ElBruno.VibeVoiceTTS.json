@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#1C1C1C",
-          "background": "#A6CE83",
+          "foreground": "#FFFFFF",
+          "background": "#B05183",
           "style": "plain",
           "template": " 🔊 ElBruno.VibeVoiceTTS "
         }
