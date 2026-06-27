@@ -595,3 +595,94 @@ For future reference: When user requests "run the workflow to publish the page,"
 
 ---
 
+### 12. Author Section Audit & Standardization
+
+**Author:** Wash (DevOps)
+**Date:** 2026-06-27
+**Status:** Audit Complete — Issues Created
+
+## Context
+
+Performed comprehensive audit of "About the Author" sections across all 26 repositories tracked in the dashboard to establish consistency and ensure compliance with ElBruno branding standards.
+
+## Baseline Standard
+
+All ElBruno repositories should include an "About the Author" section in README with:
+
+### Heading
+```markdown
+## 👋 About the Author
+```
+
+### Required Content
+- **Core line:** `Made with ❤️ by [ElBruno](https://github.com/elbruno)`
+- **5 required links:**
+  1. Podcast: [No Tienen Nombre](https://notienenombre.com)
+  2. Blog: [ElBruno.com](https://elbruno.com)
+  3. YouTube: [youtube.com/elbruno](https://www.youtube.com/elbruno)
+  4. LinkedIn: [@elbruno](https://www.linkedin.com/in/elbruno/)
+  5. Twitter/X: [@elbruno](https://www.x.com/elbruno/) — **NOT** `/in/elbruno/`
+
+## Audit Results
+
+**Total repositories:** 26  
+**Compliant:** 1 (ElBruno.QwenTTS — baseline)  
+**Needs attention:** 25
+
+### Issues by Category
+
+| Category | Count | Issue Template |
+|----------|-------|-----------------|
+| **WRONG** | 7 | Fix: Correct Twitter URL in About the Author section |
+| **MISSING** | 4 | Add missing: About the Author section to README |
+| **INCOMPLETE** | 13 | Standardize: Update About the Author section in README |
+| **Archived** | 1 | elbruno-agentskills (cannot create issues) |
+
+### Issues Created (24 total)
+
+**WRONG (7):** Twitter URL using `/in/elbruno/` instead of `/elbruno/`
+- ElBruno.ClockTray (#8)
+- ElBruno.HuggingFace.Downloader (#9)
+- elbruno.localembeddings (#47)
+- ElBruno.PersonaPlex (#4)
+- ElBruno.Realtime (#6)
+- ElBruno.Text2Image (#38)
+- ElBruno.VibeVoiceTTS (#29)
+
+**MISSING (4):** No author section
+- ElBruno.BM25 (#1)
+- ElBruno.MAF.FoundryLocal (#1)
+- HermesNET (#15)
+- openclawnet (#161)
+
+**INCOMPLETE (13):** Section exists but missing heading, link(s), or core line
+- elbruno-ai-evaluation (#2)
+- ElBruno.AspireMonitor (#7)
+- ElBruno.CopilotCLIMonitor (#99)
+- ElBruno.LocalLLMs (#18)
+- ElBruno.MarkItDotNet (#22)
+- ElBruno.MempalaceNet (#31)
+- ElBruno.ModelContextProtocol (#6)
+- elbruno.OllamaSharp.Extensions (#1)
+- ElBruno.PresenterTimer (#1)
+- ElBruno.QRCodeGenerator (#3)
+- ElBruno.Reranking (#1)
+- ElBruno.Whisper (#14)
+- graphify-dotnet (#9)
+
+## Recommendations
+
+1. Update CI/CD templates to validate author section format
+2. Create PR template reminder for contributors
+3. Document required format in CONTRIBUTING.md
+4. Monitor issues for timely resolution
+5. Manual intervention needed for archived repos (elbruno-agentskills)
+
+## Data Source
+
+- Repository list: `data/latest/data.repositories.json` (26 repos)
+- Baseline reference: ElBruno.QwenTTS README
+- All issues labeled with `documentation`
+
+---
+
