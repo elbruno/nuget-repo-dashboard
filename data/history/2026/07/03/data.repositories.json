@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T12:25:06.5482522+00:00",
+  "generatedAt": "2026-07-03T12:29:21.2867262+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -217,18 +217,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 95,
-        "availablePoints": 40,
+        "totalScore": 86,
+        "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 11,
+          "maxScore": 20,
+          "available": true,
+          "value": 11,
+          "displayValue": "11 commits",
+          "summary": "11 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -255,12 +255,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -379,18 +379,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 1,
-        "availablePoints": 20,
+        "totalScore": 33,
+        "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
           "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -417,12 +417,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -551,18 +551,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 45,
-        "availablePoints": 40,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 50,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 2,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -589,12 +589,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -724,18 +724,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 45,
-        "availablePoints": 40,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 59,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 9,
+          "maxScore": 20,
+          "available": true,
+          "value": 9,
+          "displayValue": "9 commits",
+          "summary": "9 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -762,12 +762,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -871,18 +871,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 1,
-        "availablePoints": 20,
+        "totalScore": 33,
+        "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
           "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -909,12 +909,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -1002,18 +1002,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 45,
-        "availablePoints": 40,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 50,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 2,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -1040,12 +1040,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -1221,18 +1221,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 30,
-        "availablePoints": 40,
+        "totalScore": 45,
+        "availablePoints": 80,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 4,
+          "maxScore": 20,
+          "available": true,
+          "value": 4,
+          "displayValue": "4 commits",
+          "summary": "4 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 12,
@@ -1259,12 +1259,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -1396,18 +1396,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 93,
-        "availablePoints": 40,
-        "status": "good",
-        "label": "Good",
-        "emoji": "\uD83D\uDFE2",
+        "totalScore": 75,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 3,
+          "maxScore": 20,
+          "available": true,
+          "value": 3,
+          "displayValue": "3 commits",
+          "summary": "3 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 17,
@@ -1434,12 +1434,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -1586,18 +1586,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 45,
-        "availablePoints": 40,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 50,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 2,
+          "maxScore": 20,
+          "available": true,
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -1624,12 +1624,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -1716,18 +1716,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 95,
-        "availablePoints": 40,
+        "totalScore": 98,
+        "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 34,
+          "displayValue": "34 commits",
+          "summary": "34 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -1754,12 +1754,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -1849,18 +1849,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 45,
-        "availablePoints": 40,
+        "totalScore": 49,
+        "availablePoints": 80,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -1887,12 +1887,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -2045,18 +2045,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 45,
-        "availablePoints": 40,
+        "totalScore": 49,
+        "availablePoints": 80,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -2083,64 +2083,106 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
     {
       "owner": "elbruno",
-      "name": "openclawnet",
-      "fullName": "elbruno/openclawnet",
-      "stars": 0,
-      "forks": 0,
-      "openIssues": 0,
+      "name": "ElBruno.Realtime",
+      "fullName": "elbruno/ElBruno.Realtime",
+      "stars": 23,
+      "forks": 2,
+      "openIssues": 2,
       "openPullRequests": 0,
-      "description": "Open Claw .NET project",
-      "language": null,
-      "license": null,
-      "lastPush": null,
+      "description": "Pluggable real-time audio conversation framework for .NET. Local VAD, STT, TTS, and LLM",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-05-05T14:12:28+00:00",
       "archived": false,
       "watchersCount": 0,
-      "topics": [],
-      "createdAt": null,
-      "updatedAt": null,
-      "size": 0,
-      "defaultBranch": null,
-      "homepage": null,
-      "hasWiki": false,
+      "topics": [
+        "aspire",
+        "blazor",
+        "csharp",
+        "dotnet",
+        "microsoft-extensions-ai",
+        "nuget",
+        "onnx",
+        "realtime-audio",
+        "speech-to-text",
+        "text-to-speech",
+        "voice-activity-detection",
+        "whisper"
+      ],
+      "createdAt": "2026-02-27T16:41:34+00:00",
+      "updatedAt": "2026-06-09T08:52:26+00:00",
+      "size": 69487,
+      "defaultBranch": "main",
+      "homepage": "https://www.nuget.org/packages/ElBruno.Realtime",
+      "hasWiki": true,
       "hasPages": false,
-      "networkCount": 0,
-      "visibility": null,
-      "htmlUrl": "https://github.com/elbruno/openclawnet",
-      "recentIssues": [],
+      "networkCount": 2,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime",
+      "recentIssues": [
+        {
+          "number": 6,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/issues/6",
+          "createdAt": "2026-06-27T21:51:11+00:00",
+          "updatedAt": "2026-06-27T21:51:11+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        },
+        {
+          "number": 5,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/issues/5",
+          "createdAt": "2026-06-27T21:50:53+00:00",
+          "updatedAt": "2026-06-27T21:50:53+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
-      "isStub": true,
-      "stubReason": "Failed to fetch live data from GitHub API (rate limited or unavailable)",
-      "isWatchList": true,
-      "watchPurpose": "Reference architecture and AI-assisted workflow patterns",
-      "watchDateAdded": "2025-04-02",
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 1,
-        "availablePoints": 0,
+        "totalScore": 33,
+        "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
           "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2149,6 +2191,2686 @@
           "value": null,
           "displayValue": null,
           "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 6 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "elbruno.OllamaSharp.Extensions",
+      "fullName": "elbruno/elbruno.OllamaSharp.Extensions",
+      "stars": 5,
+      "forks": 0,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "Extensions for the OllamaSharp library",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-01T14:05:39+00:00",
+      "archived": false,
+      "watchersCount": 1,
+      "topics": [],
+      "createdAt": "2026-01-08T13:57:55+00:00",
+      "updatedAt": "2026-07-01T14:06:00+00:00",
+      "size": 38,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions",
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 1,
+          "title": "Standardize: Update About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions/issues/1",
+          "createdAt": "2026-06-27T21:51:50+00:00",
+          "updatedAt": "2026-07-01T14:05:41+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-07-01T14:05:40+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 2,
+          "title": "Standardize About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/elbruno.OllamaSharp.Extensions/pull/2",
+          "createdAt": "2026-07-01T14:05:37+00:00",
+          "updatedAt": "2026-07-01T14:05:40+00:00",
+          "mergedAt": "2026-07-01T14:05:39+00:00",
+          "closedAt": "2026-07-01T14:05:39+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-standardize-about-author-readme",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 36,
+        "availablePoints": 80,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 18,
+          "maxScore": 20,
+          "available": true,
+          "value": 3.7,
+          "displayValue": "3.7 days",
+          "summary": "3.7 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 10,
+          "displayValue": "Partial",
+          "summary": "README present, docs/ missing."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.CopilotCLIMonitor",
+      "fullName": "elbruno/ElBruno.CopilotCLIMonitor",
+      "stars": 1,
+      "forks": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "Windows Systray application that keeps you informed with native notifications when GitHub Copilot CLI tasks finish. Stop babysitting long-running workflows.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-01T14:11:56+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "copilot-cli",
+        "developer-tools",
+        "dotnet",
+        "github-copilot",
+        "notifications",
+        "windows-systray",
+        "wpf"
+      ],
+      "createdAt": "2026-05-12T22:22:49+00:00",
+      "updatedAt": "2026-07-01T14:12:36+00:00",
+      "size": 12576,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor",
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 99,
+          "title": "Standardize: Update About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/issues/99",
+          "createdAt": "2026-06-27T21:51:43+00:00",
+          "updatedAt": "2026-07-01T00:42:10+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-07-01T00:42:10+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 95,
+          "title": "Bump System.CommandLine from 3.0.0-preview.4.26230.115 to 3.0.0-preview.5.26302.115",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/95",
+          "createdAt": "2026-06-10T10:09:07+00:00",
+          "updatedAt": "2026-07-01T14:11:56+00:00",
+          "mergedAt": "2026-07-01T14:11:48+00:00",
+          "closedAt": "2026-07-01T14:11:48+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Cli/multi-926c5c9164",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 97,
+          "title": "chore(deps): bump actions/checkout from 6 to 7",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/97",
+          "createdAt": "2026-06-24T10:05:15+00:00",
+          "updatedAt": "2026-07-01T14:11:00+00:00",
+          "mergedAt": "2026-07-01T14:10:51+00:00",
+          "closedAt": "2026-07-01T14:10:51+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/github_actions/actions/checkout-7",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 102,
+          "title": "Bump Microsoft.Extensions.DependencyInjection.Abstractions and Microsoft.Extensions.Logging.Abstractions",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/102",
+          "createdAt": "2026-07-01T14:07:42+00:00",
+          "updatedAt": "2026-07-01T14:10:51+00:00",
+          "mergedAt": "2026-07-01T14:10:49+00:00",
+          "closedAt": "2026-07-01T14:10:49+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Core/multi-0b7acf3311",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 98,
+          "title": "Bump Microsoft.NET.Test.Sdk from 18.6.0 to 18.7.0",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/98",
+          "createdAt": "2026-06-24T10:07:53+00:00",
+          "updatedAt": "2026-07-01T14:10:20+00:00",
+          "mergedAt": "2026-07-01T14:10:18+00:00",
+          "closedAt": "2026-07-01T14:10:18+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/Microsoft.NET.Test.Sdk-18.7.0",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 101,
+          "title": "Bump Spectre.Console from 0.55.2 to 0.57.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/101",
+          "createdAt": "2026-07-01T10:13:36+00:00",
+          "updatedAt": "2026-07-01T14:04:34+00:00",
+          "mergedAt": "2026-07-01T14:04:26+00:00",
+          "closedAt": "2026-07-01T14:04:26+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Cli/Spectre.Console-0.57.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 100,
+          "title": "docs: standardize About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/100",
+          "createdAt": "2026-07-01T00:42:02+00:00",
+          "updatedAt": "2026-07-01T00:42:12+00:00",
+          "mergedAt": "2026-07-01T00:42:10+00:00",
+          "closedAt": "2026-07-01T00:42:10+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-standardize-about-author-section",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 89,
+          "title": "Bump Spectre.Console from 0.49.1 to 0.55.2",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/89",
+          "createdAt": "2026-05-20T16:01:25+00:00",
+          "updatedAt": "2026-06-05T16:25:40+00:00",
+          "mergedAt": "2026-06-05T16:25:38+00:00",
+          "closedAt": "2026-06-05T16:25:38+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/src/ElBruno.CopilotCLIMonitor.Cli/Spectre.Console-0.55.2",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 91,
+          "title": "Bump Microsoft.NET.Test.Sdk from 18.5.1 to 18.6.0",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor/pull/91",
+          "createdAt": "2026-05-27T12:10:02+00:00",
+          "updatedAt": "2026-06-05T16:25:36+00:00",
+          "mergedAt": "2026-06-05T16:25:34+00:00",
+          "closedAt": "2026-06-05T16:25:34+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "security"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/tests/ElBruno.CopilotCLIMonitor.Tests/Microsoft.NET.Test.Sdk-18.6.0",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 8,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 65,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 14,
+          "maxScore": 20,
+          "available": true,
+          "value": 14,
+          "displayValue": "14 commits",
+          "summary": "14 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 18,
+          "maxScore": 20,
+          "available": true,
+          "value": 3.1,
+          "displayValue": "3.1 days",
+          "summary": "3.1 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "HermesNET",
+      "fullName": "elbruno/HermesNET",
+      "stars": 6,
+      "forks": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "A comprehensive runtime for building intelligent agent applications with session persistence, observability, and provider abstraction built on .NET 10.",
+      "language": "C#",
+      "license": null,
+      "lastPush": "2026-07-01T14:20:50+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "cli",
+        "csharp",
+        "distributed",
+        "dotnet",
+        "dotnet10",
+        "observability",
+        "runtime"
+      ],
+      "createdAt": "2026-05-22T21:10:54+00:00",
+      "updatedAt": "2026-07-01T14:21:06+00:00",
+      "size": 46365,
+      "defaultBranch": "main",
+      "homepage": "https://github.com/elbruno/HermesNET",
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/HermesNET",
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 15,
+          "title": "Add missing: About the Author section to README",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/issues/15",
+          "createdAt": "2026-06-27T21:51:28+00:00",
+          "updatedAt": "2026-07-01T00:41:14+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-07-01T00:41:14+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 12,
+          "title": "chore(deps): Bump Moq from 4.20.70 to 4.20.72",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/12",
+          "createdAt": "2026-06-08T06:19:45+00:00",
+          "updatedAt": "2026-07-01T14:20:31+00:00",
+          "mergedAt": "2026-07-01T14:20:29+00:00",
+          "closedAt": "2026-07-01T14:20:29+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Moq-4.20.72",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 14,
+          "title": "chore(deps): Bump OpenTelemetry and OpenTelemetry.Extensions.Hosting",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/14",
+          "createdAt": "2026-06-08T06:21:23+00:00",
+          "updatedAt": "2026-07-01T14:16:35+00:00",
+          "mergedAt": "2026-07-01T14:16:27+00:00",
+          "closedAt": "2026-07-01T14:16:27+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/multi-c3026b77af",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 9,
+          "title": "chore(deps): Bump Microsoft.AspNetCore.Mvc.Testing from 10.0.0 to 10.0.8",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/9",
+          "createdAt": "2026-06-08T06:18:02+00:00",
+          "updatedAt": "2026-07-01T14:14:24+00:00",
+          "mergedAt": "2026-07-01T14:14:15+00:00",
+          "closedAt": "2026-07-01T14:14:16+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Microsoft.AspNetCore.Mvc.Testing-10.0.8",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 16,
+          "title": "Add About the Author section to README",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/16",
+          "createdAt": "2026-07-01T00:40:52+00:00",
+          "updatedAt": "2026-07-01T00:41:00+00:00",
+          "mergedAt": "2026-07-01T00:40:59+00:00",
+          "closedAt": "2026-07-01T00:40:59+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-add-missing-about-the-author-section-to",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 3,
+          "title": "chore(deps): Bump Microsoft.Data.Sqlite from 10.0.0 to 10.0.8",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/3",
+          "createdAt": "2026-05-22T21:14:59+00:00",
+          "updatedAt": "2026-06-05T16:18:36+00:00",
+          "mergedAt": "2026-06-05T16:18:28+00:00",
+          "closedAt": "2026-06-05T16:18:28+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Microsoft.Data.Sqlite-10.0.8",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 6,
+          "title": "chore(deps): Bump Microsoft.Extensions.Configuration and Microsoft.Extensions.Configuration.Json",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/6",
+          "createdAt": "2026-05-22T21:16:46+00:00",
+          "updatedAt": "2026-06-05T16:18:18+00:00",
+          "mergedAt": "2026-06-05T16:18:10+00:00",
+          "closedAt": "2026-06-05T16:18:10+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/multi-e827ba4341",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 4,
+          "title": "chore(deps): Bump Microsoft.EntityFrameworkCore from 10.0.0 to 10.0.8",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/4",
+          "createdAt": "2026-05-22T21:15:15+00:00",
+          "updatedAt": "2026-06-05T16:17:04+00:00",
+          "mergedAt": "2026-06-05T16:16:55+00:00",
+          "closedAt": "2026-06-05T16:16:55+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Microsoft.EntityFrameworkCore-10.0.8",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 1,
+          "title": "chore(deps): Bump coverlet.collector from 6.0.0 to 10.0.1",
+          "htmlUrl": "https://github.com/elbruno/HermesNET/pull/1",
+          "createdAt": "2026-05-22T21:13:50+00:00",
+          "updatedAt": "2026-06-05T16:03:14+00:00",
+          "mergedAt": "2026-06-05T16:03:11+00:00",
+          "closedAt": "2026-06-05T16:03:12+00:00",
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/coverlet.collector-10.0.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 8,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 73,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 22,
+          "displayValue": "22 commits",
+          "summary": "22 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 18,
+          "maxScore": 20,
+          "available": true,
+          "value": 3.1,
+          "displayValue": "3.1 days",
+          "summary": "3.1 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 3 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.Reranking",
+      "fullName": "elbruno/ElBruno.Reranking",
+      "stars": 4,
+      "forks": 0,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "A semantic reranking library for .NET with ONNX and Claude backends. Rerank search results with precision using local-first or cloud-based models.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-01T14:06:50+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "bge",
+        "claude-api",
+        "csharp",
+        "dotnet",
+        "nlp",
+        "onnx",
+        "reranking",
+        "semantic-search"
+      ],
+      "createdAt": "2026-04-28T16:38:23+00:00",
+      "updatedAt": "2026-07-01T14:07:23+00:00",
+      "size": 23909,
+      "defaultBranch": "main",
+      "homepage": "https://github.com/elbruno/ElBruno.Reranking",
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.Reranking",
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 1,
+          "title": "Standardize: Update About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Reranking/issues/1",
+          "createdAt": "2026-06-27T21:51:54+00:00",
+          "updatedAt": "2026-07-01T14:06:51+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-07-01T14:06:51+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 2,
+          "title": "docs: Standardize About Author section in README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Reranking/pull/2",
+          "createdAt": "2026-07-01T14:04:58+00:00",
+          "updatedAt": "2026-07-01T14:06:50+00:00",
+          "mergedAt": "2026-07-01T14:06:50+00:00",
+          "closedAt": "2026-07-01T14:06:50+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-issue-1-standardize-update-about-the-author-sect-8bee5f",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 53,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
+        "activity": {
+          "score": 4,
+          "maxScore": 20,
+          "available": true,
+          "value": 4,
+          "displayValue": "4 commits",
+          "summary": "4 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 18,
+          "maxScore": 20,
+          "available": true,
+          "value": 3.7,
+          "displayValue": "3.7 days",
+          "summary": "3.7 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.ModelContextProtocol",
+      "fullName": "elbruno/ElBruno.ModelContextProtocol",
+      "stars": 8,
+      "forks": 0,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "Semantic routing for MCP tools - .NET library that indexes MCP tool definitions and returns the most relevant tools via vector search",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-01T00:40:51+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "csharp",
+        "dotnet",
+        "embeddings",
+        "llm",
+        "mcp",
+        "mcp-tools",
+        "model-context-protocol",
+        "nuget",
+        "semantic-search",
+        "tool-routing",
+        "vector-search"
+      ],
+      "createdAt": "2026-03-26T20:40:47+00:00",
+      "updatedAt": "2026-07-01T00:40:55+00:00",
+      "size": 128105,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol",
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 6,
+          "title": "Standardize: Update About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol/issues/6",
+          "createdAt": "2026-06-27T21:51:49+00:00",
+          "updatedAt": "2026-07-01T00:40:51+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-07-01T00:40:51+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 7,
+          "title": "Standardize README About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol/pull/7",
+          "createdAt": "2026-07-01T00:40:42+00:00",
+          "updatedAt": "2026-07-01T00:40:51+00:00",
+          "mergedAt": "2026-07-01T00:40:50+00:00",
+          "closedAt": "2026-07-01T00:40:50+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-standardize-about-author-section",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 49,
+        "availablePoints": 80,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 18,
+          "maxScore": 20,
+          "available": true,
+          "value": 3.1,
+          "displayValue": "3.1 days",
+          "summary": "3.1 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.ClockTray",
+      "fullName": "elbruno/ElBruno.ClockTray",
+      "stars": 6,
+      "forks": 0,
+      "openIssues": 2,
+      "openPullRequests": 0,
+      "description": "Windows system tray app to show/hide the taskbar date and time. Toggle via context menu, double-click, or Ctrl\u002BAlt\u002BT hotkey.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-04-24T01:09:31+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "clock",
+        "csharp",
+        "dotnet",
+        "hotkey",
+        "system-tray",
+        "taskbar",
+        "utility",
+        "windows",
+        "windows-app",
+        "winforms"
+      ],
+      "createdAt": "2026-03-03T16:01:51+00:00",
+      "updatedAt": "2026-07-03T05:35:10+00:00",
+      "size": 2686,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray",
+      "recentIssues": [
+        {
+          "number": 8,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/issues/8",
+          "createdAt": "2026-06-27T21:51:05+00:00",
+          "updatedAt": "2026-06-27T21:51:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        },
+        {
+          "number": 7,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/issues/7",
+          "createdAt": "2026-06-27T21:50:48+00:00",
+          "updatedAt": "2026-06-27T21:50:48+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "ElBruno",
+      "name": "ElBruno.BM25",
+      "fullName": "ElBruno/ElBruno.BM25",
+      "stars": 2,
+      "forks": 0,
+      "openIssues": 1,
+      "openPullRequests": 0,
+      "description": "Zero-dependency BM25 full-text search library for .NET. High-performance indexing and ranking with configurable tokenization.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-04-29T02:11:44+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "bm25",
+        "csharp",
+        "dotnet",
+        "full-text-search",
+        "information-retrieval",
+        "nuget",
+        "search",
+        "text-analysis"
+      ],
+      "createdAt": "2026-04-28T21:27:06+00:00",
+      "updatedAt": "2026-05-01T08:53:44+00:00",
+      "size": 14975,
+      "defaultBranch": "main",
+      "homepage": "https://github.com/elbruno/ElBruno.BM25",
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.BM25",
+      "recentIssues": [
+        {
+          "number": 1,
+          "title": "Add missing: About the Author section to README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.BM25/issues/1",
+          "createdAt": "2026-06-27T21:51:25+00:00",
+          "updatedAt": "2026-06-27T21:51:25+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.PersonaPlex",
+      "fullName": "elbruno/ElBruno.PersonaPlex",
+      "stars": 6,
+      "forks": 1,
+      "openIssues": 2,
+      "openPullRequests": 0,
+      "description": "C# .NET library for running NVIDIA PersonaPlex-7B-v1 full-duplex speech-to-speech locally using ONNX Runtime",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-02-28T21:33:57+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [],
+      "createdAt": "2026-02-27T01:33:45+00:00",
+      "updatedAt": "2026-04-17T14:23:09+00:00",
+      "size": 575,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex",
+      "recentIssues": [
+        {
+          "number": 4,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex/issues/4",
+          "createdAt": "2026-06-27T21:51:09+00:00",
+          "updatedAt": "2026-06-27T21:51:09+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        },
+        {
+          "number": 3,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex/issues/3",
+          "createdAt": "2026-06-27T21:50:52+00:00",
+          "updatedAt": "2026-06-27T21:50:52+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "elbruno-ai-evaluation",
+      "fullName": "elbruno/elbruno-ai-evaluation",
+      "stars": 4,
+      "forks": 0,
+      "openIssues": 1,
+      "openPullRequests": 0,
+      "description": "AI Testing \u0026 Observability Toolkit for .NET - deterministic evaluators, synthetic data, golden datasets, regression detection",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-02-28T18:53:22+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "csharp",
+        "dotnet",
+        "evaluation",
+        "llm",
+        "nuget",
+        "testing",
+        "xunit"
+      ],
+      "createdAt": "2026-02-24T00:57:33+00:00",
+      "updatedAt": "2026-05-02T12:49:14+00:00",
+      "size": 16977,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": true,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "recentIssues": [
+        {
+          "number": 2,
+          "title": "Standardize: Update About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation/issues/2",
+          "createdAt": "2026-06-27T21:51:41+00:00",
+          "updatedAt": "2026-06-27T21:51:41+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 4 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.QRCodeGenerator",
+      "fullName": "elbruno/ElBruno.QRCodeGenerator",
+      "stars": 9,
+      "forks": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "\uD83D\uDFE6 .NET libraries for generating QR codes \u2014 CLI, SVG, Image, and more",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-01T14:05:01+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ascii-art",
+        "console",
+        "csharp",
+        "dotnet",
+        "dotnet-tool",
+        "image-generation",
+        "net10",
+        "net8",
+        "nuget",
+        "nuget-package",
+        "pdf",
+        "qr-code",
+        "qr-code-generator",
+        "qrcoder",
+        "skiasharp",
+        "svg",
+        "terminal",
+        "vcard",
+        "wifi"
+      ],
+      "createdAt": "2026-03-26T12:27:16+00:00",
+      "updatedAt": "2026-07-01T14:05:33+00:00",
+      "size": 2690,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "recentIssues": [],
+      "recentClosedIssues": [
+        {
+          "number": 3,
+          "title": "Standardize: Update About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator/issues/3",
+          "createdAt": "2026-06-27T21:51:53+00:00",
+          "updatedAt": "2026-07-01T14:04:58+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-07-01T14:04:58+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 4,
+          "title": "Standardize: Update About the Author section in README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator/pull/4",
+          "createdAt": "2026-07-01T14:04:50+00:00",
+          "updatedAt": "2026-07-01T14:05:02+00:00",
+          "mergedAt": "2026-07-01T14:04:57+00:00",
+          "closedAt": "2026-07-01T14:04:57+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-standardize-author-section",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 49,
+        "availablePoints": 80,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 18,
+          "maxScore": 20,
+          "available": true,
+          "value": 3.7,
+          "displayValue": "3.7 days",
+          "summary": "3.7 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 5 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.MAF.FoundryLocal",
+      "fullName": "elbruno/ElBruno.MAF.FoundryLocal",
+      "stars": 4,
+      "forks": 1,
+      "openIssues": 1,
+      "openPullRequests": 0,
+      "description": "Local-first .NET 10 sample integrating Microsoft Agent Framework with Foundry Local through a Microsoft.Extensions.AI IChatClient adapter.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-06-05T20:56:56+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "ai-agent",
+        "console-app",
+        "csharp",
+        "dotnet",
+        "dotnet10",
+        "foundry-local",
+        "local-ai",
+        "microsoft-agent-framework",
+        "microsoft-extensions-ai"
+      ],
+      "createdAt": "2026-06-05T17:41:41+00:00",
+      "updatedAt": "2026-06-30T03:15:24+00:00",
+      "size": 28422,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.MAF.FoundryLocal",
+      "recentIssues": [
+        {
+          "number": 1,
+          "title": "Add missing: About the Author section to README",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MAF.FoundryLocal/issues/1",
+          "createdAt": "2026-06-27T21:51:26+00:00",
+          "updatedAt": "2026-06-27T21:51:26+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 92,
+        "availablePoints": 60,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "20 commits",
+          "summary": "20 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 15,
+          "maxScore": 20,
+          "available": true,
+          "value": 3,
+          "displayValue": "3 releases",
+          "summary": "3 package releases in the last 30 days across 1 package."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "elbruno-agentskills",
+      "fullName": "elbruno/elbruno-agentskills",
+      "stars": 1,
+      "forks": 0,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "A .NET 10 library implementing the Agent Skills specification by Anthropic \u2014 parsing, validation, and integration tools for AI agent skills.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-02-07T14:39:23+00:00",
+      "archived": true,
+      "watchersCount": 1,
+      "topics": [],
+      "createdAt": "2026-02-06T21:06:00+00:00",
+      "updatedAt": "2026-05-10T15:13:35+00:00",
+      "size": 70,
+      "defaultBranch": "master",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/elbruno-agentskills",
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 2 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
+      "name": "openclawnet",
+      "fullName": "elbruno/openclawnet",
+      "stars": 63,
+      "forks": 23,
+      "openIssues": 2,
+      "openPullRequests": 0,
+      "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-03T05:46:55+00:00",
+      "archived": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai-agents",
+        "aspire",
+        "azure-openai",
+        "blazor",
+        "dotnet",
+        "dotnet10",
+        "ef-core",
+        "github-copilot",
+        "live-coding",
+        "microsoft-foundry",
+        "ollama",
+        "openclawnet",
+        "reactor",
+        "signalr",
+        "tutorial"
+      ],
+      "createdAt": "2026-04-12T17:17:04+00:00",
+      "updatedAt": "2026-07-03T05:47:00+00:00",
+      "size": 57548,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": true,
+      "networkCount": 23,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/openclawnet",
+      "recentIssues": [
+        {
+          "number": 161,
+          "title": "Add missing: About the Author section to README",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/issues/161",
+          "createdAt": "2026-06-27T21:51:29+00:00",
+          "updatedAt": "2026-06-27T21:51:29+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        },
+        {
+          "number": 125,
+          "title": "E2E page is not loading",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/issues/125",
+          "createdAt": "2026-05-29T11:48:27+00:00",
+          "updatedAt": "2026-05-29T11:50:53+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 1,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [
+        {
+          "number": 120,
+          "title": "The Ollama provider\u2019s \u201CTest Connection\u201D always returns Failed",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/issues/120",
+          "createdAt": "2026-05-27T13:26:50+00:00",
+          "updatedAt": "2026-06-11T17:47:50+00:00",
+          "userLogin": "davidgamo",
+          "labels": [],
+          "commentsCount": 2,
+          "state": "closed",
+          "closedAt": "2026-06-11T17:47:50+00:00"
+        },
+        {
+          "number": 122,
+          "title": "The Ollama profile\u2019s \u201CTest Agent\u201D always returns Failed",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/issues/122",
+          "createdAt": "2026-05-27T14:11:08+00:00",
+          "updatedAt": "2026-06-11T17:47:42+00:00",
+          "userLogin": "davidgamo",
+          "labels": [],
+          "commentsCount": 2,
+          "state": "closed",
+          "closedAt": "2026-06-11T17:47:42+00:00"
+        }
+      ],
+      "closedIssuesCount": 2,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 167,
+          "title": "sync: mirror from plan repo [2026-07-03]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/167",
+          "createdAt": "2026-07-03T05:46:50+00:00",
+          "updatedAt": "2026-07-03T05:46:56+00:00",
+          "mergedAt": "2026-07-03T05:46:54+00:00",
+          "closedAt": "2026-07-03T05:46:54+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-07-03",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 166,
+          "title": "sync: mirror from plan repo [2026-07-02]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/166",
+          "createdAt": "2026-07-02T05:52:21+00:00",
+          "updatedAt": "2026-07-02T05:52:26+00:00",
+          "mergedAt": "2026-07-02T05:52:25+00:00",
+          "closedAt": "2026-07-02T05:52:25+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-07-02",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 165,
+          "title": "sync: mirror from plan repo [2026-07-01]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/165",
+          "createdAt": "2026-07-01T06:19:16+00:00",
+          "updatedAt": "2026-07-01T06:19:21+00:00",
+          "mergedAt": "2026-07-01T06:19:20+00:00",
+          "closedAt": "2026-07-01T06:19:20+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-07-01",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 164,
+          "title": "sync: mirror from plan repo [2026-06-30]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/164",
+          "createdAt": "2026-06-30T06:04:28+00:00",
+          "updatedAt": "2026-06-30T06:04:33+00:00",
+          "mergedAt": "2026-06-30T06:04:31+00:00",
+          "closedAt": "2026-06-30T06:04:31+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-30",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 163,
+          "title": "sync: mirror from plan repo [2026-06-29]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/163",
+          "createdAt": "2026-06-29T06:38:52+00:00",
+          "updatedAt": "2026-06-29T06:38:57+00:00",
+          "mergedAt": "2026-06-29T06:38:56+00:00",
+          "closedAt": "2026-06-29T06:38:56+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-29",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 162,
+          "title": "sync: mirror from plan repo [2026-06-28]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/162",
+          "createdAt": "2026-06-28T06:11:07+00:00",
+          "updatedAt": "2026-06-28T06:11:12+00:00",
+          "mergedAt": "2026-06-28T06:11:10+00:00",
+          "closedAt": "2026-06-28T06:11:10+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-28",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 160,
+          "title": "sync: mirror from plan repo [2026-06-27]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/160",
+          "createdAt": "2026-06-27T05:48:22+00:00",
+          "updatedAt": "2026-06-27T05:48:27+00:00",
+          "mergedAt": "2026-06-27T05:48:26+00:00",
+          "closedAt": "2026-06-27T05:48:26+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-27",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 159,
+          "title": "sync: mirror from plan repo [2026-06-26]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/159",
+          "createdAt": "2026-06-26T06:04:04+00:00",
+          "updatedAt": "2026-06-26T06:04:09+00:00",
+          "mergedAt": "2026-06-26T06:04:07+00:00",
+          "closedAt": "2026-06-26T06:04:07+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-26",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 158,
+          "title": "sync: mirror from plan repo [2026-06-25]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/158",
+          "createdAt": "2026-06-25T06:00:03+00:00",
+          "updatedAt": "2026-06-25T06:00:11+00:00",
+          "mergedAt": "2026-06-25T06:00:08+00:00",
+          "closedAt": "2026-06-25T06:00:08+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-25",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 157,
+          "title": "sync: mirror from plan repo [2026-06-24]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/157",
+          "createdAt": "2026-06-24T06:01:06+00:00",
+          "updatedAt": "2026-06-24T06:01:12+00:00",
+          "mergedAt": "2026-06-24T06:01:10+00:00",
+          "closedAt": "2026-06-24T06:01:10+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-24",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 156,
+          "title": "sync: mirror from plan repo [2026-06-23]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/156",
+          "createdAt": "2026-06-23T06:01:13+00:00",
+          "updatedAt": "2026-06-23T06:01:19+00:00",
+          "mergedAt": "2026-06-23T06:01:17+00:00",
+          "closedAt": "2026-06-23T06:01:17+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-23",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 155,
+          "title": "sync: mirror from plan repo [2026-06-22]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/155",
+          "createdAt": "2026-06-22T07:14:31+00:00",
+          "updatedAt": "2026-06-22T07:14:37+00:00",
+          "mergedAt": "2026-06-22T07:14:35+00:00",
+          "closedAt": "2026-06-22T07:14:35+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-22",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 154,
+          "title": "sync: mirror from plan repo [2026-06-21]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/154",
+          "createdAt": "2026-06-21T06:45:40+00:00",
+          "updatedAt": "2026-06-21T06:45:45+00:00",
+          "mergedAt": "2026-06-21T06:45:43+00:00",
+          "closedAt": "2026-06-21T06:45:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-21",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 153,
+          "title": "sync: mirror from plan repo [2026-06-20]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/153",
+          "createdAt": "2026-06-20T06:14:39+00:00",
+          "updatedAt": "2026-06-20T06:14:45+00:00",
+          "mergedAt": "2026-06-20T06:14:43+00:00",
+          "closedAt": "2026-06-20T06:14:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-20",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 152,
+          "title": "sync: mirror from plan repo [2026-06-19]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/152",
+          "createdAt": "2026-06-19T06:59:20+00:00",
+          "updatedAt": "2026-06-19T06:59:25+00:00",
+          "mergedAt": "2026-06-19T06:59:24+00:00",
+          "closedAt": "2026-06-19T06:59:24+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-19",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 151,
+          "title": "sync: mirror from plan repo [2026-06-18]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/151",
+          "createdAt": "2026-06-18T06:46:29+00:00",
+          "updatedAt": "2026-06-18T06:46:36+00:00",
+          "mergedAt": "2026-06-18T06:46:34+00:00",
+          "closedAt": "2026-06-18T06:46:34+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-18",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 150,
+          "title": "sync: mirror from plan repo [2026-06-17]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/150",
+          "createdAt": "2026-06-17T07:02:19+00:00",
+          "updatedAt": "2026-06-17T07:02:24+00:00",
+          "mergedAt": "2026-06-17T07:02:23+00:00",
+          "closedAt": "2026-06-17T07:02:23+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-17",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 149,
+          "title": "sync: mirror from plan repo [2026-06-16]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/149",
+          "createdAt": "2026-06-16T07:20:35+00:00",
+          "updatedAt": "2026-06-16T07:20:41+00:00",
+          "mergedAt": "2026-06-16T07:20:40+00:00",
+          "closedAt": "2026-06-16T07:20:40+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-16",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 148,
+          "title": "sync: mirror from plan repo [2026-06-15]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/148",
+          "createdAt": "2026-06-15T07:11:22+00:00",
+          "updatedAt": "2026-06-15T07:11:28+00:00",
+          "mergedAt": "2026-06-15T07:11:26+00:00",
+          "closedAt": "2026-06-15T07:11:26+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-15",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 147,
+          "title": "sync: mirror from plan repo [2026-06-14]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/147",
+          "createdAt": "2026-06-14T06:28:22+00:00",
+          "updatedAt": "2026-06-14T06:28:27+00:00",
+          "mergedAt": "2026-06-14T06:28:26+00:00",
+          "closedAt": "2026-06-14T06:28:26+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-14",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 146,
+          "title": "sync: mirror from plan repo [2026-06-13]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/146",
+          "createdAt": "2026-06-13T06:10:46+00:00",
+          "updatedAt": "2026-06-13T06:10:52+00:00",
+          "mergedAt": "2026-06-13T06:10:51+00:00",
+          "closedAt": "2026-06-13T06:10:51+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-13",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 145,
+          "title": "sync: mirror from plan repo [2026-06-12]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/145",
+          "createdAt": "2026-06-12T06:28:20+00:00",
+          "updatedAt": "2026-06-12T06:28:26+00:00",
+          "mergedAt": "2026-06-12T06:28:25+00:00",
+          "closedAt": "2026-06-12T06:28:25+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-12",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 144,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/144",
+          "createdAt": "2026-06-11T16:41:17+00:00",
+          "updatedAt": "2026-06-11T16:41:23+00:00",
+          "mergedAt": "2026-06-11T16:41:21+00:00",
+          "closedAt": "2026-06-11T16:41:21+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 143,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/143",
+          "createdAt": "2026-06-11T16:34:05+00:00",
+          "updatedAt": "2026-06-11T16:34:12+00:00",
+          "mergedAt": "2026-06-11T16:34:10+00:00",
+          "closedAt": "2026-06-11T16:34:10+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 142,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/142",
+          "createdAt": "2026-06-11T16:23:32+00:00",
+          "updatedAt": "2026-06-11T16:23:38+00:00",
+          "mergedAt": "2026-06-11T16:23:36+00:00",
+          "closedAt": "2026-06-11T16:23:36+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 141,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/141",
+          "createdAt": "2026-06-11T15:40:51+00:00",
+          "updatedAt": "2026-06-11T15:40:58+00:00",
+          "mergedAt": "2026-06-11T15:40:56+00:00",
+          "closedAt": "2026-06-11T15:40:56+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 140,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/140",
+          "createdAt": "2026-06-11T15:28:07+00:00",
+          "updatedAt": "2026-06-11T15:28:13+00:00",
+          "mergedAt": "2026-06-11T15:28:11+00:00",
+          "closedAt": "2026-06-11T15:28:11+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 139,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/139",
+          "createdAt": "2026-06-11T15:17:58+00:00",
+          "updatedAt": "2026-06-11T15:18:04+00:00",
+          "mergedAt": "2026-06-11T15:18:02+00:00",
+          "closedAt": "2026-06-11T15:18:02+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 138,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/138",
+          "createdAt": "2026-06-11T15:06:01+00:00",
+          "updatedAt": "2026-06-11T15:06:09+00:00",
+          "mergedAt": "2026-06-11T15:06:07+00:00",
+          "closedAt": "2026-06-11T15:06:07+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 137,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/137",
+          "createdAt": "2026-06-11T14:39:20+00:00",
+          "updatedAt": "2026-06-11T14:39:26+00:00",
+          "mergedAt": "2026-06-11T14:39:25+00:00",
+          "closedAt": "2026-06-11T14:39:25+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 136,
+          "title": "sync: mirror from plan repo [2026-06-11]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/136",
+          "createdAt": "2026-06-11T14:23:24+00:00",
+          "updatedAt": "2026-06-11T14:23:31+00:00",
+          "mergedAt": "2026-06-11T14:23:29+00:00",
+          "closedAt": "2026-06-11T14:23:29+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-11",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 134,
+          "title": "sync: mirror from plan repo [2026-06-07]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/134",
+          "createdAt": "2026-06-07T06:17:21+00:00",
+          "updatedAt": "2026-06-07T06:17:26+00:00",
+          "mergedAt": "2026-06-07T06:17:25+00:00",
+          "closedAt": "2026-06-07T06:17:25+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-07",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 133,
+          "title": "sync: mirror from plan repo [2026-06-06]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/133",
+          "createdAt": "2026-06-06T05:49:05+00:00",
+          "updatedAt": "2026-06-06T05:49:09+00:00",
+          "mergedAt": "2026-06-06T05:49:07+00:00",
+          "closedAt": "2026-06-06T05:49:08+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-06",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 132,
+          "title": "sync: mirror from plan repo [2026-06-05]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/132",
+          "createdAt": "2026-06-05T06:16:11+00:00",
+          "updatedAt": "2026-06-05T06:16:18+00:00",
+          "mergedAt": "2026-06-05T06:16:16+00:00",
+          "closedAt": "2026-06-05T06:16:16+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-05",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 131,
+          "title": "sync: mirror from plan repo [2026-06-04]",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/131",
+          "createdAt": "2026-06-04T06:37:01+00:00",
+          "updatedAt": "2026-06-04T06:37:06+00:00",
+          "mergedAt": "2026-06-04T06:37:05+00:00",
+          "closedAt": "2026-06-04T06:37:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "auto:sync",
+            "bot"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "sync/plan-mirror-2026-06-04",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 35,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": true,
+      "watchPurpose": "Reference architecture and AI-assisted workflow patterns",
+      "watchDateAdded": "2025-04-02",
+      "maintainability": {
+        "totalScore": 83,
+        "availablePoints": 60,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 35,
+          "displayValue": "35 commits",
+          "summary": "35 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 15.2,
+          "displayValue": "15.2 days",
+          "summary": "15.2 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 0,
@@ -2167,12 +4889,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     },
@@ -2185,21 +4907,21 @@
       "openIssues": 0,
       "openPullRequests": 0,
       "description": "Reusable local-first speech runtime for .NET \u2014 VAD, STT, LLM, TTS pipeline with Microsoft.Extensions.AI",
-      "language": null,
-      "license": null,
-      "lastPush": null,
+      "language": "JavaScript",
+      "license": "MIT",
+      "lastPush": "2026-07-03T12:03:18+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [],
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2026-07-03T12:02:53+00:00",
+      "updatedAt": "2026-07-03T12:03:23+00:00",
       "size": 0,
-      "defaultBranch": null,
+      "defaultBranch": "main",
       "homepage": null,
-      "hasWiki": false,
+      "hasWiki": true,
       "hasPages": false,
       "networkCount": 0,
-      "visibility": null,
+      "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Speech",
       "recentIssues": [],
       "recentClosedIssues": [],
@@ -2207,24 +4929,24 @@
       "recentPullRequests": [],
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
-      "isStub": true,
-      "stubReason": "Failed to fetch live data from GitHub API (rate limited or unavailable)",
+      "isStub": false,
+      "stubReason": null,
       "isWatchList": true,
       "watchPurpose": "Core speech pipeline that depends on ElBruno.Whisper, ElBruno.VibeVoiceTTS, ElBruno.QwenTTS, and ElBruno.LocalLLMs. Monitor for integration requirements and API contracts.",
       "watchDateAdded": "2026-07-03",
       "maintainability": {
-        "totalScore": 1,
-        "availablePoints": 0,
+        "totalScore": 28,
+        "availablePoints": 40,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 1,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2251,12 +4973,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 10,
+          "maxScore": 20,
+          "available": true,
+          "value": 10,
+          "displayValue": "Partial",
+          "summary": "README missing, docs/ present."
         }
       }
     },
@@ -2264,26 +4986,41 @@
       "owner": "elbruno",
       "name": "ElBruno.CopilotHarness",
       "fullName": "elbruno/ElBruno.CopilotHarness",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "openIssues": 0,
       "openPullRequests": 0,
       "description": "Local-first GitHub Copilot BYOK harness: policy-based routing between local LLMs and Azure OpenAI, launched with .NET Aspire, with explainability and live routing telemetry.",
-      "language": null,
-      "license": null,
-      "lastPush": null,
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-02T18:19:23+00:00",
       "archived": false,
       "watchersCount": 0,
-      "topics": [],
-      "createdAt": null,
-      "updatedAt": null,
-      "size": 0,
-      "defaultBranch": null,
-      "homepage": null,
+      "topics": [
+        "ai",
+        "aspire",
+        "azure-openai",
+        "blazor",
+        "byok",
+        "copilot",
+        "dotnet",
+        "dotnet-aspire",
+        "explainable-ai",
+        "github-copilot",
+        "llm",
+        "local-llm",
+        "model-routing",
+        "ollama"
+      ],
+      "createdAt": "2026-06-26T10:30:00+00:00",
+      "updatedAt": "2026-07-03T09:12:21+00:00",
+      "size": 3676,
+      "defaultBranch": "main",
+      "homepage": "https://elbruno.github.io/ElBruno.CopilotHarness/",
       "hasWiki": false,
-      "hasPages": false,
+      "hasPages": true,
       "networkCount": 0,
-      "visibility": null,
+      "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotHarness",
       "recentIssues": [],
       "recentClosedIssues": [],
@@ -2291,24 +5028,24 @@
       "recentPullRequests": [],
       "recentMergedPullRequests": [],
       "mergedPullRequestsCount": 0,
-      "isStub": true,
-      "stubReason": "Failed to fetch live data from GitHub API (rate limited or unavailable)",
+      "isStub": false,
+      "stubReason": null,
       "isWatchList": true,
       "watchPurpose": "Reference implementation for local LLM routing, Aspire integration, and telemetry patterns applicable to the dashboard and ElBruno.LocalLLMs.",
       "watchDateAdded": "2026-07-03",
       "maintainability": {
-        "totalScore": 1,
-        "availablePoints": 0,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 100,
+        "availablePoints": 40,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Commit activity unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 55,
+          "displayValue": "55 commits",
+          "summary": "55 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2335,12 +5072,12 @@
           "summary": "Coverage percentage not found in README."
         },
         "documentation": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "README and docs/ signals unavailable from GitHub API."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
         }
       }
     }
@@ -2355,10 +5092,10 @@
       "description": "Open Claw .NET project",
       "purpose": "Reference architecture and AI-assisted workflow patterns",
       "dateAdded": "2025-04-02",
-      "stars": 0,
-      "lastUpdate": null,
-      "isStub": true,
-      "stubReason": "Failed to fetch live data from GitHub API (rate limited or unavailable)"
+      "stars": 63,
+      "lastUpdate": "2026-07-03T05:46:55+00:00",
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2370,9 +5107,9 @@
       "purpose": "Core speech pipeline that depends on ElBruno.Whisper, ElBruno.VibeVoiceTTS, ElBruno.QwenTTS, and ElBruno.LocalLLMs. Monitor for integration requirements and API contracts.",
       "dateAdded": "2026-07-03",
       "stars": 0,
-      "lastUpdate": null,
-      "isStub": true,
-      "stubReason": "Failed to fetch live data from GitHub API (rate limited or unavailable)"
+      "lastUpdate": "2026-07-03T12:03:18+00:00",
+      "isStub": false,
+      "stubReason": null
     },
     {
       "owner": "elbruno",
@@ -2383,10 +5120,10 @@
       "description": "Local-first GitHub Copilot BYOK harness: policy-based routing between local LLMs and Azure OpenAI, launched with .NET Aspire, with explainability and live routing telemetry.",
       "purpose": "Reference implementation for local LLM routing, Aspire integration, and telemetry patterns applicable to the dashboard and ElBruno.LocalLLMs.",
       "dateAdded": "2026-07-03",
-      "stars": 0,
-      "lastUpdate": null,
-      "isStub": true,
-      "stubReason": "Failed to fetch live data from GitHub API (rate limited or unavailable)"
+      "stars": 1,
+      "lastUpdate": "2026-07-02T18:19:23+00:00",
+      "isStub": false,
+      "stubReason": null
     }
   ]
 }
