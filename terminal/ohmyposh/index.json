@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-03T11:42:23.4168059+00:00",
-  "totalRepos": 25,
+  "generatedAt": "2026-07-03T12:29:25.793505+00:00",
+  "totalRepos": 27,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -151,6 +151,18 @@
       "configFile": "elbruno-openclawnet.json",
       "accentColor": "#6C5470",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Speech",
+      "configFile": "elbruno-ElBruno.Speech.json",
+      "accentColor": "#B178B8",
+      "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.CopilotHarness",
+      "configFile": "elbruno-ElBruno.CopilotHarness.json",
+      "accentColor": "#96B99A",
+      "icon": "\uD83E\uDD16"
     }
   ]
 }
