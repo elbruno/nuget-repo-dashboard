@@ -13,3 +13,4 @@ data/history/
 .squad/sessions/
 # Squad: SubSquad activation file (local to this machine)
 .squad-workstream
+.squad/.cache/
