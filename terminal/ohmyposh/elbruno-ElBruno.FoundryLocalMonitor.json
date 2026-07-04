@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
-  "console_title_template": " 🔊 ElBruno.Speech ",
+  "console_title_template": " 📊 ElBruno.FoundryLocalMonitor ",
   "blocks": [
     {
       "type": "prompt",
@@ -10,9 +10,9 @@
         {
           "type": "text",
           "foreground": "#1C1C1C",
-          "background": "#BBBE5A",
+          "background": "#5CA2AE",
           "style": "plain",
-          "template": " 🔊 ElBruno.Speech "
+          "template": " 📊 ElBruno.FoundryLocalMonitor "
         }
       ]
     }

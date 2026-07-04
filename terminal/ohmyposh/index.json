@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-03T12:33:52.9816612+00:00",
-  "totalRepos": 27,
+  "generatedAt": "2026-07-04T11:01:51.2453578+00:00",
+  "totalRepos": 28,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -93,15 +93,15 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/HermesNET",
-      "configFile": "elbruno-HermesNET.json",
-      "accentColor": "#8B8A71",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/HermesNET",
+      "configFile": "elbruno-HermesNET.json",
+      "accentColor": "#8B8A71",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -129,16 +129,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/elbruno-ai-evaluation",
-      "configFile": "elbruno-elbruno-ai-evaluation.json",
-      "accentColor": "#5A99B2",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.QRCodeGenerator",
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
+    },
+    {
+      "repo": "elbruno/elbruno-ai-evaluation",
+      "configFile": "elbruno-elbruno-ai-evaluation.json",
+      "accentColor": "#5A99B2",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/ElBruno.MAF.FoundryLocal",
@@ -147,16 +147,22 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.Speech",
+      "configFile": "elbruno-ElBruno.Speech.json",
+      "accentColor": "#BBBE5A",
+      "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.FoundryLocalMonitor",
+      "configFile": "elbruno-ElBruno.FoundryLocalMonitor.json",
+      "accentColor": "#5CA2AE",
+      "icon": "\uD83D\uDCCA"
+    },
+    {
       "repo": "elbruno/openclawnet",
       "configFile": "elbruno-openclawnet.json",
       "accentColor": "#6C5470",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.Speech",
-      "configFile": "elbruno-ElBruno.Speech.json",
-      "accentColor": "#B178B8",
-      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.CopilotHarness",
