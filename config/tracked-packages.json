@@ -84,6 +84,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.FoundryLocalMonitor",
+    "repos": [
+      "elbruno/ElBruno.FoundryLocalMonitor"
+    ]
+  },
+  {
     "packageId": "ElBruno.Hermes.Adapters",
     "repos": [
       "elbruno/HermesNET"
@@ -192,6 +198,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.MAF.FoundryLocal.Adapter",
+    "repos": [
+      "elbruno/ElBruno.MAF.FoundryLocal"
+    ]
+  },
+  {
     "packageId": "ElBruno.MarkItDotNet",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
@@ -240,6 +252,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.MarkItDotNet.Evals",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
     "packageId": "ElBruno.MarkItDotNet.Excel",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
@@ -259,6 +277,12 @@
   },
   {
     "packageId": "ElBruno.MarkItDotNet.Quality",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Security",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
     ]
@@ -389,6 +413,54 @@
     "packageId": "ElBruno.Reranking",
     "repos": [
       "elbruno/ElBruno.Reranking"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Abstractions",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.AspNetCore",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Audio",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Cli",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.NAudio",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.OpenTelemetry",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Pipeline",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Vad.Silero",
+    "repos": [
+      "elbruno/ElBruno.Speech"
     ]
   },
   {
