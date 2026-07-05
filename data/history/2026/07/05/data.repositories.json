@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T11:14:49.1640244+00:00",
+  "generatedAt": "2026-07-05T13:57:26.6879151+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -270,12 +270,12 @@
       "fullName": "elbruno/ElBruno.HuggingFace.Downloader",
       "stars": 7,
       "forks": 1,
-      "openIssues": 3,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "A .NET library to download files (ONNX models, tokenizers, voice presets, etc.) from Hugging Face Hub repositories with progress reporting, caching, and authentication support.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-07-04T16:02:10+00:00",
+      "lastPush": "2026-07-05T12:18:30+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -293,8 +293,8 @@
         "onnx"
       ],
       "createdAt": "2026-02-23T03:16:12+00:00",
-      "updatedAt": "2026-07-04T16:01:59+00:00",
-      "size": 1771,
+      "updatedAt": "2026-07-05T12:18:24+00:00",
+      "size": 1830,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -302,49 +302,48 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
-          "number": 10,
-          "title": "feat: support Hugging Face revision and commit pinning",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/issues/10",
-          "createdAt": "2026-07-03T12:11:46+00:00",
-          "updatedAt": "2026-07-03T12:11:46+00:00",
+          "number": 8,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/issues/8",
+          "createdAt": "2026-06-27T21:50:49+00:00",
+          "updatedAt": "2026-07-05T12:18:21+00:00",
           "userLogin": "elbruno",
-          "labels": [],
+          "labels": [
+            "documentation"
+          ],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
+          "state": "closed",
+          "closedAt": "2026-07-05T12:18:21+00:00"
         },
         {
           "number": 9,
           "title": "Fix: Correct Twitter URL in About the Author section",
           "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/issues/9",
           "createdAt": "2026-06-27T21:51:07+00:00",
-          "updatedAt": "2026-06-27T21:51:07+00:00",
+          "updatedAt": "2026-07-05T12:09:13+00:00",
           "userLogin": "elbruno",
           "labels": [
             "documentation"
           ],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
+          "state": "closed",
+          "closedAt": "2026-07-05T12:09:13+00:00"
         },
         {
-          "number": 8,
-          "title": "Fix: Correct Twitter URL in About the Author section",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/issues/8",
-          "createdAt": "2026-06-27T21:50:49+00:00",
-          "updatedAt": "2026-06-27T21:50:49+00:00",
+          "number": 10,
+          "title": "feat: support Hugging Face revision and commit pinning",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/issues/10",
+          "createdAt": "2026-07-03T12:11:46+00:00",
+          "updatedAt": "2026-07-05T12:03:25+00:00",
           "userLogin": "elbruno",
-          "labels": [
-            "documentation"
-          ],
+          "labels": [],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "state": "closed",
+          "closedAt": "2026-07-05T12:03:25+00:00"
+        },
         {
           "number": 11,
           "title": "feat: add manifest-based model bundles with SHA-256 integrity validation",
@@ -370,9 +369,69 @@
           "closedAt": "2026-07-04T15:20:02+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 5,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
+        {
+          "number": 18,
+          "title": "Fix X profile links and bump 1.4.2",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/pull/18",
+          "createdAt": "2026-07-05T12:17:37+00:00",
+          "updatedAt": "2026-07-05T12:18:22+00:00",
+          "mergedAt": "2026-07-05T12:18:20+00:00",
+          "closedAt": "2026-07-05T12:18:20+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-fix-twitter-url-about-author",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 17,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/pull/17",
+          "createdAt": "2026-07-05T12:09:04+00:00",
+          "updatedAt": "2026-07-05T12:09:12+00:00",
+          "mergedAt": "2026-07-05T12:09:12+00:00",
+          "closedAt": "2026-07-05T12:09:12+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-fix-correct-twitter-url-in-about-the-aut",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 16,
+          "title": "feat: support Hugging Face revision and commit pinning",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/pull/16",
+          "createdAt": "2026-07-05T12:03:16+00:00",
+          "updatedAt": "2026-07-05T12:03:25+00:00",
+          "mergedAt": "2026-07-05T12:03:24+00:00",
+          "closedAt": "2026-07-05T12:03:24+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-support-hf-revision-and-commit-pinning",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 15,
           "title": "Add manifest-based model bundle validation",
@@ -434,41 +493,41 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 3,
+      "mergedPullRequestsCount": 6,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 78,
+        "totalScore": 79,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 3,
+          "score": 6,
           "maxScore": 20,
           "available": true,
-          "value": 3,
-          "displayValue": "3 commits",
-          "summary": "3 commits in the last 30 days."
+          "value": 6,
+          "displayValue": "6 commits",
+          "summary": "6 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 19,
+          "score": 17,
           "maxScore": 20,
           "available": true,
-          "value": 1.1,
-          "displayValue": "1.1 days",
-          "summary": "1.1 average days to close recent issues."
+          "value": 3.9,
+          "displayValue": "3.9 days",
+          "summary": "3.9 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 4,
-          "displayValue": "4 releases",
-          "summary": "4 package releases in the last 30 days across 2 packages."
+          "value": 10,
+          "displayValue": "10 releases",
+          "summary": "10 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -2423,12 +2482,12 @@
       "fullName": "elbruno/ElBruno.Realtime",
       "stars": 23,
       "forks": 2,
-      "openIssues": 2,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "Pluggable real-time audio conversation framework for .NET. Local VAD, STT, TTS, and LLM",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-05-05T14:12:28+00:00",
+      "lastPush": "2026-07-05T12:11:25+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -2446,8 +2505,8 @@
         "whisper"
       ],
       "createdAt": "2026-02-27T16:41:34+00:00",
-      "updatedAt": "2026-06-09T08:52:26+00:00",
-      "size": 69487,
+      "updatedAt": "2026-07-05T12:11:04+00:00",
+      "size": 69502,
       "defaultBranch": "main",
       "homepage": "https://www.nuget.org/packages/ElBruno.Realtime",
       "hasWiki": true,
@@ -2455,75 +2514,116 @@
       "networkCount": 2,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 6,
           "title": "Fix: Correct Twitter URL in About the Author section",
           "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/issues/6",
           "createdAt": "2026-06-27T21:51:11+00:00",
-          "updatedAt": "2026-06-27T21:51:11+00:00",
+          "updatedAt": "2026-07-05T12:11:01+00:00",
           "userLogin": "elbruno",
           "labels": [
             "documentation"
           ],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
+          "state": "closed",
+          "closedAt": "2026-07-05T12:11:01+00:00"
         },
         {
           "number": 5,
           "title": "Fix: Correct Twitter URL in About the Author section",
           "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/issues/5",
           "createdAt": "2026-06-27T21:50:53+00:00",
-          "updatedAt": "2026-06-27T21:50:53+00:00",
+          "updatedAt": "2026-07-05T11:56:19+00:00",
           "userLogin": "elbruno",
           "labels": [
             "documentation"
           ],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
+          "state": "closed",
+          "closedAt": "2026-07-05T11:56:19+00:00"
         }
       ],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 8,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/pull/8",
+          "createdAt": "2026-07-05T12:09:51+00:00",
+          "updatedAt": "2026-07-05T12:11:00+00:00",
+          "mergedAt": "2026-07-05T12:11:00+00:00",
+          "closedAt": "2026-07-05T12:11:00+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-fix-twitter-url-about-author-issue-6",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 7,
+          "title": "Fix author X URL and release docs",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/pull/7",
+          "createdAt": "2026-07-05T11:56:07+00:00",
+          "updatedAt": "2026-07-05T11:56:20+00:00",
+          "mergedAt": "2026-07-05T11:56:18+00:00",
+          "closedAt": "2026-07-05T11:56:18+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-fix-twitter-url-about-author",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 2,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 73,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 3,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 3,
+          "displayValue": "3 commits",
+          "summary": "3 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
+          "score": 15,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 6 packages."
+          "value": 7.6,
+          "displayValue": "7.6 days",
+          "summary": "7.6 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 12,
+          "displayValue": "12 releases",
+          "summary": "12 package releases in the last 30 days across 6 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3613,12 +3713,12 @@
       "fullName": "elbruno/ElBruno.ClockTray",
       "stars": 6,
       "forks": 0,
-      "openIssues": 2,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "Windows system tray app to show/hide the taskbar date and time. Toggle via context menu, double-click, or Ctrl\u002BAlt\u002BT hotkey.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-04-24T01:09:31+00:00",
+      "lastPush": "2026-07-05T12:32:54+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -3634,8 +3734,8 @@
         "winforms"
       ],
       "createdAt": "2026-03-03T16:01:51+00:00",
-      "updatedAt": "2026-07-03T05:35:10+00:00",
-      "size": 2686,
+      "updatedAt": "2026-07-05T12:32:40+00:00",
+      "size": 2688,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3643,75 +3743,96 @@
       "networkCount": 0,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray",
-      "recentIssues": [
-        {
-          "number": 8,
-          "title": "Fix: Correct Twitter URL in About the Author section",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/issues/8",
-          "createdAt": "2026-06-27T21:51:05+00:00",
-          "updatedAt": "2026-06-27T21:51:05+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "documentation"
-          ],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        },
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 7,
           "title": "Fix: Correct Twitter URL in About the Author section",
           "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/issues/7",
           "createdAt": "2026-06-27T21:50:48+00:00",
-          "updatedAt": "2026-06-27T21:50:48+00:00",
+          "updatedAt": "2026-07-05T12:38:39+00:00",
           "userLogin": "elbruno",
           "labels": [
             "documentation"
           ],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
+          "state": "closed",
+          "closedAt": "2026-07-05T12:38:39+00:00"
+        },
+        {
+          "number": 8,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/issues/8",
+          "createdAt": "2026-06-27T21:51:05+00:00",
+          "updatedAt": "2026-07-05T12:32:37+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 0,
+          "state": "closed",
+          "closedAt": "2026-07-05T12:32:37+00:00"
         }
       ],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 9,
+          "title": "Fix author Twitter URL and publish 0.6.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ClockTray/pull/9",
+          "createdAt": "2026-07-05T12:32:27+00:00",
+          "updatedAt": "2026-07-05T12:32:37+00:00",
+          "mergedAt": "2026-07-05T12:32:36+00:00",
+          "closedAt": "2026-07-05T12:32:36+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-fix-correct-twitter-url-about-author",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 51,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 1,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
+          "score": 15,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 1 package."
+          "value": 7.6,
+          "displayValue": "7.6 days",
+          "summary": "7.6 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 5,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 release",
+          "summary": "1 package release in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -3737,18 +3858,18 @@
       "fullName": "elbruno/ElBruno.PersonaPlex",
       "stars": 6,
       "forks": 1,
-      "openIssues": 2,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": "C# .NET library for running NVIDIA PersonaPlex-7B-v1 full-duplex speech-to-speech locally using ONNX Runtime",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-02-28T21:33:57+00:00",
+      "lastPush": "2026-07-05T12:27:43+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [],
       "createdAt": "2026-02-27T01:33:45+00:00",
-      "updatedAt": "2026-04-17T14:23:09+00:00",
-      "size": 575,
+      "updatedAt": "2026-07-05T12:27:19+00:00",
+      "size": 577,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3756,75 +3877,96 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex",
-      "recentIssues": [
-        {
-          "number": 4,
-          "title": "Fix: Correct Twitter URL in About the Author section",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex/issues/4",
-          "createdAt": "2026-06-27T21:51:09+00:00",
-          "updatedAt": "2026-06-27T21:51:09+00:00",
-          "userLogin": "elbruno",
-          "labels": [
-            "documentation"
-          ],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        },
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 3,
           "title": "Fix: Correct Twitter URL in About the Author section",
           "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex/issues/3",
           "createdAt": "2026-06-27T21:50:52+00:00",
-          "updatedAt": "2026-06-27T21:50:52+00:00",
+          "updatedAt": "2026-07-05T12:38:35+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "documentation"
+          ],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-07-05T12:38:35+00:00"
+        },
+        {
+          "number": 4,
+          "title": "Fix: Correct Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex/issues/4",
+          "createdAt": "2026-06-27T21:51:09+00:00",
+          "updatedAt": "2026-07-05T12:27:16+00:00",
           "userLogin": "elbruno",
           "labels": [
             "documentation"
           ],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
+          "state": "closed",
+          "closedAt": "2026-07-05T12:27:16+00:00"
         }
       ],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 5,
+          "title": "Fix Twitter URL in About the Author section",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex/pull/5",
+          "createdAt": "2026-07-05T12:27:02+00:00",
+          "updatedAt": "2026-07-05T12:27:16+00:00",
+          "mergedAt": "2026-07-05T12:27:15+00:00",
+          "closedAt": "2026-07-05T12:27:15+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-fix-twitter-url-about-author",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "totalScore": 51,
+        "availablePoints": 80,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 1,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
+          "score": 15,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 1 package."
+          "value": 7.6,
+          "displayValue": "7.6 days",
+          "summary": "7.6 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 5,
+          "maxScore": 20,
+          "available": true,
+          "value": 1,
+          "displayValue": "1 release",
+          "summary": "1 package release in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -4124,7 +4266,7 @@
       "description": "Windows systray monitor for Foundry Local \u2014 real-time AI model load/unload notifications, mini status window, published as a .NET global tool",
       "language": "C#",
       "license": null,
-      "lastPush": "2026-07-04T22:39:54+00:00",
+      "lastPush": "2026-07-05T13:52:10+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -4140,8 +4282,8 @@
         "wpf"
       ],
       "createdAt": "2026-07-03T19:10:27+00:00",
-      "updatedAt": "2026-07-05T09:41:38+00:00",
-      "size": 5509,
+      "updatedAt": "2026-07-05T13:52:14+00:00",
+      "size": 5667,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -4170,9 +4312,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 24,
-          "displayValue": "24 commits",
-          "summary": "24 commits in the last 30 days."
+          "value": 28,
+          "displayValue": "28 commits",
+          "summary": "28 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -4186,9 +4328,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 10,
-          "displayValue": "10 releases",
-          "summary": "10 package releases in the last 30 days across 1 package."
+          "value": 12,
+          "displayValue": "12 releases",
+          "summary": "12 package releases in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -5773,7 +5915,7 @@
       "description": "Local-first GitHub Copilot BYOK harness: policy-based routing between local LLMs and Azure OpenAI, launched with .NET Aspire, with explainability and live routing telemetry.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-07-04T20:22:18+00:00",
+      "lastPush": "2026-07-05T13:37:32+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -5793,7 +5935,7 @@
         "ollama"
       ],
       "createdAt": "2026-06-26T10:30:00+00:00",
-      "updatedAt": "2026-07-04T20:22:21+00:00",
+      "updatedAt": "2026-07-05T13:37:35+00:00",
       "size": 6407,
       "defaultBranch": "main",
       "homepage": "https://elbruno.github.io/ElBruno.CopilotHarness/",
@@ -5823,9 +5965,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 83,
-          "displayValue": "83 commits",
-          "summary": "83 commits in the last 30 days."
+          "value": 84,
+          "displayValue": "84 commits",
+          "summary": "84 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -5901,7 +6043,7 @@
       "purpose": "Reference implementation for local LLM routing, Aspire integration, and telemetry patterns applicable to the dashboard and ElBruno.LocalLLMs.",
       "dateAdded": "2026-07-03",
       "stars": 2,
-      "lastUpdate": "2026-07-04T20:22:18+00:00",
+      "lastUpdate": "2026-07-05T13:37:32+00:00",
       "isStub": false,
       "stubReason": null
     }

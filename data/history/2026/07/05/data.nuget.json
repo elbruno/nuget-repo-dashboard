@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T11:14:49.1640244+00:00",
+  "generatedAt": "2026-07-05T13:57:26.6879151+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -108,7 +108,7 @@
     },
     {
       "packageId": "ElBruno.HuggingFace.Downloader",
-      "latestVersion": "1.3.0",
+      "latestVersion": "1.4.2",
       "totalDownloads": 10268,
       "description": "A .NET library to download files (ONNX models, tokenizers, voice presets, etc.) from Hugging Face Hub repositories with progress reporting, caching, and authentication support.",
       "authors": "Bruno Capuano",
@@ -123,8 +123,8 @@
         "nuget"
       ],
       "listed": true,
-      "publishedDate": "2026-07-04T16:02:47.87+00:00",
-      "releasesLast30Days": 2,
+      "publishedDate": "2026-07-05T12:19:11.66+00:00",
+      "releasesLast30Days": 5,
       "dependencies": null
     },
     {
@@ -678,7 +678,7 @@
     },
     {
       "packageId": "ElBruno.Realtime",
-      "latestVersion": "0.10.0",
+      "latestVersion": "0.10.2",
       "totalDownloads": 922,
       "description": "Core abstractions for real-time audio conversation in .NET. Provides ITextToSpeechClient, IVoiceActivityDetector, and IRealtimeConversationClient interfaces following Microsoft.Extensions.AI patterns. Pluggable providers for STT, TTS, VAD, and LLM.",
       "authors": "Bruno Capuano",
@@ -696,8 +696,8 @@
         "voice"
       ],
       "listed": true,
-      "publishedDate": "2026-05-05T14:06:47.99+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-07-05T12:12:25.163+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1087,7 +1087,7 @@
     },
     {
       "packageId": "ElBruno.Realtime.SileroVad",
-      "latestVersion": "0.10.0",
+      "latestVersion": "0.10.2",
       "totalDownloads": 636,
       "description": "Silero VAD-based IVoiceActivityDetector implementation for ElBruno.Realtime. Provides local voice activity detection using Silero VAD v5 ONNX model with automatic download. Detects speech segments in continuous audio streams.",
       "authors": "Bruno Capuano",
@@ -1103,13 +1103,13 @@
         "speech"
       ],
       "listed": true,
-      "publishedDate": "2026-05-05T14:06:48.267+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-07-05T12:12:25.487+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.Realtime.Whisper",
-      "latestVersion": "0.10.0",
+      "latestVersion": "0.10.2",
       "totalDownloads": 657,
       "description": "Whisper-based ISpeechToTextClient implementation for ElBruno.Realtime. Provides local speech-to-text using Whisper.net with automatic GGML model download. Supports tiny.en (fast) and base.en (accurate) models.",
       "authors": "Bruno Capuano",
@@ -1124,8 +1124,8 @@
         "realtime"
       ],
       "listed": true,
-      "publishedDate": "2026-05-05T14:06:48.53+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-07-05T12:12:25.78+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1314,7 +1314,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-22T22:12:55.6+00:00",
-      "releasesLast30Days": 0,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1472,7 +1472,7 @@
     },
     {
       "packageId": "ElBruno.PersonaPlex",
-      "latestVersion": "0.6.0",
+      "latestVersion": "0.6.1",
       "totalDownloads": 415,
       "description": "A .NET library for running NVIDIA PersonaPlex-7B-v1 full-duplex speech-to-speech locally using ONNX Runtime. Supports automatic model download from HuggingFace, voice presets, persona control, and native C# inference \u2014 no Python dependency.",
       "authors": "Bruno Capuano",
@@ -1492,8 +1492,8 @@
         "audio"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T21:34:39.393+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-07-05T12:28:17.82+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1581,7 +1581,7 @@
     },
     {
       "packageId": "ElBruno.FoundryLocalMonitor",
-      "latestVersion": "0.5.12",
+      "latestVersion": "0.5.14",
       "totalDownloads": 296,
       "description": "Windows systray monitor for Foundry Local \u2014 model load/unload notifications, mini status window",
       "authors": "Bruno Capuano",
@@ -1594,8 +1594,8 @@
         "systray"
       ],
       "listed": true,
-      "publishedDate": "2026-07-04T22:40:57.057+00:00",
-      "releasesLast30Days": 10,
+      "publishedDate": "2026-07-05T12:19:28.107+00:00",
+      "releasesLast30Days": 12,
       "dependencies": null
     },
     {
@@ -1720,7 +1720,7 @@
     },
     {
       "packageId": "ElBruno.HuggingFace.Downloader.Cli",
-      "latestVersion": "1.3.0",
+      "latestVersion": "1.4.2",
       "totalDownloads": 206,
       "description": "A .NET CLI tool to download, manage, and inspect cached files from Hugging Face Hub repositories.",
       "authors": "Bruno Capuano",
@@ -1736,8 +1736,8 @@
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-07-04T16:02:48.183+00:00",
-      "releasesLast30Days": 2,
+      "publishedDate": "2026-07-05T12:19:11.987+00:00",
+      "releasesLast30Days": 5,
       "dependencies": null
     },
     {
@@ -1956,7 +1956,7 @@
     },
     {
       "packageId": "ElBruno.QwenTTS.Realtime",
-      "latestVersion": "0.10.0",
+      "latestVersion": "0.10.2",
       "totalDownloads": 120,
       "description": "Bridge between ElBruno.QwenTTS and ElBruno.Realtime \u2014 provides ITextToSpeechClient adapter and DI extensions for QwenTTS integration with the real-time conversation pipeline.",
       "authors": "Bruno Capuano",
@@ -1972,8 +1972,8 @@
         "bridge"
       ],
       "listed": true,
-      "publishedDate": "2026-05-05T14:10:06.903+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-07-05T12:12:24.883+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1996,7 +1996,7 @@
     },
     {
       "packageId": "ElBruno.KokoroTTS.Realtime",
-      "latestVersion": "0.10.0",
+      "latestVersion": "0.10.2",
       "totalDownloads": 141,
       "description": "Bridge between KokoroSharp and ElBruno.Realtime \u2014 provides ITextToSpeechClient adapter and DI extensions for Kokoro TTS integration with the real-time conversation pipeline.",
       "authors": "Bruno Capuano",
@@ -2012,8 +2012,8 @@
         "bridge"
       ],
       "listed": true,
-      "publishedDate": "2026-05-05T14:10:06.34+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-07-05T12:12:24.553+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -2140,7 +2140,7 @@
     },
     {
       "packageId": "ElBruno.VibeVoiceTTS.Realtime",
-      "latestVersion": "0.10.0",
+      "latestVersion": "0.10.2",
       "totalDownloads": 117,
       "description": "Bridge between ElBruno.VibeVoiceTTS and ElBruno.Realtime \u2014 provides ITextToSpeechClient adapter and DI extensions for VibeVoiceTTS integration with the real-time conversation pipeline.",
       "authors": "Bruno Capuano",
@@ -2156,8 +2156,8 @@
         "bridge"
       ],
       "listed": true,
-      "publishedDate": "2026-05-05T14:10:07.77+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-07-05T12:12:26.143+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
