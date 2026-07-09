@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T11:17:30.3047958+00:00",
+  "generatedAt": "2026-07-09T12:16:28.8595347+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -21,16 +21,16 @@
       "icon": "\uD83E\uDDE0"
     },
     {
-      "repo": "elbruno/ElBruno.Text2Image",
-      "configFile": "elbruno-ElBruno.Text2Image.json",
-      "accentColor": "#A4A1C8",
-      "icon": "\uD83D\uDDBC️"
-    },
-    {
       "repo": "elbruno/ElBruno.QwenTTS",
       "configFile": "elbruno-ElBruno.QwenTTS.json",
       "accentColor": "#AC8460",
       "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.Text2Image",
+      "configFile": "elbruno-ElBruno.Text2Image.json",
+      "accentColor": "#A4A1C8",
+      "icon": "\uD83D\uDDBC️"
     },
     {
       "repo": "elbruno/ElBruno.MempalaceNet",
@@ -69,6 +69,12 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#6E94AE",
+      "icon": "⚡"
+    },
+    {
       "repo": "elbruno/ElBruno.AspireMonitor",
       "configFile": "elbruno-ElBruno.AspireMonitor.json",
       "accentColor": "#CFC9B6",
@@ -81,16 +87,16 @@
       "icon": "\uD83C\uDF99️"
     },
     {
-      "repo": "elbruno/ElBruno.Realtime",
-      "configFile": "elbruno-ElBruno.Realtime.json",
-      "accentColor": "#6E94AE",
-      "icon": "⚡"
-    },
-    {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
       "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
       "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Speech",
+      "configFile": "elbruno-ElBruno.Speech.json",
+      "accentColor": "#BBBE5A",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.CopilotCLIMonitor",
@@ -127,12 +133,6 @@
       "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
       "accentColor": "#C3627F",
       "icon": "\uD83D\uDD0C"
-    },
-    {
-      "repo": "elbruno/ElBruno.Speech",
-      "configFile": "elbruno-ElBruno.Speech.json",
-      "accentColor": "#BBBE5A",
-      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/elbruno-ai-evaluation",
