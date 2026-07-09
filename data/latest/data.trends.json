@@ -1,13 +1,9 @@
 {
-  "generatedAt": "2026-07-08T11:17:02.1115037+00:00",
+  "generatedAt": "2026-07-09T12:15:59.8217667+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.LocalEmbeddings": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 2737
-        },
         {
           "date": "2026-04-10",
           "value": 2737
@@ -355,11 +351,15 @@
         {
           "date": "2026-07-07",
           "value": 7537
+        },
+        {
+          "date": "2026-07-08",
+          "value": 7627
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -374,10 +374,6 @@
     },
     "ElBruno.HuggingFace.Downloader": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 2363
-        },
         {
           "date": "2026-04-10",
           "value": 2363
@@ -725,11 +721,15 @@
         {
           "date": "2026-07-07",
           "value": 10562
+        },
+        {
+          "date": "2026-07-08",
+          "value": 10889
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         },
         {
@@ -740,10 +740,6 @@
     },
     "ElBruno.QwenTTS": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 1321
-        },
         {
           "date": "2026-04-10",
           "value": 1321
@@ -1091,11 +1087,15 @@
         {
           "date": "2026-07-07",
           "value": 4101
+        },
+        {
+          "date": "2026-07-08",
+          "value": 4295
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.3.0"
         },
         {
@@ -1122,10 +1122,6 @@
     },
     "ElBruno.LocalLLMs": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 1017
-        },
         {
           "date": "2026-04-10",
           "value": 1017
@@ -1473,11 +1469,15 @@
         {
           "date": "2026-07-07",
           "value": 2424
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2446
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.11.0"
         },
         {
@@ -1500,10 +1500,6 @@
     },
     "ElBruno.VibeVoiceTTS": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 991
-        },
         {
           "date": "2026-04-10",
           "value": 991
@@ -1851,11 +1847,15 @@
         {
           "date": "2026-07-07",
           "value": 2043
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2119
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.1.9"
         },
         {
@@ -1878,10 +1878,6 @@
     },
     "ElBruno.LocalEmbeddings.VectorData": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 732
-        },
         {
           "date": "2026-04-10",
           "value": 732
@@ -2229,11 +2225,15 @@
         {
           "date": "2026-07-07",
           "value": 1956
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1956
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -2248,10 +2248,6 @@
     },
     "ElBruno.LocalEmbeddings.KernelMemory": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 706
-        },
         {
           "date": "2026-04-10",
           "value": 706
@@ -2599,11 +2595,15 @@
         {
           "date": "2026-07-07",
           "value": 1881
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1908
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -2618,10 +2618,6 @@
     },
     "ElBruno.OllamaSharp.Extensions": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 586
-        },
         {
           "date": "2026-04-10",
           "value": 586
@@ -2969,21 +2965,21 @@
         {
           "date": "2026-07-07",
           "value": 788
+        },
+        {
+          "date": "2026-07-08",
+          "value": 788
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.0.2"
         }
       ]
     },
     "ElBruno.Text2Image": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 492
-        },
         {
           "date": "2026-04-10",
           "value": 492
@@ -3331,11 +3327,15 @@
         {
           "date": "2026-07-07",
           "value": 4724
+        },
+        {
+          "date": "2026-07-08",
+          "value": 4728
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -3382,10 +3382,6 @@
     },
     "ElBruno.AgentsOrchestration.Abstractions": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 389
-        },
         {
           "date": "2026-04-10",
           "value": 389
@@ -3733,21 +3729,21 @@
         {
           "date": "2026-07-07",
           "value": 521
+        },
+        {
+          "date": "2026-07-08",
+          "value": 521
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.5"
         }
       ]
     },
     "ElBruno.Realtime": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 390
-        },
         {
           "date": "2026-04-10",
           "value": 390
@@ -4095,11 +4091,15 @@
         {
           "date": "2026-07-07",
           "value": 1023
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1150
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -4114,10 +4114,6 @@
     },
     "ElBruno.LocalEmbeddings.ImageEmbeddings": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 421
-        },
         {
           "date": "2026-04-10",
           "value": 421
@@ -4465,11 +4461,15 @@
         {
           "date": "2026-07-07",
           "value": 1493
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1501
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -4484,10 +4484,6 @@
     },
     "ElBruno.AI.Evaluation": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 271
-        },
         {
           "date": "2026-04-10",
           "value": 271
@@ -4835,21 +4831,21 @@
         {
           "date": "2026-07-07",
           "value": 423
+        },
+        {
+          "date": "2026-07-08",
+          "value": 450
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         }
       ]
     },
     "ElBruno.Text2Image.Cuda": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 297
-        },
         {
           "date": "2026-04-10",
           "value": 297
@@ -5197,11 +5193,15 @@
         {
           "date": "2026-07-07",
           "value": 2841
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2847
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -5248,10 +5248,6 @@
     },
     "ElBruno.AgentsOrchestration.Orchestration": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 357
-        },
         {
           "date": "2026-04-10",
           "value": 357
@@ -5599,21 +5595,21 @@
         {
           "date": "2026-07-07",
           "value": 513
+        },
+        {
+          "date": "2026-07-08",
+          "value": 517
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.5"
         }
       ]
     },
     "ElBruno.ModelContextProtocol.MCPToolRouter": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 355
-        },
         {
           "date": "2026-04-10",
           "value": 355
@@ -5961,21 +5957,21 @@
         {
           "date": "2026-07-07",
           "value": 656
+        },
+        {
+          "date": "2026-07-08",
+          "value": 656
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         }
       ]
     },
     "ElBruno.QRCodeGenerator.CLI": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 295
-        },
         {
           "date": "2026-04-10",
           "value": 295
@@ -6323,21 +6319,21 @@
         {
           "date": "2026-07-07",
           "value": 451
+        },
+        {
+          "date": "2026-07-08",
+          "value": 451
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         }
       ]
     },
     "ElBruno.Realtime.Whisper": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 295
-        },
         {
           "date": "2026-04-10",
           "value": 295
@@ -6685,11 +6681,15 @@
         {
           "date": "2026-07-07",
           "value": 740
+        },
+        {
+          "date": "2026-07-08",
+          "value": 756
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -6704,10 +6704,6 @@
     },
     "ElBruno.Text2Image.Foundry": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 301
-        },
         {
           "date": "2026-04-10",
           "value": 301
@@ -7055,11 +7051,15 @@
         {
           "date": "2026-07-07",
           "value": 2814
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2827
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -7106,10 +7106,6 @@
     },
     "ElBruno.Text2Image.Cpu": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 293
-        },
         {
           "date": "2026-04-10",
           "value": 293
@@ -7457,11 +7453,15 @@
         {
           "date": "2026-07-07",
           "value": 2900
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2901
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -7508,10 +7508,6 @@
     },
     "ElBruno.Text2Image.DirectML": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 284
-        },
         {
           "date": "2026-04-10",
           "value": 284
@@ -7859,11 +7855,15 @@
         {
           "date": "2026-07-07",
           "value": 2801
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2801
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -7910,10 +7910,6 @@
     },
     "ElBruno.PersonaPlex": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 306
-        },
         {
           "date": "2026-04-10",
           "value": 306
@@ -8261,11 +8257,15 @@
         {
           "date": "2026-07-07",
           "value": 453
+        },
+        {
+          "date": "2026-07-08",
+          "value": 468
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -8276,10 +8276,6 @@
     },
     "ElBruno.Realtime.SileroVad": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 287
-        },
         {
           "date": "2026-04-10",
           "value": 287
@@ -8627,11 +8623,15 @@
         {
           "date": "2026-07-07",
           "value": 721
+        },
+        {
+          "date": "2026-07-08",
+          "value": 748
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -8646,10 +8646,6 @@
     },
     "ElBruno.ClockTray": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 268
-        },
         {
           "date": "2026-04-10",
           "value": 268
@@ -8997,11 +8993,15 @@
         {
           "date": "2026-07-07",
           "value": 661
+        },
+        {
+          "date": "2026-07-08",
+          "value": 669
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.5"
         },
         {
@@ -9016,10 +9016,6 @@
     },
     "ElBruno.QRCodeGenerator.Svg": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 215
-        },
         {
           "date": "2026-04-10",
           "value": 215
@@ -9367,21 +9363,21 @@
         {
           "date": "2026-07-07",
           "value": 327
+        },
+        {
+          "date": "2026-07-08",
+          "value": 327
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         }
       ]
     },
     "ElBruno.MarkItDotNet": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 220
-        },
         {
           "date": "2026-04-10",
           "value": 220
@@ -9729,11 +9725,15 @@
         {
           "date": "2026-07-07",
           "value": 14730
+        },
+        {
+          "date": "2026-07-08",
+          "value": 14916
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         },
         {
@@ -9760,10 +9760,6 @@
     },
     "ElBruno.MarkItDotNet.AI": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 162
-        },
         {
           "date": "2026-04-10",
           "value": 162
@@ -10111,11 +10107,15 @@
         {
           "date": "2026-07-07",
           "value": 9365
+        },
+        {
+          "date": "2026-07-08",
+          "value": 9478
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         },
         {
@@ -10142,10 +10142,6 @@
     },
     "ElBruno.AI.Evaluation.Xunit": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 177
-        },
         {
           "date": "2026-04-10",
           "value": 177
@@ -10493,21 +10489,21 @@
         {
           "date": "2026-07-07",
           "value": 285
+        },
+        {
+          "date": "2026-07-08",
+          "value": 297
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         }
       ]
     },
     "ElBruno.AI.Evaluation.SyntheticData": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 173
-        },
         {
           "date": "2026-04-10",
           "value": 173
@@ -10855,21 +10851,21 @@
         {
           "date": "2026-07-07",
           "value": 289
+        },
+        {
+          "date": "2026-07-08",
+          "value": 326
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         }
       ]
     },
     "ElBruno.QRCodeGenerator.Ascii": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 143
-        },
         {
           "date": "2026-04-10",
           "value": 143
@@ -11217,21 +11213,21 @@
         {
           "date": "2026-07-07",
           "value": 240
+        },
+        {
+          "date": "2026-07-08",
+          "value": 240
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         }
       ]
     },
     "ElBruno.MarkItDotNet.Excel": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 163
-        },
         {
           "date": "2026-04-10",
           "value": 163
@@ -11579,11 +11575,15 @@
         {
           "date": "2026-07-07",
           "value": 12092
+        },
+        {
+          "date": "2026-07-08",
+          "value": 12260
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         },
         {
@@ -11610,10 +11610,6 @@
     },
     "ElBruno.AI.Evaluation.Reporting": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 178
-        },
         {
           "date": "2026-04-10",
           "value": 178
@@ -11961,21 +11957,21 @@
         {
           "date": "2026-07-07",
           "value": 287
+        },
+        {
+          "date": "2026-07-08",
+          "value": 339
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         }
       ]
     },
     "ElBruno.QRCodeGenerator.Payloads": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 187
-        },
         {
           "date": "2026-04-10",
           "value": 187
@@ -12323,21 +12319,21 @@
         {
           "date": "2026-07-07",
           "value": 362
+        },
+        {
+          "date": "2026-07-08",
+          "value": 362
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         }
       ]
     },
     "ElBruno.QRCodeGenerator.Tool": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 161
-        },
         {
           "date": "2026-04-10",
           "value": 161
@@ -12685,21 +12681,21 @@
         {
           "date": "2026-07-07",
           "value": 256
+        },
+        {
+          "date": "2026-07-08",
+          "value": 256
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         }
       ]
     },
     "ElBruno.Whisper": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 171
-        },
         {
           "date": "2026-04-10",
           "value": 171
@@ -13047,11 +13043,15 @@
         {
           "date": "2026-07-07",
           "value": 1230
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1294
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.1.5"
         },
         {
@@ -13074,10 +13074,6 @@
     },
     "ElBruno.MarkItDotNet.PowerPoint": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 160
-        },
         {
           "date": "2026-04-10",
           "value": 160
@@ -13425,11 +13421,15 @@
         {
           "date": "2026-07-07",
           "value": 11630
+        },
+        {
+          "date": "2026-07-08",
+          "value": 11649
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         },
         {
@@ -13456,10 +13456,6 @@
     },
     "ElBruno.QRCodeGenerator.Image": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 142
-        },
         {
           "date": "2026-04-10",
           "value": 142
@@ -13807,21 +13803,21 @@
         {
           "date": "2026-07-07",
           "value": 228
+        },
+        {
+          "date": "2026-07-08",
+          "value": 228
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         }
       ]
     },
     "ElBruno.QRCodeGenerator.Pdf": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 122
-        },
         {
           "date": "2026-04-10",
           "value": 122
@@ -14169,21 +14165,21 @@
         {
           "date": "2026-07-07",
           "value": 229
+        },
+        {
+          "date": "2026-07-08",
+          "value": 229
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         }
       ]
     },
     "elbruno.Extensions.AI.Skills.Core": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 90
-        },
         {
           "date": "2026-04-10",
           "value": 90
@@ -14531,21 +14527,21 @@
         {
           "date": "2026-07-07",
           "value": 124
+        },
+        {
+          "date": "2026-07-08",
+          "value": 124
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.1.0"
         }
       ]
     },
     "elbruno.Extensions.AI.Skills.Cli": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 99
-        },
         {
           "date": "2026-04-10",
           "value": 99
@@ -14893,21 +14889,21 @@
         {
           "date": "2026-07-07",
           "value": 137
+        },
+        {
+          "date": "2026-07-08",
+          "value": 137
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.1.0"
         }
       ]
     },
     "ElBruno.MarkItDotNet.Whisper": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 86
-        },
         {
           "date": "2026-04-10",
           "value": 86
@@ -15255,11 +15251,15 @@
         {
           "date": "2026-07-07",
           "value": 1173
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1177
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         },
         {
@@ -15286,10 +15286,6 @@
     },
     "ElBruno.LocalLLMs.Rag": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 36
-        },
         {
           "date": "2026-04-10",
           "value": 36
@@ -15637,11 +15633,15 @@
         {
           "date": "2026-07-07",
           "value": 649
+        },
+        {
+          "date": "2026-07-08",
+          "value": 665
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.11.0"
         },
         {
@@ -15664,10 +15664,6 @@
     },
     "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -16015,11 +16011,15 @@
         {
           "date": "2026-07-07",
           "value": 914
+        },
+        {
+          "date": "2026-07-08",
+          "value": 915
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -16034,10 +16034,6 @@
     },
     "ElBruno.LocalEmbeddings.Npu.Intel": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -16385,11 +16381,15 @@
         {
           "date": "2026-07-07",
           "value": 808
+        },
+        {
+          "date": "2026-07-08",
+          "value": 811
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -16404,10 +16404,6 @@
     },
     "ElBruno.HuggingFace.Downloader.Cli": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -16755,11 +16751,15 @@
         {
           "date": "2026-07-07",
           "value": 402
+        },
+        {
+          "date": "2026-07-08",
+          "value": 601
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.1.0"
         },
         {
@@ -16770,10 +16770,6 @@
     },
     "ElBruno.LocalEmbeddings.Npu": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -17121,11 +17117,15 @@
         {
           "date": "2026-07-07",
           "value": 802
+        },
+        {
+          "date": "2026-07-08",
+          "value": 807
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -17140,10 +17140,6 @@
     },
     "ElBruno.LocalEmbeddings.Npu.Qualcomm": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -17491,11 +17487,15 @@
         {
           "date": "2026-07-07",
           "value": 815
+        },
+        {
+          "date": "2026-07-08",
+          "value": 818
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -17510,10 +17510,6 @@
     },
     "ElBruno.MarkItDotNet.Cli": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -17861,11 +17857,15 @@
         {
           "date": "2026-07-07",
           "value": 772
+        },
+        {
+          "date": "2026-07-08",
+          "value": 777
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.5.2"
         },
         {
@@ -17892,10 +17892,6 @@
     },
     "graphify-dotnet": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -18243,11 +18239,15 @@
         {
           "date": "2026-07-07",
           "value": 2661
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2686
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "0.6.0"
         },
         {
@@ -18266,10 +18266,6 @@
     },
     "ElBruno.LocalEmbeddings.Harrier": {
       "downloads": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -18617,11 +18613,15 @@
         {
           "date": "2026-07-07",
           "value": 929
+        },
+        {
+          "date": "2026-07-08",
+          "value": 930
         }
       ],
       "versionHistory": [
         {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "version": "1.4.3"
         },
         {
@@ -18970,6 +18970,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 556
+        },
+        {
+          "date": "2026-07-08",
           "value": 556
         }
       ],
@@ -19333,6 +19337,10 @@
         {
           "date": "2026-07-07",
           "value": 657
+        },
+        {
+          "date": "2026-07-08",
+          "value": 658
         }
       ],
       "versionHistory": [
@@ -19694,6 +19702,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 579
+        },
+        {
+          "date": "2026-07-08",
           "value": 579
         }
       ],
@@ -20057,6 +20069,10 @@
         {
           "date": "2026-07-07",
           "value": 556
+        },
+        {
+          "date": "2026-07-08",
+          "value": 557
         }
       ],
       "versionHistory": [
@@ -20418,6 +20434,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 562
+        },
+        {
+          "date": "2026-07-08",
           "value": 562
         }
       ],
@@ -20781,6 +20801,10 @@
         {
           "date": "2026-07-07",
           "value": 13895
+        },
+        {
+          "date": "2026-07-08",
+          "value": 13931
         }
       ],
       "versionHistory": [
@@ -21143,6 +21167,10 @@
         {
           "date": "2026-07-07",
           "value": 932
+        },
+        {
+          "date": "2026-07-08",
+          "value": 934
         }
       ],
       "versionHistory": [
@@ -21505,6 +21533,10 @@
         {
           "date": "2026-07-07",
           "value": 555
+        },
+        {
+          "date": "2026-07-08",
+          "value": 556
         }
       ],
       "versionHistory": [
@@ -21867,6 +21899,10 @@
         {
           "date": "2026-07-07",
           "value": 567
+        },
+        {
+          "date": "2026-07-08",
+          "value": 567
         }
       ],
       "versionHistory": [
@@ -22217,6 +22253,10 @@
         {
           "date": "2026-07-07",
           "value": 300
+        },
+        {
+          "date": "2026-07-08",
+          "value": 300
         }
       ],
       "versionHistory": [
@@ -22554,6 +22594,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 221
+        },
+        {
+          "date": "2026-07-08",
           "value": 221
         }
       ],
@@ -22893,6 +22937,10 @@
         {
           "date": "2026-07-07",
           "value": 223
+        },
+        {
+          "date": "2026-07-08",
+          "value": 223
         }
       ],
       "versionHistory": [
@@ -23231,6 +23279,10 @@
         {
           "date": "2026-07-07",
           "value": 227
+        },
+        {
+          "date": "2026-07-08",
+          "value": 227
         }
       ],
       "versionHistory": [
@@ -23565,6 +23617,10 @@
         {
           "date": "2026-07-07",
           "value": 700
+        },
+        {
+          "date": "2026-07-08",
+          "value": 732
         }
       ],
       "versionHistory": [
@@ -23899,6 +23955,10 @@
         {
           "date": "2026-07-07",
           "value": 524
+        },
+        {
+          "date": "2026-07-08",
+          "value": 587
         }
       ],
       "versionHistory": [
@@ -24229,6 +24289,10 @@
         {
           "date": "2026-07-07",
           "value": 2149
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2149
         }
       ],
       "versionHistory": [
@@ -24551,6 +24615,10 @@
         {
           "date": "2026-07-07",
           "value": 1009
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1011
         }
       ],
       "versionHistory": [
@@ -24869,6 +24937,10 @@
         {
           "date": "2026-07-07",
           "value": 2064
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2068
         }
       ],
       "versionHistory": [
@@ -25183,6 +25255,10 @@
         {
           "date": "2026-07-07",
           "value": 915
+        },
+        {
+          "date": "2026-07-08",
+          "value": 916
         }
       ],
       "versionHistory": [
@@ -25497,6 +25573,10 @@
         {
           "date": "2026-07-07",
           "value": 2480
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2482
         }
       ],
       "versionHistory": [
@@ -25810,6 +25890,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1064
+        },
+        {
+          "date": "2026-07-08",
           "value": 1064
         }
       ],
@@ -26125,6 +26209,10 @@
         {
           "date": "2026-07-07",
           "value": 793
+        },
+        {
+          "date": "2026-07-08",
+          "value": 793
         }
       ],
       "versionHistory": [
@@ -26439,6 +26527,10 @@
         {
           "date": "2026-07-07",
           "value": 809
+        },
+        {
+          "date": "2026-07-08",
+          "value": 810
         }
       ],
       "versionHistory": [
@@ -26752,6 +26844,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 765
+        },
+        {
+          "date": "2026-07-08",
           "value": 765
         }
       ],
@@ -27067,6 +27163,10 @@
         {
           "date": "2026-07-07",
           "value": 818
+        },
+        {
+          "date": "2026-07-08",
+          "value": 818
         }
       ],
       "versionHistory": [
@@ -27381,6 +27481,10 @@
         {
           "date": "2026-07-07",
           "value": 2097
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2100
         }
       ],
       "versionHistory": [
@@ -27695,6 +27799,10 @@
         {
           "date": "2026-07-07",
           "value": 835
+        },
+        {
+          "date": "2026-07-08",
+          "value": 835
         }
       ],
       "versionHistory": [
@@ -28005,6 +28113,10 @@
         {
           "date": "2026-07-07",
           "value": 1334
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1335
         }
       ],
       "versionHistory": [
@@ -28307,6 +28419,10 @@
         {
           "date": "2026-07-07",
           "value": 572
+        },
+        {
+          "date": "2026-07-08",
+          "value": 573
         }
       ],
       "versionHistory": [
@@ -28589,6 +28705,10 @@
         {
           "date": "2026-07-07",
           "value": 583
+        },
+        {
+          "date": "2026-07-08",
+          "value": 593
         }
       ],
       "versionHistory": [
@@ -28867,6 +28987,10 @@
         {
           "date": "2026-07-07",
           "value": 518
+        },
+        {
+          "date": "2026-07-08",
+          "value": 518
         }
       ],
       "versionHistory": [
@@ -29137,6 +29261,10 @@
         {
           "date": "2026-07-07",
           "value": 199
+        },
+        {
+          "date": "2026-07-08",
+          "value": 298
         }
       ],
       "versionHistory": [
@@ -29395,6 +29523,10 @@
         {
           "date": "2026-07-07",
           "value": 196
+        },
+        {
+          "date": "2026-07-08",
+          "value": 296
         }
       ],
       "versionHistory": [
@@ -29653,6 +29785,10 @@
         {
           "date": "2026-07-07",
           "value": 218
+        },
+        {
+          "date": "2026-07-08",
+          "value": 251
         }
       ],
       "versionHistory": [
@@ -29891,6 +30027,10 @@
         {
           "date": "2026-07-07",
           "value": 240
+        },
+        {
+          "date": "2026-07-08",
+          "value": 240
         }
       ],
       "versionHistory": [
@@ -30117,6 +30257,10 @@
         {
           "date": "2026-07-07",
           "value": 631
+        },
+        {
+          "date": "2026-07-08",
+          "value": 633
         }
       ],
       "versionHistory": [
@@ -30307,6 +30451,10 @@
         {
           "date": "2026-07-07",
           "value": 415
+        },
+        {
+          "date": "2026-07-08",
+          "value": 416
         }
       ],
       "versionHistory": [
@@ -30489,6 +30637,10 @@
         {
           "date": "2026-07-07",
           "value": 440
+        },
+        {
+          "date": "2026-07-08",
+          "value": 443
         }
       ],
       "versionHistory": [
@@ -30671,6 +30823,10 @@
         {
           "date": "2026-07-07",
           "value": 409
+        },
+        {
+          "date": "2026-07-08",
+          "value": 410
         }
       ],
       "versionHistory": [
@@ -30817,6 +30973,10 @@
         {
           "date": "2026-07-07",
           "value": 1168
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1169
         }
       ],
       "versionHistory": [
@@ -30959,6 +31119,10 @@
         {
           "date": "2026-07-07",
           "value": 356
+        },
+        {
+          "date": "2026-07-08",
+          "value": 405
         }
       ],
       "versionHistory": [
@@ -31069,6 +31233,10 @@
         {
           "date": "2026-07-07",
           "value": 113
+        },
+        {
+          "date": "2026-07-08",
+          "value": 113
         }
       ],
       "versionHistory": [
@@ -31175,6 +31343,10 @@
         {
           "date": "2026-07-07",
           "value": 106
+        },
+        {
+          "date": "2026-07-08",
+          "value": 106
         }
       ],
       "versionHistory": [
@@ -31201,6 +31373,10 @@
         {
           "date": "2026-07-07",
           "value": 192
+        },
+        {
+          "date": "2026-07-08",
+          "value": 235
         }
       ],
       "versionHistory": [
@@ -31231,6 +31407,10 @@
         {
           "date": "2026-07-07",
           "value": 248
+        },
+        {
+          "date": "2026-07-08",
+          "value": 344
         }
       ],
       "versionHistory": [
@@ -31261,6 +31441,10 @@
         {
           "date": "2026-07-07",
           "value": 174
+        },
+        {
+          "date": "2026-07-08",
+          "value": 373
         }
       ],
       "versionHistory": [
@@ -31291,6 +31475,10 @@
         {
           "date": "2026-07-07",
           "value": 242
+        },
+        {
+          "date": "2026-07-08",
+          "value": 344
         }
       ],
       "versionHistory": [
@@ -31321,6 +31509,10 @@
         {
           "date": "2026-07-07",
           "value": 195
+        },
+        {
+          "date": "2026-07-08",
+          "value": 317
         }
       ],
       "versionHistory": [
@@ -31351,6 +31543,10 @@
         {
           "date": "2026-07-07",
           "value": 207
+        },
+        {
+          "date": "2026-07-08",
+          "value": 341
         }
       ],
       "versionHistory": [
@@ -31381,6 +31577,10 @@
         {
           "date": "2026-07-07",
           "value": 195
+        },
+        {
+          "date": "2026-07-08",
+          "value": 227
         }
       ],
       "versionHistory": [
@@ -31411,6 +31611,10 @@
         {
           "date": "2026-07-07",
           "value": 194
+        },
+        {
+          "date": "2026-07-08",
+          "value": 236
         }
       ],
       "versionHistory": [
@@ -31441,6 +31645,10 @@
         {
           "date": "2026-07-07",
           "value": 1216
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1594
         }
       ],
       "versionHistory": [
@@ -31467,10 +31675,6 @@
     "elbruno/elbruno.localembeddings": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 25
-        },
-        {
           "date": "2026-04-10",
           "value": 25
         },
@@ -31817,13 +32021,13 @@
         {
           "date": "2026-07-07",
           "value": 35
+        },
+        {
+          "date": "2026-07-08",
+          "value": 35
         }
       ],
       "forks": [
-        {
-          "date": "2026-04-09",
-          "value": 1
-        },
         {
           "date": "2026-04-10",
           "value": 1
@@ -32170,15 +32374,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -32524,15 +32728,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -32878,6 +33082,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -32885,10 +33093,6 @@
     "elbruno/ElBruno.HuggingFace.Downloader": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 4
-        },
-        {
           "date": "2026-04-10",
           "value": 4
         },
@@ -33235,14 +33439,14 @@
         {
           "date": "2026-07-07",
           "value": 8
+        },
+        {
+          "date": "2026-07-08",
+          "value": 8
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -33589,14 +33793,14 @@
         {
           "date": "2026-07-07",
           "value": 1
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -33943,14 +34147,14 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -34297,15 +34501,15 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1
         }
       ]
     },
     "elbruno/ElBruno.QwenTTS": {
       "stars": [
-        {
-          "date": "2026-04-09",
-          "value": 17
-        },
         {
           "date": "2026-04-10",
           "value": 17
@@ -34653,13 +34857,13 @@
         {
           "date": "2026-07-07",
           "value": 35
+        },
+        {
+          "date": "2026-07-08",
+          "value": 35
         }
       ],
       "forks": [
-        {
-          "date": "2026-04-09",
-          "value": 1
-        },
         {
           "date": "2026-04-10",
           "value": 2
@@ -35007,13 +35211,13 @@
         {
           "date": "2026-07-07",
           "value": 6
+        },
+        {
+          "date": "2026-07-08",
+          "value": 6
         }
       ],
       "openIssues": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -35361,13 +35565,13 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -35714,6 +35918,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -35721,10 +35929,6 @@
     "elbruno/ElBruno.LocalLLMs": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 8
-        },
-        {
           "date": "2026-04-10",
           "value": 8
         },
@@ -36071,13 +36275,13 @@
         {
           "date": "2026-07-07",
           "value": 15
+        },
+        {
+          "date": "2026-07-08",
+          "value": 15
         }
       ],
       "forks": [
-        {
-          "date": "2026-04-09",
-          "value": 3
-        },
         {
           "date": "2026-04-10",
           "value": 3
@@ -36425,13 +36629,13 @@
         {
           "date": "2026-07-07",
           "value": 4
+        },
+        {
+          "date": "2026-07-08",
+          "value": 4
         }
       ],
       "openIssues": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -36779,13 +36983,13 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -37132,6 +37336,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -37139,10 +37347,6 @@
     "elbruno/ElBruno.VibeVoiceTTS": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 10
-        },
-        {
           "date": "2026-04-10",
           "value": 10
         },
@@ -37488,15 +37692,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 14
+        },
+        {
+          "date": "2026-07-08",
           "value": 14
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 1
-        },
-        {
           "date": "2026-04-10",
           "value": 1
         },
@@ -37843,13 +38047,13 @@
         {
           "date": "2026-07-07",
           "value": 2
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2
         }
       ],
       "openIssues": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -38197,13 +38401,13 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -38550,6 +38754,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -38557,10 +38765,6 @@
     "elbruno/elbruno.OllamaSharp.Extensions": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 4
-        },
-        {
           "date": "2026-04-10",
           "value": 4
         },
@@ -38906,15 +39110,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 5
+        },
+        {
+          "date": "2026-07-08",
           "value": 5
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -39260,15 +39464,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -39614,15 +39818,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -39968,6 +40172,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -39975,10 +40183,6 @@
     "elbruno/ElBruno.Text2Image": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 4
-        },
-        {
           "date": "2026-04-10",
           "value": 4
         },
@@ -40324,15 +40528,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 8
+        },
+        {
+          "date": "2026-07-08",
           "value": 8
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -40678,15 +40882,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -41032,15 +41236,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -41386,16 +41590,16 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
     },
     "elbruno/ElBruno.Realtime": {
       "stars": [
-        {
-          "date": "2026-04-09",
-          "value": 14
-        },
         {
           "date": "2026-04-10",
           "value": 14
@@ -41743,13 +41947,13 @@
         {
           "date": "2026-07-07",
           "value": 23
+        },
+        {
+          "date": "2026-07-08",
+          "value": 23
         }
       ],
       "forks": [
-        {
-          "date": "2026-04-09",
-          "value": 1
-        },
         {
           "date": "2026-04-10",
           "value": 1
@@ -42096,15 +42300,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 2
+        },
+        {
+          "date": "2026-07-08",
           "value": 2
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -42451,13 +42655,13 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -42804,6 +43008,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -42811,10 +43019,6 @@
     "elbruno/elbruno-ai-evaluation": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 1
-        },
-        {
           "date": "2026-04-10",
           "value": 1
         },
@@ -43160,15 +43364,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 4
+        },
+        {
+          "date": "2026-07-08",
           "value": 4
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -43514,15 +43718,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -43868,15 +44072,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -44222,6 +44426,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -44229,10 +44437,6 @@
     "elbruno/ElBruno.ModelContextProtocol": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 4
-        },
-        {
           "date": "2026-04-10",
           "value": 4
         },
@@ -44578,15 +44782,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 8
+        },
+        {
+          "date": "2026-07-08",
           "value": 8
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -44932,15 +45136,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -45286,15 +45490,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -45640,6 +45844,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -45647,10 +45855,6 @@
     "elbruno/ElBruno.PersonaPlex": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 5
-        },
-        {
           "date": "2026-04-10",
           "value": 5
         },
@@ -45992,15 +46196,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 6
+        },
+        {
+          "date": "2026-07-08",
           "value": 6
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -46342,15 +46546,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -46692,15 +46896,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -47042,6 +47246,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -47049,10 +47257,6 @@
     "elbruno/ElBruno.ClockTray": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 3
-        },
-        {
           "date": "2026-04-10",
           "value": 3
         },
@@ -47394,15 +47598,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 6
+        },
+        {
+          "date": "2026-07-08",
           "value": 6
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -47744,15 +47948,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -48094,15 +48298,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -48444,6 +48648,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -48451,10 +48659,6 @@
     "elbruno/ElBruno.QRCodeGenerator": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 5
-        },
-        {
           "date": "2026-04-10",
           "value": 5
         },
@@ -48796,15 +49000,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 9
+        },
+        {
+          "date": "2026-07-08",
           "value": 9
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 1
-        },
-        {
           "date": "2026-04-10",
           "value": 1
         },
@@ -49146,15 +49350,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -49496,15 +49700,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -49846,16 +50050,16 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
     },
     "elbruno/ElBruno.MarkItDotNet": {
       "stars": [
-        {
-          "date": "2026-04-09",
-          "value": 8
-        },
         {
           "date": "2026-04-10",
           "value": 11
@@ -50203,13 +50407,13 @@
         {
           "date": "2026-07-07",
           "value": 30
+        },
+        {
+          "date": "2026-07-08",
+          "value": 30
         }
       ],
       "forks": [
-        {
-          "date": "2026-04-09",
-          "value": 4
-        },
         {
           "date": "2026-04-10",
           "value": 4
@@ -50556,15 +50760,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 4
+        },
+        {
+          "date": "2026-07-08",
           "value": 4
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -50910,15 +51114,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 8
+        },
+        {
+          "date": "2026-07-08",
           "value": 8
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -51264,16 +51468,16 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
     },
     "elbruno/ElBruno.Whisper": {
       "stars": [
-        {
-          "date": "2026-04-09",
-          "value": 2
-        },
         {
           "date": "2026-04-10",
           "value": 2
@@ -51621,13 +51825,13 @@
         {
           "date": "2026-07-07",
           "value": 7
+        },
+        {
+          "date": "2026-07-08",
+          "value": 8
         }
       ],
       "forks": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -51975,13 +52179,13 @@
         {
           "date": "2026-07-07",
           "value": 3
+        },
+        {
+          "date": "2026-07-08",
+          "value": 3
         }
       ],
       "openIssues": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 2
@@ -52329,13 +52533,13 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -52683,16 +52887,16 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ]
     },
     "elbruno/elbruno-agentskills": {
       "stars": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -53034,15 +53238,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
       "forks": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -53384,15 +53588,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openIssues": [
         {
-          "date": "2026-04-09",
-          "value": 1
-        },
-        {
           "date": "2026-04-10",
           "value": 1
         },
@@ -53734,15 +53938,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 1
-        },
-        {
           "date": "2026-04-10",
           "value": 1
         },
@@ -54084,16 +54288,16 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
     },
     "elbruno/graphify-dotnet": {
       "stars": [
-        {
-          "date": "2026-04-09",
-          "value": 28
-        },
         {
           "date": "2026-04-10",
           "value": 30
@@ -54437,13 +54641,13 @@
         {
           "date": "2026-07-07",
           "value": 85
+        },
+        {
+          "date": "2026-07-08",
+          "value": 86
         }
       ],
       "forks": [
-        {
-          "date": "2026-04-09",
-          "value": 6
-        },
         {
           "date": "2026-04-10",
           "value": 7
@@ -54787,13 +54991,13 @@
         {
           "date": "2026-07-07",
           "value": 13
+        },
+        {
+          "date": "2026-07-08",
+          "value": 13
         }
       ],
       "openIssues": [
-        {
-          "date": "2026-04-09",
-          "value": 0
-        },
         {
           "date": "2026-04-10",
           "value": 0
@@ -55136,15 +55340,15 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
       "openPullRequests": [
         {
-          "date": "2026-04-09",
-          "value": 0
-        },
-        {
           "date": "2026-04-10",
           "value": 0
         },
@@ -55486,6 +55690,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -55783,6 +55991,10 @@
         {
           "date": "2026-07-07",
           "value": 63
+        },
+        {
+          "date": "2026-07-08",
+          "value": 63
         }
       ],
       "forks": [
@@ -56077,6 +56289,10 @@
         {
           "date": "2026-07-07",
           "value": 23
+        },
+        {
+          "date": "2026-07-08",
+          "value": 23
         }
       ],
       "openIssues": [
@@ -56371,6 +56587,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -56664,6 +56884,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -56953,6 +57177,10 @@
         {
           "date": "2026-07-07",
           "value": 11
+        },
+        {
+          "date": "2026-07-08",
+          "value": 11
         }
       ],
       "forks": [
@@ -57238,6 +57466,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
@@ -57525,6 +57757,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -57811,6 +58047,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ]
     },
@@ -58095,6 +58335,10 @@
         {
           "date": "2026-07-07",
           "value": 7
+        },
+        {
+          "date": "2026-07-08",
+          "value": 7
         }
       ],
       "forks": [
@@ -58376,6 +58620,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
@@ -58659,6 +58907,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -58940,6 +59192,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -59217,6 +59473,10 @@
         {
           "date": "2026-07-07",
           "value": 4
+        },
+        {
+          "date": "2026-07-08",
+          "value": 4
         }
       ],
       "forks": [
@@ -59490,6 +59750,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
@@ -59765,6 +60029,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -60038,6 +60306,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -60315,6 +60587,10 @@
         {
           "date": "2026-07-07",
           "value": 2
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2
         }
       ],
       "forks": [
@@ -60588,6 +60864,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
@@ -60863,6 +61143,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -61136,6 +61420,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -61353,6 +61641,10 @@
         {
           "date": "2026-07-07",
           "value": 1
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1
         }
       ],
       "forks": [
@@ -61566,6 +61858,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
@@ -61781,6 +62077,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 3
         }
       ],
       "openPullRequests": [
@@ -61995,6 +62295,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 3
         }
       ]
     },
@@ -62171,6 +62475,10 @@
         {
           "date": "2026-07-07",
           "value": 6
+        },
+        {
+          "date": "2026-07-08",
+          "value": 6
         }
       ],
       "forks": [
@@ -62344,6 +62652,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
@@ -62519,6 +62831,10 @@
         {
           "date": "2026-07-07",
           "value": 5
+        },
+        {
+          "date": "2026-07-08",
+          "value": 5
         }
       ],
       "openPullRequests": [
@@ -62692,6 +63008,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 5
+        },
+        {
+          "date": "2026-07-08",
           "value": 5
         }
       ]
@@ -62833,6 +63153,10 @@
         {
           "date": "2026-07-07",
           "value": 2
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2
         }
       ],
       "forks": [
@@ -62970,6 +63294,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
@@ -63109,6 +63437,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -63246,6 +63578,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -63379,6 +63715,10 @@
         {
           "date": "2026-07-07",
           "value": 4
+        },
+        {
+          "date": "2026-07-08",
+          "value": 4
         }
       ],
       "forks": [
@@ -63508,6 +63848,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ],
@@ -63639,6 +63983,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -63768,6 +64116,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -63793,6 +64145,10 @@
         {
           "date": "2026-07-07",
           "value": 2
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2
         }
       ],
       "forks": [
@@ -63814,6 +64170,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
@@ -63837,6 +64197,10 @@
         {
           "date": "2026-07-07",
           "value": 1
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1
         }
       ],
       "openPullRequests": [
@@ -63858,6 +64222,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 1
+        },
+        {
+          "date": "2026-07-08",
           "value": 1
         }
       ]
@@ -63883,6 +64251,10 @@
         {
           "date": "2026-07-07",
           "value": 2
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2
         }
       ],
       "forks": [
@@ -63904,6 +64276,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
@@ -63927,6 +64303,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -63948,6 +64328,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ]
@@ -63969,6 +64353,10 @@
         {
           "date": "2026-07-07",
           "value": 1
+        },
+        {
+          "date": "2026-07-08",
+          "value": 1
         }
       ],
       "forks": [
@@ -63986,6 +64374,10 @@
         },
         {
           "date": "2026-07-07",
+          "value": 0
+        },
+        {
+          "date": "2026-07-08",
           "value": 0
         }
       ],
@@ -64005,6 +64397,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -64023,6 +64419,10 @@
         {
           "date": "2026-07-07",
           "value": 0
+        },
+        {
+          "date": "2026-07-08",
+          "value": 0
         }
       ]
     }
@@ -64030,337 +64430,337 @@
   "velocities": [
     {
       "packageId": "ElBruno.LocalEmbeddings",
-      "avgDailyDownloads": 37.14,
+      "avgDailyDownloads": 47.14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.HuggingFace.Downloader",
-      "avgDailyDownloads": 93,
+      "avgDailyDownloads": 136.43,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QwenTTS",
-      "avgDailyDownloads": 40.14,
+      "avgDailyDownloads": 67.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalLLMs",
-      "avgDailyDownloads": 23.71,
+      "avgDailyDownloads": 26.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.VibeVoiceTTS",
-      "avgDailyDownloads": 27.14,
+      "avgDailyDownloads": 38,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.VectorData",
-      "avgDailyDownloads": 6.29,
-      "staleDays": 1,
+      "avgDailyDownloads": 6.14,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
-      "avgDailyDownloads": 6.29,
-      "staleDays": 1,
+      "avgDailyDownloads": 10.14,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.OllamaSharp.Extensions",
-      "avgDailyDownloads": 1,
-      "staleDays": 4,
+      "avgDailyDownloads": 0.86,
+      "staleDays": 5,
       "isStale": true
     },
     {
       "packageId": "ElBruno.Text2Image",
-      "avgDailyDownloads": 12.14,
+      "avgDailyDownloads": 12.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AgentsOrchestration.Abstractions",
       "avgDailyDownloads": 0.86,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Realtime",
-      "avgDailyDownloads": 15.86,
+      "avgDailyDownloads": 34,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings",
-      "avgDailyDownloads": 7.57,
+      "avgDailyDownloads": 7,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation",
-      "avgDailyDownloads": 13.29,
+      "avgDailyDownloads": 17.14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.Cuda",
-      "avgDailyDownloads": 8.43,
-      "staleDays": 1,
+      "avgDailyDownloads": 9.29,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AgentsOrchestration.Orchestration",
-      "avgDailyDownloads": 2,
-      "staleDays": 1,
+      "avgDailyDownloads": 2.14,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter",
-      "avgDailyDownloads": 2.43,
-      "staleDays": 1,
+      "avgDailyDownloads": 2.29,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.CLI",
       "avgDailyDownloads": 0.57,
-      "staleDays": 4,
+      "staleDays": 5,
       "isStale": true
     },
     {
       "packageId": "ElBruno.Realtime.Whisper",
-      "avgDailyDownloads": 14.29,
+      "avgDailyDownloads": 16.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.Foundry",
-      "avgDailyDownloads": 12.86,
+      "avgDailyDownloads": 14.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.Cpu",
-      "avgDailyDownloads": 9.86,
+      "avgDailyDownloads": 10,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.DirectML",
-      "avgDailyDownloads": 7.86,
-      "staleDays": 1,
+      "avgDailyDownloads": 7.57,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.PersonaPlex",
-      "avgDailyDownloads": 6,
+      "avgDailyDownloads": 8.14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Realtime.SileroVad",
-      "avgDailyDownloads": 13.86,
+      "avgDailyDownloads": 17.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.ClockTray",
-      "avgDailyDownloads": 7.29,
+      "avgDailyDownloads": 8.14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Svg",
       "avgDailyDownloads": 0.71,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet",
-      "avgDailyDownloads": 206.14,
+      "avgDailyDownloads": 178.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.AI",
-      "avgDailyDownloads": 129.71,
+      "avgDailyDownloads": 100.29,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation.Xunit",
-      "avgDailyDownloads": 6.71,
+      "avgDailyDownloads": 8.43,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation.SyntheticData",
-      "avgDailyDownloads": 7.57,
-      "staleDays": 1,
+      "avgDailyDownloads": 12.86,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Ascii",
       "avgDailyDownloads": 0.43,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Excel",
-      "avgDailyDownloads": 179,
+      "avgDailyDownloads": 150.43,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AI.Evaluation.Reporting",
-      "avgDailyDownloads": 6.14,
+      "avgDailyDownloads": 13.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Payloads",
       "avgDailyDownloads": 1,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Tool",
       "avgDailyDownloads": 0.43,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Whisper",
-      "avgDailyDownloads": 35.71,
+      "avgDailyDownloads": 44.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.PowerPoint",
-      "avgDailyDownloads": 152.29,
+      "avgDailyDownloads": 107.14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Image",
       "avgDailyDownloads": 0.29,
-      "staleDays": 4,
+      "staleDays": 5,
       "isStale": true
     },
     {
       "packageId": "ElBruno.QRCodeGenerator.Pdf",
       "avgDailyDownloads": 0.71,
-      "staleDays": 0,
+      "staleDays": 1,
       "isStale": false
     },
     {
       "packageId": "elbruno.Extensions.AI.Skills.Core",
       "avgDailyDownloads": 0.29,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "elbruno.Extensions.AI.Skills.Cli",
       "avgDailyDownloads": 0.43,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Whisper",
-      "avgDailyDownloads": 7.14,
+      "avgDailyDownloads": 7,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalLLMs.Rag",
-      "avgDailyDownloads": 17.43,
-      "staleDays": 1,
+      "avgDailyDownloads": 19.57,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
-      "avgDailyDownloads": 2.43,
+      "avgDailyDownloads": 2.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
-      "avgDailyDownloads": 3.71,
-      "staleDays": 1,
+      "avgDailyDownloads": 4.14,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.HuggingFace.Downloader.Cli",
-      "avgDailyDownloads": 38.86,
+      "avgDailyDownloads": 67.29,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu",
-      "avgDailyDownloads": 3.29,
-      "staleDays": 1,
+      "avgDailyDownloads": 4,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
       "avgDailyDownloads": 3,
-      "staleDays": 1,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Cli",
-      "avgDailyDownloads": 3.14,
-      "staleDays": 1,
+      "avgDailyDownloads": 3.57,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "graphify-dotnet",
-      "avgDailyDownloads": 52.29,
+      "avgDailyDownloads": 48.29,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalEmbeddings.Harrier",
-      "avgDailyDownloads": 3.43,
+      "avgDailyDownloads": 3.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Quality",
-      "avgDailyDownloads": 2.29,
-      "staleDays": 0,
+      "avgDailyDownloads": 2,
+      "staleDays": 1,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Citations",
-      "avgDailyDownloads": 3.14,
-      "staleDays": 0,
-      "isStale": false
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.VectorData",
       "avgDailyDownloads": 2.86,
       "staleDays": 0,
       "isStale": false
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.VectorData",
+      "avgDailyDownloads": 2.57,
+      "staleDays": 1,
+      "isStale": false
+    },
+    {
       "packageId": "ElBruno.MarkItDotNet.Sync",
-      "avgDailyDownloads": 2.14,
+      "avgDailyDownloads": 2,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.AzureSearch",
-      "avgDailyDownloads": 2.29,
-      "staleDays": 1,
+      "avgDailyDownloads": 2,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.CoreModel",
-      "avgDailyDownloads": 201.86,
+      "avgDailyDownloads": 153.14,
       "staleDays": 0,
       "isStale": false
     },
@@ -64372,276 +64772,276 @@
     },
     {
       "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
-      "avgDailyDownloads": 2.71,
+      "avgDailyDownloads": 2.43,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Metadata",
-      "avgDailyDownloads": 2.71,
-      "staleDays": 0,
+      "avgDailyDownloads": 2.43,
+      "staleDays": 1,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AotMapper",
       "avgDailyDownloads": 0.29,
-      "staleDays": 4,
+      "staleDays": 5,
       "isStale": true
     },
     {
       "packageId": "ElBruno.AotMapper.Generator",
       "avgDailyDownloads": 0.29,
-      "staleDays": 4,
+      "staleDays": 5,
       "isStale": true
     },
     {
       "packageId": "ElBruno.AotMapper.EntityFramework",
       "avgDailyDownloads": 0.29,
-      "staleDays": 4,
+      "staleDays": 5,
       "isStale": true
     },
     {
       "packageId": "ElBruno.AotMapper.AspNetCore",
       "avgDailyDownloads": 0.71,
-      "staleDays": 4,
+      "staleDays": 5,
       "isStale": true
     },
     {
       "packageId": "ElBruno.QwenTTS.VoiceCloning",
-      "avgDailyDownloads": 26.14,
+      "avgDailyDownloads": 30.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.LocalLLMs.BitNet",
-      "avgDailyDownloads": 13.71,
+      "avgDailyDownloads": 22.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Text2Image.Cli",
-      "avgDailyDownloads": 15.86,
-      "staleDays": 0,
+      "avgDailyDownloads": 15.57,
+      "staleDays": 1,
       "isStale": false
     },
     {
       "packageId": "ElBruno.OllamaMonitor",
-      "avgDailyDownloads": 16.43,
+      "avgDailyDownloads": 14.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Backends.Sqlite",
-      "avgDailyDownloads": 17.14,
+      "avgDailyDownloads": 14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Search",
       "avgDailyDownloads": 3.29,
-      "staleDays": 1,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Core",
-      "avgDailyDownloads": 19.14,
+      "avgDailyDownloads": 15.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Ai",
       "avgDailyDownloads": 2.43,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Agents",
-      "avgDailyDownloads": 2.57,
-      "staleDays": 1,
+      "avgDailyDownloads": 2.29,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Mcp",
-      "avgDailyDownloads": 1.57,
-      "staleDays": 1,
+      "avgDailyDownloads": 1.71,
+      "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Mining",
       "avgDailyDownloads": 2.29,
-      "staleDays": 0,
+      "staleDays": 1,
       "isStale": false
     },
     {
       "packageId": "mempalacenet",
       "avgDailyDownloads": 2,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "MemPalace.KnowledgeGraph",
-      "avgDailyDownloads": 17.43,
+      "avgDailyDownloads": 14.29,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "mempalacenet-bench",
       "avgDailyDownloads": 2,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.AspireMonitor",
-      "avgDailyDownloads": 5.14,
+      "avgDailyDownloads": 5.29,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Reranking",
-      "avgDailyDownloads": 3,
+      "avgDailyDownloads": 3.14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.BM25",
-      "avgDailyDownloads": 14.14,
+      "avgDailyDownloads": 15.57,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "MemPalace.Diagnostics",
       "avgDailyDownloads": 1.14,
-      "staleDays": 1,
+      "staleDays": 2,
       "isStale": false
     },
     {
       "packageId": "ElBruno.QwenTTS.Realtime",
-      "avgDailyDownloads": 11.57,
+      "avgDailyDownloads": 25.71,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.VibeVoiceTTS.Realtime",
-      "avgDailyDownloads": 11.57,
+      "avgDailyDownloads": 25.86,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.KokoroTTS.Realtime",
-      "avgDailyDownloads": 11.14,
+      "avgDailyDownloads": 15.86,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "graphify-dotnet-core",
-      "avgDailyDownloads": 1.29,
-      "staleDays": 0,
-      "isStale": false
-    },
-    {
-      "packageId": "ElBruno.CopilotCLIMonitor",
-      "avgDailyDownloads": 3.43,
+      "avgDailyDownloads": 1,
       "staleDays": 1,
       "isStale": false
     },
     {
+      "packageId": "ElBruno.CopilotCLIMonitor",
+      "avgDailyDownloads": 3.29,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
       "packageId": "ElBruno.Hermes.Tool",
-      "avgDailyDownloads": 1,
+      "avgDailyDownloads": 1.14,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Hermes.Core",
-      "avgDailyDownloads": 0.86,
-      "staleDays": 3,
-      "isStale": true
-    },
-    {
-      "packageId": "ElBruno.Hermes.Adapters",
-      "avgDailyDownloads": 0.86,
-      "staleDays": 3,
-      "isStale": true
-    },
-    {
-      "packageId": "ElBruno.PresenterTimer",
-      "avgDailyDownloads": 11.71,
-      "staleDays": 1,
-      "isStale": false
-    },
-    {
-      "packageId": "ElBruno.MAF.FoundryLocal.Adapter",
-      "avgDailyDownloads": 7.29,
-      "staleDays": 0,
-      "isStale": false
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.Evals",
       "avgDailyDownloads": 1.29,
       "staleDays": 0,
       "isStale": false
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Security",
-      "avgDailyDownloads": 2.29,
+      "packageId": "ElBruno.Hermes.Adapters",
+      "avgDailyDownloads": 1,
       "staleDays": 0,
       "isStale": false
     },
     {
+      "packageId": "ElBruno.PresenterTimer",
+      "avgDailyDownloads": 11.86,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MAF.FoundryLocal.Adapter",
+      "avgDailyDownloads": 14.29,
+      "staleDays": 0,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Evals",
+      "avgDailyDownloads": 1.14,
+      "staleDays": 1,
+      "isStale": false
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Security",
+      "avgDailyDownloads": 2.14,
+      "staleDays": 1,
+      "isStale": false
+    },
+    {
       "packageId": "ElBruno.Speech.NAudio",
-      "avgDailyDownloads": 29.33,
+      "avgDailyDownloads": 32.75,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Speech.Abstractions",
-      "avgDailyDownloads": 50.33,
+      "avgDailyDownloads": 61.75,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Speech.OpenTelemetry",
-      "avgDailyDownloads": 28,
+      "avgDailyDownloads": 70.75,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Speech.Audio",
-      "avgDailyDownloads": 47.67,
+      "avgDailyDownloads": 61.25,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Speech.AspNetCore",
-      "avgDailyDownloads": 65,
+      "avgDailyDownloads": 79.25,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Speech.Pipeline",
-      "avgDailyDownloads": 34.67,
+      "avgDailyDownloads": 59.5,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Speech.Cli",
-      "avgDailyDownloads": 33,
+      "avgDailyDownloads": 32.75,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.Speech.Vad.Silero",
-      "avgDailyDownloads": 29.33,
+      "avgDailyDownloads": 32.5,
       "staleDays": 0,
       "isStale": false
     },
     {
       "packageId": "ElBruno.FoundryLocalMonitor",
-      "avgDailyDownloads": 395.33,
+      "avgDailyDownloads": 391,
       "staleDays": 0,
       "isStale": false
     }
   ],
-  "stalePackageCount": 9,
+  "stalePackageCount": 7,
   "issueActivity": [
     {
       "date": "2026-04-10",
@@ -65132,6 +65532,12 @@
     {
       "date": "2026-07-07",
       "opened": 0,
+      "merged": 1,
+      "closed": 1
+    },
+    {
+      "date": "2026-07-08",
+      "opened": 4,
       "merged": 1,
       "closed": 1
     }
@@ -65654,203 +66060,203 @@
   ],
   "newPackages": [
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.HuggingFace.Downloader"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QwenTTS"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalLLMs"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.VibeVoiceTTS"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.VectorData"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.KernelMemory"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.OllamaSharp.Extensions"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Text2Image"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.AgentsOrchestration.Abstractions"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Realtime"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.AI.Evaluation"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Text2Image.Cuda"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.AgentsOrchestration.Orchestration"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.ModelContextProtocol.MCPToolRouter"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QRCodeGenerator.CLI"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Realtime.Whisper"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Text2Image.Foundry"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Text2Image.Cpu"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Text2Image.DirectML"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.PersonaPlex"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Realtime.SileroVad"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.ClockTray"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QRCodeGenerator.Svg"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.MarkItDotNet"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.MarkItDotNet.AI"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.AI.Evaluation.Xunit"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.AI.Evaluation.SyntheticData"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QRCodeGenerator.Ascii"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.MarkItDotNet.Excel"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.AI.Evaluation.Reporting"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QRCodeGenerator.Payloads"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QRCodeGenerator.Tool"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.Whisper"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.MarkItDotNet.PowerPoint"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QRCodeGenerator.Image"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.QRCodeGenerator.Pdf"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "elbruno.Extensions.AI.Skills.Core"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "elbruno.Extensions.AI.Skills.Cli"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.MarkItDotNet.Whisper"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalLLMs.Rag"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.Npu.Intel"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.HuggingFace.Downloader.Cli"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.Npu"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.MarkItDotNet.Cli"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "graphify-dotnet"
     },
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "packageId": "ElBruno.LocalEmbeddings.Harrier"
     },
     {
