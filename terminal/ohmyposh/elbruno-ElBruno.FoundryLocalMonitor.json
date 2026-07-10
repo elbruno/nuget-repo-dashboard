@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#1C1C1C",
-          "background": "#5CA2AE",
+          "foreground": "#FFFFFF",
+          "background": "#C052AE",
           "style": "plain",
           "template": " 📊 ElBruno.FoundryLocalMonitor "
         }

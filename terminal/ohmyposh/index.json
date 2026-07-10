@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T12:16:28.8595347+00:00",
+  "generatedAt": "2026-07-10T12:09:57.8672117+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -33,6 +33,12 @@
       "icon": "\uD83D\uDDBC️"
     },
     {
+      "repo": "elbruno/ElBruno.FoundryLocalMonitor",
+      "configFile": "elbruno-ElBruno.FoundryLocalMonitor.json",
+      "accentColor": "#C052AE",
+      "icon": "\uD83D\uDCCA"
+    },
+    {
       "repo": "elbruno/ElBruno.MempalaceNet",
       "configFile": "elbruno-ElBruno.MempalaceNet.json",
       "accentColor": "#536459",
@@ -53,20 +59,20 @@
     {
       "repo": "elbruno/ElBruno.VibeVoiceTTS",
       "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
-      "accentColor": "#B05183",
+      "accentColor": "#BA5683",
       "icon": "\uD83D\uDD0A"
-    },
-    {
-      "repo": "elbruno/ElBruno.FoundryLocalMonitor",
-      "configFile": "elbruno-ElBruno.FoundryLocalMonitor.json",
-      "accentColor": "#5CA2AE",
-      "icon": "\uD83D\uDCCA"
     },
     {
       "repo": "elbruno/ElBruno.PresenterTimer",
       "configFile": "elbruno-ElBruno.PresenterTimer.json",
       "accentColor": "#CD5CB2",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.Whisper",
+      "configFile": "elbruno-ElBruno.Whisper.json",
+      "accentColor": "#6EC9A8",
+      "icon": "\uD83C\uDF99️"
     },
     {
       "repo": "elbruno/ElBruno.Realtime",
@@ -81,22 +87,16 @@
       "icon": "\uD83D\uDCCA"
     },
     {
-      "repo": "elbruno/ElBruno.Whisper",
-      "configFile": "elbruno-ElBruno.Whisper.json",
-      "accentColor": "#6EC9A8",
-      "icon": "\uD83C\uDF99️"
+      "repo": "elbruno/ElBruno.Speech",
+      "configFile": "elbruno-ElBruno.Speech.json",
+      "accentColor": "#BBBE5A",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/elbruno.OllamaSharp.Extensions",
       "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
       "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.Speech",
-      "configFile": "elbruno-ElBruno.Speech.json",
-      "accentColor": "#BBBE5A",
-      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.CopilotCLIMonitor",
@@ -111,9 +111,9 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.Reranking",
-      "configFile": "elbruno-ElBruno.Reranking.json",
-      "accentColor": "#A97061",
+      "repo": "elbruno/ElBruno.ClockTray",
+      "configFile": "elbruno-ElBruno.ClockTray.json",
+      "accentColor": "#CEA8AC",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -123,9 +123,9 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.ClockTray",
-      "configFile": "elbruno-ElBruno.ClockTray.json",
-      "accentColor": "#CEA8AC",
+      "repo": "elbruno/ElBruno.Reranking",
+      "configFile": "elbruno-ElBruno.Reranking.json",
+      "accentColor": "#A97061",
       "icon": "\uD83D\uDD37"
     },
     {
