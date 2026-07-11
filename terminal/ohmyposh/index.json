@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T12:09:57.8672117+00:00",
+  "generatedAt": "2026-07-11T10:34:49.2259868+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -117,15 +117,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/HermesNET",
-      "configFile": "elbruno-HermesNET.json",
-      "accentColor": "#8B8A71",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/HermesNET",
+      "configFile": "elbruno-HermesNET.json",
+      "accentColor": "#8B8A71",
       "icon": "\uD83D\uDD37"
     },
     {
