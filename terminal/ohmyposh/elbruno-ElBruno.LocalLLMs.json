@@ -10,7 +10,7 @@
         {
           "type": "text",
           "foreground": "#1C1C1C",
-          "background": "#85958B",
+          "background": "#C1B38B",
           "style": "plain",
           "template": " 🤖 ElBruno.LocalLLMs "
         }

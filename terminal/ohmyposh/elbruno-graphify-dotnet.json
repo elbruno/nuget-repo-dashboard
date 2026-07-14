@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#1C1C1C",
-          "background": "#BEA579",
+          "foreground": "#FFFFFF",
+          "background": "#6E7D79",
           "style": "plain",
           "template": " 🔷 graphify-dotnet "
         }
