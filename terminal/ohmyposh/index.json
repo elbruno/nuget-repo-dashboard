@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T11:12:48.8837358+00:00",
+  "generatedAt": "2026-07-17T10:59:32.4061637+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -21,16 +21,16 @@
       "icon": "\uD83E\uDDE0"
     },
     {
-      "repo": "elbruno/ElBruno.QwenTTS",
-      "configFile": "elbruno-ElBruno.QwenTTS.json",
-      "accentColor": "#AC8460",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/ElBruno.Text2Image",
       "configFile": "elbruno-ElBruno.Text2Image.json",
       "accentColor": "#A4A1C8",
       "icon": "\uD83D\uDDBC️"
+    },
+    {
+      "repo": "elbruno/ElBruno.QwenTTS",
+      "configFile": "elbruno-ElBruno.QwenTTS.json",
+      "accentColor": "#AC8460",
+      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/graphify-dotnet",
