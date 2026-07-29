@@ -132,6 +132,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.LocalEmbeddings.Azure",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
     "packageId": "ElBruno.LocalEmbeddings.Harrier",
     "repos": [
       "elbruno/elbruno.localembeddings"
@@ -169,6 +175,12 @@
   },
   {
     "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalEmbeddings.OpenTelemetry",
     "repos": [
       "elbruno/elbruno.localembeddings"
     ]
@@ -235,6 +247,18 @@
   },
   {
     "packageId": "ElBruno.MarkItDotNet.Cli",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Connectors",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Connectors.AzureBlob",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
     ]
