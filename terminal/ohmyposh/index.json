@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T11:21:07.3573627+00:00",
+  "generatedAt": "2026-07-31T11:35:43.8626031+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -39,16 +39,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.FoundryLocalMonitor",
-      "configFile": "elbruno-ElBruno.FoundryLocalMonitor.json",
-      "accentColor": "#C052AE",
-      "icon": "\uD83D\uDCCA"
-    },
-    {
       "repo": "elbruno/ElBruno.LocalLLMs",
       "configFile": "elbruno-ElBruno.LocalLLMs.json",
       "accentColor": "#C1B38B",
       "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "elbruno/ElBruno.FoundryLocalMonitor",
+      "configFile": "elbruno-ElBruno.FoundryLocalMonitor.json",
+      "accentColor": "#C052AE",
+      "icon": "\uD83D\uDCCA"
     },
     {
       "repo": "elbruno/ElBruno.MempalaceNet",
@@ -99,15 +99,15 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
-      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
-      "accentColor": "#ADA976",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/HermesNET",
       "configFile": "elbruno-HermesNET.json",
       "accentColor": "#8B8A71",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
+      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
+      "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
     },
     {
