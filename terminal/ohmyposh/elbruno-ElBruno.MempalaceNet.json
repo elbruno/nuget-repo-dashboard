@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "#1C1C1C",
-          "background": "#A38C59",
+          "foreground": "#FFFFFF",
+          "background": "#536459",
           "style": "plain",
           "template": " 🔷 ElBruno.MempalaceNet "
         }

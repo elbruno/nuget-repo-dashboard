@@ -10,7 +10,7 @@
         {
           "type": "text",
           "foreground": "#1C1C1C",
-          "background": "#9DB0B6",
+          "background": "#CFC9B6",
           "style": "plain",
           "template": " 📊 ElBruno.AspireMonitor "
         }
