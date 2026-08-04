@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T12:36:53.5933596+00:00",
+  "generatedAt": "2026-08-04T11:34:33.7456219+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -75,16 +75,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.Realtime",
-      "configFile": "elbruno-ElBruno.Realtime.json",
-      "accentColor": "#6E94AE",
-      "icon": "⚡"
-    },
-    {
       "repo": "elbruno/ElBruno.Speech",
       "configFile": "elbruno-ElBruno.Speech.json",
       "accentColor": "#BBBE5A",
       "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#6E94AE",
+      "icon": "⚡"
     },
     {
       "repo": "elbruno/ElBruno.AspireMonitor",
