@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T14:07:53.133926+00:00",
+  "generatedAt": "2026-08-06T14:23:04.5643428+00:00",
   "windowDays": 90,
   "packages": {
     "ElBruno.HuggingFace.Downloader": {
@@ -67326,7 +67326,7 @@
         },
         {
           "date": "2026-08-06",
-          "value": 1
+          "value": 0
         }
       ],
       "openPullRequests": [
@@ -67684,7 +67684,7 @@
         },
         {
           "date": "2026-08-06",
-          "value": 1
+          "value": 0
         }
       ]
     },
