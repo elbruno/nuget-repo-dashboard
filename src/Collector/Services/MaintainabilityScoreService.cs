@@ -441,26 +441,26 @@ public sealed partial class MaintainabilityScoreService : IMaintainabilityScoreS
                 if (response.StatusCode == HttpStatusCode.Forbidden ||
                     response.StatusCode == HttpStatusCode.TooManyRequests)
                 {
+                    // Try to wait if the reset window is short enough (primary rate limit)
                     if (response.Headers.TryGetValues("X-RateLimit-Remaining", out var remaining) &&
                         int.TryParse(remaining.FirstOrDefault(), out var rem) &&
-                        rem == 0)
+                        rem == 0 &&
+                        response.Headers.TryGetValues("X-RateLimit-Reset", out var resetValues) &&
+                        long.TryParse(resetValues.FirstOrDefault(), out var resetEpoch))
                     {
-                        if (response.Headers.TryGetValues("X-RateLimit-Reset", out var resetValues) &&
-                            long.TryParse(resetValues.FirstOrDefault(), out var resetEpoch))
+                        var resetTime = DateTimeOffset.FromUnixTimeSeconds(resetEpoch);
+                        var waitTime = resetTime - DateTimeOffset.UtcNow;
+                        if (waitTime > TimeSpan.Zero && waitTime < TimeSpan.FromMinutes(5))
                         {
-                            var resetTime = DateTimeOffset.FromUnixTimeSeconds(resetEpoch);
-                            var waitTime = resetTime - DateTimeOffset.UtcNow;
-                            if (waitTime > TimeSpan.Zero && waitTime < TimeSpan.FromMinutes(5))
-                            {
-                                Console.Error.WriteLine($"[Health] GitHub rate limited. Waiting {waitTime.TotalSeconds:F0}s...");
-                                await Task.Delay(waitTime);
-                                continue;
-                            }
+                            Console.Error.WriteLine($"[Health] GitHub rate limited. Waiting {waitTime.TotalSeconds:F0}s...");
+                            await Task.Delay(waitTime);
+                            continue;
                         }
-
-                        Console.Error.WriteLine($"[Health] GitHub rate limited for {url}.");
-                        return new ApiJsonResponse(null, ApiAvailability.Error);
                     }
+
+                    // Secondary rate limits or no reset header — return gracefully without crashing
+                    Console.Error.WriteLine($"[Health] GitHub rate limited for {url}.");
+                    return new ApiJsonResponse(null, ApiAvailability.Error);
                 }
 
                 response.EnsureSuccessStatusCode();

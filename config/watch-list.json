@@ -6,5 +6,21 @@
     "description": "Open Claw .NET project",
     "dateAdded": "2025-04-02",
     "purpose": "Reference architecture and AI-assisted workflow patterns"
+  },
+  {
+    "owner": "elbruno",
+    "repo": "ElBruno.Speech",
+    "url": "https://github.com/elbruno/ElBruno.Speech",
+    "description": "Reusable local-first speech runtime for .NET — VAD, STT, LLM, TTS pipeline with Microsoft.Extensions.AI",
+    "dateAdded": "2026-07-03",
+    "purpose": "Core speech pipeline that depends on ElBruno.Whisper, ElBruno.VibeVoiceTTS, ElBruno.QwenTTS, and ElBruno.LocalLLMs. Monitor for integration requirements and API contracts."
+  },
+  {
+    "owner": "elbruno",
+    "repo": "ElBruno.CopilotHarness",
+    "url": "https://github.com/elbruno/ElBruno.CopilotHarness",
+    "description": "Local-first GitHub Copilot BYOK harness: policy-based routing between local LLMs and Azure OpenAI, launched with .NET Aspire, with explainability and live routing telemetry.",
+    "dateAdded": "2026-07-03",
+    "purpose": "Reference implementation for local LLM routing, Aspire integration, and telemetry patterns applicable to the dashboard and ElBruno.LocalLLMs."
   }
 ]
