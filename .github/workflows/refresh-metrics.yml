@@ -120,6 +120,94 @@ jobs:
           cp site/api/trends/index.json _site/api/trends/index.json
           cp site/api/metadata.json _site/api/metadata.json
 
+      - name: Preflight — verify _site integrity
+        run: |
+          set -euo pipefail
+
+          # Required files that must exist before Pages upload
+          REQUIRED_FILES=(
+            "_site/index.html"
+            "_site/data/data.nuget.json"
+            "_site/data/data.repositories.json"
+            "_site/data/data.trends.json"
+            "_site/data/data.metadata.json"
+            "_site/api/packages/index.json"
+            "_site/api/repositories/index.json"
+            "_site/api/trends/index.json"
+            "_site/api/metadata.json"
+          )
+
+          echo "=== Checking required _site files ==="
+          MISSING=0
+          for f in "${REQUIRED_FILES[@]}"; do
+            if [[ -f "$f" ]]; then
+              echo "  ✅  $f"
+            else
+              echo "  ❌  MISSING: $f"
+              MISSING=$((MISSING + 1))
+            fi
+          done
+          if [[ $MISSING -gt 0 ]]; then
+            echo "Preflight failed: $MISSING required file(s) missing."
+            exit 1
+          fi
+
+          # Validate JSON files are parseable
+          JSON_FILES=(
+            "_site/data/data.nuget.json"
+            "_site/data/data.repositories.json"
+            "_site/data/data.trends.json"
+            "_site/data/data.metadata.json"
+            "_site/api/packages/index.json"
+            "_site/api/repositories/index.json"
+            "_site/api/trends/index.json"
+            "_site/api/metadata.json"
+          )
+
+          echo "=== Validating JSON files ==="
+          INVALID=0
+          for f in "${JSON_FILES[@]}"; do
+            if python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$f" 2>/dev/null; then
+              echo "  ✅  valid JSON: $f"
+            else
+              echo "  ❌  INVALID JSON: $f"
+              INVALID=$((INVALID + 1))
+            fi
+          done
+          if [[ $INVALID -gt 0 ]]; then
+            echo "Preflight failed: $INVALID file(s) contain invalid JSON."
+            exit 1
+          fi
+
+          # Confirm API copies match source data files
+          echo "=== Verifying API copies match source data ==="
+          declare -A PAIRS=(
+            ["data/latest/data.nuget.json"]="_site/api/packages/index.json"
+            ["data/latest/data.repositories.json"]="_site/api/repositories/index.json"
+            ["data/latest/data.trends.json"]="_site/api/trends/index.json"
+            ["data/latest/data.metadata.json"]="_site/api/metadata.json"
+          )
+          MISMATCH=0
+          for SRC in "${!PAIRS[@]}"; do
+            DEST="${PAIRS[$SRC]}"
+            if [[ -f "$SRC" ]]; then
+              if diff -q "$SRC" "$DEST" > /dev/null 2>&1; then
+                echo "  ✅  matches: $DEST"
+              else
+                echo "  ❌  MISMATCH: $DEST does not match $SRC"
+                MISMATCH=$((MISMATCH + 1))
+              fi
+            else
+              echo "  ⚠️   source not found (skipped): $SRC"
+            fi
+          done
+          if [[ $MISMATCH -gt 0 ]]; then
+            echo "Preflight failed: $MISMATCH API file(s) do not match source data."
+            exit 1
+          fi
+
+          echo "=== Preflight passed ==="
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
 

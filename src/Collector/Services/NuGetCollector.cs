@@ -171,15 +171,55 @@ public sealed class NuGetCollector : INuGetCollector
             if (root.TryGetProperty("catalogEntry", out var catalogEntry) &&
                 catalogEntry.TryGetProperty("dependencyGroups", out var dependencyGroups))
             {
-                foreach (var group in dependencyGroups.EnumerateArray())
+                if (dependencyGroups.ValueKind != JsonValueKind.Array)
                 {
-                    if (group.TryGetProperty("dependencies", out var groupDeps))
+                    Console.Error.WriteLine(
+                        $"[NuGet] '{packageId}' dependencyGroups is {dependencyGroups.ValueKind}, expected Array — skipping dependency parse");
+                }
+                else
+                {
+                    var groupIndex = 0;
+                    foreach (var group in dependencyGroups.EnumerateArray())
                     {
+                        if (group.ValueKind != JsonValueKind.Object)
+                        {
+                            Console.Error.WriteLine(
+                                $"[NuGet] '{packageId}' dependencyGroups[{groupIndex}] is {group.ValueKind}, expected Object — skipping group");
+                            groupIndex++;
+                            continue;
+                        }
+
+                        if (!group.TryGetProperty("dependencies", out var groupDeps))
+                        {
+                            // A group with no dependencies element is valid (e.g. .NETStandard with no deps)
+                            groupIndex++;
+                            continue;
+                        }
+
+                        if (groupDeps.ValueKind != JsonValueKind.Array)
+                        {
+                            var tfm = group.GetStringOrDefault("targetFramework", "<unknown>");
+                            Console.Error.WriteLine(
+                                $"[NuGet] '{packageId}' dependencyGroups[{groupIndex}] (tfm={tfm}) dependencies is {groupDeps.ValueKind}, expected Array — skipping group");
+                            groupIndex++;
+                            continue;
+                        }
+
+                        var depIndex = 0;
                         foreach (var dep in groupDeps.EnumerateArray())
                         {
+                            if (dep.ValueKind != JsonValueKind.Object)
+                            {
+                                var tfm = group.GetStringOrDefault("targetFramework", "<unknown>");
+                                Console.Error.WriteLine(
+                                    $"[NuGet] '{packageId}' dependencyGroups[{groupIndex}].dependencies[{depIndex}] (tfm={tfm}) is {dep.ValueKind}, expected Object — skipping entry");
+                                depIndex++;
+                                continue;
+                            }
+
                             var depId = dep.GetStringOrDefault("id", "");
                             var depVersion = dep.GetStringOrDefault("range", "*");
-                            
+
                             if (!string.IsNullOrEmpty(depId))
                             {
                                 // Check if this dependency is on the latest version
@@ -191,7 +231,11 @@ public sealed class NuGetCollector : INuGetCollector
                                     IsLatest = isLatest
                                 });
                             }
+
+                            depIndex++;
                         }
+
+                        groupIndex++;
                     }
                 }
             }
