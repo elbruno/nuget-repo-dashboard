@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T11:32:51.2964171+00:00",
+  "generatedAt": "2026-08-06T14:08:14.8739397+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -3986,8 +3986,8 @@
       "fullName": "elbruno/openclawnet",
       "stars": 63,
       "forks": 24,
-      "openIssues": 1,
-      "openPullRequests": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
       "language": "C#",
       "license": "MIT",
@@ -4037,28 +4037,7 @@
         }
       ],
       "closedIssuesCount": 1,
-      "recentPullRequests": [
-        {
-          "number": 205,
-          "title": "feat: preserve local implementation changes and add squad CI/release workflows",
-          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/205",
-          "createdAt": "2026-08-05T16:01:02+00:00",
-          "updatedAt": "2026-08-05T16:01:02+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno/local-changes-20260805",
-          "baseBranch": "main",
-          "commentsCount": 0
-        }
-      ],
+      "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
           "number": 206,
