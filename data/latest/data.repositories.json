@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T14:23:21.153583+00:00",
+  "generatedAt": "2026-08-06T15:17:23.5251569+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -3986,12 +3986,12 @@
       "fullName": "elbruno/openclawnet",
       "stars": 63,
       "forks": 24,
-      "openIssues": 0,
-      "openPullRequests": 0,
+      "openIssues": 2,
+      "openPullRequests": 2,
       "description": "\uD83D\uDC3E OpenClawNet \u2014 Build an AI Agent Platform in .NET 10 (Reactor live series materials)",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-08-06T05:10:01+00:00",
+      "lastPush": "2026-08-06T15:13:32+00:00",
       "archived": false,
       "watchersCount": 0,
       "topics": [
@@ -4012,7 +4012,7 @@
         "tutorial"
       ],
       "createdAt": "2026-04-12T17:17:04+00:00",
-      "updatedAt": "2026-08-06T05:11:00+00:00",
+      "updatedAt": "2026-08-06T15:09:38+00:00",
       "size": 58617,
       "defaultBranch": "main",
       "homepage": null,
@@ -4037,8 +4037,69 @@
         }
       ],
       "closedIssuesCount": 1,
-      "recentPullRequests": [],
+      "recentPullRequests": [
+        {
+          "number": 209,
+          "title": "docs: Release guidance, test environment, and migration notes",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/209",
+          "createdAt": "2026-08-06T15:12:54+00:00",
+          "updatedAt": "2026-08-06T15:12:54+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "docs/release-guidance-20260806",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 208,
+          "title": "chore(packages): pin all wildcard PackageReference entries, align YamlDotNet",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/208",
+          "createdAt": "2026-08-06T15:11:34+00:00",
+          "updatedAt": "2026-08-06T15:13:33+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "pkg/stabilize-wildcards-2026-08-06",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
       "recentMergedPullRequests": [
+        {
+          "number": 207,
+          "title": "feat: replacement for PR #205 \u2014 squad meta, package upgrades, Dylan regression fixes",
+          "htmlUrl": "https://github.com/elbruno/openclawnet/pull/207",
+          "createdAt": "2026-08-06T14:35:19+00:00",
+          "updatedAt": "2026-08-06T15:04:42+00:00",
+          "mergedAt": "2026-08-06T15:04:42+00:00",
+          "closedAt": "2026-08-06T15:04:42+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "mark/pr205-replacement",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 206,
           "title": "sync: mirror from plan repo [2026-08-06]",
@@ -4750,7 +4811,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 31,
+      "mergedPullRequestsCount": 32,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -4766,9 +4827,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 31,
-          "displayValue": "31 commits",
-          "summary": "31 commits in the last 30 days."
+          "value": 32,
+          "displayValue": "32 commits",
+          "summary": "32 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
@@ -4976,7 +5037,7 @@
       "purpose": "Reference architecture and AI-assisted workflow patterns",
       "dateAdded": "2025-04-02",
       "stars": 63,
-      "lastUpdate": "2026-08-06T05:10:01+00:00",
+      "lastUpdate": "2026-08-06T15:13:32+00:00",
       "isStub": false,
       "stubReason": null
     },
