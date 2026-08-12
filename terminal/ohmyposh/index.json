@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T10:10:43.4234142+00:00",
+  "generatedAt": "2026-08-12T10:20:13.9514532+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -99,15 +99,15 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
-      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
-      "accentColor": "#ADA976",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
+      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
+      "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
     },
     {
