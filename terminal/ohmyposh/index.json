@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T10:21:52.3068175+00:00",
+  "generatedAt": "2026-08-14T10:16:46.0756851+00:00",
   "totalRepos": 28,
   "profiles": [
     {
@@ -105,15 +105,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
-      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
-      "accentColor": "#ADA976",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/HermesNET",
       "configFile": "elbruno-HermesNET.json",
       "accentColor": "#8B8A71",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
+      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
+      "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
     },
     {
