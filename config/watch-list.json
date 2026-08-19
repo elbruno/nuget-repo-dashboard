@@ -22,5 +22,13 @@
     "description": "Local-first GitHub Copilot BYOK harness: policy-based routing between local LLMs and Azure OpenAI, launched with .NET Aspire, with explainability and live routing telemetry.",
     "dateAdded": "2026-07-03",
     "purpose": "Reference implementation for local LLM routing, Aspire integration, and telemetry patterns applicable to the dashboard and ElBruno.LocalLLMs."
+  },
+  {
+    "owner": "microsoft",
+    "repo": "Generative-AI-for-beginners-dotnet",
+    "url": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
+    "description": "Hands-on course for building practical generative AI applications with .NET",
+    "dateAdded": "2026-08-19",
+    "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling."
   }
 ]
