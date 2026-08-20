@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": " 🔷 Generative-AI-for-beginners-dotnet ",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#1C1C1C",
+          "background": "#55A9C8",
+          "style": "plain",
+          "template": " 🔷 Generative-AI-for-beginners-dotnet "
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-19T09:49:17.0777428+00:00",
-  "totalRepos": 28,
+  "generatedAt": "2026-08-20T09:51:07.5853819+00:00",
+  "totalRepos": 29,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -57,15 +57,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.VibeVoiceTTS",
-      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
-      "accentColor": "#BA5683",
-      "icon": "\uD83D\uDD0A"
-    },
-    {
       "repo": "elbruno/ElBruno.Speech",
       "configFile": "elbruno-ElBruno.Speech.json",
       "accentColor": "#BBBE5A",
+      "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.VibeVoiceTTS",
+      "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
+      "accentColor": "#BA5683",
       "icon": "\uD83D\uDD0A"
     },
     {
@@ -169,6 +169,12 @@
       "configFile": "elbruno-ElBruno.CopilotHarness.json",
       "accentColor": "#96B99A",
       "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "microsoft/Generative-AI-for-beginners-dotnet",
+      "configFile": "microsoft-Generative-AI-for-beginners-dotnet.json",
+      "accentColor": "#55A9C8",
+      "icon": "\uD83D\uDD37"
     }
   ]
 }
