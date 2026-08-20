@@ -72,6 +72,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.CopilotCLIMonitor.Core",
+    "repos": [
+      "elbruno/ElBruno.CopilotCLIMonitor"
+    ]
+  },
+  {
     "packageId": "elbruno.Extensions.AI.Skills.Cli",
     "repos": [
       "elbruno/elbruno-agentskills"
@@ -138,6 +144,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.LocalEmbeddings.BlazorComponents",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
     "packageId": "ElBruno.LocalEmbeddings.Harrier",
     "repos": [
       "elbruno/elbruno.localembeddings"
@@ -199,6 +211,12 @@
   },
   {
     "packageId": "ElBruno.LocalLLMs.BitNet",
+    "repos": [
+      "elbruno/ElBruno.LocalLLMs"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalLLMs.BlazorComponents",
     "repos": [
       "elbruno/ElBruno.LocalLLMs"
     ]
@@ -352,6 +370,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.PersonaPlex.BlazorComponents",
+    "repos": [
+      "elbruno/ElBruno.PersonaPlex"
+    ]
+  },
+  {
     "packageId": "ElBruno.PresenterTimer",
     "repos": [
       "elbruno/ElBruno.PresenterTimer"
@@ -404,6 +428,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.QwenTTS.BlazorComponents",
+    "repos": [
+      "elbruno/ElBruno.QwenTTS"
+    ]
+  },
+  {
     "packageId": "ElBruno.QwenTTS.Realtime",
     "repos": [
       "elbruno/ElBruno.Realtime"
@@ -440,6 +470,18 @@
     ]
   },
   {
+    "packageId": "ElBruno.Reranking.BlazorComponents",
+    "repos": [
+      "elbruno/ElBruno.Reranking"
+    ]
+  },
+  {
+    "packageId": "ElBruno.S1Mini",
+    "repos": [
+      "elbruno/ElBruno.S1Mini"
+    ]
+  },
+  {
     "packageId": "ElBruno.Speech.Abstractions",
     "repos": [
       "elbruno/ElBruno.Speech"
@@ -453,6 +495,12 @@
   },
   {
     "packageId": "ElBruno.Speech.Audio",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.BlazorComponents",
     "repos": [
       "elbruno/ElBruno.Speech"
     ]
@@ -489,6 +537,12 @@
   },
   {
     "packageId": "ElBruno.Text2Image",
+    "repos": [
+      "elbruno/ElBruno.Text2Image"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Text2Image.BlazorComponents",
     "repos": [
       "elbruno/ElBruno.Text2Image"
     ]
@@ -537,6 +591,12 @@
   },
   {
     "packageId": "ElBruno.Whisper",
+    "repos": [
+      "elbruno/ElBruno.Whisper"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Whisper.BlazorComponents",
     "repos": [
       "elbruno/ElBruno.Whisper"
     ]
