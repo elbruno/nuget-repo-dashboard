@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": " 🔷 ElBruno.S1Mini ",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#1C1C1C",
+          "background": "#C76890",
+          "style": "plain",
+          "template": " 🔷 ElBruno.S1Mini "
+        }
+      ]
+    }
+  ]
+}

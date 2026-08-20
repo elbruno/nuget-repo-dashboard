@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-20T09:51:07.5853819+00:00",
-  "totalRepos": 29,
+  "generatedAt": "2026-08-20T16:07:21.8041481+00:00",
+  "totalRepos": 30,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -117,15 +117,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.ClockTray",
-      "configFile": "elbruno-ElBruno.ClockTray.json",
-      "accentColor": "#CEA8AC",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "ElBruno/ElBruno.BM25",
       "configFile": "ElBruno-ElBruno.BM25.json",
       "accentColor": "#556C55",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.ClockTray",
+      "configFile": "elbruno-ElBruno.ClockTray.json",
+      "accentColor": "#CEA8AC",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -157,6 +157,12 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
+    },
+    {
+      "repo": "elbruno/ElBruno.S1Mini",
+      "configFile": "elbruno-ElBruno.S1Mini.json",
+      "accentColor": "#C76890",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",
