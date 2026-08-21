@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T16:07:21.8041481+00:00",
+  "generatedAt": "2026-08-21T09:52:04.8779327+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -81,16 +81,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.Realtime",
-      "configFile": "elbruno-ElBruno.Realtime.json",
-      "accentColor": "#6E94AE",
-      "icon": "⚡"
-    },
-    {
       "repo": "elbruno/ElBruno.AspireMonitor",
       "configFile": "elbruno-ElBruno.AspireMonitor.json",
       "accentColor": "#CFC9B6",
       "icon": "\uD83D\uDCCA"
+    },
+    {
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#6E94AE",
+      "icon": "⚡"
     },
     {
       "repo": "elbruno/ElBruno.CopilotCLIMonitor",
