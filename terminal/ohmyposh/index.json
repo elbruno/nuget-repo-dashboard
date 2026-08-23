@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T09:41:45.9853772+00:00",
+  "generatedAt": "2026-08-23T09:42:23.5896512+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -117,15 +117,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "ElBruno/ElBruno.BM25",
-      "configFile": "ElBruno-ElBruno.BM25.json",
-      "accentColor": "#556C55",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.ClockTray",
       "configFile": "elbruno-ElBruno.ClockTray.json",
       "accentColor": "#CEA8AC",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "ElBruno/ElBruno.BM25",
+      "configFile": "ElBruno-ElBruno.BM25.json",
+      "accentColor": "#556C55",
       "icon": "\uD83D\uDD37"
     },
     {
