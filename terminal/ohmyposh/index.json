@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T13:39:21.9325229+00:00",
+  "generatedAt": "2026-09-03T13:35:25.528589+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -87,16 +87,16 @@
       "icon": "\uD83D\uDCCA"
     },
     {
-      "repo": "elbruno/ElBruno.Realtime",
-      "configFile": "elbruno-ElBruno.Realtime.json",
-      "accentColor": "#6E94AE",
-      "icon": "⚡"
-    },
-    {
       "repo": "elbruno/ElBruno.CopilotCLIMonitor",
       "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
       "accentColor": "#6660B3",
       "icon": "\uD83E\uDD16"
+    },
+    {
+      "repo": "elbruno/ElBruno.Realtime",
+      "configFile": "elbruno-ElBruno.Realtime.json",
+      "accentColor": "#6E94AE",
+      "icon": "⚡"
     },
     {
       "repo": "elbruno/HermesNET",
