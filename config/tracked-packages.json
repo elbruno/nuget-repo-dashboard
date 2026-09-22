@@ -32,6 +32,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.AI.Jev",
+    "repos": [
+      "elbruno/ElBruno.AI.Jev"
+    ]
+  },
+  {
     "packageId": "ElBruno.AotMapper",
     "repos": []
   },
