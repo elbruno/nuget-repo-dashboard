@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T16:26:59.9069787+00:00",
-  "totalRepos": 31,
+  "generatedAt": "2026-10-02T15:04:50.2722217+00:00",
+  "totalRepos": 30,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -79,12 +79,6 @@
       "configFile": "elbruno-ElBruno.PresenterTimer.json",
       "accentColor": "#CD5CB2",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.CopilotCLIMonitor",
-      "configFile": "elbruno-ElBruno.CopilotCLIMonitor.json",
-      "accentColor": "#6660B3",
-      "icon": "\uD83E\uDD16"
     },
     {
       "repo": "elbruno/ElBruno.AspireMonitor",
@@ -167,7 +161,7 @@
     {
       "repo": "elbruno/ElBruno.AI.Jev",
       "configFile": "elbruno-ElBruno.AI.Jev.json",
-      "accentColor": "#A25ED1",
+      "accentColor": "#8E54D1",
       "icon": "\uD83D\uDD37"
     },
     {
