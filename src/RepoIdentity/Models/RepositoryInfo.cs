@@ -10,5 +10,6 @@ public record RepositoryInfo
     public int Stars { get; init; }
     public DateTimeOffset LastPush { get; init; }
     public bool Archived { get; init; }
+    public bool Retired { get; init; }
     public string HtmlUrl { get; init; } = string.Empty;
 }

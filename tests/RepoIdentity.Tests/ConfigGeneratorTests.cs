@@ -9,7 +9,7 @@ public class ConfigGeneratorTests
 {
     private readonly ConfigGenerator _sut = new(new ColorGenerator());
 
-    private static RepositoryInfo MakeRepo(string owner, string name, string? language = "C#", bool archived = false) => new()
+    private static RepositoryInfo MakeRepo(string owner, string name, string? language = "C#", bool archived = false, bool retired = false) => new()
     {
         Owner = owner,
         Name = name,
@@ -18,6 +18,7 @@ public class ConfigGeneratorTests
         Stars = 1,
         LastPush = DateTimeOffset.UtcNow,
         Archived = archived,
+        Retired = retired,
         HtmlUrl = $"https://github.com/{owner}/{name}"
     };
 
@@ -54,6 +55,26 @@ public class ConfigGeneratorTests
         finally { Directory.Delete(outputDir, recursive: true); }
     }
 
+    [Fact]
+    public async Task GenerateAsync_SkipsRetiredReposAndRemovesStaleProfiles()
+    {
+        var outputDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+        try
+        {
+            await _sut.GenerateAsync([MakeRepo("elbruno", "Active"), MakeRepo("elbruno", "Old")], outputDir);
+            File.WriteAllText(Path.Combine(outputDir, "default.json"), "{}");
+            File.Exists(Path.Combine(outputDir, "elbruno-Old.json")).Should().BeTrue();
+
+            var result = await _sut.GenerateAsync([MakeRepo("elbruno", "Active"), MakeRepo("elbruno", "Old", retired: true)], outputDir);
+
+            result.FilesGenerated.Should().Be(1);
+            File.Exists(Path.Combine(outputDir, "elbruno-Old.json")).Should().BeFalse();
+            File.Exists(Path.Combine(outputDir, "elbruno-Active.json")).Should().BeTrue();
+            File.Exists(Path.Combine(outputDir, "default.json")).Should().BeTrue();
+            File.ReadAllText(Path.Combine(outputDir, "index.json")).Should().NotContain("elbruno/Old");
+        }
+        finally { Directory.Delete(outputDir, recursive: true); }
+    }
     [Fact]
     public async Task GenerateAsync_ProducesValidOhMyPoshJson()
     {

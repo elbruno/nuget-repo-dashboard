@@ -58,8 +58,10 @@ public sealed class ConfigGenerator : IConfigGenerator
         CancellationToken cancellationToken = default)
     {
         Directory.CreateDirectory(outputDirectory);
+        var indexPath = Path.Combine(outputDirectory, "index.json");
+        var previousProfileFiles = ReadPreviousProfileFiles(indexPath);
 
-        var activeRepos = repositories.Where(r => !r.Archived).ToList();
+        var activeRepos = repositories.Where(r => !r.Archived && !r.Retired).ToList();
         var generatedFiles = new List<string>();
         var profiles = new List<object>();
 
@@ -131,11 +133,37 @@ public sealed class ConfigGenerator : IConfigGenerator
             totalRepos = activeRepos.Count,
             profiles
         };
-        var indexPath = Path.Combine(outputDirectory, "index.json");
         await File.WriteAllTextAsync(indexPath, JsonSerializer.Serialize(index, WriteOptions), cancellationToken);
         generatedFiles.Add(indexPath);
 
+        // Remove profiles previously listed in index.json for repos that are now inactive
+        var currentFiles = new HashSet<string>(activeRepos.Select(r => SanitizeFileName(r.FullName) + ".json"), StringComparer.OrdinalIgnoreCase);
+        foreach (var stale in previousProfileFiles.Where(f => !currentFiles.Contains(f)))
+        {
+            var stalePath = Path.Combine(outputDirectory, Path.GetFileName(stale));
+            if (File.Exists(stalePath))
+                File.Delete(stalePath);
+        }
+
         return new GenerationResult(activeRepos.Count, outputDirectory, generatedFiles);
+    }
+
+    private static List<string> ReadPreviousProfileFiles(string indexPath)
+    {
+        if (!File.Exists(indexPath))
+            return [];
+        try
+        {
+            using var doc = JsonDocument.Parse(File.ReadAllText(indexPath));
+            return doc.RootElement.GetProperty("profiles").EnumerateArray()
+                .Select(p => p.GetProperty("configFile").GetString())
+                .Where(f => !string.IsNullOrWhiteSpace(f) && !f!.Equals("index.json", StringComparison.OrdinalIgnoreCase) && !f.Equals("default.json", StringComparison.OrdinalIgnoreCase))
+                .Select(f => f!).ToList();
+        }
+        catch (Exception ex) when (ex is JsonException or KeyNotFoundException or InvalidOperationException)
+        {
+            return [];
+        }
     }
 
     internal static string SanitizeFileName(string fullName)
