@@ -962,7 +962,7 @@
         <div class="dashboard-toolbar-header">
           <div>
             <div class="dashboard-toolbar-title">Search and filter</div>
-            <div class="active-filters-summary" id="dashboard-filters-summary">All packages and repositories are visible.</div>
+            <div class="active-filters-summary" id="dashboard-filters-summary">Active packages and repositories are visible.</div>
           </div>
           <div class="dashboard-toolbar-actions">
             <button type="button" class="toggle-btn filter-toggle" id="filters-toggle" aria-expanded="false" aria-controls="dashboard-filter-controls">Filters</button>
@@ -970,6 +970,14 @@
           </div>
         </div>
         <div class="filter-controls" id="dashboard-filter-controls">
+          <div class="filter-group">
+            <label for="dashboard-lifecycle">Lifecycle</label>
+            <select id="dashboard-lifecycle">
+              <option value="active">Active</option>
+              <option value="retired">Retired / archived</option>
+              <option value="all">All</option>
+            </select>
+          </div>
           <div class="filter-group filter-grow">
             <label for="dashboard-search">Search</label>
             <input type="text" id="dashboard-search" placeholder="Name, description, tag, or topic">
@@ -1098,7 +1106,7 @@
             <label for="repo-sort">Sort</label>
             <select id="repo-sort">
               <option value="stars">Stars</option>
-              <option value="health">Health</option>
+              <option value="health">Health (active only)</option>
               <option value="forks">Forks</option>
               <option value="issues">Issues</option>
               <option value="prs">PRs</option>
@@ -1137,7 +1145,7 @@
           <div id="watch-list-grid" class="card-grid"></div>
           <div id="watch-list-empty" class="empty-state" style="display:none;">
             <span class="icon">📭</span>
-            <p>No watch-list repositories configured</p>
+            <p>No watch-list repositories match your lifecycle filter</p>
           </div>
         </div>
       </section>
@@ -1241,6 +1249,7 @@
     const REPOS_URL = 'data/data.repositories.json';
     const TRENDS_URL = 'data/data.trends.json';
     const METADATA_URL = 'data/data.metadata.json';
+    const CONFIG_URL = 'data/dashboard-config.json';
 
     const LANG_COLORS = {
       'C#': '#178600', 'JavaScript': '#f1e05a', 'TypeScript': '#3178c6',
@@ -1256,6 +1265,7 @@
     let trendsData = null;
     const DASHBOARD_FILTER_STORAGE_KEY = 'dashboard-filters-v1';
     const defaultDashboardFilters = {
+      lifecycle: 'active',
       search: '',
       tag: '',
       downloads: '',
@@ -1343,6 +1353,7 @@
     }
 
     function renderHealthBadge(repo) {
+      if (isInactiveRepo(repo)) return '';
       const health = repo?.maintainability;
       if (!health) {
         return `<span class="health-badge unavailable" title="Health score unavailable">⚪ <strong>N/A</strong><span class="health-label">Health</span></span>`;
@@ -1484,6 +1495,7 @@
     function readDashboardFiltersFromUrl() {
       const params = new URLSearchParams(window.location.search);
       return {
+        ...(params.has('lifecycle') ? { lifecycle: params.get('lifecycle') } : {}),
         search: normalizeFilterValue(params.get('q')),
         tag: normalizeFilterValue(params.get('tag')),
         downloads: normalizeFilterValue(params.get('downloads')),
@@ -1498,6 +1510,7 @@
       const freshness = normalizeFilterValue(filters.freshness);
 
       return {
+        lifecycle: ['active', 'retired', 'all'].includes(filters.lifecycle) ? filters.lifecycle : 'active',
         search: normalizeFilterValue(filters.search),
         tag: normalizeFilterValue(filters.tag),
         downloads: ['100', '1000', '10000'].includes(downloads) ? downloads : '',
@@ -1522,6 +1535,7 @@
     function syncDashboardFiltersToUrl() {
       const params = new URLSearchParams(window.location.search);
       const mappings = [
+        ['lifecycle', dashboardFilters.lifecycle === 'active' ? '' : dashboardFilters.lifecycle],
         ['q', dashboardFilters.search],
         ['tag', dashboardFilters.tag],
         ['downloads', dashboardFilters.downloads],
@@ -1544,6 +1558,7 @@
 
     function getActiveDashboardFilterLabels() {
       const labels = [];
+      if (dashboardFilters.lifecycle !== 'active') labels.push(`lifecycle ${dashboardFilters.lifecycle}`);
       if (dashboardFilters.search) labels.push(`search "${dashboardFilters.search}"`);
       if (dashboardFilters.tag) labels.push(`tag ${dashboardFilters.tag}`);
       if (dashboardFilters.downloads) labels.push(`${fmtCompact(Number(dashboardFilters.downloads))}+ downloads`);
@@ -1560,7 +1575,7 @@
 
       summaryEl.textContent = labels.length
         ? `${labels.length} active filter${labels.length === 1 ? '' : 's'}: ${labels.join(' · ')}`
-        : 'All packages and repositories are visible.';
+        : 'Active packages and repositories are visible; retired and archived entries are hidden.';
 
       clearBtn.disabled = labels.length === 0;
       toggleBtn.textContent = labels.length ? `Filters (${labels.length})` : 'Filters';
@@ -1577,6 +1592,7 @@
     }
 
     function syncDashboardFilterControls() {
+      document.getElementById('dashboard-lifecycle').value = dashboardFilters.lifecycle;
       document.getElementById('dashboard-search').value = dashboardFilters.search;
       document.getElementById('dashboard-tag').value = dashboardFilters.tag;
       document.getElementById('dashboard-downloads').value = dashboardFilters.downloads;
@@ -1603,10 +1619,39 @@
       syncDashboardFiltersToUrl();
       renderNugetSection();
       renderRepoSection();
+      renderIssuesSection();
+      renderPrsSection();
+      renderWatchListSection();
     }
 
     function clearDashboardFilters() {
       applyDashboardFilterUpdate({ ...defaultDashboardFilters, filtersOpen: dashboardFilters.filtersOpen });
+    }
+
+    function isInactiveRepo(repo) {
+      return Boolean(repo.retired || repo.archived);
+    }
+
+    function matchesLifecycle(inactive) {
+      return dashboardFilters.lifecycle === 'all'
+        || (dashboardFilters.lifecycle === 'retired' ? inactive : !inactive);
+    }
+
+    function lifecycleBadge(entity) {
+      if (entity.retired) return '<span class="license-badge">Retired - unsupported</span>';
+      if (entity.archived) return '<span class="license-badge">Archived - read-only</span>';
+      return '';
+    }
+
+    function applyLifecycleConfig(config) {
+      const retiredPackages = new Set((config.retiredPackages || []).map(id => id.toLowerCase()));
+      const retiredRepositories = new Set((config.retiredRepositories || []).map(id => id.toLowerCase()));
+      for (const pkg of allPackages) {
+        pkg.retired = retiredPackages.has(pkg.packageId.toLowerCase());
+      }
+      for (const repo of allRepos) {
+        repo.retired = retiredRepositories.has((repo.fullName || '').toLowerCase());
+      }
     }
 
     function buildSearchTerms(value) {
@@ -2031,6 +2076,7 @@
             </div>
             <span class="card-version">v${esc(pkg.latestVersion || '')}</span>
           </div>
+          ${lifecycleBadge(pkg)}
           <div class="card-description">${esc(truncate(pkg.description, 140))}</div>
           <div class="card-stats">
             <div class="stat">⬇️ <span class="value">${fmt(pkg.totalDownloads)}</span> ${badge}</div>
@@ -2055,6 +2101,7 @@
         return `<tr>
           <td><a href="https://www.nuget.org/packages/${encodeURIComponent(pkg.packageId)}" target="_blank" rel="noopener">${esc(pkg.packageId)}</a>
             <span class="card-version" style="margin-left:0.4rem;">v${esc(pkg.latestVersion || '')}</span>
+            ${lifecycleBadge(pkg)}
             ${tags ? `<div class="tags">${tags}</div>` : ''}
           </td>
           <td class="text-muted">${esc(truncate(pkg.description, 80))}</td>
@@ -2087,6 +2134,7 @@
               <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
             </div>
             <div class="card-badges">
+              ${lifecycleBadge(repo)}
               ${healthBadge}
               ${repo.license ? `<span class="license-badge">${esc(repo.license)}</span>` : ''}
             </div>
@@ -2117,6 +2165,7 @@
         return `<tr>
           <td>
             <a href="${esc(repo.htmlUrl || '#')}" target="_blank" rel="noopener">${esc(repo.fullName || repo.name)}</a>
+            ${lifecycleBadge(repo)}
             ${repo.license ? ` <span class="license-badge">${esc(repo.license)}</span>` : ''}
             ${topics ? `<div class="tags">${topics}</div>` : ''}
           </td>
@@ -2152,7 +2201,7 @@
             <div class="card-title">
               <a href="${esc(repoUrl)}" target="_blank" rel="noopener">${esc(fullName)}</a>
             </div>
-            ${stubBadge}
+            <div class="card-badges">${lifecycleBadge(repo)}${stubBadge}</div>
           </div>
           <div class="card-description">${esc(description)}</div>
           <div class="card-description"><strong>Purpose:</strong> ${esc(purpose)}</div>
@@ -2177,9 +2226,15 @@
       }
 
       section.style.display = '';
-      countEl.textContent = `Tracking ${watchListRepos.length} referenced repositories`;
-      grid.innerHTML = watchListRepos.map(renderWatchListCard).join('');
-      empty.style.display = 'none';
+      const reposByName = new Map(allRepos.map(repo => [(repo.fullName || '').toLowerCase(), repo]));
+      const visibleRepos = watchListRepos.map(repo => {
+        const fullName = repo.fullName || `${repo.owner}/${repo.repo}`;
+        const metrics = reposByName.get(fullName.toLowerCase());
+        return { ...repo, retired: metrics?.retired || false, archived: metrics?.archived || false };
+      }).filter(repo => matchesLifecycle(isInactiveRepo(repo)));
+      countEl.textContent = `Showing ${visibleRepos.length} of ${watchListRepos.length} referenced repositories`;
+      grid.innerHTML = visibleRepos.map(renderWatchListCard).join('');
+      empty.style.display = visibleRepos.length ? 'none' : 'block';
     }
 
     /* ── Issues Rendering ── */
@@ -2230,6 +2285,7 @@
     function getAllIssueEntries() {
       const entries = [];
       for (const repo of allRepos) {
+        if (!matchesLifecycle(isInactiveRepo(repo))) continue;
         for (const issue of (repo.recentIssues || [])) {
           entries.push({ issue, repoFullName: repo.fullName || repo.name });
         }
@@ -2362,6 +2418,7 @@
     function getAllPrEntries() {
       const entries = [];
       for (const repo of allRepos) {
+        if (!matchesLifecycle(isInactiveRepo(repo))) continue;
         for (const pr of (repo.recentPullRequests || [])) {
           entries.push({ pr, repoFullName: repo.fullName || repo.name });
         }
@@ -2428,6 +2485,7 @@
       const sortKey = document.getElementById('nuget-sort').value;
 
       let pkgs = allPackages.filter(p => {
+        if (!matchesLifecycle(Boolean(p.retired))) return false;
         if (!matchesSearch(dashboardFilters.search, [p.packageId, p.description, p.tags || []])) return false;
         if (!matchesTag(dashboardFilters.tag, p.tags)) return false;
         if (!matchesMinimum(p.totalDownloads, dashboardFilters.downloads)) return false;
@@ -2452,6 +2510,8 @@
       const sortKey = document.getElementById('repo-sort').value;
 
       let repos = allRepos.filter(r => {
+        if (!matchesLifecycle(isInactiveRepo(r))) return false;
+        if (sortKey === 'health' && isInactiveRepo(r)) return false;
         if (!matchesSearch(dashboardFilters.search, [r.fullName || r.name, r.description, r.topics || []])) return false;
         if (!matchesTag(dashboardFilters.tag, r.topics)) return false;
         if (!matchesMinimum(r.stars, dashboardFilters.stars)) return false;
@@ -2550,8 +2610,8 @@
     /* ── Top 5 Leaderboard Section Rendering ── */
 
     function renderLeaderboard() {
-      const topPkgs = [...allPackages].sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0)).slice(0, 5);
-      const topRepos = [...allRepos].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5);
+      const topPkgs = allPackages.filter(p => !p.retired).sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0)).slice(0, 5);
+      const topRepos = allRepos.filter(r => !isInactiveRepo(r)).sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5);
 
       const pkgCards = topPkgs.map((pkg, i) => `
         <div class="highlight-card">
@@ -2577,11 +2637,11 @@
 
       document.getElementById('top-leaderboard-grid').innerHTML = `
         <div class="highlights-column">
-          <h3>📦 Top 5 Most Downloaded Packages</h3>
+          <h3>📦 Top 5 Active Packages by Downloads</h3>
           ${pkgCards}
         </div>
         <div class="highlights-column">
-          <h3>🐙 Top 5 Most Starred Repositories</h3>
+          <h3>🐙 Top 5 Active Repositories by Stars</h3>
           ${repoCards}
         </div>
       `;
@@ -2603,14 +2663,15 @@
       const date = new Date().toISOString().split('T')[0];
       const filename = `packages-${date}.csv`;
 
-      const headers = ['Package ID', 'Version', 'Total Downloads', 'Project URL', 'Authors', 'Tags'];
+      const headers = ['Package ID', 'Version', 'Total Downloads', 'Project URL', 'Authors', 'Tags', 'Retired'];
       const rows = pkgs.map(p => [
-        p.id,
+        p.packageId,
         p.latestVersion,
         p.totalDownloads || 0,
         p.projectUrl || '',
         p.authors || '',
-        (p.tags || []).join(';')
+        (p.tags || []).join(';'),
+        Boolean(p.retired)
       ]);
 
       const csv = [
@@ -2630,7 +2691,8 @@
         exportedAt: new Date().toISOString(),
         count: pkgs.length,
         packages: pkgs.map(p => ({
-          id: p.id,
+          id: p.packageId,
+          retired: Boolean(p.retired),
           version: p.latestVersion,
           totalDownloads: p.totalDownloads || 0,
           projectUrl: p.projectUrl || '',
@@ -2647,15 +2709,17 @@
       const date = new Date().toISOString().split('T')[0];
       const filename = `repositories-${date}.csv`;
 
-      const headers = ['Name', 'Stars', 'Forks', 'Open Issues', 'Open PRs', 'Language', 'URL'];
+      const headers = ['Name', 'Stars', 'Forks', 'Open Issues', 'Open PRs', 'Language', 'URL', 'Retired', 'Archived'];
       const rows = repos.map(r => [
         r.fullName || r.name,
-        r.stargazersCount || 0,
-        r.forksCount || 0,
-        r.openIssuesCount || 0,
-        r.pullRequestsCount || 0,
-        r.primaryLanguage || '',
-        r.htmlUrl || ''
+        r.stars || 0,
+        r.forks || 0,
+        r.openIssues || 0,
+        r.openPullRequests || 0,
+        r.language || '',
+        r.htmlUrl || '',
+        Boolean(r.retired),
+        Boolean(r.archived)
       ]);
 
       const csv = [
@@ -2676,11 +2740,13 @@
         count: repos.length,
         repositories: repos.map(r => ({
           name: r.fullName || r.name,
-          stars: r.stargazersCount || 0,
-          forks: r.forksCount || 0,
-          openIssues: r.openIssuesCount || 0,
-          pullRequests: r.pullRequestsCount || 0,
-          language: r.primaryLanguage || '',
+          retired: Boolean(r.retired),
+          archived: Boolean(r.archived),
+          stars: r.stars || 0,
+          forks: r.forks || 0,
+          openIssues: r.openIssues || 0,
+          pullRequests: r.openPullRequests || 0,
+          language: r.language || '',
           url: r.htmlUrl || ''
         }))
       };
@@ -2703,6 +2769,9 @@
     /* ── Event Wiring ── */
 
     function wireFilters() {
+      document.getElementById('dashboard-lifecycle').addEventListener('change', (event) => {
+        applyDashboardFilterUpdate({ lifecycle: event.target.value });
+      });
       document.getElementById('nuget-sort').addEventListener('change', renderNugetSection);
       document.getElementById('repo-sort').addEventListener('change', renderRepoSection);
       document.getElementById('dashboard-search').addEventListener('input', (event) => {
@@ -2824,7 +2893,9 @@
       document.getElementById('trends-section').style.display = '';
 
       // Staleness banner
-      const staleCount = trendsData.stalePackageCount || 0;
+      const activePackageIds = new Set(allPackages.filter(p => !p.retired).map(p => p.packageId.toLowerCase()));
+      const staleCount = (trendsData.velocities || [])
+        .filter(v => v.isStale && activePackageIds.has(v.packageId.toLowerCase())).length;
       const banner = document.getElementById('staleness-banner');
       if (staleCount > 0) {
         document.getElementById('staleness-message').textContent =
@@ -2853,6 +2924,7 @@
       // Top movers: packages with biggest % change in downloads (last 7 days vs prior 7)
       const movers = [];
       for (const [name, pkg] of Object.entries(trendsData.packages)) {
+        if (!activePackageIds.has(name.toLowerCase())) continue;
         const pct = calcTrendPct(pkg.downloads, 7);
         if (pct !== null) movers.push({ name, pct });
       }
@@ -2910,15 +2982,18 @@
         : '';
 
       // Version activity — recent releases
-      const versionActivity = (trendsData.versionActivity || []).slice(-5);
+      const versionActivity = (trendsData.versionActivity || [])
+        .map(v => ({ ...v, packages: v.packages.filter(p => activePackageIds.has(p.toLowerCase())) }))
+        .filter(v => v.packages.length > 0).slice(-5);
       const versionHtml = versionActivity.length > 0
         ? `<ul class="top-movers">${versionActivity.map(v =>
-            `<li><span class="mover-name">📦 ${v.newVersions} new version${v.newVersions !== 1 ? 's' : ''} on ${esc(v.date)}</span><span style="font-size:0.75rem;color:var(--text-muted);">${v.packages.map(p => esc(p)).join(', ')}</span></li>`
+            `<li><span class="mover-name">📦 Active package releases on ${esc(v.date)}</span><span style="font-size:0.75rem;color:var(--text-muted);">${v.packages.map(p => esc(p)).join(', ')}</span></li>`
           ).join('')}</ul>`
         : '';
 
       // New packages
-      const newPackages = (trendsData.newPackages || []).slice(-5);
+      const newPackages = (trendsData.newPackages || [])
+        .filter(p => activePackageIds.has(p.packageId.toLowerCase())).slice(-5);
       const newPkgHtml = newPackages.length > 0
         ? `<ul class="top-movers">${newPackages.map(p =>
             `<li><span class="mover-name">🆕 ${esc(p.packageId)}</span><span style="font-size:0.75rem;color:var(--text-muted);">First seen ${esc(p.date)}</span></li>`
@@ -2931,25 +3006,25 @@
 
       document.getElementById('trends-grid').innerHTML = `
         <div class="trend-card">
-          <h4>📊 Total Downloads</h4>
+          <h4>📊 Lifetime Downloads - All Packages</h4>
           <div class="big-number">${fmt(latestTotal)} ${totalBadge}</div>
           ${totalSparkline ? `<div class="sparkline-wrap">${totalSparkline}</div>` : ''}
         </div>
         <div class="trend-card">
-          <h4>🚀 Top Movers (7-day download change)</h4>
+          <h4>🚀 Active Top Movers (7-day download change)</h4>
           ${moversHtml}
           ${velocityHtml ? `<h4 style="margin-top:0.75rem;">⚡ Download Velocity</h4>${velocityHtml}` : ''}
         </div>
         <div class="trend-card">
-          <h4>🐛 Issue Activity (last 7 days)</h4>
+          <h4>🐛 Issue Activity - All Repositories (last 7 days)</h4>
           ${issueHtml}
         </div>
         ${prActivityHtml ? `<div class="trend-card">
-          <h4>🔀 PR Activity (last 7 days)</h4>
+          <h4>🔀 PR Activity - All Repositories (last 7 days)</h4>
           ${prActivityHtml}
         </div>` : ''}
         <div class="trend-card">
-          <h4>📦 Recent Releases</h4>
+          <h4>📦 Recent Active Releases</h4>
           ${publishHtml}
         </div>
       `;
@@ -2988,14 +3063,16 @@
       const content = document.getElementById('content');
 
       try {
-        const [nugetRes, reposRes, metadataRes, trendsRes] = await Promise.all([
+        const [nugetRes, reposRes, metadataRes, trendsRes, configRes] = await Promise.all([
           fetch(NUGET_URL), fetch(REPOS_URL),
           fetch(METADATA_URL).catch(() => null),
           fetch(TRENDS_URL).catch(() => null),
+          fetch(CONFIG_URL),
         ]);
 
         if (!nugetRes.ok) throw new Error(`Failed to load NuGet data (${nugetRes.status})`);
         if (!reposRes.ok) throw new Error(`Failed to load repository data (${reposRes.status})`);
+        if (!configRes.ok) throw new Error(`Failed to load lifecycle configuration (${configRes.status})`);
 
         const nugetData = await nugetRes.json();
         const reposData = await reposRes.json();
@@ -3007,6 +3084,7 @@
         allPackages = nugetData.packages || [];
         allRepos = reposData.repositories || [];
         watchListRepos = reposData.watchList || [];
+        applyLifecycleConfig(await configRes.json());
 
         // Header info
         const author = allPackages[0]?.authors || 'Dashboard';
@@ -3024,16 +3102,18 @@
 
         // Summary cards
         const totalDownloads = allPackages.reduce((s, p) => s + (p.totalDownloads || 0), 0);
+        const activeDownloads = allPackages.filter(p => !p.retired).reduce((s, p) => s + (p.totalDownloads || 0), 0);
         const totalIssues = allRepos.reduce((s, r) => s + (r.recentIssues || []).length, 0);
         const totalPrs = allRepos.reduce((s, r) => s + (r.recentPullRequests || []).length, 0);
         const watchListCount = allRepos.filter(r => r.isWatchList || r.watchPurpose || r.watchDateAdded).length;
         document.getElementById('summary').innerHTML = `
-          <div class="summary-card"><div class="number">${fmt(allPackages.length)}</div><div class="label">Packages</div></div>
-          <div class="summary-card"><div class="number">${fmt(allRepos.length)}</div><div class="label">Repositories</div></div>
+          <div class="summary-card"><div class="number">${fmt(allPackages.length)}</div><div class="label">Tracked Packages - All</div></div>
+          <div class="summary-card"><div class="number">${fmt(allRepos.length)}</div><div class="label">Tracked Repositories - All</div></div>
           <div class="summary-card"><div class="number">${fmt(watchListCount)}</div><div class="label">Watch List</div></div>
-          <div class="summary-card"><div class="number">${fmt(totalDownloads)}</div><div class="label">Total Downloads</div></div>
-          <div class="summary-card"><div class="number">${fmt(totalIssues)}</div><div class="label">Open Issues</div></div>
-          <div class="summary-card"><div class="number">${fmt(totalPrs)}</div><div class="label">Open PRs</div></div>
+          <div class="summary-card" id="lifetime-downloads"><div class="number">${fmt(totalDownloads)}</div><div class="label">Lifetime Downloads - All Packages</div></div>
+          <div class="summary-card" id="active-downloads"><div class="number">${fmt(activeDownloads)}</div><div class="label">Downloads - Active Packages</div></div>
+          <div class="summary-card"><div class="number">${fmt(totalIssues)}</div><div class="label">Open Issues - All Repositories</div></div>
+          <div class="summary-card"><div class="number">${fmt(totalPrs)}</div><div class="label">Open PRs - All Repositories</div></div>
         `;
 
         // Populate dynamic filter options
@@ -3057,6 +3137,7 @@
         renderRepoSection();
         renderIssuesSection();
         renderPrsSection();
+        renderWatchListSection();
 
         // Initialize collapsible sections
         initCollapsible();

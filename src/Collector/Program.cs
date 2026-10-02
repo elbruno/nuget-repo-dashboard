@@ -334,6 +334,7 @@ var trendData = await trendService.AggregateAsync(repoRoot);
 Console.WriteLine($"    → {trendData.Packages.Count} package trends, {trendData.Repositories.Count} repo trends ({trendData.WindowDays}-day window)");
 
 // --- Apply defensive guards ---
+LifecycleService.Apply(dashboardConfig, nugetMetrics, githubMetrics);
 IMetricsGuardService metricsGuard = new MetricsGuardService();
 
 // Layer 1: Monotonicity Guard — download counts must never decrease

@@ -1,6 +1,13 @@
 {
   "nugetProfile": "elbruno",
   "mergeWithTrackedPackages": true,
+  "retiredPackages": [
+    "ElBruno.CopilotCLIMonitor",
+    "ElBruno.CopilotCLIMonitor.Core"
+  ],
+  "retiredRepositories": [
+    "elbruno/ElBruno.CopilotCLIMonitor"
+  ],
   "ignorePackages": [
     "LocalEmbeddings",
     "Microsoft.Extensions.AI",

@@ -111,6 +111,7 @@ jobs:
         run: |
           mkdir -p _site/data _site/api/packages _site/api/repositories _site/api/trends
           cp site/index.html _site/
+          cp config/dashboard-config.json _site/data/dashboard-config.json
           cp data/latest/data.nuget.json _site/data/data.nuget.json
           cp data/latest/data.repositories.json _site/data/data.repositories.json
           cp data/latest/data.trends.json _site/data/data.trends.json
@@ -127,6 +128,7 @@ jobs:
           # Required files that must exist before Pages upload
           REQUIRED_FILES=(
             "_site/index.html"
+            "_site/data/dashboard-config.json"
             "_site/data/data.nuget.json"
             "_site/data/data.repositories.json"
             "_site/data/data.trends.json"
@@ -154,6 +156,7 @@ jobs:
 
           # Validate JSON files are parseable
           JSON_FILES=(
+            "_site/data/dashboard-config.json"
             "_site/data/data.nuget.json"
             "_site/data/data.repositories.json"
             "_site/data/data.trends.json"

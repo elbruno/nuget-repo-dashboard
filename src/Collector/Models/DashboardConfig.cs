@@ -24,4 +24,10 @@ public sealed class DashboardConfig
     /// </summary>
     [JsonPropertyName("ignorePackages")]
     public List<string> IgnorePackages { get; set; } = [];
+
+    [JsonPropertyName("retiredPackages")]
+    public List<string> RetiredPackages { get; set; } = [];
+
+    [JsonPropertyName("retiredRepositories")]
+    public List<string> RetiredRepositories { get; set; } = [];
 }

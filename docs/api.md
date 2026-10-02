@@ -153,6 +153,22 @@ Returns repositories in the watch list with their metrics.
 
 ## Response Format
 
+### Lifecycle fields
+
+Package and repository metrics include a `retired` boolean, set from
+`retiredPackages` and `retiredRepositories` in `config/dashboard-config.json`.
+Repository metrics also retain GitHub's independent `archived` boolean.
+Archival does not automatically mark associated packages retired or deprecated.
+Missing lifecycle fields in older snapshots should be treated as `false`.
+
+API lists and historical trends include all tracked entries, including retired
+ones. Consumers wanting an active view should exclude packages with `retired:
+true`, and repositories with either `retired: true` or `archived: true`.
+Retired/archived repositories have no maintainability score (`maintainability:
+null`). Lifetime download totals include retired packages; active-package
+totals exclude them. NuGet deprecation is currently configured manually, not
+detected automatically.
+
 All endpoints return JSON with the following structure:
 
 ```json

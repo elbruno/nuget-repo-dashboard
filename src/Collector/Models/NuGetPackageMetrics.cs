@@ -34,6 +34,9 @@ public sealed class NuGetPackageMetrics
     [JsonPropertyName("packageId")]
     public string PackageId { get; set; } = string.Empty;
 
+    [JsonPropertyName("retired")]
+    public bool Retired { get; set; }
+
     [JsonPropertyName("latestVersion")]
     public string LatestVersion { get; set; } = string.Empty;
 

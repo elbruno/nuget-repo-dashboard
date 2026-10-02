@@ -4,9 +4,33 @@ using NuGetDashboard.Collector.Services;
 
 namespace Collector.Tests;
 
+[Collection("Staleness console output")]
 public class StalenessAlertTests
 {
     private readonly MetricsGuardService _guard = new();
+
+    [Fact]
+    public void CheckStaleness_RetiredPackageDoesNotRaiseAlertButActivePackageDoes()
+    {
+        var data = BuildMultiPackageTrendData(
+            ("Pkg.Retired", [500, 500, 500, 500, 500, 500, 500]),
+            ("Pkg.Active", [500, 500, 500, 500, 500, 500, 500]));
+        var retired = BuildPackage("Pkg.Retired", 500);
+        retired.Retired = true;
+        using var output = new StringWriter();
+        var originalOutput = Console.Out;
+        try
+        {
+            Console.SetOut(output);
+            _guard.CheckStaleness(data, [retired, BuildPackage("Pkg.Active", 500)]);
+        }
+        finally
+        {
+            Console.SetOut(originalOutput);
+        }
+
+        output.ToString().Should().Contain("Pkg.Active").And.NotContain("Pkg.Retired");
+    }
 
     // ──────────────────────────────────────────────────────────────────
     // Helpers
@@ -375,4 +399,9 @@ public class StalenessAlertTests
     {
         MetricsGuardService.MinDownloadsForStalenessCheck.Should().Be(100);
     }
+}
+
+[CollectionDefinition("Staleness console output", DisableParallelization = true)]
+public class StalenessConsoleCollection
+{
 }

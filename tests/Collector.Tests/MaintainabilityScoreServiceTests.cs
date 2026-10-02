@@ -7,6 +7,27 @@ namespace Collector.Tests;
 
 public class MaintainabilityScoreServiceTests
 {
+    [Theory]
+    [InlineData(true, false)]
+    [InlineData(false, true)]
+    public async Task ApplyAsync_InactiveRepositoryHasNoHealthScoreOrNetworkRequests(bool retired, bool archived)
+    {
+        using var httpClient = new HttpClient();
+        var repo = new GitHubRepoMetrics
+        {
+            Retired = retired,
+            Archived = archived,
+            Owner = "owner",
+            Name = "repo",
+            FullName = "owner/repo",
+            Maintainability = new MaintainabilityScore()
+        };
+
+        await new MaintainabilityScoreService(httpClient).ApplyAsync([repo], [], []);
+
+        repo.Maintainability.Should().BeNull();
+    }
+
     [Fact]
     public async Task ApplyAsync_PopulatesMaintainabilityScoreAndBreakdown()
     {

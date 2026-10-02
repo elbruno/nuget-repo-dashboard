@@ -39,6 +39,12 @@ public sealed partial class MaintainabilityScoreService : IMaintainabilityScoreS
 
         foreach (var repo in repositories)
         {
+            if (repo.Retired || repo.Archived)
+            {
+                repo.Maintainability = null;
+                continue;
+            }
+
             if (string.IsNullOrWhiteSpace(repo.Owner) || string.IsNullOrWhiteSpace(repo.Name))
             {
                 repo.Maintainability = CreateDefaultScore();

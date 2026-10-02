@@ -40,6 +40,9 @@ public sealed class GitHubRepoMetrics
     [JsonPropertyName("archived")]
     public bool Archived { get; set; }
 
+    [JsonPropertyName("retired")]
+    public bool Retired { get; set; }
+
     [JsonPropertyName("watchersCount")]
     public int WatchersCount { get; set; }
 

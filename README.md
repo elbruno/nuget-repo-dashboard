@@ -138,6 +138,30 @@ Primary configuration for auto-discovery:
 - `nugetProfile` — NuGet username for auto-discovery (queries `owner:{username}`)
 - `mergeWithTrackedPackages` — merge manual package mappings from `tracked-packages.json`
 - `ignorePackages` — exclude specific packages from collection (case-insensitive)
+- `retiredPackages` — package IDs that are no longer supported; still collected and included in lifetime downloads (case-insensitive).
+- `retiredRepositories` — retired repository full names (`owner/repo`); still collected for historical reference (case-insensitive).
+
+### Retired projects
+
+The dashboard defaults to **Active** entries. Use the **Lifecycle** filter to show
+**Retired** (including archived repositories) or **All** entries. Explicitly retired
+entries display **Retired - unsupported**; GitHub archival is shown separately as
+**Archived - read-only** and does not automatically retire associated packages.
+NuGet deprecation detection is not automatic: record unsupported packages in
+`retiredPackages`, including each package in a retired project.
+
+**Lifetime downloads - all packages** includes retired packages, while
+**Downloads - active packages** excludes them. These totals are portfolio-wide
+and do not change with display filters. Historical snapshots and download trends
+are retained, and collection continues for retired packages. Active-only
+leaderboards, top movers, and maintenance scoring exclude retired entries
+(and archived repositories). Exports follow the selected lifecycle filter and
+include lifecycle fields.
+
+Keep retired packages in `tracked-packages.json` so discovery changes do not
+remove them from collection. Do not put them in `ignorePackages`. The Pages
+workflow also publishes `dashboard-config.json` under `data/` so retirement
+labels apply even to snapshots collected before retirement.
 
 ### Tracked Packages (`config/tracked-packages.json`)
 
@@ -284,4 +308,3 @@ Place a `repo.identity.json` in any tracked repo to customize its profile:
   "icon": "🧠"
 }
 ```
-

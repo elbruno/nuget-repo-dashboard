@@ -21,7 +21,7 @@ public interface IMetricsGuardService
 
     /// <summary>
     /// Checks trend data for packages with no download growth over consecutive data points.
-    /// Logs warnings for packages with >100 total downloads that show 0% growth
+    /// Logs warnings for active packages with >100 total downloads that show 0% growth
     /// for 5 or more consecutive data points.
     /// </summary>
     void CheckStaleness(TrendData trendData, List<NuGetPackageMetrics> currentMetrics);
@@ -95,7 +95,7 @@ public sealed class MetricsGuardService : IMetricsGuardService
         var currentDownloads = new Dictionary<string, long>(StringComparer.OrdinalIgnoreCase);
         foreach (var m in currentMetrics)
         {
-            if (!string.IsNullOrWhiteSpace(m.PackageId))
+            if (!m.Retired && !string.IsNullOrWhiteSpace(m.PackageId))
             {
                 currentDownloads[m.PackageId] = m.TotalDownloads;
             }
