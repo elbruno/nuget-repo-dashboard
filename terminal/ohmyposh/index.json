@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T16:11:16.4298265+00:00",
-  "totalRepos": 30,
+  "generatedAt": "2026-10-10T15:22:48.9731137+00:00",
+  "totalRepos": 31,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -162,6 +162,12 @@
       "repo": "elbruno/ElBruno.AI.Jev",
       "configFile": "elbruno-ElBruno.AI.Jev.json",
       "accentColor": "#8E54D1",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.AI.Decisions",
+      "configFile": "elbruno-ElBruno.AI.Decisions.json",
+      "accentColor": "#5F886C",
       "icon": "\uD83D\uDD37"
     },
     {
