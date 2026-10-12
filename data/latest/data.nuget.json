@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T15:39:04.4661322+00:00",
+  "generatedAt": "2026-10-12T19:01:37.0574065+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -1012,6 +1012,27 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.Speech.OpenTelemetry",
+      "retired": false,
+      "latestVersion": "1.5.0",
+      "totalDownloads": 1401,
+      "description": "OpenTelemetry instrumentation for ElBruno.Speech \u2014 activities, metrics, and Aspire-compatible setup.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "opentelemetry",
+        "metrics",
+        "tracing",
+        "aspire",
+        "dotnet"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-06T14:18:55.093+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AspireMonitor",
       "retired": false,
       "latestVersion": "1.12.0",
@@ -1031,27 +1052,6 @@
       "listed": true,
       "publishedDate": "2026-05-24T14:30:17.233+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.Speech.OpenTelemetry",
-      "retired": false,
-      "latestVersion": "1.5.0",
-      "totalDownloads": 1401,
-      "description": "OpenTelemetry instrumentation for ElBruno.Speech \u2014 activities, metrics, and Aspire-compatible setup.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "opentelemetry",
-        "metrics",
-        "tracing",
-        "aspire",
-        "dotnet"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-06T14:18:55.093+00:00",
-      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2217,27 +2217,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Svg",
-      "retired": false,
-      "latestVersion": "1.1.0",
-      "totalDownloads": 382,
-      "description": "Generate QR codes as resolution-independent SVG markup. Perfect for web, email, documents, and print.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "svg",
-        "vector",
-        "web",
-        "email",
-        "printing"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:07.52+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.S1Mini",
       "retired": false,
       "latestVersion": "0.1.2",
@@ -2259,6 +2238,27 @@
       ],
       "listed": true,
       "publishedDate": "2026-08-21T00:33:49.83+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Svg",
+      "retired": false,
+      "latestVersion": "1.1.0",
+      "totalDownloads": 382,
+      "description": "Generate QR codes as resolution-independent SVG markup. Perfect for web, email, documents, and print.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "svg",
+        "vector",
+        "web",
+        "email",
+        "printing"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:07.52+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -2285,6 +2285,26 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.Text2Image.BlazorComponents",
+      "retired": false,
+      "latestVersion": "1.6.0",
+      "totalDownloads": 265,
+      "description": "Reusable Blazor components for ElBruno.Text2Image generation experiences.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
+      "tags": [
+        "blazor",
+        "text-to-image",
+        "image-generation",
+        "ai",
+        "stable-diffusion"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-01T15:09:23.263+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AotMapper.Generator",
       "retired": false,
       "latestVersion": "0.6.0",
@@ -2304,26 +2324,6 @@
       "listed": true,
       "publishedDate": "2026-04-19T13:12:26.4+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.Text2Image.BlazorComponents",
-      "retired": false,
-      "latestVersion": "1.6.0",
-      "totalDownloads": 265,
-      "description": "Reusable Blazor components for ElBruno.Text2Image generation experiences.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
-      "tags": [
-        "blazor",
-        "text-to-image",
-        "image-generation",
-        "ai",
-        "stable-diffusion"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-01T15:09:23.263+00:00",
-      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -2350,6 +2350,20 @@
       "dependencies": null
     },
     {
+      "packageId": "graphify-dotnet-core",
+      "retired": false,
+      "latestVersion": "0.7.0",
+      "totalDownloads": 320,
+      "description": "Core graph extraction, graph modeling, clustering, and export pipeline for graphify-dotnet.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/graphify-dotnet",
+      "tags": [],
+      "listed": true,
+      "publishedDate": "2026-05-11T14:57:23.727+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AotMapper.EntityFramework",
       "retired": false,
       "latestVersion": "0.6.0",
@@ -2367,20 +2381,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-19T13:12:27.217+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "graphify-dotnet-core",
-      "retired": false,
-      "latestVersion": "0.7.0",
-      "totalDownloads": 320,
-      "description": "Core graph extraction, graph modeling, clustering, and export pipeline for graphify-dotnet.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/graphify-dotnet",
-      "tags": [],
-      "listed": true,
-      "publishedDate": "2026-05-11T14:57:23.727+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -2467,6 +2467,29 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.LocalLLMs.Decisions",
+      "retired": false,
+      "latestVersion": "0.23.0",
+      "totalDownloads": 55,
+      "description": "Local System One decision models for ElBruno.LocalLLMs. Typed choice, score and yes/no decisions with probabilities in a single forward pass, running fully in-process on ONNX Runtime with no server and no Python.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
+      "tags": [
+        "decisions",
+        "classification",
+        "laya",
+        "onnx",
+        "system-one",
+        "local-llm",
+        "routing",
+        "triage"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-10T01:58:21.177+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AI.Decisions.Jev",
       "retired": false,
       "latestVersion": "0.6.2",
@@ -2515,28 +2538,6 @@
       "dependencies": null
     },
     {
-      "packageId": "elbruno.Extensions.AI.Skills.Cli",
-      "retired": false,
-      "latestVersion": "0.1.0",
-      "totalDownloads": 211,
-      "description": "CLI tool for validating skills and generating prompt XML.",
-      "authors": "elbruno",
-      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
-      "tags": [
-        "agent-skills",
-        "ai",
-        "llm",
-        "anthropic",
-        "dotnet",
-        "microsoft-extensions-ai",
-        "mcp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-06T21:09:15.113+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.AI.Decisions",
       "retired": false,
       "latestVersion": "0.6.2",
@@ -2560,26 +2561,25 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.LocalLLMs.Decisions",
+      "packageId": "elbruno.Extensions.AI.Skills.Cli",
       "retired": false,
-      "latestVersion": "0.23.0",
-      "totalDownloads": 55,
-      "description": "Local System One decision models for ElBruno.LocalLLMs. Typed choice, score and yes/no decisions with probabilities in a single forward pass, running fully in-process on ONNX Runtime with no server and no Python.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
+      "latestVersion": "0.1.0",
+      "totalDownloads": 211,
+      "description": "CLI tool for validating skills and generating prompt XML.",
+      "authors": "elbruno",
+      "projectUrl": "https://github.com/elbruno/elbruno-agentskills",
       "tags": [
-        "decisions",
-        "classification",
-        "laya",
-        "onnx",
-        "system-one",
-        "local-llm",
-        "routing",
-        "triage"
+        "agent-skills",
+        "ai",
+        "llm",
+        "anthropic",
+        "dotnet",
+        "microsoft-extensions-ai",
+        "mcp"
       ],
       "listed": true,
-      "publishedDate": "2026-10-10T01:58:21.177+00:00",
-      "releasesLast30Days": 2,
+      "publishedDate": "2026-02-06T21:09:15.113+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -2629,29 +2629,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.AI.Decisions.Foundry",
-      "retired": false,
-      "latestVersion": "0.6.2",
-      "totalDownloads": 0,
-      "description": "Microsoft-Decision-1 on Microsoft Foundry for ElBruno.AI.Decisions: Choice, Score, and Assess through the Microsoft SystemOne API. Early-access SDK; validate model calibration for your workload.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "tags": [
-        "ai",
-        "decision",
-        "foundry",
-        "microsoft-decision-1",
-        "classification",
-        "routing",
-        "dotnet",
-        "tentative"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-10T01:24:18.31+00:00",
-      "releasesLast30Days": 3,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.AI.Decisions.Ollama",
       "retired": false,
       "latestVersion": "0.6.2",
@@ -2672,6 +2649,29 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-10T01:24:19.29+00:00",
+      "releasesLast30Days": 3,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.AI.Decisions.Foundry",
+      "retired": false,
+      "latestVersion": "0.6.2",
+      "totalDownloads": 0,
+      "description": "Microsoft-Decision-1 on Microsoft Foundry for ElBruno.AI.Decisions: Choice, Score, and Assess through the Microsoft SystemOne API. Early-access SDK; validate model calibration for your workload.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "tags": [
+        "ai",
+        "decision",
+        "foundry",
+        "microsoft-decision-1",
+        "classification",
+        "routing",
+        "dotnet",
+        "tentative"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-10T01:24:18.31+00:00",
       "releasesLast30Days": 3,
       "dependencies": null
     },
