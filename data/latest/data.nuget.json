@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T16:57:38.2730048+00:00",
+  "generatedAt": "2026-10-14T14:31:34.6968075+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -202,7 +202,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-01T15:09:23.017+00:00",
-      "releasesLast30Days": 2,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -268,7 +268,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-01T15:09:24.673+00:00",
-      "releasesLast30Days": 2,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -292,7 +292,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-01T15:09:24.28+00:00",
-      "releasesLast30Days": 2,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -337,7 +337,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-01T15:09:24.093+00:00",
-      "releasesLast30Days": 2,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -360,7 +360,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-01T15:09:24.463+00:00",
-      "releasesLast30Days": 2,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -496,7 +496,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-01T15:09:23.79+00:00",
-      "releasesLast30Days": 2,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -735,6 +735,34 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
+      "retired": false,
+      "latestVersion": "1.6.4",
+      "totalDownloads": 1872,
+      "description": "Intel Core Ultra NPU-accelerated local embedding generation using OpenVINO and ONNX Runtime",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "onnx",
+        "ai",
+        "local",
+        "npu",
+        "intel",
+        "core-ultra",
+        "openvino",
+        "hardware-acceleration",
+        "microsoft-extensions-ai",
+        "sentence-transformers",
+        "nlp",
+        "machine-learning"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-07T18:22:55.477+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
       "retired": false,
       "latestVersion": "1.6.4",
@@ -784,34 +812,6 @@
       "listed": true,
       "publishedDate": "2026-08-07T00:24:22.68+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.LocalEmbeddings.Npu.Intel",
-      "retired": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 1872,
-      "description": "Intel Core Ultra NPU-accelerated local embedding generation using OpenVINO and ONNX Runtime",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "tags": [
-        "embeddings",
-        "onnx",
-        "ai",
-        "local",
-        "npu",
-        "intel",
-        "core-ultra",
-        "openvino",
-        "hardware-acceleration",
-        "microsoft-extensions-ai",
-        "sentence-transformers",
-        "nlp",
-        "machine-learning"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-07T18:22:55.477+00:00",
-      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -886,26 +886,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.PresenterTimer",
-      "retired": false,
-      "latestVersion": "0.9.0",
-      "totalDownloads": 1359,
-      "description": "Windows tray timeline app for presenters to stay on track during talks, demos, and recordings.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.PresenterTimer",
-      "tags": [
-        "presenter",
-        "timer",
-        "tray",
-        "wpf",
-        "windows"
-      ],
-      "listed": true,
-      "publishedDate": "2026-06-08T17:15:56.027+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.CopilotCLIMonitor",
       "retired": true,
       "latestVersion": "0.3.2",
@@ -924,6 +904,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-08-20T17:43:22.803+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.PresenterTimer",
+      "retired": false,
+      "latestVersion": "0.9.0",
+      "totalDownloads": 1359,
+      "description": "Windows tray timeline app for presenters to stay on track during talks, demos, and recordings.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.PresenterTimer",
+      "tags": [
+        "presenter",
+        "timer",
+        "tray",
+        "wpf",
+        "windows"
+      ],
+      "listed": true,
+      "publishedDate": "2026-06-08T17:15:56.027+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -987,6 +987,27 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.Speech.OpenTelemetry",
+      "retired": false,
+      "latestVersion": "1.5.0",
+      "totalDownloads": 1401,
+      "description": "OpenTelemetry instrumentation for ElBruno.Speech \u2014 activities, metrics, and Aspire-compatible setup.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "opentelemetry",
+        "metrics",
+        "tracing",
+        "aspire",
+        "dotnet"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-06T14:18:55.093+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.MarkItDotNet.Cli",
       "retired": false,
       "latestVersion": "0.9.2",
@@ -1012,27 +1033,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.Speech.OpenTelemetry",
-      "retired": false,
-      "latestVersion": "1.5.0",
-      "totalDownloads": 1401,
-      "description": "OpenTelemetry instrumentation for ElBruno.Speech \u2014 activities, metrics, and Aspire-compatible setup.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "opentelemetry",
-        "metrics",
-        "tracing",
-        "aspire",
-        "dotnet"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-06T14:18:55.093+00:00",
-      "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.AspireMonitor",
       "retired": false,
       "latestVersion": "1.12.0",
@@ -1055,27 +1055,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Quality",
-      "retired": false,
-      "latestVersion": "0.9.2",
-      "totalDownloads": 1226,
-      "description": "Quality analysis and scoring for ElBruno.MarkItDotNet ingestion pipelines. Detects OCR issues, duplicate content, broken reading order, and guides fallback routing.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "quality",
-        "analysis",
-        "ocr",
-        "ingestion",
-        "diagnostics"
-      ],
-      "listed": true,
-      "publishedDate": "2026-08-07T00:24:21.323+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.Citations",
       "retired": false,
       "latestVersion": "0.9.2",
@@ -1094,6 +1073,27 @@
       ],
       "listed": true,
       "publishedDate": "2026-08-07T00:24:17.55+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Quality",
+      "retired": false,
+      "latestVersion": "0.9.2",
+      "totalDownloads": 1226,
+      "description": "Quality analysis and scoring for ElBruno.MarkItDotNet ingestion pipelines. Detects OCR issues, duplicate content, broken reading order, and guides fallback routing.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "quality",
+        "analysis",
+        "ocr",
+        "ingestion",
+        "diagnostics"
+      ],
+      "listed": true,
+      "publishedDate": "2026-08-07T00:24:21.323+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -1386,6 +1386,32 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.LocalLLMs.BlazorComponents",
+      "retired": false,
+      "latestVersion": "0.23.0",
+      "totalDownloads": 869,
+      "description": "Blazor UI components for ElBruno.LocalLLMs \u2014 model status cards, chat boxes, download management, environment diagnostics, RAG playground and more.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
+      "tags": [
+        "blazor",
+        "llm",
+        "onnx",
+        "ai",
+        "local",
+        "chat",
+        "components",
+        "phi",
+        "qwen",
+        "llama",
+        "rag"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-10T01:58:20.847+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.Realtime.SileroVad",
       "retired": false,
       "latestVersion": "0.10.2",
@@ -1429,32 +1455,6 @@
       "listed": true,
       "publishedDate": "2026-05-08T21:55:10.393+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.LocalLLMs.BlazorComponents",
-      "retired": false,
-      "latestVersion": "0.23.0",
-      "totalDownloads": 869,
-      "description": "Blazor UI components for ElBruno.LocalLLMs \u2014 model status cards, chat boxes, download management, environment diagnostics, RAG playground and more.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
-      "tags": [
-        "blazor",
-        "llm",
-        "onnx",
-        "ai",
-        "local",
-        "chat",
-        "components",
-        "phi",
-        "qwen",
-        "llama",
-        "rag"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-10T01:58:20.847+00:00",
-      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1503,6 +1503,30 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.LocalEmbeddings.OpenTelemetry",
+      "retired": false,
+      "latestVersion": "1.6.4",
+      "totalDownloads": 821,
+      "description": "OpenTelemetry observability instrumentation for ElBruno.LocalEmbeddings \u2014 distributed tracing, metrics collection, and structured events for enterprise observability",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "opentelemetry",
+        "observability",
+        "tracing",
+        "metrics",
+        "jaeger",
+        "datadog",
+        "azure-monitor",
+        "distributed-tracing"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-07T18:22:56.12+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.Hermes.Adapters",
       "retired": false,
       "latestVersion": "2.0.2",
@@ -1544,30 +1568,6 @@
       "listed": true,
       "publishedDate": "2026-05-08T21:55:24.083+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.LocalEmbeddings.OpenTelemetry",
-      "retired": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 821,
-      "description": "OpenTelemetry observability instrumentation for ElBruno.LocalEmbeddings \u2014 distributed tracing, metrics collection, and structured events for enterprise observability",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "tags": [
-        "embeddings",
-        "opentelemetry",
-        "observability",
-        "tracing",
-        "metrics",
-        "jaeger",
-        "datadog",
-        "azure-monitor",
-        "distributed-tracing"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-07T18:22:56.12+00:00",
-      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1756,26 +1756,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.ClockTray",
-      "retired": false,
-      "latestVersion": "1.0.0",
-      "totalDownloads": 854,
-      "description": "Windows system tray app to toggle taskbar date/time visibility. Context menu \u002B Ctrl\u002BAlt\u002BT hotkey.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.ClockTray",
-      "tags": [
-        "windows",
-        "taskbar",
-        "clock",
-        "system-tray",
-        "toggle"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-22T22:12:55.6+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.LocalEmbeddings.Azure",
       "retired": false,
       "latestVersion": "1.6.4",
@@ -1795,6 +1775,26 @@
       "listed": true,
       "publishedDate": "2026-10-07T18:22:52.503+00:00",
       "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.ClockTray",
+      "retired": false,
+      "latestVersion": "1.0.0",
+      "totalDownloads": 854,
+      "description": "Windows system tray app to toggle taskbar date/time visibility. Context menu \u002B Ctrl\u002BAlt\u002BT hotkey.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.ClockTray",
+      "tags": [
+        "windows",
+        "taskbar",
+        "clock",
+        "system-tray",
+        "toggle"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-22T22:12:55.6+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -1819,6 +1819,29 @@
       "listed": true,
       "publishedDate": "2026-04-04T15:37:07.34+00:00",
       "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.Speech.BlazorComponents",
+      "retired": false,
+      "latestVersion": "1.5.0",
+      "totalDownloads": 581,
+      "description": "Blazor Razor Class Library providing ready-to-use speech pipeline UI components for ElBruno.Speech.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "blazor",
+        "components",
+        "rcl",
+        "vad",
+        "stt",
+        "tts",
+        "dotnet"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-06T14:18:48.05+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1887,29 +1910,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.Speech.BlazorComponents",
-      "retired": false,
-      "latestVersion": "1.5.0",
-      "totalDownloads": 581,
-      "description": "Blazor Razor Class Library providing ready-to-use speech pipeline UI components for ElBruno.Speech.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "blazor",
-        "components",
-        "rcl",
-        "vad",
-        "stt",
-        "tts",
-        "dotnet"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-06T14:18:48.05+00:00",
-      "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.AgentsOrchestration.Abstractions",
       "retired": false,
       "latestVersion": "0.5.5",
@@ -1951,6 +1951,30 @@
       "listed": true,
       "publishedDate": "2026-05-08T21:55:11.447+00:00",
       "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.BlazorComponents",
+      "retired": false,
+      "latestVersion": "1.6.4",
+      "totalDownloads": 538,
+      "description": "Blazor UI components for ElBruno.LocalEmbeddings \u2014 model status cards, embedding explorer, semantic search box, similarity meter, and more",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "onnx",
+        "ai",
+        "local",
+        "blazor",
+        "components",
+        "semantic-search",
+        "microsoft-extensions-ai",
+        "razor"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-07T18:22:52.8+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1997,30 +2021,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.LocalEmbeddings.BlazorComponents",
-      "retired": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 538,
-      "description": "Blazor UI components for ElBruno.LocalEmbeddings \u2014 model status cards, embedding explorer, semantic search box, similarity meter, and more",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "tags": [
-        "embeddings",
-        "onnx",
-        "ai",
-        "local",
-        "blazor",
-        "components",
-        "semantic-search",
-        "microsoft-extensions-ai",
-        "razor"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-07T18:22:52.8+00:00",
-      "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.Connectors",
       "retired": false,
       "latestVersion": "0.9.2",
@@ -2038,6 +2038,29 @@
       "listed": true,
       "publishedDate": "2026-08-07T00:24:18.53+00:00",
       "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.LocalLLMs.Decisions",
+      "retired": false,
+      "latestVersion": "0.23.0",
+      "totalDownloads": 55,
+      "description": "Local System One decision models for ElBruno.LocalLLMs. Typed choice, score and yes/no decisions with probabilities in a single forward pass, running fully in-process on ONNX Runtime with no server and no Python.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
+      "tags": [
+        "decisions",
+        "classification",
+        "laya",
+        "onnx",
+        "system-one",
+        "local-llm",
+        "routing",
+        "triage"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-10T01:58:21.177+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -2194,29 +2217,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.VibeVoiceTTS.Realtime",
-      "retired": false,
-      "latestVersion": "0.10.2",
-      "totalDownloads": 398,
-      "description": "Bridge between ElBruno.VibeVoiceTTS and ElBruno.Realtime \u2014 provides ITextToSpeechClient adapter and DI extensions for VibeVoiceTTS integration with the real-time conversation pipeline.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
-      "tags": [
-        "vibevoice",
-        "tts",
-        "text-to-speech",
-        "realtime",
-        "ai",
-        "local",
-        "onnx",
-        "bridge"
-      ],
-      "listed": true,
-      "publishedDate": "2026-07-05T12:12:26.143+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.S1Mini",
       "retired": false,
       "latestVersion": "0.1.2",
@@ -2238,6 +2238,29 @@
       ],
       "listed": true,
       "publishedDate": "2026-08-21T00:33:49.83+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.VibeVoiceTTS.Realtime",
+      "retired": false,
+      "latestVersion": "0.10.2",
+      "totalDownloads": 398,
+      "description": "Bridge between ElBruno.VibeVoiceTTS and ElBruno.Realtime \u2014 provides ITextToSpeechClient adapter and DI extensions for VibeVoiceTTS integration with the real-time conversation pipeline.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
+      "tags": [
+        "vibevoice",
+        "tts",
+        "text-to-speech",
+        "realtime",
+        "ai",
+        "local",
+        "onnx",
+        "bridge"
+      ],
+      "listed": true,
+      "publishedDate": "2026-07-05T12:12:26.143+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -2301,7 +2324,7 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-01T15:09:23.263+00:00",
-      "releasesLast30Days": 2,
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2327,29 +2350,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.LocalLLMs.Decisions",
-      "retired": false,
-      "latestVersion": "0.23.0",
-      "totalDownloads": 55,
-      "description": "Local System One decision models for ElBruno.LocalLLMs. Typed choice, score and yes/no decisions with probabilities in a single forward pass, running fully in-process on ONNX Runtime with no server and no Python.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
-      "tags": [
-        "decisions",
-        "classification",
-        "laya",
-        "onnx",
-        "system-one",
-        "local-llm",
-        "routing",
-        "triage"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-10T01:58:21.177+00:00",
-      "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.QRCodeGenerator.Tool",
       "retired": false,
       "latestVersion": "1.1.0",
@@ -2370,6 +2370,29 @@
       "listed": true,
       "publishedDate": "2026-04-01T21:58:05.853+00:00",
       "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.AI.Decisions",
+      "retired": false,
+      "latestVersion": "0.6.2",
+      "totalDownloads": 0,
+      "description": "Provider-neutral .NET 10 abstractions for AI decision models: Choice, Score, and Assess with probabilities and provider confidence. Providers: Microsoft-Decision-1 on Foundry, Ollama, and Jev.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "tags": [
+        "ai",
+        "decision",
+        "classification",
+        "routing",
+        "foundry",
+        "ollama",
+        "dotnet",
+        "microsoft-extensions-ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-10T01:24:16.2+00:00",
+      "releasesLast30Days": 3,
       "dependencies": null
     },
     {
@@ -2428,6 +2451,30 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.AI.Decisions.Ollama",
+      "retired": false,
+      "latestVersion": "0.6.2",
+      "totalDownloads": 0,
+      "description": "Local System One decision models for ElBruno.AI.Decisions through Ollama v0.35.0 or later: native Choice, Score, and Assess probabilities. Confidence is not calibrated correctness. Tentative early access.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "tags": [
+        "ai",
+        "decision",
+        "ollama",
+        "local",
+        "offline",
+        "classification",
+        "routing",
+        "dotnet",
+        "tentative"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-10T01:24:19.29+00:00",
+      "releasesLast30Days": 3,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.QRCodeGenerator.Ascii",
       "retired": false,
       "latestVersion": "1.1.0",
@@ -2445,70 +2492,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-01T21:58:07.05+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AotMapper.AspNetCore",
-      "retired": false,
-      "latestVersion": "0.6.0",
-      "totalDownloads": 261,
-      "description": "ASP.NET Core integration for ElBruno.AotMapper. DI registration and convenience extensions.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "",
-      "tags": [
-        "aot",
-        "mapper",
-        "aspnetcore",
-        "dependency-injection",
-        "native-aot"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-19T13:12:26.597+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AI.Decisions",
-      "retired": false,
-      "latestVersion": "0.6.2",
-      "totalDownloads": 0,
-      "description": "Provider-neutral .NET 10 abstractions for AI decision models: Choice, Score, and Assess with probabilities and provider confidence. Providers: Microsoft-Decision-1 on Foundry, Ollama, and Jev.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "tags": [
-        "ai",
-        "decision",
-        "classification",
-        "routing",
-        "foundry",
-        "ollama",
-        "dotnet",
-        "microsoft-extensions-ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-10T01:24:16.2+00:00",
-      "releasesLast30Days": 3,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.QRCodeGenerator.Image",
-      "retired": false,
-      "latestVersion": "1.1.0",
-      "totalDownloads": 260,
-      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "png",
-        "jpeg",
-        "image",
-        "bitmap",
-        "skiasharp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:06.607+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -2537,6 +2520,47 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.AotMapper.AspNetCore",
+      "retired": false,
+      "latestVersion": "0.6.0",
+      "totalDownloads": 261,
+      "description": "ASP.NET Core integration for ElBruno.AotMapper. DI registration and convenience extensions.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
+      "tags": [
+        "aot",
+        "mapper",
+        "aspnetcore",
+        "dependency-injection",
+        "native-aot"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-19T13:12:26.597+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Image",
+      "retired": false,
+      "latestVersion": "1.1.0",
+      "totalDownloads": 260,
+      "description": "Generate QR codes as PNG or JPEG bitmaps using SkiaSharp.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "png",
+        "jpeg",
+        "image",
+        "bitmap",
+        "skiasharp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:06.607+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AI.Jev",
       "retired": false,
       "latestVersion": "0.6.0",
@@ -2558,6 +2582,29 @@
       "listed": true,
       "publishedDate": "2026-09-30T15:06:34.973+00:00",
       "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.AI.Decisions.Foundry",
+      "retired": false,
+      "latestVersion": "0.6.2",
+      "totalDownloads": 0,
+      "description": "Microsoft-Decision-1 on Microsoft Foundry for ElBruno.AI.Decisions: Choice, Score, and Assess through the Microsoft SystemOne API. Early-access SDK; validate model calibration for your workload.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "tags": [
+        "ai",
+        "decision",
+        "foundry",
+        "microsoft-decision-1",
+        "classification",
+        "routing",
+        "dotnet",
+        "tentative"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-10T01:24:18.31+00:00",
+      "releasesLast30Days": 3,
       "dependencies": null
     },
     {
@@ -2626,53 +2673,6 @@
       "listed": true,
       "publishedDate": "2026-08-16T17:17:09.133+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AI.Decisions.Ollama",
-      "retired": false,
-      "latestVersion": "0.6.2",
-      "totalDownloads": 0,
-      "description": "Local System One decision models for ElBruno.AI.Decisions through Ollama v0.35.0 or later: native Choice, Score, and Assess probabilities. Confidence is not calibrated correctness. Tentative early access.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "tags": [
-        "ai",
-        "decision",
-        "ollama",
-        "local",
-        "offline",
-        "classification",
-        "routing",
-        "dotnet",
-        "tentative"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-10T01:24:19.29+00:00",
-      "releasesLast30Days": 3,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AI.Decisions.Foundry",
-      "retired": false,
-      "latestVersion": "0.6.2",
-      "totalDownloads": 0,
-      "description": "Microsoft-Decision-1 on Microsoft Foundry for ElBruno.AI.Decisions: Choice, Score, and Assess through the Microsoft SystemOne API. Early-access SDK; validate model calibration for your workload.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "tags": [
-        "ai",
-        "decision",
-        "foundry",
-        "microsoft-decision-1",
-        "classification",
-        "routing",
-        "dotnet",
-        "tentative"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-10T01:24:18.31+00:00",
-      "releasesLast30Days": 3,
       "dependencies": null
     },
     {
