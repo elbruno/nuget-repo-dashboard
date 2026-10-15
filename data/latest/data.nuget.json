@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T14:31:34.6968075+00:00",
+  "generatedAt": "2026-10-15T14:10:29.4685876+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -612,31 +612,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.QwenTTS.VoiceCloning",
-      "retired": false,
-      "latestVersion": "1.10.2",
-      "totalDownloads": 2430,
-      "description": "Voice cloning extension for ElBruno.QwenTTS. Clone any voice from a 3-second audio sample using the Qwen3-TTS Base model with ECAPA-TDNN speaker encoder.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "tags": [
-        "tts",
-        "text-to-speech",
-        "voice-cloning",
-        "qwen",
-        "onnx",
-        "ai",
-        "local",
-        "speech-synthesis",
-        "ecapa-tdnn",
-        "speaker-encoder"
-      ],
-      "listed": true,
-      "publishedDate": "2026-09-29T15:11:09.407+00:00",
-      "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.LocalLLMs.BitNet",
       "retired": false,
       "latestVersion": "0.23.0",
@@ -658,6 +633,31 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-10T01:58:20.457+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.QwenTTS.VoiceCloning",
+      "retired": false,
+      "latestVersion": "1.10.2",
+      "totalDownloads": 2430,
+      "description": "Voice cloning extension for ElBruno.QwenTTS. Clone any voice from a 3-second audio sample using the Qwen3-TTS Base model with ECAPA-TDNN speaker encoder.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
+      "tags": [
+        "tts",
+        "text-to-speech",
+        "voice-cloning",
+        "qwen",
+        "onnx",
+        "ai",
+        "local",
+        "speech-synthesis",
+        "ecapa-tdnn",
+        "speaker-encoder"
+      ],
+      "listed": true,
+      "publishedDate": "2026-09-29T15:11:09.407+00:00",
       "releasesLast30Days": 2,
       "dependencies": null
     },
@@ -1954,27 +1954,24 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.LocalEmbeddings.BlazorComponents",
+      "packageId": "ElBruno.AI.Evaluation",
       "retired": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 538,
-      "description": "Blazor UI components for ElBruno.LocalEmbeddings \u2014 model status cards, embedding explorer, semantic search box, similarity meter, and more",
+      "latestVersion": "0.5.2",
+      "totalDownloads": 567,
+      "description": "AI Testing and Evaluation Toolkit for .NET",
       "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
       "tags": [
-        "embeddings",
-        "onnx",
         "ai",
-        "local",
-        "blazor",
-        "components",
-        "semantic-search",
-        "microsoft-extensions-ai",
-        "razor"
+        "evaluation",
+        "testing",
+        "observability",
+        "dotnet",
+        "llm"
       ],
       "listed": true,
-      "publishedDate": "2026-10-07T18:22:52.8+00:00",
-      "releasesLast30Days": 2,
+      "publishedDate": "2026-02-28T18:53:59.933+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -2000,24 +1997,27 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.AI.Evaluation",
+      "packageId": "ElBruno.LocalEmbeddings.BlazorComponents",
       "retired": false,
-      "latestVersion": "0.5.2",
-      "totalDownloads": 567,
-      "description": "AI Testing and Evaluation Toolkit for .NET",
+      "latestVersion": "1.6.4",
+      "totalDownloads": 538,
+      "description": "Blazor UI components for ElBruno.LocalEmbeddings \u2014 model status cards, embedding explorer, semantic search box, similarity meter, and more",
       "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
       "tags": [
+        "embeddings",
+        "onnx",
         "ai",
-        "evaluation",
-        "testing",
-        "observability",
-        "dotnet",
-        "llm"
+        "local",
+        "blazor",
+        "components",
+        "semantic-search",
+        "microsoft-extensions-ai",
+        "razor"
       ],
       "listed": true,
-      "publishedDate": "2026-02-28T18:53:59.933+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-07T18:22:52.8+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -2037,6 +2037,27 @@
       ],
       "listed": true,
       "publishedDate": "2026-08-07T00:24:18.53+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.AI.Evaluation.SyntheticData",
+      "retired": false,
+      "latestVersion": "0.5.2",
+      "totalDownloads": 415,
+      "description": "Synthetic data generation for AI evaluation testing in .NET",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "tags": [
+        "ai",
+        "evaluation",
+        "testing",
+        "observability",
+        "dotnet",
+        "llm"
+      ],
+      "listed": true,
+      "publishedDate": "2026-02-28T18:54:00.33+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -2061,27 +2082,6 @@
       "listed": true,
       "publishedDate": "2026-10-10T01:58:21.177+00:00",
       "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AI.Evaluation.SyntheticData",
-      "retired": false,
-      "latestVersion": "0.5.2",
-      "totalDownloads": 415,
-      "description": "Synthetic data generation for AI evaluation testing in .NET",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "tags": [
-        "ai",
-        "evaluation",
-        "testing",
-        "observability",
-        "dotnet",
-        "llm"
-      ],
-      "listed": true,
-      "publishedDate": "2026-02-28T18:54:00.33+00:00",
-      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -2375,7 +2375,7 @@
     {
       "packageId": "ElBruno.AI.Decisions",
       "retired": false,
-      "latestVersion": "0.6.2",
+      "latestVersion": "0.6.3",
       "totalDownloads": 0,
       "description": "Provider-neutral .NET 10 abstractions for AI decision models: Choice, Score, and Assess with probabilities and provider confidence. Providers: Microsoft-Decision-1 on Foundry, Ollama, and Jev.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -2391,8 +2391,8 @@
         "microsoft-extensions-ai"
       ],
       "listed": true,
-      "publishedDate": "2026-10-10T01:24:16.2+00:00",
-      "releasesLast30Days": 3,
+      "publishedDate": "2026-10-14T22:05:00.33+00:00",
+      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
@@ -2453,7 +2453,7 @@
     {
       "packageId": "ElBruno.AI.Decisions.Ollama",
       "retired": false,
-      "latestVersion": "0.6.2",
+      "latestVersion": "0.6.3",
       "totalDownloads": 0,
       "description": "Local System One decision models for ElBruno.AI.Decisions through Ollama v0.35.0 or later: native Choice, Score, and Assess probabilities. Confidence is not calibrated correctness. Tentative early access.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -2470,8 +2470,8 @@
         "tentative"
       ],
       "listed": true,
-      "publishedDate": "2026-10-10T01:24:19.29+00:00",
-      "releasesLast30Days": 3,
+      "publishedDate": "2026-10-14T22:05:02.44+00:00",
+      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
@@ -2498,7 +2498,7 @@
     {
       "packageId": "ElBruno.AI.Decisions.Jev",
       "retired": false,
-      "latestVersion": "0.6.2",
+      "latestVersion": "0.6.3",
       "totalDownloads": 0,
       "description": "Tentative early-access .NET 10 client for TypeSafe AI Jev and local Laya typed decisions: Choice, Score, Noul, model discovery, and Microsoft.Extensions.AI tools, routing and assessments. Live TypeSafe compatibility is unverified; evaluate before production use.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -2515,8 +2515,8 @@
         "early-access"
       ],
       "listed": true,
-      "publishedDate": "2026-10-10T01:24:17.23+00:00",
-      "releasesLast30Days": 3,
+      "publishedDate": "2026-10-14T22:05:01.04+00:00",
+      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
@@ -2587,7 +2587,7 @@
     {
       "packageId": "ElBruno.AI.Decisions.Foundry",
       "retired": false,
-      "latestVersion": "0.6.2",
+      "latestVersion": "0.6.3",
       "totalDownloads": 0,
       "description": "Microsoft-Decision-1 on Microsoft Foundry for ElBruno.AI.Decisions: Choice, Score, and Assess through the Microsoft SystemOne API. Early-access SDK; validate model calibration for your workload.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -2603,8 +2603,8 @@
         "tentative"
       ],
       "listed": true,
-      "publishedDate": "2026-10-10T01:24:18.31+00:00",
-      "releasesLast30Days": 3,
+      "publishedDate": "2026-10-14T22:05:01.763+00:00",
+      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
