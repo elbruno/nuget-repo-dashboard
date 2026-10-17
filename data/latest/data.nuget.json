@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T13:57:56.5831092+00:00",
+  "generatedAt": "2026-10-17T12:59:11.0678969+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -886,26 +886,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.PresenterTimer",
-      "retired": false,
-      "latestVersion": "0.9.0",
-      "totalDownloads": 1359,
-      "description": "Windows tray timeline app for presenters to stay on track during talks, demos, and recordings.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.PresenterTimer",
-      "tags": [
-        "presenter",
-        "timer",
-        "tray",
-        "wpf",
-        "windows"
-      ],
-      "listed": true,
-      "publishedDate": "2026-06-08T17:15:56.027+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.CopilotCLIMonitor",
       "retired": true,
       "latestVersion": "0.3.2",
@@ -924,6 +904,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-08-20T17:43:22.803+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.PresenterTimer",
+      "retired": false,
+      "latestVersion": "0.9.0",
+      "totalDownloads": 1359,
+      "description": "Windows tray timeline app for presenters to stay on track during talks, demos, and recordings.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.PresenterTimer",
+      "tags": [
+        "presenter",
+        "timer",
+        "tray",
+        "wpf",
+        "windows"
+      ],
+      "listed": true,
+      "publishedDate": "2026-06-08T17:15:56.027+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -1055,6 +1055,26 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.Speech.AspNetCore",
+      "retired": false,
+      "latestVersion": "1.5.0",
+      "totalDownloads": 1469,
+      "description": "ASP.NET Core integration for ElBruno.Speech \u2014 WebSocket endpoint, session registry, health checks, and protocol handling.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "aspnetcore",
+        "websocket",
+        "health",
+        "dotnet"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-06T14:18:47.427+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.MarkItDotNet.Citations",
       "retired": false,
       "latestVersion": "0.9.2",
@@ -1074,26 +1094,6 @@
       "listed": true,
       "publishedDate": "2026-08-07T00:24:17.55+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.Speech.AspNetCore",
-      "retired": false,
-      "latestVersion": "1.5.0",
-      "totalDownloads": 1469,
-      "description": "ASP.NET Core integration for ElBruno.Speech \u2014 WebSocket endpoint, session registry, health checks, and protocol handling.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "aspnetcore",
-        "websocket",
-        "health",
-        "dotnet"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-06T14:18:47.427+00:00",
-      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1320,6 +1320,28 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.Metadata",
+      "retired": false,
+      "latestVersion": "0.9.2",
+      "totalDownloads": 1245,
+      "description": "Metadata extraction and enrichment for ElBruno.MarkItDotNet ingestion pipelines. Provides title, author, language detection, document type tagging, and heading normalization.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "metadata",
+        "enrichment",
+        "rag",
+        "ai",
+        "ingestion",
+        "nlp"
+      ],
+      "listed": true,
+      "publishedDate": "2026-08-07T00:24:20.637+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "MemPalace.Search",
       "retired": false,
       "latestVersion": "0.15.2",
@@ -1339,28 +1361,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-05-08T21:55:12.457+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.Metadata",
-      "retired": false,
-      "latestVersion": "0.9.2",
-      "totalDownloads": 1245,
-      "description": "Metadata extraction and enrichment for ElBruno.MarkItDotNet ingestion pipelines. Provides title, author, language detection, document type tagging, and heading normalization.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "metadata",
-        "enrichment",
-        "rag",
-        "ai",
-        "ingestion",
-        "nlp"
-      ],
-      "listed": true,
-      "publishedDate": "2026-08-07T00:24:20.637+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -1660,6 +1660,26 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.Evals",
+      "retired": false,
+      "latestVersion": "0.9.2",
+      "totalDownloads": 795,
+      "description": "Evaluation helpers for conversion quality, completeness, and markdown readiness in ElBruno.MarkItDotNet pipelines.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "evals",
+        "evaluation",
+        "quality",
+        "ingestion"
+      ],
+      "listed": true,
+      "publishedDate": "2026-08-07T00:24:19.923+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.BM25",
       "retired": false,
       "latestVersion": "0.5.1",
@@ -1682,26 +1702,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-07-04T16:20:59.463+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.Evals",
-      "retired": false,
-      "latestVersion": "0.9.2",
-      "totalDownloads": 795,
-      "description": "Evaluation helpers for conversion quality, completeness, and markdown readiness in ElBruno.MarkItDotNet pipelines.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "evals",
-        "evaluation",
-        "quality",
-        "ingestion"
-      ],
-      "listed": true,
-      "publishedDate": "2026-08-07T00:24:19.923+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -2041,6 +2041,29 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.AI.Decisions",
+      "retired": false,
+      "latestVersion": "0.6.3",
+      "totalDownloads": 0,
+      "description": "Provider-neutral .NET 10 abstractions for AI decision models: Choice, Score, and Assess with probabilities and provider confidence. Providers: Microsoft-Decision-1 on Foundry, Ollama, and Jev.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "tags": [
+        "ai",
+        "decision",
+        "classification",
+        "routing",
+        "foundry",
+        "ollama",
+        "dotnet",
+        "microsoft-extensions-ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-14T22:05:00.33+00:00",
+      "releasesLast30Days": 4,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.LocalLLMs.Decisions",
       "retired": false,
       "latestVersion": "0.23.0",
@@ -2131,25 +2154,26 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.AI.Decisions",
+      "packageId": "ElBruno.AI.Decisions.Jev",
       "retired": false,
       "latestVersion": "0.6.3",
       "totalDownloads": 0,
-      "description": "Provider-neutral .NET 10 abstractions for AI decision models: Choice, Score, and Assess with probabilities and provider confidence. Providers: Microsoft-Decision-1 on Foundry, Ollama, and Jev.",
+      "description": "Tentative early-access .NET 10 client for TypeSafe AI Jev and local Laya typed decisions: Choice, Score, Noul, model discovery, and Microsoft.Extensions.AI tools, routing and assessments. Live TypeSafe compatibility is unverified; evaluate before production use.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
       "tags": [
+        "jev",
+        "typesafe",
         "ai",
-        "decision",
-        "classification",
-        "routing",
-        "foundry",
-        "ollama",
         "dotnet",
-        "microsoft-extensions-ai"
+        "classification",
+        "decision",
+        "microsoft-extensions-ai",
+        "tentative",
+        "early-access"
       ],
       "listed": true,
-      "publishedDate": "2026-10-14T22:05:00.33+00:00",
+      "publishedDate": "2026-10-14T22:05:01.04+00:00",
       "releasesLast30Days": 4,
       "dependencies": null
     },
@@ -2216,30 +2240,6 @@
       "listed": true,
       "publishedDate": "2026-02-28T18:54:00.513+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AI.Decisions.Jev",
-      "retired": false,
-      "latestVersion": "0.6.3",
-      "totalDownloads": 0,
-      "description": "Tentative early-access .NET 10 client for TypeSafe AI Jev and local Laya typed decisions: Choice, Score, Noul, model discovery, and Microsoft.Extensions.AI tools, routing and assessments. Live TypeSafe compatibility is unverified; evaluate before production use.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "tags": [
-        "jev",
-        "typesafe",
-        "ai",
-        "dotnet",
-        "classification",
-        "decision",
-        "microsoft-extensions-ai",
-        "tentative",
-        "early-access"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-14T22:05:01.04+00:00",
-      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
@@ -2352,6 +2352,29 @@
       "listed": true,
       "publishedDate": "2026-04-19T13:12:26.903+00:00",
       "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.AI.Decisions.Foundry",
+      "retired": false,
+      "latestVersion": "0.6.3",
+      "totalDownloads": 0,
+      "description": "Microsoft-Decision-1 on Microsoft Foundry for ElBruno.AI.Decisions: Choice, Score, and Assess through the Microsoft SystemOne API. Early-access SDK; validate model calibration for your workload.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "tags": [
+        "ai",
+        "decision",
+        "foundry",
+        "microsoft-decision-1",
+        "classification",
+        "routing",
+        "dotnet",
+        "tentative"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-14T22:05:01.763+00:00",
+      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
@@ -2496,29 +2519,6 @@
       "listed": true,
       "publishedDate": "2026-04-01T21:58:07.96+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AI.Decisions.Foundry",
-      "retired": false,
-      "latestVersion": "0.6.3",
-      "totalDownloads": 0,
-      "description": "Microsoft-Decision-1 on Microsoft Foundry for ElBruno.AI.Decisions: Choice, Score, and Assess through the Microsoft SystemOne API. Early-access SDK; validate model calibration for your workload.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "tags": [
-        "ai",
-        "decision",
-        "foundry",
-        "microsoft-decision-1",
-        "classification",
-        "routing",
-        "dotnet",
-        "tentative"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-14T22:05:01.763+00:00",
-      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
