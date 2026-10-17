@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T13:58:02.1710457+00:00",
+  "generatedAt": "2026-10-17T12:59:16.3189912+00:00",
   "totalRepos": 31,
   "profiles": [
     {
@@ -147,16 +147,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.QRCodeGenerator",
-      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
-      "accentColor": "#B85C5B",
-      "icon": "\uD83D\uDCF7"
-    },
-    {
       "repo": "elbruno/ElBruno.AI.Decisions",
       "configFile": "elbruno-ElBruno.AI.Decisions.json",
       "accentColor": "#5F886C",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.QRCodeGenerator",
+      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
+      "accentColor": "#B85C5B",
+      "icon": "\uD83D\uDCF7"
     },
     {
       "repo": "elbruno/ElBruno.S1Mini",
