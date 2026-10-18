@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T12:59:11.0678969+00:00",
+  "generatedAt": "2026-10-18T13:16:23.8942595+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -928,25 +928,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.Speech.Cli",
-      "retired": false,
-      "latestVersion": "1.5.0",
-      "totalDownloads": 1612,
-      "description": "CLI tool for ElBruno.Speech \u2014 devices, transcribe, vad, talk, serve, and benchmark commands.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "cli",
-        "tool",
-        "dotnet"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-06T14:18:54.377+00:00",
-      "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.Speech.NAudio",
       "retired": false,
       "latestVersion": "1.5.0",
@@ -964,6 +945,25 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-06T14:18:54.713+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.Speech.Cli",
+      "retired": false,
+      "latestVersion": "1.5.0",
+      "totalDownloads": 1612,
+      "description": "CLI tool for ElBruno.Speech \u2014 devices, transcribe, vad, talk, serve, and benchmark commands.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "cli",
+        "tool",
+        "dotnet"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-06T14:18:54.377+00:00",
       "releasesLast30Days": 1,
       "dependencies": null
     },
@@ -1055,26 +1055,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.Speech.AspNetCore",
-      "retired": false,
-      "latestVersion": "1.5.0",
-      "totalDownloads": 1469,
-      "description": "ASP.NET Core integration for ElBruno.Speech \u2014 WebSocket endpoint, session registry, health checks, and protocol handling.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "aspnetcore",
-        "websocket",
-        "health",
-        "dotnet"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-06T14:18:47.427+00:00",
-      "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.Citations",
       "retired": false,
       "latestVersion": "0.9.2",
@@ -1094,6 +1074,26 @@
       "listed": true,
       "publishedDate": "2026-08-07T00:24:17.55+00:00",
       "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.Speech.AspNetCore",
+      "retired": false,
+      "latestVersion": "1.5.0",
+      "totalDownloads": 1469,
+      "description": "ASP.NET Core integration for ElBruno.Speech \u2014 WebSocket endpoint, session registry, health checks, and protocol handling.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "aspnetcore",
+        "websocket",
+        "health",
+        "dotnet"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-06T14:18:47.427+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2021,26 +2021,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Connectors",
-      "retired": false,
-      "latestVersion": "0.9.2",
-      "totalDownloads": 476,
-      "description": "Source connector abstractions and filesystem connector for ElBruno.MarkItDotNet ingestion pipelines.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "connectors",
-        "ingestion",
-        "filesystem",
-        "document-source"
-      ],
-      "listed": true,
-      "publishedDate": "2026-08-07T00:24:18.53+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.AI.Decisions",
       "retired": false,
       "latestVersion": "0.6.3",
@@ -2061,6 +2041,26 @@
       "listed": true,
       "publishedDate": "2026-10-14T22:05:00.33+00:00",
       "releasesLast30Days": 4,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Connectors",
+      "retired": false,
+      "latestVersion": "0.9.2",
+      "totalDownloads": 476,
+      "description": "Source connector abstractions and filesystem connector for ElBruno.MarkItDotNet ingestion pipelines.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "connectors",
+        "ingestion",
+        "filesystem",
+        "document-source"
+      ],
+      "listed": true,
+      "publishedDate": "2026-08-07T00:24:18.53+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -2131,29 +2131,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.QRCodeGenerator.Payloads",
-      "retired": false,
-      "latestVersion": "1.1.0",
-      "totalDownloads": 416,
-      "description": "Fluent API builders for structured QR code payloads: WiFi, vCard, Email, SMS, Geographic coordinates, and URLs.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "payloads",
-        "wifi",
-        "vcard",
-        "sms",
-        "geo",
-        "email",
-        "structured-data"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:04.627+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.AI.Decisions.Jev",
       "retired": false,
       "latestVersion": "0.6.3",
@@ -2175,6 +2152,29 @@
       "listed": true,
       "publishedDate": "2026-10-14T22:05:01.04+00:00",
       "releasesLast30Days": 4,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.QRCodeGenerator.Payloads",
+      "retired": false,
+      "latestVersion": "1.1.0",
+      "totalDownloads": 416,
+      "description": "Fluent API builders for structured QR code payloads: WiFi, vCard, Email, SMS, Geographic coordinates, and URLs.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "payloads",
+        "wifi",
+        "vcard",
+        "sms",
+        "geo",
+        "email",
+        "structured-data"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:04.627+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -2333,28 +2333,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.AotMapper",
-      "retired": false,
-      "latestVersion": "0.6.0",
-      "totalDownloads": 336,
-      "description": "AOT-friendly source-generator-based DTO mapper for .NET. Core attributes and abstractions.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "",
-      "tags": [
-        "aot",
-        "mapper",
-        "dto",
-        "source-generator",
-        "native-aot",
-        "trimming",
-        "mapping"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-19T13:12:26.903+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.AI.Decisions.Foundry",
       "retired": false,
       "latestVersion": "0.6.3",
@@ -2375,6 +2353,28 @@
       "listed": true,
       "publishedDate": "2026-10-14T22:05:01.763+00:00",
       "releasesLast30Days": 4,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.AotMapper",
+      "retired": false,
+      "latestVersion": "0.6.0",
+      "totalDownloads": 336,
+      "description": "AOT-friendly source-generator-based DTO mapper for .NET. Core attributes and abstractions.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "",
+      "tags": [
+        "aot",
+        "mapper",
+        "dto",
+        "source-generator",
+        "native-aot",
+        "trimming",
+        "mapping"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-19T13:12:26.903+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -2467,6 +2467,20 @@
       "dependencies": null
     },
     {
+      "packageId": "graphify-dotnet-core",
+      "retired": false,
+      "latestVersion": "0.7.0",
+      "totalDownloads": 320,
+      "description": "Core graph extraction, graph modeling, clustering, and export pipeline for graphify-dotnet.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/graphify-dotnet",
+      "tags": [],
+      "listed": true,
+      "publishedDate": "2026-05-11T14:57:23.727+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AotMapper.EntityFramework",
       "retired": false,
       "latestVersion": "0.6.0",
@@ -2484,20 +2498,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-19T13:12:27.217+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "graphify-dotnet-core",
-      "retired": false,
-      "latestVersion": "0.7.0",
-      "totalDownloads": 320,
-      "description": "Core graph extraction, graph modeling, clustering, and export pipeline for graphify-dotnet.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/graphify-dotnet",
-      "tags": [],
-      "listed": true,
-      "publishedDate": "2026-05-11T14:57:23.727+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
