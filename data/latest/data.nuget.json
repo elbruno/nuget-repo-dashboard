@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-18T13:16:23.8942595+00:00",
+  "generatedAt": "2026-10-19T16:36:22.1755495+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 39135,
       "description": ".NET library that converts file formats to Markdown for AI pipelines, documentation workflows, and developer tools. Inspired by Python markitdown.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -22,14 +22,14 @@
         "file-conversion"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:16.097+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:50.043+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.MarkItDotNet.CoreModel",
       "retired": false,
-      "latestVersion": "0.9.3-preview.1",
+      "latestVersion": "0.9.3",
       "totalDownloads": 38841,
       "description": "Structured document model for ElBruno.MarkItDotNet ingestion pipelines. Defines Document, Section, Block hierarchy for layout-aware processing.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -43,14 +43,14 @@
         "structured-extraction"
       ],
       "listed": true,
-      "publishedDate": "2026-10-09T22:45:09.83+00:00",
-      "releasesLast30Days": 1,
+      "publishedDate": "2026-10-19T14:28:53.993+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Excel",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 34332,
       "description": "Excel (.xlsx) to Markdown converter for ElBruno.MarkItDotNet. Converts spreadsheet sheets to Markdown tables.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -64,14 +64,14 @@
         "markitdown"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:20.293+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:55.233+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.MarkItDotNet.PowerPoint",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 29767,
       "description": "PowerPoint (.pptx) to Markdown converter for ElBruno.MarkItDotNet. Converts slides and speaker notes to Markdown.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -85,14 +85,14 @@
         "markitdown"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:20.983+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:56.64+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.MarkItDotNet.AI",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 25080,
       "description": "AI-powered converters for ElBruno.MarkItDotNet using IChatClient. Provides OCR, image captioning, and audio transcription.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -107,8 +107,8 @@
         "markitdown"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:16.537+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:50.497+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -407,6 +407,28 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.LocalEmbeddings.VectorData",
+      "retired": false,
+      "latestVersion": "1.6.4",
+      "totalDownloads": 3289,
+      "description": "Microsoft.Extensions.VectorData integration for ElBruno.LocalEmbeddings",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "onnx",
+        "ai",
+        "local",
+        "microsoft-extensions-ai",
+        "vectordata",
+        "semantic-search"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-07T18:22:56.423+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.LocalEmbeddings.KernelMemory",
       "retired": false,
       "latestVersion": "1.6.4",
@@ -426,28 +448,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-07T18:22:54.897+00:00",
-      "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.LocalEmbeddings.VectorData",
-      "retired": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 3289,
-      "description": "Microsoft.Extensions.VectorData integration for ElBruno.LocalEmbeddings",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "tags": [
-        "embeddings",
-        "onnx",
-        "ai",
-        "local",
-        "microsoft-extensions-ai",
-        "vectordata",
-        "semantic-search"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-07T18:22:56.423+00:00",
       "releasesLast30Days": 2,
       "dependencies": null
     },
@@ -568,6 +568,29 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
+      "retired": false,
+      "latestVersion": "1.6.4",
+      "totalDownloads": 2142,
+      "description": "Model downloader for ElBruno.LocalEmbeddings.ImageEmbeddings",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "onnx",
+        "ai",
+        "local",
+        "clip",
+        "image-embeddings",
+        "model-downloader",
+        "huggingface"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-07T18:22:54.623+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.Speech.Audio",
       "retired": false,
       "latestVersion": "1.5.0",
@@ -589,25 +612,27 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.LocalEmbeddings.ImageEmbeddings.Downloader",
+      "packageId": "ElBruno.QwenTTS.VoiceCloning",
       "retired": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 2142,
-      "description": "Model downloader for ElBruno.LocalEmbeddings.ImageEmbeddings",
+      "latestVersion": "1.10.2",
+      "totalDownloads": 2430,
+      "description": "Voice cloning extension for ElBruno.QwenTTS. Clone any voice from a 3-second audio sample using the Qwen3-TTS Base model with ECAPA-TDNN speaker encoder.",
       "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
       "tags": [
-        "embeddings",
+        "tts",
+        "text-to-speech",
+        "voice-cloning",
+        "qwen",
         "onnx",
         "ai",
         "local",
-        "clip",
-        "image-embeddings",
-        "model-downloader",
-        "huggingface"
+        "speech-synthesis",
+        "ecapa-tdnn",
+        "speaker-encoder"
       ],
       "listed": true,
-      "publishedDate": "2026-10-07T18:22:54.623+00:00",
+      "publishedDate": "2026-09-29T15:11:09.407+00:00",
       "releasesLast30Days": 2,
       "dependencies": null
     },
@@ -633,31 +658,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-10T01:58:20.457+00:00",
-      "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.QwenTTS.VoiceCloning",
-      "retired": false,
-      "latestVersion": "1.10.2",
-      "totalDownloads": 2430,
-      "description": "Voice cloning extension for ElBruno.QwenTTS. Clone any voice from a 3-second audio sample using the Qwen3-TTS Base model with ECAPA-TDNN speaker encoder.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
-      "tags": [
-        "tts",
-        "text-to-speech",
-        "voice-cloning",
-        "qwen",
-        "onnx",
-        "ai",
-        "local",
-        "speech-synthesis",
-        "ecapa-tdnn",
-        "speaker-encoder"
-      ],
-      "listed": true,
-      "publishedDate": "2026-09-29T15:11:09.407+00:00",
       "releasesLast30Days": 2,
       "dependencies": null
     },
@@ -793,7 +793,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.Whisper",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1994,
       "description": "Local audio transcription for ElBruno.MarkItDotNet using OpenAI Whisper via ONNX Runtime. Converts audio files to Markdown transcripts offline.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -810,8 +810,8 @@
         "markitdown"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:22.68+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:58.5+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -867,7 +867,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.Chunking",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1919,
       "description": "Layout-aware and token-aware chunking for ElBruno.MarkItDotNet ingestion pipelines. Supports heading-based, paragraph-based, and token-aware strategies.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -881,8 +881,8 @@
         "text-splitting"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:17.22+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:51.347+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -928,6 +928,25 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.OllamaMonitor",
+      "retired": false,
+      "latestVersion": "0.10.0",
+      "totalDownloads": 1476,
+      "description": "Windows-first Ollama monitor global tool launcher and configuration CLI.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "",
+      "tags": [
+        "ollama",
+        "monitoring",
+        "dotnet-tool",
+        "windows"
+      ],
+      "listed": true,
+      "publishedDate": "2026-06-28T13:38:30.157+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.Speech.NAudio",
       "retired": false,
       "latestVersion": "1.5.0",
@@ -968,25 +987,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.OllamaMonitor",
-      "retired": false,
-      "latestVersion": "0.10.0",
-      "totalDownloads": 1476,
-      "description": "Windows-first Ollama monitor global tool launcher and configuration CLI.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "",
-      "tags": [
-        "ollama",
-        "monitoring",
-        "dotnet-tool",
-        "windows"
-      ],
-      "listed": true,
-      "publishedDate": "2026-06-28T13:38:30.157+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.Speech.OpenTelemetry",
       "retired": false,
       "latestVersion": "1.5.0",
@@ -1010,7 +1010,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.Cli",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1513,
       "description": "Command-line tool for converting files to Markdown. Powered by ElBruno.MarkItDotNet.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1028,8 +1028,8 @@
         "powerpoint"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:18.197+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:52.823+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1057,7 +1057,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.Citations",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1397,
       "description": "Citation tracking and source traceability for ElBruno.MarkItDotNet ingestion pipelines. Provides page, block, and heading-path references for chunks.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1072,8 +1072,29 @@
         "source-tracking"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:17.55+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:51.703+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Quality",
+      "retired": false,
+      "latestVersion": "0.9.3",
+      "totalDownloads": 1226,
+      "description": "Quality analysis and scoring for ElBruno.MarkItDotNet ingestion pipelines. Detects OCR issues, duplicate content, broken reading order, and guides fallback routing.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "quality",
+        "analysis",
+        "ocr",
+        "ingestion",
+        "diagnostics"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-19T14:28:56.98+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1094,27 +1115,6 @@
       "listed": true,
       "publishedDate": "2026-10-06T14:18:47.427+00:00",
       "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.Quality",
-      "retired": false,
-      "latestVersion": "0.9.2",
-      "totalDownloads": 1226,
-      "description": "Quality analysis and scoring for ElBruno.MarkItDotNet ingestion pipelines. Detects OCR issues, duplicate content, broken reading order, and guides fallback routing.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "quality",
-        "analysis",
-        "ocr",
-        "ingestion",
-        "diagnostics"
-      ],
-      "listed": true,
-      "publishedDate": "2026-08-07T00:24:21.323+00:00",
-      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -1212,7 +1212,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1210,
       "description": "Azure Document Intelligence integration for ElBruno.MarkItDotNet. Provides layout-aware OCR extraction with structured CoreModel output.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1227,14 +1227,14 @@
         "ai"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:19.557+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:54.39+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.MarkItDotNet.AzureSearch",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1233,
       "description": "Azure AI Search integration for ElBruno.MarkItDotNet ingestion pipelines. Provides index schema, document mapping, and batch upload helpers.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1250,14 +1250,14 @@
         "indexing"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:16.877+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:50.907+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Sync",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1204,
       "description": "Incremental sync and change detection for ElBruno.MarkItDotNet ingestion pipelines. Supports source hashing, chunk diffing, soft-delete, and sync planning.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1271,8 +1271,8 @@
         "hashing"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:22.027+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:57.793+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1299,7 +1299,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.VectorData",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1251,
       "description": "Provider-neutral vector record mapping and export for ElBruno.MarkItDotNet ingestion pipelines. Supports Microsoft.Extensions.VectorData abstractions and JSONL export.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1315,14 +1315,14 @@
         "jsonl"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:22.367+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:58.16+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
       "packageId": "ElBruno.MarkItDotNet.Metadata",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 1245,
       "description": "Metadata extraction and enrichment for ElBruno.MarkItDotNet ingestion pipelines. Provides title, author, language detection, document type tagging, and heading normalization.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1337,8 +1337,8 @@
         "nlp"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:20.637+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:56.277+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1435,6 +1435,28 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.Realtime.Whisper",
+      "retired": false,
+      "latestVersion": "0.10.2",
+      "totalDownloads": 1049,
+      "description": "Whisper-based ISpeechToTextClient implementation for ElBruno.Realtime. Provides local speech-to-text using Whisper.net with automatic GGML model download. Supports tiny.en (fast) and base.en (accurate) models.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
+      "tags": [
+        "whisper",
+        "speech-to-text",
+        "stt",
+        "onnx",
+        "ai",
+        "local",
+        "realtime"
+      ],
+      "listed": true,
+      "publishedDate": "2026-07-05T12:12:25.78+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "MemPalace.Agents",
       "retired": false,
       "latestVersion": "0.15.2",
@@ -1454,28 +1476,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-05-08T21:55:10.393+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.Realtime.Whisper",
-      "retired": false,
-      "latestVersion": "0.10.2",
-      "totalDownloads": 1049,
-      "description": "Whisper-based ISpeechToTextClient implementation for ElBruno.Realtime. Provides local speech-to-text using Whisper.net with automatic GGML model download. Supports tiny.en (fast) and base.en (accurate) models.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
-      "tags": [
-        "whisper",
-        "speech-to-text",
-        "stt",
-        "onnx",
-        "ai",
-        "local",
-        "realtime"
-      ],
-      "listed": true,
-      "publishedDate": "2026-07-05T12:12:25.78+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -1594,26 +1594,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.Reranking",
-      "retired": false,
-      "latestVersion": "0.6.0",
-      "totalDownloads": 849,
-      "description": "A .NET library for semantic reranking of search results using BGE and Claude backends",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Reranking",
-      "tags": [
-        "reranking",
-        "semantic-search",
-        "bge",
-        "claude",
-        "ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-08-04T21:09:00.23+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "MemPalace.Mcp",
       "retired": false,
       "latestVersion": "0.15.2",
@@ -1633,6 +1613,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-05-08T21:55:11.96+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.Reranking",
+      "retired": false,
+      "latestVersion": "0.6.0",
+      "totalDownloads": 849,
+      "description": "A .NET library for semantic reranking of search results using BGE and Claude backends",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Reranking",
+      "tags": [
+        "reranking",
+        "semantic-search",
+        "bge",
+        "claude",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-08-04T21:09:00.23+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -1660,23 +1660,25 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Evals",
+      "packageId": "ElBruno.QwenTTS.BlazorComponents",
       "retired": false,
-      "latestVersion": "0.9.2",
-      "totalDownloads": 795,
-      "description": "Evaluation helpers for conversion quality, completeness, and markdown readiness in ElBruno.MarkItDotNet pipelines.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "latestVersion": "1.10.2",
+      "totalDownloads": 791,
+      "description": "Reusable Blazor components for ElBruno.QwenTTS text-to-speech and voice cloning UIs.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
       "tags": [
-        "markdown",
-        "evals",
-        "evaluation",
-        "quality",
-        "ingestion"
+        "blazor",
+        "components",
+        "tts",
+        "qwen",
+        "voice-cloning",
+        "onnx",
+        "ui"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:19.923+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-09-29T15:11:08.983+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1706,24 +1708,44 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.QwenTTS.BlazorComponents",
+      "packageId": "ElBruno.MarkItDotNet.Evals",
       "retired": false,
-      "latestVersion": "1.10.2",
-      "totalDownloads": 791,
-      "description": "Reusable Blazor components for ElBruno.QwenTTS text-to-speech and voice cloning UIs.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QwenTTS",
+      "latestVersion": "0.9.3",
+      "totalDownloads": 795,
+      "description": "Evaluation helpers for conversion quality, completeness, and markdown readiness in ElBruno.MarkItDotNet pipelines.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
       "tags": [
-        "blazor",
-        "components",
-        "tts",
-        "qwen",
-        "voice-cloning",
-        "onnx",
-        "ui"
+        "markdown",
+        "evals",
+        "evaluation",
+        "quality",
+        "ingestion"
       ],
       "listed": true,
-      "publishedDate": "2026-09-29T15:11:08.983+00:00",
+      "publishedDate": "2026-10-19T14:28:54.777+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.LocalEmbeddings.Azure",
+      "retired": false,
+      "latestVersion": "1.6.4",
+      "totalDownloads": 752,
+      "description": "Azure OpenAI fallback integration for ElBruno.LocalEmbeddings \u2014 try local embeddings first, fall back to Azure on failure",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
+      "tags": [
+        "embeddings",
+        "azure",
+        "openai",
+        "fallback",
+        "ai",
+        "local",
+        "microsoft-extensions-ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-07T18:22:52.503+00:00",
       "releasesLast30Days": 2,
       "dependencies": null
     },
@@ -1753,28 +1775,6 @@
       "listed": true,
       "publishedDate": "2026-08-04T18:21:58.633+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.LocalEmbeddings.Azure",
-      "retired": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 752,
-      "description": "Azure OpenAI fallback integration for ElBruno.LocalEmbeddings \u2014 try local embeddings first, fall back to Azure on failure",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "tags": [
-        "embeddings",
-        "azure",
-        "openai",
-        "fallback",
-        "ai",
-        "local",
-        "microsoft-extensions-ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-07T18:22:52.503+00:00",
-      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -1871,7 +1871,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.Security",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 740,
       "description": "Security scanning and policy evaluation helpers for ElBruno.MarkItDotNet pipelines.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -1885,8 +1885,8 @@
         "secrets"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:21.673+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:57.313+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2046,7 +2046,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.Connectors",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 476,
       "description": "Source connector abstractions and filesystem connector for ElBruno.MarkItDotNet ingestion pipelines.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -2059,8 +2059,8 @@
         "document-source"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:18.53+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:53.167+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2180,7 +2180,7 @@
     {
       "packageId": "ElBruno.MarkItDotNet.Connectors.AzureBlob",
       "retired": false,
-      "latestVersion": "0.9.2",
+      "latestVersion": "0.9.3",
       "totalDownloads": 358,
       "description": "Azure Blob Storage source connector for ElBruno.MarkItDotNet ingestion pipelines.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -2194,8 +2194,8 @@
         "document-source"
       ],
       "listed": true,
-      "publishedDate": "2026-08-07T00:24:18.863+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-19T14:28:53.57+00:00",
+      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2356,6 +2356,26 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.Text2Image.BlazorComponents",
+      "retired": false,
+      "latestVersion": "1.6.0",
+      "totalDownloads": 265,
+      "description": "Reusable Blazor components for ElBruno.Text2Image generation experiences.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
+      "tags": [
+        "blazor",
+        "text-to-image",
+        "image-generation",
+        "ai",
+        "stable-diffusion"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-01T15:09:23.263+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AotMapper",
       "retired": false,
       "latestVersion": "0.6.0",
@@ -2375,26 +2395,6 @@
       "listed": true,
       "publishedDate": "2026-04-19T13:12:26.903+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.Text2Image.BlazorComponents",
-      "retired": false,
-      "latestVersion": "1.6.0",
-      "totalDownloads": 265,
-      "description": "Reusable Blazor components for ElBruno.Text2Image generation experiences.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Text2Image",
-      "tags": [
-        "blazor",
-        "text-to-image",
-        "image-generation",
-        "ai",
-        "stable-diffusion"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-01T15:09:23.263+00:00",
-      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2481,6 +2481,26 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.QRCodeGenerator.Pdf",
+      "retired": false,
+      "latestVersion": "1.1.0",
+      "totalDownloads": 315,
+      "description": "Generate PDF documents with embedded QR codes. Uses PdfSharpCore for cross-platform PDF generation.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
+      "tags": [
+        "qrcode",
+        "pdf",
+        "document",
+        "pdfsharp",
+        "report"
+      ],
+      "listed": true,
+      "publishedDate": "2026-04-01T21:58:07.96+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AotMapper.EntityFramework",
       "retired": false,
       "latestVersion": "0.6.0",
@@ -2498,26 +2518,6 @@
       ],
       "listed": true,
       "publishedDate": "2026-04-19T13:12:27.217+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.QRCodeGenerator.Pdf",
-      "retired": false,
-      "latestVersion": "1.1.0",
-      "totalDownloads": 315,
-      "description": "Generate PDF documents with embedded QR codes. Uses PdfSharpCore for cross-platform PDF generation.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.QRCodeGenerator",
-      "tags": [
-        "qrcode",
-        "pdf",
-        "document",
-        "pdfsharp",
-        "report"
-      ],
-      "listed": true,
-      "publishedDate": "2026-04-01T21:58:07.96+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -2753,6 +2753,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-07T18:22:53.527+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Markdown",
+      "retired": false,
+      "latestVersion": "0.9.3",
+      "totalDownloads": 0,
+      "description": "Parse Markdown into structured MarkItDotNet documents using Markdig.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "markdig",
+        "parser",
+        "document-model",
+        "gfm"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-19T14:28:55.937+00:00",
       "releasesLast30Days": 1,
       "dependencies": null
     }
