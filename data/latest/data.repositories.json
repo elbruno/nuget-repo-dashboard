@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T16:36:22.1755495+00:00",
+  "generatedAt": "2026-10-20T14:19:10.525935+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -839,7 +839,7 @@
       "owner": "elbruno",
       "name": "ElBruno.LocalLLMs",
       "fullName": "elbruno/ElBruno.LocalLLMs",
-      "stars": 23,
+      "stars": 24,
       "forks": 4,
       "openIssues": 0,
       "openPullRequests": 0,
@@ -867,7 +867,7 @@
         "rag"
       ],
       "createdAt": "2026-03-17T23:54:21+00:00",
-      "updatedAt": "2026-10-10T07:07:45+00:00",
+      "updatedAt": "2026-10-19T21:38:34+00:00",
       "size": 6545,
       "defaultBranch": "main",
       "homepage": null,
@@ -4403,14 +4403,14 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3136,
-      "forks": 2208,
-      "openIssues": 0,
-      "openPullRequests": 0,
+      "stars": 3137,
+      "forks": 2214,
+      "openIssues": 1,
+      "openPullRequests": 1,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-16T15:51:21+00:00",
+      "lastPush": "2026-10-19T19:21:31+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 45,
@@ -4422,13 +4422,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-10-19T11:40:00+00:00",
-      "size": 209528,
+      "updatedAt": "2026-10-20T12:00:48+00:00",
+      "size": 209526,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2208,
+      "networkCount": 2214,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4463,8 +4463,55 @@
         }
       ],
       "closedIssuesCount": 2,
-      "recentPullRequests": [],
+      "recentPullRequests": [
+        {
+          "number": 551,
+          "title": "Bump MessagePack from 2.5.301 to 2.5.303",
+          "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet/pull/551",
+          "createdAt": "2026-10-19T19:21:32+00:00",
+          "updatedAt": "2026-10-19T19:21:53+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "needs-review",
+            "dependencies",
+            ".NET"
+          ],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/samples/PracticalSamples/src/McpSample.AppHost/MessagePack-2.5.303",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
       "recentMergedPullRequests": [
+        {
+          "number": 550,
+          "title": "fix: minimize PR welcome workflow permissions",
+          "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet/pull/550",
+          "createdAt": "2026-10-19T19:17:47+00:00",
+          "updatedAt": "2026-10-19T19:19:11+00:00",
+          "mergedAt": "2026-10-19T19:19:11+00:00",
+          "closedAt": "2026-10-19T19:19:11+00:00",
+          "userLogin": "elbruno",
+          "labels": [
+            "needs-review"
+          ],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-mitigate-pull-request-target-workflows",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 549,
           "title": "Bump MessagePack from 2.5.301 to 2.5.303",
@@ -4600,25 +4647,25 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 6,
+      "mergedPullRequestsCount": 7,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
       "watchPurpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "watchDateAdded": "2026-08-19",
       "maintainability": {
-        "totalScore": 78,
+        "totalScore": 80,
         "availablePoints": 60,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 10,
+          "score": 11,
           "maxScore": 20,
           "available": true,
-          "value": 10,
-          "displayValue": "10 commits",
-          "summary": "10 commits in the last 30 days."
+          "value": 11,
+          "displayValue": "11 commits",
+          "summary": "11 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 17,
@@ -4707,8 +4754,8 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3136,
-      "lastUpdate": "2026-10-16T15:51:21+00:00",
+      "stars": 3137,
+      "lastUpdate": "2026-10-19T19:21:31+00:00",
       "isStub": false,
       "stubReason": null
     }
