@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T14:19:10.525935+00:00",
+  "generatedAt": "2026-10-21T14:45:21.199599+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -2537,7 +2537,7 @@
       "owner": "elbruno",
       "name": "HermesNET",
       "fullName": "elbruno/HermesNET",
-      "stars": 6,
+      "stars": 7,
       "forks": 2,
       "openIssues": 5,
       "openPullRequests": 5,
@@ -2560,7 +2560,7 @@
         "runtime"
       ],
       "createdAt": "2026-05-22T21:10:54+00:00",
-      "updatedAt": "2026-10-09T18:40:11+00:00",
+      "updatedAt": "2026-10-20T17:45:25+00:00",
       "size": 46398,
       "defaultBranch": "main",
       "homepage": "https://github.com/elbruno/HermesNET",
@@ -3866,7 +3866,7 @@
       "description": "Local ASR transcript cleanup in .NET with superwhisper/s1-mini and ONNX Runtime GenAI. Removes fillers, collapses stutters, fixes punctuation. Auto-downloads models from HuggingFace.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-08-21T00:32:39+00:00",
+      "lastPush": "2026-10-21T13:56:20+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -3893,8 +3893,8 @@
         "whisper"
       ],
       "createdAt": "2026-08-20T14:32:59+00:00",
-      "updatedAt": "2026-08-27T14:09:25+00:00",
-      "size": 3037,
+      "updatedAt": "2026-10-21T13:56:16+00:00",
+      "size": 5253,
       "defaultBranch": "main",
       "homepage": "https://www.nuget.org/packages/ElBruno.S1Mini",
       "hasWiki": true,
@@ -3906,26 +3906,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 1,
+          "title": "Fix Squad instruction compatibility for ordinary Copilot sessions",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.S1Mini/pull/1",
+          "createdAt": "2026-10-20T21:47:38+00:00",
+          "updatedAt": "2026-10-20T21:48:41+00:00",
+          "mergedAt": "2026-10-20T21:48:40+00:00",
+          "closedAt": "2026-10-20T21:48:40+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-squad-instruction-compatibility",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 57,
         "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 4,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 4,
+          "displayValue": "4 commits",
+          "summary": "4 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -3936,12 +3957,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 10,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 1 package."
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -4403,8 +4424,8 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3137,
-      "forks": 2214,
+      "stars": 3142,
+      "forks": 2218,
       "openIssues": 1,
       "openPullRequests": 1,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
@@ -4422,13 +4443,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-10-20T12:00:48+00:00",
+      "updatedAt": "2026-10-21T13:20:45+00:00",
       "size": 209526,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2214,
+      "networkCount": 2218,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4754,7 +4775,7 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3137,
+      "stars": 3142,
       "lastUpdate": "2026-10-19T19:21:31+00:00",
       "isStub": false,
       "stubReason": null

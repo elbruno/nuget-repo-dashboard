@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T14:19:10.525935+00:00",
+  "generatedAt": "2026-10-21T14:45:21.199599+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -474,29 +474,6 @@
       "dependencies": null
     },
     {
-      "packageId": "MemPalace.KnowledgeGraph",
-      "retired": false,
-      "latestVersion": "0.15.2",
-      "totalDownloads": 3173,
-      "description": "Temporal knowledge graph for MemPalace.NET with entity-relationship triples and validity windows.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MempalaceNet",
-      "tags": [
-        "ai",
-        "agents",
-        "memory",
-        "rag",
-        "mcp",
-        "dotnet",
-        "embeddings",
-        "palace"
-      ],
-      "listed": true,
-      "publishedDate": "2026-05-08T21:55:11.697+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.Text2Image.Cli",
       "retired": false,
       "latestVersion": "1.6.0",
@@ -543,6 +520,29 @@
       "listed": true,
       "publishedDate": "2026-10-07T18:22:54.193+00:00",
       "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
+      "packageId": "MemPalace.KnowledgeGraph",
+      "retired": false,
+      "latestVersion": "0.15.2",
+      "totalDownloads": 3173,
+      "description": "Temporal knowledge graph for MemPalace.NET with entity-relationship triples and validity windows.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MempalaceNet",
+      "tags": [
+        "ai",
+        "agents",
+        "memory",
+        "rag",
+        "mcp",
+        "dotnet",
+        "embeddings",
+        "palace"
+      ],
+      "listed": true,
+      "publishedDate": "2026-05-08T21:55:11.697+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -763,6 +763,30 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.Whisper",
+      "retired": false,
+      "latestVersion": "0.9.3",
+      "totalDownloads": 1994,
+      "description": "Local audio transcription for ElBruno.MarkItDotNet using OpenAI Whisper via ONNX Runtime. Converts audio files to Markdown transcripts offline.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "converter",
+        "whisper",
+        "audio",
+        "transcription",
+        "speech-to-text",
+        "onnx",
+        "offline",
+        "markitdown"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-19T14:28:58.5+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.LocalEmbeddings.Npu.Qualcomm",
       "retired": false,
       "latestVersion": "1.6.4",
@@ -788,30 +812,6 @@
       "listed": true,
       "publishedDate": "2026-10-07T18:22:55.787+00:00",
       "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.Whisper",
-      "retired": false,
-      "latestVersion": "0.9.3",
-      "totalDownloads": 1994,
-      "description": "Local audio transcription for ElBruno.MarkItDotNet using OpenAI Whisper via ONNX Runtime. Converts audio files to Markdown transcripts offline.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "converter",
-        "whisper",
-        "audio",
-        "transcription",
-        "speech-to-text",
-        "onnx",
-        "offline",
-        "markitdown"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-19T14:28:58.5+00:00",
-      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1012,27 +1012,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.Speech.OpenTelemetry",
-      "retired": false,
-      "latestVersion": "1.5.0",
-      "totalDownloads": 1401,
-      "description": "OpenTelemetry instrumentation for ElBruno.Speech \u2014 activities, metrics, and Aspire-compatible setup.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "opentelemetry",
-        "metrics",
-        "tracing",
-        "aspire",
-        "dotnet"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-06T14:18:55.093+00:00",
-      "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.Citations",
       "retired": false,
       "latestVersion": "0.9.3",
@@ -1051,6 +1030,48 @@
       ],
       "listed": true,
       "publishedDate": "2026-10-19T14:28:51.703+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.MarkItDotNet.Quality",
+      "retired": false,
+      "latestVersion": "0.9.3",
+      "totalDownloads": 1226,
+      "description": "Quality analysis and scoring for ElBruno.MarkItDotNet ingestion pipelines. Detects OCR issues, duplicate content, broken reading order, and guides fallback routing.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "quality",
+        "analysis",
+        "ocr",
+        "ingestion",
+        "diagnostics"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-19T14:28:56.98+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.Speech.OpenTelemetry",
+      "retired": false,
+      "latestVersion": "1.5.0",
+      "totalDownloads": 1401,
+      "description": "OpenTelemetry instrumentation for ElBruno.Speech \u2014 activities, metrics, and Aspire-compatible setup.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "opentelemetry",
+        "metrics",
+        "tracing",
+        "aspire",
+        "dotnet"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-06T14:18:55.093+00:00",
       "releasesLast30Days": 1,
       "dependencies": null
     },
@@ -1074,27 +1095,6 @@
       "listed": true,
       "publishedDate": "2026-05-24T14:30:17.233+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.Quality",
-      "retired": false,
-      "latestVersion": "0.9.3",
-      "totalDownloads": 1226,
-      "description": "Quality analysis and scoring for ElBruno.MarkItDotNet ingestion pipelines. Detects OCR issues, duplicate content, broken reading order, and guides fallback routing.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "quality",
-        "analysis",
-        "ocr",
-        "ingestion",
-        "diagnostics"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-19T14:28:56.98+00:00",
-      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -1164,29 +1164,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.HuggingFace.Downloader.Cli",
-      "retired": false,
-      "latestVersion": "1.6.0",
-      "totalDownloads": 1206,
-      "description": "A .NET CLI tool to download, manage, and inspect cached files from Hugging Face Hub repositories.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
-      "tags": [
-        "huggingface",
-        "download",
-        "cli",
-        "dotnet-tool",
-        "onnx",
-        "model",
-        "ml",
-        "ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-09-28T17:59:22.883+00:00",
-      "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.DocumentIntelligence",
       "retired": false,
       "latestVersion": "0.9.3",
@@ -1206,29 +1183,6 @@
       "listed": true,
       "publishedDate": "2026-10-19T14:28:54.39+00:00",
       "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
-      "packageId": "MemPalace.Ai",
-      "retired": false,
-      "latestVersion": "0.15.2",
-      "totalDownloads": 1281,
-      "description": "Microsoft.Extensions.AI integration for MemPalace.NET with ONNX embeddings (ElBruno.LocalEmbeddings) and Ollama/OpenAI support.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MempalaceNet",
-      "tags": [
-        "ai",
-        "agents",
-        "memory",
-        "rag",
-        "mcp",
-        "dotnet",
-        "embeddings",
-        "palace"
-      ],
-      "listed": true,
-      "publishedDate": "2026-05-08T21:55:10.69+00:00",
-      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -1255,6 +1209,52 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.HuggingFace.Downloader.Cli",
+      "retired": false,
+      "latestVersion": "1.6.0",
+      "totalDownloads": 1206,
+      "description": "A .NET CLI tool to download, manage, and inspect cached files from Hugging Face Hub repositories.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
+      "tags": [
+        "huggingface",
+        "download",
+        "cli",
+        "dotnet-tool",
+        "onnx",
+        "model",
+        "ml",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-09-28T17:59:22.883+00:00",
+      "releasesLast30Days": 2,
+      "dependencies": null
+    },
+    {
+      "packageId": "MemPalace.Ai",
+      "retired": false,
+      "latestVersion": "0.15.2",
+      "totalDownloads": 1281,
+      "description": "Microsoft.Extensions.AI integration for MemPalace.NET with ONNX embeddings (ElBruno.LocalEmbeddings) and Ollama/OpenAI support.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MempalaceNet",
+      "tags": [
+        "ai",
+        "agents",
+        "memory",
+        "rag",
+        "mcp",
+        "dotnet",
+        "embeddings",
+        "palace"
+      ],
+      "listed": true,
+      "publishedDate": "2026-05-08T21:55:10.69+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.MarkItDotNet.Sync",
       "retired": false,
       "latestVersion": "0.9.3",
@@ -1273,27 +1273,6 @@
       "listed": true,
       "publishedDate": "2026-10-19T14:28:57.793+00:00",
       "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.Hermes.Tool",
-      "retired": false,
-      "latestVersion": "2.0.2",
-      "totalDownloads": 993,
-      "description": "Hermes.NET: Distributed agent runtime with skills, tools, memory, and observability.",
-      "authors": "Bruno Capuano,Copilot",
-      "projectUrl": "https://github.com/elbruno/HermesNET",
-      "tags": [
-        "agent",
-        "runtime",
-        "skills",
-        "tools",
-        "ai",
-        "distributed"
-      ],
-      "listed": true,
-      "publishedDate": "2026-05-23T17:21:37.62+00:00",
-      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -1317,6 +1296,27 @@
       "listed": true,
       "publishedDate": "2026-10-19T14:28:58.16+00:00",
       "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.Hermes.Tool",
+      "retired": false,
+      "latestVersion": "2.0.2",
+      "totalDownloads": 993,
+      "description": "Hermes.NET: Distributed agent runtime with skills, tools, memory, and observability.",
+      "authors": "Bruno Capuano,Copilot",
+      "projectUrl": "https://github.com/elbruno/HermesNET",
+      "tags": [
+        "agent",
+        "runtime",
+        "skills",
+        "tools",
+        "ai",
+        "distributed"
+      ],
+      "listed": true,
+      "publishedDate": "2026-05-23T17:21:37.62+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -1594,26 +1594,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.Reranking",
-      "retired": false,
-      "latestVersion": "0.6.0",
-      "totalDownloads": 849,
-      "description": "A .NET library for semantic reranking of search results using BGE and Claude backends",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Reranking",
-      "tags": [
-        "reranking",
-        "semantic-search",
-        "bge",
-        "claude",
-        "ai"
-      ],
-      "listed": true,
-      "publishedDate": "2026-08-04T21:09:00.23+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
       "packageId": "MemPalace.Mcp",
       "retired": false,
       "latestVersion": "0.15.2",
@@ -1633,6 +1613,26 @@
       ],
       "listed": true,
       "publishedDate": "2026-05-08T21:55:11.96+00:00",
+      "releasesLast30Days": 0,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.Reranking",
+      "retired": false,
+      "latestVersion": "0.6.0",
+      "totalDownloads": 849,
+      "description": "A .NET library for semantic reranking of search results using BGE and Claude backends",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Reranking",
+      "tags": [
+        "reranking",
+        "semantic-search",
+        "bge",
+        "claude",
+        "ai"
+      ],
+      "listed": true,
+      "publishedDate": "2026-08-04T21:09:00.23+00:00",
       "releasesLast30Days": 0,
       "dependencies": null
     },
@@ -1660,6 +1660,26 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.Evals",
+      "retired": false,
+      "latestVersion": "0.9.3",
+      "totalDownloads": 795,
+      "description": "Evaluation helpers for conversion quality, completeness, and markdown readiness in ElBruno.MarkItDotNet pipelines.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "evals",
+        "evaluation",
+        "quality",
+        "ingestion"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-19T14:28:54.777+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.QwenTTS.BlazorComponents",
       "retired": false,
       "latestVersion": "1.10.2",
@@ -1679,26 +1699,6 @@
       "listed": true,
       "publishedDate": "2026-09-29T15:11:08.983+00:00",
       "releasesLast30Days": 2,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.MarkItDotNet.Evals",
-      "retired": false,
-      "latestVersion": "0.9.3",
-      "totalDownloads": 795,
-      "description": "Evaluation helpers for conversion quality, completeness, and markdown readiness in ElBruno.MarkItDotNet pipelines.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "evals",
-        "evaluation",
-        "quality",
-        "ingestion"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-19T14:28:54.777+00:00",
-      "releasesLast30Days": 1,
       "dependencies": null
     },
     {
@@ -2000,6 +2000,26 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.MarkItDotNet.Connectors",
+      "retired": false,
+      "latestVersion": "0.9.3",
+      "totalDownloads": 476,
+      "description": "Source connector abstractions and filesystem connector for ElBruno.MarkItDotNet ingestion pipelines.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
+      "tags": [
+        "markdown",
+        "connectors",
+        "ingestion",
+        "filesystem",
+        "document-source"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-19T14:28:53.167+00:00",
+      "releasesLast30Days": 1,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.AI.Evaluation",
       "retired": false,
       "latestVersion": "0.5.2",
@@ -2044,22 +2064,23 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Connectors",
+      "packageId": "ElBruno.MarkItDotNet.Connectors.AzureBlob",
       "retired": false,
       "latestVersion": "0.9.3",
-      "totalDownloads": 476,
-      "description": "Source connector abstractions and filesystem connector for ElBruno.MarkItDotNet ingestion pipelines.",
+      "totalDownloads": 358,
+      "description": "Azure Blob Storage source connector for ElBruno.MarkItDotNet ingestion pipelines.",
       "authors": "Bruno Capuano (ElBruno)",
       "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
       "tags": [
         "markdown",
         "connectors",
         "ingestion",
-        "filesystem",
+        "azure",
+        "blob-storage",
         "document-source"
       ],
       "listed": true,
-      "publishedDate": "2026-10-19T14:28:53.167+00:00",
+      "publishedDate": "2026-10-19T14:28:53.57+00:00",
       "releasesLast30Days": 1,
       "dependencies": null
     },
@@ -2155,27 +2176,6 @@
       "dependencies": null
     },
     {
-      "packageId": "ElBruno.MarkItDotNet.Connectors.AzureBlob",
-      "retired": false,
-      "latestVersion": "0.9.3",
-      "totalDownloads": 358,
-      "description": "Azure Blob Storage source connector for ElBruno.MarkItDotNet ingestion pipelines.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet",
-      "tags": [
-        "markdown",
-        "connectors",
-        "ingestion",
-        "azure",
-        "blob-storage",
-        "document-source"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-19T14:28:53.57+00:00",
-      "releasesLast30Days": 1,
-      "dependencies": null
-    },
-    {
       "packageId": "ElBruno.QRCodeGenerator.Payloads",
       "retired": false,
       "latestVersion": "1.1.0",
@@ -2264,9 +2264,33 @@
       "dependencies": null
     },
     {
+      "packageId": "ElBruno.AI.Decisions.Ollama",
+      "retired": false,
+      "latestVersion": "0.6.3",
+      "totalDownloads": 0,
+      "description": "Local System One decision models for ElBruno.AI.Decisions through Ollama v0.35.0 or later: native Choice, Score, and Assess probabilities. Confidence is not calibrated correctness. Tentative early access.",
+      "authors": "Bruno Capuano (ElBruno)",
+      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "tags": [
+        "ai",
+        "decision",
+        "ollama",
+        "local",
+        "offline",
+        "classification",
+        "routing",
+        "dotnet",
+        "tentative"
+      ],
+      "listed": true,
+      "publishedDate": "2026-10-14T22:05:02.44+00:00",
+      "releasesLast30Days": 4,
+      "dependencies": null
+    },
+    {
       "packageId": "ElBruno.S1Mini",
       "retired": false,
-      "latestVersion": "0.1.2",
+      "latestVersion": "0.2.1",
       "totalDownloads": 374,
       "description": "Local ASR transcript normalizer for .NET, wrapping superwhisper/s1-mini (0.6B Qwen3 fine-tune) via ONNX Runtime GenAI. Auto-downloads the INT4 ONNX model from HuggingFace and exposes a TranscriptNormalizer API plus IChatClient.",
       "authors": "Bruno Capuano (ElBruno)",
@@ -2284,31 +2308,8 @@
         "qwen3"
       ],
       "listed": true,
-      "publishedDate": "2026-08-21T00:33:49.83+00:00",
-      "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.VibeVoiceTTS.Realtime",
-      "retired": false,
-      "latestVersion": "0.10.2",
-      "totalDownloads": 398,
-      "description": "Bridge between ElBruno.VibeVoiceTTS and ElBruno.Realtime \u2014 provides ITextToSpeechClient adapter and DI extensions for VibeVoiceTTS integration with the real-time conversation pipeline.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
-      "tags": [
-        "vibevoice",
-        "tts",
-        "text-to-speech",
-        "realtime",
-        "ai",
-        "local",
-        "onnx",
-        "bridge"
-      ],
-      "listed": true,
-      "publishedDate": "2026-07-05T12:12:26.143+00:00",
-      "releasesLast30Days": 0,
+      "publishedDate": "2026-10-21T13:57:10.463+00:00",
+      "releasesLast30Days": 2,
       "dependencies": null
     },
     {
@@ -2332,6 +2333,29 @@
       "listed": true,
       "publishedDate": "2026-10-14T22:05:01.763+00:00",
       "releasesLast30Days": 4,
+      "dependencies": null
+    },
+    {
+      "packageId": "ElBruno.VibeVoiceTTS.Realtime",
+      "retired": false,
+      "latestVersion": "0.10.2",
+      "totalDownloads": 398,
+      "description": "Bridge between ElBruno.VibeVoiceTTS and ElBruno.Realtime \u2014 provides ITextToSpeechClient adapter and DI extensions for VibeVoiceTTS integration with the real-time conversation pipeline.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Realtime",
+      "tags": [
+        "vibevoice",
+        "tts",
+        "text-to-speech",
+        "realtime",
+        "ai",
+        "local",
+        "onnx",
+        "bridge"
+      ],
+      "listed": true,
+      "publishedDate": "2026-07-05T12:12:26.143+00:00",
+      "releasesLast30Days": 0,
       "dependencies": null
     },
     {
@@ -2417,30 +2441,6 @@
       "listed": true,
       "publishedDate": "2026-04-19T13:12:26.4+00:00",
       "releasesLast30Days": 0,
-      "dependencies": null
-    },
-    {
-      "packageId": "ElBruno.AI.Decisions.Ollama",
-      "retired": false,
-      "latestVersion": "0.6.3",
-      "totalDownloads": 0,
-      "description": "Local System One decision models for ElBruno.AI.Decisions through Ollama v0.35.0 or later: native Choice, Score, and Assess probabilities. Confidence is not calibrated correctness. Tentative early access.",
-      "authors": "Bruno Capuano (ElBruno)",
-      "projectUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "tags": [
-        "ai",
-        "decision",
-        "ollama",
-        "local",
-        "offline",
-        "classification",
-        "routing",
-        "dotnet",
-        "tentative"
-      ],
-      "listed": true,
-      "publishedDate": "2026-10-14T22:05:02.44+00:00",
-      "releasesLast30Days": 4,
       "dependencies": null
     },
     {
