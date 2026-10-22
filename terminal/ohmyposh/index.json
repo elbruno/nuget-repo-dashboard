@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-21T14:45:28.6516265+00:00",
-  "totalRepos": 31,
+  "generatedAt": "2026-10-22T14:37:09.2084194+00:00",
+  "totalRepos": 30,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -93,12 +93,6 @@
       "icon": "⚡"
     },
     {
-      "repo": "elbruno/HermesNET",
-      "configFile": "elbruno-HermesNET.json",
-      "accentColor": "#8B8A71",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
@@ -153,16 +147,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.QRCodeGenerator",
-      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
-      "accentColor": "#B85C5B",
-      "icon": "\uD83D\uDCF7"
-    },
-    {
       "repo": "elbruno/ElBruno.S1Mini",
       "configFile": "elbruno-ElBruno.S1Mini.json",
       "accentColor": "#C76890",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.QRCodeGenerator",
+      "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
+      "accentColor": "#B85C5B",
+      "icon": "\uD83D\uDCF7"
     },
     {
       "repo": "elbruno/ElBruno.AI.Jev",
