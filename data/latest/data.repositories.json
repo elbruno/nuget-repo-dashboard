@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T14:37:02.1947837+00:00",
+  "generatedAt": "2026-10-23T14:15:00.864651+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -177,8 +177,33 @@
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader",
       "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "recentClosedIssues": [
+        {
+          "number": 23,
+          "title": "feature request: url for private registry",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/issues/23",
+          "createdAt": "2026-09-16T05:27:59+00:00",
+          "updatedAt": "2026-09-28T18:11:37+00:00",
+          "userLogin": "mrmaxonline",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-09-28T18:11:37+00:00"
+        },
+        {
+          "number": 21,
+          "title": "feature request\uFF1A enum files",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/issues/21",
+          "createdAt": "2026-09-03T05:17:16+00:00",
+          "updatedAt": "2026-09-28T17:53:35+00:00",
+          "userLogin": "jasonzhang761213",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-09-28T17:30:15+00:00"
+        }
+      ],
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -229,8 +254,8 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 73,
-        "availablePoints": 60,
+        "totalScore": 64,
+        "availablePoints": 80,
         "status": "fair",
         "label": "Fair",
         "emoji": "\uD83D\uDFE1",
@@ -243,12 +268,12 @@
           "summary": "4 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
+          "score": 7,
+          "maxScore": 20,
+          "available": true,
+          "value": 19,
+          "displayValue": "19.0 days",
+          "summary": "19.0 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
@@ -281,9 +306,9 @@
       "name": "elbruno.localembeddings",
       "fullName": "elbruno/elbruno.localembeddings",
       "stars": 42,
-      "forks": 1,
-      "openIssues": 0,
-      "openPullRequests": 0,
+      "forks": 2,
+      "openIssues": 2,
+      "openPullRequests": 1,
       "description": ".NET library for local embedding generation using ONNX and Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
@@ -317,13 +342,60 @@
       "homepage": null,
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 1,
+      "networkCount": 2,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
-      "recentPullRequests": [],
+      "recentIssues": [
+        {
+          "number": 61,
+          "title": "Two processes that download the same model at the same time fail",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/issues/61",
+          "createdAt": "2026-10-23T03:10:42+00:00",
+          "updatedAt": "2026-10-23T03:10:42+00:00",
+          "userLogin": "Laurianti",
+          "labels": [],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [
+        {
+          "number": 56,
+          "title": "Question: accented words become [UNK] with the default model. Is \u0060RemoveNonSpacingMarks\u0060 intentionally off?",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/issues/56",
+          "createdAt": "2026-09-21T01:15:38+00:00",
+          "updatedAt": "2026-09-28T17:26:31+00:00",
+          "userLogin": "rkishore",
+          "labels": [],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-09-28T17:12:30+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
+      "recentPullRequests": [
+        {
+          "number": 62,
+          "title": "Fix concurrent model downloads across processes",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/62",
+          "createdAt": "2026-10-23T03:10:56+00:00",
+          "updatedAt": "2026-10-23T14:10:29+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "Laurianti",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/cross-process-model-download",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
       "recentMergedPullRequests": [
         {
           "number": 60,
@@ -413,8 +485,8 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 82,
-        "availablePoints": 60,
+        "totalScore": 80,
+        "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
@@ -427,12 +499,12 @@
           "summary": "9 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
+          "score": 15,
+          "maxScore": 20,
+          "available": true,
+          "value": 7.7,
+          "displayValue": "7.7 days",
+          "summary": "7.7 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
@@ -808,7 +880,7 @@
       "description": "C# local LLM chat completions library using ONNX Runtime, compatible with Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-10T01:57:00+00:00",
+      "lastPush": "2026-10-22T21:20:58+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -829,8 +901,8 @@
         "rag"
       ],
       "createdAt": "2026-03-17T23:54:21+00:00",
-      "updatedAt": "2026-10-19T21:38:34+00:00",
-      "size": 6545,
+      "updatedAt": "2026-10-22T21:21:01+00:00",
+      "size": 6676,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
@@ -839,10 +911,63 @@
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
       "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "recentClosedIssues": [
+        {
+          "number": 58,
+          "title": "Validate local IDecisionClient inference with Laya and investigate Tev1 0.8B ONNX backend",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/58",
+          "createdAt": "2026-10-22T19:55:06+00:00",
+          "updatedAt": "2026-10-22T21:29:24+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-10-22T20:51:33+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
+        {
+          "number": 60,
+          "title": "Automatically download and cache the pinned Kev 0.8B ONNX export",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/60",
+          "createdAt": "2026-10-22T21:18:28+00:00",
+          "updatedAt": "2026-10-22T21:20:56+00:00",
+          "mergedAt": "2026-10-22T21:20:56+00:00",
+          "closedAt": "2026-10-22T21:20:56+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-local-decision-inference",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 59,
+          "title": "Add native Kev 0.8B decisions and validate local Laya inference",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/59",
+          "createdAt": "2026-10-22T20:38:05+00:00",
+          "updatedAt": "2026-10-22T20:39:58+00:00",
+          "mergedAt": "2026-10-22T20:39:58+00:00",
+          "closedAt": "2026-10-22T20:39:58+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-local-decision-inference",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 57,
           "title": "feat(decisions): implement shared ElBruno.AI.Decisions IDecisionClient (v0.23.0)",
@@ -904,41 +1029,41 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 3,
+      "mergedPullRequestsCount": 5,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 72,
-        "availablePoints": 60,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
+        "totalScore": 81,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 3,
+          "score": 5,
           "maxScore": 20,
           "available": true,
-          "value": 3,
-          "displayValue": "3 commits",
-          "summary": "3 commits in the last 30 days."
+          "value": 5,
+          "displayValue": "5 commits",
+          "summary": "5 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0.0 days",
+          "summary": "0.0 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 10,
-          "displayValue": "10 releases",
-          "summary": "10 package releases in the last 30 days across 5 packages."
+          "value": 20,
+          "displayValue": "20 releases",
+          "summary": "20 package releases in the last 30 days across 5 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1256,12 +1381,12 @@
       "fullName": "elbruno/ElBruno.Speech",
       "stars": 3,
       "forks": 1,
-      "openIssues": 0,
+      "openIssues": 1,
       "openPullRequests": 0,
       "description": "Reusable local-first speech runtime for .NET \u2014 VAD, STT, LLM, TTS pipeline with Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-21T17:32:54+00:00",
+      "lastPush": "2026-10-22T20:41:14+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -1283,8 +1408,8 @@
         "voice-activity-detection"
       ],
       "createdAt": "2026-07-03T12:02:53+00:00",
-      "updatedAt": "2026-10-21T17:33:00+00:00",
-      "size": 3147,
+      "updatedAt": "2026-10-22T20:41:19+00:00",
+      "size": 7413,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -1292,11 +1417,97 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "recentIssues": [
+        {
+          "number": 105,
+          "title": "Evaluate podcast transcription and timing against independently reviewed references",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/issues/105",
+          "createdAt": "2026-10-22T21:05:36+00:00",
+          "updatedAt": "2026-10-22T21:05:36+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [
+        {
+          "number": 101,
+          "title": "Evaluate a local Parakeet TDT v3 provider for multilingual ASR",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/issues/101",
+          "createdAt": "2026-10-22T15:49:28+00:00",
+          "updatedAt": "2026-10-22T21:05:45+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 3,
+          "state": "closed",
+          "closedAt": "2026-10-22T21:05:45+00:00"
+        }
+      ],
+      "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
+        {
+          "number": 104,
+          "title": "Prepare 1.6.0-preview.2 release review",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/104",
+          "createdAt": "2026-10-22T20:15:38+00:00",
+          "updatedAt": "2026-10-22T21:00:33+00:00",
+          "mergedAt": "2026-10-22T20:41:14+00:00",
+          "closedAt": "2026-10-22T20:41:14+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-prepare-preview-2-release",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 103,
+          "title": "Add reusable speech fixtures, model benchmarks, and opt-in Whisper large-v3",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/103",
+          "createdAt": "2026-10-22T18:49:10+00:00",
+          "updatedAt": "2026-10-22T20:12:08+00:00",
+          "mergedAt": "2026-10-22T20:12:08+00:00",
+          "closedAt": "2026-10-22T20:12:08+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-parakeet-provider-evaluation",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 102,
+          "title": "Add experimental Parakeet STT provider and prepare 1.6.0-preview.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/102",
+          "createdAt": "2026-10-22T17:53:16+00:00",
+          "updatedAt": "2026-10-22T17:59:26+00:00",
+          "mergedAt": "2026-10-22T17:59:26+00:00",
+          "closedAt": "2026-10-22T17:59:26+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-parakeet-provider-evaluation",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 92,
           "title": "Bump bunit from 2.11.3 to 2.12.5",
@@ -1918,7 +2129,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 31,
+      "mergedPullRequestsCount": 34,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -1926,7 +2137,7 @@
       "watchDateAdded": "2026-07-03",
       "maintainability": {
         "totalScore": 100,
-        "availablePoints": 60,
+        "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
@@ -1934,25 +2145,25 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 35,
-          "displayValue": "35 commits",
-          "summary": "35 commits in the last 30 days."
+          "value": 39,
+          "displayValue": "39 commits",
+          "summary": "39 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0.2,
+          "displayValue": "0.2 days",
+          "summary": "0.2 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 9,
-          "displayValue": "9 releases",
-          "summary": "9 package releases in the last 30 days across 9 packages."
+          "value": 27,
+          "displayValue": "27 releases",
+          "summary": "27 package releases in the last 30 days across 9 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3431,9 +3642,9 @@
       "owner": "elbruno",
       "name": "ElBruno.AI.Decisions",
       "fullName": "elbruno/ElBruno.AI.Decisions",
-      "stars": 3,
+      "stars": 4,
       "forks": 1,
-      "openIssues": 0,
+      "openIssues": 1,
       "openPullRequests": 0,
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
@@ -3450,7 +3661,7 @@
         "nuget"
       ],
       "createdAt": "2026-09-22T12:05:46+00:00",
-      "updatedAt": "2026-10-14T22:04:26+00:00",
+      "updatedAt": "2026-10-22T15:57:22+00:00",
       "size": 6230,
       "defaultBranch": "main",
       "homepage": null,
@@ -3459,7 +3670,20 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [],
+      "recentIssues": [
+        {
+          "number": 6,
+          "title": "Porting this to MEAI",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/6",
+          "createdAt": "2026-10-22T15:59:53+00:00",
+          "updatedAt": "2026-10-22T17:58:00+00:00",
+          "userLogin": "cedricmendelin",
+          "labels": [],
+          "commentsCount": 1,
+          "state": null,
+          "closedAt": null
+        }
+      ],
       "recentClosedIssues": [
         {
           "number": 4,
@@ -3615,7 +3839,7 @@
       "description": "Local ASR transcript cleanup in .NET with superwhisper/s1-mini and ONNX Runtime GenAI. Removes fillers, collapses stutters, fixes punctuation. Auto-downloads models from HuggingFace.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-21T13:56:20+00:00",
+      "lastPush": "2026-10-22T21:23:10+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -3642,8 +3866,8 @@
         "whisper"
       ],
       "createdAt": "2026-08-20T14:32:59+00:00",
-      "updatedAt": "2026-10-21T13:56:16+00:00",
-      "size": 5267,
+      "updatedAt": "2026-10-22T21:23:14+00:00",
+      "size": 61316,
       "defaultBranch": "main",
       "homepage": "https://www.nuget.org/packages/ElBruno.S1Mini",
       "hasWiki": true,
@@ -3684,18 +3908,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 57,
+        "totalScore": 62,
         "availablePoints": 60,
         "status": "fair",
         "label": "Fair",
         "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 4,
+          "score": 7,
           "maxScore": 20,
           "available": true,
-          "value": 4,
-          "displayValue": "4 commits",
-          "summary": "4 commits in the last 30 days."
+          "value": 7,
+          "displayValue": "7 commits",
+          "summary": "7 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -3840,9 +4064,9 @@
       "owner": "elbruno",
       "name": "ElBruno.AI.Jev",
       "fullName": "elbruno/ElBruno.AI.Jev",
-      "stars": 3,
+      "stars": 4,
       "forks": 1,
-      "openIssues": 0,
+      "openIssues": 1,
       "openPullRequests": 0,
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
@@ -3859,7 +4083,7 @@
         "nuget"
       ],
       "createdAt": "2026-09-22T12:05:46+00:00",
-      "updatedAt": "2026-10-14T22:04:26+00:00",
+      "updatedAt": "2026-10-22T15:57:22+00:00",
       "size": 6230,
       "defaultBranch": "main",
       "homepage": null,
@@ -3868,9 +4092,47 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
+      "recentIssues": [
+        {
+          "number": 6,
+          "title": "Porting this to MEAI",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/6",
+          "createdAt": "2026-10-22T15:59:53+00:00",
+          "updatedAt": "2026-10-22T17:58:00+00:00",
+          "userLogin": "cedricmendelin",
+          "labels": [],
+          "commentsCount": 1,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [
+        {
+          "number": 4,
+          "title": "Expose provider-reported token usage on decision results",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/4",
+          "createdAt": "2026-10-14T21:38:40+00:00",
+          "updatedAt": "2026-10-14T22:12:27+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-10-14T22:12:27+00:00"
+        },
+        {
+          "number": 1,
+          "title": "Support local Laya decision inference through the Jev-compatible API",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/1",
+          "createdAt": "2026-09-30T14:41:02+00:00",
+          "updatedAt": "2026-09-30T15:22:52+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-09-30T15:22:52+00:00"
+        }
+      ],
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -3941,11 +4203,11 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 75,
-        "availablePoints": 60,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
+        "totalScore": 81,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
           "score": 20,
           "maxScore": 20,
@@ -3955,12 +4217,12 @@
           "summary": "31 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0.0 days",
+          "summary": "0.0 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 5,
@@ -4102,18 +4364,18 @@
       "watchPurpose": "Reference architecture and AI-assisted workflow patterns",
       "watchDateAdded": "2025-04-02",
       "maintainability": {
-        "totalScore": 57,
+        "totalScore": 53,
         "availablePoints": 40,
         "status": "fair",
         "label": "Fair",
         "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 3,
+          "score": 1,
           "maxScore": 20,
           "available": true,
-          "value": 3,
-          "displayValue": "3 commits",
-          "summary": "3 commits in the last 30 days."
+          "value": 1,
+          "displayValue": "1 commit",
+          "summary": "1 commit in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -4253,8 +4515,8 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3148,
-      "forks": 2220,
+      "stars": 3152,
+      "forks": 2223,
       "openIssues": 0,
       "openPullRequests": 0,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
@@ -4272,13 +4534,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-10-22T12:14:43+00:00",
-      "size": 209526,
+      "updatedAt": "2026-10-23T09:16:43+00:00",
+      "size": 209529,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2220,
+      "networkCount": 2223,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4334,7 +4596,7 @@
           "title": "Fix links and paths left over from the V2 reorganization",
           "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet/pull/553",
           "createdAt": "2026-10-22T00:19:09+00:00",
-          "updatedAt": "2026-10-22T14:34:00+00:00",
+          "updatedAt": "2026-10-22T15:36:56+00:00",
           "mergedAt": "2026-10-22T14:34:00+00:00",
           "closedAt": "2026-10-22T14:34:00+00:00",
           "userLogin": "Laurianti",
@@ -4612,7 +4874,7 @@
       "purpose": "Core speech pipeline that depends on ElBruno.Whisper, ElBruno.VibeVoiceTTS, ElBruno.QwenTTS, and ElBruno.LocalLLMs. Monitor for integration requirements and API contracts.",
       "dateAdded": "2026-07-03",
       "stars": 3,
-      "lastUpdate": "2026-10-21T17:32:54+00:00",
+      "lastUpdate": "2026-10-22T20:41:14+00:00",
       "isStub": false,
       "stubReason": null
     },
@@ -4639,7 +4901,7 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3148,
+      "stars": 3152,
       "lastUpdate": "2026-10-22T14:33:59+00:00",
       "isStub": false,
       "stubReason": null
