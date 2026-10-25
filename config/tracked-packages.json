@@ -8,6 +8,30 @@
     "repos": []
   },
   {
+    "packageId": "ElBruno.AI.Decisions",
+    "repos": [
+      "elbruno/ElBruno.AI.Decisions"
+    ]
+  },
+  {
+    "packageId": "ElBruno.AI.Decisions.Foundry",
+    "repos": [
+      "elbruno/ElBruno.AI.Decisions"
+    ]
+  },
+  {
+    "packageId": "ElBruno.AI.Decisions.Jev",
+    "repos": [
+      "elbruno/ElBruno.AI.Decisions"
+    ]
+  },
+  {
+    "packageId": "ElBruno.AI.Decisions.Ollama",
+    "repos": [
+      "elbruno/ElBruno.AI.Decisions"
+    ]
+  },
+  {
     "packageId": "ElBruno.AI.Evaluation",
     "repos": [
       "elbruno/elbruno-ai-evaluation"
@@ -156,6 +180,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.LocalEmbeddings.EmbeddingGemma",
+    "repos": [
+      "elbruno/elbruno.localembeddings"
+    ]
+  },
+  {
     "packageId": "ElBruno.LocalEmbeddings.Harrier",
     "repos": [
       "elbruno/elbruno.localembeddings"
@@ -223,6 +253,12 @@
   },
   {
     "packageId": "ElBruno.LocalLLMs.BlazorComponents",
+    "repos": [
+      "elbruno/ElBruno.LocalLLMs"
+    ]
+  },
+  {
+    "packageId": "ElBruno.LocalLLMs.Decisions",
     "repos": [
       "elbruno/ElBruno.LocalLLMs"
     ]
@@ -307,6 +343,12 @@
   },
   {
     "packageId": "ElBruno.MarkItDotNet.Excel",
+    "repos": [
+      "elbruno/ElBruno.MarkItDotNet"
+    ]
+  },
+  {
+    "packageId": "ElBruno.MarkItDotNet.Markdown",
     "repos": [
       "elbruno/ElBruno.MarkItDotNet"
     ]
