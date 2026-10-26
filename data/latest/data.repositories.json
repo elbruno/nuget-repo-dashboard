@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T13:42:59.44777+00:00",
+  "generatedAt": "2026-10-26T16:07:21.9776018+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -305,14 +305,14 @@
       "owner": "elbruno",
       "name": "elbruno.localembeddings",
       "fullName": "elbruno/elbruno.localembeddings",
-      "stars": 42,
+      "stars": 43,
       "forks": 2,
-      "openIssues": 2,
-      "openPullRequests": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
       "description": ".NET library for local embedding generation using ONNX and Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-07T18:20:34+00:00",
+      "lastPush": "2026-10-25T16:24:50+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -336,8 +336,8 @@
         "vector-embeddings"
       ],
       "createdAt": "2026-02-12T20:46:25+00:00",
-      "updatedAt": "2026-10-15T18:21:14+00:00",
-      "size": 62351,
+      "updatedAt": "2026-10-25T21:56:56+00:00",
+      "size": 62400,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -345,21 +345,20 @@
       "networkCount": 2,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 61,
           "title": "Two processes that download the same model at the same time fail",
           "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/issues/61",
           "createdAt": "2026-10-23T03:10:42+00:00",
-          "updatedAt": "2026-10-23T03:10:42+00:00",
+          "updatedAt": "2026-10-25T16:46:26+00:00",
           "userLogin": "Laurianti",
           "labels": [],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-10-25T16:33:20+00:00"
+        },
         {
           "number": 56,
           "title": "Question: accented words become [UNK] with the default model. Is \u0060RemoveNonSpacingMarks\u0060 intentionally off?",
@@ -373,30 +372,49 @@
           "closedAt": "2026-09-28T17:12:30+00:00"
         }
       ],
-      "closedIssuesCount": 1,
-      "recentPullRequests": [
+      "closedIssuesCount": 2,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
         {
-          "number": 62,
-          "title": "Fix concurrent model downloads across processes",
-          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/62",
-          "createdAt": "2026-10-23T03:10:56+00:00",
-          "updatedAt": "2026-10-23T19:41:59+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "Laurianti",
+          "number": 64,
+          "title": "Fix NuGet restore and prepare 1.6.6",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/64",
+          "createdAt": "2026-10-25T16:24:11+00:00",
+          "updatedAt": "2026-10-25T16:24:42+00:00",
+          "mergedAt": "2026-10-25T16:24:42+00:00",
+          "closedAt": "2026-10-25T16:24:42+00:00",
+          "userLogin": "elbruno",
           "labels": [],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
           "reviewDecision": null,
-          "headBranch": "fix/cross-process-model-download",
+          "headBranch": "fix/nuget-restore-for-1.6.6",
           "baseBranch": "main",
           "commentsCount": 0
-        }
-      ],
-      "recentMergedPullRequests": [
+        },
+        {
+          "number": 63,
+          "title": "Fix cross-process model download races",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/63",
+          "createdAt": "2026-10-25T16:02:42+00:00",
+          "updatedAt": "2026-10-25T16:04:10+00:00",
+          "mergedAt": "2026-10-25T16:04:10+00:00",
+          "closedAt": "2026-10-25T16:04:10+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix/issue-61-cross-process-downloads",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 60,
           "title": "docs: update README What\u0027s New to v1.6.3",
@@ -478,41 +496,41 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 4,
+      "mergedPullRequestsCount": 6,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 80,
+        "totalScore": 90,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 9,
-          "maxScore": 20,
-          "available": true,
-          "value": 9,
-          "displayValue": "9 commits",
-          "summary": "9 commits in the last 30 days."
-        },
-        "issueResolution": {
           "score": 15,
           "maxScore": 20,
           "available": true,
-          "value": 7.7,
-          "displayValue": "7.7 days",
-          "summary": "7.7 average days to close recent issues."
+          "value": 15,
+          "displayValue": "15 commits",
+          "summary": "15 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 17,
+          "maxScore": 20,
+          "available": true,
+          "value": 5.1,
+          "displayValue": "5.1 days",
+          "summary": "5.1 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 25,
-          "displayValue": "25 releases",
-          "summary": "25 package releases in the last 30 days across 13 packages."
+          "value": 38,
+          "displayValue": "38 releases",
+          "summary": "38 package releases in the last 30 days across 13 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1381,12 +1399,12 @@
       "fullName": "elbruno/ElBruno.Speech",
       "stars": 3,
       "forks": 1,
-      "openIssues": 1,
-      "openPullRequests": 0,
+      "openIssues": 11,
+      "openPullRequests": 10,
       "description": "Reusable local-first speech runtime for .NET \u2014 VAD, STT, LLM, TTS pipeline with Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-22T20:41:14+00:00",
+      "lastPush": "2026-10-26T14:15:50+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -1409,7 +1427,7 @@
       ],
       "createdAt": "2026-07-03T12:02:53+00:00",
       "updatedAt": "2026-10-22T20:41:19+00:00",
-      "size": 7413,
+      "size": 9286,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -1433,6 +1451,18 @@
       ],
       "recentClosedIssues": [
         {
+          "number": 106,
+          "title": "[Feature] Add Ollama Phonon text-to-speech provider",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/issues/106",
+          "createdAt": "2026-10-25T18:56:31+00:00",
+          "updatedAt": "2026-10-26T13:49:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 7,
+          "state": "closed",
+          "closedAt": "2026-10-25T20:34:50+00:00"
+        },
+        {
           "number": 101,
           "title": "Evaluate a local Parakeet TDT v3 provider for multilingual ASR",
           "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/issues/101",
@@ -1445,8 +1475,209 @@
           "closedAt": "2026-10-22T21:05:45+00:00"
         }
       ],
-      "closedIssuesCount": 1,
-      "recentPullRequests": [],
+      "closedIssuesCount": 2,
+      "recentPullRequests": [
+        {
+          "number": 117,
+          "title": "Bump OpenTelemetry.Extensions.Hosting from 1.19.1 to 1.20.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/117",
+          "createdAt": "2026-10-26T14:15:52+00:00",
+          "updatedAt": "2026-10-26T14:15:56+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/OpenTelemetry.Extensions.Hosting-1.20.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 116,
+          "title": "Bump OpenTelemetry.Api from 1.19.1 to 1.20.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/116",
+          "createdAt": "2026-10-26T14:14:55+00:00",
+          "updatedAt": "2026-10-26T14:14:59+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/OpenTelemetry.Api-1.20.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 115,
+          "title": "Bump Microsoft.SourceLink.GitHub from 10.0.401 to 10.0.403",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/115",
+          "createdAt": "2026-10-26T14:13:41+00:00",
+          "updatedAt": "2026-10-26T14:13:44+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Microsoft.SourceLink.GitHub-10.0.403",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 114,
+          "title": "Bump Microsoft.Extensions.DependencyInjection.Abstractions and Microsoft.Extensions.Options",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/114",
+          "createdAt": "2026-10-26T14:08:32+00:00",
+          "updatedAt": "2026-10-26T14:08:36+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/multi-de7ce06f61",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 113,
+          "title": "Bump Microsoft.Extensions.DependencyInjection.Abstractions and Microsoft.Extensions.Logging.Abstractions",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/113",
+          "createdAt": "2026-10-26T14:07:58+00:00",
+          "updatedAt": "2026-10-26T14:08:01+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/multi-c320cc18e2",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 112,
+          "title": "Bump Microsoft.Extensions.Hosting from 10.0.13 to 10.0.14",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/112",
+          "createdAt": "2026-10-26T14:06:47+00:00",
+          "updatedAt": "2026-10-26T14:06:51+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Microsoft.Extensions.Hosting-10.0.14",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 110,
+          "title": "Bump Microsoft.Extensions.DependencyInjection from 10.0.13 to 10.0.14",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/110",
+          "createdAt": "2026-10-26T14:04:28+00:00",
+          "updatedAt": "2026-10-26T14:04:32+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Microsoft.Extensions.DependencyInjection-10.0.14",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 109,
+          "title": "Bump Microsoft.AspNetCore.Mvc.Testing from 8.0.32 to 8.0.33",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/109",
+          "createdAt": "2026-10-26T14:01:04+00:00",
+          "updatedAt": "2026-10-26T14:01:07+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/Microsoft.AspNetCore.Mvc.Testing-8.0.33",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 108,
+          "title": "Bump bunit from 2.12.5 to 2.13.3",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/108",
+          "createdAt": "2026-10-26T13:59:59+00:00",
+          "updatedAt": "2026-10-26T14:00:03+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/nuget/bunit-2.13.3",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 107,
+          "title": "chore(deps): bump github/codeql-action from 4.39.0 to 4.39.1",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/107",
+          "createdAt": "2026-10-26T13:56:36+00:00",
+          "updatedAt": "2026-10-26T13:56:40+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/github_actions/github/codeql-action-4.39.1",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
       "recentMergedPullRequests": [
         {
           "number": 104,
@@ -2153,17 +2384,17 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 0.2,
-          "displayValue": "0.2 days",
-          "summary": "0.2 average days to close recent issues."
+          "value": 0.1,
+          "displayValue": "0.1 days",
+          "summary": "0.1 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 27,
-          "displayValue": "27 releases",
-          "summary": "27 package releases in the last 30 days across 9 packages."
+          "value": 54,
+          "displayValue": "54 releases",
+          "summary": "54 package releases in the last 30 days across 9 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3550,7 +3781,7 @@
       "fullName": "elbruno/ElBruno.AI.Decisions",
       "stars": 4,
       "forks": 1,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
@@ -3576,21 +3807,20 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 6,
           "title": "Porting this to MEAI",
           "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/6",
           "createdAt": "2026-10-22T15:59:53+00:00",
-          "updatedAt": "2026-10-22T17:58:00+00:00",
+          "updatedAt": "2026-10-25T16:47:52+00:00",
           "userLogin": "cedricmendelin",
           "labels": [],
           "commentsCount": 1,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "state": "closed",
+          "closedAt": "2026-10-25T16:47:52+00:00"
+        },
         {
           "number": 4,
           "title": "Expose provider-reported token usage on decision results",
@@ -3616,7 +3846,7 @@
           "closedAt": "2026-09-30T15:22:52+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 3,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -3687,7 +3917,7 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 100,
+        "totalScore": 99,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
@@ -3701,12 +3931,12 @@
           "summary": "31 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 20,
+          "score": 19,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0.0 days",
-          "summary": "0.0 average days to close recent issues."
+          "value": 1,
+          "displayValue": "1.0 days",
+          "summary": "1.0 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
@@ -4066,7 +4296,7 @@
       "fullName": "elbruno/ElBruno.AI.Jev",
       "stars": 4,
       "forks": 1,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
@@ -4092,21 +4322,20 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 6,
           "title": "Porting this to MEAI",
           "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/6",
           "createdAt": "2026-10-22T15:59:53+00:00",
-          "updatedAt": "2026-10-22T17:58:00+00:00",
+          "updatedAt": "2026-10-25T16:47:52+00:00",
           "userLogin": "cedricmendelin",
           "labels": [],
           "commentsCount": 1,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "state": "closed",
+          "closedAt": "2026-10-25T16:47:52+00:00"
+        },
         {
           "number": 4,
           "title": "Expose provider-reported token usage on decision results",
@@ -4132,7 +4361,7 @@
           "closedAt": "2026-09-30T15:22:52+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 3,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -4203,7 +4432,7 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 81,
+        "totalScore": 80,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
@@ -4217,12 +4446,12 @@
           "summary": "31 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 20,
+          "score": 19,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0.0 days",
-          "summary": "0.0 average days to close recent issues."
+          "value": 1,
+          "displayValue": "1.0 days",
+          "summary": "1.0 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 5,
@@ -4515,8 +4744,8 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3157,
-      "forks": 2229,
+      "stars": 3161,
+      "forks": 2232,
       "openIssues": 0,
       "openPullRequests": 0,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
@@ -4534,13 +4763,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-10-24T22:57:36+00:00",
+      "updatedAt": "2026-10-26T14:57:29+00:00",
       "size": 209529,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2229,
+      "networkCount": 2232,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4874,7 +5103,7 @@
       "purpose": "Core speech pipeline that depends on ElBruno.Whisper, ElBruno.VibeVoiceTTS, ElBruno.QwenTTS, and ElBruno.LocalLLMs. Monitor for integration requirements and API contracts.",
       "dateAdded": "2026-07-03",
       "stars": 3,
-      "lastUpdate": "2026-10-22T20:41:14+00:00",
+      "lastUpdate": "2026-10-26T14:15:50+00:00",
       "isStub": false,
       "stubReason": null
     },
@@ -4901,7 +5130,7 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3157,
+      "stars": 3161,
       "lastUpdate": "2026-10-22T14:33:59+00:00",
       "isStub": false,
       "stubReason": null
