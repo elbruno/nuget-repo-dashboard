@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T15:21:47.1904039+00:00",
+  "generatedAt": "2026-10-28T16:01:05.2482318+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -51,16 +51,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.FoundryLocalMonitor",
-      "configFile": "elbruno-ElBruno.FoundryLocalMonitor.json",
-      "accentColor": "#C052AE",
-      "icon": "\uD83D\uDCCA"
-    },
-    {
       "repo": "elbruno/ElBruno.Speech",
       "configFile": "elbruno-ElBruno.Speech.json",
       "accentColor": "#BBBE5A",
       "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.FoundryLocalMonitor",
+      "configFile": "elbruno-ElBruno.FoundryLocalMonitor.json",
+      "accentColor": "#C052AE",
+      "icon": "\uD83D\uDCCA"
     },
     {
       "repo": "elbruno/ElBruno.VibeVoiceTTS",
@@ -129,15 +129,15 @@
       "icon": "\uD83D\uDD0C"
     },
     {
-      "repo": "elbruno/ElBruno.MAF.FoundryLocal",
-      "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
-      "accentColor": "#A8BCA2",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.AI.Decisions",
       "configFile": "elbruno-ElBruno.AI.Decisions.json",
       "accentColor": "#5F886C",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.MAF.FoundryLocal",
+      "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
+      "accentColor": "#A8BCA2",
       "icon": "\uD83D\uDD37"
     },
     {
