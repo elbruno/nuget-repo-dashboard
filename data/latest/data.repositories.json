@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T16:07:33.9706033+00:00",
+  "generatedAt": "2026-10-30T15:56:41.5567918+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -3220,6 +3220,176 @@
     },
     {
       "owner": "elbruno",
+      "name": "ElBruno.AI.Decisions",
+      "fullName": "elbruno/ElBruno.AI.Decisions",
+      "stars": 4,
+      "forks": 1,
+      "openIssues": 1,
+      "openPullRequests": 0,
+      "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-10-26T18:24:13+00:00",
+      "archived": false,
+      "retired": false,
+      "watchersCount": 0,
+      "topics": [
+        "dotnet",
+        "dotnet10",
+        "jev",
+        "microsoft-extensions-ai",
+        "nuget"
+      ],
+      "createdAt": "2026-09-22T12:05:46+00:00",
+      "updatedAt": "2026-10-26T18:24:18+00:00",
+      "size": 6285,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
+      "recentIssues": [
+        {
+          "number": 7,
+          "title": "Improve Foundry client initialization with project-endpoint support and endpoint-first overloads",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/7",
+          "createdAt": "2026-10-28T19:15:13+00:00",
+          "updatedAt": "2026-10-28T19:15:13+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 0,
+          "state": null,
+          "closedAt": null
+        }
+      ],
+      "recentClosedIssues": [
+        {
+          "number": 6,
+          "title": "Porting this to MEAI",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/6",
+          "createdAt": "2026-10-22T15:59:53+00:00",
+          "updatedAt": "2026-10-25T16:47:52+00:00",
+          "userLogin": "cedricmendelin",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-10-25T16:47:52+00:00"
+        },
+        {
+          "number": 4,
+          "title": "Expose provider-reported token usage on decision results",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/4",
+          "createdAt": "2026-10-14T21:38:40+00:00",
+          "updatedAt": "2026-10-14T22:12:27+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-10-14T22:12:27+00:00"
+        }
+      ],
+      "closedIssuesCount": 2,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
+        {
+          "number": 5,
+          "title": "Expose provider-reported token usage on decision results",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/5",
+          "createdAt": "2026-10-14T22:00:17+00:00",
+          "updatedAt": "2026-10-14T22:04:21+00:00",
+          "mergedAt": "2026-10-14T22:04:21+00:00",
+          "closedAt": "2026-10-14T22:04:21+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-decision-token-usage",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 3,
+          "title": "Rename to ElBruno.AI.Decisions with Jev, Foundry and Ollama providers",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/3",
+          "createdAt": "2026-10-09T20:01:59+00:00",
+          "updatedAt": "2026-10-09T22:39:47+00:00",
+          "mergedAt": "2026-10-09T22:39:43+00:00",
+          "closedAt": "2026-10-09T22:39:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "decisions-rename",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 2,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 99,
+        "availablePoints": 80,
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
+        "activity": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 33,
+          "displayValue": "33 commits",
+          "summary": "33 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 19,
+          "maxScore": 20,
+          "available": true,
+          "value": 1.5,
+          "displayValue": "1.5 days",
+          "summary": "1.5 average days to close recent issues."
+        },
+        "releaseFrequency": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "20 releases",
+          "summary": "20 package releases in the last 30 days across 4 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
       "name": "ElBruno.ModelContextProtocol",
       "fullName": "elbruno/ElBruno.ModelContextProtocol",
       "stars": 8,
@@ -3297,208 +3467,6 @@
           "value": 0,
           "displayValue": "0 releases",
           "summary": "0 package releases in the last 30 days across 1 package."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "elbruno",
-      "name": "ElBruno.AI.Decisions",
-      "fullName": "elbruno/ElBruno.AI.Decisions",
-      "stars": 4,
-      "forks": 1,
-      "openIssues": 1,
-      "openPullRequests": 0,
-      "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-10-26T18:24:13+00:00",
-      "archived": false,
-      "retired": false,
-      "watchersCount": 0,
-      "topics": [
-        "dotnet",
-        "dotnet10",
-        "jev",
-        "microsoft-extensions-ai",
-        "nuget"
-      ],
-      "createdAt": "2026-09-22T12:05:46+00:00",
-      "updatedAt": "2026-10-26T18:24:18+00:00",
-      "size": 6285,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": true,
-      "hasPages": false,
-      "networkCount": 1,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [
-        {
-          "number": 7,
-          "title": "Improve Foundry client initialization with project-endpoint support and endpoint-first overloads",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/7",
-          "createdAt": "2026-10-28T19:15:13+00:00",
-          "updatedAt": "2026-10-28T19:15:13+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
-        {
-          "number": 6,
-          "title": "Porting this to MEAI",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/6",
-          "createdAt": "2026-10-22T15:59:53+00:00",
-          "updatedAt": "2026-10-25T16:47:52+00:00",
-          "userLogin": "cedricmendelin",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-10-25T16:47:52+00:00"
-        },
-        {
-          "number": 4,
-          "title": "Expose provider-reported token usage on decision results",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/4",
-          "createdAt": "2026-10-14T21:38:40+00:00",
-          "updatedAt": "2026-10-14T22:12:27+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-10-14T22:12:27+00:00"
-        },
-        {
-          "number": 1,
-          "title": "Support local Laya decision inference through the Jev-compatible API",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/1",
-          "createdAt": "2026-09-30T14:41:02+00:00",
-          "updatedAt": "2026-09-30T15:22:52+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-09-30T15:22:52+00:00"
-        }
-      ],
-      "closedIssuesCount": 3,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [
-        {
-          "number": 5,
-          "title": "Expose provider-reported token usage on decision results",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/5",
-          "createdAt": "2026-10-14T22:00:17+00:00",
-          "updatedAt": "2026-10-14T22:04:21+00:00",
-          "mergedAt": "2026-10-14T22:04:21+00:00",
-          "closedAt": "2026-10-14T22:04:21+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-decision-token-usage",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 3,
-          "title": "Rename to ElBruno.AI.Decisions with Jev, Foundry and Ollama providers",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/3",
-          "createdAt": "2026-10-09T20:01:59+00:00",
-          "updatedAt": "2026-10-09T22:39:47+00:00",
-          "mergedAt": "2026-10-09T22:39:43+00:00",
-          "closedAt": "2026-10-09T22:39:43+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "decisions-rename",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 2,
-          "title": "Add local Laya inference support",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/2",
-          "createdAt": "2026-09-30T15:22:40+00:00",
-          "updatedAt": "2026-09-30T15:22:51+00:00",
-          "mergedAt": "2026-09-30T15:22:49+00:00",
-          "closedAt": "2026-09-30T15:22:49+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-support-local-laya-inference",
-          "baseBranch": "main",
-          "commentsCount": 0
-        }
-      ],
-      "mergedPullRequestsCount": 3,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 99,
-        "availablePoints": 80,
-        "status": "good",
-        "label": "Good",
-        "emoji": "\uD83D\uDFE2",
-        "activity": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 35,
-          "displayValue": "35 commits",
-          "summary": "35 commits in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 19,
-          "maxScore": 20,
-          "available": true,
-          "value": 1,
-          "displayValue": "1.0 days",
-          "summary": "1.0 average days to close recent issues."
-        },
-        "releaseFrequency": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "20 releases",
-          "summary": "20 package releases in the last 30 days across 4 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -4010,21 +3978,9 @@
           "commentsCount": 1,
           "state": "closed",
           "closedAt": "2026-10-14T22:12:27+00:00"
-        },
-        {
-          "number": 1,
-          "title": "Support local Laya decision inference through the Jev-compatible API",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/1",
-          "createdAt": "2026-09-30T14:41:02+00:00",
-          "updatedAt": "2026-09-30T15:22:52+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-09-30T15:22:52+00:00"
         }
       ],
-      "closedIssuesCount": 3,
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -4066,63 +4022,43 @@
           "headBranch": "decisions-rename",
           "baseBranch": "main",
           "commentsCount": 0
-        },
-        {
-          "number": 2,
-          "title": "Add local Laya inference support",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/2",
-          "createdAt": "2026-09-30T15:22:40+00:00",
-          "updatedAt": "2026-09-30T15:22:51+00:00",
-          "mergedAt": "2026-09-30T15:22:49+00:00",
-          "closedAt": "2026-09-30T15:22:49+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-support-local-laya-inference",
-          "baseBranch": "main",
-          "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 3,
+      "mergedPullRequestsCount": 2,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 80,
+        "totalScore": 74,
         "availablePoints": 80,
-        "status": "good",
-        "label": "Good",
-        "emoji": "\uD83D\uDFE2",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 35,
-          "displayValue": "35 commits",
-          "summary": "35 commits in the last 30 days."
+          "value": 33,
+          "displayValue": "33 commits",
+          "summary": "33 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
           "maxScore": 20,
           "available": true,
-          "value": 1,
-          "displayValue": "1.0 days",
-          "summary": "1.0 average days to close recent issues."
+          "value": 1.5,
+          "displayValue": "1.5 days",
+          "summary": "1.5 average days to close recent issues."
         },
         "releaseFrequency": {
-          "score": 5,
+          "score": 0,
           "maxScore": 20,
           "available": true,
-          "value": 1,
-          "displayValue": "1 release",
-          "summary": "1 package release in the last 30 days across 1 package."
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -4386,14 +4322,14 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3169,
-      "forks": 2246,
-      "openIssues": 0,
-      "openPullRequests": 0,
+      "stars": 3174,
+      "forks": 2248,
+      "openIssues": 1,
+      "openPullRequests": 1,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-29T15:12:01+00:00",
+      "lastPush": "2026-10-30T03:07:02+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 46,
@@ -4405,13 +4341,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-10-29T15:12:16+00:00",
-      "size": 209531,
+      "updatedAt": "2026-10-30T08:19:43+00:00",
+      "size": 209536,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2246,
+      "networkCount": 2248,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4460,7 +4396,31 @@
         }
       ],
       "closedIssuesCount": 3,
-      "recentPullRequests": [],
+      "recentPullRequests": [
+        {
+          "number": 555,
+          "title": "chore(deps): bump pozil/auto-assign-issue from 4.0.1 to 4.1.0 in the github-actions group",
+          "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet/pull/555",
+          "createdAt": "2026-10-30T03:07:04+00:00",
+          "updatedAt": "2026-10-30T03:07:08+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "dependencies",
+            "github_actions"
+          ],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/github_actions/github-actions-b050591099",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
       "recentMergedPullRequests": [
         {
           "number": 554,
@@ -4794,8 +4754,8 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3169,
-      "lastUpdate": "2026-10-29T15:12:01+00:00",
+      "stars": 3174,
+      "lastUpdate": "2026-10-30T03:07:02+00:00",
       "isStub": false,
       "stubReason": null
     }
