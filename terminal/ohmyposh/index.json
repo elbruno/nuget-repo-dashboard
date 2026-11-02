@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T16:01:10.2413966+00:00",
+  "generatedAt": "2026-11-02T19:29:09.1166887+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -111,15 +111,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.PersonaPlex",
-      "configFile": "elbruno-ElBruno.PersonaPlex.json",
-      "accentColor": "#7DBBB3",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.AI.Decisions",
       "configFile": "elbruno-ElBruno.AI.Decisions.json",
       "accentColor": "#5F886C",
+      "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.PersonaPlex",
+      "configFile": "elbruno-ElBruno.PersonaPlex.json",
+      "accentColor": "#7DBBB3",
       "icon": "\uD83D\uDD37"
     },
     {
