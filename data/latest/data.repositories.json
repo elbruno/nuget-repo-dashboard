@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T19:29:03.7797286+00:00",
+  "generatedAt": "2026-11-03T17:01:54.6500662+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -1005,12 +1005,12 @@
       "fullName": "elbruno/ElBruno.Speech",
       "stars": 3,
       "forks": 1,
-      "openIssues": 3,
-      "openPullRequests": 2,
+      "openIssues": 1,
+      "openPullRequests": 0,
       "description": "Reusable local-first speech runtime for .NET \u2014 VAD, STT, LLM, TTS pipeline with Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-02T13:59:23+00:00",
+      "lastPush": "2026-11-03T15:03:15+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -1032,8 +1032,8 @@
         "voice-activity-detection"
       ],
       "createdAt": "2026-07-03T12:02:53+00:00",
-      "updatedAt": "2026-10-26T18:08:26+00:00",
-      "size": 9299,
+      "updatedAt": "2026-11-03T14:59:54+00:00",
+      "size": 9309,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -1082,19 +1082,20 @@
         }
       ],
       "closedIssuesCount": 2,
-      "recentPullRequests": [
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
         {
           "number": 119,
           "title": "Bump Microsoft.ML.OnnxRuntime from 1.31.0 to 1.31.1",
           "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/119",
           "createdAt": "2026-11-02T13:59:24+00:00",
-          "updatedAt": "2026-11-02T13:59:28+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-11-03T14:56:36+00:00",
+          "mergedAt": "2026-11-03T14:56:33+00:00",
+          "closedAt": "2026-11-03T14:56:33+00:00",
           "userLogin": "dependabot[bot]",
           "labels": [],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -1108,13 +1109,13 @@
           "title": "Bump Microsoft.Extensions.Hosting.Abstractions from 10.0.12 to 10.0.14",
           "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/118",
           "createdAt": "2026-11-02T13:58:53+00:00",
-          "updatedAt": "2026-11-02T13:58:57+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-11-03T14:56:24+00:00",
+          "mergedAt": "2026-11-03T14:56:22+00:00",
+          "closedAt": "2026-11-03T14:56:22+00:00",
           "userLogin": "dependabot[bot]",
           "labels": [],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -1122,9 +1123,7 @@
           "headBranch": "dependabot/nuget/Microsoft.Extensions.Hosting.Abstractions-10.0.14",
           "baseBranch": "main",
           "commentsCount": 0
-        }
-      ],
-      "recentMergedPullRequests": [
+        },
         {
           "number": 117,
           "title": "Bump OpenTelemetry.Extensions.Hosting from 1.19.1 to 1.20.1",
@@ -1786,7 +1785,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 33,
+      "mergedPullRequestsCount": 35,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -1802,9 +1801,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 50,
-          "displayValue": "50 commits",
-          "summary": "50 commits in the last 30 days."
+          "value": 53,
+          "displayValue": "53 commits",
+          "summary": "53 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 20,
@@ -1818,9 +1817,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 78,
-          "displayValue": "78 releases",
-          "summary": "78 package releases in the last 30 days across 12 packages."
+          "value": 90,
+          "displayValue": "90 releases",
+          "summary": "90 package releases in the last 30 days across 12 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -2928,12 +2927,12 @@
       "fullName": "elbruno/ElBruno.AI.Decisions",
       "stars": 5,
       "forks": 1,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-26T18:24:13+00:00",
+      "lastPush": "2026-11-03T15:20:05+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -2945,8 +2944,8 @@
         "nuget"
       ],
       "createdAt": "2026-09-22T12:05:46+00:00",
-      "updatedAt": "2026-11-01T09:37:46+00:00",
-      "size": 6285,
+      "updatedAt": "2026-11-03T15:20:10+00:00",
+      "size": 6335,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -2954,21 +2953,20 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 7,
           "title": "Improve Foundry client initialization with project-endpoint support and endpoint-first overloads",
           "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/7",
           "createdAt": "2026-10-28T19:15:13+00:00",
-          "updatedAt": "2026-10-28T19:15:13+00:00",
+          "updatedAt": "2026-11-03T15:20:24+00:00",
           "userLogin": "elbruno",
           "labels": [],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-11-03T15:20:24+00:00"
+        },
         {
           "number": 6,
           "title": "Porting this to MEAI",
@@ -2994,7 +2992,7 @@
           "closedAt": "2026-10-14T22:12:27+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 3,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -3045,7 +3043,7 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 99,
+        "totalScore": 98,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
@@ -3054,25 +3052,25 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 33,
-          "displayValue": "33 commits",
-          "summary": "33 commits in the last 30 days."
+          "value": 35,
+          "displayValue": "35 commits",
+          "summary": "35 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 19,
+          "score": 18,
           "maxScore": 20,
           "available": true,
-          "value": 1.5,
-          "displayValue": "1.5 days",
-          "summary": "1.5 average days to close recent issues."
+          "value": 3,
+          "displayValue": "3.0 days",
+          "summary": "3.0 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 20,
-          "displayValue": "20 releases",
-          "summary": "20 package releases in the last 30 days across 4 packages."
+          "value": 24,
+          "displayValue": "24 releases",
+          "summary": "24 package releases in the last 30 days across 4 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3799,12 +3797,12 @@
       "fullName": "elbruno/ElBruno.AI.Jev",
       "stars": 5,
       "forks": 1,
-      "openIssues": 1,
+      "openIssues": 0,
       "openPullRequests": 0,
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-26T18:24:13+00:00",
+      "lastPush": "2026-11-03T15:20:05+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -3816,8 +3814,8 @@
         "nuget"
       ],
       "createdAt": "2026-09-22T12:05:46+00:00",
-      "updatedAt": "2026-11-01T09:37:46+00:00",
-      "size": 6285,
+      "updatedAt": "2026-11-03T15:20:10+00:00",
+      "size": 6335,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3825,21 +3823,20 @@
       "networkCount": 1,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 7,
           "title": "Improve Foundry client initialization with project-endpoint support and endpoint-first overloads",
           "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/7",
           "createdAt": "2026-10-28T19:15:13+00:00",
-          "updatedAt": "2026-10-28T19:15:13+00:00",
+          "updatedAt": "2026-11-03T15:20:24+00:00",
           "userLogin": "elbruno",
           "labels": [],
-          "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "commentsCount": 1,
+          "state": "closed",
+          "closedAt": "2026-11-03T15:20:24+00:00"
+        },
         {
           "number": 6,
           "title": "Porting this to MEAI",
@@ -3865,7 +3862,7 @@
           "closedAt": "2026-10-14T22:12:27+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 3,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -3916,7 +3913,7 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 74,
+        "totalScore": 73,
         "availablePoints": 80,
         "status": "fair",
         "label": "Fair",
@@ -3925,17 +3922,17 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 33,
-          "displayValue": "33 commits",
-          "summary": "33 commits in the last 30 days."
+          "value": 35,
+          "displayValue": "35 commits",
+          "summary": "35 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 19,
+          "score": 18,
           "maxScore": 20,
           "available": true,
-          "value": 1.5,
-          "displayValue": "1.5 days",
-          "summary": "1.5 average days to close recent issues."
+          "value": 3,
+          "displayValue": "3.0 days",
+          "summary": "3.0 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 0,
@@ -4207,8 +4204,8 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3196,
-      "forks": 2256,
+      "stars": 3201,
+      "forks": 2258,
       "openIssues": 0,
       "openPullRequests": 0,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
@@ -4226,13 +4223,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-11-02T17:42:22+00:00",
+      "updatedAt": "2026-11-03T15:11:30+00:00",
       "size": 209570,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2256,
+      "networkCount": 2258,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4643,7 +4640,7 @@
       "purpose": "Core speech pipeline that depends on ElBruno.Whisper, ElBruno.VibeVoiceTTS, ElBruno.QwenTTS, and ElBruno.LocalLLMs. Monitor for integration requirements and API contracts.",
       "dateAdded": "2026-07-03",
       "stars": 3,
-      "lastUpdate": "2026-11-02T13:59:23+00:00",
+      "lastUpdate": "2026-11-03T15:03:15+00:00",
       "isStub": false,
       "stubReason": null
     },
@@ -4670,7 +4667,7 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3196,
+      "stars": 3201,
       "lastUpdate": "2026-11-02T16:36:33+00:00",
       "isStub": false,
       "stubReason": null
