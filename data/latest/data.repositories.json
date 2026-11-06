@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T17:23:16.5941308+00:00",
+  "generatedAt": "2026-11-06T16:45:56.5716368+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -275,12 +275,12 @@
       "fullName": "elbruno/elbruno.localembeddings",
       "stars": 44,
       "forks": 2,
-      "openIssues": 2,
-      "openPullRequests": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
       "description": ".NET library for local embedding generation using ONNX and Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-25T16:24:50+00:00",
+      "lastPush": "2026-11-05T17:32:21+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -304,8 +304,8 @@
         "vector-embeddings"
       ],
       "createdAt": "2026-02-12T20:46:25+00:00",
-      "updatedAt": "2026-11-02T15:29:35+00:00",
-      "size": 62400,
+      "updatedAt": "2026-11-05T17:32:19+00:00",
+      "size": 62484,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -313,21 +313,20 @@
       "networkCount": 2,
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings",
-      "recentIssues": [
+      "recentIssues": [],
+      "recentClosedIssues": [
         {
           "number": 65,
           "title": "Support .NET Framework (netstandard2.0 target)",
           "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/issues/65",
           "createdAt": "2026-11-04T03:51:33+00:00",
-          "updatedAt": "2026-11-04T03:51:33+00:00",
+          "updatedAt": "2026-11-05T17:32:13+00:00",
           "userLogin": "Laurianti",
           "labels": [],
           "commentsCount": 0,
-          "state": null,
-          "closedAt": null
-        }
-      ],
-      "recentClosedIssues": [
+          "state": "closed",
+          "closedAt": "2026-11-05T17:32:13+00:00"
+        },
         {
           "number": 61,
           "title": "Two processes that download the same model at the same time fail",
@@ -341,20 +340,21 @@
           "closedAt": "2026-10-25T16:33:20+00:00"
         }
       ],
-      "closedIssuesCount": 1,
-      "recentPullRequests": [
+      "closedIssuesCount": 2,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
         {
           "number": 66,
           "title": "Add netstandard2.0 target for .NET Framework",
           "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/66",
           "createdAt": "2026-11-04T03:51:35+00:00",
-          "updatedAt": "2026-11-04T16:23:31+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-11-05T17:32:12+00:00",
+          "mergedAt": "2026-11-05T17:32:11+00:00",
+          "closedAt": "2026-11-05T17:32:12+00:00",
           "userLogin": "Laurianti",
           "labels": [],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -362,9 +362,7 @@
           "headBranch": "downloader-1.6.1",
           "baseBranch": "main",
           "commentsCount": 0
-        }
-      ],
-      "recentMergedPullRequests": [
+        },
         {
           "number": 64,
           "title": "Fix NuGet restore and prepare 1.6.6",
@@ -406,41 +404,41 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 2,
+      "mergedPullRequestsCount": 3,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 81,
+        "totalScore": 90,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 7,
+          "score": 13,
           "maxScore": 20,
           "available": true,
-          "value": 7,
-          "displayValue": "7 commits",
-          "summary": "7 commits in the last 30 days."
+          "value": 13,
+          "displayValue": "13 commits",
+          "summary": "13 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 18,
+          "score": 19,
           "maxScore": 20,
           "available": true,
-          "value": 2.6,
-          "displayValue": "2.6 days",
-          "summary": "2.6 average days to close recent issues."
+          "value": 2.1,
+          "displayValue": "2.1 days",
+          "summary": "2.1 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 26,
-          "displayValue": "26 releases",
-          "summary": "26 package releases in the last 30 days across 13 packages."
+          "value": 39,
+          "displayValue": "39 releases",
+          "summary": "39 package releases in the last 30 days across 13 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -937,7 +935,7 @@
       "owner": "elbruno",
       "name": "graphify-dotnet",
       "fullName": "elbruno/graphify-dotnet",
-      "stars": 97,
+      "stars": 98,
       "forks": 18,
       "openIssues": 0,
       "openPullRequests": 0,
@@ -965,7 +963,7 @@
         "vis-js"
       ],
       "createdAt": "2026-04-06T20:06:04+00:00",
-      "updatedAt": "2026-11-04T21:06:39+00:00",
+      "updatedAt": "2026-11-06T12:08:07+00:00",
       "size": 6656,
       "defaultBranch": "main",
       "homepage": null,
@@ -2015,53 +2013,6 @@
     },
     {
       "owner": "elbruno",
-      "name": "ElBruno.CopilotCLIMonitor",
-      "fullName": "elbruno/ElBruno.CopilotCLIMonitor",
-      "stars": 1,
-      "forks": 1,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": "RETIRED: No longer maintained or supported. Windows systray notifications for GitHub Copilot CLI. Preserved for historical reference.",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-10-02T14:13:13+00:00",
-      "archived": true,
-      "retired": true,
-      "watchersCount": 0,
-      "topics": [
-        "copilot-cli",
-        "developer-tools",
-        "dotnet",
-        "github-copilot",
-        "notifications",
-        "windows-systray",
-        "wpf"
-      ],
-      "createdAt": "2026-05-12T22:22:49+00:00",
-      "updatedAt": "2026-10-02T14:21:46+00:00",
-      "size": 12565,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": true,
-      "hasPages": false,
-      "networkCount": 1,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": null
-    },
-    {
-      "owner": "elbruno",
       "name": "ElBruno.PresenterTimer",
       "fullName": "elbruno/ElBruno.PresenterTimer",
       "stars": 2,
@@ -2154,6 +2105,53 @@
           "summary": "README present, docs/ present."
         }
       }
+    },
+    {
+      "owner": "elbruno",
+      "name": "ElBruno.CopilotCLIMonitor",
+      "fullName": "elbruno/ElBruno.CopilotCLIMonitor",
+      "stars": 1,
+      "forks": 1,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "RETIRED: No longer maintained or supported. Windows systray notifications for GitHub Copilot CLI. Preserved for historical reference.",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-10-02T14:13:13+00:00",
+      "archived": true,
+      "retired": true,
+      "watchersCount": 0,
+      "topics": [
+        "copilot-cli",
+        "developer-tools",
+        "dotnet",
+        "github-copilot",
+        "notifications",
+        "windows-systray",
+        "wpf"
+      ],
+      "createdAt": "2026-05-12T22:22:49+00:00",
+      "updatedAt": "2026-10-02T14:21:46+00:00",
+      "size": 12565,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": false,
+      "networkCount": 1,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/ElBruno.CopilotCLIMonitor",
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": null
     },
     {
       "owner": "elbruno",
@@ -3341,6 +3339,100 @@
     },
     {
       "owner": "elbruno",
+      "name": "elbruno-ai-evaluation",
+      "fullName": "elbruno/elbruno-ai-evaluation",
+      "stars": 4,
+      "forks": 0,
+      "openIssues": 0,
+      "openPullRequests": 0,
+      "description": "AI Testing \u0026 Observability Toolkit for .NET - deterministic evaluators, synthetic data, golden datasets, regression detection",
+      "language": "C#",
+      "license": "MIT",
+      "lastPush": "2026-07-04T15:59:38+00:00",
+      "archived": false,
+      "retired": false,
+      "watchersCount": 0,
+      "topics": [
+        "ai",
+        "csharp",
+        "dotnet",
+        "evaluation",
+        "llm",
+        "nuget",
+        "testing",
+        "xunit"
+      ],
+      "createdAt": "2026-02-24T00:57:33+00:00",
+      "updatedAt": "2026-07-04T15:59:21+00:00",
+      "size": 17017,
+      "defaultBranch": "main",
+      "homepage": null,
+      "hasWiki": true,
+      "hasPages": true,
+      "networkCount": 0,
+      "visibility": "public",
+      "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
+      "recentIssues": [],
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
+      "isStub": false,
+      "stubReason": null,
+      "isWatchList": false,
+      "watchPurpose": null,
+      "watchDateAdded": null,
+      "maintainability": {
+        "totalScore": 33,
+        "availablePoints": 60,
+        "status": "needs-attention",
+        "label": "Needs attention",
+        "emoji": "\uD83D\uDD34",
+        "activity": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
+        },
+        "issueResolution": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
+        },
+        "releaseFrequency": {
+          "score": 0,
+          "maxScore": 20,
+          "available": true,
+          "value": 0,
+          "displayValue": "0 releases",
+          "summary": "0 package releases in the last 30 days across 4 packages."
+        },
+        "testCoverage": {
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "Coverage percentage not found in README."
+        },
+        "documentation": {
+          "score": 20,
+          "maxScore": 20,
+          "available": true,
+          "value": 20,
+          "displayValue": "Complete",
+          "summary": "README present, docs/ present."
+        }
+      }
+    },
+    {
+      "owner": "elbruno",
       "name": "ElBruno.S1Mini",
       "fullName": "elbruno/ElBruno.S1Mini",
       "stars": 3,
@@ -3447,100 +3539,6 @@
           "value": 2,
           "displayValue": "2 releases",
           "summary": "2 package releases in the last 30 days across 1 package."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "elbruno",
-      "name": "elbruno-ai-evaluation",
-      "fullName": "elbruno/elbruno-ai-evaluation",
-      "stars": 4,
-      "forks": 0,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": "AI Testing \u0026 Observability Toolkit for .NET - deterministic evaluators, synthetic data, golden datasets, regression detection",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-07-04T15:59:38+00:00",
-      "archived": false,
-      "retired": false,
-      "watchersCount": 0,
-      "topics": [
-        "ai",
-        "csharp",
-        "dotnet",
-        "evaluation",
-        "llm",
-        "nuget",
-        "testing",
-        "xunit"
-      ],
-      "createdAt": "2026-02-24T00:57:33+00:00",
-      "updatedAt": "2026-07-04T15:59:21+00:00",
-      "size": 17017,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": true,
-      "hasPages": true,
-      "networkCount": 0,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/elbruno-ai-evaluation",
-      "recentIssues": [],
-      "recentClosedIssues": [],
-      "closedIssuesCount": 0,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 33,
-        "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
-        "activity": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "No recent closed issues with close-time data."
-        },
-        "releaseFrequency": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 4 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -4078,14 +4076,14 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3204,
-      "forks": 2262,
-      "openIssues": 1,
-      "openPullRequests": 1,
+      "stars": 3205,
+      "forks": 2263,
+      "openIssues": 0,
+      "openPullRequests": 0,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-04T18:29:35+00:00",
+      "lastPush": "2026-11-05T17:38:10+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 46,
@@ -4097,13 +4095,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-11-05T14:37:53+00:00",
-      "size": 209651,
+      "updatedAt": "2026-11-06T05:21:28+00:00",
+      "size": 209652,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2262,
+      "networkCount": 2263,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4166,22 +4164,23 @@
         }
       ],
       "closedIssuesCount": 4,
-      "recentPullRequests": [
+      "recentPullRequests": [],
+      "recentMergedPullRequests": [
         {
           "number": 559,
           "title": "Bump the nuget group with 8 updates",
           "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet/pull/559",
           "createdAt": "2026-11-04T18:29:37+00:00",
-          "updatedAt": "2026-11-04T18:29:43+00:00",
-          "mergedAt": null,
-          "closedAt": null,
+          "updatedAt": "2026-11-05T17:38:11+00:00",
+          "mergedAt": "2026-11-05T17:38:01+00:00",
+          "closedAt": "2026-11-05T17:38:01+00:00",
           "userLogin": "dependabot[bot]",
           "labels": [
             "dependencies",
             ".NET"
           ],
           "isDraft": false,
-          "state": "open",
+          "state": "closed",
           "additions": 0,
           "deletions": 0,
           "changedFiles": 0,
@@ -4189,9 +4188,7 @@
           "headBranch": "dependabot/nuget/samples/CoreSamples/DecisionAgent-01-FoundryHosted/src/SupportRoutingAgent/main/nuget-87a5670fd7",
           "baseBranch": "main",
           "commentsCount": 0
-        }
-      ],
-      "recentMergedPullRequests": [
+        },
         {
           "number": 558,
           "title": "chore: Remove Squad tooling and dedicated automation",
@@ -4436,25 +4433,25 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 11,
+      "mergedPullRequestsCount": 12,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
       "watchPurpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "watchDateAdded": "2026-08-19",
       "maintainability": {
-        "totalScore": 92,
+        "totalScore": 97,
         "availablePoints": 60,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 17,
+          "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 17,
-          "displayValue": "17 commits",
-          "summary": "17 commits in the last 30 days."
+          "value": 20,
+          "displayValue": "20 commits",
+          "summary": "20 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -4543,8 +4540,8 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3204,
-      "lastUpdate": "2026-11-04T18:29:35+00:00",
+      "stars": 3205,
+      "lastUpdate": "2026-11-05T17:38:10+00:00",
       "isStub": false,
       "stubReason": null
     }
