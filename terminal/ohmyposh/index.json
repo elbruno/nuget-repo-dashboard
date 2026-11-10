@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T19:48:13.7651274+00:00",
+  "generatedAt": "2026-11-10T17:02:24.4069199+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -129,16 +129,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.ModelContextProtocol",
-      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
-      "accentColor": "#C3627F",
-      "icon": "\uD83D\uDD0C"
-    },
-    {
       "repo": "elbruno/ElBruno.MAF.FoundryLocal",
       "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
       "accentColor": "#A8BCA2",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.ModelContextProtocol",
+      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
+      "accentColor": "#C3627F",
+      "icon": "\uD83D\uDD0C"
     },
     {
       "repo": "elbruno/ElBruno.S1Mini",
