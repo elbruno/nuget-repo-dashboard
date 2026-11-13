@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T17:35:17.6280948+00:00",
+  "generatedAt": "2026-11-13T17:12:41.1498364+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -3957,14 +3957,14 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3220,
-      "forks": 2271,
-      "openIssues": 0,
-      "openPullRequests": 0,
+      "stars": 3223,
+      "forks": 2274,
+      "openIssues": 1,
+      "openPullRequests": 1,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-11T14:43:17+00:00",
+      "lastPush": "2026-11-13T03:06:15+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 46,
@@ -3976,13 +3976,13 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-11-12T16:04:17+00:00",
-      "size": 209799,
+      "updatedAt": "2026-11-13T15:52:17+00:00",
+      "size": 209811,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
       "hasPages": false,
-      "networkCount": 2271,
+      "networkCount": 2274,
       "visibility": "public",
       "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet",
       "recentIssues": [],
@@ -4045,7 +4045,31 @@
         }
       ],
       "closedIssuesCount": 4,
-      "recentPullRequests": [],
+      "recentPullRequests": [
+        {
+          "number": 565,
+          "title": "chore(deps): bump actions/setup-dotnet from 6.0.0 to 6.1.0 in the github-actions group",
+          "htmlUrl": "https://github.com/microsoft/Generative-AI-for-beginners-dotnet/pull/565",
+          "createdAt": "2026-11-13T03:06:17+00:00",
+          "updatedAt": "2026-11-13T03:06:21+00:00",
+          "mergedAt": null,
+          "closedAt": null,
+          "userLogin": "dependabot[bot]",
+          "labels": [
+            "dependencies",
+            "github_actions"
+          ],
+          "isDraft": false,
+          "state": "open",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "dependabot/github_actions/github-actions-39799580c0",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
       "recentMergedPullRequests": [
         {
           "number": 561,
@@ -4442,8 +4466,8 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3220,
-      "lastUpdate": "2026-11-11T14:43:17+00:00",
+      "stars": 3223,
+      "lastUpdate": "2026-11-13T03:06:15+00:00",
       "isStub": false,
       "stubReason": null
     }
