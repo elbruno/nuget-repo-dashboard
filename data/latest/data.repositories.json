@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T17:12:41.1498364+00:00",
+  "generatedAt": "2026-11-14T15:49:03.5291751+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -12,7 +12,7 @@
       "description": ".NET library that converts file formats to Markdown for AI pipelines",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-19T14:25:32+00:00",
+      "lastPush": "2026-11-14T15:26:52+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -63,6 +63,26 @@
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
+          "number": 32,
+          "title": "Add .NET 11 support and align stable 0.9.4 release",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/32",
+          "createdAt": "2026-11-14T15:22:30+00:00",
+          "updatedAt": "2026-11-14T15:26:52+00:00",
+          "mergedAt": "2026-11-14T15:26:52+00:00",
+          "closedAt": "2026-11-14T15:26:52+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-net11-library-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
           "number": 31,
           "title": "Fix PDF paragraph line grouping",
           "htmlUrl": "https://github.com/elbruno/ElBruno.MarkItDotNet/pull/31",
@@ -83,25 +103,25 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 1,
+      "mergedPullRequestsCount": 2,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 74,
+        "totalScore": 76,
         "availablePoints": 80,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 1,
+          "score": 3,
           "maxScore": 20,
           "available": true,
-          "value": 1,
-          "displayValue": "1 commit",
-          "summary": "1 commit in the last 30 days."
+          "value": 3,
+          "displayValue": "3 commits",
+          "summary": "3 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -115,9 +135,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 20,
-          "displayValue": "20 releases",
-          "summary": "20 package releases in the last 30 days across 20 packages."
+          "value": 40,
+          "displayValue": "40 releases",
+          "summary": "40 package releases in the last 30 days across 20 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -148,7 +168,7 @@
       "description": "A .NET library to download files (ONNX models, tokenizers, voice presets, etc.) from Hugging Face Hub repositories with progress reporting, caching, and authentication support.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-02T16:17:56+00:00",
+      "lastPush": "2026-11-14T13:09:43+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -168,7 +188,7 @@
       ],
       "createdAt": "2026-02-23T03:16:12+00:00",
       "updatedAt": "2026-11-02T16:15:42+00:00",
-      "size": 1817,
+      "size": 1825,
       "defaultBranch": "main",
       "homepage": "https://elbruno.github.io/ElBruno.HuggingFace.Downloader/",
       "hasWiki": true,
@@ -195,6 +215,26 @@
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
+          "number": 27,
+          "title": "Add .NET 11 package targets",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/pull/27",
+          "createdAt": "2026-11-14T13:05:03+00:00",
+          "updatedAt": "2026-11-14T13:08:14+00:00",
+          "mergedAt": "2026-11-14T13:08:14+00:00",
+          "closedAt": "2026-11-14T13:08:14+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-downloader-net-11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
           "number": 26,
           "title": "Add netstandard2.0 target for .NET Framework",
           "htmlUrl": "https://github.com/elbruno/ElBruno.HuggingFace.Downloader/pull/26",
@@ -215,25 +255,25 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 1,
+      "mergedPullRequestsCount": 2,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 64,
+        "totalScore": 78,
         "availablePoints": 80,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
+        "status": "good",
+        "label": "Good",
+        "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 4,
+          "score": 5,
           "maxScore": 20,
           "available": true,
-          "value": 4,
-          "displayValue": "4 commits",
-          "summary": "4 commits in the last 30 days."
+          "value": 5,
+          "displayValue": "5 commits",
+          "summary": "5 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 17,
@@ -244,12 +284,12 @@
           "summary": "4.7 average days to close recent issues."
         },
         "releaseFrequency": {
-          "score": 10,
+          "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 2,
-          "displayValue": "2 releases",
-          "summary": "2 package releases in the last 30 days across 2 packages."
+          "value": 4,
+          "displayValue": "4 releases",
+          "summary": "4 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -280,7 +320,7 @@
       "description": ".NET library for local embedding generation using ONNX and Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-05T17:32:21+00:00",
+      "lastPush": "2026-11-14T15:05:11+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -344,6 +384,26 @@
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
+          "number": 67,
+          "title": "Add .NET 11 support to embeddings packages",
+          "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/67",
+          "createdAt": "2026-11-14T15:03:07+00:00",
+          "updatedAt": "2026-11-14T15:05:01+00:00",
+          "mergedAt": "2026-11-14T15:05:01+00:00",
+          "closedAt": "2026-11-14T15:05:01+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-net11-embeddings-support",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
           "number": 66,
           "title": "Add netstandard2.0 target for .NET Framework",
           "htmlUrl": "https://github.com/elbruno/elbruno.localembeddings/pull/66",
@@ -404,25 +464,25 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 3,
+      "mergedPullRequestsCount": 4,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 89,
+        "totalScore": 91,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 12,
+          "score": 14,
           "maxScore": 20,
           "available": true,
-          "value": 12,
-          "displayValue": "12 commits",
-          "summary": "12 commits in the last 30 days."
+          "value": 14,
+          "displayValue": "14 commits",
+          "summary": "14 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 19,
@@ -436,9 +496,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 26,
-          "displayValue": "26 releases",
-          "summary": "26 package releases in the last 30 days across 13 packages."
+          "value": 39,
+          "displayValue": "39 releases",
+          "summary": "39 package releases in the last 30 days across 13 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -469,7 +529,7 @@
       "description": "Qwen3-TTS ONNX export pipeline \u002B C# .NET 10 console app for local voice generation",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-09-29T15:52:39+00:00",
+      "lastPush": "2026-11-14T15:05:05+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -502,26 +562,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 86,
+          "title": "Add .NET 11 targets and prepare NuGet 1.11.0",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.QwenTTS/pull/86",
+          "createdAt": "2026-11-14T14:50:46+00:00",
+          "updatedAt": "2026-11-14T15:05:05+00:00",
+          "mergedAt": "2026-11-14T15:05:05+00:00",
+          "closedAt": "2026-11-14T15:05:05+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-dotnet-11-qwentts",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 63,
         "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 3,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 3,
+          "displayValue": "3 commits",
+          "summary": "3 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -532,12 +613,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 15,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 3 packages."
+          "value": 3,
+          "displayValue": "3 releases",
+          "summary": "3 package releases in the last 30 days across 3 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -568,7 +649,7 @@
       "description": "A .NET library for local image captioning using ONNX Runtime with automatic HuggingFace model download",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-04T14:59:23+00:00",
+      "lastPush": "2026-11-14T15:07:37+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 1,
@@ -606,26 +687,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 45,
+          "title": "Add .NET 11 support in v1.7.2",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Text2Image/pull/45",
+          "createdAt": "2026-11-14T14:50:32+00:00",
+          "updatedAt": "2026-11-14T15:07:07+00:00",
+          "mergedAt": "2026-11-14T15:07:07+00:00",
+          "closedAt": "2026-11-14T15:07:07+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-dotnet-11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 72,
+        "totalScore": 75,
         "availablePoints": 60,
         "status": "fair",
         "label": "Fair",
         "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 3,
+          "score": 5,
           "maxScore": 20,
           "available": true,
-          "value": 3,
-          "displayValue": "3 commits",
-          "summary": "3 commits in the last 30 days."
+          "value": 5,
+          "displayValue": "5 commits",
+          "summary": "5 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -639,9 +741,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 14,
-          "displayValue": "14 releases",
-          "summary": "14 package releases in the last 30 days across 7 packages."
+          "value": 21,
+          "displayValue": "21 releases",
+          "summary": "21 package releases in the last 30 days across 7 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -672,7 +774,7 @@
       "description": "C# local LLM chat completions library using ONNX Runtime, compatible with Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-10-22T21:20:58+00:00",
+      "lastPush": "2026-11-14T15:08:23+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -721,6 +823,26 @@
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
+          "number": 61,
+          "title": "Add .NET 11 support to published packages",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/61",
+          "createdAt": "2026-11-14T14:50:45+00:00",
+          "updatedAt": "2026-11-14T15:08:23+00:00",
+          "mergedAt": "2026-11-14T15:08:23+00:00",
+          "closedAt": "2026-11-14T15:08:23+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-local-llms-net-11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
           "number": 60,
           "title": "Automatically download and cache the pinned Kev 0.8B ONNX export",
           "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/60",
@@ -761,25 +883,25 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 2,
+      "mergedPullRequestsCount": 3,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 78,
+        "totalScore": 79,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 2,
+          "score": 3,
           "maxScore": 20,
           "available": true,
-          "value": 2,
-          "displayValue": "2 commits",
-          "summary": "2 commits in the last 30 days."
+          "value": 3,
+          "displayValue": "3 commits",
+          "summary": "3 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 20,
@@ -793,9 +915,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 10,
-          "displayValue": "10 releases",
-          "summary": "10 package releases in the last 30 days across 5 packages."
+          "value": 15,
+          "displayValue": "15 releases",
+          "summary": "15 package releases in the last 30 days across 5 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1017,12 +1139,12 @@
       "fullName": "elbruno/ElBruno.Speech",
       "stars": 4,
       "forks": 1,
-      "openIssues": 3,
-      "openPullRequests": 2,
+      "openIssues": 2,
+      "openPullRequests": 1,
       "description": "Reusable local-first speech runtime for .NET \u2014 VAD, STT, LLM, TTS pipeline with Microsoft.Extensions.AI",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-09T13:57:46+00:00",
+      "lastPush": "2026-11-14T15:37:02+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -1096,31 +1218,11 @@
       "closedIssuesCount": 2,
       "recentPullRequests": [
         {
-          "number": 121,
-          "title": "Bump bunit from 2.13.3 to 2.14.0",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/121",
-          "createdAt": "2026-11-09T13:57:48+00:00",
-          "updatedAt": "2026-11-09T13:57:51+00:00",
-          "mergedAt": null,
-          "closedAt": null,
-          "userLogin": "dependabot[bot]",
-          "labels": [],
-          "isDraft": false,
-          "state": "open",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "dependabot/nuget/bunit-2.14.0",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
           "number": 120,
           "title": "chore(deps): bump github/codeql-action from 4.39.1 to 4.39.3",
           "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/120",
           "createdAt": "2026-11-09T13:55:12+00:00",
-          "updatedAt": "2026-11-09T13:55:16+00:00",
+          "updatedAt": "2026-11-14T15:02:05+00:00",
           "mergedAt": null,
           "closedAt": null,
           "userLogin": "dependabot[bot]",
@@ -1137,6 +1239,46 @@
         }
       ],
       "recentMergedPullRequests": [
+        {
+          "number": 123,
+          "title": "Integrate 1.6.2 release documentation",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/123",
+          "createdAt": "2026-11-14T15:28:35+00:00",
+          "updatedAt": "2026-11-14T15:37:03+00:00",
+          "mergedAt": "2026-11-14T15:37:02+00:00",
+          "closedAt": "2026-11-14T15:37:02+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-speech-dotnet-11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 122,
+          "title": "Add .NET 11 package support",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/122",
+          "createdAt": "2026-11-14T14:53:55+00:00",
+          "updatedAt": "2026-11-14T14:59:57+00:00",
+          "mergedAt": "2026-11-14T14:59:57+00:00",
+          "closedAt": "2026-11-14T14:59:57+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-speech-dotnet-11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
         {
           "number": 119,
           "title": "Bump Microsoft.ML.OnnxRuntime from 1.31.0 to 1.31.1",
@@ -1678,7 +1820,7 @@
           "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 27,
+      "mergedPullRequestsCount": 29,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -1694,9 +1836,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 45,
-          "displayValue": "45 commits",
-          "summary": "45 commits in the last 30 days."
+          "value": 48,
+          "displayValue": "48 commits",
+          "summary": "48 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 20,
@@ -1710,9 +1852,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 81,
-          "displayValue": "81 releases",
-          "summary": "81 package releases in the last 30 days across 12 packages."
+          "value": 93,
+          "displayValue": "93 releases",
+          "summary": "93 package releases in the last 30 days across 12 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1885,79 +2027,46 @@
           "commentsCount": 1,
           "state": "closed",
           "closedAt": "2026-10-25T16:47:52+00:00"
-        },
-        {
-          "number": 4,
-          "title": "Expose provider-reported token usage on decision results",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/4",
-          "createdAt": "2026-10-14T21:38:40+00:00",
-          "updatedAt": "2026-10-14T22:12:27+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-10-14T22:12:27+00:00"
         }
       ],
-      "closedIssuesCount": 3,
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [
-        {
-          "number": 5,
-          "title": "Expose provider-reported token usage on decision results",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/5",
-          "createdAt": "2026-10-14T22:00:17+00:00",
-          "updatedAt": "2026-10-14T22:04:21+00:00",
-          "mergedAt": "2026-10-14T22:04:21+00:00",
-          "closedAt": "2026-10-14T22:04:21+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-decision-token-usage",
-          "baseBranch": "main",
-          "commentsCount": 0
-        }
-      ],
-      "mergedPullRequestsCount": 1,
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 83,
+        "totalScore": 79,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 8,
+          "score": 6,
           "maxScore": 20,
           "available": true,
-          "value": 8,
-          "displayValue": "8 commits",
-          "summary": "8 commits in the last 30 days."
+          "value": 6,
+          "displayValue": "6 commits",
+          "summary": "6 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 18,
+          "score": 17,
           "maxScore": 20,
           "available": true,
-          "value": 3,
-          "displayValue": "3.0 days",
-          "summary": "3.0 average days to close recent issues."
+          "value": 4.4,
+          "displayValue": "4.4 days",
+          "summary": "4.4 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 12,
-          "displayValue": "12 releases",
-          "summary": "12 package releases in the last 30 days across 4 packages."
+          "value": 8,
+          "displayValue": "8 releases",
+          "summary": "8 package releases in the last 30 days across 4 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1988,7 +2097,7 @@
       "description": null,
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-07-03T19:23:10+00:00",
+      "lastPush": "2026-11-14T14:44:32+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 1,
@@ -2014,7 +2123,7 @@
       ],
       "createdAt": "2026-02-19T01:49:51+00:00",
       "updatedAt": "2026-10-05T13:09:27+00:00",
-      "size": 1061,
+      "size": 1063,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": false,
@@ -2026,26 +2135,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 38,
+          "title": "Add .NET 11 support to VibeVoiceTTS",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.VibeVoiceTTS/pull/38",
+          "createdAt": "2026-11-14T14:41:55+00:00",
+          "updatedAt": "2026-11-14T14:43:21+00:00",
+          "mergedAt": "2026-11-14T14:43:21+00:00",
+          "closedAt": "2026-11-14T14:43:21+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-net-11-package-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 45,
         "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
+          "score": 2,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2056,12 +2186,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 5,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 1 package."
+          "value": 1,
+          "displayValue": "1 release",
+          "summary": "1 package release in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -2092,7 +2222,7 @@
       "description": "Local Whisper speech-to-text in .NET with ONNX Runtime. Auto-downloads models from HuggingFace.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-08-03T00:14:17+00:00",
+      "lastPush": "2026-11-14T14:51:20+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -2114,7 +2244,7 @@
       ],
       "createdAt": "2026-03-30T16:53:03+00:00",
       "updatedAt": "2026-08-29T15:18:28+00:00",
-      "size": 2063,
+      "size": 2074,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -2126,26 +2256,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 27,
+          "title": "Add .NET 11 support and prepare NuGet release",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Whisper/pull/27",
+          "createdAt": "2026-11-14T14:46:50+00:00",
+          "updatedAt": "2026-11-14T14:50:46+00:00",
+          "mergedAt": "2026-11-14T14:50:46+00:00",
+          "closedAt": "2026-11-14T14:50:46+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-add-dotnet-11-support",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 53,
         "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 2,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2156,12 +2307,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 10,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 2 packages."
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -2334,7 +2485,7 @@
       "description": "Windows tray monitor for .NET Aspire distributed applications \u2014 pin resources, see live URLs, and start/stop your AppHost from the system tray.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-07-01T00:42:27+00:00",
+      "lastPush": "2026-11-14T14:40:01+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -2354,7 +2505,7 @@
       ],
       "createdAt": "2026-04-26T13:07:02+00:00",
       "updatedAt": "2026-07-01T00:42:31+00:00",
-      "size": 18765,
+      "size": 18775,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -2366,26 +2517,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 9,
+          "title": "Add .NET 11 multi-target support",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.AspireMonitor/pull/9",
+          "createdAt": "2026-11-14T14:37:50+00:00",
+          "updatedAt": "2026-11-14T14:38:38+00:00",
+          "mergedAt": "2026-11-14T14:38:37+00:00",
+          "closedAt": "2026-11-14T14:38:37+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-dotnet-11-package-support",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 45,
         "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
+          "score": 2,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2396,12 +2568,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 5,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 1 package."
+          "value": 1,
+          "displayValue": "1 release",
+          "summary": "1 package release in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -2432,7 +2604,7 @@
       "description": "Pluggable real-time audio conversation framework for .NET. Local VAD, STT, TTS, and LLM",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-08-02T19:00:45+00:00",
+      "lastPush": "2026-11-14T15:09:44+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -2464,26 +2636,67 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 12,
+          "title": "Fix stable QwenTTS release build",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/pull/12",
+          "createdAt": "2026-11-14T15:07:43+00:00",
+          "updatedAt": "2026-11-14T15:09:45+00:00",
+          "mergedAt": "2026-11-14T15:09:43+00:00",
+          "closedAt": "2026-11-14T15:09:43+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "fix-qwen-stable-ci",
+          "baseBranch": "main",
+          "commentsCount": 0
+        },
+        {
+          "number": 11,
+          "title": "Add .NET 11 support and stable package releases",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.Realtime/pull/11",
+          "createdAt": "2026-11-14T14:59:46+00:00",
+          "updatedAt": "2026-11-14T15:01:14+00:00",
+          "mergedAt": "2026-11-14T15:01:13+00:00",
+          "closedAt": "2026-11-14T15:01:13+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-realtime-net11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 2,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 70,
         "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 2,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2494,12 +2707,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 6 packages."
+          "value": 7,
+          "displayValue": "7 releases",
+          "summary": "7 package releases in the last 30 days across 7 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -2874,14 +3087,14 @@
       "description": "C# .NET library for running NVIDIA PersonaPlex-7B-v1 full-duplex speech-to-speech locally using ONNX Runtime",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-08-04T18:20:58+00:00",
+      "lastPush": "2026-11-14T14:48:43+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
       "topics": [],
       "createdAt": "2026-02-27T01:33:45+00:00",
       "updatedAt": "2026-08-04T18:22:52+00:00",
-      "size": 1022,
+      "size": 1030,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -2893,26 +3106,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 8,
+          "title": "Add .NET 11 support to PersonaPlex packages",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.PersonaPlex/pull/8",
+          "createdAt": "2026-11-14T14:46:02+00:00",
+          "updatedAt": "2026-11-14T14:48:02+00:00",
+          "mergedAt": "2026-11-14T14:48:01+00:00",
+          "closedAt": "2026-11-14T14:48:01+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-net11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 53,
         "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 0,
+          "score": 2,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -2923,12 +3157,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 10,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 2 packages."
+          "value": 2,
+          "displayValue": "2 releases",
+          "summary": "2 package releases in the last 30 days across 2 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3151,7 +3385,7 @@
       "description": "Semantic routing for MCP tools - .NET library that indexes MCP tool definitions and returns the most relevant tools via vector search",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-07-01T00:40:51+00:00",
+      "lastPush": "2026-11-14T15:36:18+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -3183,26 +3417,47 @@
       "recentClosedIssues": [],
       "closedIssuesCount": 0,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [],
-      "mergedPullRequestsCount": 0,
+      "recentMergedPullRequests": [
+        {
+          "number": 8,
+          "title": "Add .NET 11 support and refresh MCP dependencies",
+          "htmlUrl": "https://github.com/elbruno/ElBruno.ModelContextProtocol/pull/8",
+          "createdAt": "2026-11-14T15:32:01+00:00",
+          "updatedAt": "2026-11-14T15:35:52+00:00",
+          "mergedAt": "2026-11-14T15:35:52+00:00",
+          "closedAt": "2026-11-14T15:35:52+00:00",
+          "userLogin": "elbruno",
+          "labels": [],
+          "isDraft": false,
+          "state": "closed",
+          "additions": 0,
+          "deletions": 0,
+          "changedFiles": 0,
+          "reviewDecision": null,
+          "headBranch": "elbruno-mcp-net11-upgrade",
+          "baseBranch": "main",
+          "commentsCount": 0
+        }
+      ],
+      "mergedPullRequestsCount": 1,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 37,
         "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 0,
+          "score": 2,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 commits",
-          "summary": "0 commits in the last 30 days."
+          "value": 2,
+          "displayValue": "2 commits",
+          "summary": "2 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -3470,7 +3725,7 @@
       "description": "\uD83D\uDFE6 .NET libraries for generating QR codes \u2014 CLI, SVG, Image, and more",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-07-01T14:05:01+00:00",
+      "lastPush": "2026-11-14T15:28:52+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -3517,11 +3772,11 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 33,
+        "totalScore": 67,
         "availablePoints": 60,
-        "status": "needs-attention",
-        "label": "Needs attention",
-        "emoji": "\uD83D\uDD34",
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
           "score": 0,
           "maxScore": 20,
@@ -3539,12 +3794,12 @@
           "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
-          "score": 0,
+          "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 5 packages."
+          "value": 5,
+          "displayValue": "5 releases",
+          "summary": "5 package releases in the last 30 days across 5 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3621,71 +3876,38 @@
           "commentsCount": 1,
           "state": "closed",
           "closedAt": "2026-10-25T16:47:52+00:00"
-        },
-        {
-          "number": 4,
-          "title": "Expose provider-reported token usage on decision results",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/4",
-          "createdAt": "2026-10-14T21:38:40+00:00",
-          "updatedAt": "2026-10-14T22:12:27+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-10-14T22:12:27+00:00"
         }
       ],
-      "closedIssuesCount": 3,
+      "closedIssuesCount": 2,
       "recentPullRequests": [],
-      "recentMergedPullRequests": [
-        {
-          "number": 5,
-          "title": "Expose provider-reported token usage on decision results",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/5",
-          "createdAt": "2026-10-14T22:00:17+00:00",
-          "updatedAt": "2026-10-14T22:04:21+00:00",
-          "mergedAt": "2026-10-14T22:04:21+00:00",
-          "closedAt": "2026-10-14T22:04:21+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-decision-token-usage",
-          "baseBranch": "main",
-          "commentsCount": 0
-        }
-      ],
-      "mergedPullRequestsCount": 1,
+      "recentMergedPullRequests": [],
+      "mergedPullRequestsCount": 0,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 57,
+        "totalScore": 54,
         "availablePoints": 80,
         "status": "fair",
         "label": "Fair",
         "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 8,
+          "score": 6,
           "maxScore": 20,
           "available": true,
-          "value": 8,
-          "displayValue": "8 commits",
-          "summary": "8 commits in the last 30 days."
+          "value": 6,
+          "displayValue": "6 commits",
+          "summary": "6 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 18,
+          "score": 17,
           "maxScore": 20,
           "available": true,
-          "value": 3,
-          "displayValue": "3.0 days",
-          "summary": "3.0 average days to close recent issues."
+          "value": 4.4,
+          "displayValue": "4.4 days",
+          "summary": "4.4 average days to close recent issues."
         },
         "releaseFrequency": {
           "score": 0,
@@ -3957,7 +4179,7 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3223,
+      "stars": 3225,
       "forks": 2274,
       "openIssues": 1,
       "openPullRequests": 1,
@@ -3976,7 +4198,7 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-11-13T15:52:17+00:00",
+      "updatedAt": "2026-11-14T14:18:30+00:00",
       "size": 209811,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
@@ -4375,9 +4597,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 24,
-          "displayValue": "24 commits",
-          "summary": "24 commits in the last 30 days."
+          "value": 23,
+          "displayValue": "23 commits",
+          "summary": "23 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 18,
@@ -4439,7 +4661,7 @@
       "purpose": "Core speech pipeline that depends on ElBruno.Whisper, ElBruno.VibeVoiceTTS, ElBruno.QwenTTS, and ElBruno.LocalLLMs. Monitor for integration requirements and API contracts.",
       "dateAdded": "2026-07-03",
       "stars": 4,
-      "lastUpdate": "2026-11-09T13:57:46+00:00",
+      "lastUpdate": "2026-11-14T15:37:02+00:00",
       "isStub": false,
       "stubReason": null
     },
@@ -4466,7 +4688,7 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3223,
+      "stars": 3225,
       "lastUpdate": "2026-11-13T03:06:15+00:00",
       "isStub": false,
       "stubReason": null
