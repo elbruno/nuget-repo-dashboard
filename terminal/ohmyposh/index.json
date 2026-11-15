@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T15:49:09.2926519+00:00",
+  "generatedAt": "2026-11-15T16:20:38.4805078+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -123,12 +123,6 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.ClockTray",
-      "configFile": "elbruno-ElBruno.ClockTray.json",
-      "accentColor": "#CEA8AC",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.MAF.FoundryLocal",
       "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
       "accentColor": "#A8BCA2",
@@ -139,6 +133,12 @@
       "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
       "accentColor": "#C3627F",
       "icon": "\uD83D\uDD0C"
+    },
+    {
+      "repo": "elbruno/ElBruno.ClockTray",
+      "configFile": "elbruno-ElBruno.ClockTray.json",
+      "accentColor": "#CEA8AC",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/ElBruno.S1Mini",
