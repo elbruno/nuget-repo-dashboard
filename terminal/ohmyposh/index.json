@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T16:20:38.4805078+00:00",
+  "generatedAt": "2026-11-16T19:34:55.9734333+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -45,16 +45,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.Speech",
+      "configFile": "elbruno-ElBruno.Speech.json",
+      "accentColor": "#C5C35A",
+      "icon": "\uD83D\uDD0A"
+    },
+    {
       "repo": "elbruno/graphify-dotnet",
       "configFile": "elbruno-graphify-dotnet.json",
       "accentColor": "#BEA579",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.Speech",
-      "configFile": "elbruno-ElBruno.Speech.json",
-      "accentColor": "#BBBE5A",
-      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.FoundryLocalMonitor",
