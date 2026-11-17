@@ -10,7 +10,7 @@
         {
           "type": "text",
           "foreground": "#1C1C1C",
-          "background": "#C5C35A",
+          "background": "#BBBE5A",
           "style": "plain",
           "template": " 🔊 ElBruno.Speech "
         }
