@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T18:33:13.2905839+00:00",
+  "generatedAt": "2026-11-18T18:03:00.7741571+00:00",
   "totalRepos": 30,
   "profiles": [
     {
@@ -45,16 +45,16 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.Speech",
+      "configFile": "elbruno-ElBruno.Speech.json",
+      "accentColor": "#C5C35A",
+      "icon": "\uD83D\uDD0A"
+    },
+    {
       "repo": "elbruno/graphify-dotnet",
       "configFile": "elbruno-graphify-dotnet.json",
       "accentColor": "#BEA579",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.Speech",
-      "configFile": "elbruno-ElBruno.Speech.json",
-      "accentColor": "#BBBE5A",
-      "icon": "\uD83D\uDD0A"
     },
     {
       "repo": "elbruno/ElBruno.FoundryLocalMonitor",
@@ -105,15 +105,15 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "ElBruno/ElBruno.BM25",
-      "configFile": "ElBruno-ElBruno.BM25.json",
-      "accentColor": "#556C55",
+      "repo": "elbruno/ElBruno.MAF.FoundryLocal",
+      "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
+      "accentColor": "#A8BCA2",
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
-      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
-      "accentColor": "#ADA976",
+      "repo": "ElBruno/ElBruno.BM25",
+      "configFile": "ElBruno-ElBruno.BM25.json",
+      "accentColor": "#556C55",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -123,9 +123,9 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.MAF.FoundryLocal",
-      "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
-      "accentColor": "#A8BCA2",
+      "repo": "elbruno/elbruno.OllamaSharp.Extensions",
+      "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
+      "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
     },
     {
