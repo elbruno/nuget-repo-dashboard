@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-18T18:03:00.7741571+00:00",
-  "totalRepos": 30,
+  "generatedAt": "2026-11-19T18:16:14.3198787+00:00",
+  "totalRepos": 29,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -39,16 +39,16 @@
       "icon": "\uD83E\uDD16"
     },
     {
-      "repo": "elbruno/ElBruno.MempalaceNet",
-      "configFile": "elbruno-ElBruno.MempalaceNet.json",
-      "accentColor": "#536459",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Speech",
       "configFile": "elbruno-ElBruno.Speech.json",
       "accentColor": "#C5C35A",
       "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.MempalaceNet",
+      "configFile": "elbruno-ElBruno.MempalaceNet.json",
+      "accentColor": "#536459",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/graphify-dotnet",
@@ -87,12 +87,6 @@
       "icon": "\uD83D\uDD37"
     },
     {
-      "repo": "elbruno/ElBruno.AspireMonitor",
-      "configFile": "elbruno-ElBruno.AspireMonitor.json",
-      "accentColor": "#CFC9B6",
-      "icon": "\uD83D\uDCCA"
-    },
-    {
       "repo": "elbruno/ElBruno.Realtime",
       "configFile": "elbruno-ElBruno.Realtime.json",
       "accentColor": "#6E94AE",
@@ -105,21 +99,21 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.PersonaPlex",
+      "configFile": "elbruno-ElBruno.PersonaPlex.json",
+      "accentColor": "#7DBBB3",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.MAF.FoundryLocal",
       "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
-      "accentColor": "#A8BCA2",
+      "accentColor": "#D0D0A2",
       "icon": "\uD83D\uDD37"
     },
     {
       "repo": "ElBruno/ElBruno.BM25",
       "configFile": "ElBruno-ElBruno.BM25.json",
       "accentColor": "#556C55",
-      "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.PersonaPlex",
-      "configFile": "elbruno-ElBruno.PersonaPlex.json",
-      "accentColor": "#7DBBB3",
       "icon": "\uD83D\uDD37"
     },
     {

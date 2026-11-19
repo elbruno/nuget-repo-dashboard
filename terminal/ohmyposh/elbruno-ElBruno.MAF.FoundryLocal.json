@@ -10,7 +10,7 @@
         {
           "type": "text",
           "foreground": "#1C1C1C",
-          "background": "#A8BCA2",
+          "background": "#D0D0A2",
           "style": "plain",
           "template": " 🔷 ElBruno.MAF.FoundryLocal "
         }
