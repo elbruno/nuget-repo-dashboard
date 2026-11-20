@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T18:16:14.3198787+00:00",
+  "generatedAt": "2026-11-20T17:47:25.0540581+00:00",
   "totalRepos": 29,
   "profiles": [
     {
@@ -81,21 +81,15 @@
       "icon": "\uD83C\uDF99️"
     },
     {
-      "repo": "elbruno/ElBruno.PresenterTimer",
-      "configFile": "elbruno-ElBruno.PresenterTimer.json",
-      "accentColor": "#CD5CB2",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.Realtime",
       "configFile": "elbruno-ElBruno.Realtime.json",
       "accentColor": "#6E94AE",
       "icon": "⚡"
     },
     {
-      "repo": "elbruno/ElBruno.Reranking",
-      "configFile": "elbruno-ElBruno.Reranking.json",
-      "accentColor": "#A97061",
+      "repo": "elbruno/ElBruno.PresenterTimer",
+      "configFile": "elbruno-ElBruno.PresenterTimer.json",
+      "accentColor": "#CD5CB2",
       "icon": "\uD83D\uDD37"
     },
     {
@@ -105,10 +99,22 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.Reranking",
+      "configFile": "elbruno-ElBruno.Reranking.json",
+      "accentColor": "#A97061",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.MAF.FoundryLocal",
       "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
       "accentColor": "#D0D0A2",
       "icon": "\uD83D\uDD37"
+    },
+    {
+      "repo": "elbruno/ElBruno.ModelContextProtocol",
+      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
+      "accentColor": "#C3627F",
+      "icon": "\uD83D\uDD0C"
     },
     {
       "repo": "ElBruno/ElBruno.BM25",
@@ -121,12 +127,6 @@
       "configFile": "elbruno-elbruno.OllamaSharp.Extensions.json",
       "accentColor": "#ADA976",
       "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.ModelContextProtocol",
-      "configFile": "elbruno-ElBruno.ModelContextProtocol.json",
-      "accentColor": "#C3627F",
-      "icon": "\uD83D\uDD0C"
     },
     {
       "repo": "elbruno/ElBruno.ClockTray",
