@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-21T16:47:27.2193629+00:00",
-  "totalRepos": 29,
+  "generatedAt": "2026-11-22T17:08:46.6402344+00:00",
+  "totalRepos": 28,
   "profiles": [
     {
       "repo": "elbruno/ElBruno.MarkItDotNet",
@@ -151,12 +151,6 @@
       "configFile": "elbruno-ElBruno.QRCodeGenerator.json",
       "accentColor": "#B85C5B",
       "icon": "\uD83D\uDCF7"
-    },
-    {
-      "repo": "elbruno/ElBruno.AI.Jev",
-      "configFile": "elbruno-ElBruno.AI.Jev.json",
-      "accentColor": "#8E54D1",
-      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/openclawnet",
