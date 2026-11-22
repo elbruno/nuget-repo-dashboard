@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T16:47:22.5709616+00:00",
+  "generatedAt": "2026-11-22T17:08:43.1661137+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -892,21 +892,8 @@
       "visibility": "public",
       "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs",
       "recentIssues": [],
-      "recentClosedIssues": [
-        {
-          "number": 58,
-          "title": "Validate local IDecisionClient inference with Laya and investigate Tev1 0.8B ONNX backend",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/issues/58",
-          "createdAt": "2026-10-22T19:55:06+00:00",
-          "updatedAt": "2026-10-22T21:29:24+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 3,
-          "state": "closed",
-          "closedAt": "2026-10-22T20:51:33+00:00"
-        }
-      ],
-      "closedIssuesCount": 1,
+      "recentClosedIssues": [],
+      "closedIssuesCount": 0,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -968,83 +955,43 @@
           "headBranch": "elbruno-local-llms-net-11-upgrade",
           "baseBranch": "main",
           "commentsCount": 0
-        },
-        {
-          "number": 60,
-          "title": "Automatically download and cache the pinned Kev 0.8B ONNX export",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/60",
-          "createdAt": "2026-10-22T21:18:28+00:00",
-          "updatedAt": "2026-10-22T21:20:56+00:00",
-          "mergedAt": "2026-10-22T21:20:56+00:00",
-          "closedAt": "2026-10-22T21:20:56+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-local-decision-inference",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 59,
-          "title": "Add native Kev 0.8B decisions and validate local Laya inference",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.LocalLLMs/pull/59",
-          "createdAt": "2026-10-22T20:38:05+00:00",
-          "updatedAt": "2026-10-22T20:39:58+00:00",
-          "mergedAt": "2026-10-22T20:39:58+00:00",
-          "closedAt": "2026-10-22T20:39:58+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-local-decision-inference",
-          "baseBranch": "main",
-          "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 5,
+      "mergedPullRequestsCount": 3,
       "isStub": false,
       "stubReason": null,
       "isWatchList": false,
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 83,
-        "availablePoints": 80,
-        "status": "good",
-        "label": "Good",
-        "emoji": "\uD83D\uDFE2",
+        "totalScore": 73,
+        "availablePoints": 60,
+        "status": "fair",
+        "label": "Fair",
+        "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 6,
+          "score": 4,
           "maxScore": 20,
           "available": true,
-          "value": 6,
-          "displayValue": "6 commits",
-          "summary": "6 commits in the last 30 days."
+          "value": 4,
+          "displayValue": "4 commits",
+          "summary": "4 commits in the last 30 days."
         },
         "issueResolution": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0.0 days",
-          "summary": "0.0 average days to close recent issues."
+          "score": 0,
+          "maxScore": 0,
+          "available": false,
+          "value": null,
+          "displayValue": null,
+          "summary": "No recent closed issues with close-time data."
         },
         "releaseFrequency": {
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 20,
-          "displayValue": "20 releases",
-          "summary": "20 package releases in the last 30 days across 5 packages."
+          "value": 10,
+          "displayValue": "10 releases",
+          "summary": "10 package releases in the last 30 days across 5 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -1132,21 +1079,9 @@
           "commentsCount": 8,
           "state": "closed",
           "closedAt": "2026-10-25T20:34:50+00:00"
-        },
-        {
-          "number": 101,
-          "title": "Evaluate a local Parakeet TDT v3 provider for multilingual ASR",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/issues/101",
-          "createdAt": "2026-10-22T15:49:28+00:00",
-          "updatedAt": "2026-10-22T21:05:45+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 3,
-          "state": "closed",
-          "closedAt": "2026-10-22T21:05:45+00:00"
         }
       ],
-      "closedIssuesCount": 2,
+      "closedIssuesCount": 1,
       "recentPullRequests": [],
       "recentMergedPullRequests": [
         {
@@ -1488,69 +1423,9 @@
           "headBranch": "dependabot/nuget/OpenTelemetry.Api-1.20.1",
           "baseBranch": "main",
           "commentsCount": 0
-        },
-        {
-          "number": 104,
-          "title": "Prepare 1.6.0-preview.2 release review",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/104",
-          "createdAt": "2026-10-22T20:15:38+00:00",
-          "updatedAt": "2026-10-22T21:00:33+00:00",
-          "mergedAt": "2026-10-22T20:41:14+00:00",
-          "closedAt": "2026-10-22T20:41:14+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-prepare-preview-2-release",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 103,
-          "title": "Add reusable speech fixtures, model benchmarks, and opt-in Whisper large-v3",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/103",
-          "createdAt": "2026-10-22T18:49:10+00:00",
-          "updatedAt": "2026-10-22T20:12:08+00:00",
-          "mergedAt": "2026-10-22T20:12:08+00:00",
-          "closedAt": "2026-10-22T20:12:08+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-parakeet-provider-evaluation",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 102,
-          "title": "Add experimental Parakeet STT provider and prepare 1.6.0-preview.1",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.Speech/pull/102",
-          "createdAt": "2026-10-22T17:53:16+00:00",
-          "updatedAt": "2026-10-22T17:59:26+00:00",
-          "mergedAt": "2026-10-22T17:59:26+00:00",
-          "closedAt": "2026-10-22T17:59:26+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-parakeet-provider-evaluation",
-          "baseBranch": "main",
-          "commentsCount": 0
         }
       ],
-      "mergedPullRequestsCount": 20,
+      "mergedPullRequestsCount": 17,
       "isStub": false,
       "stubReason": null,
       "isWatchList": true,
@@ -1566,9 +1441,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 35,
-          "displayValue": "35 commits",
-          "summary": "35 commits in the last 30 days."
+          "value": 31,
+          "displayValue": "31 commits",
+          "summary": "31 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 20,
@@ -1582,9 +1457,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 117,
-          "displayValue": "117 releases",
-          "summary": "117 package releases in the last 30 days across 12 packages."
+          "value": 96,
+          "displayValue": "96 releases",
+          "summary": "96 package releases in the last 30 days across 12 packages."
         },
         "testCoverage": {
           "score": 0,
@@ -3613,18 +3488,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 37,
+        "totalScore": 33,
         "availablePoints": 60,
         "status": "needs-attention",
         "label": "Needs attention",
         "emoji": "\uD83D\uDD34",
         "activity": {
-          "score": 2,
+          "score": 0,
           "maxScore": 20,
           "available": true,
-          "value": 2,
-          "displayValue": "2 commits",
-          "summary": "2 commits in the last 30 days."
+          "value": 0,
+          "displayValue": "0 commits",
+          "summary": "0 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 0,
@@ -3861,163 +3736,6 @@
           "value": 5,
           "displayValue": "5 releases",
           "summary": "5 package releases in the last 30 days across 5 packages."
-        },
-        "testCoverage": {
-          "score": 0,
-          "maxScore": 0,
-          "available": false,
-          "value": null,
-          "displayValue": null,
-          "summary": "Coverage percentage not found in README."
-        },
-        "documentation": {
-          "score": 20,
-          "maxScore": 20,
-          "available": true,
-          "value": 20,
-          "displayValue": "Complete",
-          "summary": "README present, docs/ present."
-        }
-      }
-    },
-    {
-      "owner": "elbruno",
-      "name": "ElBruno.AI.Jev",
-      "fullName": "elbruno/ElBruno.AI.Jev",
-      "stars": 5,
-      "forks": 1,
-      "openIssues": 0,
-      "openPullRequests": 0,
-      "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
-      "language": "C#",
-      "license": "MIT",
-      "lastPush": "2026-11-19T16:19:04+00:00",
-      "archived": false,
-      "retired": false,
-      "watchersCount": 0,
-      "topics": [
-        "dotnet",
-        "dotnet10",
-        "jev",
-        "microsoft-extensions-ai",
-        "nuget"
-      ],
-      "createdAt": "2026-09-22T12:05:46+00:00",
-      "updatedAt": "2026-11-03T15:20:10+00:00",
-      "size": 6392,
-      "defaultBranch": "main",
-      "homepage": null,
-      "hasWiki": true,
-      "hasPages": false,
-      "networkCount": 1,
-      "visibility": "public",
-      "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions",
-      "recentIssues": [],
-      "recentClosedIssues": [
-        {
-          "number": 7,
-          "title": "Improve Foundry client initialization with project-endpoint support and endpoint-first overloads",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/7",
-          "createdAt": "2026-10-28T19:15:13+00:00",
-          "updatedAt": "2026-11-03T15:20:24+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-11-03T15:20:24+00:00"
-        },
-        {
-          "number": 6,
-          "title": "Porting this to MEAI",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/issues/6",
-          "createdAt": "2026-10-22T15:59:53+00:00",
-          "updatedAt": "2026-10-25T16:47:52+00:00",
-          "userLogin": "cedricmendelin",
-          "labels": [],
-          "commentsCount": 1,
-          "state": "closed",
-          "closedAt": "2026-10-25T16:47:52+00:00"
-        }
-      ],
-      "closedIssuesCount": 2,
-      "recentPullRequests": [],
-      "recentMergedPullRequests": [
-        {
-          "number": 9,
-          "title": "Prepare Decisions 0.9.0 release",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/9",
-          "createdAt": "2026-11-19T16:02:00+00:00",
-          "updatedAt": "2026-11-19T16:19:05+00:00",
-          "mergedAt": "2026-11-19T16:19:04+00:00",
-          "closedAt": "2026-11-19T16:19:05+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-decisions-package-upgrades",
-          "baseBranch": "main",
-          "commentsCount": 0
-        },
-        {
-          "number": 8,
-          "title": "Upgrade Decisions dependencies and add Foundry Local provider",
-          "htmlUrl": "https://github.com/elbruno/ElBruno.AI.Decisions/pull/8",
-          "createdAt": "2026-11-17T23:16:25+00:00",
-          "updatedAt": "2026-11-17T23:27:11+00:00",
-          "mergedAt": "2026-11-17T23:27:11+00:00",
-          "closedAt": "2026-11-17T23:27:11+00:00",
-          "userLogin": "elbruno",
-          "labels": [],
-          "isDraft": false,
-          "state": "closed",
-          "additions": 0,
-          "deletions": 0,
-          "changedFiles": 0,
-          "reviewDecision": null,
-          "headBranch": "elbruno-decisions-package-upgrades",
-          "baseBranch": "main",
-          "commentsCount": 0
-        }
-      ],
-      "mergedPullRequestsCount": 2,
-      "isStub": false,
-      "stubReason": null,
-      "isWatchList": false,
-      "watchPurpose": null,
-      "watchDateAdded": null,
-      "maintainability": {
-        "totalScore": 61,
-        "availablePoints": 80,
-        "status": "fair",
-        "label": "Fair",
-        "emoji": "\uD83D\uDFE1",
-        "activity": {
-          "score": 12,
-          "maxScore": 20,
-          "available": true,
-          "value": 12,
-          "displayValue": "12 commits",
-          "summary": "12 commits in the last 30 days."
-        },
-        "issueResolution": {
-          "score": 17,
-          "maxScore": 20,
-          "available": true,
-          "value": 4.4,
-          "displayValue": "4.4 days",
-          "summary": "4.4 average days to close recent issues."
-        },
-        "releaseFrequency": {
-          "score": 0,
-          "maxScore": 20,
-          "available": true,
-          "value": 0,
-          "displayValue": "0 releases",
-          "summary": "0 package releases in the last 30 days across 1 package."
         },
         "testCoverage": {
           "score": 0,
@@ -4281,7 +3999,7 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3244,
+      "stars": 3247,
       "forks": 2284,
       "openIssues": 0,
       "openPullRequests": 0,
@@ -4300,7 +4018,7 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-11-21T11:56:02+00:00",
+      "updatedAt": "2026-11-22T12:16:12+00:00",
       "size": 209688,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
@@ -4668,7 +4386,7 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3244,
+      "stars": 3247,
       "lastUpdate": "2026-11-18T16:35:18+00:00",
       "isStub": false,
       "stubReason": null
