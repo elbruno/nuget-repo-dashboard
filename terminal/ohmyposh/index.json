@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T20:09:17.1200021+00:00",
+  "generatedAt": "2026-11-25T19:14:57.7297342+00:00",
   "totalRepos": 29,
   "profiles": [
     {
@@ -63,16 +63,16 @@
       "icon": "\uD83D\uDCCA"
     },
     {
-      "repo": "elbruno/ElBruno.AI.Decisions",
-      "configFile": "elbruno-ElBruno.AI.Decisions.json",
-      "accentColor": "#5F886C",
-      "icon": "\uD83D\uDD37"
-    },
-    {
       "repo": "elbruno/ElBruno.VibeVoiceTTS",
       "configFile": "elbruno-ElBruno.VibeVoiceTTS.json",
       "accentColor": "#BA5683",
       "icon": "\uD83D\uDD0A"
+    },
+    {
+      "repo": "elbruno/ElBruno.AI.Decisions",
+      "configFile": "elbruno-ElBruno.AI.Decisions.json",
+      "accentColor": "#5F886C",
+      "icon": "\uD83D\uDD37"
     },
     {
       "repo": "elbruno/ElBruno.Whisper",
@@ -93,6 +93,12 @@
       "icon": "\uD83D\uDD37"
     },
     {
+      "repo": "elbruno/ElBruno.MAF.FoundryLocal",
+      "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
+      "accentColor": "#D0D0A2",
+      "icon": "\uD83D\uDD37"
+    },
+    {
       "repo": "elbruno/ElBruno.PersonaPlex",
       "configFile": "elbruno-ElBruno.PersonaPlex.json",
       "accentColor": "#7DBBB3",
@@ -102,12 +108,6 @@
       "repo": "elbruno/ElBruno.Reranking",
       "configFile": "elbruno-ElBruno.Reranking.json",
       "accentColor": "#A97061",
-      "icon": "\uD83D\uDD37"
-    },
-    {
-      "repo": "elbruno/ElBruno.MAF.FoundryLocal",
-      "configFile": "elbruno-ElBruno.MAF.FoundryLocal.json",
-      "accentColor": "#D0D0A2",
       "icon": "\uD83D\uDD37"
     },
     {
