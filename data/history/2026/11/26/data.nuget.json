@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T14:02:07.7388739+00:00",
+  "generatedAt": "2026-11-26T19:00:21.8621643+00:00",
   "packages": [
     {
       "packageId": "ElBruno.MarkItDotNet",
@@ -6241,88 +6241,6 @@
       }
     },
     {
-      "packageId": "ElBruno.Speech.Stt.Parakeet",
-      "retired": false,
-      "deprecated": false,
-      "latestVersion": "1.6.4",
-      "totalDownloads": 887,
-      "description": "Opt-in local multilingual Parakeet TDT v3 speech recognition with ONNX Runtime.",
-      "authors": "Bruno Capuano",
-      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
-      "tags": [
-        "speech",
-        "stt",
-        "parakeet",
-        "onnx",
-        "multilingual"
-      ],
-      "listed": true,
-      "publishedDate": "2026-11-18T02:54:19.007+00:00",
-      "releasesLast30Days": 4,
-      "dependencies": {
-        "directCount": 11,
-        "dependencies": [
-          {
-            "id": "ElBruno.Speech.Audio",
-            "version": "[1.6.4, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.Extensions.AI.Abstractions",
-            "version": "[10.11.0, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
-            "version": "[10.0.15, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.ML.OnnxRuntime",
-            "version": "[1.32.0, )",
-            "isLatest": true
-          },
-          {
-            "id": "ElBruno.Speech.Audio",
-            "version": "[1.6.4, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.Extensions.AI.Abstractions",
-            "version": "[10.11.0, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.ML.OnnxRuntime",
-            "version": "[1.32.0, )",
-            "isLatest": true
-          },
-          {
-            "id": "ElBruno.Speech.Audio",
-            "version": "[1.6.4, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.Extensions.AI.Abstractions",
-            "version": "[10.11.0, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
-            "version": "[10.0.15, )",
-            "isLatest": true
-          },
-          {
-            "id": "Microsoft.ML.OnnxRuntime",
-            "version": "[1.32.0, )",
-            "isLatest": true
-          }
-        ],
-        "outdatedCount": 0,
-        "freshnessPercent": 100
-      }
-    },
-    {
       "packageId": "ElBruno.MarkItDotNet.Connectors.AzureBlob",
       "retired": false,
       "deprecated": false,
@@ -6408,6 +6326,88 @@
           {
             "id": "Microsoft.Extensions.Logging.Abstractions",
             "version": "[10.0.15, )",
+            "isLatest": true
+          }
+        ],
+        "outdatedCount": 0,
+        "freshnessPercent": 100
+      }
+    },
+    {
+      "packageId": "ElBruno.Speech.Stt.Parakeet",
+      "retired": false,
+      "deprecated": false,
+      "latestVersion": "1.6.4",
+      "totalDownloads": 887,
+      "description": "Opt-in local multilingual Parakeet TDT v3 speech recognition with ONNX Runtime.",
+      "authors": "Bruno Capuano",
+      "projectUrl": "https://github.com/elbruno/ElBruno.Speech",
+      "tags": [
+        "speech",
+        "stt",
+        "parakeet",
+        "onnx",
+        "multilingual"
+      ],
+      "listed": true,
+      "publishedDate": "2026-11-18T02:54:19.007+00:00",
+      "releasesLast30Days": 4,
+      "dependencies": {
+        "directCount": 11,
+        "dependencies": [
+          {
+            "id": "ElBruno.Speech.Audio",
+            "version": "[1.6.4, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.Extensions.AI.Abstractions",
+            "version": "[10.11.0, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+            "version": "[10.0.15, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.ML.OnnxRuntime",
+            "version": "[1.32.0, )",
+            "isLatest": true
+          },
+          {
+            "id": "ElBruno.Speech.Audio",
+            "version": "[1.6.4, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.Extensions.AI.Abstractions",
+            "version": "[10.11.0, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.ML.OnnxRuntime",
+            "version": "[1.32.0, )",
+            "isLatest": true
+          },
+          {
+            "id": "ElBruno.Speech.Audio",
+            "version": "[1.6.4, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.Extensions.AI.Abstractions",
+            "version": "[10.11.0, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+            "version": "[10.0.15, )",
+            "isLatest": true
+          },
+          {
+            "id": "Microsoft.ML.OnnxRuntime",
+            "version": "[1.32.0, )",
             "isLatest": true
           }
         ],

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T14:02:07.7388739+00:00",
+  "generatedAt": "2026-11-26T19:00:21.8621643+00:00",
   "repositories": [
     {
       "owner": "elbruno",
@@ -1683,7 +1683,7 @@
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-26T02:10:03+00:00",
+      "lastPush": "2026-11-26T15:10:58+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -1696,7 +1696,7 @@
       ],
       "createdAt": "2026-09-22T12:05:46+00:00",
       "updatedAt": "2026-11-03T15:20:10+00:00",
-      "size": 6568,
+      "size": 6569,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -1770,18 +1770,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 86,
+        "totalScore": 88,
         "availablePoints": 80,
         "status": "good",
         "label": "Good",
         "emoji": "\uD83D\uDFE2",
         "activity": {
-          "score": 13,
+          "score": 14,
           "maxScore": 20,
           "available": true,
-          "value": 13,
-          "displayValue": "13 commits",
-          "summary": "13 commits in the last 30 days."
+          "value": 14,
+          "displayValue": "14 commits",
+          "summary": "14 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 16,
@@ -3549,7 +3549,7 @@
       "description": ".NET 10 decision SDK: Choose, Score, and Assess with Microsoft Foundry (Microsoft-Decision-1), native local Ollama System One models, and TypeSafe AI Jev. One API, probabilities instead of paragraphs.",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-26T02:10:03+00:00",
+      "lastPush": "2026-11-26T15:10:58+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 0,
@@ -3562,7 +3562,7 @@
       ],
       "createdAt": "2026-09-22T12:05:46+00:00",
       "updatedAt": "2026-11-03T15:20:10+00:00",
-      "size": 6568,
+      "size": 6569,
       "defaultBranch": "main",
       "homepage": null,
       "hasWiki": true,
@@ -3636,18 +3636,18 @@
       "watchPurpose": null,
       "watchDateAdded": null,
       "maintainability": {
-        "totalScore": 61,
+        "totalScore": 63,
         "availablePoints": 80,
         "status": "fair",
         "label": "Fair",
         "emoji": "\uD83D\uDFE1",
         "activity": {
-          "score": 13,
+          "score": 14,
           "maxScore": 20,
           "available": true,
-          "value": 13,
-          "displayValue": "13 commits",
-          "summary": "13 commits in the last 30 days."
+          "value": 14,
+          "displayValue": "14 commits",
+          "summary": "14 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 16,
@@ -3888,14 +3888,14 @@
       "owner": "microsoft",
       "name": "Generative-AI-for-beginners-dotnet",
       "fullName": "microsoft/Generative-AI-for-beginners-dotnet",
-      "stars": 3257,
+      "stars": 3258,
       "forks": 2289,
       "openIssues": 1,
       "openPullRequests": 1,
       "description": "Five lessons, learn how to really apply AI to your .NET Applications",
       "language": "C#",
       "license": "MIT",
-      "lastPush": "2026-11-23T03:23:50+00:00",
+      "lastPush": "2026-11-26T15:48:47+00:00",
       "archived": false,
       "retired": false,
       "watchersCount": 47,
@@ -3907,8 +3907,8 @@
         "semantic-kernel"
       ],
       "createdAt": "2025-01-10T19:32:34+00:00",
-      "updatedAt": "2026-11-26T13:26:41+00:00",
-      "size": 209728,
+      "updatedAt": "2026-11-26T17:03:36+00:00",
+      "size": 209795,
       "defaultBranch": "main",
       "homepage": "https://aka.ms/genainet",
       "hasWiki": true,
@@ -4208,9 +4208,9 @@
           "score": 20,
           "maxScore": 20,
           "available": true,
-          "value": 20,
-          "displayValue": "20 commits",
-          "summary": "20 commits in the last 30 days."
+          "value": 22,
+          "displayValue": "22 commits",
+          "summary": "22 commits in the last 30 days."
         },
         "issueResolution": {
           "score": 20,
@@ -4299,8 +4299,8 @@
       "description": "Hands-on course for building practical generative AI applications with .NET",
       "purpose": "Track practical .NET generative AI patterns, samples, and recommended Microsoft tooling.",
       "dateAdded": "2026-08-19",
-      "stars": 3257,
-      "lastUpdate": "2026-11-23T03:23:50+00:00",
+      "stars": 3258,
+      "lastUpdate": "2026-11-26T15:48:47+00:00",
       "isStub": false,
       "stubReason": null
     }
