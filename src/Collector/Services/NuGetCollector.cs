@@ -1,5 +1,6 @@
 using System.Net;
 using System.Text.Json;
+using NuGet.Versioning;
 using NuGetDashboard.Collector.Models;
 
 namespace NuGetDashboard.Collector.Services;
@@ -12,6 +13,7 @@ public interface INuGetCollector
 public sealed class NuGetCollector : INuGetCollector
 {
     private readonly HttpClient _httpClient;
+    private readonly Dictionary<string, Task<NuGetVersion?>> _latestVersions = new(StringComparer.OrdinalIgnoreCase);
     private const string RegistrationBaseUrl = "https://api.nuget.org/v3/registration5-gz-semver2";
     private const string SearchShardUsnc = "https://azuresearch-usnc.nuget.org/query";
     private const string SearchShardUssc = "https://azuresearch-ussc.nuget.org/query";
@@ -167,8 +169,17 @@ public sealed class NuGetCollector : INuGetCollector
             var root = json.RootElement;
             var dependencies = new List<PackageDependency>();
 
-            // Parse catalogEntry to get dependencies
-            if (root.TryGetProperty("catalogEntry", out var catalogEntry) &&
+            if (!root.TryGetProperty("catalogEntry", out var catalogEntry)) return null;
+            if (catalogEntry.ValueKind == JsonValueKind.String)
+            {
+                var catalogUrl = catalogEntry.GetString();
+                if (string.IsNullOrEmpty(catalogUrl)) return null;
+                var catalogJson = await GetWithRetryAsync(catalogUrl);
+                if (catalogJson is null) return null;
+                catalogEntry = catalogJson.RootElement;
+            }
+
+            if (catalogEntry.ValueKind == JsonValueKind.Object &&
                 catalogEntry.TryGetProperty("dependencyGroups", out var dependencyGroups))
             {
                 if (dependencyGroups.ValueKind != JsonValueKind.Array)
@@ -266,58 +277,64 @@ public sealed class NuGetCollector : INuGetCollector
     {
         try
         {
-            // For simplicity, check if the version range constraint allows the latest version
-            // This is a simplified check; a production system would parse version ranges properly
             if (versionRange == "*" || versionRange == "") return true;
+            if (!VersionRange.TryParse(versionRange, out var range)) return false;
 
-            var url = $"{RegistrationBaseUrl}/{packageId.ToLowerInvariant()}/index.json";
-            var json = await GetWithRetryAsync(url);
-            if (json is null) return false;
-
-            var root = json.RootElement;
-            string? latestVersion = null;
-
-            if (root.TryGetProperty("items", out var pages))
+            if (!_latestVersions.TryGetValue(packageId, out var latestVersionTask))
             {
-                foreach (var page in pages.EnumerateArray())
-                {
-                    JsonElement items;
-                    if (page.TryGetProperty("items", out var inlineItems))
-                    {
-                        items = inlineItems;
-                    }
-                    else if (page.TryGetProperty("@id", out var pageUrl))
-                    {
-                        var pageJson = await GetWithRetryAsync(pageUrl.GetString()!);
-                        if (pageJson is null) continue;
-                        if (!pageJson.RootElement.TryGetProperty("items", out items)) continue;
-                    }
-                    else
-                    {
-                        continue;
-                    }
-
-                    foreach (var leaf in items.EnumerateArray())
-                    {
-                        if (leaf.TryGetProperty("catalogEntry", out var entry))
-                        {
-                            latestVersion = entry.GetStringOrDefault("version", "");
-                        }
-                    }
-                }
+                latestVersionTask = GetLatestVersionAsync(packageId);
+                _latestVersions[packageId] = latestVersionTask;
             }
 
-            if (string.IsNullOrEmpty(latestVersion)) return true;
-
-            // Simple version comparison: if the version range includes the latest version, consider it up-to-date
-            // This is a simplified implementation
-            return !versionRange.StartsWith("<") && !versionRange.Contains("(") && !versionRange.Contains("[");
+            var latestVersion = await latestVersionTask;
+            return latestVersion is not null && range.Satisfies(latestVersion);
         }
         catch
         {
-            // If we can't determine, assume it's acceptable
-            return true;
+            return false;
         }
+    }
+
+    private async Task<NuGetVersion?> GetLatestVersionAsync(string packageId)
+    {
+        var url = $"{RegistrationBaseUrl}/{packageId.ToLowerInvariant()}/index.json";
+        var json = await GetWithRetryAsync(url);
+        if (json is null) return null;
+
+        var root = json.RootElement;
+        string? latestVersion = null;
+
+        if (root.TryGetProperty("items", out var pages))
+        {
+            foreach (var page in pages.EnumerateArray())
+            {
+                JsonElement items;
+                if (page.TryGetProperty("items", out var inlineItems))
+                {
+                    items = inlineItems;
+                }
+                else if (page.TryGetProperty("@id", out var pageUrl))
+                {
+                    var pageJson = await GetWithRetryAsync(pageUrl.GetString()!);
+                    if (pageJson is null) continue;
+                    if (!pageJson.RootElement.TryGetProperty("items", out items)) continue;
+                }
+                else
+                {
+                    continue;
+                }
+
+                foreach (var leaf in items.EnumerateArray())
+                {
+                    if (leaf.TryGetProperty("catalogEntry", out var entry))
+                    {
+                        latestVersion = entry.GetStringOrDefault("version", "");
+                    }
+                }
+            }
+        }
+
+        return NuGetVersion.TryParse(latestVersion, out var parsedVersion) ? parsedVersion : null;
     }
 
     private async Task<long> GetTotalDownloadsAsync(string packageId)

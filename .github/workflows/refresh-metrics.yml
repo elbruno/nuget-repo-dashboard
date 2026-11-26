@@ -10,6 +10,7 @@ on:
   workflow_dispatch: # Manual trigger
 
 permissions:
+  actions: read
   contents: write
   pages: write
   id-token: write
@@ -212,7 +213,25 @@ jobs:
           echo "=== Preflight passed ==="
 
       - name: Upload Pages artifact
+        id: upload
         uses: actions/upload-pages-artifact@v3
+
+      - name: Wait for Pages artifact visibility
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+        run: |
+          for attempt in {1..12}; do
+            if gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts?name=github-pages&per_page=100" \
+              --jq ".artifacts[] | select(.id == ${ARTIFACT_ID} and .expired == false) | .id" | grep -qx "$ARTIFACT_ID"; then
+              echo "Pages artifact $ARTIFACT_ID is visible."
+              exit 0
+            fi
+            echo "Pages artifact not visible yet, attempt $attempt of 12."
+            sleep 5
+          done
+          echo "Pages artifact $ARTIFACT_ID did not become visible."
+          exit 1
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -57,6 +57,53 @@ public class NuGetCollectorDependencyTests
 
     // ─── Test: valid dependency JSON ─────────────────────────────────────────
 
+    [Theory]
+    [InlineData("[1.0.0, )", true)]
+    [InlineData("[1.0.0, 2.0.0)", false)]
+    public async Task CollectAsync_ReferencedCatalogEntry_UsesNuGetVersionRanges(string range, bool isLatest)
+    {
+        const string pkg = "DepPkg";
+        const string catalogUrl = "https://api.nuget.org/v3/catalog0/data/package.json";
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse($"{RegistrationBase}/deppkg/index.json", HttpStatusCode.OK, BuildRegistrationIndexJson());
+        handler.AddResponse($"{RegistrationBase}/deppkg/1.0.0.json", HttpStatusCode.OK,
+            $$"""{ "catalogEntry": "{{catalogUrl}}" }""");
+        handler.AddResponse(catalogUrl, HttpStatusCode.OK, $$"""
+            { "dependencyGroups": [{ "dependencies": [{ "id": "Example.Dependency", "range": "{{range}}" }] }] }
+            """);
+        handler.AddResponse($"{RegistrationBase}/example.dependency/index.json", HttpStatusCode.OK,
+            BuildRegistrationIndexJson("2.0.0"));
+        handler.AddResponse($"https://azuresearch-usnc.nuget.org/query?q=packageid:{pkg}&take=1", HttpStatusCode.OK, BuildSearchJson());
+        handler.AddResponse($"https://azuresearch-ussc.nuget.org/query?q=packageid:{pkg}&take=1", HttpStatusCode.OK, BuildSearchJson());
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new NuGetCollector(httpClient);
+        var results = await collector.CollectAsync([new PackageConfig { PackageId = pkg, Repos = [] }]);
+
+        var dependencies = results.Should().ContainSingle().Subject.Dependencies;
+        dependencies.Should().NotBeNull();
+        dependencies!.Dependencies.Should().ContainSingle().Which.IsLatest.Should().Be(isLatest);
+        dependencies.OutdatedCount.Should().Be(isLatest ? 0 : 1);
+    }
+
+    [Fact]
+    public async Task CollectAsync_ReferencedCatalogEntryNotFound_PreservesPackageWithoutDependencies()
+    {
+        const string pkg = "DepPkg";
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse($"{RegistrationBase}/deppkg/index.json", HttpStatusCode.OK, BuildRegistrationIndexJson());
+        handler.AddResponse($"{RegistrationBase}/deppkg/1.0.0.json", HttpStatusCode.OK,
+            """{ "catalogEntry": "https://api.nuget.org/v3/catalog0/missing.json" }""");
+        handler.AddResponse($"https://azuresearch-usnc.nuget.org/query?q=packageid:{pkg}&take=1", HttpStatusCode.OK, BuildSearchJson());
+        handler.AddResponse($"https://azuresearch-ussc.nuget.org/query?q=packageid:{pkg}&take=1", HttpStatusCode.OK, BuildSearchJson());
+
+        using var httpClient = new HttpClient(handler);
+        var collector = new NuGetCollector(httpClient);
+        var results = await collector.CollectAsync([new PackageConfig { PackageId = pkg, Repos = [] }]);
+
+        results.Should().ContainSingle().Which.Dependencies.Should().BeNull();
+    }
+
     [Fact]
     public async Task CollectAsync_ValidDependencyJson_ParsesDependenciesCorrectly()
     {
