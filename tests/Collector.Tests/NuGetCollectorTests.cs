@@ -58,6 +58,31 @@ public class NuGetCollectorTests
         """;
     }
 
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task CollectAsync_UsesDeprecationOfLatestVersion(bool latestDeprecated)
+    {
+        var oldDeprecation = latestDeprecated ? "" : "\"deprecation\": {\"reasons\":[\"Legacy\"]},";
+        var newDeprecation = latestDeprecated ? "\"deprecation\": {\"reasons\":[\"Legacy\"]}," : "";
+        var index = $$"""
+            { "items": [{ "items": [
+              { "catalogEntry": { {{oldDeprecation}} "version": "1.0.0" } },
+              { "catalogEntry": { {{newDeprecation}} "version": "2.0.0" } }
+            ] }] }
+            """;
+        var handler = new MockHttpMessageHandler();
+        handler.AddResponse("https://api.nuget.org/v3/registration5-gz-semver2/testpkg/index.json", HttpStatusCode.OK, index);
+        handler.AddResponse("https://azuresearch-usnc.nuget.org/query?q=packageid:TestPkg&take=1", HttpStatusCode.OK, BuildSearchJson(100));
+        handler.AddResponse("https://azuresearch-ussc.nuget.org/query?q=packageid:TestPkg&take=1", HttpStatusCode.OK, BuildSearchJson(100));
+        using var httpClient = new HttpClient(handler);
+        var collector = new NuGetCollector(httpClient);
+
+        var result = await collector.CollectAsync([new PackageConfig { PackageId = "TestPkg" }]);
+
+        result.Should().ContainSingle().Which.Deprecated.Should().Be(latestDeprecated);
+    }
+
     private static string BuildRegistrationJsonWithReleaseHistory(params string[] publishedDates)
     {
         var items = string.Join(",",

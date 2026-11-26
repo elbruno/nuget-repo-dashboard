@@ -974,7 +974,7 @@
             <label for="dashboard-lifecycle">Lifecycle</label>
             <select id="dashboard-lifecycle">
               <option value="active">Active</option>
-              <option value="retired">Retired / archived</option>
+              <option value="retired">Retired / deprecated / archived</option>
               <option value="all">All</option>
             </select>
           </div>
@@ -1575,7 +1575,7 @@
 
       summaryEl.textContent = labels.length
         ? `${labels.length} active filter${labels.length === 1 ? '' : 's'}: ${labels.join(' · ')}`
-        : 'Active packages and repositories are visible; retired and archived entries are hidden.';
+        : 'Active packages and repositories are visible; retired, deprecated, and archived entries are hidden.';
 
       clearBtn.disabled = labels.length === 0;
       toggleBtn.textContent = labels.length ? `Filters (${labels.length})` : 'Filters';
@@ -1628,6 +1628,10 @@
       applyDashboardFilterUpdate({ ...defaultDashboardFilters, filtersOpen: dashboardFilters.filtersOpen });
     }
 
+    function isInactivePackage(pkg) {
+      return Boolean(pkg.retired || pkg.deprecated);
+    }
+
     function isInactiveRepo(repo) {
       return Boolean(repo.retired || repo.archived);
     }
@@ -1638,9 +1642,11 @@
     }
 
     function lifecycleBadge(entity) {
-      if (entity.retired) return '<span class="license-badge">Retired - unsupported</span>';
-      if (entity.archived) return '<span class="license-badge">Archived - read-only</span>';
-      return '';
+      return [
+        entity.retired ? '<span class="license-badge">Retired - unsupported</span>' : '',
+        entity.deprecated ? '<span class="license-badge">Deprecated on NuGet</span>' : '',
+        entity.archived ? '<span class="license-badge">Archived - read-only</span>' : ''
+      ].join('');
     }
 
     function applyLifecycleConfig(config) {
@@ -2485,7 +2491,7 @@
       const sortKey = document.getElementById('nuget-sort').value;
 
       let pkgs = allPackages.filter(p => {
-        if (!matchesLifecycle(Boolean(p.retired))) return false;
+        if (!matchesLifecycle(isInactivePackage(p))) return false;
         if (!matchesSearch(dashboardFilters.search, [p.packageId, p.description, p.tags || []])) return false;
         if (!matchesTag(dashboardFilters.tag, p.tags)) return false;
         if (!matchesMinimum(p.totalDownloads, dashboardFilters.downloads)) return false;
@@ -2610,7 +2616,7 @@
     /* ── Top 5 Leaderboard Section Rendering ── */
 
     function renderLeaderboard() {
-      const topPkgs = allPackages.filter(p => !p.retired).sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0)).slice(0, 5);
+      const topPkgs = allPackages.filter(p => !isInactivePackage(p)).sort((a, b) => (b.totalDownloads || 0) - (a.totalDownloads || 0)).slice(0, 5);
       const topRepos = allRepos.filter(r => !isInactiveRepo(r)).sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5);
 
       const pkgCards = topPkgs.map((pkg, i) => `
@@ -2663,7 +2669,7 @@
       const date = new Date().toISOString().split('T')[0];
       const filename = `packages-${date}.csv`;
 
-      const headers = ['Package ID', 'Version', 'Total Downloads', 'Project URL', 'Authors', 'Tags', 'Retired'];
+      const headers = ['Package ID', 'Version', 'Total Downloads', 'Project URL', 'Authors', 'Tags', 'Retired', 'Deprecated'];
       const rows = pkgs.map(p => [
         p.packageId,
         p.latestVersion,
@@ -2671,7 +2677,8 @@
         p.projectUrl || '',
         p.authors || '',
         (p.tags || []).join(';'),
-        Boolean(p.retired)
+        Boolean(p.retired),
+        Boolean(p.deprecated)
       ]);
 
       const csv = [
@@ -2693,6 +2700,7 @@
         packages: pkgs.map(p => ({
           id: p.packageId,
           retired: Boolean(p.retired),
+          deprecated: Boolean(p.deprecated),
           version: p.latestVersion,
           totalDownloads: p.totalDownloads || 0,
           projectUrl: p.projectUrl || '',
@@ -2893,7 +2901,7 @@
       document.getElementById('trends-section').style.display = '';
 
       // Staleness banner
-      const activePackageIds = new Set(allPackages.filter(p => !p.retired).map(p => p.packageId.toLowerCase()));
+      const activePackageIds = new Set(allPackages.filter(p => !isInactivePackage(p)).map(p => p.packageId.toLowerCase()));
       const staleCount = (trendsData.velocities || [])
         .filter(v => v.isStale && activePackageIds.has(v.packageId.toLowerCase())).length;
       const banner = document.getElementById('staleness-banner');
@@ -3102,13 +3110,19 @@
 
         // Summary cards
         const totalDownloads = allPackages.reduce((s, p) => s + (p.totalDownloads || 0), 0);
-        const activeDownloads = allPackages.filter(p => !p.retired).reduce((s, p) => s + (p.totalDownloads || 0), 0);
+        const activePackages = allPackages.filter(p => !isInactivePackage(p));
+        const activeDownloads = activePackages.reduce((s, p) => s + (p.totalDownloads || 0), 0);
+        const activeRepos = allRepos.filter(r => !isInactiveRepo(r));
         const totalIssues = allRepos.reduce((s, r) => s + (r.recentIssues || []).length, 0);
         const totalPrs = allRepos.reduce((s, r) => s + (r.recentPullRequests || []).length, 0);
         const watchListCount = allRepos.filter(r => r.isWatchList || r.watchPurpose || r.watchDateAdded).length;
         document.getElementById('summary').innerHTML = `
           <div class="summary-card"><div class="number">${fmt(allPackages.length)}</div><div class="label">Tracked Packages - All</div></div>
+          <div class="summary-card" id="active-packages"><div class="number">${fmt(activePackages.length)}</div><div class="label">Active Packages</div></div>
+          <div class="summary-card" id="deprecated-packages"><div class="number">${fmt(allPackages.filter(p => p.deprecated).length)}</div><div class="label">Deprecated Packages (Latest Version)</div></div>
           <div class="summary-card"><div class="number">${fmt(allRepos.length)}</div><div class="label">Tracked Repositories - All</div></div>
+          <div class="summary-card" id="active-repositories"><div class="number">${fmt(activeRepos.length)}</div><div class="label">Active Repositories</div></div>
+          <div class="summary-card" id="archived-repositories"><div class="number">${fmt(allRepos.filter(r => r.archived).length)}</div><div class="label">Archived Repositories</div></div>
           <div class="summary-card"><div class="number">${fmt(watchListCount)}</div><div class="label">Watch List</div></div>
           <div class="summary-card" id="lifetime-downloads"><div class="number">${fmt(totalDownloads)}</div><div class="label">Lifetime Downloads - All Packages</div></div>
           <div class="summary-card" id="active-downloads"><div class="number">${fmt(activeDownloads)}</div><div class="label">Downloads - Active Packages</div></div>

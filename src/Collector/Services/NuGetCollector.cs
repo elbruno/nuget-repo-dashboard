@@ -64,6 +64,7 @@ public sealed class NuGetCollector : INuGetCollector
         string? projectUrl = null;
         List<string> tags = [];
         bool listed = true;
+        bool deprecated = false;
         DateTimeOffset? publishedDate = null;
         int releasesLast30Days = 0;
         var releaseCutoff = DateTimeOffset.UtcNow.AddDays(-30);
@@ -117,6 +118,8 @@ public sealed class NuGetCollector : INuGetCollector
                     authors = entry.GetStringOrDefault("authors", string.Empty);
                     projectUrl = entry.GetStringOrNull("projectUrl");
                     listed = entry.TryGetProperty("listed", out var listedProp) ? listedProp.GetBoolean() : true;
+                    deprecated = entry.TryGetProperty("deprecation", out var deprecation) &&
+                        deprecation.ValueKind == JsonValueKind.Object;
 
                     if (entry.TryGetProperty("published", out var pub) &&
                         DateTimeOffset.TryParse(pub.GetString(), out var pubDate))
@@ -152,6 +155,7 @@ public sealed class NuGetCollector : INuGetCollector
             ProjectUrl = projectUrl,
             Tags = tags,
             Listed = listed,
+            Deprecated = deprecated,
             PublishedDate = publishedDate,
             ReleasesLast30Days = releasesLast30Days,
             Dependencies = dependencyMetrics

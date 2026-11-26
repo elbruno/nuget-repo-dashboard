@@ -9,7 +9,7 @@ public partial class DashboardDownloadValidationTests
     private static string RepoRoot => Path.GetFullPath(Path.Combine(
         AppContext.BaseDirectory, "..", "..", "..", "..", ".."));
 
-    private async Task<IPage> OpenLifecycleDashboardAsync(string query = "", bool missingConfig = false)
+    private async Task<IPage> OpenLifecycleDashboardAsync(string query = "", bool missingConfig = false, bool includeDeprecated = false)
     {
         var page = await _browser.NewPageAsync();
         var html = await File.ReadAllTextAsync(Path.Combine(RepoRoot, "site", "index.html"));
@@ -44,6 +44,10 @@ public partial class DashboardDownloadValidationTests
                     """,
                 _ => "{}"
             };
+            if (includeDeprecated && path == "/data/data.nuget.json")
+            {
+                body = body.Replace("\"packageId\":\"Active.Package\"", "\"packageId\":\"Active.Package\",\"deprecated\":true");
+            }
             await route.FulfillAsync(new RouteFulfillOptions
             {
                 Status = missingConfig && path == "/data/dashboard-config.json" ? 404 : 200,
@@ -53,6 +57,35 @@ public partial class DashboardDownloadValidationTests
         });
         await page.GotoAsync(LocalDashboardUrl + query, new PageGotoOptions { WaitUntil = WaitUntilState.NetworkIdle });
         return page;
+    }
+
+    [Fact]
+    public async Task Lifecycle_DeprecatedPackagesAreExcludedFromActiveNumbersAndShownInInactiveView()
+    {
+        var page = await OpenLifecycleDashboardAsync(includeDeprecated: true);
+        (await page.Locator("#active-packages .number").TextContentAsync()).Should().Be("1");
+        (await page.Locator("#deprecated-packages .number").TextContentAsync()).Should().Be("1");
+        (await page.Locator("#active-repositories .number").TextContentAsync()).Should().Be("1");
+        (await page.Locator("#archived-repositories .number").TextContentAsync()).Should().Be("1");
+        (await page.Locator("#lifetime-downloads .number").TextContentAsync()).Should().Be("7,125");
+        (await page.Locator("#active-downloads .number").TextContentAsync()).Should().Be("25");
+        (await page.Locator("#nuget-grid").TextContentAsync()).Should().NotContain("Active.Package");
+        (await page.Locator("#top-leaderboard-grid").TextContentAsync()).Should().NotContain("Active.Package");
+
+        await page.SelectOptionAsync("#dashboard-lifecycle", "retired");
+        (await page.Locator("#nuget-grid").TextContentAsync()).Should().Contain("Active.Package").And.Contain("Deprecated on NuGet");
+        var exported = await page.EvaluateAsync<string>("""
+        () => {
+            let result;
+            downloadFile = content => { result = content; };
+            exportPackagesAsJSON();
+            return result;
+        }
+        """);
+        using var packages = System.Text.Json.JsonDocument.Parse(exported);
+        packages.RootElement.GetProperty("packages").EnumerateArray()
+            .Single(p => p.GetProperty("id").GetString() == "Active.Package")
+            .GetProperty("deprecated").GetBoolean().Should().BeTrue();
     }
 
     [Fact]

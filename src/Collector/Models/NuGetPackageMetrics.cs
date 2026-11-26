@@ -37,6 +37,9 @@ public sealed class NuGetPackageMetrics
     [JsonPropertyName("retired")]
     public bool Retired { get; set; }
 
+    [JsonPropertyName("deprecated")]
+    public bool Deprecated { get; set; }
+
     [JsonPropertyName("latestVersion")]
     public string LatestVersion { get; set; } = string.Empty;
 
