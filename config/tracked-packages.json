@@ -20,7 +20,19 @@
     ]
   },
   {
+    "packageId": "ElBruno.AI.Decisions.Foundry.Local",
+    "repos": [
+      "elbruno/ElBruno.AI.Decisions"
+    ]
+  },
+  {
     "packageId": "ElBruno.AI.Decisions.Jev",
+    "repos": [
+      "elbruno/ElBruno.AI.Decisions"
+    ]
+  },
+  {
+    "packageId": "ElBruno.AI.Decisions.Llama",
     "repos": [
       "elbruno/ElBruno.AI.Decisions"
     ]
@@ -500,6 +512,12 @@
     ]
   },
   {
+    "packageId": "ElBruno.Realtime.BlazorComponents",
+    "repos": [
+      "elbruno/ElBruno.Realtime"
+    ]
+  },
+  {
     "packageId": "ElBruno.Realtime.SileroVad",
     "repos": [
       "elbruno/ElBruno.Realtime"
@@ -573,6 +591,24 @@
   },
   {
     "packageId": "ElBruno.Speech.Pipeline",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Stt.Parakeet",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Stt.Whisper",
+    "repos": [
+      "elbruno/ElBruno.Speech"
+    ]
+  },
+  {
+    "packageId": "ElBruno.Speech.Tts.Ollama",
     "repos": [
       "elbruno/ElBruno.Speech"
     ]
